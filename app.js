@@ -10,6 +10,26 @@
   var knownCount = 0; // unique words marked as known
   var missCount = 0;  // total "don't know" taps (repeats included)
 
+  var currentFrontKey = null; // which language is the title on the live card
+  var revealed = false;       // has the live card's answer been revealed?
+
+  // Back/forward "peek" navigation:
+  // `seen` is a chronological log of resolved cards; `peekPos` is the index
+  // currently being viewed (null = live current card, read/write; a number =
+  // looking at a past card, read-only).
+  var seen = [];
+  var peekPos = null;
+
+  // ---- language config ---------------------------------------------------
+  var LANGS = [
+    { key: "de", label: "DE", get: function (w) { return w.word; } },
+    { key: "en", label: "EN", get: function (w) { return w.en; } },
+    { key: "ru", label: "RU", get: function (w) { return w.ru; } }
+  ];
+  // Which languages are allowed to appear as the big prompt (title) word.
+  var titleLangs = loadTitleLangs();
+
+  // ---- elements ----------------------------------------------------------
   var elDeck = document.getElementById("deck");
   var elControls = document.getElementById("controls");
   var elStats = document.getElementById("stats");
@@ -20,6 +40,10 @@
   var elProgress = document.getElementById("progress");
   var elStatNumbers = document.getElementById("statNumbers");
   var elUnknownList = document.getElementById("unknownList");
+  var elBtnBack = document.getElementById("btnBack");
+  var elBtnForward = document.getElementById("btnForward");
+  var elBtnKnown = document.getElementById("btnKnown");
+  var elBtnUnknown = document.getElementById("btnUnknown");
 
   // ---- utilities ---------------------------------------------------------
   function shuffle(arr) {
@@ -38,28 +62,49 @@
     return d.innerHTML;
   }
 
+  function langByKey(key) {
+    for (var i = 0; i < LANGS.length; i++) if (LANGS[i].key === key) return LANGS[i];
+    return LANGS[0];
+  }
+
+  function allowedTitleLangs() {
+    var a = LANGS.filter(function (l) { return titleLangs[l.key]; });
+    return a.length ? a : LANGS.slice();
+  }
+
+  function loadTitleLangs() {
+    var def = { de: true, en: true, ru: true };
+    try {
+      var raw = window.localStorage.getItem("swipua_titleLangs");
+      if (raw) {
+        var parsed = JSON.parse(raw);
+        var out = {}, any = false;
+        ["de", "en", "ru"].forEach(function (k) {
+          out[k] = !!parsed[k];
+          if (out[k]) any = true;
+        });
+        if (any) return out;
+      }
+    } catch (e) {}
+    return def;
+  }
+
+  function saveTitleLangs() {
+    try { window.localStorage.setItem("swipua_titleLangs", JSON.stringify(titleLangs)); } catch (e) {}
+  }
+
   // ---- rendering ---------------------------------------------------------
-  function renderCard() {
-    var w = deck[0];
-
-    elProgress.textContent = knownCount + " learned · " + deck.length + " left";
-
-    // Randomly choose which language is shown as the prompt (front) word.
-    // The other two languages are shown below as translations.
-    var faces = [
-      { label: "DE", value: w.word },
-      { label: "EN", value: w.en },
-      { label: "RU", value: w.ru }
-    ];
-    var front = Math.floor(Math.random() * faces.length);
-
-    elWord.textContent = faces[front].value;
+  // Paint a word onto the card. `frontKey` = which language is the title;
+  // `isRevealed` = whether translations/examples are shown.
+  function paintCard(w, frontKey, isRevealed) {
+    var frontLang = langByKey(frontKey);
+    elWord.textContent = frontLang.get(w);
 
     elTranslations.innerHTML = "";
-    faces.forEach(function (f, i) {
-      if (i === front) return;
+    LANGS.forEach(function (l) {
+      if (l.key === frontKey) return;
       var span = document.createElement("span");
-      span.textContent = f.label + ": " + f.value;
+      span.textContent = l.label + ": " + l.get(w);
       elTranslations.appendChild(span);
     });
 
@@ -74,13 +119,72 @@
       elExamples.appendChild(div);
     });
 
+    elCard.classList.toggle("answer-hidden", !isRevealed);
     elCard.classList.remove("drag-know", "drag-unknown");
     elCard.style.transform = "";
   }
 
+  // Render the live current card (top of deck), hidden, with a fresh random title.
+  function renderCard() {
+    peekPos = null;
+    revealed = false;
+    var w = deck[0];
+    var allowed = allowedTitleLangs();
+    currentFrontKey = allowed[Math.floor(Math.random() * allowed.length)].key;
+    paintCard(w, currentFrontKey, false);
+    updateProgress();
+    updateControls();
+  }
+
+  // Repaint the live current card in its existing state (used when returning
+  // from a peek, or after changing the flags).
+  function repaintLive() {
+    paintCard(deck[0], currentFrontKey, revealed);
+    updateProgress();
+    updateControls();
+  }
+
+  function paintPeek() {
+    var entry = seen[peekPos];
+    paintCard(entry.word, entry.frontKey, true); // past cards are shown fully
+    updateProgress();
+    updateControls();
+  }
+
+  function updateProgress() {
+    if (peekPos !== null) {
+      var stepsBack = seen.length - peekPos;
+      elProgress.textContent = "↩ previous card (−" + stepsBack + ")";
+    } else {
+      elProgress.textContent = knownCount + " learned · " + deck.length + " left";
+    }
+  }
+
+  function updateControls() {
+    var peeking = peekPos !== null;
+    // In peek mode the status is read-only: hide Know/Don't, show "Back to current".
+    elBtnKnown.classList.toggle("hidden", peeking);
+    elBtnUnknown.classList.toggle("hidden", peeking);
+    elBtnForward.classList.toggle("hidden", !peeking);
+    // Back is available whenever there's an earlier card to look at.
+    var canGoBack = peeking ? (peekPos > 0) : (seen.length > 0);
+    elBtnBack.disabled = !canGoBack;
+  }
+
+  function reveal() {
+    if (revealed) return;
+    revealed = true;
+    elCard.classList.remove("answer-hidden");
+  }
+
+  // ---- actions -----------------------------------------------------------
   function advance(isKnown) {
+    if (peekPos !== null) return;       // can't change status while looking back
     if (deck.length === 0) return;
+    if (!revealed) { reveal(); return; } // first interaction reveals the answer
+
     var w = deck.shift();
+    seen.push({ word: w, frontKey: currentFrontKey });
 
     if (isKnown) {
       knownCount++;
@@ -99,6 +203,29 @@
     }
   }
 
+  function goBack() {
+    if (peekPos === null) {
+      if (seen.length === 0) return;
+      peekPos = seen.length - 1;
+    } else if (peekPos > 0) {
+      peekPos--;
+    } else {
+      return;
+    }
+    paintPeek();
+  }
+
+  function goForward() {
+    if (peekPos === null) return;
+    peekPos++;
+    if (peekPos >= seen.length) {
+      peekPos = null;   // caught up to the present
+      repaintLive();
+    } else {
+      paintPeek();
+    }
+  }
+
   function showStats() {
     elDeck.classList.add("hidden");
     elControls.classList.add("hidden");
@@ -113,28 +240,83 @@
       '<div class="row"><span class="w">All words remembered — nice.</span></div>';
   }
 
-  // ---- controls ----------------------------------------------------------
-  document.getElementById("btnKnown").addEventListener("click", function () { advance(true); });
-  document.getElementById("btnUnknown").addEventListener("click", function () { advance(false); });
+  // ---- flag toggles ------------------------------------------------------
+  function initFlags() {
+    var buttons = document.querySelectorAll(".flag");
+    Array.prototype.forEach.call(buttons, function (btn) {
+      var key = btn.getAttribute("data-lang");
+      syncFlag(btn, key);
+      btn.addEventListener("click", function () {
+        var enabledCount = LANGS.filter(function (l) { return titleLangs[l.key]; }).length;
+        // Keep at least one language eligible as the title.
+        if (titleLangs[key] && enabledCount === 1) {
+          btn.classList.remove("shake");
+          // force reflow so the animation can retrigger
+          void btn.offsetWidth;
+          btn.classList.add("shake");
+          return;
+        }
+        titleLangs[key] = !titleLangs[key];
+        syncFlag(btn, key);
+        saveTitleLangs();
+        applyFlagChange();
+      });
+    });
+  }
+
+  function syncFlag(btn, key) {
+    btn.classList.toggle("off", !titleLangs[key]);
+    btn.setAttribute("aria-pressed", titleLangs[key] ? "true" : "false");
+  }
+
+  // Re-pick the live card's title only if its current language was switched
+  // off; otherwise leave the card as-is so the change isn't jarring.
+  function applyFlagChange() {
+    if (peekPos !== null || deck.length === 0) return;
+    if (!titleLangs[currentFrontKey]) {
+      var allowed = allowedTitleLangs();
+      currentFrontKey = allowed[Math.floor(Math.random() * allowed.length)].key;
+    }
+    paintCard(deck[0], currentFrontKey, revealed);
+  }
+
+  // ---- controls wiring ---------------------------------------------------
+  elBtnKnown.addEventListener("click", function () { advance(true); });
+  elBtnUnknown.addEventListener("click", function () { advance(false); });
+  elBtnBack.addEventListener("click", goBack);
+  elBtnForward.addEventListener("click", goForward);
   document.getElementById("btnReload").addEventListener("click", function () { location.reload(); });
 
   document.addEventListener("keydown", function (e) {
     if (elStats.classList.contains("hidden") === false) return;
-    if (e.code === "Space") {
+
+    if (peekPos !== null) {
+      // Read-only browsing of past cards.
+      if (e.key === "ArrowLeft") { e.preventDefault(); goBack(); }
+      else if (e.key === "ArrowRight" || e.key === "Escape") { e.preventDefault(); goForward(); }
+      return;
+    }
+
+    if (e.key === "ArrowLeft") {
       e.preventDefault();
-      advance(false);
+      goBack();
+    } else if (e.code === "Space") {
+      e.preventDefault();
+      advance(false); // reveals first, then marks "don't know"
     } else if (e.key === "Enter") {
       e.preventDefault();
-      advance(true);
+      advance(true);  // reveals first, then marks "know"
     }
   });
 
-  // touch/mouse swipe: drag right = know, drag left = don't know
+  // touch/mouse swipe: drag right = know, drag left = don't know.
+  // A small movement (a tap) reveals the answer on the live card.
   (function enableSwipe() {
     var startX = null;
     var dragging = false;
 
     function onStart(x) {
+      if (peekPos !== null) return; // no dragging while looking back
       startX = x;
       dragging = true;
     }
@@ -143,8 +325,10 @@
       if (!dragging || startX === null) return;
       var dx = x - startX;
       elCard.style.transform = "translateX(" + dx + "px) rotate(" + (dx / 20) + "deg)";
-      elCard.classList.toggle("drag-know", dx > 40);
-      elCard.classList.toggle("drag-unknown", dx < -40);
+      if (revealed) {
+        elCard.classList.toggle("drag-know", dx > 40);
+        elCard.classList.toggle("drag-unknown", dx < -40);
+      }
     }
 
     function onEnd(x) {
@@ -152,6 +336,13 @@
       var dx = x - startX;
       dragging = false;
       startX = null;
+
+      if (!revealed) {
+        // Any tap/drag on a hidden card just reveals it.
+        elCard.style.transform = "";
+        reveal();
+        return;
+      }
       if (dx > 100) {
         advance(true);
       } else if (dx < -100) {
@@ -172,9 +363,12 @@
   })();
 
   // ---- boot --------------------------------------------------------------
+  initFlags();
   if (deck.length === 0) {
     elWord.textContent = "No words loaded";
+    elCard.classList.remove("answer-hidden");
     elTranslations.textContent = "Check data.js";
+    updateControls();
   } else {
     renderCard();
   }

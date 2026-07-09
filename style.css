@@ -45,11 +45,44 @@ body {
   flex-shrink: 0;
 }
 
+#topleft {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 #logo {
   font-weight: 700;
   font-size: 1.1rem;
   letter-spacing: 0.02em;
 }
+
+#flags {
+  display: flex;
+  gap: 6px;
+}
+
+.flag {
+  padding: 4px 9px;
+  font-size: 1.15rem;
+  line-height: 1;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.15s ease, filter 0.15s ease, border-color 0.15s ease;
+}
+
+.flag:not(.off) { border-color: var(--accent); }
+.flag.off { opacity: 0.35; filter: grayscale(1); }
+.flag:active { transform: scale(0.9); }
+
+@keyframes flagShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+.flag.shake { animation: flagShake 0.3s; }
 
 #progress {
   color: var(--muted);
@@ -114,6 +147,17 @@ body {
   padding: 6px 12px;
 }
 
+#revealHint {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 6px 0;
+}
+
+#card.answer-hidden #translations,
+#card.answer-hidden #examples { display: none; }
+#card:not(.answer-hidden) #revealHint { display: none; }
+
 #examples {
   display: flex;
   flex-direction: column;
@@ -166,6 +210,10 @@ button:active {
 
 #btnUnknown { color: var(--bad); }
 #btnKnown { color: var(--accent); }
+#btnBack, #btnForward { color: var(--muted); }
+
+button:disabled { opacity: 0.4; cursor: default; }
+.hidden { display: none !important; }
 
 kbd {
   font-family: inherit;

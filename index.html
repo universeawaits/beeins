@@ -9,21 +9,31 @@
 <body>
 
 <header id="topbar">
-  <div id="logo">swipua</div>
+  <div id="topleft">
+    <div id="logo">swipua</div>
+    <div id="flags" role="group" aria-label="Which language shows as the prompt">
+      <button type="button" class="flag" data-lang="de" title="German as prompt">🇩🇪</button>
+      <button type="button" class="flag" data-lang="en" title="English as prompt">🇬🇧</button>
+      <button type="button" class="flag" data-lang="ru" title="Russian as prompt">🇷🇺</button>
+    </div>
+  </div>
   <div id="progress">0 / 0</div>
 </header>
 
 <main id="deck">
-  <div id="card">
+  <div id="card" class="answer-hidden">
     <div id="word"></div>
+    <div id="revealHint">Tap the card or press <kbd>Enter</kbd> to reveal</div>
     <div id="translations"></div>
     <div id="examples"></div>
   </div>
 </main>
 
 <footer id="controls">
+  <button id="btnBack" title="Look at the previous card">‹ Back</button>
   <button id="btnUnknown">✗ Don't know <kbd>Space</kbd></button>
   <button id="btnKnown">✓ Know <kbd>Enter</kbd></button>
+  <button id="btnForward" class="hidden">Back to current ›</button>
 </footer>
 
 <section id="stats" class="hidden">
