@@ -1,10 +1,11 @@
 # swipua
 
-A tiny swipe-to-learn German vocabulary flashcard app (German ↔ English/Russian, with example sentences).
+A tiny swipe-to-learn German vocabulary flashcard app with translations in English, Russian, Vietnamese, and Persian, plus example sentences.
 
 - **Swipe right / ✓ / Enter** — you know the word (it leaves the deck).
 - **Swipe left / ✗ / Space** — you don't know it (it comes back later in the session, at random, until you mark it as known).
-- Card order is shuffled every session, and each card shows one of DE / EN / RU as the prompt (chosen at random), with the other two as translations.
+- Card order is shuffled every session, and each card shows one language as the prompt (chosen at random), with the others as translations.
+- The flag buttons (🇩🇪 🇬🇧 🇷🇺 🇻🇳 🇮🇷) in the top-left toggle which languages are eligible to appear as the prompt.
 
 ## Run locally
 

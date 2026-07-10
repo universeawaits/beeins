@@ -24,7 +24,9 @@
   var LANGS = [
     { key: "de", label: "DE", get: function (w) { return w.word; } },
     { key: "en", label: "EN", get: function (w) { return w.en; } },
-    { key: "ru", label: "RU", get: function (w) { return w.ru; } }
+    { key: "ru", label: "RU", get: function (w) { return w.ru; } },
+    { key: "vi", label: "VI", get: function (w) { return w.vi; } },
+    { key: "fa", label: "FA", get: function (w) { return w.fa; } }
   ];
   // Which languages are allowed to appear as the big prompt (title) word.
   var titleLangs = loadTitleLangs();
@@ -73,15 +75,18 @@
   }
 
   function loadTitleLangs() {
-    var def = { de: true, en: true, ru: true };
+    var def = {};
+    LANGS.forEach(function (l) { def[l.key] = true; });
     try {
       var raw = window.localStorage.getItem("swipua_titleLangs");
       if (raw) {
         var parsed = JSON.parse(raw);
         var out = {}, any = false;
-        ["de", "en", "ru"].forEach(function (k) {
-          out[k] = !!parsed[k];
-          if (out[k]) any = true;
+        LANGS.forEach(function (l) {
+          // languages not present in a saved preference (e.g. newly added
+          // ones) default to on rather than off
+          out[l.key] = parsed.hasOwnProperty(l.key) ? !!parsed[l.key] : true;
+          if (out[l.key]) any = true;
         });
         if (any) return out;
       }
@@ -99,12 +104,15 @@
   function paintCard(w, frontKey, isRevealed) {
     var frontLang = langByKey(frontKey);
     elWord.textContent = frontLang.get(w);
+    elWord.setAttribute("dir", "auto"); // render RTL (Persian) correctly
 
     elTranslations.innerHTML = "";
     LANGS.forEach(function (l) {
       if (l.key === frontKey) return;
       var span = document.createElement("span");
-      span.textContent = l.label + ": " + l.get(w);
+      // <bdi> isolates the value's direction so mixing LTR labels with
+      // RTL (Persian) values stays readable
+      span.innerHTML = l.label + ": <bdi>" + escapeHtml(l.get(w)) + "</bdi>";
       elTranslations.appendChild(span);
     });
 
@@ -112,10 +120,10 @@
     (w.examples || []).forEach(function (ex) {
       var div = document.createElement("div");
       div.className = "example";
-      div.innerHTML =
-        '<div class="de">' + escapeHtml(ex.de) + "</div>" +
-        '<div class="en">' + escapeHtml(ex.en) + "</div>" +
-        '<div class="ru">' + escapeHtml(ex.ru) + "</div>";
+      div.innerHTML = LANGS.map(function (l) {
+        var v = l.key === "de" ? ex.de : ex[l.key];
+        return '<div class="' + l.key + '" dir="auto">' + escapeHtml(v) + "</div>";
+      }).join("");
       elExamples.appendChild(div);
     });
 
