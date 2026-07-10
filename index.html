@@ -11,6 +11,10 @@
 <header id="topbar">
   <div id="topleft">
     <div id="logo">swipua</div>
+    <nav id="viewNav" role="tablist" aria-label="View">
+      <button type="button" id="navCards" class="viewBtn active" role="tab" aria-selected="true">Cards</button>
+      <button type="button" id="navGrammar" class="viewBtn" role="tab" aria-selected="false">Grammar</button>
+    </nav>
     <div id="flagRows">
       <div class="flagRow" role="group" aria-label="Languages that can appear as the prompt word">
         <span class="flagLabel" title="Which languages can appear as the prompt word (before you reveal)">ask</span>
@@ -38,6 +42,7 @@
     <div id="word"></div>
     <div id="revealHint">Tap the card or press <kbd>Enter</kbd> to reveal</div>
     <div id="translations"></div>
+    <div id="synonyms"></div>
     <div id="examples"></div>
   </div>
 </main>
@@ -56,7 +61,17 @@
   <button id="btnReload">Reload page to start over</button>
 </section>
 
+<section id="grammar" class="hidden">
+  <div id="grammarHead">
+    <h1 id="grammarTitle">Grammar</h1>
+    <p id="grammarHint"></p>
+  </div>
+  <nav id="grammarIndex" aria-label="Grammar topics"></nav>
+  <div id="grammarBody"></div>
+</section>
+
 <script src="data.js"></script>
+<script src="grammar.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

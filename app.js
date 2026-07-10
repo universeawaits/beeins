@@ -49,6 +49,37 @@
   var elBtnForward = document.getElementById("btnForward");
   var elBtnKnown = document.getElementById("btnKnown");
   var elBtnUnknown = document.getElementById("btnUnknown");
+  var elSynonyms = document.getElementById("synonyms");
+  var elNavCards = document.getElementById("navCards");
+  var elNavGrammar = document.getElementById("navGrammar");
+  var elGrammar = document.getElementById("grammar");
+  var elGrammarBody = document.getElementById("grammarBody");
+  var elGrammarIndex = document.getElementById("grammarIndex");
+  var elGrammarTitle = document.getElementById("grammarTitle");
+  var elGrammarHint = document.getElementById("grammarHint");
+
+  var GRAMMAR_DATA = (typeof GRAMMAR !== "undefined" && GRAMMAR) ? GRAMMAR : [];
+
+  // View state: "cards" flashcards vs "grammar" cheat sheet. The grammar view
+  // reuses the two flag rows: the "ask"/title row picks the language grammar is
+  // EXPLAINED in; the "show" row picks the languages examples & analogues appear in.
+  var currentView = "cards";
+  var sessionDone = false;
+
+  // Small UI dictionary for the grammar view chrome, shown in the explain language.
+  var GUI = {
+    cheatTitle: { de: "B1-Grammatik · Spickzettel", en: "B1 Grammar · Cheat Sheet", ru: "Грамматика B1 · Шпаргалка", vi: "Ngữ pháp B1 · Bảng tóm tắt", fa: "گرامر B1 · برگه مرور" },
+    help: {
+      de: "Erklärungen folgen der oberen Flaggenreihe · Beispiele & Sprachvergleiche der unteren.",
+      en: "Explanations follow the top flag row · examples & analogues follow the bottom row.",
+      ru: "Объяснения — по верхнему ряду флагов · примеры и аналогии — по нижнему.",
+      vi: "Giải thích theo hàng cờ trên · ví dụ & so sánh theo hàng dưới.",
+      fa: "توضیحات از ردیف پرچم بالا · مثال‌ها و قیاس‌ها از ردیف پایین پیروی می‌کنند."
+    },
+    examples: { de: "Beispiele", en: "Examples", ru: "Примеры", vi: "Ví dụ", fa: "مثال‌ها" },
+    analogues: { de: "Sprachvergleich", en: "In your language", ru: "В вашем языке", vi: "Trong ngôn ngữ của bạn", fa: "در زبان شما" },
+    empty: { de: "Grammatikinhalt wird vorbereitet.", en: "Grammar content is being prepared.", ru: "Грамматический материал готовится.", vi: "Nội dung ngữ pháp đang được chuẩn bị.", fa: "محتوای گرامر در حال آماده‌سازی است." }
+  };
 
   // ---- utilities ---------------------------------------------------------
   function shuffle(arr) {
@@ -122,6 +153,24 @@
       span.innerHTML = l.label + ": <bdi>" + escapeHtml(l.get(w)) + "</bdi>";
       elTranslations.appendChild(span);
     });
+
+    // German synonyms — alternatives you can sometimes swap the word for.
+    // Built regardless of reveal state (CSS hides them until revealed).
+    elSynonyms.innerHTML = "";
+    var syn = w.syn || [];
+    if (syn.length) {
+      var lab = document.createElement("span");
+      lab.className = "synLabel";
+      lab.textContent = "≈";
+      elSynonyms.appendChild(lab);
+      syn.forEach(function (s) {
+        var chip = document.createElement("span");
+        chip.className = "syn";
+        chip.setAttribute("dir", "auto");
+        chip.textContent = s;
+        elSynonyms.appendChild(chip);
+      });
+    }
 
     elExamples.innerHTML = "";
     (w.examples || []).forEach(function (ex) {
@@ -242,6 +291,7 @@
   }
 
   function showStats() {
+    sessionDone = true;
     elDeck.classList.add("hidden");
     elControls.classList.add("hidden");
     elStats.classList.remove("hidden");
@@ -253,6 +303,229 @@
 
     elUnknownList.innerHTML =
       '<div class="row"><span class="w">All words remembered — nice.</span></div>';
+  }
+
+  // ---- grammar cheat sheet ----------------------------------------------
+  // Which languages the grammar is EXPLAINED in (title/"ask" row). The first
+  // enabled one (in LANGS order) is the primary used for headers & labels.
+  function explainLangs() {
+    var a = LANGS.filter(function (l) { return titleLangs[l.key]; });
+    return a.length ? a : LANGS.slice();
+  }
+  function primaryExplainKey() { return explainLangs()[0].key; }
+  // Which languages examples & analogues appear in (the "show" row).
+  function shownLangs() {
+    var a = LANGS.filter(function (l) { return showLangs[l.key]; });
+    return a.length ? a : LANGS.slice();
+  }
+  // Pick a localized string, falling back to English then German.
+  function tr(map, key) {
+    if (!map) return "";
+    if (map[key] != null && map[key] !== "") return map[key];
+    return map.en || map.de || "";
+  }
+
+  function renderGrammar() {
+    var pk = primaryExplainKey();
+    elGrammarTitle.textContent = tr(GUI.cheatTitle, pk);
+    elGrammarTitle.setAttribute("dir", "auto");
+    elGrammarHint.textContent = tr(GUI.help, pk);
+    elGrammarHint.setAttribute("dir", "auto");
+
+    elGrammarIndex.innerHTML = "";
+    GRAMMAR_DATA.forEach(function (t) {
+      var b = document.createElement("button");
+      b.className = "gIndexBtn";
+      b.type = "button";
+      b.setAttribute("dir", "auto");
+      b.textContent = (t.icon ? t.icon + " " : "") + tr(t.title, pk);
+      b.addEventListener("click", function () {
+        var el = document.getElementById("gTopic-" + t.id);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      elGrammarIndex.appendChild(b);
+    });
+
+    elGrammarBody.innerHTML = "";
+    if (!GRAMMAR_DATA.length) {
+      var p = document.createElement("p");
+      p.style.cssText = "text-align:center;color:var(--muted);margin-top:40px";
+      p.setAttribute("dir", "auto");
+      p.textContent = tr(GUI.empty, pk);
+      elGrammarBody.appendChild(p);
+      return;
+    }
+    GRAMMAR_DATA.forEach(function (t) { elGrammarBody.appendChild(renderTopic(t, pk)); });
+  }
+
+  function renderTopic(t, pk) {
+    var sec = document.createElement("section");
+    sec.className = "gTopic";
+    sec.id = "gTopic-" + t.id;
+
+    var h = document.createElement("h2");
+    var deName = tr(t.title, "de");
+    var primName = tr(t.title, pk);
+    var html = '<span class="gIcon">' + escapeHtml(t.icon || "") + "</span>" +
+      '<span dir="auto">' + escapeHtml(primName) + "</span>";
+    if (pk !== "de" && deName && deName !== primName) {
+      html += '<span class="gDe" dir="auto">' + escapeHtml(deName) + "</span>";
+    }
+    h.innerHTML = html;
+    sec.appendChild(h);
+
+    // intro in each enabled explain language (primary first, rest muted)
+    explainLangs().forEach(function (l, idx) {
+      var txt = tr(t.intro, l.key);
+      if (!txt) return;
+      var p = document.createElement("p");
+      p.className = "gIntro" + (idx > 0 ? " alt" : "");
+      p.setAttribute("dir", "auto");
+      p.textContent = txt;
+      sec.appendChild(p);
+    });
+
+    (t.tables || []).forEach(function (tb) {
+      var w = renderTable(tb, pk);
+      if (w) sec.appendChild(w);
+    });
+
+    // examples: the German sentence always, plus each shown language's translation
+    if ((t.examples || []).length) {
+      var exSec = document.createElement("div");
+      exSec.className = "gSection";
+      var eh = document.createElement("h3");
+      eh.setAttribute("dir", "auto");
+      eh.textContent = tr(GUI.examples, pk);
+      exSec.appendChild(eh);
+      t.examples.forEach(function (ex) {
+        var d = document.createElement("div");
+        d.className = "gExample";
+        var de = document.createElement("div");
+        de.className = "gExDe";
+        de.setAttribute("dir", "auto");
+        de.textContent = ex.de || "";
+        d.appendChild(de);
+        shownLangs().forEach(function (l) {
+          if (l.key === "de" || !ex[l.key]) return;
+          var line = document.createElement("div");
+          line.className = "gExTr";
+          line.setAttribute("dir", "auto");
+          line.innerHTML = "<bdi>" + escapeHtml(ex[l.key]) + "</bdi>";
+          d.appendChild(line);
+        });
+        exSec.appendChild(d);
+      });
+      sec.appendChild(exSec);
+    }
+
+    // analogues: one contrastive hint per shown language, labeled by language
+    var hintLangs = shownLangs().filter(function (l) { return t.hints && t.hints[l.key]; });
+    if (hintLangs.length) {
+      var hs = document.createElement("div");
+      hs.className = "gSection";
+      var hh = document.createElement("h3");
+      hh.setAttribute("dir", "auto");
+      hh.textContent = tr(GUI.analogues, pk);
+      hs.appendChild(hh);
+      var box = document.createElement("div");
+      box.className = "gHints";
+      hintLangs.forEach(function (l) {
+        var row = document.createElement("div");
+        row.className = "gHint";
+        var lang = document.createElement("span");
+        lang.className = "gHintLang";
+        lang.textContent = l.label;
+        var txt = document.createElement("span");
+        txt.setAttribute("dir", "auto");
+        txt.innerHTML = "<bdi>" + escapeHtml(t.hints[l.key]) + "</bdi>";
+        row.appendChild(lang);
+        row.appendChild(txt);
+        box.appendChild(row);
+      });
+      hs.appendChild(box);
+      sec.appendChild(hs);
+    }
+
+    return sec;
+  }
+
+  function renderTable(tb, pk) {
+    if (!tb || !(tb.rows || []).length) return null;
+    var wrap = document.createElement("div");
+    wrap.className = "gTableWrap";
+
+    var cap = tr(tb.caption, pk);
+    if (cap) {
+      var c = document.createElement("div");
+      c.className = "gCaption";
+      c.setAttribute("dir", "auto");
+      c.textContent = cap;
+      wrap.appendChild(c);
+    }
+
+    var table = document.createElement("table");
+    table.className = "gTable";
+
+    var hasLabels = !!tr(tb.labelHeader, pk) || tb.rows.some(function (r) { return tr(r.label, pk); });
+    var cols = tb.columns || [];
+
+    if (cols.length || hasLabels) {
+      var thead = document.createElement("thead");
+      var htr = document.createElement("tr");
+      if (hasLabels) {
+        var th0 = document.createElement("th");
+        th0.className = "gRowLabel";
+        th0.setAttribute("dir", "auto");
+        th0.textContent = tr(tb.labelHeader, pk);
+        htr.appendChild(th0);
+      }
+      cols.forEach(function (col) {
+        var th = document.createElement("th");
+        th.setAttribute("dir", "auto");
+        th.textContent = tr(col, pk);
+        htr.appendChild(th);
+      });
+      thead.appendChild(htr);
+      table.appendChild(thead);
+    }
+
+    var tbody = document.createElement("tbody");
+    tb.rows.forEach(function (r) {
+      var rtr = document.createElement("tr");
+      if (hasLabels) {
+        var tdl = document.createElement("td");
+        tdl.className = "gRowLabel";
+        tdl.setAttribute("dir", "auto");
+        tdl.textContent = tr(r.label, pk);
+        rtr.appendChild(tdl);
+      }
+      (r.cells || []).forEach(function (cell) {
+        var td = document.createElement("td");
+        td.setAttribute("dir", "auto");
+        td.innerHTML = "<bdi>" + escapeHtml(cell) + "</bdi>";
+        rtr.appendChild(td);
+      });
+      tbody.appendChild(rtr);
+    });
+    table.appendChild(tbody);
+    wrap.appendChild(table);
+    return wrap;
+  }
+
+  function showView(view) {
+    currentView = view;
+    var grammar = view === "grammar";
+    elGrammar.classList.toggle("hidden", !grammar);
+    elDeck.classList.toggle("hidden", grammar || sessionDone);
+    elControls.classList.toggle("hidden", grammar || sessionDone);
+    elStats.classList.toggle("hidden", grammar || !sessionDone);
+    elNavCards.classList.toggle("active", !grammar);
+    elNavGrammar.classList.toggle("active", grammar);
+    elNavCards.setAttribute("aria-selected", (!grammar).toString());
+    elNavGrammar.setAttribute("aria-selected", grammar.toString());
+    elProgress.style.visibility = grammar ? "hidden" : "";
+    if (grammar) renderGrammar();
   }
 
   // ---- flag toggles ------------------------------------------------------
@@ -292,6 +565,8 @@
   // re-pick the title if the current one was just switched off; the "show" row
   // just needs a repaint so translations/example lines update.
   function applyFlagChange(name) {
+    // In grammar view the flags choose explanation / example languages.
+    if (currentView === "grammar") { renderGrammar(); return; }
     if (peekPos !== null || deck.length === 0) return;
     if (name === "title" && !titleLangs[currentFrontKey]) {
       var allowed = allowedTitleLangs();
@@ -305,9 +580,15 @@
   elBtnUnknown.addEventListener("click", function () { advance(false); });
   elBtnBack.addEventListener("click", goBack);
   elBtnForward.addEventListener("click", goForward);
+  function setHash(h) {
+    try { history.replaceState(null, "", h ? "#" + h : location.pathname + location.search); } catch (e) {}
+  }
+  elNavCards.addEventListener("click", function () { showView("cards"); setHash(""); });
+  elNavGrammar.addEventListener("click", function () { showView("grammar"); setHash("grammar"); });
   document.getElementById("btnReload").addEventListener("click", function () { location.reload(); });
 
   document.addEventListener("keydown", function (e) {
+    if (currentView === "grammar") return;   // grammar view scrolls freely
     if (elStats.classList.contains("hidden") === false) return;
 
     if (peekPos !== null) {
@@ -392,4 +673,5 @@
   } else {
     renderCard();
   }
+  if ((location.hash || "").toLowerCase() === "#grammar") showView("grammar");
 })();

@@ -108,6 +108,32 @@ body {
   font-size: 0.95rem;
 }
 
+/* ---- view toggle (Cards / Grammar) ------------------------------------ */
+#viewNav {
+  display: inline-flex;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card-bg);
+}
+
+.viewBtn {
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.viewBtn.active {
+  background: var(--accent);
+  color: #fff;
+}
+
 #deck {
   flex: 1;
   display: flex;
@@ -294,3 +320,229 @@ kbd {
 
 #unknownList .row .w { font-weight: 600; }
 #unknownList .row .t { color: var(--muted); }
+
+/* ---- synonyms on the card --------------------------------------------- */
+#synonyms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#synonyms .synLabel {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+#synonyms .syn {
+  background: var(--bg);
+  border: 1px dashed var(--border);
+  border-radius: 999px;
+  padding: 3px 11px;
+  font-size: 0.92rem;
+}
+
+#card.answer-hidden #synonyms { display: none; }
+
+/* ---- grammar cheat sheet ---------------------------------------------- */
+#grammar {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 8px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#grammar.hidden { display: none; }
+
+#grammarHead {
+  width: 100%;
+  max-width: 780px;
+  text-align: center;
+  margin: 4px 0 8px;
+}
+
+#grammarTitle {
+  font-size: 1.5rem;
+  margin: 8px 0 4px;
+}
+
+#grammarHint {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0 0 8px;
+}
+
+#grammarIndex {
+  width: 100%;
+  max-width: 780px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 8px 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.gIndexBtn {
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.gIndexBtn:hover { border-color: var(--accent); }
+
+#grammarBody {
+  width: 100%;
+  max-width: 780px;
+}
+
+.gTopic {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px 22px 20px;
+  margin-top: 20px;
+  scroll-margin-top: 56px;
+}
+
+.gTopic h2 {
+  font-size: 1.25rem;
+  margin: 0 0 2px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.gTopic h2 .gIcon { font-size: 1.3rem; }
+.gTopic h2 .gDe {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.gTopic .gIntro {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 8px 0 4px;
+}
+
+.gTopic .gIntro.alt { color: var(--muted); font-size: 0.9rem; }
+
+.gTableWrap {
+  overflow-x: auto;
+  margin: 16px 0 4px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.gCaption {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent);
+  padding: 10px 12px 0;
+}
+
+table.gTable {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+table.gTable th,
+table.gTable td {
+  border: 1px solid var(--border);
+  padding: 7px 11px;
+  text-align: left;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+table.gTable thead th {
+  background: var(--bg);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  position: sticky;
+  top: 0;
+}
+
+table.gTable th.gRowLabel,
+table.gTable td.gRowLabel {
+  font-weight: 600;
+  background: var(--bg);
+  color: var(--text);
+  white-space: normal;
+}
+
+.gSection {
+  margin-top: 16px;
+}
+
+.gSection h3 {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+
+.gExample {
+  border-left: 3px solid var(--border);
+  padding: 2px 0 2px 12px;
+  margin-bottom: 12px;
+}
+
+.gExample .gExDe { font-weight: 600; margin-bottom: 3px; }
+
+.gExample .gExTr {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.gHints {
+  margin-top: 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.gHint {
+  display: flex;
+  gap: 10px;
+  padding: 5px 0;
+  line-height: 1.45;
+  font-size: 0.92rem;
+}
+
+.gHint + .gHint { border-top: 1px dashed var(--border); }
+
+.gHint .gHintLang {
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 22px;
+  padding-top: 3px;
+}
+
+#grammar.hidden,
+#deck.hidden { display: none; }
