@@ -5,20 +5,20 @@
 <title>swipua</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem('swipua_theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 </head>
 <body>
 
 <header id="topbar">
   <div id="topbarMain">
   <div id="topleft">
-    <div id="logo">swipua</div>
     <nav id="viewNav" role="tablist" aria-label="View">
       <button type="button" id="navCards" class="viewBtn active" role="tab" aria-selected="true">Cards</button>
       <button type="button" id="navGrammar" class="viewBtn" role="tab" aria-selected="false">Grammar</button>
     </nav>
     <div id="flagRows">
       <div class="flagRow" role="group" aria-label="Languages that can appear as the prompt word">
-        <span class="flagLabel" title="Which languages can appear as the prompt word (before you reveal)">ask</span>
+        <span class="flagLabel" id="lblAsk" title="Which languages can appear as the prompt word (before you reveal)">ask</span>
         <button type="button" class="flag" data-set="title" data-lang="de" title="German as prompt">🇩🇪</button>
         <button type="button" class="flag" data-set="title" data-lang="en" title="English as prompt">🇬🇧</button>
         <button type="button" class="flag" data-set="title" data-lang="ru" title="Russian as prompt">🇷🇺</button>
@@ -26,7 +26,7 @@
         <button type="button" class="flag" data-set="title" data-lang="fa" title="Persian as prompt">🇮🇷</button>
       </div>
       <div class="flagRow" role="group" aria-label="Which translations appear after you reveal">
-        <span class="flagLabel" title="Which translations appear after you reveal the card">show</span>
+        <span class="flagLabel" id="lblShow" title="Which translations appear after you reveal the card">show</span>
         <button type="button" class="flag" data-set="show" data-lang="de" title="Show German translation">🇩🇪</button>
         <button type="button" class="flag" data-set="show" data-lang="en" title="Show English translation">🇬🇧</button>
         <button type="button" class="flag" data-set="show" data-lang="ru" title="Show Russian translation">🇷🇺</button>
@@ -35,7 +35,10 @@
       </div>
     </div>
   </div>
-  <div id="progress">0 / 0</div>
+  <div id="topright">
+    <button type="button" id="themeToggle" title="Switch light / dark theme" aria-label="Switch light or dark theme">🌙</button>
+    <div id="progress">0 / 0</div>
+  </div>
   </div>
   <nav id="grammarIndex" class="hidden" aria-label="Grammar topics"></nav>
 </header>
@@ -58,7 +61,7 @@
 </footer>
 
 <section id="stats" class="hidden">
-  <h1>Done!</h1>
+  <h1 id="statsTitle">Done!</h1>
   <div id="statNumbers"></div>
   <div id="unknownList"></div>
   <button id="btnReload">Reload page to start over</button>

@@ -1,16 +1,22 @@
+/* Light theme — modelled on the VS Code "Quiet Light" theme
+   (bg #f5f5f5, text #333, green #448c27, red #aa3731). This is the
+   default; the dark theme applies via prefers-color-scheme or an
+   explicit [data-theme="dark"] set by the toggle. */
 :root {
-  color-scheme: light dark;
-  --bg: #f4f2ee;
-  --card-bg: #ffffff;
-  --text: #1c1c1c;
-  --muted: #6b6b6b;
-  --accent: #2f6f4f;
-  --bad: #b23a3a;
-  --border: #e2ddd3;
+  color-scheme: light;
+  --bg: #e6e6e4;
+  --card-bg: #f5f5f3;
+  --text: #333333;
+  --muted: #8a8a86;
+  --accent: #448c27;
+  --bad: #aa3731;
+  --border: #d6d6d2;
 }
 
+/* Dark theme values, shared by system-preference and manual selection. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
+    color-scheme: dark;
     --bg: #17181a;
     --card-bg: #232427;
     --text: #ececec;
@@ -19,6 +25,17 @@
     --bad: #e07070;
     --border: #333436;
   }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #17181a;
+  --card-bg: #232427;
+  --text: #ececec;
+  --muted: #9a9a9a;
+  --accent: #5fbf8e;
+  --bad: #e07070;
+  --border: #333436;
 }
 
 * { box-sizing: border-box; }
@@ -57,11 +74,23 @@ body {
   gap: 8px 14px;
 }
 
-#logo {
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 0.02em;
+#topright {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
+
+#themeToggle {
+  font-size: 1rem;
+  line-height: 1;
+  padding: 5px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  cursor: pointer;
+}
+
+#themeToggle:active { transform: scale(0.92); }
 
 #flagRows {
   display: flex;

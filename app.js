@@ -55,6 +55,12 @@
   var elGrammar = document.getElementById("grammar");
   var elGrammarBody = document.getElementById("grammarBody");
   var elGrammarIndex = document.getElementById("grammarIndex");
+  var elLblAsk = document.getElementById("lblAsk");
+  var elLblShow = document.getElementById("lblShow");
+  var elRevealHint = document.getElementById("revealHint");
+  var elStatsTitle = document.getElementById("statsTitle");
+  var elBtnReload = document.getElementById("btnReload");
+  var elThemeToggle = document.getElementById("themeToggle");
 
   var GRAMMAR_DATA = (typeof GRAMMAR !== "undefined" && GRAMMAR) ? GRAMMAR : [];
 
@@ -69,6 +75,29 @@
     examples: { de: "Beispiele", en: "Examples", ru: "Примеры", vi: "Ví dụ", fa: "مثال‌ها" },
     analogues: { de: "Sprachvergleich", en: "In your language", ru: "В вашем языке", vi: "Trong ngôn ngữ của bạn", fa: "در زبان شما" },
     empty: { de: "Grammatikinhalt wird vorbereitet.", en: "Grammar content is being prepared.", ru: "Грамматический материал готовится.", vi: "Nội dung ngữ pháp đang được chuẩn bị.", fa: "محتوای گرامر در حال آماده‌سازی است." }
+  };
+
+  // Interface chrome (nav, buttons, progress, stats). Rendered in the first
+  // enabled "show" language so the whole UI speaks the learner's language.
+  var UISTR = {
+    cards:        { de: "Karten", en: "Cards", ru: "Карточки", vi: "Thẻ", fa: "کارت‌ها" },
+    grammar:      { de: "Grammatik", en: "Grammar", ru: "Грамматика", vi: "Ngữ pháp", fa: "گرامر" },
+    ask:          { de: "Frage", en: "Ask", ru: "Вопрос", vi: "Hỏi", fa: "پرسش" },
+    show:         { de: "Antwort", en: "Show", ru: "Ответ", vi: "Đáp", fa: "پاسخ" },
+    revealA:      { de: "Tippe die Karte oder drücke", en: "Tap the card or press", ru: "Нажмите на карточку или клавишу", vi: "Chạm vào thẻ hoặc nhấn", fa: "روی کارت بزنید یا کلید" },
+    revealB:      { de: "zum Aufdecken", en: "to reveal", ru: "чтобы показать", vi: "để hiện", fa: "را برای نمایش بزنید" },
+    back:         { de: "Zurück", en: "Back", ru: "Назад", vi: "Quay lại", fa: "بازگشت" },
+    dontknow:     { de: "Weiß ich nicht", en: "Don't know", ru: "Не знаю", vi: "Chưa biết", fa: "نمی‌دانم" },
+    know:         { de: "Weiß ich", en: "Know", ru: "Знаю", vi: "Đã biết", fa: "می‌دانم" },
+    backcurrent:  { de: "Zur aktuellen Karte", en: "Back to current", ru: "К текущей", vi: "Về thẻ hiện tại", fa: "بازگشت به کارت فعلی" },
+    learned:      { de: "gelernt", en: "learned", ru: "выучено", vi: "đã học", fa: "آموخته" },
+    left:         { de: "übrig", en: "left", ru: "осталось", vi: "còn lại", fa: "باقی‌مانده" },
+    prevcard:     { de: "vorherige Karte", en: "previous card", ru: "предыдущая карточка", vi: "thẻ trước", fa: "کارت قبلی" },
+    done:         { de: "Fertig!", en: "Done!", ru: "Готово!", vi: "Xong!", fa: "تمام شد!" },
+    words:        { de: "Wörter", en: "words", ru: "слов", vi: "từ", fa: "واژه" },
+    slips:        { de: "Fehler", en: "slips", ru: "ошибок", vi: "lỗi", fa: "خطا" },
+    allremembered:{ de: "Alle Wörter behalten — super.", en: "All words remembered — nice.", ru: "Все слова запомнены — отлично.", vi: "Đã nhớ hết các từ — tuyệt.", fa: "همه واژه‌ها را به یاد آوردید — عالی." },
+    reload:       { de: "Neu laden zum Neustart", en: "Reload page to start over", ru: "Перезагрузить и начать заново", vi: "Tải lại để bắt đầu lại", fa: "برای شروع دوباره صفحه را بارگذاری کنید" }
   };
 
   // ---- utilities ---------------------------------------------------------
@@ -206,11 +235,13 @@
   }
 
   function updateProgress() {
+    var k = uiLangKey();
+    elProgress.setAttribute("dir", "auto");
     if (peekPos !== null) {
       var stepsBack = seen.length - peekPos;
-      elProgress.textContent = "↩ previous card (−" + stepsBack + ")";
+      elProgress.textContent = "↩ " + tr(UISTR.prevcard, k) + " (−" + stepsBack + ")";
     } else {
-      elProgress.textContent = knownCount + " learned · " + deck.length + " left";
+      elProgress.textContent = knownCount + " " + tr(UISTR.learned, k) + " · " + deck.length + " " + tr(UISTR.left, k);
     }
   }
 
@@ -286,13 +317,14 @@
     elControls.classList.add("hidden");
     elStats.classList.remove("hidden");
 
+    var k = uiLangKey();
     elStatNumbers.innerHTML =
-      '<div><b>' + totalWords + '</b>words</div>' +
-      '<div><b>' + knownCount + '</b>learned</div>' +
-      '<div><b>' + missCount + '</b>slips</div>';
+      '<div><b>' + totalWords + '</b>' + escapeHtml(tr(UISTR.words, k)) + '</div>' +
+      '<div><b>' + knownCount + '</b>' + escapeHtml(tr(UISTR.learned, k)) + '</div>' +
+      '<div><b>' + missCount + '</b>' + escapeHtml(tr(UISTR.slips, k)) + '</div>';
 
     elUnknownList.innerHTML =
-      '<div class="row"><span class="w">All words remembered — nice.</span></div>';
+      '<div class="row"><span class="w" dir="auto">' + escapeHtml(tr(UISTR.allremembered, k)) + '</span></div>';
   }
 
   // ---- grammar cheat sheet ----------------------------------------------
@@ -313,6 +345,29 @@
     if (!map) return "";
     if (map[key] != null && map[key] !== "") return map[key];
     return map.en || map.de || "";
+  }
+
+  // The interface language: the first enabled "show" language (LANGS order).
+  function uiLangKey() { return shownLangs()[0].key; }
+
+  // Paint all static interface labels in the current UI language.
+  function applyUiLang() {
+    var k = uiLangKey();
+    elNavCards.textContent = tr(UISTR.cards, k);
+    elNavGrammar.textContent = tr(UISTR.grammar, k);
+    if (elLblAsk) elLblAsk.textContent = tr(UISTR.ask, k);
+    if (elLblShow) elLblShow.textContent = tr(UISTR.show, k);
+    if (elRevealHint) {
+      elRevealHint.innerHTML = escapeHtml(tr(UISTR.revealA, k)) + " <kbd>Enter</kbd> " + escapeHtml(tr(UISTR.revealB, k));
+      elRevealHint.setAttribute("dir", "auto");
+    }
+    elBtnBack.innerHTML = "‹ " + escapeHtml(tr(UISTR.back, k));
+    elBtnUnknown.innerHTML = "✗ " + escapeHtml(tr(UISTR.dontknow, k)) + " <kbd>Space</kbd>";
+    elBtnKnown.innerHTML = "✓ " + escapeHtml(tr(UISTR.know, k)) + " <kbd>Enter</kbd>";
+    elBtnForward.innerHTML = escapeHtml(tr(UISTR.backcurrent, k)) + " ›";
+    if (elStatsTitle) elStatsTitle.textContent = tr(UISTR.done, k);
+    if (elBtnReload) elBtnReload.textContent = tr(UISTR.reload, k);
+    updateProgress();
   }
 
   function renderGrammar() {
@@ -551,6 +606,8 @@
   // re-pick the title if the current one was just switched off; the "show" row
   // just needs a repaint so translations/example lines update.
   function applyFlagChange(name) {
+    // The interface language follows the first "show" language.
+    if (name === "show") applyUiLang();
     // In grammar view the flags choose explanation / example languages.
     if (currentView === "grammar") { renderGrammar(); return; }
     if (peekPos !== null || deck.length === 0) return;
@@ -571,7 +628,31 @@
   }
   elNavCards.addEventListener("click", function () { showView("cards"); setHash(""); });
   elNavGrammar.addEventListener("click", function () { showView("grammar"); setHash("grammar"); });
-  document.getElementById("btnReload").addEventListener("click", function () { location.reload(); });
+  elBtnReload.addEventListener("click", function () { location.reload(); });
+
+  // ---- theme (light = VS Code "Quiet Light", dark = default) -------------
+  function systemPrefersDark() {
+    return !!(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  }
+  function effectiveTheme() {
+    return document.documentElement.getAttribute("data-theme") || (systemPrefersDark() ? "dark" : "light");
+  }
+  function paintThemeIcon() {
+    // Show the theme you'd switch TO.
+    elThemeToggle.textContent = effectiveTheme() === "dark" ? "☀️" : "🌙";
+  }
+  function initTheme() {
+    var stored = null;
+    try { stored = window.localStorage.getItem("swipua_theme"); } catch (e) {}
+    if (stored === "dark" || stored === "light") document.documentElement.setAttribute("data-theme", stored);
+    paintThemeIcon();
+  }
+  elThemeToggle.addEventListener("click", function () {
+    var next = effectiveTheme() === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { window.localStorage.setItem("swipua_theme", next); } catch (e) {}
+    paintThemeIcon();
+  });
 
   document.addEventListener("keydown", function (e) {
     if (currentView === "grammar") return;   // grammar view scrolls freely
@@ -651,6 +732,8 @@
 
   // ---- boot --------------------------------------------------------------
   initFlags();
+  initTheme();
+  applyUiLang();
   if (deck.length === 0) {
     elWord.textContent = "No words loaded";
     elCard.classList.remove("answer-hidden");
