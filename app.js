@@ -135,6 +135,7 @@
   var elShowBtn = document.getElementById("showDropBtn");
   var elAskFlags = document.getElementById("askFlags");
   var elShowFlags = document.getElementById("showFlags");
+  var elAskDrop = document.querySelector('.langDrop[data-set="title"]');
 
   var GRAMMAR_DATA = (typeof GRAMMAR !== "undefined" && GRAMMAR) ? GRAMMAR : [];
 
@@ -523,16 +524,23 @@
   // ---- grammar cheat sheet ----------------------------------------------
   // Which languages the grammar is EXPLAINED in (title/"ask" row). The first
   // enabled one (in LANGS order) is the primary used for headers & labels.
-  function explainLangs() {
-    var a = AVAIL.filter(function (l) { return titleLangs[l.key]; });
-    return a.length ? a : AVAIL.slice();
-  }
-  function primaryExplainKey() { return explainLangs()[0].key; }
-  // Which languages examples & analogues appear in (the "show" row).
+  // Which languages examples & analogues appear in (the "show" set).
   function shownLangs() {
     var a = AVAIL.filter(function (l) { return showLangs[l.key]; });
     return a.length ? a : AVAIL.slice();
   }
+  // Grammar is driven ENTIRELY by the "show" set — the rules, tables, examples
+  // and analogues all appear in the shown languages. The primary language
+  // (headers, captions, the bold intro) is the interface language (the first
+  // non-German shown language), so it's ordered first.
+  function explainLangs() {
+    var shown = shownLangs();
+    var pk = uiLangKey();
+    var primary = shown.filter(function (l) { return l.key === pk; });
+    var rest = shown.filter(function (l) { return l.key !== pk; });
+    return primary.length ? primary.concat(rest) : shown;
+  }
+  function primaryExplainKey() { return explainLangs()[0].key; }
   // Pick a localized string, falling back to English then German.
   function tr(map, key) {
     if (!map) return "";
@@ -618,14 +626,16 @@
     h.innerHTML = html;
     sec.appendChild(h);
 
-    // intro in each enabled explain language (primary first, rest muted)
-    explainLangs().forEach(function (l, idx) {
-      var txt = tr(t.intro, l.key);
-      if (!txt) return;
+    // Intro in each shown language that ACTUALLY has grammar content for this
+    // topic (primary first, rest muted). We check the key explicitly rather
+    // than via tr(), so a language without its own grammar text is skipped
+    // instead of repeating the English/German fallback.
+    var introLangs = explainLangs().filter(function (l) { return t.intro && t.intro[l.key]; });
+    introLangs.forEach(function (l, idx) {
       var p = document.createElement("p");
       p.className = "gIntro" + (idx > 0 ? " alt" : "");
       p.setAttribute("dir", "auto");
-      p.textContent = txt;
+      p.textContent = t.intro[l.key];
       sec.appendChild(p);
     });
 
@@ -763,6 +773,10 @@
     elGrammar.classList.toggle("hidden", !grammar);
     elGrammarIndex.classList.toggle("hidden", !grammar);
     elLevelNav.classList.toggle("hidden", grammar); // levels only apply to cards
+    // In grammar there is a single language selector — the "show" set drives
+    // the rules and the examples. The "ask" (prompt) selector only makes sense
+    // for cards, so hide it here.
+    if (elAskDrop) elAskDrop.classList.toggle("hidden", grammar);
     elDeck.classList.toggle("hidden", grammar || sessionDone);
     elControls.classList.toggle("hidden", grammar || sessionDone);
     elStats.classList.toggle("hidden", grammar || !sessionDone);
