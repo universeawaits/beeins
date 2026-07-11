@@ -14,7 +14,16 @@ const GRAMMAR = [
    "fa": "جنس اسم و حروف تعریف",
    "uk": "Рід і артикль",
    "pl": "Rodzaj i rodzajnik",
-   "tr": "İsim cinsleri ve artikeller"
+   "tr": "İsim cinsleri ve artikeller",
+   "th": "เพศของคำนามและคำนำหน้านาม (Genus & Artikel)",
+   "zh": "性与冠词",
+   "ms": "Jantina Nama & Artikel",
+   "sw": "Jinsia ya Nomino na Artikeli",
+   "hi": "लिंग और आर्टिकल",
+   "ur": "جنس اور آرٹیکل (Genus & Artikel)",
+   "ar_eg": "جنس الاسم وأداة التعريف",
+   "ar_lb": "نوع الاسم (الجندر) والأداة (Artikel)",
+   "ar_sy": "الجنس والأداة"
   },
   "intro": {
    "de": "Jedes deutsche Nomen hat ein Genus: maskulin (der), feminin (die) oder neutral (das). Weil das Genus oft nicht vorhersehbar ist, lernst du jedes Nomen am besten gleich mit seinem Artikel. Die Endungen weiter unten helfen beim Raten, wenn du unsicher bist.",
@@ -24,7 +33,16 @@ const GRAMMAR = [
    "fa": "هر اسم آلمانی یکی از سه جنس دستوری را دارد — مذکر (der)، مؤنث (die) یا خنثی (das) — و حرف تعریف بر همان اساس تغییر می‌کند. جنس اسم اغلب قابل پیش‌بینی نیست، پس بهتر است هر اسم را همراه حرف تعریفش یاد بگیرید. پسوندهای پایین هنگام تردید به حدس زدن جنس کمک می‌کنند.",
    "uk": "Кожен німецький іменник має рід: чоловічий (der), жіночий (die) або середній (das). Оскільки рід часто неможливо передбачити, кожен іменник найкраще вчити одразу з його артиклем. Наведені нижче закінчення допомагають вгадати рід, коли ти не впевнений.",
    "pl": "Każdy niemiecki rzeczownik ma rodzaj: męski (der), żeński (die) lub nijaki (das). Ponieważ rodzaju często nie da się przewidzieć, najlepiej uczyć się każdego rzeczownika od razu z jego rodzajnikiem. Końcówki podane niżej pomagają zgadywać, gdy nie masz pewności.",
-   "tr": "Her Almanca isim bir cinse sahiptir: eril (der), dişil (die) veya nötr (das). Cins çoğu zaman önceden tahmin edilemediği için her ismi en iyisi artikeliyle birlikte öğren. Aşağıdaki ekler, emin olmadığında tahmin etmene yardımcı olur."
+   "tr": "Her Almanca isim bir cinse sahiptir: eril (der), dişil (die) veya nötr (das). Cins çoğu zaman önceden tahmin edilemediği için her ismi en iyisi artikeliyle birlikte öğren. Aşağıdaki ekler, emin olmadığında tahmin etmene yardımcı olur.",
+   "th": "คำนามภาษาเยอรมันทุกคำมีเพศ (Genus) อย่างใดอย่างหนึ่ง คือ เพศชาย (der) เพศหญิง (die) หรือเพศกลาง (das) เนื่องจากเพศของคำนามมักคาดเดาไม่ได้ วิธีที่ดีที่สุดคือเรียนรู้คำนามแต่ละคำพร้อมกับคำนำหน้านามไปด้วยเลย คำลงท้ายที่แสดงไว้ด้านล่างจะช่วยให้เดาเพศได้เมื่อไม่แน่ใจ",
+   "zh": "每个德语名词都有一个性:阳性(der)、阴性(die)或中性(das)。由于名词的性往往无法预测,最好在学习每个名词时就连同其冠词一起记住。下面的词尾变化可以在你不确定时帮助你猜测。",
+   "ms": "Setiap kata nama bahasa Jerman mempunyai satu jantina: maskulin (der), feminin (die) atau neutral (das). Oleh sebab jantina sesuatu kata nama selalunya tidak dapat diramal, cara terbaik ialah menghafal setiap kata nama bersama artikelnya sekali. Akhiran-akhiran di bawah membantu anda meneka jantina apabila anda tidak pasti.",
+   "sw": "Kila nomino ya Kijerumani ina jinsia moja: kiume (der), kike (die), au isiyo na jinsia (das). Kwa kuwa jinsia mara nyingi haitabiriki, ni bora kujifunza kila nomino pamoja na artikeli yake tangu mwanzo. Miisho ya maneno iliyo hapa chini inasaidia kukisia jinsia unapokuwa na shaka.",
+   "hi": "जर्मन के हर संज्ञा (Nomen) का एक लिंग होता है: पुल्लिंग (der), स्त्रीलिंग (die) या नपुंसकलिंग (das)। चूँकि लिंग अक्सर अनुमान लगाना मुश्किल होता है, इसलिए हर संज्ञा को उसके आर्टिकल के साथ ही सीखना सबसे अच्छा है। नीचे दिए गए शब्दांत अनुमान लगाने में मदद करते हैं, जब आप अनिश्चित हों।",
+   "ur": "ہر جرمن اسم کی ایک جنس (Genus) ہوتی ہے: مذکر (der)، مؤنث (die) یا غیر جانبدار (das)۔ چونکہ جنس اکثر پیشگی طور پر معلوم نہیں کی جا سکتی، اس لیے بہتر ہے کہ ہر اسم کو اس کے آرٹیکل کے ساتھ ہی یاد کیا جائے۔ نیچے دیے گئے الفاظ کے اختتامیے اندازہ لگانے میں مدد دیتے ہیں جب آپ غیر یقینی ہوں۔",
+   "ar_eg": "كل اسم في الألماني له جنس: مذكر (der)، مؤنث (die)، أو محايد (das). وبما إن الجنس غالبًا مبيبقاش متوقَّع، الأحسن إنك تحفظ كل اسم مع الأداة بتاعته من الأول. النهايات اللي جاية تحت هتساعدك تخمّن لو مش متأكد.",
+   "ar_lb": "كل اسم ألماني إلو نوع (جندر): مذكر (der)، مؤنث (die)، أو محايد (das). بما إنو النوع مش دايمًا منقدر نتوقعو، أحسن طريقة إنك تتعلم كل اسم مع الأداة تبعتو من الأول. النهايات (Endungen) اللي تحت بتساعدك تخمّن لما ما تكون متأكد.",
+   "ar_sy": "كل اسم ألماني إله جنس: مذكر (der)، مؤنث (die)، أو محايد (das). لأنو الجنس بكتير حالات ما بينحزر، الأحسن تتعلم كل اسم مع أداته من أول مرة. النهايات تحت بتساعدك تحزر لما ما تكون متأكد."
   },
   "tables": [
    {
@@ -36,7 +54,16 @@ const GRAMMAR = [
      "fa": "سه جنس دستوری و حروف تعریف آن‌ها",
      "uk": "Три роди та їхні артиклі",
      "pl": "Trzy rodzaje i ich rodzajniki",
-     "tr": "Üç cins ve artikelleri"
+     "tr": "Üç cins ve artikelleri",
+     "th": "เพศทั้งสามและคำนำหน้านามของแต่ละเพศ",
+     "zh": "三种性及其冠词",
+     "ms": "Tiga jantina dan artikelnya",
+     "sw": "Jinsia tatu na artikeli zake",
+     "hi": "तीन लिंग और उनके आर्टिकल",
+     "ur": "تین جنسیں اور ان کے آرٹیکلز",
+     "ar_eg": "الأجناس التلاتة وأدواتهم",
+     "ar_lb": "الأنواع التلاتة (الجندر) وأدواتها",
+     "ar_sy": "الأجناس التلاتة وأدواتها"
     },
     "labelHeader": {
      "de": "Genus",
@@ -46,7 +73,16 @@ const GRAMMAR = [
      "fa": "جنس دستوری",
      "uk": "Рід",
      "pl": "Rodzaj",
-     "tr": "Cins"
+     "tr": "Cins",
+     "th": "เพศ (Genus)",
+     "zh": "性",
+     "ms": "Jantina",
+     "sw": "Jinsia",
+     "hi": "लिंग",
+     "ur": "جنس (Genus)",
+     "ar_eg": "الجنس (Genus)",
+     "ar_lb": "النوع (Genus)",
+     "ar_sy": "الجنس"
     },
     "columns": [
      {
@@ -57,7 +93,16 @@ const GRAMMAR = [
       "fa": "حرف تعریف معیّن",
       "uk": "Означений артикль",
       "pl": "Rodzajnik określony",
-      "tr": "Belirli artikel"
+      "tr": "Belirli artikel",
+      "th": "คำนำหน้านามชี้เฉพาะ (bestimmter Artikel)",
+      "zh": "定冠词",
+      "ms": "Artikel tentu",
+      "sw": "Artikeli dhahiri",
+      "hi": "निश्चित आर्टिकल",
+      "ur": "معین آرٹیکل (Bestimmter Artikel)",
+      "ar_eg": "أداة التعريف (Bestimmter Artikel)",
+      "ar_lb": "الأداة المعرّفة (Bestimmter Artikel)",
+      "ar_sy": "الأداة المعرّفة"
      },
      {
       "de": "Unbestimmter Artikel",
@@ -67,7 +112,16 @@ const GRAMMAR = [
       "fa": "حرف تعریف نامعیّن",
       "uk": "Неозначений артикль",
       "pl": "Rodzajnik nieokreślony",
-      "tr": "Belirsiz artikel"
+      "tr": "Belirsiz artikel",
+      "th": "คำนำหน้านามไม่ชี้เฉพาะ (unbestimmter Artikel)",
+      "zh": "不定冠词",
+      "ms": "Artikel tak tentu",
+      "sw": "Artikeli isiyo dhahiri",
+      "hi": "अनिश्चित आर्टिकल",
+      "ur": "غیر معین آرٹیکل (Unbestimmter Artikel)",
+      "ar_eg": "أداة التنكير (Unbestimmter Artikel)",
+      "ar_lb": "الأداة النكرة (Unbestimmter Artikel)",
+      "ar_sy": "الأداة النكرة"
      },
      {
       "de": "Beispielnomen",
@@ -77,7 +131,16 @@ const GRAMMAR = [
       "fa": "اسم نمونه",
       "uk": "Приклад іменника",
       "pl": "Przykładowy rzeczownik",
-      "tr": "Örnek isim"
+      "tr": "Örnek isim",
+      "th": "คำนามตัวอย่าง",
+      "zh": "示例名词",
+      "ms": "Contoh kata nama",
+      "sw": "Nomino mfano",
+      "hi": "उदाहरण संज्ञा",
+      "ur": "مثالی اسم",
+      "ar_eg": "مثال على اسم",
+      "ar_lb": "مثال عن اسم",
+      "ar_sy": "اسم مثال"
      }
     ],
     "rows": [
@@ -90,7 +153,16 @@ const GRAMMAR = [
        "fa": "مذکر",
        "uk": "Чоловічий рід",
        "pl": "Rodzaj męski",
-       "tr": "Eril"
+       "tr": "Eril",
+       "th": "เพศชาย (Maskulinum)",
+       "zh": "阳性",
+       "ms": "Maskulin",
+       "sw": "Kiume",
+       "hi": "पुल्लिंग",
+       "ur": "مذکر (Maskulinum)",
+       "ar_eg": "المذكر",
+       "ar_lb": "المذكر (Maskulinum)",
+       "ar_sy": "المذكر"
       },
       "cells": [
        "der",
@@ -107,7 +179,16 @@ const GRAMMAR = [
        "fa": "مؤنث",
        "uk": "Жіночий рід",
        "pl": "Rodzaj żeński",
-       "tr": "Dişil"
+       "tr": "Dişil",
+       "th": "เพศหญิง (Femininum)",
+       "zh": "阴性",
+       "ms": "Feminin",
+       "sw": "Kike",
+       "hi": "स्त्रीलिंग",
+       "ur": "مؤنث (Femininum)",
+       "ar_eg": "المؤنث",
+       "ar_lb": "المؤنث (Femininum)",
+       "ar_sy": "المؤنث"
       },
       "cells": [
        "die",
@@ -124,7 +205,16 @@ const GRAMMAR = [
        "fa": "خنثی",
        "uk": "Середній рід",
        "pl": "Rodzaj nijaki",
-       "tr": "Nötr"
+       "tr": "Nötr",
+       "th": "เพศกลาง (Neutrum)",
+       "zh": "中性",
+       "ms": "Neutral",
+       "sw": "Isiyo na jinsia",
+       "hi": "नपुंसकलिंग",
+       "ur": "غیر جانبدار (Neutrum)",
+       "ar_eg": "المحايد",
+       "ar_lb": "المحايد (Neutrum)",
+       "ar_sy": "المحايد"
       },
       "cells": [
        "das",
@@ -143,7 +233,16 @@ const GRAMMAR = [
      "fa": "پسوندهایی که جنس اسم را نشان می‌دهند",
      "uk": "Закінчення як підказка щодо роду",
      "pl": "Końcówki wskazujące na rodzaj",
-     "tr": "Cinse işaret eden ekler"
+     "tr": "Cinse işaret eden ekler",
+     "th": "คำลงท้ายที่บ่งบอกเพศของคำนาม",
+     "zh": "提示词性的词尾",
+     "ms": "Akhiran sebagai petunjuk jantina",
+     "sw": "Miisho ya maneno inayoashiria jinsia",
+     "hi": "लिंग का संकेत देने वाले शब्दांत",
+     "ur": "جنس کی نشاندہی کرنے والے الفاظ کے اختتامیے",
+     "ar_eg": "نهايات الكلمة اللي بتدل على الجنس",
+     "ar_lb": "نهايات الكلمة يلي بتدل على النوع",
+     "ar_sy": "نهايات الكلمة يلي بتدل عالجنس"
     },
     "labelHeader": {
      "de": "",
@@ -161,7 +260,16 @@ const GRAMMAR = [
       "fa": "پسوند",
       "uk": "Закінчення",
       "pl": "Końcówka",
-      "tr": "Ek"
+      "tr": "Ek",
+      "th": "คำลงท้าย (Endung)",
+      "zh": "词尾",
+      "ms": "Akhiran",
+      "sw": "Mwisho wa neno",
+      "hi": "अंत",
+      "ur": "اختتامیہ (Ending)",
+      "ar_eg": "النهاية",
+      "ar_lb": "النهاية (Endung)",
+      "ar_sy": "النهاية"
      },
      {
       "de": "Artikel",
@@ -171,7 +279,16 @@ const GRAMMAR = [
       "fa": "حرف تعریف",
       "uk": "Артикль",
       "pl": "Rodzajnik",
-      "tr": "Artikel"
+      "tr": "Artikel",
+      "th": "คำนำหน้านาม (Artikel)",
+      "zh": "冠词",
+      "ms": "Artikel",
+      "sw": "Artikeli",
+      "hi": "आर्टिकल",
+      "ur": "آرٹیکل",
+      "ar_eg": "الأداة",
+      "ar_lb": "الأداة (Artikel)",
+      "ar_sy": "الأداة"
      },
      {
       "de": "Beispiel",
@@ -181,7 +298,16 @@ const GRAMMAR = [
       "fa": "مثال",
       "uk": "Приклад",
       "pl": "Przykład",
-      "tr": "Örnek"
+      "tr": "Örnek",
+      "th": "ตัวอย่าง",
+      "zh": "例子",
+      "ms": "Contoh",
+      "sw": "Mfano",
+      "hi": "उदाहरण",
+      "ur": "مثال",
+      "ar_eg": "مثال",
+      "ar_lb": "مثال",
+      "ar_sy": "مثال"
      }
     ],
     "rows": [
@@ -323,7 +449,16 @@ const GRAMMAR = [
     "fa": "این یک مرد است. آن مرد مهربان است.",
     "uk": "Це чоловік. Чоловік привітний.",
     "pl": "To jest mężczyzna. Ten mężczyzna jest przyjazny.",
-    "tr": "Bu bir adam. Adam güler yüzlü."
+    "tr": "Bu bir adam. Adam güler yüzlü.",
+    "th": "นี่คือผู้ชายคนหนึ่ง ผู้ชายคนนั้นเป็นมิตร",
+    "zh": "这是一个男人。这个男人很友好。",
+    "ms": "Ini seorang lelaki. Lelaki itu peramah.",
+    "sw": "Huyu ni mwanaume. Mwanaume huyo ni mwenye urafiki.",
+    "hi": "यह एक आदमी है। यह आदमी मित्रवत है।",
+    "ur": "یہ ایک آدمی ہے۔ یہ آدمی (der Mann) دوستانہ ہے۔",
+    "ar_eg": "ده راجل. الراجل ده لطيف.",
+    "ar_lb": "هيدا رجّال. الرجّال لطيف.",
+    "ar_sy": "هاد رجّال (ein Mann). الرجّال (der Mann) لطيف."
    },
    {
     "de": "Eine Frau und ein Kind warten dort.",
@@ -333,7 +468,16 @@ const GRAMMAR = [
     "fa": "یک زن و یک کودک آنجا منتظر هستند.",
     "uk": "Жінка й дитина чекають там.",
     "pl": "Kobieta i dziecko czekają tam.",
-    "tr": "Bir kadın ve bir çocuk orada bekliyor."
+    "tr": "Bir kadın ve bir çocuk orada bekliyor.",
+    "th": "ผู้หญิงคนหนึ่งกับเด็กคนหนึ่งกำลังรออยู่ที่นั่น",
+    "zh": "一个女人和一个孩子在那里等着。",
+    "ms": "Seorang wanita dan seorang kanak-kanak sedang menunggu di sana.",
+    "sw": "Mwanamke mmoja na mtoto mmoja wanangoja pale.",
+    "hi": "एक औरत और एक बच्चा वहाँ इंतज़ार कर रहे हैं।",
+    "ur": "ایک عورت اور ایک بچہ وہاں انتظار کر رہے ہیں۔",
+    "ar_eg": "في ست وولد مستنيين هناك.",
+    "ar_lb": "في مرا وولد عم يستنّو هونيك.",
+    "ar_sy": "في مرا (eine Frau) وولد (ein Kind) عم يستنّوا هونيك."
    },
    {
     "de": "Die Zeitung ist neu.",
@@ -343,7 +487,16 @@ const GRAMMAR = [
     "fa": "روزنامه نو است.",
     "uk": "Газета нова.",
     "pl": "Gazeta jest nowa.",
-    "tr": "Gazete yeni."
+    "tr": "Gazete yeni.",
+    "th": "หนังสือพิมพ์ฉบับนี้ใหม่",
+    "zh": "这份报纸是新的。",
+    "ms": "Akhbar itu baharu.",
+    "sw": "Gazeti ni jipya.",
+    "hi": "अख़बार नया है।",
+    "ur": "اخبار (die Zeitung) نیا ہے۔",
+    "ar_eg": "الجورنال ده جديد.",
+    "ar_lb": "الجريدة جديدة.",
+    "ar_sy": "الجريدة (die Zeitung) جديدة."
    }
   ],
   "hints": {
@@ -354,7 +507,16 @@ const GRAMMAR = [
    "fa": "فارسی نه جنس دستوری دارد و نه حرف تعریف معیّن؛ پس der/die/das کاملاً تازه است. حرف تعریف نامعیّن ein/eine کمی شبیه «یک» یا «ـی» فارسی است، اما «معیّن» معادلی در فارسی ندارد. جنس هر اسم را باید حفظ کنید، چون از روی معنی قابل حدس نیست — مثلاً das Mädchen با اینکه «دختر» است، خنثی است.",
    "uk": "Запам'ятай: ніколи не вчи іменник без артикля — «der/die/das» нерозривно належить до слова. Закінчення -ung, -heit, -keit, -schaft і -tion майже завжди жіночого роду, -chen і -lein завжди середнього (навіть das Mädchen!), -ismus і -ling завжди чоловічого роду.",
    "pl": "Zapamiętaj: nigdy nie ucz się rzeczownika bez rodzajnika — 'der/die/das' należy na stałe do słowa. Końcówki takie jak -ung, -heit, -keit, -schaft i -tion są prawie zawsze żeńskie, -chen i -lein zawsze nijakie (nawet das Mädchen!), a -ismus i -ling zawsze męskie.",
-   "tr": "Unutma: İsimleri asla artikelsiz öğrenme — 'der/die/das' kelimenin ayrılmaz parçasıdır. -ung, -heit, -keit, -schaft ve -tion gibi ekler neredeyse her zaman dişildir; -chen ve -lein her zaman nötrdür (das Mädchen bile!); -ismus ve -ling her zaman erildir."
+   "tr": "Unutma: İsimleri asla artikelsiz öğrenme — 'der/die/das' kelimenin ayrılmaz parçasıdır. -ung, -heit, -keit, -schaft ve -tion gibi ekler neredeyse her zaman dişildir; -chen ve -lein her zaman nötrdür (das Mädchen bile!); -ismus ve -ling her zaman erildir.",
+   "th": "ข้อควรจำ: อย่าเรียนคำนามโดยไม่มีคำนำหน้านาม — 'der/die/das' เป็นส่วนหนึ่งของคำนั้นเสมอ คำลงท้ายอย่าง -ung, -heit, -keit, -schaft และ -tion มักเป็นเพศหญิง (feminin) เกือบทุกครั้ง ส่วน -chen และ -lein เป็นเพศกลาง (neutral) เสมอ (แม้แต่ das Mädchen!) และ -ismus กับ -ling เป็นเพศชาย (maskulin) เสมอ",
+   "zh": "注意:学习名词时绝不要不带冠词——“der/die/das”是单词固定的一部分。以 -ung、-heit、-keit、-schaft 和 -tion 结尾的词几乎总是阴性,-chen 和 -lein 结尾的词总是中性(连 das Mädchen“女孩”也不例外!),-ismus 和 -ling 结尾的词总是阳性。",
+   "ms": "Ingat: Jangan sekali-kali menghafal kata nama tanpa artikelnya — 'der/die/das' adalah sebahagian tetap daripada perkataan itu. Akhiran seperti -ung, -heit, -keit, -schaft dan -tion hampir selalu feminin, -chen dan -lein sentiasa neutral (termasuk das Mädchen, 'gadis'!), manakala -ismus dan -ling sentiasa maskulin.",
+   "sw": "Kumbuka: usijifunze nomino bila artikeli kamwe — 'der/die/das' ni sehemu isiyoondoka ya neno lenyewe. Miisho kama -ung, -heit, -keit, -schaft na -tion karibu daima ni ya kike, -chen na -lein daima ni isiyo na jinsia (hata das Mädchen, yaani 'msichana'!), na -ismus na -ling daima ni ya kiume.",
+   "hi": "याद रखें: संज्ञा को कभी भी आर्टिकल के बिना न सीखें — 'der/die/das' शब्द का ही एक स्थायी हिस्सा है। -ung, -heit, -keit, -schaft और -tion जैसे शब्दांत लगभग हमेशा स्त्रीलिंग (feminin) होते हैं, -chen और -lein हमेशा नपुंसकलिंग (neutral) होते हैं (das Mädchen भी!), और -ismus तथा -ling हमेशा पुल्लिंग (maskulin) होते हैं।",
+   "ur": "یاد رکھیں: اسم کبھی بھی بغیر آرٹیکل کے نہ سیکھیں — 'der/die/das' لفظ کا لازمی حصہ ہے۔ -ung، -heit، -keit، -schaft اور -tion جیسے اختتامیے تقریباً ہمیشہ مؤنث ہوتے ہیں، -chen اور -lein ہمیشہ غیر جانبدار ہوتے ہیں (یہاں تک کہ das Mädchen بھی!)، اور -ismus اور -ling ہمیشہ مذکر ہوتے ہیں۔",
+   "ar_eg": "لازم تعرف: متحفظش أي اسم من غير الأداة بتاعته — der/die/das بقوا جزء من الكلمة نفسها. النهايات زي -ung, -heit, -keit, -schaft, -tion بتبقى غالبًا مؤنث، -chen و -lein بتبقى دايمًا محايد (حتى das Mädchen يعني البنت!)، و -ismus و -ling بتبقى دايمًا مذكر.",
+   "ar_lb": "خدها بالك: ما تتعلّم الاسم بلا الأداة تبعتو — 'der/die/das' جزء ثابت من الكلمة. النهايات متل -ung، -heit، -keit، -schaft، و-tion تقريبًا دايمًا مؤنث، -chen و-lein دايمًا محايد (حتى das Mädchen يعني 'البنت'!)، و-ismus و-ling دايمًا مذكر.",
+   "ar_sy": "خد بالك: ما تتعلم الاسم بلا أداة أبداً — 'der/die/das' جزء تابت من الكلمة. النهايات متل -ung و-heit و-keit و-schaft و-tion بمعظم الحالات مؤنثة، و-chen و-lein دايماً محايدة (حتى das Mädchen يعني البنت!)، و-ismus و-ling دايماً مذكرة."
   }
  },
  {
@@ -368,7 +530,16 @@ const GRAMMAR = [
    "fa": "چهار حالت",
    "uk": "Чотири відмінки",
    "pl": "Cztery przypadki",
-   "tr": "Dört hâl"
+   "tr": "Dört hâl",
+   "th": "การกทั้งสี่ (die vier Fälle)",
+   "zh": "四个格",
+   "ms": "Empat Kes",
+   "sw": "Kesi Nne za Sarufi",
+   "hi": "चार कारक",
+   "ur": "چار حالتیں (Fälle)",
+   "ar_eg": "الحالات الإعرابية الأربعة",
+   "ar_lb": "الحالات الأربعة (Fälle)",
+   "ar_sy": "الحالات الإعرابية الأربعة"
   },
   "intro": {
    "de": "Deutsch hat vier Fälle (Kasus): Nominativ, Akkusativ, Dativ und Genitiv. Der Fall zeigt die Rolle eines Wortes im Satz – wer etwas tut, wen oder was es betrifft, wem etwas gegeben wird und wem etwas gehört. Nicht das Substantiv, sondern vor allem der Artikel verändert sich je nach Fall.",
@@ -378,7 +549,16 @@ const GRAMMAR = [
    "fa": "زبان آلمانی چهار حالت (case) دارد: نهادی (فاعل – چه کسی انجام می‌دهد)، مفعولی مستقیم (چه چیزی/چه کسی را)، مفعولی غیرمستقیم (به چه کسی) و اضافی (مالکیت – مالِ چه کسی). حالت، نقش واژه را در جمله نشان می‌دهد و به جای خودِ اسم، بیشتر حرف تعریف تغییر می‌کند.",
    "uk": "Німецька мова має чотири відмінки (Kasus): Nominativ, Akkusativ, Dativ і Genitiv. Відмінок показує роль слова в реченні – хто щось робить, кого чи що це стосується, кому щось дають і кому щось належить. Змінюється не сам іменник, а насамперед артикль – залежно від відмінка.",
    "pl": "Niemiecki ma cztery przypadki (Kasus): mianownik, biernik, celownik i dopełniacz. Przypadek pokazuje rolę słowa w zdaniu – kto coś robi, kogo lub co to dotyczy, komu coś się daje i do kogo coś należy. Zmienia się nie tyle samo rzeczownik, ile przede wszystkim rodzajnik zależnie od przypadka.",
-   "tr": "Almancada dört hâl (kasus) vardır: Nominativ, Akkusativ, Dativ ve Genitiv. Hâl, bir kelimenin cümledeki rolünü gösterir – kim bir şey yapıyor, kimi veya neyi ilgilendiriyor, kime bir şey veriliyor ve kime ait olduğunu. Hâle göre değişen, isim değil her şeyden önce artikeldir."
+   "tr": "Almancada dört hâl (kasus) vardır: Nominativ, Akkusativ, Dativ ve Genitiv. Hâl, bir kelimenin cümledeki rolünü gösterir – kim bir şey yapıyor, kimi veya neyi ilgilendiriyor, kime bir şey veriliyor ve kime ait olduğunu. Hâle göre değişen, isim değil her şeyden önce artikeldir.",
+   "th": "ภาษาเยอรมันมีการก (Kasus) สี่แบบ ได้แก่ Nominativ, Akkusativ, Dativ และ Genitiv การกจะแสดงบทบาทของคำในประโยค — ใครเป็นผู้กระทำ กระทำต่อใครหรือสิ่งใด สิ่งนั้นถูกให้แก่ใคร และเป็นของใคร ไม่ใช่ตัวคำนามที่เปลี่ยนรูป แต่ส่วนใหญ่แล้วคำนำหน้านามต่างหากที่เปลี่ยนไปตามการก",
+   "zh": "德语有四个格(Kasus):Nominativ、Akkusativ、Dativ 和 Genitiv。格标明一个词在句子中的作用——谁在做某事、涉及谁或什么、给予谁、以及归谁所有。随格发生变化的主要不是名词本身,而是冠词。",
+   "ms": "Bahasa Jerman mempunyai empat kes (Kasus): Nominativ, Akkusativ, Dativ dan Genitiv. Kes menunjukkan peranan sesuatu perkataan dalam ayat – siapa yang melakukan sesuatu, siapa atau apa yang terlibat, kepada siapa sesuatu diberikan, dan kepunyaan siapa sesuatu itu. Bukan kata namanya, tetapi terutamanya artikel yang berubah mengikut kes.",
+   "sw": "Kijerumani kina kesi nne (Kasus): Nominativ, Akkusativ, Dativ na Genitiv. Kesi inaonyesha nafasi ya neno katika sentensi – nani anafanya kitu, ni nani au nini kinachoathiriwa, ni nani anayepewa kitu, na ni nani mmiliki wa kitu. Si nomino yenyewe, bali hasa artikeli ndiyo inayobadilika kulingana na kesi.",
+   "hi": "जर्मन में चार कारक (Kasus) होते हैं: Nominativ, Akkusativ, Dativ और Genitiv। कारक वाक्य में किसी शब्द की भूमिका दिखाता है – कौन कुछ करता है, किसे या क्या प्रभावित करता है, किसे कुछ दिया जाता है और किसका कुछ है। संज्ञा नहीं बल्कि मुख्य रूप से आर्टिकल कारक के अनुसार बदलता है।",
+   "ur": "جرمن زبان میں چار حالتیں (Kasus) ہوتی ہیں: نامیہ (Nominativ)، مفعولی (Akkusativ)، دیتی حالت (Dativ) اور اضافتی (Genitiv)۔ یہ حالت جملے میں کسی لفظ کا کردار ظاہر کرتی ہے — کون کچھ کر رہا ہے، کس کو یا کیا متاثر ہو رہا ہے، کسے کچھ دیا جا رہا ہے، اور کس کی ملکیت ہے۔ اسم نہیں بلکہ خاص طور پر آرٹیکل حالت کے مطابق بدلتا ہے۔",
+   "ar_eg": "الألماني عنده أربع حالات إعرابية (Kasus): Nominativ و Akkusativ و Dativ و Genitiv. الحالة بتوضح دور الكلمة في الجملة – مين اللي بيعمل الفعل، ومين أو إيه اللي بيتأثر بيه، ومين اللي بياخد حاجة، ومين اللي حاجة بتاعته. مش الاسم نفسه اللي بيتغير، لكن قبل كل حاجة الأداة بتاعته.",
+   "ar_lb": "الألماني عندو أربع حالات (Kasus): Nominativ، Akkusativ، Dativ، وGenitiv. الحالة بتبيّن دور الكلمة بالجملة – مين عم يعمل الشي، مين أو شو المقصود فيه، لمين عم يُعطى الشي، ولمين هالشي عائد. مش الاسم هو يلي بيتغيّر، إنما بالأكتر الأداة (Artikel) هي يلي بتتغيّر حسب الحالة.",
+   "ar_sy": "الألماني عندو أربع حالات إعرابية (Kasus): Nominativ وAkkusativ وDativ وGenitiv. الحالة بتبيّن دور الكلمة بالجملة – مين عم يعمل الشي، مين أو شو المقصود فيه، لمين عم يُعطى الشي، ولمين هالشي تبعو. مو الاسم يلي بيتغيّر، الأداة هي يلي بتتغيّر حسب الحالة."
   },
   "tables": [
    {
@@ -390,7 +570,16 @@ const GRAMMAR = [
      "fa": "حرف تعریف معین (der/die/das) – معادل «the»",
      "uk": "Означений артикль (der/die/das) – «the»",
      "pl": "Rodzajnik określony (der/die/das) – „the”",
-     "tr": "Belirli artikel (der/die/das) – „the“"
+     "tr": "Belirli artikel (der/die/das) – „the“",
+     "th": "คำนำหน้านามชี้เฉพาะ (der/die/das) – เทียบเท่า „the“ ในภาษาอังกฤษ",
+     "zh": "定冠词(der/die/das)——“the”",
+     "ms": "Artikel tentu (der/die/das) – 'the'",
+     "sw": "Artikeli dhahiri (der/die/das) – 'the'",
+     "hi": "निश्चित आर्टिकल (der/die/das) – 'the'",
+     "ur": "معین آرٹیکل (der/die/das) – ”the“",
+     "ar_eg": "أداة التعريف (der/die/das) – يعني «الـ»",
+     "ar_lb": "الأداة المعرّفة (der/die/das) – يعني „the“",
+     "ar_sy": "الأداة المعرّفة (der/die/das) – يعني 'ال' بالعربي"
     },
     "labelHeader": {
      "de": "Kasus (Fall)",
@@ -400,7 +589,16 @@ const GRAMMAR = [
      "fa": "حالت",
      "uk": "Відмінок (Kasus)",
      "pl": "Przypadek (Kasus)",
-     "tr": "Kasus (hâl)"
+     "tr": "Kasus (hâl)",
+     "th": "การก (Kasus)",
+     "zh": "格",
+     "ms": "Kes",
+     "sw": "Kesi (Fall)",
+     "hi": "कारक (Kasus)",
+     "ur": "حالت (Kasus)",
+     "ar_eg": "الحالة الإعرابية (Kasus)",
+     "ar_lb": "الحالة (Kasus/Fall)",
+     "ar_sy": "الحالة الإعرابية"
     },
     "columns": [
      {
@@ -411,7 +609,16 @@ const GRAMMAR = [
       "fa": "مذکر (m)",
       "uk": "чоловічий (m)",
       "pl": "męski (m)",
-      "tr": "eril (m)"
+      "tr": "eril (m)",
+      "th": "เพศชาย (m)",
+      "zh": "阳性(m)",
+      "ms": "maskulin (m)",
+      "sw": "kiume (m)",
+      "hi": "पुल्लिंग (m)",
+      "ur": "مذکر (m)",
+      "ar_eg": "مذكر (m)",
+      "ar_lb": "مذكر (m)",
+      "ar_sy": "مذكر (m)"
      },
      {
       "de": "feminin (f)",
@@ -421,7 +628,16 @@ const GRAMMAR = [
       "fa": "مؤنث (f)",
       "uk": "жіночий (f)",
       "pl": "żeński (f)",
-      "tr": "dişil (f)"
+      "tr": "dişil (f)",
+      "th": "เพศหญิง (f)",
+      "zh": "阴性(f)",
+      "ms": "feminin (f)",
+      "sw": "kike (f)",
+      "hi": "स्त्रीलिंग (f)",
+      "ur": "مؤنث (f)",
+      "ar_eg": "مؤنث (f)",
+      "ar_lb": "مؤنث (f)",
+      "ar_sy": "مؤنث (f)"
      },
      {
       "de": "neutral (n)",
@@ -431,7 +647,16 @@ const GRAMMAR = [
       "fa": "خنثی (n)",
       "uk": "середній (n)",
       "pl": "nijaki (n)",
-      "tr": "nötr (n)"
+      "tr": "nötr (n)",
+      "th": "เพศกลาง (n)",
+      "zh": "中性(n)",
+      "ms": "neutral (n)",
+      "sw": "isiyo na jinsia (n)",
+      "hi": "नपुंसकलिंग (n)",
+      "ur": "غیر جانبدار (n)",
+      "ar_eg": "محايد (n)",
+      "ar_lb": "محايد (n)",
+      "ar_sy": "محايد (n)"
      },
      {
       "de": "Plural",
@@ -441,7 +666,16 @@ const GRAMMAR = [
       "fa": "جمع",
       "uk": "множина",
       "pl": "liczba mnoga",
-      "tr": "Çoğul"
+      "tr": "Çoğul",
+      "th": "พหูพจน์ (Plural)",
+      "zh": "复数",
+      "ms": "Jamak",
+      "sw": "wingi",
+      "hi": "बहुवचन",
+      "ur": "جمع (Plural)",
+      "ar_eg": "جمع",
+      "ar_lb": "جمع (Plural)",
+      "ar_sy": "جمع"
      }
     ],
     "rows": [
@@ -454,7 +688,16 @@ const GRAMMAR = [
        "fa": "نهادی (فاعل – چه کسی؟)",
        "uk": "Nominativ (підмет – хто?)",
        "pl": "Mianownik (podmiot – wer?)",
-       "tr": "Nominativ (özne – kim?)"
+       "tr": "Nominativ (özne – kim?)",
+       "th": "การกประธาน (Nominativ) – ใคร?",
+       "zh": "Nominativ(主语——谁?)",
+       "ms": "Nominativ (subjek – siapa?)",
+       "sw": "Nominativ (kiima – nani?)",
+       "hi": "Nominativ (कर्ता – कौन?)",
+       "ur": "نامیہ (Nominativ) – فاعل – کون؟",
+       "ar_eg": "Nominativ (الفاعل – مين؟)",
+       "ar_lb": "Nominativ (الفاعل – مين؟)",
+       "ar_sy": "Nominativ (الفاعل – مين؟)"
       },
       "cells": [
        "der",
@@ -472,7 +715,16 @@ const GRAMMAR = [
        "fa": "مفعولی مستقیم (چه کسی/چه چیزی را؟)",
        "uk": "Akkusativ (додаток – кого/що?)",
        "pl": "Biernik (dopełnienie – wen/was?)",
-       "tr": "Akkusativ (nesne – kimi/neyi?)"
+       "tr": "Akkusativ (nesne – kimi/neyi?)",
+       "th": "กรรมตรง (Akkusativ) – ใคร/อะไร?",
+       "zh": "Akkusativ(宾语——谁/什么?)",
+       "ms": "Akkusativ (objek – siapa/apa?)",
+       "sw": "Akkusativ (yambwa – nani/nini?)",
+       "hi": "Akkusativ (कर्म – किसे/क्या?)",
+       "ur": "مفعولی (Akkusativ) – مفعول – کسے/کیا؟",
+       "ar_eg": "Akkusativ (المفعول به – مين/إيه؟)",
+       "ar_lb": "Akkusativ (المفعول به – مين/شو؟)",
+       "ar_sy": "Akkusativ (المفعول به – مين/شو؟)"
       },
       "cells": [
        "den",
@@ -490,7 +742,16 @@ const GRAMMAR = [
        "fa": "مفعولی غیرمستقیم (به چه کسی؟)",
        "uk": "Dativ (непрямий додаток – кому?)",
        "pl": "Celownik (dopełnienie dalsze – wem?)",
-       "tr": "Dativ (dolaylı nesne – kime?)"
+       "tr": "Dativ (dolaylı nesne – kime?)",
+       "th": "กรรมรอง (Dativ) – แก่ใคร?",
+       "zh": "Dativ(间接宾语——给谁?)",
+       "ms": "Dativ (objek tidak langsung – kepada siapa?)",
+       "sw": "Dativ (yambwa isiyo ya moja kwa moja – kwa nani?)",
+       "hi": "Dativ (अप्रत्यक्ष कर्म – किसे?)",
+       "ur": "دیتی حالت (Dativ) – غیر مستقیم مفعول – کسے؟",
+       "ar_eg": "Dativ (المفعول غير المباشر – لمين؟)",
+       "ar_lb": "Dativ (المفعول غير المباشر – لمين؟)",
+       "ar_sy": "Dativ (المفعول غير المباشر – لمين؟)"
       },
       "cells": [
        "dem",
@@ -508,7 +769,16 @@ const GRAMMAR = [
        "fa": "اضافی (مالکیت – مالِ چه کسی؟)",
        "uk": "Genitiv (присвійність – чий?)",
        "pl": "Dopełniacz (posiadanie – wessen?)",
-       "tr": "Genitiv (iyelik – kimin?)"
+       "tr": "Genitiv (iyelik – kimin?)",
+       "th": "การกแสดงความเป็นเจ้าของ (Genitiv) – ของใคร?",
+       "zh": "Genitiv(所有格——谁的?)",
+       "ms": "Genitiv (pemilikan – kepunyaan siapa?)",
+       "sw": "Genitiv (umiliki – ya nani?)",
+       "hi": "Genitiv (स्वामित्व – किसका?)",
+       "ur": "اضافتی (Genitiv) – ملکیت – کس کا؟",
+       "ar_eg": "Genitiv (الملكية – ملك مين؟)",
+       "ar_lb": "Genitiv (الملكية – تبع مين؟)",
+       "ar_sy": "Genitiv (الملكية – تبع مين؟)"
       },
       "cells": [
        "des",
@@ -528,7 +798,16 @@ const GRAMMAR = [
      "fa": "واژه‌های ein: حرف تعریف نامعین ein «a/an» و شکل منفی kein «هیچ» — پایانه‌های یکسان. هر خانه ein / kein را نشان می‌دهد. ein جمع ندارد (اسم بدون حرف تعریف می‌آید)؛ فقط kein جمع دارد.",
      "uk": "ein-слова: неозначений артикль ein «якийсь» і його заперечення kein «жодний / не» – однакові закінчення. У кожній клітинці показано ein / kein. ein не має множини (там вживається сам іменник без артикля); лише kein має форми множини.",
      "pl": "Wyrazy z ein-: rodzajnik nieokreślony ein „a/an” i zaprzeczenie kein „kein/nicht ein” – te same końcówki. Komórka pokazuje ein / kein. ein nie ma liczby mnogiej (stoi tam wtedy sam rzeczownik); tylko kein ma formy liczby mnogiej.",
-     "tr": "ein-kelimeleri: belirsiz artikel ein „a/an“ ve olumsuzluk biçimi kein „hiçbir / bir … değil“ – aynı ekler. Hücre ein / kein gösterir. ein'in çoğulu yoktur (orada yalın isim bulunur); yalnızca kein'in çoğul biçimleri vardır."
+     "tr": "ein-kelimeleri: belirsiz artikel ein „a/an“ ve olumsuzluk biçimi kein „hiçbir / bir … değil“ – aynı ekler. Hücre ein / kein gösterir. ein'in çoğulu yoktur (orada yalın isim bulunur); yalnızca kein'in çoğul biçimleri vardır.",
+     "th": "คำกลุ่ม ein-Wörter ได้แก่คำนำหน้านามไม่ชี้เฉพาะ ein (เทียบเท่า 'a/an') และรูปปฏิเสธ kein (เทียบเท่า 'ไม่มี') ซึ่งผันด้วยคำลงท้ายชุดเดียวกัน แต่ละช่องในตารางแสดงคู่ ein / kein โดย ein ไม่มีรูปพหูพจน์ (พหูพจน์ใช้คำนามเปล่าไม่มีคำนำหน้า) มีเพียง kein เท่านั้นที่มีรูปพหูพจน์",
+     "zh": "ein 词:不定冠词 ein(“a/an”)及其否定形式 kein(“没有一个/不是一个”)——词尾相同。表格中每格显示 ein / kein。ein 没有复数形式(复数时直接用不带冠词的名词);只有 kein 有复数形式。",
+     "ms": "Perkataan-ein: artikel tak tentu ein ('a/an') dan bentuk nafi kein ('tiada/bukan satu') – akhiran yang sama. Setiap sel menunjukkan ein / kein. ein tiada bentuk jamak (kata nama tanpa artikel digunakan di situ); hanya kein mempunyai bentuk jamak.",
+     "sw": "Maneno ya aina ya ein: artikeli isiyo dhahiri ein ('a/an') na hasi yake kein ('hakuna/si') – zina miisho sawa. Kila seli inaonyesha ein / kein. ein haina wingi (mahali hapo nomino tupu ndiyo inayotumika); ni kein pekee mwenye maumbo ya wingi.",
+     "hi": "ein-शब्द: अनिश्चित आर्टिकल ein 'a/an' और उसका निषेध kein 'कोई नहीं/एक नहीं' – दोनों के अंत एक जैसे होते हैं। सेल में ein / kein दिखाया गया है। ein का कोई बहुवचन नहीं होता (वहाँ केवल संज्ञा अकेली आती है); केवल kein के बहुवचन रूप होते हैं।",
+     "ur": "ein والے الفاظ: غیر معین آرٹیکل ein ”ایک“ اور اس کی نفی kein ”کوئی نہیں“ — ایک ہی اختتامیے استعمال ہوتے ہیں۔ ہر خانہ ein / kein دکھاتا ہے۔ ein کی کوئی جمع نہیں ہوتی (وہاں صرف خالی اسم آتا ہے)؛ صرف kein کی جمع صورتیں ہوتی ہیں۔",
+     "ar_eg": "كلمات ein: أداة التنكير ein يعني «واحد/واحدة»، والنفي kein يعني «ولا واحد/مفيش». نفس النهايات. كل خانة في الجدول بتوضح ein / kein. ein مالوش صيغة جمع (في الجمع بتستخدم الاسم لوحده من غير أداة)؛ kein بس هو اللي له صيغ جمع.",
+     "ar_lb": "كلمات الـ ein: الأداة النكرة ein يعني „a/an“ (وحدة/واحد)، ونفيها kein يعني „ما في/ولا“ – نفس النهايات. كل خانة بتوريك ein / kein. ein ما إلها جمع (بهالحالة بيستعملو الاسم لحالو بلا أداة)؛ بس kein إلها صيغ جمع.",
+     "ar_sy": "كلمات ein: أداة النكرة ein 'واحد/ة' ونفيها kein 'ولا واحد/مش' – نفس النهايات. الخانة بتبيّن ein / kein. ein ما إلها جمع (بهالحالة بتحكي الاسم لحاله)؛ بس kein إلها صيغ جمع."
     },
     "labelHeader": {
      "de": "Kasus (Fall)",
@@ -538,7 +817,16 @@ const GRAMMAR = [
      "fa": "حالت",
      "uk": "Відмінок (Kasus)",
      "pl": "Przypadek (Kasus)",
-     "tr": "Kasus (hâl)"
+     "tr": "Kasus (hâl)",
+     "th": "การก (Kasus)",
+     "zh": "格",
+     "ms": "Kes",
+     "sw": "Kesi (Fall)",
+     "hi": "कारक (Kasus)",
+     "ur": "حالت (Kasus)",
+     "ar_eg": "الحالة الإعرابية (Kasus)",
+     "ar_lb": "الحالة (Kasus/Fall)",
+     "ar_sy": "الحالة الإعرابية"
     },
     "columns": [
      {
@@ -549,7 +837,16 @@ const GRAMMAR = [
       "fa": "مذکر (m)",
       "uk": "чоловічий (m)",
       "pl": "męski (m)",
-      "tr": "eril (m)"
+      "tr": "eril (m)",
+      "th": "เพศชาย (m)",
+      "zh": "阳性(m)",
+      "ms": "maskulin (m)",
+      "sw": "kiume (m)",
+      "hi": "पुल्लिंग (m)",
+      "ur": "مذکر (m)",
+      "ar_eg": "مذكر (m)",
+      "ar_lb": "مذكر (m)",
+      "ar_sy": "مذكر (m)"
      },
      {
       "de": "feminin (f)",
@@ -559,7 +856,16 @@ const GRAMMAR = [
       "fa": "مؤنث (f)",
       "uk": "жіночий (f)",
       "pl": "żeński (f)",
-      "tr": "dişil (f)"
+      "tr": "dişil (f)",
+      "th": "เพศหญิง (f)",
+      "zh": "阴性(f)",
+      "ms": "feminin (f)",
+      "sw": "kike (f)",
+      "hi": "स्त्रीलिंग (f)",
+      "ur": "مؤنث (f)",
+      "ar_eg": "مؤنث (f)",
+      "ar_lb": "مؤنث (f)",
+      "ar_sy": "مؤنث (f)"
      },
      {
       "de": "neutral (n)",
@@ -569,7 +875,16 @@ const GRAMMAR = [
       "fa": "خنثی (n)",
       "uk": "середній (n)",
       "pl": "nijaki (n)",
-      "tr": "nötr (n)"
+      "tr": "nötr (n)",
+      "th": "เพศกลาง (n)",
+      "zh": "中性(n)",
+      "ms": "neutral (n)",
+      "sw": "isiyo na jinsia (n)",
+      "hi": "नपुंसकलिंग (n)",
+      "ur": "غیر جانبدار (n)",
+      "ar_eg": "محايد (n)",
+      "ar_lb": "محايد (n)",
+      "ar_sy": "محايد (n)"
      },
      {
       "de": "Plural (nur kein)",
@@ -579,7 +894,16 @@ const GRAMMAR = [
       "fa": "جمع (فقط kein)",
       "uk": "множина (лише kein)",
       "pl": "liczba mnoga (tylko kein)",
-      "tr": "Çoğul (yalnızca kein)"
+      "tr": "Çoğul (yalnızca kein)",
+      "th": "พหูพจน์ (เฉพาะ kein)",
+      "zh": "复数(仅 kein)",
+      "ms": "Jamak (hanya kein)",
+      "sw": "wingi (kein pekee)",
+      "hi": "बहुवचन (केवल kein)",
+      "ur": "جمع (صرف kein)",
+      "ar_eg": "جمع (kein بس)",
+      "ar_lb": "جمع (kein بس)",
+      "ar_sy": "جمع (بس kein)"
      }
     ],
     "rows": [
@@ -592,7 +916,16 @@ const GRAMMAR = [
        "fa": "نهادی (چه کسی؟)",
        "uk": "Nominativ (хто?)",
        "pl": "Mianownik (wer?)",
-       "tr": "Nominativ (kim?)"
+       "tr": "Nominativ (kim?)",
+       "th": "การกประธาน (Nominativ) – ใคร?",
+       "zh": "Nominativ(谁?)",
+       "ms": "Nominativ (siapa?)",
+       "sw": "Nominativ (nani?)",
+       "hi": "Nominativ (कौन?)",
+       "ur": "نامیہ (Nominativ) – کون؟",
+       "ar_eg": "Nominativ (مين؟)",
+       "ar_lb": "Nominativ (مين؟)",
+       "ar_sy": "Nominativ (مين؟)"
       },
       "cells": [
        "ein / kein",
@@ -610,7 +943,16 @@ const GRAMMAR = [
        "fa": "مفعولی مستقیم (چه کسی را؟)",
        "uk": "Akkusativ (кого/що?)",
        "pl": "Biernik (wen/was?)",
-       "tr": "Akkusativ (kimi/neyi?)"
+       "tr": "Akkusativ (kimi/neyi?)",
+       "th": "กรรมตรง (Akkusativ) – ใคร/อะไร?",
+       "zh": "Akkusativ(谁/什么?)",
+       "ms": "Akkusativ (siapa/apa?)",
+       "sw": "Akkusativ (nani/nini?)",
+       "hi": "Akkusativ (किसे/क्या?)",
+       "ur": "مفعولی (Akkusativ) – کسے/کیا؟",
+       "ar_eg": "Akkusativ (مين/إيه؟)",
+       "ar_lb": "Akkusativ (مين/شو؟)",
+       "ar_sy": "Akkusativ (مين/شو؟)"
       },
       "cells": [
        "einen / keinen",
@@ -628,7 +970,16 @@ const GRAMMAR = [
        "fa": "مفعولی غیرمستقیم (به چه کسی؟)",
        "uk": "Dativ (кому?)",
        "pl": "Celownik (wem?)",
-       "tr": "Dativ (kime?)"
+       "tr": "Dativ (kime?)",
+       "th": "กรรมรอง (Dativ) – แก่ใคร?",
+       "zh": "Dativ(给谁?)",
+       "ms": "Dativ (kepada siapa?)",
+       "sw": "Dativ (kwa nani?)",
+       "hi": "Dativ (किसे?)",
+       "ur": "دیتی حالت (Dativ) – کسے؟",
+       "ar_eg": "Dativ (لمين؟)",
+       "ar_lb": "Dativ (لمين؟)",
+       "ar_sy": "Dativ (لمين؟)"
       },
       "cells": [
        "einem / keinem",
@@ -646,7 +997,16 @@ const GRAMMAR = [
        "fa": "اضافی (مالِ چه کسی؟)",
        "uk": "Genitiv (чий?)",
        "pl": "Dopełniacz (wessen?)",
-       "tr": "Genitiv (kimin?)"
+       "tr": "Genitiv (kimin?)",
+       "th": "การกแสดงความเป็นเจ้าของ (Genitiv) – ของใคร?",
+       "zh": "Genitiv(谁的?)",
+       "ms": "Genitiv (kepunyaan siapa?)",
+       "sw": "Genitiv (ya nani?)",
+       "hi": "Genitiv (किसका?)",
+       "ur": "اضافتی (Genitiv) – کس کا؟",
+       "ar_eg": "Genitiv (ملك مين؟)",
+       "ar_lb": "Genitiv (تبع مين؟)",
+       "ar_sy": "Genitiv (تبع مين؟)"
       },
       "cells": [
        "eines / keines",
@@ -667,7 +1027,16 @@ const GRAMMAR = [
     "fa": "مرد سیبِ کودک را به زن می‌دهد. (نهادی: der Mann · مفعولی غیرمستقیم: der Frau · مفعولی مستقیم: den Apfel · اضافی: des Kindes)",
     "uk": "Чоловік дає жінці яблуко дитини.",
     "pl": "Mężczyzna daje kobiecie jabłko dziecka.",
-    "tr": "Adam kadına çocuğun elmasını veriyor."
+    "tr": "Adam kadına çocuğun elmasını veriyor.",
+    "th": "ผู้ชายให้แอปเปิ้ลของเด็กแก่ผู้หญิง",
+    "zh": "这个男人把孩子的苹果给了这个女人。",
+    "ms": "Lelaki itu memberikan epal kanak-kanak itu kepada wanita itu.",
+    "sw": "Mwanaume anampa mwanamke tofaa la mtoto.",
+    "hi": "आदमी औरत को बच्चे का सेब देता है। (Nominativ: der Mann · Dativ: der Frau · Akkusativ: den Apfel · Genitiv: des Kindes)",
+    "ur": "آدمی (der Mann) عورت (der Frau) کو بچے (des Kindes) کا سیب (den Apfel) دیتا ہے۔",
+    "ar_eg": "الراجل بيدي الست تفاحة الولد.",
+    "ar_lb": "الرجّال عم يعطي المرا تفاحة الولد. (Nom: der Mann · Dat: der Frau · Akk: den Apfel · Gen: des Kindes)",
+    "ar_sy": "الرجّال عم يعطي المرا تفاحة الولد. (Nom: der Mann · Dat: der Frau · Akk: den Apfel · Gen: des Kindes)"
    },
    {
     "de": "Der Hund beißt den Mann, nicht der Mann den Hund.",
@@ -677,7 +1046,16 @@ const GRAMMAR = [
     "fa": "سگ مرد را گاز می‌گیرد، نه مرد سگ را. (تفاوت der و den نشان می‌دهد چه کسی کننده است، پس نقش‌ها حتی با جابه‌جایی واژه‌ها روشن می‌ماند.)",
     "uk": "Собака кусає чоловіка, а не чоловік собаку.",
     "pl": "Pies gryzie mężczyznę, a nie mężczyzna psa.",
-    "tr": "Köpek adamı ısırır, adam köpeği değil."
+    "tr": "Köpek adamı ısırır, adam köpeği değil.",
+    "th": "สุนัขกัดผู้ชาย ไม่ใช่ผู้ชายกัดสุนัข",
+    "zh": "是狗咬了这个男人,而不是这个男人咬了狗。",
+    "ms": "Anjing itu menggigit lelaki itu, bukan lelaki itu menggigit anjing itu.",
+    "sw": "Mbwa anamuuma mwanaume, si mwanaume anayemuuma mbwa.",
+    "hi": "कुत्ता आदमी को काटता है, आदमी कुत्ते को नहीं। (der और den का अंतर बताता है कि शब्दों का क्रम बदलने पर भी कौन क्या कर रहा है।)",
+    "ur": "کتا آدمی (den Mann) کو کاٹتا ہے، نہ کہ آدمی (der Mann) کتے کو۔",
+    "ar_eg": "الكلب بيعض الراجل، مش الراجل بيعض الكلب.",
+    "ar_lb": "الكلب عم يعض الرجّال، مش الرجّال عم يعض الكلب. (der مقابل den بتبيّن مين عم يعمل الفعل، فبتضل الأدوار واضحة حتى لو تحرّكت الكلمات.)",
+    "ar_sy": "الكلب عم يعض الرجّال، مو الرجّال الكلب. (der مقابل den بيبيّن مين عم يعمل الفعل، فبتضل الأدوار واضحة حتى لو تحرّكت الكلمات.)"
    }
   ],
   "hints": {
@@ -688,7 +1066,16 @@ const GRAMMAR = [
    "fa": "فارسی جنسیت دستوری ندارد، اما در آلمانی هر اسم یکی از سه جنس را دارد که شکل حرف تعریف را تعیین می‌کند و باید همراه اسم حفظ شود. مفعول مستقیم که در فارسی با «را» مشخص می‌شود، در آلمانی با حالت مفعولی (Akkusativ) و شکلی مانند «den» نشان داده می‌شود؛ و حالت اضافیِ آلمانی (Genitiv) همان نقش کسرهٔ اضافهٔ فارسی برای مالکیت را دارد و ترتیب واژه‌ها هم مانند فارسی است (اسم اصلی اول، مالک بعد: das Buch des Mannes = کتابِ مرد)، اما در آلمانی مالک در حالت اضافی صرف می‌شود (des Mannes) در حالی که فارسی فقط کسرهٔ اضافه می‌گیرد.",
    "uk": "Запам'ятай відмінки як запитання: Nominativ = хто?, Akkusativ = кого/що?, Dativ = кому?, Genitiv = чий? Спершу вивчи напам'ять таблицю означеного артикля – лише чоловічий Akkusativ (der → den) справді порушує загальну схему.",
    "pl": "Zapamiętaj przypadki jako pytania: mianownik = wer?, biernik = wen/was?, celownik = wem?, dopełniacz = wessen? Naucz się najpierw na pamięć tabeli rodzajnika określonego – tak naprawdę tylko męski biernik (der → den) faktycznie łamie schemat.",
-   "tr": "Hâlleri soru olarak aklında tut: Nominativ = kim?, Akkusativ = kimi/neyi?, Dativ = kime?, Genitiv = kimin? Önce belirli artikel tablosunu ezberle – kalıbı gerçekten bozan tek şey eril Akkusativ'dir (der → den)."
+   "tr": "Hâlleri soru olarak aklında tut: Nominativ = kim?, Akkusativ = kimi/neyi?, Dativ = kime?, Genitiv = kimin? Önce belirli artikel tablosunu ezberle – kalıbı gerçekten bozan tek şey eril Akkusativ'dir (der → den).",
+   "th": "จำการกเป็นคำถาม: Nominativ = ใคร?, Akkusativ = ใคร/อะไร?, Dativ = แก่ใคร?, Genitiv = ของใคร? ให้ท่องตารางคำนำหน้านามชี้เฉพาะให้ขึ้นใจก่อน — มีเพียงรูปเพศชายใน Akkusativ (der → den) เท่านั้นที่เปลี่ยนแปลงไปจากรูปแบบเดิมอย่างชัดเจน",
+   "zh": "把格记成问题的形式:Nominativ = 谁?,Akkusativ = 谁/什么?,Dativ = 给谁?,Genitiv = 谁的?先把定冠词表背熟——真正打破规律的只有阳性第四格(der → den)。",
+   "ms": "Ingat kes-kes sebagai soalan: Nominativ = siapa?, Akkusativ = siapa/apa?, Dativ = kepada siapa?, Genitiv = kepunyaan siapa? Hafal dahulu jadual artikel tentu – hanya bentuk Akkusativ maskulin (der → den) yang benar-benar mengubah corak itu.",
+   "sw": "Kumbuka kesi kama maswali: Nominativ = nani?, Akkusativ = nani/nini?, Dativ = kwa nani?, Genitiv = ya nani? Jifunze kwanza jedwali la artikeli dhahiri kwa moyo – ni Akkusativ ya kiume pekee (der → den) inayovunja kweli mfumo huo.",
+   "hi": "कारकों को प्रश्नों के रूप में याद रखें: Nominativ = कौन?, Akkusativ = किसे/क्या?, Dativ = किसे?, Genitiv = किसका? पहले निश्चित आर्टिकल की तालिका कंठस्थ करें – केवल पुल्लिंग Akkusativ (der → den) ही असली पैटर्न तोड़ता है।",
+   "ur": "حالتوں کو سوالات کی صورت میں یاد رکھیں: نامیہ (Nominativ) = کون؟، مفعولی (Akkusativ) = کسے/کیا؟، دیتی حالت (Dativ) = کسے؟، اضافتی (Genitiv) = کس کا؟ پہلے معین آرٹیکل کی جدول از بر کریں — صرف مذکر مفعولی حالت (der → den) اصل میں اس نمونے کو توڑتی ہے۔",
+   "ar_eg": "احفظ الحالات كأسئلة: Nominativ = مين؟، Akkusativ = مين/إيه؟، Dativ = لمين؟، Genitiv = ملك مين؟. احفظ الأول جدول أداة التعريف عن ظهر قلب – بس الـ Akkusativ المذكر (der → den) هو اللي بيكسر القاعدة فعلاً.",
+   "ar_lb": "احفظ الحالات كأسئلة: Nominativ = مين؟، Akkusativ = مين/شو؟، Dativ = لمين؟، Genitiv = تبع مين؟ احفظ أول شي جدول الأداة المعرّفة عن ظهر قلب – بس المذكر بالـ Akkusativ (der → den) هو يلي فعليًا بيكسر النمط.",
+   "ar_sy": "احفظ الحالات كأسئلة: Nominativ = مين؟، Akkusativ = مين/شو؟، Dativ = لمين؟، Genitiv = تبع مين؟ تعلّم أول شي جدول الأداة المعرّفة عن ظهر قلب – بس المذكر بالـAkkusativ (der → den) هوي يلي بيكسر القاعدة فعلياً."
   }
  },
  {
@@ -702,7 +1089,16 @@ const GRAMMAR = [
    "fa": "ضمایر شخصی",
    "uk": "Особові займенники",
    "pl": "Zaimki osobowe",
-   "tr": "Şahıs zamirleri"
+   "tr": "Şahıs zamirleri",
+   "th": "สรรพนามบุรุษ (Personalpronomen)",
+   "zh": "人称代词",
+   "ms": "Kata Ganti Nama Diri",
+   "sw": "Viwakilishi vya Nafsi",
+   "hi": "पुरुषवाचक सर्वनाम (Personalpronomen)",
+   "ur": "ضمائرِ شخصی (Personalpronomen)",
+   "ar_eg": "ضمائر المتكلم/المخاطب/الغائب",
+   "ar_lb": "الضمائر الشخصية (Personalpronomen)",
+   "ar_sy": "ضمائر الشخص"
   },
   "intro": {
    "de": "Personalpronomen ändern ihre Form je nach Funktion im Satz: Subjekt (Nominativ), direktes Objekt (Akkusativ) oder indirektes Objekt (Dativ). Die Höflichkeitsform Sie/Ihnen entspricht der 3. Person Plural und wird immer großgeschrieben.",
@@ -712,7 +1108,16 @@ const GRAMMAR = [
    "fa": "ضمایر شخصی آلمانی بسته به نقششان در جمله شکل عوض می‌کنند: فاعل (نومیناتیو)، مفعول مستقیم (آکوزاتیو) یا مفعول غیرمستقیم (داتیو). شکل مؤدبانهٔ Sie/Ihnen همان صیغهٔ سوم‌شخص جمع است و همیشه با حرف بزرگ نوشته می‌شود.",
    "uk": "Особові займенники змінюють форму залежно від функції в реченні: підмет (Nominativ), прямий додаток (Akkusativ) або непрямий додаток (Dativ). Ввічлива форма Sie/Ihnen збігається з 3-ю особою множини й завжди пишеться з великої літери.",
    "pl": "Zaimki osobowe zmieniają formę zależnie od funkcji w zdaniu: podmiot (mianownik), dopełnienie bliższe (biernik) lub dopełnienie dalsze (celownik). Forma grzecznościowa Sie/Ihnen odpowiada 3. osobie liczby mnogiej i zawsze pisze się ją wielką literą.",
-   "tr": "Şahıs zamirleri cümledeki işlevine göre biçim değiştirir: özne (Nominativ), doğrudan nesne (Akkusativ) veya dolaylı nesne (Dativ). Nezaket biçimi Sie/Ihnen, 3. çoğul şahsa denk gelir ve her zaman büyük harfle yazılır."
+   "tr": "Şahıs zamirleri cümledeki işlevine göre biçim değiştirir: özne (Nominativ), doğrudan nesne (Akkusativ) veya dolaylı nesne (Dativ). Nezaket biçimi Sie/Ihnen, 3. çoğul şahsa denk gelir ve her zaman büyük harfle yazılır.",
+   "th": "สรรพนามบุรุษ (Personalpronomen) จะเปลี่ยนรูปตามหน้าที่ในประโยค คือ เป็นประธาน (Nominativ) กรรมตรง (Akkusativ) หรือกรรมรอง (Dativ) รูปสุภาพ Sie/Ihnen ใช้รูปเดียวกับบุรุษที่ 3 พหูพจน์ และต้องขึ้นต้นด้วยตัวพิมพ์ใหญ่เสมอ",
+   "zh": "人称代词会根据其在句中的作用而变化形式:主语(Nominativ)、直接宾语(Akkusativ)或间接宾语(Dativ)。敬称 Sie/Ihnen 与第三人称复数形式相同,且始终大写。",
+   "ms": "Kata ganti nama diri berubah bentuk mengikut fungsinya dalam ayat: subjek (Nominativ), objek langsung (Akkusativ) atau objek tidak langsung (Dativ). Bentuk hormat Sie/Ihnen sama seperti bentuk orang ketiga jamak dan sentiasa dieja dengan huruf besar.",
+   "sw": "Viwakilishi vya nafsi hubadilisha umbo lake kulingana na kazi yake katika sentensi: kiima (Nominativ), yambwa ya moja kwa moja (Akkusativ), au yambwa isiyo ya moja kwa moja (Dativ). Umbo la heshima Sie/Ihnen linalingana na nafsi ya tatu wingi na huandikwa kwa herufi kubwa daima.",
+   "hi": "पुरुषवाचक सर्वनाम वाक्य में अपनी भूमिका के अनुसार रूप बदलते हैं: कर्ता (Nominativ), प्रत्यक्ष कर्म (Akkusativ) या अप्रत्यक्ष कर्म (Dativ)। सम्मानसूचक रूप Sie/Ihnen बहुवचन तृतीय पुरुष के समान होता है और हमेशा बड़े अक्षर से लिखा जाता है।",
+   "ur": "ضمائرِ شخصی جملے میں اپنے کردار کے مطابق شکل بدلتے ہیں: فاعل (نامیہ)، براہِ راست مفعول (مفعولی) یا بالواسطہ مفعول (دیتی حالت)۔ ادب کی صورت Sie/Ihnen تیسرے شخص جمع کے مطابق ہوتی ہے اور ہمیشہ بڑے حرف سے لکھی جاتی ہے۔",
+   "ar_eg": "ضمائر الشخص بتغيّر شكلها حسب دورها في الجملة: فاعل (Nominativ)، مفعول به مباشر (Akkusativ)، أو مفعول به غير مباشر (Dativ). صيغة الاحترام Sie/Ihnen هي نفسها صيغة الغائب الجمع (3. Person Plural) وبتتكتب دايمًا بحرف كبير.",
+   "ar_lb": "الضمائر الشخصية بتغيّر شكلها حسب دورها بالجملة: فاعل (Nominativ)، مفعول به مباشر (Akkusativ)، أو مفعول به غير مباشر (Dativ). صيغة الاحترام Sie/Ihnen هي نفس صيغة الغائب الجمع (3. Person Plural) ودايمًا بتنكتب بحرف كبير.",
+   "ar_sy": "ضمائر الشخص بالألماني بتغيّر شكلها حسب دورها بالجملة: فاعل (Nominativ)، مفعول به مباشر (Akkusativ)، أو مفعول به غير مباشر (Dativ). صيغة الاحترام Sie/Ihnen هي نفسا صيغة الغائب الجمع (هنّي) ودايماً بتنكتب بحرف كبير."
   },
   "tables": [
    {
@@ -724,7 +1129,16 @@ const GRAMMAR = [
      "fa": "ضمایر شخصی آلمانی بر پایهٔ حالت (نومیناتیو / آکوزاتیو / داتیو)",
      "uk": "Особові займенники за відмінками (Nominativ / Akkusativ / Dativ)",
      "pl": "Zaimki osobowe według przypadków (mianownik / biernik / celownik)",
-     "tr": "Hâle göre şahıs zamirleri (Nominativ / Akkusativ / Dativ)"
+     "tr": "Hâle göre şahıs zamirleri (Nominativ / Akkusativ / Dativ)",
+     "th": "สรรพนามบุรุษจำแนกตามการก (Nominativ / Akkusativ / Dativ)",
+     "zh": "按格分类的人称代词(Nominativ / Akkusativ / Dativ)",
+     "ms": "Kata ganti nama diri mengikut kes (Nominativ / Akkusativ / Dativ)",
+     "sw": "Viwakilishi vya nafsi kwa kesi (Nominativ / Akkusativ / Dativ)",
+     "hi": "कारक के अनुसार पुरुषवाचक सर्वनाम (Nominativ / Akkusativ / Dativ)",
+     "ur": "حالت کے مطابق ضمائرِ شخصی (نامیہ / مفعولی / دیتی حالت)",
+     "ar_eg": "ضمائر الشخص حسب الحالة الإعرابية (Nominativ / Akkusativ / Dativ)",
+     "ar_lb": "الضمائر الشخصية حسب الحالة (Nominativ / Akkusativ / Dativ)",
+     "ar_sy": "ضمائر الشخص حسب الحالة الإعرابية (Nominativ / Akkusativ / Dativ)"
     },
     "labelHeader": {
      "de": "Person",
@@ -734,7 +1148,16 @@ const GRAMMAR = [
      "fa": "شخص",
      "uk": "Особа",
      "pl": "Osoba",
-     "tr": "Şahıs"
+     "tr": "Şahıs",
+     "th": "บุรุษ (Person)",
+     "zh": "人称",
+     "ms": "Orang",
+     "sw": "Nafsi",
+     "hi": "पुरुष (Person)",
+     "ur": "شخص (Person)",
+     "ar_eg": "الضمير",
+     "ar_lb": "الشخص (Person)",
+     "ar_sy": "الشخص"
     },
     "columns": [
      {
@@ -745,7 +1168,16 @@ const GRAMMAR = [
       "fa": "نومیناتیو (فاعل)",
       "uk": "Nominativ (підмет)",
       "pl": "Mianownik (podmiot)",
-      "tr": "Nominativ (özne)"
+      "tr": "Nominativ (özne)",
+      "th": "การกประธาน (Nominativ)",
+      "zh": "Nominativ(主语)",
+      "ms": "Nominativ (subjek)",
+      "sw": "Nominativ (kiima)",
+      "hi": "Nominativ (कर्ता)",
+      "ur": "نامیہ (فاعل)",
+      "ar_eg": "Nominativ (الفاعل)",
+      "ar_lb": "Nominativ (الفاعل)",
+      "ar_sy": "Nominativ (الفاعل)"
      },
      {
       "de": "Akkusativ (dir. Objekt)",
@@ -755,7 +1187,16 @@ const GRAMMAR = [
       "fa": "آکوزاتیو (مفعول مستقیم)",
       "uk": "Akkusativ (прям. додаток)",
       "pl": "Biernik (dopeł. bliższe)",
-      "tr": "Akkusativ (doğr. nesne)"
+      "tr": "Akkusativ (doğr. nesne)",
+      "th": "กรรมตรง (Akkusativ)",
+      "zh": "Akkusativ(直接宾语)",
+      "ms": "Akkusativ (objek langsung)",
+      "sw": "Akkusativ (yambwa ya moja kwa moja)",
+      "hi": "Akkusativ (प्रत्यक्ष कर्म)",
+      "ur": "مفعولی (براہِ راست مفعول)",
+      "ar_eg": "Akkusativ (المفعول المباشر)",
+      "ar_lb": "Akkusativ (مفعول به مباشر)",
+      "ar_sy": "Akkusativ (مفعول مباشر)"
      },
      {
       "de": "Dativ (indir. Objekt)",
@@ -765,7 +1206,16 @@ const GRAMMAR = [
       "fa": "داتیو (مفعول غیرمستقیم)",
       "uk": "Dativ (непрям. додаток)",
       "pl": "Celownik (dopeł. dalsze)",
-      "tr": "Dativ (dolaylı nesne)"
+      "tr": "Dativ (dolaylı nesne)",
+      "th": "กรรมรอง (Dativ)",
+      "zh": "Dativ(间接宾语)",
+      "ms": "Dativ (objek tidak langsung)",
+      "sw": "Dativ (yambwa isiyo ya moja kwa moja)",
+      "hi": "Dativ (अप्रत्यक्ष कर्म)",
+      "ur": "دیتی حالت (بالواسطہ مفعول)",
+      "ar_eg": "Dativ (المفعول غير المباشر)",
+      "ar_lb": "Dativ (مفعول به غير مباشر)",
+      "ar_sy": "Dativ (مفعول غير مباشر)"
      }
     ],
     "rows": [
@@ -778,7 +1228,16 @@ const GRAMMAR = [
        "fa": "من",
        "uk": "1-ша особа одн.",
        "pl": "1. os. lp.",
-       "tr": "1. tekil şahıs"
+       "tr": "1. tekil şahıs",
+       "th": "บุรุษที่ 1 เอกพจน์",
+       "zh": "第一人称单数",
+       "ms": "Orang pertama tunggal",
+       "sw": "Nafsi ya 1 umoja",
+       "hi": "प्रथम पुरुष एकवचन",
+       "ur": "واحد متکلم (میں)",
+       "ar_eg": "المتكلم المفرد",
+       "ar_lb": "متكلم مفرد (أنا)",
+       "ar_sy": "متكلم مفرد (أنا)"
       },
       "cells": [
        "ich",
@@ -795,7 +1254,16 @@ const GRAMMAR = [
        "fa": "تو",
        "uk": "2-га особа одн. (неформально)",
        "pl": "2. os. lp.",
-       "tr": "2. tekil şahıs"
+       "tr": "2. tekil şahıs",
+       "th": "บุรุษที่ 2 เอกพจน์ (ไม่เป็นทางการ)",
+       "zh": "第二人称单数",
+       "ms": "Orang kedua tunggal",
+       "sw": "Nafsi ya 2 umoja",
+       "hi": "द्वितीय पुरुष एकवचन (अनौपचारिक)",
+       "ur": "واحد حاضر، غیر رسمی (تم)",
+       "ar_eg": "المخاطب المفرد",
+       "ar_lb": "مخاطب مفرد (إنتَ/إنتِ)",
+       "ar_sy": "مخاطب مفرد (إنت)"
       },
       "cells": [
        "du",
@@ -812,7 +1280,16 @@ const GRAMMAR = [
        "fa": "او (مذکر)",
        "uk": "3-тя особа одн. ч.",
        "pl": "3. os. lp. m.",
-       "tr": "3. tekil şahıs (eril)"
+       "tr": "3. tekil şahıs (eril)",
+       "th": "บุรุษที่ 3 เอกพจน์ เพศชาย",
+       "zh": "第三人称单数阳性",
+       "ms": "Orang ketiga tunggal (m)",
+       "sw": "Nafsi ya 3 umoja (kiume)",
+       "hi": "तृतीय पुरुष एकवचन पुल्लिंग",
+       "ur": "واحد غائب، مذکر (وہ)",
+       "ar_eg": "الغائب المفرد (مذكر)",
+       "ar_lb": "غائب مفرد مذكر (هو)",
+       "ar_sy": "غائب مفرد مذكر (هوي)"
       },
       "cells": [
        "er",
@@ -829,7 +1306,16 @@ const GRAMMAR = [
        "fa": "او (مؤنث)",
        "uk": "3-тя особа одн. ж.",
        "pl": "3. os. lp. ż.",
-       "tr": "3. tekil şahıs (dişil)"
+       "tr": "3. tekil şahıs (dişil)",
+       "th": "บุรุษที่ 3 เอกพจน์ เพศหญิง",
+       "zh": "第三人称单数阴性",
+       "ms": "Orang ketiga tunggal (f)",
+       "sw": "Nafsi ya 3 umoja (kike)",
+       "hi": "तृतीय पुरुष एकवचन स्त्रीलिंग",
+       "ur": "واحد غائب، مؤنث (وہ)",
+       "ar_eg": "الغائب المفرد (مؤنث)",
+       "ar_lb": "غائب مفرد مؤنث (هي)",
+       "ar_sy": "غائب مفرد مؤنث (هي)"
       },
       "cells": [
        "sie",
@@ -846,7 +1332,16 @@ const GRAMMAR = [
        "fa": "آن (خنثی)",
        "uk": "3-тя особа одн. с.",
        "pl": "3. os. lp. n.",
-       "tr": "3. tekil şahıs (nötr)"
+       "tr": "3. tekil şahıs (nötr)",
+       "th": "บุรุษที่ 3 เอกพจน์ เพศกลาง",
+       "zh": "第三人称单数中性",
+       "ms": "Orang ketiga tunggal (n)",
+       "sw": "Nafsi ya 3 umoja (isiyo na jinsia)",
+       "hi": "तृतीय पुरुष एकवचन नपुंसकलिंग",
+       "ur": "واحد غائب، غیر جانبدار (یہ)",
+       "ar_eg": "الغائب المفرد (محايد)",
+       "ar_lb": "غائب مفرد محايد (هو/هي – شي)",
+       "ar_sy": "غائب مفرد محايد (الشي)"
       },
       "cells": [
        "es",
@@ -863,7 +1358,16 @@ const GRAMMAR = [
        "fa": "ما",
        "uk": "1-ша особа мн.",
        "pl": "1. os. lm.",
-       "tr": "1. çoğul şahıs"
+       "tr": "1. çoğul şahıs",
+       "th": "บุรุษที่ 1 พหูพจน์",
+       "zh": "第一人称复数",
+       "ms": "Orang pertama jamak",
+       "sw": "Nafsi ya 1 wingi",
+       "hi": "प्रथम पुरुष बहुवचन",
+       "ur": "جمع متکلم (ہم)",
+       "ar_eg": "المتكلم الجمع",
+       "ar_lb": "متكلم جمع (نحنا)",
+       "ar_sy": "متكلم جمع (نحنا)"
       },
       "cells": [
        "wir",
@@ -880,7 +1384,16 @@ const GRAMMAR = [
        "fa": "شما (جمع خودمانی)",
        "uk": "2-га особа мн. (неформально)",
        "pl": "2. os. lm.",
-       "tr": "2. çoğul şahıs"
+       "tr": "2. çoğul şahıs",
+       "th": "บุรุษที่ 2 พหูพจน์ (ไม่เป็นทางการ)",
+       "zh": "第二人称复数",
+       "ms": "Orang kedua jamak",
+       "sw": "Nafsi ya 2 wingi",
+       "hi": "द्वितीय पुरुष बहुवचन (अनौपचारिक)",
+       "ur": "جمع حاضر، غیر رسمی (تم سب)",
+       "ar_eg": "المخاطب الجمع",
+       "ar_lb": "مخاطب جمع (إنتو)",
+       "ar_sy": "مخاطب جمع (إنتو)"
       },
       "cells": [
        "ihr",
@@ -897,7 +1410,16 @@ const GRAMMAR = [
        "fa": "آنها / شما (رسمی)",
        "uk": "3-тя особа мн. / ввічлива форма",
        "pl": "3. os. lm. / forma grzecznościowa",
-       "tr": "3. çoğul şahıs / nezaket"
+       "tr": "3. çoğul şahıs / nezaket",
+       "th": "บุรุษที่ 3 พหูพจน์ / รูปสุภาพ",
+       "zh": "第三人称复数/敬称",
+       "ms": "Orang ketiga jamak / hormat",
+       "sw": "Nafsi ya 3 wingi / heshima",
+       "hi": "तृतीय पुरुष बहुवचन / सम्मानसूचक",
+       "ur": "جمع غائب / ادب کی صورت (وہ / آپ)",
+       "ar_eg": "الغائب الجمع / صيغة الاحترام",
+       "ar_lb": "غائب جمع / صيغة الاحترام (هنّي / حضرتك)",
+       "ar_sy": "غائب جمع / صيغة الاحترام (هنّي / حضرتك)"
       },
       "cells": [
        "sie / Sie",
@@ -917,7 +1439,16 @@ const GRAMMAR = [
     "fa": "من تو را می‌بینم، اما تو مرا نمی‌بینی.",
     "uk": "Я бачу тебе, але ти мене не бачиш.",
     "pl": "Widzę cię, ale ty mnie nie widzisz.",
-    "tr": "Ben seni görüyorum ama sen beni görmüyorsun."
+    "tr": "Ben seni görüyorum ama sen beni görmüyorsun.",
+    "th": "ฉันเห็นเธอ แต่เธอไม่เห็นฉัน",
+    "zh": "我看见你,但你没看见我。",
+    "ms": "Saya nampak awak, tetapi awak tidak nampak saya.",
+    "sw": "Ninakuona wewe, lakini wewe huniooni mimi.",
+    "hi": "मैं तुम्हें देखता हूँ, पर तुम मुझे नहीं देखते।",
+    "ur": "میں تمہیں دیکھتا ہوں، لیکن تم مجھے نہیں دیکھتے۔",
+    "ar_eg": "أنا شايفك، بس إنت مش شايفني.",
+    "ar_lb": "أنا شايفك، بس إنت مش شايفني.",
+    "ar_sy": "أنا شايفك، بس إنت مش شايفني."
    },
    {
     "de": "Er hilft ihr, und sie dankt ihm.",
@@ -927,7 +1458,16 @@ const GRAMMAR = [
     "fa": "او (مرد) به او (زن) کمک می‌کند و او (زن) از او (مرد) تشکر می‌کند.",
     "uk": "Він допомагає їй, а вона дякує йому.",
     "pl": "On jej pomaga, a ona mu dziękuje.",
-    "tr": "Adam kadına yardım ediyor, kadın da ona teşekkür ediyor."
+    "tr": "Adam kadına yardım ediyor, kadın da ona teşekkür ediyor.",
+    "th": "เขาช่วยเธอ และเธอก็ขอบคุณเขา",
+    "zh": "他帮助她,她感谢他。",
+    "ms": "Dia menolongnya, dan dia berterima kasih kepadanya.",
+    "sw": "Yeye (mwanaume) anamsaidia yeye (mwanamke), naye anamshukuru.",
+    "hi": "वह उसकी मदद करता है, और वह उसे धन्यवाद देती है।",
+    "ur": "وہ (مذکر) اس کی مدد کرتا ہے، اور وہ (مؤنث) اس کا شکریہ ادا کرتی ہے۔",
+    "ar_eg": "هو بيساعدها، وهي بتشكره.",
+    "ar_lb": "هوي عم يساعدها، وهيي عم تشكرو.",
+    "ar_sy": "هوي عم يساعدها، وهي عم تشكرو."
    },
    {
     "de": "Können Sie mir bitte helfen?",
@@ -937,7 +1477,16 @@ const GRAMMAR = [
     "fa": "می‌توانید لطفاً به من کمک کنید؟",
     "uk": "Чи можете Ви мені, будь ласка, допомогти?",
     "pl": "Czy może mi Pan/Pani pomóc?",
-    "tr": "Bana yardım edebilir misiniz lütfen?"
+    "tr": "Bana yardım edebilir misiniz lütfen?",
+    "th": "คุณช่วยฉันได้ไหมคะ/ครับ?",
+    "zh": "您能帮我一下吗?",
+    "ms": "Bolehkah anda tolong saya?",
+    "sw": "Je, mnaweza kunisaidia, tafadhali?",
+    "hi": "क्या आप कृपया मेरी मदद कर सकते हैं?",
+    "ur": "کیا آپ برائے مہربانی میری مدد کر سکتے ہیں؟",
+    "ar_eg": "ممكن حضرتك تساعدني لو سمحت؟",
+    "ar_lb": "فيك تساعدني لو سمحت؟",
+    "ar_sy": "فيك تساعدني لو سمحت؟"
    }
   ],
   "hints": {
@@ -948,7 +1497,16 @@ const GRAMMAR = [
    "fa": "در فارسی ضمیرها با نقششان تغییر نمی‌کنند؛ مفعول را با «را» نشان می‌دهیم (او من را دید). آلمانی به‌جای «را» خودِ ضمیر را عوض می‌کند: mich برای مفعول مستقیم و mir برای مفعول غیرمستقیم. همچنین آلمانی برای سوم‌شخص سه ضمیرِ جنسیتی دارد (er/sie/es)، در حالی که فارسی فقط «او» دارد.",
    "uk": "Запам'ятай: Akkusativ – це форма прямого додатка (mich, dich, ihn), а Dativ – форма «отримувача» (mir, dir, ihm, ihr, uns, euch, ihnen). Ввічливу форму Sie/Ihnen (= 3-тя особа множини) завжди пиши з великої літери, а sie («вони») – з малої.",
    "pl": "Zapamiętaj: biernik to forma dopełnienia bliższego (mich, dich, ihn), a celownik to forma „odbiorcy” (mir, dir, ihm, ihr, uns, euch, ihnen). Formę grzecznościową Sie/Ihnen (= 3. osoba liczby mnogiej) zawsze pisz wielką literą, natomiast sie („oni/one”) małą.",
-   "tr": "Unutma: Akkusativ, doğrudan nesnenin biçimidir (mich, dich, ihn); Dativ ise 'alıcı' biçimidir (mir, dir, ihm, ihr, uns, euch, ihnen). Nezaket biçimi Sie/Ihnen'i (= 3. çoğul şahıs) her zaman büyük harfle, buna karşılık sie ('onlar') küçük harfle yaz."
+   "tr": "Unutma: Akkusativ, doğrudan nesnenin biçimidir (mich, dich, ihn); Dativ ise 'alıcı' biçimidir (mir, dir, ihm, ihr, uns, euch, ihnen). Nezaket biçimi Sie/Ihnen'i (= 3. çoğul şahıs) her zaman büyük harfle, buna karşılık sie ('onlar') küçük harfle yaz.",
+   "th": "ข้อควรจำ: Akkusativ คือรูปกรรมตรง (mich, dich, ihn) ส่วน Dativ คือรูป 'ผู้รับ' (mir, dir, ihm, ihr, uns, euch, ihnen) รูปสุภาพ Sie/Ihnen (= บุรุษที่ 3 พหูพจน์) ต้องขึ้นต้นด้วยตัวพิมพ์ใหญ่เสมอ ในขณะที่ sie ('พวกเขา') เขียนด้วยตัวพิมพ์เล็ก",
+   "zh": "注意:Akkusativ 是直接宾语的形式(mich、dich、ihn),Dativ 是“接受者”的形式(mir、dir、ihm、ihr、uns、euch、ihnen)。敬称 Sie/Ihnen(=第三人称复数)始终大写,而 sie(“他们”)则小写。",
+   "ms": "Ingat: Akkusativ ialah bentuk objek langsung (mich, dich, ihn), manakala Dativ ialah bentuk 'penerima' (mir, dir, ihm, ihr, uns, euch, ihnen). Bentuk hormat Sie/Ihnen (= orang ketiga jamak) sentiasa dieja dengan huruf besar, manakala sie ('mereka') dieja dengan huruf kecil.",
+   "sw": "Kumbuka: Akkusativ ni umbo la yambwa ya moja kwa moja (mich, dich, ihn), na Dativ ni umbo la 'mpokeaji' (mir, dir, ihm, ihr, uns, euch, ihnen). Umbo la heshima Sie/Ihnen (= nafsi ya 3 wingi) huandikwa kwa herufi kubwa daima, wakati sie ('wao') huandikwa kwa herufi ndogo.",
+   "hi": "याद रखें: Akkusativ प्रत्यक्ष कर्म का रूप है (mich, dich, ihn), Dativ 'प्राप्तकर्ता' का रूप है (mir, dir, ihm, ihr, uns, euch, ihnen)। सम्मानसूचक रूप Sie/Ihnen (= तृतीय पुरुष बहुवचन) हमेशा बड़े अक्षर से लिखें, जबकि sie ('वे') छोटे अक्षर से।",
+   "ur": "یاد رکھیں: مفعولی حالت براہِ راست مفعول کی شکل ہے (mich، dich، ihn)، جبکہ دیتی حالت ”وصول کنندہ“ کی شکل ہے (mir، dir، ihm، ihr، uns، euch، ihnen)۔ ادب کی صورت Sie/Ihnen (= تیسرا شخص جمع) ہمیشہ بڑے حرف سے لکھیں، جبکہ sie (”وہ لوگ“) چھوٹے حرف سے۔",
+   "ar_eg": "احفظ: الـ Akkusativ هو صيغة المفعول المباشر (mich, dich, ihn)، والـ Dativ هو صيغة «المُستقبِل» (mir, dir, ihm, ihr, uns, euch, ihnen). صيغة الاحترام Sie/Ihnen (= الغائب الجمع) لازم تتكتب دايمًا بحرف كبير، أما sie («هم») فبحرف صغير.",
+   "ar_lb": "خدها بالك: الـ Akkusativ هيّي صيغة المفعول به المباشر (mich, dich, ihn)، والـ Dativ هيّي صيغة 'المستقبِل' (mir, dir, ihm, ihr, uns, euch, ihnen). صيغة الاحترام Sie/Ihnen (= غائب جمع) دايمًا بحرف كبير، بينما sie ('هنّي') بحرف صغير.",
+   "ar_sy": "خد بالك: Akkusativ هي صيغة المفعول المباشر (mich, dich, ihn)، وDativ هي صيغة 'المستلم' (mir, dir, ihm, ihr, uns, euch, ihnen). صيغة الاحترام Sie/Ihnen (يعني غائب جمع) دايماً بحرف كبير، بس sie ('هنّي') بحرف صغير."
   }
  },
  {
@@ -962,7 +1520,16 @@ const GRAMMAR = [
    "fa": "حرف‌های ملکی",
    "uk": "Присвійні артиклі",
    "pl": "Rodzajniki dzierżawcze",
-   "tr": "İyelik artikelleri"
+   "tr": "İyelik artikelleri",
+   "th": "คำแสดงความเป็นเจ้าของ (Possessivartikel)",
+   "zh": "物主冠词",
+   "ms": "Artikel Posesif",
+   "sw": "Vivumishi Vimilikishi",
+   "hi": "संबंधवाचक आर्टिकल (Possessivartikel)",
+   "ur": "ملکیتی آرٹیکل (Possessivartikel)",
+   "ar_eg": "أدوات/ضمائر الملكية",
+   "ar_lb": "أدوات الملكية (Possessivartikel)",
+   "ar_sy": "أدوات الملكية"
   },
   "intro": {
    "de": "Possessivartikel zeigen, wem etwas gehört. Sie werden wie der unbestimmte Artikel ein- dekliniert – die Endung richtet sich nach Genus, Kasus und Numerus des Nomens.",
@@ -972,7 +1539,16 @@ const GRAMMAR = [
    "fa": "حرف‌های ملکی نشان می‌دهند چیزی به چه کسی تعلق دارد. آن‌ها مانند حرف تعریفِ نکره‌ی ein- صرف می‌شوند و پایانه‌شان به جنس، حالت و شمارِ اسم بستگی دارد.",
    "uk": "Присвійні артиклі показують, кому щось належить. Вони відмінюються так само, як неозначений артикль ein- – закінчення залежить від роду, відмінка й числа іменника.",
    "pl": "Rodzajniki dzierżawcze pokazują, do kogo coś należy. Odmieniają się jak rodzajnik nieokreślony ein- – końcówka zależy od rodzaju, przypadka i liczby rzeczownika.",
-   "tr": "İyelik artikelleri, bir şeyin kime ait olduğunu gösterir. Belirsiz artikel ein- gibi çekimlenirler – ek, ismin cinsine, hâline ve sayısına göre belirlenir."
+   "tr": "İyelik artikelleri, bir şeyin kime ait olduğunu gösterir. Belirsiz artikel ein- gibi çekimlenirler – ek, ismin cinsine, hâline ve sayısına göre belirlenir.",
+   "th": "คำแสดงความเป็นเจ้าของ (Possessivartikel) บอกว่าสิ่งของนั้นเป็นของใคร โดยผันตามรูปแบบเดียวกับคำนำหน้านามไม่ชี้เฉพาะ ein- คือคำลงท้ายจะเปลี่ยนไปตามเพศ การก และพจน์ของคำนามที่ตามมา",
+   "zh": "物主冠词表示某物归谁所有。它们的变格方式与不定冠词 ein- 相同——词尾根据名词的性、格和数而定。",
+   "ms": "Artikel posesif menunjukkan kepunyaan siapa sesuatu itu. Ia dideklinasikan seperti artikel tak tentu ein- – akhirannya bergantung pada jantina, kes dan bilangan (tunggal/jamak) kata nama itu.",
+   "sw": "Vivumishi vimilikishi vinaonyesha ni nani mmiliki wa kitu. Vinabadilishwa kama artikeli isiyo dhahiri ein- – mwisho wake unategemea jinsia, kesi na idadi (umoja/wingi) ya nomino.",
+   "hi": "संबंधवाचक आर्टिकल यह दिखाते हैं कि कोई चीज़ किसकी है। इन्हें अनिश्चित आर्टिकल ein- की तरह ही रूपांतरित किया जाता है – अंत संज्ञा के लिंग, कारक और वचन पर निर्भर करता है।",
+   "ur": "ملکیتی آرٹیکل ظاہر کرتے ہیں کہ کوئی چیز کس کی ملکیت ہے۔ ان کی گردان غیر معین آرٹیکل ein- کی طرح ہوتی ہے — اختتامیہ اسم کی جنس، حالت اور عدد کے مطابق بدلتا ہے۔",
+   "ar_eg": "أدوات الملكية بتوضح ملك مين الحاجة. بتتصرّف زي أداة التنكير ein- بالظبط – النهاية بتتغير حسب جنس الاسم وحالته الإعرابية وعدده.",
+   "ar_lb": "أدوات الملكية بتبيّن الشي تبع مين. بتتصرّف متل الأداة النكرة ein- – النهاية بتتبع نوع وحالة وعدد الاسم.",
+   "ar_sy": "أدوات الملكية بتبيّن الشي تبع مين. بتتصرّف متل أداة النكرة ein- – النهاية بتتبع جنس وحالة وعدد الاسم."
   },
   "tables": [
    {
@@ -984,7 +1560,16 @@ const GRAMMAR = [
      "fa": "شکل‌های پایه: ضمیر ← حرف ملکی",
      "uk": "Основні форми: займенник → присвійний артикль",
      "pl": "Formy podstawowe: zaimek → rodzajnik dzierżawczy",
-     "tr": "Temel biçimler: zamir → iyelik artikeli"
+     "tr": "Temel biçimler: zamir → iyelik artikeli",
+     "th": "รูปพื้นฐาน: สรรพนาม → คำแสดงความเป็นเจ้าของ",
+     "zh": "基本形式:代词 → 物主冠词",
+     "ms": "Bentuk asas: kata ganti nama → artikel posesif",
+     "sw": "Maumbo ya msingi: kiwakilishi → kivumishi kimilikishi",
+     "hi": "मूल रूप: सर्वनाम → संबंधवाचक आर्टिकल",
+     "ur": "بنیادی شکلیں: ضمیر → ملکیتی آرٹیکل",
+     "ar_eg": "الصيغة الأساسية: الضمير ← أداة الملكية",
+     "ar_lb": "الصيغ الأساسية: الضمير → أداة الملكية",
+     "ar_sy": "الصيغ الأساسية: الضمير ← أداة الملكية"
     },
     "labelHeader": {
      "de": "Person",
@@ -994,7 +1579,16 @@ const GRAMMAR = [
      "fa": "شخص",
      "uk": "Особа",
      "pl": "Osoba",
-     "tr": "Şahıs"
+     "tr": "Şahıs",
+     "th": "บุรุษ (Person)",
+     "zh": "人称",
+     "ms": "Orang",
+     "sw": "Nafsi",
+     "hi": "पुरुष",
+     "ur": "شخص",
+     "ar_eg": "الضمير",
+     "ar_lb": "الشخص (Person)",
+     "ar_sy": "الشخص"
     },
     "columns": [
      {
@@ -1005,7 +1599,16 @@ const GRAMMAR = [
       "fa": "ضمیر",
       "uk": "Займенник",
       "pl": "Zaimek",
-      "tr": "Zamir"
+      "tr": "Zamir",
+      "th": "สรรพนาม (Pronomen)",
+      "zh": "代词",
+      "ms": "Kata ganti nama",
+      "sw": "Kiwakilishi",
+      "hi": "सर्वनाम",
+      "ur": "ضمیر",
+      "ar_eg": "الضمير",
+      "ar_lb": "الضمير (Pronomen)",
+      "ar_sy": "الضمير"
      },
      {
       "de": "Possessivartikel",
@@ -1015,7 +1618,16 @@ const GRAMMAR = [
       "fa": "ملکی",
       "uk": "Присвійний артикль",
       "pl": "Rodzajnik dzierżawczy",
-      "tr": "İyelik artikeli"
+      "tr": "İyelik artikeli",
+      "th": "คำแสดงความเป็นเจ้าของ (Possessivartikel)",
+      "zh": "物主冠词",
+      "ms": "Artikel posesif",
+      "sw": "Kivumishi kimilikishi",
+      "hi": "संबंधवाचक आर्टिकल",
+      "ur": "ملکیتی آرٹیکل",
+      "ar_eg": "أدوات/ضمائر الملكية",
+      "ar_lb": "أداة الملكية (Possessivartikel)",
+      "ar_sy": "أداة الملكية"
      }
     ],
     "rows": [
@@ -1028,7 +1640,16 @@ const GRAMMAR = [
        "fa": "اول‌شخص مفرد",
        "uk": "1-ша особа однини",
        "pl": "1. osoba liczby pojedynczej",
-       "tr": "1. tekil şahıs"
+       "tr": "1. tekil şahıs",
+       "th": "บุรุษที่ 1 เอกพจน์",
+       "zh": "第一人称单数",
+       "ms": "Orang pertama tunggal",
+       "sw": "Nafsi ya 1 umoja",
+       "hi": "प्रथम पुरुष एकवचन",
+       "ur": "واحد متکلم",
+       "ar_eg": "المتكلم المفرد",
+       "ar_lb": "متكلم مفرد (أنا)",
+       "ar_sy": "متكلم مفرد"
       },
       "cells": [
        "ich",
@@ -1044,7 +1665,16 @@ const GRAMMAR = [
        "fa": "دوم‌شخص مفرد (غیررسمی)",
        "uk": "2-га особа однини (неформально)",
        "pl": "2. osoba liczby pojedynczej (nieformalnie)",
-       "tr": "2. tekil şahıs (samimi)"
+       "tr": "2. tekil şahıs (samimi)",
+       "th": "บุรุษที่ 2 เอกพจน์ (ไม่เป็นทางการ)",
+       "zh": "第二人称单数(非正式)",
+       "ms": "Orang kedua tunggal (tidak formal)",
+       "sw": "Nafsi ya 2 umoja (isiyo rasmi)",
+       "hi": "द्वितीय पुरुष एकवचन (अनौपचारिक)",
+       "ur": "واحد حاضر (غیر رسمی)",
+       "ar_eg": "المخاطب المفرد (غير رسمي)",
+       "ar_lb": "مخاطب مفرد (إنتَ/إنتِ)",
+       "ar_sy": "مخاطب مفرد (غير رسمي)"
       },
       "cells": [
        "du",
@@ -1060,7 +1690,16 @@ const GRAMMAR = [
        "fa": "سوم‌شخص مفرد (مذکر)",
        "uk": "3-тя особа одн. (чоловічий рід)",
        "pl": "3. osoba liczby pojedynczej (męski)",
-       "tr": "3. tekil şahıs (eril)"
+       "tr": "3. tekil şahıs (eril)",
+       "th": "บุรุษที่ 3 เอกพจน์ (เพศชาย)",
+       "zh": "第三人称单数(阳性)",
+       "ms": "Orang ketiga tunggal (maskulin)",
+       "sw": "Nafsi ya 3 umoja (kiume)",
+       "hi": "तृतीय पुरुष एकवचन (पुल्लिंग)",
+       "ur": "واحد غائب (مذکر)",
+       "ar_eg": "الغائب المفرد (مذكر)",
+       "ar_lb": "غائب مفرد مذكر (هو)",
+       "ar_sy": "غائب مفرد مذكر"
       },
       "cells": [
        "er",
@@ -1076,7 +1715,16 @@ const GRAMMAR = [
        "fa": "سوم‌شخص مفرد (مؤنث)",
        "uk": "3-тя особа одн. (жіночий рід)",
        "pl": "3. osoba liczby pojedynczej (żeński)",
-       "tr": "3. tekil şahıs (dişil)"
+       "tr": "3. tekil şahıs (dişil)",
+       "th": "บุรุษที่ 3 เอกพจน์ (เพศหญิง)",
+       "zh": "第三人称单数(阴性)",
+       "ms": "Orang ketiga tunggal (feminin)",
+       "sw": "Nafsi ya 3 umoja (kike)",
+       "hi": "तृतीय पुरुष एकवचन (स्त्रीलिंग)",
+       "ur": "واحد غائب (مؤنث)",
+       "ar_eg": "الغائب المفرد (مؤنث)",
+       "ar_lb": "غائب مفرد مؤنث (هي)",
+       "ar_sy": "غائب مفرد مؤنث"
       },
       "cells": [
        "sie",
@@ -1092,7 +1740,16 @@ const GRAMMAR = [
        "fa": "سوم‌شخص مفرد (خنثی)",
        "uk": "3-тя особа одн. (середній рід)",
        "pl": "3. osoba liczby pojedynczej (nijaki)",
-       "tr": "3. tekil şahıs (nötr)"
+       "tr": "3. tekil şahıs (nötr)",
+       "th": "บุรุษที่ 3 เอกพจน์ (เพศกลาง)",
+       "zh": "第三人称单数(中性)",
+       "ms": "Orang ketiga tunggal (neutral)",
+       "sw": "Nafsi ya 3 umoja (isiyo na jinsia)",
+       "hi": "तृतीय पुरुष एकवचन (नपुंसकलिंग)",
+       "ur": "واحد غائب (غیر جانبدار)",
+       "ar_eg": "الغائب المفرد (محايد)",
+       "ar_lb": "غائب مفرد محايد",
+       "ar_sy": "غائب مفرد محايد"
       },
       "cells": [
        "es",
@@ -1108,7 +1765,16 @@ const GRAMMAR = [
        "fa": "اول‌شخص جمع",
        "uk": "1-ша особа множини",
        "pl": "1. osoba liczby mnogiej",
-       "tr": "1. çoğul şahıs"
+       "tr": "1. çoğul şahıs",
+       "th": "บุรุษที่ 1 พหูพจน์",
+       "zh": "第一人称复数",
+       "ms": "Orang pertama jamak",
+       "sw": "Nafsi ya 1 wingi",
+       "hi": "प्रथम पुरुष बहुवचन",
+       "ur": "جمع متکلم",
+       "ar_eg": "المتكلم الجمع",
+       "ar_lb": "متكلم جمع (نحنا)",
+       "ar_sy": "متكلم جمع"
       },
       "cells": [
        "wir",
@@ -1124,7 +1790,16 @@ const GRAMMAR = [
        "fa": "دوم‌شخص جمع",
        "uk": "2-га особа множини",
        "pl": "2. osoba liczby mnogiej",
-       "tr": "2. çoğul şahıs"
+       "tr": "2. çoğul şahıs",
+       "th": "บุรุษที่ 2 พหูพจน์",
+       "zh": "第二人称复数",
+       "ms": "Orang kedua jamak",
+       "sw": "Nafsi ya 2 wingi",
+       "hi": "द्वितीय पुरुष बहुवचन",
+       "ur": "جمع حاضر",
+       "ar_eg": "المخاطب الجمع",
+       "ar_lb": "مخاطب جمع (إنتو)",
+       "ar_sy": "مخاطب جمع"
       },
       "cells": [
        "ihr",
@@ -1140,7 +1815,16 @@ const GRAMMAR = [
        "fa": "سوم‌شخص جمع",
        "uk": "3-тя особа множини",
        "pl": "3. osoba liczby mnogiej",
-       "tr": "3. çoğul şahıs"
+       "tr": "3. çoğul şahıs",
+       "th": "บุรุษที่ 3 พหูพจน์",
+       "zh": "第三人称复数",
+       "ms": "Orang ketiga jamak",
+       "sw": "Nafsi ya 3 wingi",
+       "hi": "तृतीय पुरुष बहुवचन",
+       "ur": "جمع غائب",
+       "ar_eg": "الغائب الجمع",
+       "ar_lb": "غائب جمع (هنّي)",
+       "ar_sy": "غائب جمع"
       },
       "cells": [
        "sie",
@@ -1156,7 +1840,16 @@ const GRAMMAR = [
        "fa": "حالت مؤدبانه (مفرد/جمع)",
        "uk": "Ввічлива форма (одн./мн.)",
        "pl": "Forma grzecznościowa (lp./lm.)",
-       "tr": "Nezaket biçimi (tekil/çoğul)"
+       "tr": "Nezaket biçimi (tekil/çoğul)",
+       "th": "รูปสุภาพ (เอกพจน์/พหูพจน์)",
+       "zh": "敬称(单/复数)",
+       "ms": "Bentuk hormat (tunggal/jamak)",
+       "sw": "Umbo la heshima (umoja/wingi)",
+       "hi": "सम्मानसूचक रूप (एकवचन/बहुवचन)",
+       "ur": "ادب کی صورت (واحد/جمع)",
+       "ar_eg": "صيغة الاحترام (مفرد/جمع)",
+       "ar_lb": "صيغة الاحترام (مفرد/جمع)",
+       "ar_sy": "صيغة الاحترام (مفرد/جمع)"
       },
       "cells": [
        "Sie",
@@ -1174,7 +1867,16 @@ const GRAMMAR = [
      "fa": "mein- مانند ein- صرف می‌شود",
      "uk": "mein- відмінюється як ein-",
      "pl": "mein- odmienia się jak ein-",
-     "tr": "mein- ein- gibi çekimlenir"
+     "tr": "mein- ein- gibi çekimlenir",
+     "th": "mein- ผันเหมือน ein-",
+     "zh": "mein- 的变格方式与 ein- 相同",
+     "ms": "mein- dideklinasikan seperti ein-",
+     "sw": "mein- inabadilishwa kama ein-",
+     "hi": "mein- का रूपांतरण ein- की तरह होता है",
+     "ur": "mein- کی گردان ein- کی طرح ہوتی ہے",
+     "ar_eg": "mein- بتتصرّف زي ein- بالظبط",
+     "ar_lb": "mein- بتتصرّف متل ein-",
+     "ar_sy": "mein- بتتصرّف متل ein-"
     },
     "labelHeader": {
      "de": "Kasus",
@@ -1184,7 +1886,16 @@ const GRAMMAR = [
      "fa": "حالت",
      "uk": "Відмінок",
      "pl": "Przypadek",
-     "tr": "Kasus"
+     "tr": "Kasus",
+     "th": "การก (Kasus)",
+     "zh": "格",
+     "ms": "Kes",
+     "sw": "Kesi",
+     "hi": "कारक",
+     "ur": "حالت",
+     "ar_eg": "الحالة الإعرابية",
+     "ar_lb": "الحالة (Kasus)",
+     "ar_sy": "الحالة الإعرابية"
     },
     "columns": [
      {
@@ -1195,7 +1906,16 @@ const GRAMMAR = [
       "fa": "مذکر",
       "uk": "Чоловічий рід",
       "pl": "Rodzaj męski",
-      "tr": "Eril"
+      "tr": "Eril",
+      "th": "เพศชาย (Maskulinum)",
+      "zh": "阳性",
+      "ms": "Maskulin",
+      "sw": "Kiume",
+      "hi": "पुल्लिंग",
+      "ur": "مذکر",
+      "ar_eg": "المذكر",
+      "ar_lb": "المذكر",
+      "ar_sy": "المذكر"
      },
      {
       "de": "Femininum",
@@ -1205,7 +1925,16 @@ const GRAMMAR = [
       "fa": "مؤنث",
       "uk": "Жіночий рід",
       "pl": "Rodzaj żeński",
-      "tr": "Dişil"
+      "tr": "Dişil",
+      "th": "เพศหญิง (Femininum)",
+      "zh": "阴性",
+      "ms": "Feminin",
+      "sw": "Kike",
+      "hi": "स्त्रीलिंग",
+      "ur": "مؤنث",
+      "ar_eg": "المؤنث",
+      "ar_lb": "المؤنث",
+      "ar_sy": "المؤنث"
      },
      {
       "de": "Neutrum",
@@ -1215,7 +1944,16 @@ const GRAMMAR = [
       "fa": "خنثی",
       "uk": "Середній рід",
       "pl": "Rodzaj nijaki",
-      "tr": "Nötr"
+      "tr": "Nötr",
+      "th": "เพศกลาง (Neutrum)",
+      "zh": "中性",
+      "ms": "Neutral",
+      "sw": "Isiyo na jinsia",
+      "hi": "नपुंसकलिंग",
+      "ur": "غیر جانبدار",
+      "ar_eg": "المحايد",
+      "ar_lb": "المحايد",
+      "ar_sy": "المحايد"
      },
      {
       "de": "Plural",
@@ -1225,7 +1963,16 @@ const GRAMMAR = [
       "fa": "جمع",
       "uk": "Множина",
       "pl": "Liczba mnoga",
-      "tr": "Çoğul"
+      "tr": "Çoğul",
+      "th": "พหูพจน์ (Plural)",
+      "zh": "复数",
+      "ms": "Jamak",
+      "sw": "Wingi",
+      "hi": "बहुवचन",
+      "ur": "جمع",
+      "ar_eg": "جمع",
+      "ar_lb": "الجمع",
+      "ar_sy": "الجمع"
      }
     ],
     "rows": [
@@ -1238,7 +1985,16 @@ const GRAMMAR = [
        "fa": "نهادی (فاعلی)",
        "uk": "Nominativ",
        "pl": "Mianownik",
-       "tr": "Nominativ"
+       "tr": "Nominativ",
+       "th": "การกประธาน (Nominativ)",
+       "zh": "Nominativ",
+       "ms": "Nominativ",
+       "sw": "Nominativ",
+       "hi": "Nominativ",
+       "ur": "نامیہ",
+       "ar_eg": "Nominativ",
+       "ar_lb": "Nominativ",
+       "ar_sy": "Nominativ"
       },
       "cells": [
        "mein",
@@ -1256,7 +2012,16 @@ const GRAMMAR = [
        "fa": "رایی (مفعولی)",
        "uk": "Akkusativ",
        "pl": "Biernik",
-       "tr": "Akkusativ"
+       "tr": "Akkusativ",
+       "th": "กรรมตรง (Akkusativ)",
+       "zh": "Akkusativ",
+       "ms": "Akkusativ",
+       "sw": "Akkusativ",
+       "hi": "Akkusativ",
+       "ur": "مفعولی",
+       "ar_eg": "Akkusativ",
+       "ar_lb": "Akkusativ",
+       "ar_sy": "Akkusativ"
       },
       "cells": [
        "meinen",
@@ -1274,7 +2039,16 @@ const GRAMMAR = [
        "fa": "برایی (مفعول غیرمستقیم)",
        "uk": "Dativ",
        "pl": "Celownik",
-       "tr": "Dativ"
+       "tr": "Dativ",
+       "th": "กรรมรอง (Dativ)",
+       "zh": "Dativ",
+       "ms": "Dativ",
+       "sw": "Dativ",
+       "hi": "Dativ",
+       "ur": "دیتی حالت",
+       "ar_eg": "Dativ",
+       "ar_lb": "Dativ",
+       "ar_sy": "Dativ"
       },
       "cells": [
        "meinem",
@@ -1292,7 +2066,16 @@ const GRAMMAR = [
        "fa": "اضافی (ملکی)",
        "uk": "Genitiv",
        "pl": "Dopełniacz",
-       "tr": "Genitiv"
+       "tr": "Genitiv",
+       "th": "การกแสดงความเป็นเจ้าของ (Genitiv)",
+       "zh": "Genitiv",
+       "ms": "Genitiv",
+       "sw": "Genitiv",
+       "hi": "Genitiv",
+       "ur": "اضافتی",
+       "ar_eg": "Genitiv",
+       "ar_lb": "Genitiv",
+       "ar_sy": "Genitiv"
       },
       "cells": [
        "meines",
@@ -1313,7 +2096,16 @@ const GRAMMAR = [
     "fa": "این برادرِ من است.",
     "uk": "Це мій брат.",
     "pl": "To jest mój brat.",
-    "tr": "Bu benim erkek kardeşim."
+    "tr": "Bu benim erkek kardeşim.",
+    "th": "นี่คือพี่ชาย/น้องชายของฉัน",
+    "zh": "这是我哥哥。",
+    "ms": "Ini saudara lelaki saya.",
+    "sw": "Huyu ni kaka yangu.",
+    "hi": "यह मेरा भाई है।",
+    "ur": "یہ میرا بھائی ہے۔",
+    "ar_eg": "ده أخويا.",
+    "ar_lb": "هيدا خيّي.",
+    "ar_sy": "هاد أخي."
    },
    {
     "de": "Ich helfe meiner Schwester.",
@@ -1323,7 +2115,16 @@ const GRAMMAR = [
     "fa": "من به خواهرم کمک می‌کنم.",
     "uk": "Я допомагаю своїй сестрі.",
     "pl": "Pomagam mojej siostrze.",
-    "tr": "Kız kardeşime yardım ediyorum."
+    "tr": "Kız kardeşime yardım ediyorum.",
+    "th": "ฉันช่วยพี่สาว/น้องสาวของฉัน",
+    "zh": "我帮助我姐姐。",
+    "ms": "Saya menolong saudara perempuan saya.",
+    "sw": "Ninamsaidia dada yangu.",
+    "hi": "मैं अपनी बहन की मदद करता हूँ।",
+    "ur": "میں اپنی بہن کی مدد کرتا ہوں۔",
+    "ar_eg": "أنا بساعد أختي.",
+    "ar_lb": "أنا عم ساعد إختي.",
+    "ar_sy": "أنا عم ساعد أختي."
    },
    {
     "de": "Wo sind eure Schlüssel?",
@@ -1333,7 +2134,16 @@ const GRAMMAR = [
     "fa": "کلیدهای شما کجا هستند؟",
     "uk": "Де ваші ключі?",
     "pl": "Gdzie są wasze klucze?",
-    "tr": "Sizin anahtarlarınız nerede?"
+    "tr": "Sizin anahtarlarınız nerede?",
+    "th": "กุญแจของพวกเธออยู่ที่ไหน?",
+    "zh": "你们的钥匙在哪儿?",
+    "ms": "Di mana kunci kamu semua?",
+    "sw": "Funguo zenu ziko wapi?",
+    "hi": "तुम्हारी चाबियाँ कहाँ हैं?",
+    "ur": "تمہاری چابیاں کہاں ہیں؟",
+    "ar_eg": "فين مفاتيحكم؟",
+    "ar_lb": "وين مفاتيحكن؟",
+    "ar_sy": "وين مفاتيحكن؟"
    }
   ],
   "hints": {
@@ -1344,7 +2154,16 @@ const GRAMMAR = [
    "fa": "در فارسی مالکیت را با اضافه یا پسوند نشان می‌دهید: «کتابِ من» یا «کتابم» — نشانه بعد از اسم می‌آید و فارسی جنس دستوری ندارد. آلمانی حرف ملکی را پیش از اسم می‌آورد و پایانه‌اش را بر پایه‌ی جنس و حالت تغییر می‌دهد. چون «او» در فارسی هم مذکر و هم مؤنث است، به یاد بسپارید: sein برای مالکِ مرد و ihr برای مالکِ زن.",
    "uk": "Запам'ятай: спершу обери основну форму за власником (mein, dein, sein, ihr …), а тоді додай ein-закінчення за родом, відмінком і числом наступного іменника. Увага: euer втрачає -e- перед закінченням (euer → eure, euren, eurem).",
    "pl": "Zapamiętaj: najpierw wybierz formę podstawową według właściciela (mein, dein, sein, ihr …), a potem dodaj końcówkę ein- według rodzaju, przypadka i liczby następującego rzeczownika. Uwaga: euer traci -e- przed końcówką (euer → eure, euren, eurem).",
-   "tr": "Unutma: önce sahibe göre temel biçimi seç (mein, dein, sein, ihr …), sonra kendisinden sonra gelen ismin cinsine, hâline ve sayısına göre ein-ekini ekle. Dikkat: euer, bir ekten önce -e-'sini kaybeder (euer → eure, euren, eurem)."
+   "tr": "Unutma: önce sahibe göre temel biçimi seç (mein, dein, sein, ihr …), sonra kendisinden sonra gelen ismin cinsine, hâline ve sayısına göre ein-ekini ekle. Dikkat: euer, bir ekten önce -e-'sini kaybeder (euer → eure, euren, eurem).",
+   "th": "ข้อควรจำ: ก่อนอื่นให้เลือกรูปพื้นฐานตามเจ้าของ (mein, dein, sein, ihr …) จากนั้นจึงเติมคำลงท้ายแบบ ein- ตามเพศ การก และพจน์ของคำนามที่ตามมา ข้อควรระวัง: euer จะสูญเสีย -e- เมื่อมีคำลงท้ายตามมา (euer → eure, euren, eurem)",
+   "zh": "注意:先根据所有者选择基本形式(mein、dein、sein、ihr……),再根据后面名词的性、格和数加上 ein- 词尾。注意:euer 在加词尾前会失去中间的 -e-(euer → eure、euren、eurem)。",
+   "ms": "Ingat: pilih dahulu bentuk asas mengikut pemilik (mein, dein, sein, ihr …), kemudian tambah akhiran ein- mengikut jantina, kes dan bilangan kata nama yang mengikutinya. Perhatian: euer kehilangan huruf -e- apabila diberi akhiran (euer → eure, euren, eurem).",
+   "sw": "Kumbuka: chagua kwanza umbo la msingi kulingana na mmiliki (mein, dein, sein, ihr …), kisha ongeza mwisho wa aina ya ein- kulingana na jinsia, kesi na idadi ya nomino inayofuata. Angalizo: euer hupoteza -e- kabla ya mwisho (euer → eure, euren, eurem).",
+   "hi": "याद रखें: पहले मालिक के अनुसार मूल रूप चुनें (mein, dein, sein, ihr …), फिर आगे आने वाली संज्ञा के लिंग, कारक और वचन के अनुसार ein- वाला अंत जोड़ें। ध्यान दें: euer किसी अंत से पहले अपना -e- खो देता है (euer → eure, euren, eurem)।",
+   "ur": "یاد رکھیں: پہلے مالک کے مطابق بنیادی شکل چنیں (mein، dein، sein، ihr …)، پھر بعد میں آنے والے اسم کی جنس، حالت اور عدد کے مطابق ein- والا اختتامیہ لگائیں۔ خیال رہے: euer اختتامیے سے پہلے اپنا -e- کھو دیتا ہے (euer → eure، euren، eurem)۔",
+   "ar_eg": "احفظ: الأول اختار الصيغة الأساسية حسب صاحب الملكية (mein, dein, sein, ihr …)، بعد كده ضيف نهاية ein- حسب جنس وحالة وعدد الاسم اللي جاي بعده. خد بالك: euer بيفقد الـ -e- قبل أي نهاية (euer → eure, euren, eurem).",
+   "ar_lb": "خدها بالك: أول شي اختار الصيغة الأساسية حسب صاحب الشي (mein, dein, sein, ihr …)، وبعدين زيد نهاية الـ ein- حسب نوع وحالة وعدد الاسم يلي جاي بعدها. انتبه: euer بيفقد الـ -e- قبل ما تنضاف نهاية (euer → eure, euren, eurem).",
+   "ar_sy": "خد بالك: أول شي اختار الصيغة الأساسية حسب صاحب الشي (mein, dein, sein, ihr …)، بعدين زيد نهاية ein- حسب جنس وحالة وعدد الاسم يلي بعدها. انتبه: euer بتخسر الـ-e- قبل أي نهاية (euer → eure, euren, eurem)."
   }
  },
  {
@@ -1358,7 +2177,16 @@ const GRAMMAR = [
    "fa": "پایانه‌های صفت",
    "uk": "Закінчення прикметників",
    "pl": "Końcówki przymiotników",
-   "tr": "Sıfat ekleri"
+   "tr": "Sıfat ekleri",
+   "th": "การผันท้ายคำคุณศัพท์ (Adjektivendungen)",
+   "zh": "形容词词尾",
+   "ms": "Akhiran Kata Sifat",
+   "sw": "Miisho ya Vivumishi",
+   "hi": "विशेषण के अंत (Adjektivendungen)",
+   "ur": "صفت کے اختتامیے (Adjektivendungen)",
+   "ar_eg": "نهايات الصفة",
+   "ar_lb": "نهايات الصفة (Adjektivendungen)",
+   "ar_sy": "نهايات الصفة"
   },
   "intro": {
    "de": "Ein Adjektiv vor einem Nomen bekommt eine Endung. Welche, hängt vom Wort davor ab: nach bestimmtem Artikel (der/die/das) schwach, nach ein/kein/mein gemischt, ohne Artikel stark. Als Prädikat (Das Auto ist gut) bleibt es endungslos.",
@@ -1368,7 +2196,16 @@ const GRAMMAR = [
    "fa": "صفتی که پیش از اسم می‌آید یک پایانه می‌گیرد. اینکه کدام پایانه، به واژهٔ پیش از آن بستگی دارد: پس از حرف تعریف معین (der/die/das) ضعیف، پس از ein/kein/mein مختلط، و بدون حرف تعریف قوی. در نقش مسند (Das Auto ist gut) بدون پایانه می‌ماند.",
    "uk": "Прикметник перед іменником отримує закінчення. Яке саме – залежить від слова перед ним: після означеного артикля (der/die/das) – слабке, після ein/kein/mein – мішане, без артикля – сильне. У ролі присудка (Das Auto ist gut) прикметник залишається без закінчення.",
    "pl": "Przymiotnik przed rzeczownikiem otrzymuje końcówkę. Jaką – zależy od słowa stojącego przed nim: po rodzajniku określonym (der/die/das) odmiana słaba, po ein/kein/mein mieszana, bez rodzajnika mocna. Jako orzecznik (Das Auto ist gut) pozostaje bez końcówki.",
-   "tr": "İsimden önce gelen bir sıfat ek alır. Hangi ek olduğu önündeki kelimeye bağlıdır: belirli artikelden sonra (der/die/das) zayıf, ein/kein/mein'den sonra karışık, artikelsiz güçlü. Yüklem olarak (Das Auto ist gut) eksiz kalır."
+   "tr": "İsimden önce gelen bir sıfat ek alır. Hangi ek olduğu önündeki kelimeye bağlıdır: belirli artikelden sonra (der/die/das) zayıf, ein/kein/mein'den sonra karışık, artikelsiz güçlü. Yüklem olarak (Das Auto ist gut) eksiz kalır.",
+   "th": "คำคุณศัพท์ที่อยู่หน้าคำนามจะมีคำลงท้าย ซึ่งขึ้นอยู่กับคำที่อยู่ข้างหน้ามัน: หลังคำนำหน้านามชี้เฉพาะ (der/die/das) ใช้การผันแบบอ่อน (schwach) หลัง ein/kein/mein ใช้การผันแบบผสม (gemischt) และถ้าไม่มีคำนำหน้านามเลยใช้การผันแบบเข้ม (stark) แต่เมื่อทำหน้าที่เป็นภาคแสดง (เช่น Das Auto ist gut) จะไม่มีคำลงท้ายเลย",
+   "zh": "名词前的形容词要加词尾,具体加哪种取决于它前面的词:定冠词(der/die/das)后用弱变化,ein/kein/mein 后用混合变化,没有冠词时用强变化。作表语时(Das Auto ist gut)则不加词尾。",
+   "ms": "Kata sifat yang terletak sebelum kata nama menerima satu akhiran. Akhiran yang digunakan bergantung pada perkataan sebelumnya: selepas artikel tentu (der/die/das) – lemah, selepas ein/kein/mein – campuran, tanpa artikel – kuat. Sebagai predikat (Das Auto ist gut) ia kekal tanpa akhiran.",
+   "sw": "Kivumishi kinapokuwa kabla ya nomino hupata mwisho. Mwisho gani unategemea neno lililotangulia: baada ya artikeli dhahiri (der/die/das) ni mwisho dhaifu, baada ya ein/kein/mein ni mwisho mchanganyiko, na bila artikeli yoyote ni mwisho imara. Kikiwa kiarifu (Das Auto ist gut) hakipati mwisho wowote.",
+   "hi": "संज्ञा से पहले आने वाले विशेषण को एक अंत मिलता है। कौन-सा अंत, यह उससे पहले आने वाले शब्द पर निर्भर करता है: निश्चित आर्टिकल (der/die/das) के बाद कमज़ोर (schwach), ein/kein/mein के बाद मिश्रित (gemischt), बिना आर्टिकल के प्रबल (stark)। विधेय के रूप में (Das Auto ist gut) यह बिना अंत के रहता है।",
+   "ur": "اسم سے پہلے آنے والی صفت کو ایک اختتامیہ ملتا ہے۔ یہ اس بات پر منحصر ہے کہ اس سے پہلے کون سا لفظ ہے: معین آرٹیکل (der/die/das) کے بعد کمزور (schwach)، ein/kein/mein کے بعد مخلوط (gemischt)، اور بغیر آرٹیکل کے مضبوط (stark)۔ فعل کے طور پر (Das Auto ist gut) اس پر کوئی اختتامیہ نہیں لگتا۔",
+   "ar_eg": "الصفة اللي قبل الاسم بتاخد نهاية. أنهي نهاية؟ ده بيتوقف على الكلمة اللي قبلها: بعد أداة التعريف (der/die/das) بتبقى نهاية ضعيفة، بعد ein/kein/mein بتبقى مختلطة، من غير أداة خالص بتبقى قوية. لما الصفة تيجي بعد الفعل (Das Auto ist gut) بتفضل من غير نهاية خالص.",
+   "ar_lb": "الصفة يلي جايي قبل الاسم بتاخد نهاية. أي نهاية بتعتمد ع الكلمة يلي قبلها: بعد الأداة المعرّفة (der/die/das) بتكون ضعيفة (schwach)، بعد ein/kein/mein بتكون مختلطة (gemischt)، وبلا أداة بتكون قوية (stark). كخبر (Das Auto ist gut) بتضل بلا نهاية.",
+   "ar_sy": "الصفة قبل الاسم بتاخد نهاية. أي نهاية؟ هاد بيعتمد عالكلمة يلي قبلها: بعد الأداة المعرّفة (der/die/das) بتكون ضعيفة، بعد ein/kein/mein بتكون مختلطة، وبلا أداة بتكون قوية. لما تجي بعد فعل الكينونة (Das Auto ist gut) بتضل بلا نهاية."
   },
   "tables": [
    {
@@ -1380,7 +2217,16 @@ const GRAMMAR = [
      "fa": "صرف ضعیف — پس از حرف تعریف معین (der/die/das)",
      "uk": "Слабке — після означеного артикля (der/die/das)",
      "pl": "Odmiana słaba — po rodzajniku określonym (der/die/das)",
-     "tr": "Zayıf — belirli artikelden sonra (der/die/das)"
+     "tr": "Zayıf — belirli artikelden sonra (der/die/das)",
+     "th": "การผันแบบอ่อน (schwach) — หลังคำนำหน้านามชี้เฉพาะ (der/die/das)",
+     "zh": "弱变化——定冠词(der/die/das)之后",
+     "ms": "Lemah — selepas artikel tentu (der/die/das)",
+     "sw": "Dhaifu — baada ya artikeli dhahiri (der/die/das)",
+     "hi": "कमज़ोर (Schwach) — निश्चित आर्टिकल (der/die/das) के बाद",
+     "ur": "کمزور — معین آرٹیکل (der/die/das) کے بعد",
+     "ar_eg": "ضعيفة — بعد أداة التعريف (der/die/das)",
+     "ar_lb": "ضعيفة (Schwach) — بعد الأداة المعرّفة (der/die/das)",
+     "ar_sy": "ضعيفة — بعد الأداة المعرّفة (der/die/das)"
     },
     "labelHeader": {
      "de": "Kasus",
@@ -1390,7 +2236,16 @@ const GRAMMAR = [
      "fa": "حالت",
      "uk": "Відмінок",
      "pl": "Przypadek",
-     "tr": "Kasus"
+     "tr": "Kasus",
+     "th": "การก (Kasus)",
+     "zh": "格",
+     "ms": "Kes",
+     "sw": "Kesi",
+     "hi": "कारक",
+     "ur": "حالت",
+     "ar_eg": "الحالة الإعرابية",
+     "ar_lb": "الحالة (Kasus)",
+     "ar_sy": "الحالة الإعرابية"
     },
     "columns": [
      {
@@ -1401,7 +2256,16 @@ const GRAMMAR = [
       "fa": "مذکر",
       "uk": "чоловічий",
       "pl": "męski",
-      "tr": "eril"
+      "tr": "eril",
+      "th": "เพศชาย (maskulin)",
+      "zh": "阳性",
+      "ms": "maskulin",
+      "sw": "kiume",
+      "hi": "पुल्लिंग",
+      "ur": "مذکر",
+      "ar_eg": "مذكر",
+      "ar_lb": "مذكر",
+      "ar_sy": "مذكر"
      },
      {
       "de": "feminin",
@@ -1411,7 +2275,16 @@ const GRAMMAR = [
       "fa": "مؤنث",
       "uk": "жіночий",
       "pl": "żeński",
-      "tr": "dişil"
+      "tr": "dişil",
+      "th": "เพศหญิง (feminin)",
+      "zh": "阴性",
+      "ms": "feminin",
+      "sw": "kike",
+      "hi": "स्त्रीलिंग",
+      "ur": "مؤنث",
+      "ar_eg": "مؤنث",
+      "ar_lb": "مؤنث",
+      "ar_sy": "مؤنث"
      },
      {
       "de": "neutral",
@@ -1421,7 +2294,16 @@ const GRAMMAR = [
       "fa": "خنثی",
       "uk": "середній",
       "pl": "nijaki",
-      "tr": "nötr"
+      "tr": "nötr",
+      "th": "เพศกลาง (neutral)",
+      "zh": "中性",
+      "ms": "neutral",
+      "sw": "isiyo na jinsia",
+      "hi": "नपुंसकलिंग",
+      "ur": "غیر جانبدار",
+      "ar_eg": "محايد",
+      "ar_lb": "محايد",
+      "ar_sy": "محايد"
      },
      {
       "de": "Plural",
@@ -1431,7 +2313,16 @@ const GRAMMAR = [
       "fa": "جمع",
       "uk": "множина",
       "pl": "liczba mnoga",
-      "tr": "çoğul"
+      "tr": "çoğul",
+      "th": "พหูพจน์ (Plural)",
+      "zh": "复数",
+      "ms": "Jamak",
+      "sw": "wingi",
+      "hi": "बहुवचन",
+      "ur": "جمع",
+      "ar_eg": "جمع",
+      "ar_lb": "جمع",
+      "ar_sy": "جمع"
      }
     ],
     "rows": [
@@ -1444,7 +2335,16 @@ const GRAMMAR = [
        "fa": "نهادی (Nom.)",
        "uk": "Nominativ",
        "pl": "Mianownik",
-       "tr": "Nominativ"
+       "tr": "Nominativ",
+       "th": "การกประธาน (Nominativ)",
+       "zh": "Nominativ",
+       "ms": "Nominativ",
+       "sw": "Nominativ",
+       "hi": "Nominativ",
+       "ur": "نامیہ",
+       "ar_eg": "Nominativ",
+       "ar_lb": "Nominativ",
+       "ar_sy": "Nominativ"
       },
       "cells": [
        "der gute Mann",
@@ -1462,7 +2362,16 @@ const GRAMMAR = [
        "fa": "رایی (Akk.)",
        "uk": "Akkusativ",
        "pl": "Biernik",
-       "tr": "Akkusativ"
+       "tr": "Akkusativ",
+       "th": "กรรมตรง (Akkusativ)",
+       "zh": "Akkusativ",
+       "ms": "Akkusativ",
+       "sw": "Akkusativ",
+       "hi": "Akkusativ",
+       "ur": "مفعولی",
+       "ar_eg": "Akkusativ",
+       "ar_lb": "Akkusativ",
+       "ar_sy": "Akkusativ"
       },
       "cells": [
        "den guten Mann",
@@ -1480,7 +2389,16 @@ const GRAMMAR = [
        "fa": "برایی (Dat.)",
        "uk": "Dativ",
        "pl": "Celownik",
-       "tr": "Dativ"
+       "tr": "Dativ",
+       "th": "กรรมรอง (Dativ)",
+       "zh": "Dativ",
+       "ms": "Dativ",
+       "sw": "Dativ",
+       "hi": "Dativ",
+       "ur": "دیتی حالت",
+       "ar_eg": "Dativ",
+       "ar_lb": "Dativ",
+       "ar_sy": "Dativ"
       },
       "cells": [
        "dem guten Mann",
@@ -1498,7 +2416,16 @@ const GRAMMAR = [
        "fa": "اضافی (Gen.)",
        "uk": "Genitiv",
        "pl": "Dopełniacz",
-       "tr": "Genitiv"
+       "tr": "Genitiv",
+       "th": "การกแสดงความเป็นเจ้าของ (Genitiv)",
+       "zh": "Genitiv",
+       "ms": "Genitiv",
+       "sw": "Genitiv",
+       "hi": "Genitiv",
+       "ur": "اضافتی",
+       "ar_eg": "Genitiv",
+       "ar_lb": "Genitiv",
+       "ar_sy": "Genitiv"
       },
       "cells": [
        "des guten Mannes",
@@ -1518,7 +2445,16 @@ const GRAMMAR = [
      "fa": "صرف مختلط — پس از ein/kein/mein (حرف تعریف نامعین و ملکی)",
      "uk": "Мішане — після ein/kein/mein (неозначений артикль і присвійні)",
      "pl": "Odmiana mieszana — po ein/kein/mein (rodzajnik nieokreślony i dzierżawczy)",
-     "tr": "Karışık — ein/kein/mein'den sonra (belirsiz artikel ve iyelik)"
+     "tr": "Karışık — ein/kein/mein'den sonra (belirsiz artikel ve iyelik)",
+     "th": "การผันแบบผสม (gemischt) — หลัง ein/kein/mein (คำนำหน้านามไม่ชี้เฉพาะและคำแสดงความเป็นเจ้าของ)",
+     "zh": "混合变化——ein/kein/mein 之后(不定冠词与物主冠词)",
+     "ms": "Campuran — selepas ein/kein/mein (artikel tak tentu & posesif)",
+     "sw": "Mchanganyiko — baada ya ein/kein/mein (artikeli isiyo dhahiri na vimilikishi)",
+     "hi": "मिश्रित (Gemischt) — ein/kein/mein के बाद (अनिश्चित आर्टिकल और संबंधवाचक)",
+     "ur": "مخلوط — ein/kein/mein کے بعد (غیر معین آرٹیکل اور ملکیتی)",
+     "ar_eg": "مختلطة — بعد ein/kein/mein (أداة التنكير وأدوات الملكية)",
+     "ar_lb": "مختلطة (Gemischt) — بعد ein/kein/mein (الأداة النكرة وأدوات الملكية)",
+     "ar_sy": "مختلطة — بعد ein/kein/mein (أداة النكرة وأدوات الملكية)"
     },
     "labelHeader": {
      "de": "Kasus",
@@ -1528,7 +2464,16 @@ const GRAMMAR = [
      "fa": "حالت",
      "uk": "Відмінок",
      "pl": "Przypadek",
-     "tr": "Kasus"
+     "tr": "Kasus",
+     "th": "การก (Kasus)",
+     "zh": "格",
+     "ms": "Kes",
+     "sw": "Kesi",
+     "hi": "कारक",
+     "ur": "حالت",
+     "ar_eg": "الحالة الإعرابية",
+     "ar_lb": "الحالة (Kasus)",
+     "ar_sy": "الحالة الإعرابية"
     },
     "columns": [
      {
@@ -1539,7 +2484,16 @@ const GRAMMAR = [
       "fa": "مذکر",
       "uk": "чоловічий",
       "pl": "męski",
-      "tr": "eril"
+      "tr": "eril",
+      "th": "เพศชาย (maskulin)",
+      "zh": "阳性",
+      "ms": "maskulin",
+      "sw": "kiume",
+      "hi": "पुल्लिंग",
+      "ur": "مذکر",
+      "ar_eg": "مذكر",
+      "ar_lb": "مذكر",
+      "ar_sy": "مذكر"
      },
      {
       "de": "feminin",
@@ -1549,7 +2503,16 @@ const GRAMMAR = [
       "fa": "مؤنث",
       "uk": "жіночий",
       "pl": "żeński",
-      "tr": "dişil"
+      "tr": "dişil",
+      "th": "เพศหญิง (feminin)",
+      "zh": "阴性",
+      "ms": "feminin",
+      "sw": "kike",
+      "hi": "स्त्रीलिंग",
+      "ur": "مؤنث",
+      "ar_eg": "مؤنث",
+      "ar_lb": "مؤنث",
+      "ar_sy": "مؤنث"
      },
      {
       "de": "neutral",
@@ -1559,7 +2522,16 @@ const GRAMMAR = [
       "fa": "خنثی",
       "uk": "середній",
       "pl": "nijaki",
-      "tr": "nötr"
+      "tr": "nötr",
+      "th": "เพศกลาง (neutral)",
+      "zh": "中性",
+      "ms": "neutral",
+      "sw": "isiyo na jinsia",
+      "hi": "नपुंसकलिंग",
+      "ur": "غیر جانبدار",
+      "ar_eg": "محايد",
+      "ar_lb": "محايد",
+      "ar_sy": "محايد"
      },
      {
       "de": "Plural",
@@ -1569,7 +2541,16 @@ const GRAMMAR = [
       "fa": "جمع",
       "uk": "множина",
       "pl": "liczba mnoga",
-      "tr": "çoğul"
+      "tr": "çoğul",
+      "th": "พหูพจน์ (Plural)",
+      "zh": "复数",
+      "ms": "Jamak",
+      "sw": "wingi",
+      "hi": "बहुवचन",
+      "ur": "جمع",
+      "ar_eg": "جمع",
+      "ar_lb": "جمع",
+      "ar_sy": "جمع"
      }
     ],
     "rows": [
@@ -1582,7 +2563,16 @@ const GRAMMAR = [
        "fa": "نهادی (Nom.)",
        "uk": "Nominativ",
        "pl": "Mianownik",
-       "tr": "Nominativ"
+       "tr": "Nominativ",
+       "th": "การกประธาน (Nominativ)",
+       "zh": "Nominativ",
+       "ms": "Nominativ",
+       "sw": "Nominativ",
+       "hi": "Nominativ",
+       "ur": "نامیہ",
+       "ar_eg": "Nominativ",
+       "ar_lb": "Nominativ",
+       "ar_sy": "Nominativ"
       },
       "cells": [
        "ein guter Mann",
@@ -1600,7 +2590,16 @@ const GRAMMAR = [
        "fa": "رایی (Akk.)",
        "uk": "Akkusativ",
        "pl": "Biernik",
-       "tr": "Akkusativ"
+       "tr": "Akkusativ",
+       "th": "กรรมตรง (Akkusativ)",
+       "zh": "Akkusativ",
+       "ms": "Akkusativ",
+       "sw": "Akkusativ",
+       "hi": "Akkusativ",
+       "ur": "مفعولی",
+       "ar_eg": "Akkusativ",
+       "ar_lb": "Akkusativ",
+       "ar_sy": "Akkusativ"
       },
       "cells": [
        "einen guten Mann",
@@ -1618,7 +2617,16 @@ const GRAMMAR = [
        "fa": "برایی (Dat.)",
        "uk": "Dativ",
        "pl": "Celownik",
-       "tr": "Dativ"
+       "tr": "Dativ",
+       "th": "กรรมรอง (Dativ)",
+       "zh": "Dativ",
+       "ms": "Dativ",
+       "sw": "Dativ",
+       "hi": "Dativ",
+       "ur": "دیتی حالت",
+       "ar_eg": "Dativ",
+       "ar_lb": "Dativ",
+       "ar_sy": "Dativ"
       },
       "cells": [
        "einem guten Mann",
@@ -1636,7 +2644,16 @@ const GRAMMAR = [
        "fa": "اضافی (Gen.)",
        "uk": "Genitiv",
        "pl": "Dopełniacz",
-       "tr": "Genitiv"
+       "tr": "Genitiv",
+       "th": "การกแสดงความเป็นเจ้าของ (Genitiv)",
+       "zh": "Genitiv",
+       "ms": "Genitiv",
+       "sw": "Genitiv",
+       "hi": "Genitiv",
+       "ur": "اضافتی",
+       "ar_eg": "Genitiv",
+       "ar_lb": "Genitiv",
+       "ar_sy": "Genitiv"
       },
       "cells": [
        "eines guten Mannes",
@@ -1656,7 +2673,16 @@ const GRAMMAR = [
      "fa": "صرف قوی — بدون حرف تعریف",
      "uk": "Сильне — без артикля (нульовий артикль)",
      "pl": "Odmiana mocna — bez rodzajnika (rodzajnik zerowy)",
-     "tr": "Güçlü — artikelsiz (sıfır artikel)"
+     "tr": "Güçlü — artikelsiz (sıfır artikel)",
+     "th": "การผันแบบเข้ม (stark) — ไม่มีคำนำหน้านาม (Nullartikel)",
+     "zh": "强变化——无冠词(零冠词)",
+     "ms": "Kuat — tanpa artikel (artikel sifar)",
+     "sw": "Imara — bila artikeli (artikeli sufuri)",
+     "hi": "प्रबल (Stark) — बिना आर्टिकल (शून्य आर्टिकल)",
+     "ur": "مضبوط — بغیر آرٹیکل کے (صفر آرٹیکل)",
+     "ar_eg": "قوية — من غير أداة خالص (أداة صفرية)",
+     "ar_lb": "قوية (Stark) — بلا أداة (Nullartikel)",
+     "ar_sy": "قوية — بلا أداة (أداة صفرية)"
     },
     "labelHeader": {
      "de": "Kasus",
@@ -1666,7 +2692,16 @@ const GRAMMAR = [
      "fa": "حالت",
      "uk": "Відмінок",
      "pl": "Przypadek",
-     "tr": "Kasus"
+     "tr": "Kasus",
+     "th": "การก (Kasus)",
+     "zh": "格",
+     "ms": "Kes",
+     "sw": "Kesi",
+     "hi": "कारक",
+     "ur": "حالت",
+     "ar_eg": "الحالة الإعرابية",
+     "ar_lb": "الحالة (Kasus)",
+     "ar_sy": "الحالة الإعرابية"
     },
     "columns": [
      {
@@ -1677,7 +2712,16 @@ const GRAMMAR = [
       "fa": "مذکر",
       "uk": "чоловічий",
       "pl": "męski",
-      "tr": "eril"
+      "tr": "eril",
+      "th": "เพศชาย (maskulin)",
+      "zh": "阳性",
+      "ms": "maskulin",
+      "sw": "kiume",
+      "hi": "पुल्लिंग",
+      "ur": "مذکر",
+      "ar_eg": "مذكر",
+      "ar_lb": "مذكر",
+      "ar_sy": "مذكر"
      },
      {
       "de": "feminin",
@@ -1687,7 +2731,16 @@ const GRAMMAR = [
       "fa": "مؤنث",
       "uk": "жіночий",
       "pl": "żeński",
-      "tr": "dişil"
+      "tr": "dişil",
+      "th": "เพศหญิง (feminin)",
+      "zh": "阴性",
+      "ms": "feminin",
+      "sw": "kike",
+      "hi": "स्त्रीलिंग",
+      "ur": "مؤنث",
+      "ar_eg": "مؤنث",
+      "ar_lb": "مؤنث",
+      "ar_sy": "مؤنث"
      },
      {
       "de": "neutral",
@@ -1697,7 +2750,16 @@ const GRAMMAR = [
       "fa": "خنثی",
       "uk": "середній",
       "pl": "nijaki",
-      "tr": "nötr"
+      "tr": "nötr",
+      "th": "เพศกลาง (neutral)",
+      "zh": "中性",
+      "ms": "neutral",
+      "sw": "isiyo na jinsia",
+      "hi": "नपुंसकलिंग",
+      "ur": "غیر جانبدار",
+      "ar_eg": "محايد",
+      "ar_lb": "محايد",
+      "ar_sy": "محايد"
      },
      {
       "de": "Plural",
@@ -1707,7 +2769,16 @@ const GRAMMAR = [
       "fa": "جمع",
       "uk": "множина",
       "pl": "liczba mnoga",
-      "tr": "çoğul"
+      "tr": "çoğul",
+      "th": "พหูพจน์ (Plural)",
+      "zh": "复数",
+      "ms": "Jamak",
+      "sw": "wingi",
+      "hi": "बहुवचन",
+      "ur": "جمع",
+      "ar_eg": "جمع",
+      "ar_lb": "جمع",
+      "ar_sy": "جمع"
      }
     ],
     "rows": [
@@ -1720,7 +2791,16 @@ const GRAMMAR = [
        "fa": "نهادی (Nom.)",
        "uk": "Nominativ",
        "pl": "Mianownik",
-       "tr": "Nominativ"
+       "tr": "Nominativ",
+       "th": "การกประธาน (Nominativ)",
+       "zh": "Nominativ",
+       "ms": "Nominativ",
+       "sw": "Nominativ",
+       "hi": "Nominativ",
+       "ur": "نامیہ",
+       "ar_eg": "Nominativ",
+       "ar_lb": "Nominativ",
+       "ar_sy": "Nominativ"
       },
       "cells": [
        "guter Wein",
@@ -1738,7 +2818,16 @@ const GRAMMAR = [
        "fa": "رایی (Akk.)",
        "uk": "Akkusativ",
        "pl": "Biernik",
-       "tr": "Akkusativ"
+       "tr": "Akkusativ",
+       "th": "กรรมตรง (Akkusativ)",
+       "zh": "Akkusativ",
+       "ms": "Akkusativ",
+       "sw": "Akkusativ",
+       "hi": "Akkusativ",
+       "ur": "مفعولی",
+       "ar_eg": "Akkusativ",
+       "ar_lb": "Akkusativ",
+       "ar_sy": "Akkusativ"
       },
       "cells": [
        "guten Wein",
@@ -1756,7 +2845,16 @@ const GRAMMAR = [
        "fa": "برایی (Dat.)",
        "uk": "Dativ",
        "pl": "Celownik",
-       "tr": "Dativ"
+       "tr": "Dativ",
+       "th": "กรรมรอง (Dativ)",
+       "zh": "Dativ",
+       "ms": "Dativ",
+       "sw": "Dativ",
+       "hi": "Dativ",
+       "ur": "دیتی حالت",
+       "ar_eg": "Dativ",
+       "ar_lb": "Dativ",
+       "ar_sy": "Dativ"
       },
       "cells": [
        "gutem Wein",
@@ -1774,7 +2872,16 @@ const GRAMMAR = [
        "fa": "اضافی (Gen.)",
        "uk": "Genitiv",
        "pl": "Dopełniacz",
-       "tr": "Genitiv"
+       "tr": "Genitiv",
+       "th": "การกแสดงความเป็นเจ้าของ (Genitiv)",
+       "zh": "Genitiv",
+       "ms": "Genitiv",
+       "sw": "Genitiv",
+       "hi": "Genitiv",
+       "ur": "اضافتی",
+       "ar_eg": "Genitiv",
+       "ar_lb": "Genitiv",
+       "ar_sy": "Genitiv"
       },
       "cells": [
        "guten Weines",
@@ -1795,7 +2902,16 @@ const GRAMMAR = [
     "fa": "همکار جدید در دفتر بزرگ نشسته است.",
     "uk": "Нова колега сидить у великому офісі.",
     "pl": "Nowa koleżanka siedzi w dużym biurze.",
-    "tr": "Yeni meslektaş (kadın) büyük büroda oturuyor."
+    "tr": "Yeni meslektaş (kadın) büyük büroda oturuyor.",
+    "th": "เพื่อนร่วมงานคนใหม่ (ผู้หญิง) นั่งอยู่ในห้องทำงานที่ใหญ่",
+    "zh": "这位新来的女同事坐在那间大办公室里。",
+    "ms": "Rakan sekerja (perempuan) yang baharu itu duduk di pejabat yang besar itu.",
+    "sw": "Mfanyakazi mwenzake mpya (mwanamke) ameketi katika ofisi kubwa.",
+    "hi": "नई सहकर्मी बड़े दफ़्तर में बैठी है।",
+    "ur": "نئی ساتھی کارکن (die neue Kollegin) بڑے دفتر میں بیٹھی ہے۔",
+    "ar_eg": "الزميلة الجديدة قاعدة في المكتب الكبير.",
+    "ar_lb": "الزميلة الجديدة قاعدة بالمكتب الكبير.",
+    "ar_sy": "الزميلة الجديدة قاعدة بالمكتب الكبير."
    },
    {
     "de": "Er hat einen alten Freund und eine gute Idee.",
@@ -1805,7 +2921,16 @@ const GRAMMAR = [
     "fa": "او یک دوست قدیمی و یک ایدهٔ خوب دارد.",
     "uk": "У нього є старий друг і гарна ідея.",
     "pl": "On ma starego przyjaciela i dobry pomysł.",
-    "tr": "Onun eski bir arkadaşı ve güzel bir fikri var."
+    "tr": "Onun eski bir arkadaşı ve güzel bir fikri var.",
+    "th": "เขามีเพื่อนเก่าคนหนึ่งและไอเดียดี ๆ อย่างหนึ่ง",
+    "zh": "他有一个老朋友,还有一个好主意。",
+    "ms": "Dia mempunyai seorang kawan lama dan satu idea yang bagus.",
+    "sw": "Ana rafiki wa zamani na wazo zuri.",
+    "hi": "उसका एक पुराना दोस्त और एक अच्छा विचार है।",
+    "ur": "اس کا ایک پرانا دوست اور ایک اچھا خیال ہے۔",
+    "ar_eg": "عنده صاحب قديم وعنده فكرة كويسة.",
+    "ar_lb": "عندو رفيق قديم وفكرة منيحة.",
+    "ar_sy": "عندو صديق قديم وفكرة منيحة."
    },
    {
     "de": "Bei schönem Wetter trinken wir kaltes Bier.",
@@ -1815,7 +2940,16 @@ const GRAMMAR = [
     "fa": "در هوای خوب، ما آبجوی سرد می‌نوشیم.",
     "uk": "У гарну погоду ми п'ємо холодне пиво.",
     "pl": "Przy ładnej pogodzie pijemy zimne piwo.",
-    "tr": "Güzel havada soğuk bira içeriz."
+    "tr": "Güzel havada soğuk bira içeriz.",
+    "th": "เมื่ออากาศดี เราดื่มเบียร์เย็น ๆ",
+    "zh": "天气好时,我们喝冰镇啤酒。",
+    "ms": "Semasa cuaca elok, kami minum bir sejuk.",
+    "sw": "Wakati hali ya hewa ni nzuri, tunakunywa bia baridi.",
+    "hi": "अच्छे मौसम में हम ठंडी बियर पीते हैं।",
+    "ur": "اچھے موسم میں ہم ٹھنڈی بیئر پیتے ہیں۔",
+    "ar_eg": "لما الجو يبقى حلو بنشرب بيرة ساقعة.",
+    "ar_lb": "لما الطقس يكون حلو منشرب بيرة باردة.",
+    "ar_sy": "بالطقس الحلو منشرب بيرة بردانة."
    }
   ],
   "hints": {
@@ -1826,7 +2960,16 @@ const GRAMMAR = [
    "fa": "فارسی جنسیت دستوری و صرف صفت ندارد؛ صفت با «اِزافه» به اسم می‌چسبد و تغییر نمی‌کند (خانهٔ بزرگ). در آلمانی صفتِ پیش از اسم پایانه می‌گیرد که جنس و حالت را نشان می‌دهد. قاعده: اگر حرف تعریف (der/die/das) این نشانه را برساند، صفت پایانهٔ سبک -e/-en می‌گیرد؛ اگر حرف تعریفی نباشد، خودِ صفت باید نشانهٔ قوی را حمل کند (guter Wein). اما پس از فعل «بودن» صفت بی‌پایانه می‌ماند: 'Das Auto ist gut.'",
    "uk": "Запам'ятай: якщо артикль уже має чітке закінчення (der, dem, den …), прикметник «лінується» – зазвичай -e або -en. Якщо цієї інформації немає (немає артикля, або ein/mein у Nom./Akk.), прикметник мусить сам нести сигнальне закінчення: guter, gutes, gutem. Після sein він залишається без закінчення: «Das Auto ist gut.»",
    "pl": "Zapamiętaj: jeśli rodzajnik już nosi wyraźną końcówkę (der, dem, den …), przymiotnik jest „leniwy” — najczęściej -e lub -en. Gdy tej informacji brakuje (brak rodzajnika albo ein/mein w mianowniku/bierniku), przymiotnik musi sam nieść końcówkę sygnalizującą: guter, gutes, gutem. Po sein pozostaje bez końcówki: „Das Auto ist gut.”",
-   "tr": "Unutma: Artikel zaten net bir ek taşıyorsa (der, dem, den …), sıfat „tembeldir“ — çoğunlukla -e ya da -en. Bu bilgi eksikse (artikel yok ya da Nom./Akk.'de ein/mein), sinyal ekini sıfatın kendisi taşımak zorundadır: guter, gutes, gutem. sein'den sonra eksiz kalır: „Das Auto ist gut.“"
+   "tr": "Unutma: Artikel zaten net bir ek taşıyorsa (der, dem, den …), sıfat „tembeldir“ — çoğunlukla -e ya da -en. Bu bilgi eksikse (artikel yok ya da Nom./Akk.'de ein/mein), sinyal ekini sıfatın kendisi taşımak zorundadır: guter, gutes, gutem. sein'den sonra eksiz kalır: „Das Auto ist gut.“",
+   "th": "ข้อควรจำ: ถ้าคำนำหน้านามมีคำลงท้ายที่ชัดเจนอยู่แล้ว (der, dem, den …) คำคุณศัพท์จะ 'ขี้เกียจ' คือมักลงท้ายด้วย -e หรือ -en เท่านั้น แต่ถ้าไม่มีข้อมูลนี้ (ไม่มีคำนำหน้านาม หรือ ein/mein ใน Nominativ/Akkusativ) คำคุณศัพท์ต้องแบกคำลงท้ายที่บ่งบอกเพศ/การกเองแทน เช่น guter, gutes, gutem หลัง sein จะไม่มีคำลงท้ายเลย เช่น „Das Auto ist gut.“",
+   "zh": "注意:如果冠词本身已经带有明确的词尾(der、dem、den……),形容词就“偷懒”——通常只加 -e 或 -en。如果缺少这个信息(没有冠词,或者 ein/mein 用在第一格/第四格),形容词就必须自己承担标志性词尾:guter、gutes、gutem。在 sein 后面则不加词尾:“Das Auto ist gut.”(这辆车很好。)",
+   "ms": "Ingat: Jika artikel sudah membawa akhiran yang jelas (der, dem, den …), kata sifat menjadi 'malas' — biasanya -e atau -en sahaja. Jika maklumat itu tiada (tiada artikel, atau ein/mein dalam Nominativ/Akkusativ), kata sifat itu sendiri mesti membawa akhiran penanda: guter, gutes, gutem. Selepas sein (to be) ia kekal tanpa akhiran: 'Das Auto ist gut.'",
+   "sw": "Kumbuka: iwapo artikeli tayari ina mwisho dhahiri (der, dem, den …), kivumishi kinakuwa 'kivivu' — mara nyingi -e au -en. Ikiwa taarifa hiyo haipo (hakuna artikeli, au ein/mein katika Nominativ/Akkusativ), kivumishi lazima kibebe mwenyewe mwisho wa ishara: guter, gutes, gutem. Baada ya sein (kuwa) hakipati mwisho wowote: 'Das Auto ist gut' (Gari ni zuri).",
+   "hi": "याद रखें: यदि आर्टिकल में पहले से स्पष्ट अंत हो (der, dem, den …), तो विशेषण 'आलसी' रहता है — प्रायः -e या -en। यदि यह जानकारी न हो (कोई आर्टिकल नहीं, या Nominativ/Akkusativ में ein/mein), तो विशेषण को खुद संकेतक अंत लेना पड़ता है: guter, gutes, gutem। sein के बाद यह बिना अंत के रहता है: 'Das Auto ist gut.'",
+   "ur": "یاد رکھیں: اگر آرٹیکل خود واضح اختتامیہ رکھتا ہو (der، dem، den …) تو صفت ”سست“ ہوتی ہے — عموماً -e یا -en۔ اگر یہ معلومات موجود نہ ہو (کوئی آرٹیکل نہیں، یا نامیہ/مفعولی میں ein/mein) تو صفت کو خود اشارہ کنندہ اختتامیہ لینا پڑتا ہے: guter، gutes، gutem۔ sein کے بعد یہ بغیر اختتامیے کے رہتی ہے: ”Das Auto ist gut.“",
+   "ar_eg": "احفظ: لو الأداة نفسها بتوضح النهاية بشكل واضح (der, dem, den …)، الصفة بتبقى «كسلانة» — غالبًا -e أو -en. لو المعلومة دي ناقصة (مفيش أداة، أو ein/mein في Nom./Akk.)، الصفة نفسها لازم تحمل الإشارة القوية: guter, gutes, gutem. بعد الفعل sein بتفضل من غير نهاية: «Das Auto ist gut.»",
+   "ar_lb": "خدها بالك: إذا الأداة أصلًا حاملة نهاية واضحة (der, dem, den …)، الصفة بتكون „كسلانة“ — بالغالب -e أو -en. إذا هالمعلومة ناقصة (بلا أداة، أو ein/mein بالـ Nom./Akk.)، لازم الصفة تحمل النهاية الدالّة بنفسها: guter, gutes, gutem. بعد sein بتضل بلا نهاية: „Das Auto ist gut.“",
+   "ar_sy": "خد بالك: إذا الأداة أصلاً حاملة نهاية واضحة (der, dem, den …)، الصفة بتكون 'كسلانة' — بمعظم الحالات -e أو -en. إذا هالمعلومة ناقصة (بلا أداة، أو ein/mein بالـNominativ/Akkusativ)، لازم الصفة تحمل النهاية القوية بنفسها: guter, gutes, gutem. بعد فعل sein بتضل بلا نهاية: „Das Auto ist gut.“"
   }
  },
  {
@@ -1840,7 +2983,16 @@ const GRAMMAR = [
    "fa": "زمان حال (Präsens)",
    "uk": "Präsens (теперішній час)",
    "pl": "Präsens (czas teraźniejszy)",
-   "tr": "Präsens (şimdiki/geniş zaman)"
+   "tr": "Präsens (şimdiki/geniş zaman)",
+   "th": "ปัจจุบันกาล (Präsens)",
+   "zh": "现在时(Präsens)",
+   "ms": "Präsens (Masa Kini)",
+   "sw": "Präsens (Wakati Uliopo)",
+   "hi": "वर्तमान काल (Präsens)",
+   "ur": "حال (Präsens)",
+   "ar_eg": "زمن المضارع (Präsens)",
+   "ar_lb": "المضارع (Präsens)",
+   "ar_sy": "المضارع (Präsens)"
   },
   "intro": {
    "de": "Das Präsens beschreibt Gegenwart und Gewohnheiten. Deutsch hat nur eine Präsensform – sie ersetzt die englische Verlaufsform (I am doing) und drückt oft die nahe Zukunft aus (Morgen fahre ich nach Berlin).",
@@ -1850,7 +3002,16 @@ const GRAMMAR = [
    "fa": "زمان حال (Präsens) رویدادهای اکنون و کارهای عادتی را بیان می‌کند. آلمانی فقط یک زمان حال دارد؛ همین یک زمان هم معادل استمراری انگلیسی ('I am doing') است و اغلب آینده‌ی نزدیک را هم می‌رساند ('فردا به برلین می‌روم').",
    "uk": "Präsens описує теперішнє й звички. Німецька має лише одну форму теперішнього часу – вона замінює англійську тривалу форму (I am doing) і часто виражає найближче майбутнє (Morgen fahre ich nach Berlin).",
    "pl": "Präsens opisuje teraźniejszość i przyzwyczajenia. Niemiecki ma tylko jedną formę czasu teraźniejszego – zastępuje ona angielską formę ciągłą (I am doing) i często wyraża bliską przyszłość (Morgen fahre ich nach Berlin).",
-   "tr": "Präsens, şimdiki zamanı ve alışkanlıkları anlatır. Almancada tek bir Präsens biçimi vardır – İngilizcedeki sürerlik biçiminin (I am doing) yerini tutar ve çoğu zaman yakın geleceği ifade eder (Morgen fahre ich nach Berlin – Yarın Berlin'e gidiyorum)."
+   "tr": "Präsens, şimdiki zamanı ve alışkanlıkları anlatır. Almancada tek bir Präsens biçimi vardır – İngilizcedeki sürerlik biçiminin (I am doing) yerini tutar ve çoğu zaman yakın geleceği ifade eder (Morgen fahre ich nach Berlin – Yarın Berlin'e gidiyorum).",
+   "th": "ปัจจุบันกาล (Präsens) ใช้บอกเหตุการณ์ที่กำลังเกิดขึ้นและสิ่งที่ทำเป็นประจำ ภาษาเยอรมันมีรูปปัจจุบันกาลเพียงรูปเดียว ซึ่งใช้แทนรูป present continuous ในภาษาอังกฤษ (I am doing) และมักใช้บอกอนาคตอันใกล้ด้วย (เช่น Morgen fahre ich nach Berlin = พรุ่งนี้ฉันจะไปเบอร์ลิน)",
+   "zh": "现在时(Präsens)描述当下发生的事情和习惯性动作。德语只有一种现在时形式——它同时替代了英语的进行时(I am doing),也常常用来表达不久的将来(Morgen fahre ich nach Berlin. 明天我要去柏林。)。",
+   "ms": "Präsens menggambarkan masa kini dan kebiasaan. Bahasa Jerman hanya mempunyai satu bentuk Präsens – ia menggantikan bentuk 'sedang' dalam bahasa Inggeris (I am doing) dan selalunya turut menyatakan masa depan yang dekat (Morgen fahre ich nach Berlin – Esok saya akan pergi ke Berlin).",
+   "sw": "Präsens inaeleza mambo ya sasa na mazoea. Kijerumani kina umbo moja tu la wakati uliopo – linachukua nafasi ya umbo la kiendelezi la Kiingereza (I am doing) na mara nyingi huelezea wakati ujao wa karibu (Morgen fahre ich nach Berlin – Kesho ninaenda Berlin).",
+   "hi": "वर्तमान काल वर्तमान और आदतों का वर्णन करता है। जर्मन में केवल एक ही वर्तमान रूप है – यह अंग्रेज़ी के जारी रूप (I am doing) का भी काम करता है और अक्सर निकट भविष्य को भी व्यक्त करता है (Morgen fahre ich nach Berlin)।",
+   "ur": "حال کا صیغہ موجودہ زمانے اور عادات کو بیان کرتا ہے۔ جرمن زبان میں حال کی صرف ایک ہی صورت ہوتی ہے — یہ انگریزی کے جاری فعل (I am doing) کی جگہ لیتی ہے اور اکثر قریبی مستقبل بھی ظاہر کرتی ہے (Morgen fahre ich nach Berlin – کل میں برلن جاؤں گا)۔",
+   "ar_eg": "زمن الـ Präsens بيوصف الحاضر والعادات. الألماني عنده صيغة مضارع واحدة بس – وهي بتحل محل صيغة الاستمرار في الإنجليزي (I am doing) وكمان غالبًا بتعبّر عن المستقبل القريب (Morgen fahre ich nach Berlin = بكرة هروح برلين).",
+   "ar_lb": "المضارع (Präsens) بيوصف الحاضر والعادات. الألماني عندو صيغة وحدة بس للمضارع – وهيي بتعوّض عن صيغة الاستمرار بالإنكليزي (I am doing) وكتير مرات بتعبّر عن المستقبل القريب (Morgen fahre ich nach Berlin = بكرا رح روح عبرلين).",
+   "ar_sy": "المضارع بيوصف الحاضر والعادات. الألماني عندو صيغة وحدة بس للمضارع – هاي الصيغة بتعوّض عن صيغة الاستمرار بالإنكليزي (I am doing) وبكتير أحيان بتعبّر عن المستقبل القريب (بكرا رايح عبرلين)."
   },
   "tables": [
    {
@@ -1862,7 +3023,16 @@ const GRAMMAR = [
      "fa": "پایانه‌های منظم زمان حال (مثال: machen)",
      "uk": "Регулярні закінчення (приклад: machen)",
      "pl": "Regularne końcówki (przykład: machen)",
-     "tr": "Düzenli ekler (örnek: machen)"
+     "tr": "Düzenli ekler (örnek: machen)",
+     "th": "คำลงท้ายกริยาปกติ (ตัวอย่าง: machen)",
+     "zh": "规则词尾(以 machen 为例)",
+     "ms": "Akhiran biasa (contoh: machen)",
+     "sw": "Miisho ya kawaida (mfano: machen – kufanya)",
+     "hi": "नियमित अंत (उदाहरण: machen)",
+     "ur": "باقاعدہ اختتامیے (مثال: machen – کرنا)",
+     "ar_eg": "النهايات المنتظمة (مثال: machen)",
+     "ar_lb": "النهايات المنتظمة (مثال: machen)",
+     "ar_sy": "النهايات المنتظمة (مثال: machen)"
     },
     "labelHeader": {
      "de": "Person",
@@ -1872,7 +3042,16 @@ const GRAMMAR = [
      "fa": "شخص",
      "uk": "Особа",
      "pl": "Osoba",
-     "tr": "Şahıs"
+     "tr": "Şahıs",
+     "th": "บุรุษ (Person)",
+     "zh": "人称",
+     "ms": "Orang",
+     "sw": "Nafsi",
+     "hi": "पुरुष",
+     "ur": "شخص",
+     "ar_eg": "الضمير",
+     "ar_lb": "الشخص (Person)",
+     "ar_sy": "الشخص"
     },
     "columns": [
      {
@@ -1883,7 +3062,16 @@ const GRAMMAR = [
       "fa": "پایانه",
       "uk": "Закінчення",
       "pl": "Końcówka",
-      "tr": "Ek"
+      "tr": "Ek",
+      "th": "คำลงท้าย (Endung)",
+      "zh": "词尾",
+      "ms": "Akhiran",
+      "sw": "Mwisho",
+      "hi": "अंत",
+      "ur": "اختتامیہ",
+      "ar_eg": "النهاية",
+      "ar_lb": "النهاية (Endung)",
+      "ar_sy": "النهاية"
      },
      {
       "de": "machen",
@@ -1893,7 +3081,16 @@ const GRAMMAR = [
       "fa": "machen (انجام دادن)",
       "uk": "machen (робити)",
       "pl": "machen (robić)",
-      "tr": "machen (yapmak)"
+      "tr": "machen (yapmak)",
+      "th": "machen (ทำ)",
+      "zh": "machen(做)",
+      "ms": "machen (buat)",
+      "sw": "machen (kufanya)",
+      "hi": "machen (करना)",
+      "ur": "machen (کرنا)",
+      "ar_eg": "machen (يعمل)",
+      "ar_lb": "machen (يعمل)",
+      "ar_sy": "machen (يعمل)"
      }
     ],
     "rows": [
@@ -1906,7 +3103,16 @@ const GRAMMAR = [
        "fa": "ich (من)",
        "uk": "ich (я)",
        "pl": "ich (ja)",
-       "tr": "ich (ben)"
+       "tr": "ich (ben)",
+       "th": "ich (ฉัน)",
+       "zh": "ich(我)",
+       "ms": "ich (saya)",
+       "sw": "ich (mimi)",
+       "hi": "ich (मैं)",
+       "ur": "ich (میں)",
+       "ar_eg": "ich (أنا)",
+       "ar_lb": "ich (أنا)",
+       "ar_sy": "ich (أنا)"
       },
       "cells": [
        "-e",
@@ -1922,7 +3128,16 @@ const GRAMMAR = [
        "fa": "du (تو)",
        "uk": "du (ти)",
        "pl": "du (ty)",
-       "tr": "du (sen)"
+       "tr": "du (sen)",
+       "th": "du (เธอ)",
+       "zh": "du(你)",
+       "ms": "du (awak)",
+       "sw": "du (wewe)",
+       "hi": "du (तुम)",
+       "ur": "du (تم)",
+       "ar_eg": "du (إنت)",
+       "ar_lb": "du (إنتَ/إنتِ)",
+       "ar_sy": "du (إنت)"
       },
       "cells": [
        "-st",
@@ -1938,7 +3153,16 @@ const GRAMMAR = [
        "fa": "er/sie/es (او/آن)",
        "uk": "er/sie/es (він/вона/воно)",
        "pl": "er/sie/es (on/ona/ono)",
-       "tr": "er/sie/es (o)"
+       "tr": "er/sie/es (o)",
+       "th": "er/sie/es (เขา/เธอ/มัน)",
+       "zh": "er/sie/es(他/她/它)",
+       "ms": "er/sie/es (dia/ia)",
+       "sw": "er/sie/es (yeye/hicho)",
+       "hi": "er/sie/es (वह)",
+       "ur": "er/sie/es (وہ)",
+       "ar_eg": "er/sie/es (هو/هي/هو المحايد)",
+       "ar_lb": "er/sie/es (هو/هي)",
+       "ar_sy": "er/sie/es (هوي/هي)"
       },
       "cells": [
        "-t",
@@ -1954,7 +3178,16 @@ const GRAMMAR = [
        "fa": "wir (ما)",
        "uk": "wir (ми)",
        "pl": "wir (my)",
-       "tr": "wir (biz)"
+       "tr": "wir (biz)",
+       "th": "wir (เรา)",
+       "zh": "wir(我们)",
+       "ms": "wir (kami/kita)",
+       "sw": "wir (sisi)",
+       "hi": "wir (हम)",
+       "ur": "wir (ہم)",
+       "ar_eg": "wir (إحنا)",
+       "ar_lb": "wir (نحنا)",
+       "ar_sy": "wir (نحنا)"
       },
       "cells": [
        "-en",
@@ -1970,7 +3203,16 @@ const GRAMMAR = [
        "fa": "ihr (شما)",
        "uk": "ihr (ви)",
        "pl": "ihr (wy)",
-       "tr": "ihr (siz)"
+       "tr": "ihr (siz)",
+       "th": "ihr (พวกเธอ)",
+       "zh": "ihr(你们)",
+       "ms": "ihr (kamu semua)",
+       "sw": "ihr (nyinyi)",
+       "hi": "ihr (तुम सब)",
+       "ur": "ihr (تم سب)",
+       "ar_eg": "ihr (إنتوا)",
+       "ar_lb": "ihr (إنتو)",
+       "ar_sy": "ihr (إنتو)"
       },
       "cells": [
        "-t",
@@ -1986,7 +3228,16 @@ const GRAMMAR = [
        "fa": "sie/Sie (آنها/شما محترم)",
        "uk": "sie/Sie (вони/Ви ввічл.)",
        "pl": "sie/Sie (oni/one / forma grzecznościowa)",
-       "tr": "sie/Sie (onlar / siz - nazik)"
+       "tr": "sie/Sie (onlar / siz - nazik)",
+       "th": "sie/Sie (พวกเขา/คุณ แบบสุภาพ)",
+       "zh": "sie/Sie(他们/您)",
+       "ms": "sie/Sie (mereka/anda)",
+       "sw": "sie/Sie (wao/wewe kwa heshima)",
+       "hi": "sie/Sie (वे/आप)",
+       "ur": "sie/Sie (وہ لوگ/آپ)",
+       "ar_eg": "sie/Sie (هم/حضرتك)",
+       "ar_lb": "sie/Sie (هنّي/حضرتك)",
+       "ar_sy": "sie/Sie (هنّي/حضرتك)"
       },
       "cells": [
        "-en",
@@ -2004,7 +3255,16 @@ const GRAMMAR = [
      "fa": "سه فعل کمکی کلیدی: sein، haben، werden",
      "uk": "Три важливі допоміжні дієслова: sein, haben, werden",
      "pl": "Trzy ważne czasowniki posiłkowe: sein, haben, werden",
-     "tr": "Üç önemli yardımcı fiil: sein, haben, werden"
+     "tr": "Üç önemli yardımcı fiil: sein, haben, werden",
+     "th": "กริยาช่วยสำคัญสามตัว: sein, haben, werden",
+     "zh": "三个重要的助动词:sein、haben、werden",
+     "ms": "Tiga kata kerja bantu penting: sein, haben, werden",
+     "sw": "Vitenzi vitatu muhimu vya kusaidia: sein, haben, werden",
+     "hi": "तीन महत्वपूर्ण सहायक क्रियाएँ: sein, haben, werden",
+     "ur": "تین اہم معاون افعال: sein، haben، werden",
+     "ar_eg": "الأفعال المساعدة التلاتة المهمة: sein و haben و werden",
+     "ar_lb": "الأفعال المساعدة التلاتة المهمة: sein، haben، werden",
+     "ar_sy": "الأفعال المساعدة التلاتة المهمة: sein وhaben وwerden"
     },
     "labelHeader": {
      "de": "Person",
@@ -2014,7 +3274,16 @@ const GRAMMAR = [
      "fa": "شخص",
      "uk": "Особа",
      "pl": "Osoba",
-     "tr": "Şahıs"
+     "tr": "Şahıs",
+     "th": "บุรุษ (Person)",
+     "zh": "人称",
+     "ms": "Orang",
+     "sw": "Nafsi",
+     "hi": "पुरुष",
+     "ur": "شخص",
+     "ar_eg": "الضمير",
+     "ar_lb": "الشخص (Person)",
+     "ar_sy": "الشخص"
     },
     "columns": [
      {
@@ -2025,7 +3294,16 @@ const GRAMMAR = [
       "fa": "sein (بودن)",
       "uk": "sein (бути)",
       "pl": "sein (być)",
-      "tr": "sein (olmak - to be)"
+      "tr": "sein (olmak - to be)",
+      "th": "sein (เป็น/อยู่/คือ)",
+      "zh": "sein(是)",
+      "ms": "sein (menjadi/adalah)",
+      "sw": "sein (kuwa)",
+      "hi": "sein (होना)",
+      "ur": "sein (ہونا)",
+      "ar_eg": "sein (يكون)",
+      "ar_lb": "sein (يكون)",
+      "ar_sy": "sein (يكون)"
      },
      {
       "de": "haben",
@@ -2035,7 +3313,16 @@ const GRAMMAR = [
       "fa": "haben (داشتن)",
       "uk": "haben (мати)",
       "pl": "haben (mieć)",
-      "tr": "haben (sahip olmak)"
+      "tr": "haben (sahip olmak)",
+      "th": "haben (มี)",
+      "zh": "haben(有)",
+      "ms": "haben (ada/mempunyai)",
+      "sw": "haben (kuwa na)",
+      "hi": "haben (रखना/होना)",
+      "ur": "haben (رکھنا)",
+      "ar_eg": "haben (عنده/يملك)",
+      "ar_lb": "haben (يكون عندو)",
+      "ar_sy": "haben (يكون عندو)"
      },
      {
       "de": "werden",
@@ -2045,7 +3332,16 @@ const GRAMMAR = [
       "fa": "werden (شدن)",
       "uk": "werden (ставати)",
       "pl": "werden (stawać się)",
-      "tr": "werden (olmak - to become)"
+      "tr": "werden (olmak - to become)",
+      "th": "werden (จะ/กลายเป็น)",
+      "zh": "werden(变成)",
+      "ms": "werden (menjadi/akan)",
+      "sw": "werden (kuwa/kugeuka)",
+      "hi": "werden (बनना)",
+      "ur": "werden (بننا)",
+      "ar_eg": "werden (يبقى/يصبح)",
+      "ar_lb": "werden (يصير)",
+      "ar_sy": "werden (يصير)"
      }
     ],
     "rows": [
@@ -2058,7 +3354,16 @@ const GRAMMAR = [
        "fa": "ich (من)",
        "uk": "ich (я)",
        "pl": "ich (ja)",
-       "tr": "ich (ben)"
+       "tr": "ich (ben)",
+       "th": "ich (ฉัน)",
+       "zh": "ich(我)",
+       "ms": "ich (saya)",
+       "sw": "ich (mimi)",
+       "hi": "ich (मैं)",
+       "ur": "ich (میں)",
+       "ar_eg": "ich (أنا)",
+       "ar_lb": "ich (أنا)",
+       "ar_sy": "ich (أنا)"
       },
       "cells": [
        "bin",
@@ -2075,7 +3380,16 @@ const GRAMMAR = [
        "fa": "du (تو)",
        "uk": "du (ти)",
        "pl": "du (ty)",
-       "tr": "du (sen)"
+       "tr": "du (sen)",
+       "th": "du (เธอ)",
+       "zh": "du(你)",
+       "ms": "du (awak)",
+       "sw": "du (wewe)",
+       "hi": "du (तुम)",
+       "ur": "du (تم)",
+       "ar_eg": "du (إنت)",
+       "ar_lb": "du (إنتَ/إنتِ)",
+       "ar_sy": "du (إنت)"
       },
       "cells": [
        "bist",
@@ -2092,7 +3406,16 @@ const GRAMMAR = [
        "fa": "er/sie/es (او/آن)",
        "uk": "er/sie/es (він/вона/воно)",
        "pl": "er/sie/es (on/ona/ono)",
-       "tr": "er/sie/es (o)"
+       "tr": "er/sie/es (o)",
+       "th": "er/sie/es (เขา/เธอ/มัน)",
+       "zh": "er/sie/es(他/她/它)",
+       "ms": "er/sie/es (dia/ia)",
+       "sw": "er/sie/es (yeye/hicho)",
+       "hi": "er/sie/es (वह)",
+       "ur": "er/sie/es (وہ)",
+       "ar_eg": "er/sie/es (هو/هي/هو المحايد)",
+       "ar_lb": "er/sie/es (هو/هي)",
+       "ar_sy": "er/sie/es (هوي/هي)"
       },
       "cells": [
        "ist",
@@ -2109,7 +3432,16 @@ const GRAMMAR = [
        "fa": "wir (ما)",
        "uk": "wir (ми)",
        "pl": "wir (my)",
-       "tr": "wir (biz)"
+       "tr": "wir (biz)",
+       "th": "wir (เรา)",
+       "zh": "wir(我们)",
+       "ms": "wir (kami/kita)",
+       "sw": "wir (sisi)",
+       "hi": "wir (हम)",
+       "ur": "wir (ہم)",
+       "ar_eg": "wir (إحنا)",
+       "ar_lb": "wir (نحنا)",
+       "ar_sy": "wir (نحنا)"
       },
       "cells": [
        "sind",
@@ -2126,7 +3458,16 @@ const GRAMMAR = [
        "fa": "ihr (شما)",
        "uk": "ihr (ви)",
        "pl": "ihr (wy)",
-       "tr": "ihr (siz)"
+       "tr": "ihr (siz)",
+       "th": "ihr (พวกเธอ)",
+       "zh": "ihr(你们)",
+       "ms": "ihr (kamu semua)",
+       "sw": "ihr (nyinyi)",
+       "hi": "ihr (तुम सब)",
+       "ur": "ihr (تم سب)",
+       "ar_eg": "ihr (إنتوا)",
+       "ar_lb": "ihr (إنتو)",
+       "ar_sy": "ihr (إنتو)"
       },
       "cells": [
        "seid",
@@ -2143,7 +3484,16 @@ const GRAMMAR = [
        "fa": "sie/Sie (آنها/شما محترم)",
        "uk": "sie/Sie (вони/Ви ввічл.)",
        "pl": "sie/Sie (oni/one / forma grzecznościowa)",
-       "tr": "sie/Sie (onlar / siz - nazik)"
+       "tr": "sie/Sie (onlar / siz - nazik)",
+       "th": "sie/Sie (พวกเขา/คุณ แบบสุภาพ)",
+       "zh": "sie/Sie(他们/您)",
+       "ms": "sie/Sie (mereka/anda)",
+       "sw": "sie/Sie (wao/wewe kwa heshima)",
+       "hi": "sie/Sie (वे/आप)",
+       "ur": "sie/Sie (وہ لوگ/آپ)",
+       "ar_eg": "sie/Sie (هم/حضرتك)",
+       "ar_lb": "sie/Sie (هنّي/حضرتك)",
+       "ar_sy": "sie/Sie (هنّي/حضرتك)"
       },
       "cells": [
        "sind",
@@ -2162,7 +3512,16 @@ const GRAMMAR = [
      "fa": "افعال قوی با تغییر مصوت ریشه (فقط در du و er/sie/es)",
      "uk": "Сильні дієслова зі зміною кореневого голосного (лише du і er/sie/es)",
      "pl": "Czasowniki mocne z wymianą samogłoski (tylko du oraz er/sie/es)",
-     "tr": "Kök ünlüsü değişen güçlü fiiller (yalnızca du ve er/sie/es)"
+     "tr": "Kök ünlüsü değişen güçlü fiiller (yalnızca du ve er/sie/es)",
+     "th": "กริยาไม่ปกติที่เปลี่ยนสระ (เฉพาะ du และ er/sie/es)",
+     "zh": "带元音变化的强变化动词(仅 du 和 er/sie/es 形式)",
+     "ms": "Kata kerja kuat dengan perubahan vokal (hanya du dan er/sie/es)",
+     "sw": "Vitenzi imara vyenye mabadiliko ya irabu (du na er/sie/es pekee)",
+     "hi": "स्वर-परिवर्तन वाली प्रबल क्रियाएँ (केवल du और er/sie/es में)",
+     "ur": "مضبوط افعال جن میں مصوتہ بدلتا ہے (صرف du اور er/sie/es میں)",
+     "ar_eg": "الأفعال القوية اللي بيتغير فيها الحرف الصوتي (بس مع du و er/sie/es)",
+     "ar_lb": "أفعال قوية بيتغيّر فيها الصوتي (بس بـ du وer/sie/es)",
+     "ar_sy": "أفعال قوية بتغيّر الحرف الصوتي (بس بـdu وer/sie/es)"
     },
     "labelHeader": {
      "de": "Bedeutung",
@@ -2172,7 +3531,16 @@ const GRAMMAR = [
      "fa": "معنی",
      "uk": "Значення",
      "pl": "Znaczenie",
-     "tr": "Anlam"
+     "tr": "Anlam",
+     "th": "ความหมาย",
+     "zh": "含义",
+     "ms": "Makna",
+     "sw": "Maana",
+     "hi": "अर्थ",
+     "ur": "معنی",
+     "ar_eg": "المعنى",
+     "ar_lb": "المعنى",
+     "ar_sy": "المعنى"
     },
     "columns": [
      {
@@ -2183,7 +3551,16 @@ const GRAMMAR = [
       "fa": "مصدر",
       "uk": "Інфінітив",
       "pl": "Bezokolicznik",
-      "tr": "Mastar"
+      "tr": "Mastar",
+      "th": "รูปกริยาเดิม (Infinitiv)",
+      "zh": "不定式",
+      "ms": "Infinitif",
+      "sw": "Infiniti",
+      "hi": "इनफ़िनिटिव (मूल रूप)",
+      "ur": "مصدر (Infinitiv)",
+      "ar_eg": "Infinitiv",
+      "ar_lb": "المصدر (Infinitiv)",
+      "ar_sy": "المصدر"
      },
      {
       "de": "Vokalwechsel",
@@ -2193,7 +3570,16 @@ const GRAMMAR = [
       "fa": "تغییر مصوت",
       "uk": "Зміна голосного",
       "pl": "Wymiana samogłoski",
-      "tr": "Ünlü değişimi"
+      "tr": "Ünlü değişimi",
+      "th": "การเปลี่ยนสระ",
+      "zh": "元音变化",
+      "ms": "Perubahan vokal",
+      "sw": "Mabadiliko ya irabu",
+      "hi": "स्वर-परिवर्तन",
+      "ur": "مصوتے کی تبدیلی",
+      "ar_eg": "تغيير الحرف الصوتي",
+      "ar_lb": "تغيير الصوتي (Vokalwechsel)",
+      "ar_sy": "تغيير الحرف الصوتي"
      },
      {
       "de": "du",
@@ -2203,7 +3589,16 @@ const GRAMMAR = [
       "fa": "du (تو)",
       "uk": "du (ти)",
       "pl": "du (ty)",
-      "tr": "du (sen)"
+      "tr": "du (sen)",
+      "th": "du (เธอ)",
+      "zh": "du(你)",
+      "ms": "du (awak)",
+      "sw": "du (wewe)",
+      "hi": "du (तुम)",
+      "ur": "du (تم)",
+      "ar_eg": "du (إنت)",
+      "ar_lb": "du (إنتَ/إنتِ)",
+      "ar_sy": "du (إنت)"
      },
      {
       "de": "er/sie/es",
@@ -2213,7 +3608,16 @@ const GRAMMAR = [
       "fa": "er/sie/es (او/آن)",
       "uk": "er/sie/es (він/вона/воно)",
       "pl": "er/sie/es (on/ona/ono)",
-      "tr": "er/sie/es (o)"
+      "tr": "er/sie/es (o)",
+      "th": "er/sie/es (เขา/เธอ/มัน)",
+      "zh": "er/sie/es(他/她/它)",
+      "ms": "er/sie/es (dia/ia)",
+      "sw": "er/sie/es (yeye/hicho)",
+      "hi": "er/sie/es (वह)",
+      "ur": "er/sie/es (وہ)",
+      "ar_eg": "er/sie/es (هو/هي/هو المحايد)",
+      "ar_lb": "er/sie/es (هو/هي)",
+      "ar_sy": "er/sie/es (هوي/هي)"
      }
     ],
     "rows": [
@@ -2226,7 +3630,16 @@ const GRAMMAR = [
        "fa": "رفتن / راندن",
        "uk": "fahren (їхати)",
        "pl": "fahren (jechać)",
-       "tr": "fahren (gitmek / sürmek)"
+       "tr": "fahren (gitmek / sürmek)",
+       "th": "fahren (ขับรถ/เดินทาง)",
+       "zh": "fahren(开车/去)",
+       "ms": "fahren (memandu/pergi)",
+       "sw": "kuendesha / kwenda",
+       "hi": "fahren (चलाना/जाना)",
+       "ur": "چلانا / جانا",
+       "ar_eg": "fahren (يسوق/يسافر)",
+       "ar_lb": "fahren (يسوق/يروح بمركبة)",
+       "ar_sy": "يسوق / يروح"
       },
       "cells": [
        "fahren",
@@ -2244,7 +3657,16 @@ const GRAMMAR = [
        "fa": "دادن",
        "uk": "geben (давати)",
        "pl": "geben (dawać)",
-       "tr": "geben (vermek)"
+       "tr": "geben (vermek)",
+       "th": "geben (ให้)",
+       "zh": "geben(给)",
+       "ms": "geben (memberi)",
+       "sw": "kutoa",
+       "hi": "geben (देना)",
+       "ur": "دینا",
+       "ar_eg": "geben (يدي)",
+       "ar_lb": "geben (يعطي)",
+       "ar_sy": "يعطي"
       },
       "cells": [
        "geben",
@@ -2262,7 +3684,16 @@ const GRAMMAR = [
        "fa": "خواندن",
        "uk": "lesen (читати)",
        "pl": "lesen (czytać)",
-       "tr": "lesen (okumak)"
+       "tr": "lesen (okumak)",
+       "th": "lesen (อ่าน)",
+       "zh": "lesen(读)",
+       "ms": "lesen (membaca)",
+       "sw": "kusoma",
+       "hi": "lesen (पढ़ना)",
+       "ur": "پڑھنا",
+       "ar_eg": "lesen (يقرا)",
+       "ar_lb": "lesen (يقرا)",
+       "ar_sy": "يقرا"
       },
       "cells": [
        "lesen",
@@ -2280,7 +3711,16 @@ const GRAMMAR = [
        "fa": "صحبت کردن",
        "uk": "sprechen (говорити)",
        "pl": "sprechen (mówić)",
-       "tr": "sprechen (konuşmak)"
+       "tr": "sprechen (konuşmak)",
+       "th": "sprechen (พูด)",
+       "zh": "sprechen(说)",
+       "ms": "sprechen (bercakap)",
+       "sw": "kuzungumza",
+       "hi": "sprechen (बोलना)",
+       "ur": "بولنا",
+       "ar_eg": "sprechen (يتكلم)",
+       "ar_lb": "sprechen (يحكي)",
+       "ar_sy": "يحكي"
       },
       "cells": [
        "sprechen",
@@ -2298,7 +3738,16 @@ const GRAMMAR = [
        "fa": "گرفتن",
        "uk": "nehmen (брати)",
        "pl": "nehmen (brać)",
-       "tr": "nehmen (almak)"
+       "tr": "nehmen (almak)",
+       "th": "nehmen (เอา/รับ)",
+       "zh": "nehmen(拿/乘坐)",
+       "ms": "nehmen (mengambil)",
+       "sw": "kuchukua",
+       "hi": "nehmen (लेना)",
+       "ur": "لینا",
+       "ar_eg": "nehmen (ياخد)",
+       "ar_lb": "nehmen (ياخد)",
+       "ar_sy": "ياخد"
       },
       "cells": [
        "nehmen",
@@ -2319,7 +3768,16 @@ const GRAMMAR = [
     "fa": "من همین حالا دارم تکالیفم را انجام می‌دهم.",
     "uk": "Я саме роблю домашнє завдання.",
     "pl": "Właśnie teraz odrabiam zadanie domowe.",
-    "tr": "Şu anda ödevimi yapıyorum."
+    "tr": "Şu anda ödevimi yapıyorum.",
+    "th": "ตอนนี้ฉันกำลังทำการบ้านอยู่",
+    "zh": "我正在做作业。",
+    "ms": "Saya sedang membuat kerja rumah saya.",
+    "sw": "Kwa sasa ninafanya kazi yangu ya nyumbani.",
+    "hi": "मैं अभी अपना गृहकार्य कर रहा हूँ।",
+    "ur": "میں ابھی اپنا ہوم ورک کر رہا ہوں۔",
+    "ar_eg": "أنا دلوقتي بعمل الواجب بتاعي.",
+    "ar_lb": "هلق عم إعمل واجباتي.",
+    "ar_sy": "هلق عم اعمل واجبي."
    },
    {
     "de": "Morgen fahre ich nach Berlin.",
@@ -2329,7 +3787,16 @@ const GRAMMAR = [
     "fa": "فردا به برلین می‌روم.",
     "uk": "Завтра я їду до Берліна.",
     "pl": "Jutro jadę do Berlina.",
-    "tr": "Yarın Berlin'e gidiyorum."
+    "tr": "Yarın Berlin'e gidiyorum.",
+    "th": "พรุ่งนี้ฉันจะไปเบอร์ลิน",
+    "zh": "明天我要去柏林。",
+    "ms": "Esok saya akan pergi ke Berlin.",
+    "sw": "Kesho nitaenda Berlin.",
+    "hi": "कल मैं बर्लिन जा रहा हूँ।",
+    "ur": "کل میں برلن جا رہا ہوں۔",
+    "ar_eg": "بكرة هسافر برلين.",
+    "ar_lb": "بكرا رح روح عبرلين.",
+    "ar_sy": "بكرا رايح عبرلين."
    },
    {
     "de": "Er nimmt den Bus und liest die Zeitung.",
@@ -2339,7 +3806,16 @@ const GRAMMAR = [
     "fa": "او با اتوبوس می‌رود و روزنامه می‌خواند.",
     "uk": "Він їде автобусом і читає газету.",
     "pl": "On jedzie autobusem i czyta gazetę.",
-    "tr": "O, otobüse biniyor ve gazeteyi okuyor."
+    "tr": "O, otobüse biniyor ve gazeteyi okuyor.",
+    "th": "เขาขึ้นรถบัสและอ่านหนังสือพิมพ์",
+    "zh": "他乘公交车,并读报纸。",
+    "ms": "Dia menaiki bas dan membaca akhbar.",
+    "sw": "Anachukua basi na kusoma gazeti.",
+    "hi": "वह बस लेता है और अख़बार पढ़ता है।",
+    "ur": "وہ بس لیتا ہے اور اخبار پڑھتا ہے۔",
+    "ar_eg": "هو بياخد الأتوبيس وبيقرا الجورنال.",
+    "ar_lb": "هوي ياخد الباص ويقرا الجريدة.",
+    "ar_sy": "هوي عم ياخد الباص وعم يقرا الجريدة."
    }
   ],
   "hints": {
@@ -2350,7 +3826,16 @@ const GRAMMAR = [
    "fa": "فارسی هم فعل را با شناسه صرف می‌کند (می‌روم، می‌روی)، پس ایده‌ی پایانه‌های شخصی برایتان آشناست؛ اما در آلمانی برای «دارم می‌روم» و اغلب «خواهم رفت» هم از همین حالِ ساده استفاده می‌شود و فعل معمولاً در جایگاه دوم جمله می‌آید. دقت کنید بعضی افعال قوی مصوت ریشه را فقط در دوم‌شخص و سوم‌شخص مفرد عوض می‌کنند (fahren ← fährt).",
    "uk": "Один Präsens на все: теперішнє, тривалу дію й найближче майбутнє. Закінчення -e/-st/-t/-en/-t/-en; у сильних дієслів кореневий голосний змінюється лише в du і er/sie/es (a→ä, e→i/ie).",
    "pl": "Jeden czas teraźniejszy do wszystkiego: teraźniejszość, czynność trwająca i bliska przyszłość. Końcówki -e/-st/-t/-en/-t/-en; w czasownikach mocnych samogłoska rdzenna zmienia się tylko w du oraz er/sie/es (a→ä, e→i/ie).",
-   "tr": "Her şey için tek bir Präsens: şimdiki zaman, süreklilik ve yakın gelecek. Ekler -e/-st/-t/-en/-t/-en; güçlü fiillerde kök ünlüsü yalnızca du ve er/sie/es'te değişir (a→ä, e→i/ie)."
+   "tr": "Her şey için tek bir Präsens: şimdiki zaman, süreklilik ve yakın gelecek. Ekler -e/-st/-t/-en/-t/-en; güçlü fiillerde kök ünlüsü yalnızca du ve er/sie/es'te değişir (a→ä, e→i/ie).",
+   "th": "ปัจจุบันกาลรูปเดียวใช้ได้ทุกกรณี ทั้งปัจจุบัน การกระทำที่กำลังดำเนินอยู่ และอนาคตอันใกล้ คำลงท้ายคือ -e/-st/-t/-en/-t/-en ส่วนกริยาไม่ปกติจะเปลี่ยนสระในรากศัพท์เฉพาะรูป du และ er/sie/es เท่านั้น (a→ä, e→i/ie)",
+   "zh": "一种现在时形式包揽一切:当下、进行和不久的将来。词尾为 -e/-st/-t/-en/-t/-en;强变化动词的词干元音只在 du 和 er/sie/es 形式中发生变化(a→ä,e→i/ie)。",
+   "ms": "Satu bentuk Präsens untuk semuanya: masa kini, perbuatan yang sedang berlaku, dan masa depan yang dekat. Akhiran -e/-st/-t/-en/-t/-en; bagi kata kerja kuat, vokal batang kata berubah hanya pada du dan er/sie/es (a→ä, e→i/ie).",
+   "sw": "Präsens moja kwa kila kitu: hali ya sasa, kiendelezi, na wakati ujao wa karibu. Miisho ni -e/-st/-t/-en/-t/-en; kwa vitenzi imara, irabu ya shina hubadilika tu katika du na er/sie/es (a→ä, e→i/ie).",
+   "hi": "सब कुछ के लिए एक ही वर्तमान काल: वर्तमान, जारी क्रिया और निकट भविष्य। अंत -e/-st/-t/-en/-t/-en; प्रबल क्रियाओं में मूल स्वर केवल du और er/sie/es में बदलता है (a→ä, e→i/ie)।",
+   "ur": "ایک ہی حال سب کچھ کے لیے: موجودہ لمحہ، جاری عمل اور قریبی مستقبل۔ اختتامیے -e/-st/-t/-en/-t/-en ہیں؛ مضبوط افعال میں جڑ کا مصوتہ صرف du اور er/sie/es میں بدلتا ہے (a→ä، e→i/ie)۔",
+   "ar_eg": "زمن مضارع واحد لكل حاجة: الحاضر، والاستمرار، والمستقبل القريب. النهايات -e/-st/-t/-en/-t/-en؛ في الأفعال القوية الحرف الصوتي بيتغير بس مع du و er/sie/es (a→ä, e→i/ie).",
+   "ar_lb": "مضارع واحد لكل شي: الحاضر، الاستمرار، والمستقبل القريب. النهايات -e/-st/-t/-en/-t/-en؛ وبالأفعال القوية بيتغيّر الصوتي بالجذر بس بـ du وer/sie/es (a→ä, e→i/ie).",
+   "ar_sy": "مضارع واحد لكل شي: حاضر، استمرار، ومستقبل قريب. النهايات -e/-st/-t/-en/-t/-en؛ بالأفعال القوية الحرف الصوتي بيتغيّر بس بـdu وer/sie/es (a→ä، e→i/ie)."
   }
  },
  {
@@ -2364,7 +3849,16 @@ const GRAMMAR = [
    "fa": "پرفکت (ماضی نقلی)",
    "uk": "Perfekt (складений минулий час)",
    "pl": "Perfekt (czas przeszły złożony)",
-   "tr": "Perfekt (yakın geçmiş zaman)"
+   "tr": "Perfekt (yakın geçmiş zaman)",
+   "th": "อดีตกาลสมบูรณ์ (Perfekt)",
+   "zh": "现在完成时(Perfekt)",
+   "ms": "Perfekt (Kala Lampau Sempurna)",
+   "sw": "Perfekt (Wakati Uliopita Timilifu)",
+   "hi": "Perfekt (पूर्ण वर्तमान भूतकाल)",
+   "ur": "ماضیِ قریب (Perfekt)",
+   "ar_eg": "Perfekt",
+   "ar_lb": "الـ Perfekt (الماضي المركّب)",
+   "ar_sy": "الماضي التام (Perfekt)"
   },
   "intro": {
    "de": "Das Perfekt ist die wichtigste Vergangenheitsform der gesprochenen Sprache. Man bildet es mit dem konjugierten Hilfsverb haben oder sein plus dem Partizip II, das ans Satzende rückt.",
@@ -2374,7 +3868,16 @@ const GRAMMAR = [
    "fa": "پرفکت پرکاربردترین زمان گذشته در آلمانیِ گفتاری است. آن را با فعل کمکیِ صرف‌شده‌ی haben یا sein به‌علاوه‌ی Partizip II (اسم مفعول) می‌سازند که به انتهای جمله می‌رود.",
    "uk": "Perfekt – найважливіша форма минулого часу в розмовній мові. Його утворюють за допомогою відмінюваного допоміжного дієслова haben або sein плюс Partizip II, який стає в кінець речення.",
    "pl": "Perfekt to najważniejszy czas przeszły w języku mówionym. Tworzy się go za pomocą odmienionego czasownika posiłkowego haben lub sein plus imiesłowu czasu przeszłego (Partizip II), który przesuwa się na koniec zdania.",
-   "tr": "Perfekt, konuşma dilinin en önemli geçmiş zaman biçimidir. Çekimlenmiş yardımcı fiil haben ya da sein ile, cümlenin sonuna kayan Partizip II (geçmiş zaman ortacı) birleştirilerek kurulur."
+   "tr": "Perfekt, konuşma dilinin en önemli geçmiş zaman biçimidir. Çekimlenmiş yardımcı fiil haben ya da sein ile, cümlenin sonuna kayan Partizip II (geçmiş zaman ortacı) birleştirilerek kurulur.",
+   "th": "Perfekt เป็นรูปอดีตกาลที่สำคัญที่สุดในภาษาพูด สร้างขึ้นโดยใช้กริยาช่วย haben หรือ sein ที่ผันแล้ว ร่วมกับรูปกริยาช่อง 3 (Partizip II) ซึ่งจะย้ายไปอยู่ท้ายประโยค",
+   "zh": "现在完成时(Perfekt)是口语中最重要的过去时形式。构成方式为变位的助动词 haben 或 sein 加上第二分词(Partizip II),分词移到句末。",
+   "ms": "Perfekt ialah bentuk lampau paling penting dalam bahasa pertuturan. Ia dibentuk dengan kata kerja bantu haben atau sein yang dikonjugasikan, ditambah Partizip II, yang beralih ke hujung ayat.",
+   "sw": "Perfekt ndiyo umbo muhimu zaidi la wakati uliopita katika lugha inayozungumzwa. Huundwa kwa kitenzi kisaidizi kilichobadilishwa haben au sein pamoja na Partizip II (kishirikishi cha wakati uliopita), ambacho husogezwa mwishoni mwa sentensi.",
+   "hi": "Perfekt बोलचाल की जर्मन का सबसे महत्वपूर्ण भूतकाल है। इसे संयुगित सहायक क्रिया haben या sein और Partizip II (भूतकालिक कृदंत) से बनाया जाता है, जो वाक्य के अंत में चला जाता है।",
+   "ur": "Perfekt بولی جانے والی زبان کا سب سے اہم ماضی کا صیغہ ہے۔ اسے معاون فعل haben یا sein کی گردان شدہ صورت اور Partizip II (ماضی کا اسمِ فاعل) سے بنایا جاتا ہے، جو جملے کے آخر میں جاتا ہے۔",
+   "ar_eg": "زمن الـ Perfekt هو أهم زمن ماضي في الكلام العادي. بيتكوّن من الفعل المساعد haben أو sein متصرّف + الـ Partizip II اللي بيروح آخر الجملة.",
+   "ar_lb": "الـ Perfekt هوي أهم زمن ماضي بالحكي اليومي. بيتكوّن من الفعل المساعد المصرّف haben أو sein زائد الـ Partizip II (اسم المفعول)، يلي بيروح على آخر الجملة.",
+   "ar_sy": "الـPerfekt هو أهم صيغة ماضي بالحكي اليومي. بتتشكّل من الفعل المساعد haben أو sein متصرّف زائد Partizip II (اسم المفعول) يلي بيروح لآخر الجملة."
   },
   "tables": [
    {
@@ -2386,7 +3889,16 @@ const GRAMMAR = [
      "fa": "ساختن Partizip II",
      "uk": "Утворення Partizip II",
      "pl": "Tworzenie imiesłowu Partizip II",
-     "tr": "Partizip II'nin kuruluşu"
+     "tr": "Partizip II'nin kuruluşu",
+     "th": "การสร้างรูปกริยาช่อง 3 (Partizip II)",
+     "zh": "第二分词(Partizip II)的构成",
+     "ms": "Pembentukan Partizip II",
+     "sw": "Uundaji wa Partizip II",
+     "hi": "Partizip II का निर्माण",
+     "ur": "Partizip II کی تشکیل",
+     "ar_eg": "طريقة تكوين الـ Partizip II",
+     "ar_lb": "طريقة تكوين الـ Partizip II",
+     "ar_sy": "تشكيل Partizip II"
     },
     "labelHeader": {
      "de": "Verbtyp",
@@ -2396,7 +3908,16 @@ const GRAMMAR = [
      "fa": "نوع فعل",
      "uk": "Тип дієслова",
      "pl": "Typ czasownika",
-     "tr": "Fiil türü"
+     "tr": "Fiil türü",
+     "th": "ประเภทของกริยา",
+     "zh": "动词类型",
+     "ms": "Jenis kata kerja",
+     "sw": "Aina ya kitenzi",
+     "hi": "क्रिया का प्रकार",
+     "ur": "فعل کی قسم",
+     "ar_eg": "نوع الفعل",
+     "ar_lb": "نوع الفعل",
+     "ar_sy": "نوع الفعل"
     },
     "columns": [
      {
@@ -2407,7 +3928,16 @@ const GRAMMAR = [
       "fa": "مصدر",
       "uk": "Інфінітив",
       "pl": "Bezokolicznik",
-      "tr": "Mastar"
+      "tr": "Mastar",
+      "th": "รูปกริยาเดิม (Infinitiv)",
+      "zh": "不定式",
+      "ms": "Infinitif",
+      "sw": "Infiniti",
+      "hi": "इनफ़िनिटिव",
+      "ur": "مصدر",
+      "ar_eg": "Infinitiv",
+      "ar_lb": "المصدر (Infinitiv)",
+      "ar_sy": "المصدر"
      },
      {
       "de": "Partizip II",
@@ -2417,7 +3947,16 @@ const GRAMMAR = [
       "fa": "اسم مفعول",
       "uk": "Partizip II (дієприкметник)",
       "pl": "Imiesłów przeszły (Partizip II)",
-      "tr": "Geçmiş zaman ortacı (Partizip II)"
+      "tr": "Geçmiş zaman ortacı (Partizip II)",
+      "th": "รูปกริยาช่อง 3 (Partizip II)",
+      "zh": "第二分词(Partizip II)",
+      "ms": "Partizip II",
+      "sw": "Partizip II",
+      "hi": "Partizip II (भूतकालिक कृदंत)",
+      "ur": "Partizip II (ماضی کا اسمِ فاعل)",
+      "ar_eg": "Partizip II",
+      "ar_lb": "اسم المفعول (Partizip II)",
+      "ar_sy": "Partizip II"
      },
      {
       "de": "Regel",
@@ -2427,7 +3966,16 @@ const GRAMMAR = [
       "fa": "قاعده",
       "uk": "Правило",
       "pl": "Reguła",
-      "tr": "Kural"
+      "tr": "Kural",
+      "th": "กฎ",
+      "zh": "规则",
+      "ms": "Peraturan",
+      "sw": "Kanuni",
+      "hi": "नियम",
+      "ur": "قاعدہ",
+      "ar_eg": "القاعدة",
+      "ar_lb": "القاعدة",
+      "ar_sy": "القاعدة"
      }
     ],
     "rows": [
@@ -2440,7 +3988,16 @@ const GRAMMAR = [
        "fa": "باقاعده (ضعیف)",
        "uk": "регулярне (слабке)",
        "pl": "regularny (słaby)",
-       "tr": "düzenli (zayıf)"
+       "tr": "düzenli (zayıf)",
+       "th": "กริยาปกติ (regelmäßig)",
+       "zh": "规则动词(弱变化)",
+       "ms": "tetap (lemah)",
+       "sw": "cha kawaida (dhaifu)",
+       "hi": "नियमित (कमज़ोर)",
+       "ur": "باقاعدہ (کمزور)",
+       "ar_eg": "منتظم",
+       "ar_lb": "منتظم (ضعيف)",
+       "ar_sy": "منتظم (ضعيف)"
       },
       "cells": [
        "machen",
@@ -2457,7 +4014,16 @@ const GRAMMAR = [
        "fa": "قوی (بی‌قاعده)",
        "uk": "сильне",
        "pl": "mocny",
-       "tr": "güçlü"
+       "tr": "güçlü",
+       "th": "กริยาไม่ปกติ (stark)",
+       "zh": "强变化",
+       "ms": "kuat",
+       "sw": "imara",
+       "hi": "प्रबल",
+       "ur": "مضبوط",
+       "ar_eg": "قوي",
+       "ar_lb": "قوي",
+       "ar_sy": "قوي"
       },
       "cells": [
        "sehen · gehen · trinken",
@@ -2474,7 +4040,16 @@ const GRAMMAR = [
        "fa": "افعال -ieren",
        "uk": "дієслова на -ieren",
        "pl": "czasowniki na -ieren",
-       "tr": "-ieren fiilleri"
+       "tr": "-ieren fiilleri",
+       "th": "กริยาลงท้าย -ieren",
+       "zh": "-ieren 结尾的动词",
+       "ms": "Kata kerja -ieren",
+       "sw": "vitenzi vya -ieren",
+       "hi": "-ieren क्रियाएँ",
+       "ur": "-ieren والے افعال",
+       "ar_eg": "أفعال -ieren",
+       "ar_lb": "أفعال -ieren",
+       "ar_sy": "أفعال -ieren"
       },
       "cells": [
        "studieren",
@@ -2491,7 +4066,16 @@ const GRAMMAR = [
        "fa": "پیشوند جدانشدنی",
        "uk": "невіддільний префікс",
        "pl": "przedrostek nierozdzielny",
-       "tr": "ayrılmaz ön ek"
+       "tr": "ayrılmaz ön ek",
+       "th": "อุปสรรคแยกไม่ได้ (untrennbar)",
+       "zh": "不可分前缀",
+       "ms": "tak boleh pisah",
+       "sw": "kiambishi kisichotengana",
+       "hi": "अविभाज्य उपसर्ग",
+       "ur": "غیر منقسم سابقہ",
+       "ar_eg": "غير منفصل",
+       "ar_lb": "سابقة غير منفصلة",
+       "ar_sy": "بادئة غير منفصلة"
       },
       "cells": [
        "verstehen · besuchen",
@@ -2508,7 +4092,16 @@ const GRAMMAR = [
        "fa": "پیشوند جداشدنی",
        "uk": "віддільний префікс",
        "pl": "przedrostek rozdzielny",
-       "tr": "ayrılabilir ön ek"
+       "tr": "ayrılabilir ön ek",
+       "th": "อุปสรรคแยกได้ (trennbar)",
+       "zh": "可分前缀",
+       "ms": "boleh pisah",
+       "sw": "kiambishi kinachotengana",
+       "hi": "विभाज्य उपसर्ग",
+       "ur": "منقسم سابقہ",
+       "ar_eg": "منفصل",
+       "ar_lb": "سابقة منفصلة",
+       "ar_sy": "بادئة منفصلة"
       },
       "cells": [
        "aufstehen",
@@ -2527,7 +4120,16 @@ const GRAMMAR = [
      "fa": "haben یا sein؟",
      "uk": "haben чи sein?",
      "pl": "haben czy sein?",
-     "tr": "haben mı sein mi?"
+     "tr": "haben mı sein mi?",
+     "th": "ใช้ haben หรือ sein?",
+     "zh": "用 haben 还是 sein?",
+     "ms": "haben atau sein?",
+     "sw": "haben au sein?",
+     "hi": "haben या sein?",
+     "ur": "haben یا sein؟",
+     "ar_eg": "haben ولا sein؟",
+     "ar_lb": "haben ولا sein؟",
+     "ar_sy": "haben ولا sein؟"
     },
     "labelHeader": {
      "de": "Hilfsverb",
@@ -2537,7 +4139,16 @@ const GRAMMAR = [
      "fa": "فعل کمکی",
      "uk": "Допоміжне дієслово",
      "pl": "Czasownik posiłkowy",
-     "tr": "Yardımcı fiil"
+     "tr": "Yardımcı fiil",
+     "th": "กริยาช่วย (Hilfsverb)",
+     "zh": "助动词",
+     "ms": "Kata kerja bantu",
+     "sw": "Kitenzi kisaidizi",
+     "hi": "सहायक क्रिया",
+     "ur": "معاون فعل",
+     "ar_eg": "الفعل المساعد",
+     "ar_lb": "الفعل المساعد",
+     "ar_sy": "الفعل المساعد"
     },
     "columns": [
      {
@@ -2548,7 +4159,16 @@ const GRAMMAR = [
       "fa": "چه زمانی",
       "uk": "Коли?",
       "pl": "Kiedy?",
-      "tr": "Ne zaman?"
+      "tr": "Ne zaman?",
+      "th": "เมื่อไร?",
+      "zh": "什么时候用?",
+      "ms": "Bila?",
+      "sw": "Lini?",
+      "hi": "कब?",
+      "ur": "کب؟",
+      "ar_eg": "إمتى؟",
+      "ar_lb": "إيمتى؟",
+      "ar_sy": "إيمتى؟"
      },
      {
       "de": "Beispiel",
@@ -2558,7 +4178,16 @@ const GRAMMAR = [
       "fa": "مثال",
       "uk": "Приклад",
       "pl": "Przykład",
-      "tr": "Örnek"
+      "tr": "Örnek",
+      "th": "ตัวอย่าง",
+      "zh": "例子",
+      "ms": "Contoh",
+      "sw": "Mfano",
+      "hi": "उदाहरण",
+      "ur": "مثال",
+      "ar_eg": "مثال",
+      "ar_lb": "مثال",
+      "ar_sy": "مثال"
      }
     ],
     "rows": [
@@ -2571,7 +4200,16 @@ const GRAMMAR = [
        "fa": "haben",
        "uk": "haben",
        "pl": "haben",
-       "tr": "haben"
+       "tr": "haben",
+       "th": "haben (มี)",
+       "zh": "haben",
+       "ms": "haben",
+       "sw": "haben",
+       "hi": "haben",
+       "ur": "haben",
+       "ar_eg": "haben (عنده/يملك)",
+       "ar_lb": "haben",
+       "ar_sy": "haben"
       },
       "cells": [
        "die meisten Verben (auch mit Objekt)",
@@ -2587,7 +4225,16 @@ const GRAMMAR = [
        "fa": "sein",
        "uk": "sein",
        "pl": "sein",
-       "tr": "sein"
+       "tr": "sein",
+       "th": "sein (เป็น/อยู่/คือ)",
+       "zh": "sein",
+       "ms": "sein",
+       "sw": "sein",
+       "hi": "sein",
+       "ur": "sein",
+       "ar_eg": "sein (يكون)",
+       "ar_lb": "sein",
+       "ar_sy": "sein"
       },
       "cells": [
        "Bewegung + Zustandsänderung: gehen, fahren, kommen, aufstehen, sterben, werden, sein, bleiben",
@@ -2606,7 +4253,16 @@ const GRAMMAR = [
     "fa": "دیروز یک فیلم دیدم.",
     "uk": "Учора я подивився фільм.",
     "pl": "Wczoraj obejrzałem film.",
-    "tr": "Dün bir film izledim."
+    "tr": "Dün bir film izledim.",
+    "th": "เมื่อวานฉันดูหนังมาเรื่องหนึ่ง",
+    "zh": "我昨天看了一部电影。",
+    "ms": "Saya menonton sebuah filem semalam.",
+    "sw": "Jana niliona filamu.",
+    "hi": "मैंने कल एक फ़िल्म देखी।",
+    "ur": "میں نے کل ایک فلم دیکھی۔",
+    "ar_eg": "أنا امبارح شفت فيلم.",
+    "ar_lb": "مبارح تفرّجت على فيلم.",
+    "ar_sy": "أنا تفرّجت عفيلم مبارح."
    },
    {
     "de": "Wir sind mit dem Zug nach Berlin gefahren.",
@@ -2616,7 +4272,16 @@ const GRAMMAR = [
     "fa": "ما با قطار به برلین رفتیم.",
     "uk": "Ми поїхали до Берліна потягом.",
     "pl": "Pojechaliśmy do Berlina pociągiem.",
-    "tr": "Trenle Berlin'e gittik."
+    "tr": "Trenle Berlin'e gittik.",
+    "th": "เรานั่งรถไฟไปเบอร์ลิน",
+    "zh": "我们坐火车去了柏林。",
+    "ms": "Kami pergi ke Berlin dengan kereta api.",
+    "sw": "Tulikwenda Berlin kwa treni.",
+    "hi": "हम ट्रेन से बर्लिन गए।",
+    "ur": "ہم ٹرین سے برلن گئے۔",
+    "ar_eg": "إحنا رحنا برلين بالقطر.",
+    "ar_lb": "رحنا عبرلين بالقطار.",
+    "ar_sy": "رحنا عبرلين بالقطار."
    },
    {
     "de": "Sie hat drei Jahre in Wien studiert.",
@@ -2626,7 +4291,16 @@ const GRAMMAR = [
     "fa": "او سه سال در وین تحصیل کرد.",
     "uk": "Вона три роки навчалася у Відні.",
     "pl": "Studiowała trzy lata w Wiedniu.",
-    "tr": "O, üç yıl Viyana'da okudu."
+    "tr": "O, üç yıl Viyana'da okudu.",
+    "th": "เธอเรียนที่เวียนนามาสามปี",
+    "zh": "她在维也纳学习了三年。",
+    "ms": "Dia belajar di Vienna selama tiga tahun.",
+    "sw": "Alisoma miaka mitatu Vienna.",
+    "hi": "उसने तीन साल विएना में पढ़ाई की।",
+    "ur": "اس نے تین سال ویانا میں تعلیم حاصل کی۔",
+    "ar_eg": "هي درست في فيينا تلات سنين.",
+    "ar_lb": "هيي درست تلات سنين بفيينا.",
+    "ar_sy": "هي درست بفيينا تلات سنين."
    }
   ],
   "hints": {
@@ -2637,7 +4311,16 @@ const GRAMMAR = [
    "fa": "ساختار پرفکت آلمانی درست مثل ماضی نقلی فارسی است: فعل کمکی + اسم مفعول (مانند «رفته‌ام»). چون در فارسی هم فعل ته جمله می‌آید، قرار گرفتن Partizip II در انتهای جمله برایتان طبیعی است. فقط دقت کنید که آلمانی بین دو فعل کمکی haben و sein یکی را انتخاب می‌کند: sein برای حرکت و تغییر حالت، در غیر این صورت haben.",
    "uk": "Формула: haben/sein (відмінюване) + Partizip II у кінці речення. sein уживається при русі та зміні стану (gehen, fahren, aufstehen, werden, bleiben), інакше – haben. Немає ge- у дієслів на -ieren та з невіддільними префіксами.",
    "pl": "Wzór: haben/sein (odmienione) + Partizip II na końcu zdania. sein występuje przy ruchu i zmianie stanu (gehen, fahren, aufstehen, werden, bleiben), w pozostałych przypadkach haben. Brak ge- przy czasownikach na -ieren i przy przedrostkach nierozdzielnych.",
-   "tr": "Formül: haben/sein (çekimli) + Partizip II cümlenin sonuna. sein, hareket ve durum değişikliği fiillerinde kullanılır (gehen, fahren, aufstehen, werden, bleiben), diğer durumlarda haben. -ieren fiillerinde ve ayrılmaz ön eklerde ge- yoktur."
+   "tr": "Formül: haben/sein (çekimli) + Partizip II cümlenin sonuna. sein, hareket ve durum değişikliği fiillerinde kullanılır (gehen, fahren, aufstehen, werden, bleiben), diğer durumlarda haben. -ieren fiillerinde ve ayrılmaz ön eklerde ge- yoktur.",
+   "th": "สูตร: haben/sein (ผันแล้ว) + รูปกริยาช่อง 3 ที่ท้ายประโยค ใช้ sein กับกริยาที่แสดงการเคลื่อนไหวหรือการเปลี่ยนสภาพ (gehen, fahren, aufstehen, werden, bleiben) นอกนั้นใช้ haben ไม่มี ge- นำหน้าสำหรับกริยาลงท้าย -ieren และกริยาที่มีอุปสรรคแยกไม่ได้ (untrennbar)",
+   "zh": "公式:haben/sein(变位)+ 第二分词置于句末。表示位移和状态变化的动词(gehen、fahren、aufstehen、werden、bleiben)用 sein,其余用 haben。-ieren 结尾的动词和带不可分前缀的动词不加 ge-。",
+   "ms": "Formula: haben/sein (dikonjugasikan) + Partizip II di hujung ayat. sein digunakan untuk pergerakan dan perubahan keadaan (gehen, fahren, aufstehen, werden, bleiben), selain itu gunakan haben. Tiada ge- untuk kata kerja -ieren dan awalan yang tak boleh pisah.",
+   "sw": "Fomula: haben/sein (kilichobadilishwa) + Partizip II mwishoni mwa sentensi. sein hutumika kwa vitenzi vya mwendo na mabadiliko ya hali (gehen, fahren, aufstehen, werden, bleiben), na kwa vingine vyote hutumika haben. Hakuna ge- kwa vitenzi vya -ieren na vile vyenye viambishi awali visivyotengana.",
+   "hi": "सूत्र: haben/sein (संयुगित) + Partizip II वाक्य के अंत में। गति और अवस्था-परिवर्तन वाली क्रियाओं (gehen, fahren, aufstehen, werden, bleiben) के साथ sein आता है, बाकी सभी के साथ haben। -ieren क्रियाओं और अविभाज्य उपसर्गों में ge- नहीं लगता।",
+   "ur": "فارمولا: haben/sein (گردان شدہ) + Partizip II جملے کے آخر میں۔ sein حرکت اور حالت کی تبدیلی والے افعال کے ساتھ آتا ہے (gehen، fahren، aufstehen، werden، bleiben)، باقی جگہوں پر haben۔ -ieren والے افعال اور غیر منقسم سابقوں میں ge- نہیں آتا۔",
+   "ar_eg": "القاعدة: haben/sein (متصرّف) + Partizip II آخر الجملة. sein بتتستخدم مع أفعال الحركة وتغيير الحالة (gehen, fahren, aufstehen, werden, bleiben)، وغير كده haben. من غير ge- مع أفعال -ieren والبادئات الغير منفصلة.",
+   "ar_lb": "القاعدة: haben/sein (مصرّف) + Partizip II على آخر الجملة. sein بتنستعمل مع أفعال الحركة وتغيير الحالة (gehen، fahren، aufstehen، werden، bleiben)، وباقي الحالات haben. بلا ge- بأفعال -ieren وبالسوابق غير المنفصلة.",
+   "ar_sy": "القاعدة: haben/sein (متصرّف) + Partizip II بآخر الجملة. sein بتنستخدم مع أفعال الحركة وتغيير الحالة (gehen, fahren, aufstehen, werden, bleiben)، وباقي الأفعال haben. بلا ge- بأفعال -ieren والبادئات غير المنفصلة."
   }
  },
  {
@@ -2651,7 +4334,16 @@ const GRAMMAR = [
    "fa": "پرِتِریتوم (گذشتهٔ ساده)",
    "uk": "Präteritum (простий минулий час)",
    "pl": "Präteritum (czas przeszły prosty)",
-   "tr": "Präteritum (yalın geçmiş zaman)"
+   "tr": "Präteritum (yalın geçmiş zaman)",
+   "th": "อดีตกาลธรรมดา (Präteritum)",
+   "zh": "简单过去时(Präteritum)",
+   "ms": "Präteritum (Lampau Mudah)",
+   "sw": "Präteritum (Wakati Uliopita Rahisi)",
+   "hi": "Präteritum (सरल भूतकाल)",
+   "ur": "سادہ ماضی (Präteritum)",
+   "ar_eg": "الماضي البسيط (Präteritum)",
+   "ar_lb": "الـ Präteritum (الماضي البسيط)",
+   "ar_sy": "الماضي البسيط (Präteritum)"
   },
   "intro": {
    "de": "Das Präteritum ist die einfache Vergangenheit und steht vor allem beim Schreiben und Erzählen. Im Gespräch nimmt man es aber fast nur für sein, haben und die Modalverben — sonst sagt man das Perfekt.",
@@ -2661,7 +4353,16 @@ const GRAMMAR = [
    "fa": "پرِتِریتوم زمان گذشتهٔ ساده است و بیشتر در نوشتار و روایت به کار می‌رود. اما در گفتار روزمره آلمانی‌ها آن را تقریباً فقط برای sein و haben و افعال کمکی‌وجهی به کار می‌برند و برای بقیه Perfekt را ترجیح می‌دهند.",
    "uk": "Präteritum – це простий минулий час, який уживається насамперед на письмі та в оповіді. У розмові ж його беруть майже лише для sein, haben і модальних дієслів – в інших випадках кажуть Perfekt.",
    "pl": "Präteritum to czas przeszły prosty, używany przede wszystkim w piśmie i w narracji. W mowie stosuje się go jednak niemal tylko dla sein, haben i czasowników modalnych — poza tym mówi się w czasie Perfekt.",
-   "tr": "Präteritum, yalın geçmiş zamandır ve özellikle yazıda ve anlatıda kullanılır. Konuşmada ise neredeyse yalnızca sein, haben ve modal fiiller için kullanılır — diğer durumlarda Perfekt söylenir."
+   "tr": "Präteritum, yalın geçmiş zamandır ve özellikle yazıda ve anlatıda kullanılır. Konuşmada ise neredeyse yalnızca sein, haben ve modal fiiller için kullanılır — diğer durumlarda Perfekt söylenir.",
+   "th": "Präteritum คืออดีตกาลธรรมดา ใช้เป็นหลักในภาษาเขียนและการเล่าเรื่อง แต่ในบทสนทนามักใช้เฉพาะกับ sein, haben และกริยาโมดัล ส่วนกริยาอื่น ๆ จะใช้ Perfekt แทน",
+   "zh": "简单过去时(Präteritum)主要用于书面语和叙述。但在口语中几乎只用于 sein、haben 和情态动词——其他情况都用现在完成时(Perfekt)。",
+   "ms": "Präteritum ialah bentuk lampau mudah dan digunakan terutamanya dalam penulisan dan penceritaan. Dalam perbualan, ia hampir hanya digunakan untuk sein, haben dan kata kerja modal — selain itu orang menggunakan Perfekt.",
+   "sw": "Präteritum ni wakati uliopita rahisi na hutumika hasa katika uandishi na usimuliaji wa hadithi. Katika mazungumzo, hata hivyo, hutumika karibu tu kwa sein, haben na vitenzi vya modali — kwa vitenzi vingine hutumika Perfekt.",
+   "hi": "Präteritum सरल भूतकाल है और मुख्य रूप से लेखन और कथा-वर्णन में प्रयोग होता है। बातचीत में इसे लगभग केवल sein, haben और मोडल क्रियाओं के लिए प्रयोग किया जाता है — बाकी के लिए Perfekt बोला जाता है।",
+   "ur": "Präteritum سادہ ماضی ہے اور خاص طور پر تحریر اور بیان کرنے میں استعمال ہوتا ہے۔ بول چال میں البتہ یہ تقریباً صرف sein، haben اور معاون افعالِ استطاعت (Modalverben) کے لیے استعمال ہوتا ہے — باقی کے لیے Perfekt استعمال کیا جاتا ہے۔",
+   "ar_eg": "الـ Präteritum هو الماضي البسيط وبيتستخدم غالبًا في الكتابة والحكي. في الكلام العادي بنستخدمه تقريبًا بس مع sein و haben والأفعال المساعدة الوجهية — وغير كده بنقول Perfekt.",
+   "ar_lb": "الـ Präteritum هوي الماضي البسيط وبينستعمل بالأكتر بالكتابة والحكي القصصي. بس بالمحادثة العادية بينستعمل تقريبًا بس لـ sein وhaben والأفعال الشرطية (Modalverben) — وباقي الحالات بيقولوا الـ Perfekt.",
+   "ar_sy": "الـPräteritum هو الماضي البسيط، وبينستخدم أكتر بالكتابة والحكي القصصي. بالحكي اليومي منستخدمو تقريباً بس مع sein وhaben والأفعال الشرطية (المودال) — وباقي الأفعال منستخدم الـPerfekt."
   },
   "tables": [
    {
@@ -2673,7 +4374,16 @@ const GRAMMAR = [
      "fa": "افعال باقاعده: بن + ‑te (machen)",
      "uk": "Регулярні дієслова: основа + -te (machen)",
      "pl": "Czasowniki regularne: temat + -te (machen)",
-     "tr": "Düzenli fiiller: kök + -te (machen)"
+     "tr": "Düzenli fiiller: kök + -te (machen)",
+     "th": "กริยาปกติ: รากศัพท์ + -te (เช่น machen)",
+     "zh": "规则动词:词干 + -te(以 machen 为例)",
+     "ms": "Kata kerja tetap: batang kata + -te (machen)",
+     "sw": "Vitenzi vya kawaida: shina + -te (machen)",
+     "hi": "नियमित क्रियाएँ: धातु + -te (machen)",
+     "ur": "باقاعدہ افعال: جڑ + -te (machen)",
+     "ar_eg": "الأفعال المنتظمة: جذر الفعل + -te (مثال machen)",
+     "ar_lb": "الأفعال المنتظمة: الجذر + -te (مثال machen)",
+     "ar_sy": "أفعال منتظمة: الجذر + -te (machen)"
     },
     "labelHeader": {
      "de": "Person",
@@ -2683,7 +4393,16 @@ const GRAMMAR = [
      "fa": "شخص",
      "uk": "Особа",
      "pl": "Osoba",
-     "tr": "Şahıs"
+     "tr": "Şahıs",
+     "th": "บุรุษ (Person)",
+     "zh": "人称",
+     "ms": "Orang",
+     "sw": "Nafsi",
+     "hi": "पुरुष",
+     "ur": "شخص",
+     "ar_eg": "الضمير",
+     "ar_lb": "الشخص (Person)",
+     "ar_sy": "الشخص"
     },
     "columns": [
      {
@@ -2694,7 +4413,16 @@ const GRAMMAR = [
       "fa": "پایانه",
       "uk": "Закінчення",
       "pl": "Końcówka",
-      "tr": "Ek"
+      "tr": "Ek",
+      "th": "คำลงท้าย (Endung)",
+      "zh": "词尾",
+      "ms": "Akhiran",
+      "sw": "Mwisho",
+      "hi": "अंत",
+      "ur": "اختتامیہ",
+      "ar_eg": "النهاية",
+      "ar_lb": "النهاية (Endung)",
+      "ar_sy": "النهاية"
      },
      {
       "de": "Beispiel",
@@ -2704,7 +4432,16 @@ const GRAMMAR = [
       "fa": "مثال",
       "uk": "Приклад",
       "pl": "Przykład",
-      "tr": "Örnek"
+      "tr": "Örnek",
+      "th": "ตัวอย่าง",
+      "zh": "例子",
+      "ms": "Contoh",
+      "sw": "Mfano",
+      "hi": "उदाहरण",
+      "ur": "مثال",
+      "ar_eg": "مثال",
+      "ar_lb": "مثال",
+      "ar_sy": "مثال"
      }
     ],
     "rows": [
@@ -2717,7 +4454,16 @@ const GRAMMAR = [
        "fa": "اول‌شخص مفرد",
        "uk": "1-ша особа одн.",
        "pl": "1. os. lp.",
-       "tr": "1. tekil şahıs"
+       "tr": "1. tekil şahıs",
+       "th": "บุรุษที่ 1 เอกพจน์",
+       "zh": "第一人称单数",
+       "ms": "Orang pertama tunggal",
+       "sw": "Nafsi ya 1 umoja",
+       "hi": "प्रथम पुरुष एकवचन",
+       "ur": "واحد متکلم",
+       "ar_eg": "المتكلم المفرد",
+       "ar_lb": "متكلم مفرد",
+       "ar_sy": "متكلم مفرد"
       },
       "cells": [
        "-te",
@@ -2733,7 +4479,16 @@ const GRAMMAR = [
        "fa": "دوم‌شخص مفرد",
        "uk": "2-га особа одн.",
        "pl": "2. os. lp.",
-       "tr": "2. tekil şahıs"
+       "tr": "2. tekil şahıs",
+       "th": "บุรุษที่ 2 เอกพจน์",
+       "zh": "第二人称单数",
+       "ms": "Orang kedua tunggal",
+       "sw": "Nafsi ya 2 umoja",
+       "hi": "द्वितीय पुरुष एकवचन",
+       "ur": "واحد حاضر",
+       "ar_eg": "المخاطب المفرد",
+       "ar_lb": "مخاطب مفرد",
+       "ar_sy": "مخاطب مفرد"
       },
       "cells": [
        "-test",
@@ -2749,7 +4504,16 @@ const GRAMMAR = [
        "fa": "سوم‌شخص مفرد",
        "uk": "3-тя особа одн.",
        "pl": "3. os. lp.",
-       "tr": "3. tekil şahıs"
+       "tr": "3. tekil şahıs",
+       "th": "บุรุษที่ 3 เอกพจน์",
+       "zh": "第三人称单数",
+       "ms": "Orang ketiga tunggal",
+       "sw": "Nafsi ya 3 umoja",
+       "hi": "तृतीय पुरुष एकवचन",
+       "ur": "واحد غائب",
+       "ar_eg": "الغائب المفرد",
+       "ar_lb": "غائب مفرد",
+       "ar_sy": "غائب مفرد"
       },
       "cells": [
        "-te",
@@ -2765,7 +4529,16 @@ const GRAMMAR = [
        "fa": "اول‌شخص جمع",
        "uk": "1-ша особа мн.",
        "pl": "1. os. lm.",
-       "tr": "1. çoğul şahıs"
+       "tr": "1. çoğul şahıs",
+       "th": "บุรุษที่ 1 พหูพจน์",
+       "zh": "第一人称复数",
+       "ms": "Orang pertama jamak",
+       "sw": "Nafsi ya 1 wingi",
+       "hi": "प्रथम पुरुष बहुवचन",
+       "ur": "جمع متکلم",
+       "ar_eg": "المتكلم الجمع",
+       "ar_lb": "متكلم جمع",
+       "ar_sy": "متكلم جمع"
       },
       "cells": [
        "-ten",
@@ -2781,7 +4554,16 @@ const GRAMMAR = [
        "fa": "دوم‌شخص جمع",
        "uk": "2-га особа мн.",
        "pl": "2. os. lm.",
-       "tr": "2. çoğul şahıs"
+       "tr": "2. çoğul şahıs",
+       "th": "บุรุษที่ 2 พหูพจน์",
+       "zh": "第二人称复数",
+       "ms": "Orang kedua jamak",
+       "sw": "Nafsi ya 2 wingi",
+       "hi": "द्वितीय पुरुष बहुवचन",
+       "ur": "جمع حاضر",
+       "ar_eg": "المخاطب الجمع",
+       "ar_lb": "مخاطب جمع",
+       "ar_sy": "مخاطب جمع"
       },
       "cells": [
        "-tet",
@@ -2797,7 +4579,16 @@ const GRAMMAR = [
        "fa": "سوم‌شخص جمع / مؤدبانه",
        "uk": "3-тя особа мн. / ввічл.",
        "pl": "3. os. lm. / forma grzecznościowa",
-       "tr": "3. çoğul şahıs / nezaket"
+       "tr": "3. çoğul şahıs / nezaket",
+       "th": "บุรุษที่ 3 พหูพจน์ / รูปสุภาพ",
+       "zh": "第三人称复数/敬称",
+       "ms": "Orang ketiga jamak / hormat",
+       "sw": "Nafsi ya 3 wingi / heshima",
+       "hi": "तृतीय पुरुष बहुवचन / सम्मानसूचक",
+       "ur": "جمع غائب / ادب کی صورت",
+       "ar_eg": "الغائب الجمع / صيغة الاحترام",
+       "ar_lb": "غائب جمع / صيغة الاحترام",
+       "ar_sy": "غائب جمع / صيغة الاحترام"
       },
       "cells": [
        "-ten",
@@ -2815,7 +4606,16 @@ const GRAMMAR = [
      "fa": "افعال قوی/بی‌قاعده (سوم‌شخص مفرد)",
      "uk": "Сильні/неправильні дієслова (3-тя особа однини)",
      "pl": "Czasowniki mocne/nieregularne (3. osoba liczby pojedynczej)",
-     "tr": "Güçlü/düzensiz fiiller (3. tekil şahıs)"
+     "tr": "Güçlü/düzensiz fiiller (3. tekil şahıs)",
+     "th": "กริยาไม่ปกติ (บุรุษที่ 3 เอกพจน์)",
+     "zh": "强变化/不规则动词(第三人称单数)",
+     "ms": "Kata kerja kuat/tak tetap (orang ketiga tunggal)",
+     "sw": "Vitenzi imara/visivyo vya kawaida (Nafsi ya 3 umoja)",
+     "hi": "प्रबल/अनियमित क्रियाएँ (तृतीय पुरुष एकवचन)",
+     "ur": "مضبوط/بے قاعدہ افعال (واحد غائب)",
+     "ar_eg": "الأفعال القوية/الشاذة (الغائب المفرد)",
+     "ar_lb": "الأفعال القوية/الشاذة (الغائب المفرد)",
+     "ar_sy": "أفعال قوية/غير منتظمة (غائب مفرد)"
     },
     "labelHeader": {
      "de": "",
@@ -2833,7 +4633,16 @@ const GRAMMAR = [
       "fa": "مصدر",
       "uk": "Інфінітив",
       "pl": "Bezokolicznik",
-      "tr": "Mastar"
+      "tr": "Mastar",
+      "th": "รูปกริยาเดิม (Infinitiv)",
+      "zh": "不定式",
+      "ms": "Infinitif",
+      "sw": "Infiniti",
+      "hi": "इनफ़िनिटिव",
+      "ur": "مصدر",
+      "ar_eg": "Infinitiv",
+      "ar_lb": "المصدر (Infinitiv)",
+      "ar_sy": "المصدر"
      },
      {
       "de": "Präteritum (3. Sg.)",
@@ -2843,7 +4652,16 @@ const GRAMMAR = [
       "fa": "پرتریتوم (سوم‌شخص مفرد)",
       "uk": "Präteritum (3-тя ос. одн.)",
       "pl": "Präteritum (3. os. lp.)",
-      "tr": "Präteritum (3. tekil)"
+      "tr": "Präteritum (3. tekil)",
+      "th": "Präteritum (บุรุษที่ 3 เอกพจน์)",
+      "zh": "简单过去时(第三人称单数)",
+      "ms": "Präteritum (orang ketiga tunggal)",
+      "sw": "Präteritum (nafsi ya 3 umoja)",
+      "hi": "Präteritum (तृतीय पुरुष एकवचन)",
+      "ur": "Präteritum (واحد غائب)",
+      "ar_eg": "Präteritum (الغائب المفرد)",
+      "ar_lb": "Präteritum (غائب مفرد)",
+      "ar_sy": "Präteritum (غائب مفرد)"
      }
     ],
     "rows": [
@@ -2988,7 +4806,16 @@ const GRAMMAR = [
      "fa": "افعال کمکی‌وجهی — بدون اوملاوت در گذشته",
      "uk": "Модальні дієслова — без умлаута в минулому часі",
      "pl": "Czasowniki modalne — bez przegłosu w przeszłości",
-     "tr": "Modal fiiller — geçmişte Umlaut'suz"
+     "tr": "Modal fiiller — geçmişte Umlaut'suz",
+     "th": "กริยาโมดัล (Modalverben) — ไม่มีการเปลี่ยนเสียงสระ (Umlaut) ในอดีตกาล",
+     "zh": "情态动词——过去时不带变元音",
+     "ms": "Kata kerja modal — tiada umlaut pada bentuk lampau",
+     "sw": "Vitenzi vya modali — hakuna Umlaut wakati uliopita",
+     "hi": "मोडल क्रियाएँ — भूतकाल में उमलाउट नहीं",
+     "ur": "معاون افعالِ استطاعت — ماضی میں بغیر Umlaut کے",
+     "ar_eg": "الأفعال الوجهية — من غير Umlaut في الماضي",
+     "ar_lb": "الأفعال الشرطية (Modalverben) — بلا Umlaut بالماضي",
+     "ar_sy": "الأفعال الشرطية (المودال) — بلا تغيير حرف صوتي بالماضي"
     },
     "labelHeader": {
      "de": "",
@@ -3006,7 +4833,16 @@ const GRAMMAR = [
       "fa": "مصدر",
       "uk": "Інфінітив",
       "pl": "Bezokolicznik",
-      "tr": "Mastar"
+      "tr": "Mastar",
+      "th": "รูปกริยาเดิม (Infinitiv)",
+      "zh": "不定式",
+      "ms": "Infinitif",
+      "sw": "Infiniti",
+      "hi": "इनफ़िनिटिव",
+      "ur": "مصدر",
+      "ar_eg": "Infinitiv",
+      "ar_lb": "المصدر (Infinitiv)",
+      "ar_sy": "المصدر"
      },
      {
       "de": "Präteritum (3. Sg.)",
@@ -3016,7 +4852,16 @@ const GRAMMAR = [
       "fa": "پرتریتوم (سوم‌شخص مفرد)",
       "uk": "Präteritum (3-тя ос. одн.)",
       "pl": "Präteritum (3. os. lp.)",
-      "tr": "Präteritum (3. tekil)"
+      "tr": "Präteritum (3. tekil)",
+      "th": "Präteritum (บุรุษที่ 3 เอกพจน์)",
+      "zh": "简单过去时(第三人称单数)",
+      "ms": "Präteritum (orang ketiga tunggal)",
+      "sw": "Präteritum (nafsi ya 3 umoja)",
+      "hi": "Präteritum (तृतीय पुरुष एकवचन)",
+      "ur": "Präteritum (واحد غائب)",
+      "ar_eg": "Präteritum (الغائب المفرد)",
+      "ar_lb": "Präteritum (غائب مفرد)",
+      "ar_sy": "Präteritum (غائب مفرد)"
      }
     ],
     "rows": [
@@ -3110,7 +4955,16 @@ const GRAMMAR = [
     "fa": "دیروز من خانه بودم و وقت نداشتم.",
     "uk": "Учора я був удома й не мав часу.",
     "pl": "Wczoraj byłem w domu i nie miałem czasu.",
-    "tr": "Dün evdeydim ve hiç vaktim yoktu."
+    "tr": "Dün evdeydim ve hiç vaktim yoktu.",
+    "th": "เมื่อวานฉันอยู่บ้านและไม่มีเวลา",
+    "zh": "昨天我在家,没有时间。",
+    "ms": "Semalam saya berada di rumah dan tidak mempunyai masa.",
+    "sw": "Jana nilikuwa nyumbani na sikuwa na muda.",
+    "hi": "कल मैं घर पर था और मेरे पास समय नहीं था।",
+    "ur": "کل میں گھر پر تھا اور میرے پاس وقت نہیں تھا۔",
+    "ar_eg": "امبارح كنت في البيت ومكانش عندي وقت.",
+    "ar_lb": "مبارح كنت بالبيت وما كان عندي وقت.",
+    "ar_sy": "مبارح كنت بالبيت وما كان عندي وقت."
    },
    {
     "de": "Als Kind wollte ich Astronaut werden.",
@@ -3120,7 +4974,16 @@ const GRAMMAR = [
     "fa": "در کودکی می‌خواستم فضانورد شوم.",
     "uk": "У дитинстві я хотів стати космонавтом.",
     "pl": "Jako dziecko chciałem zostać astronautą.",
-    "tr": "Çocukken astronot olmak istiyordum."
+    "tr": "Çocukken astronot olmak istiyordum.",
+    "th": "ตอนเด็ก ๆ ฉันอยากเป็นนักบินอวกาศ",
+    "zh": "小时候我想成为一名宇航员。",
+    "ms": "Semasa kecil, saya mahu menjadi angkasawan.",
+    "sw": "Nikiwa mtoto, nilitaka kuwa mwanaanga.",
+    "hi": "बचपन में मैं अंतरिक्ष यात्री बनना चाहता था।",
+    "ur": "بچپن میں میں خلاباز بننا چاہتا تھا۔",
+    "ar_eg": "لما كنت صغير كنت عايز أبقى رائد فضاء.",
+    "ar_lb": "لما كنت صغير كنت بدي صير رائد فضاء.",
+    "ar_sy": "لما كنت صغير كنت بدي صير رائد فضاء."
    },
    {
     "de": "Sie ging zur Tür und sprach kein Wort.",
@@ -3130,7 +4993,16 @@ const GRAMMAR = [
     "fa": "او به سمت در رفت و یک کلمه هم حرف نزد.",
     "uk": "Вона підійшла до дверей і не сказала жодного слова.",
     "pl": "Podeszła do drzwi i nie powiedziała ani słowa.",
-    "tr": "O, kapıya gitti ve tek kelime konuşmadı."
+    "tr": "O, kapıya gitti ve tek kelime konuşmadı.",
+    "th": "เธอเดินไปที่ประตูโดยไม่พูดอะไรสักคำ",
+    "zh": "她走到门口,一句话也没说。",
+    "ms": "Dia berjalan ke pintu dan tidak berkata sepatah pun.",
+    "sw": "Alienda mlangoni na hakusema neno lolote.",
+    "hi": "वह दरवाज़े की ओर गई और एक शब्द भी नहीं बोली।",
+    "ur": "وہ دروازے کی طرف گئی اور ایک لفظ بھی نہ بولی۔",
+    "ar_eg": "هي راحت للباب ومقالتش ولا كلمة.",
+    "ar_lb": "هيي راحت عالباب وما حكت ولا كلمة.",
+    "ar_sy": "راحت عالباب وما حكت ولا كلمة."
    }
   ],
   "hints": {
@@ -3141,7 +5013,16 @@ const GRAMMAR = [
    "fa": "مثل گذشتهٔ سادهٔ فارسی (رفتم، دیدم) که با بن گذشته و شناسه ساخته می‌شود، پرتریتوم هم بن گذشته به‌علاوهٔ شناسه است (machte، machtest). اما افعال قوی بن‌شان عوض می‌شود (gehen → ging) و باید جدا حفظ شوند؛ ضمناً در گفتار، آلمانی‌ها بیشتر Perfekt می‌گویند و پرتریتوم را برای war و hatte و افعال کمکی نگه می‌دارند.",
    "uk": "Регулярно: основа + -te + закінчення (machte). Неправильні дієслова змінюють голосний (gehen → ging) і їх треба вчити напам'ять. У розмові здебільшого Perfekt — окрім sein, haben і модальних дієслів.",
    "pl": "Regularnie: temat + -te + końcówka (machte). Czasowniki nieregularne zmieniają samogłoskę (gehen → ging) i trzeba się ich nauczyć na pamięć. W mowie zwykle Perfekt — z wyjątkiem sein, haben i czasowników modalnych.",
-   "tr": "Düzenli: kök + -te + ek (machte). Düzensiz fiiller ünlüyü değiştirir (gehen → ging) ve ezberlenmesi gerekir. Konuşmada çoğunlukla Perfekt — sein, haben ve modal fiiller hariç."
+   "tr": "Düzenli: kök + -te + ek (machte). Düzensiz fiiller ünlüyü değiştirir (gehen → ging) ve ezberlenmesi gerekir. Konuşmada çoğunlukla Perfekt — sein, haben ve modal fiiller hariç.",
+   "th": "กริยาปกติ: รากศัพท์ + -te + คำลงท้าย (เช่น machte) ส่วนกริยาไม่ปกติจะเปลี่ยนสระ (gehen → ging) และต้องท่องจำเป็นคำ ๆ ไป เวลาพูดมักใช้ Perfekt เป็นหลัก ยกเว้น sein, haben และกริยาโมดัล",
+   "zh": "规则动词:词干 + -te + 词尾(machte)。不规则动词会改变元音(gehen → ging),必须死记硬背。口语中大多使用 Perfekt——除了 sein、haben 和情态动词。",
+   "ms": "Tetap: batang kata + -te + akhiran (machte). Kata kerja tak tetap mengubah vokalnya (gehen → ging) dan mesti dihafal. Dalam pertuturan, kebanyakannya menggunakan Perfekt — kecuali untuk sein, haben dan kata kerja modal.",
+   "sw": "Kwa kawaida: shina + -te + mwisho (machte). Vitenzi visivyo vya kawaida hubadilisha irabu (gehen → ging) na lazima vijifunzwe kwa moyo. Katika mazungumzo hutumika zaidi Perfekt — isipokuwa kwa sein, haben na vitenzi vya modali.",
+   "hi": "नियमित: धातु + -te + अंत (machte)। अनियमित क्रियाएँ स्वर बदलती हैं (gehen → ging) और इन्हें कंठस्थ करना पड़ता है। बोलचाल में प्रायः Perfekt — सिवाय sein, haben और मोडल क्रियाओं के।",
+   "ur": "باقاعدہ: جڑ + -te + اختتامیہ (machte)۔ بے قاعدہ افعال مصوتہ بدلتے ہیں (gehen → ging) اور انہیں از بر کرنا پڑتا ہے۔ بولتے وقت عموماً Perfekt استعمال ہوتا ہے — سوائے sein، haben اور معاون افعالِ استطاعت کے۔",
+   "ar_eg": "منتظم: جذر الفعل + -te + النهاية (machte). الأفعال الشاذة بتغيّر الحرف الصوتي (gehen → ging) ولازم تتحفظ. في الكلام غالبًا بنستخدم Perfekt — إلا مع sein و haben والأفعال الوجهية.",
+   "ar_lb": "منتظم: الجذر + -te + النهاية (machte). الأفعال الشاذة بيتغيّر فيها الصوتي (gehen → ging) ولازم تتحفظ عن ظهر قلب. بالحكي بيستعملوا بالأكتر الـ Perfekt — إلا مع sein وhaben والأفعال الشرطية.",
+   "ar_sy": "منتظم: الجذر + -te + النهاية (machte). الأفعال الغير منتظمة بتغيّر الحرف الصوتي (gehen → ging) ولازم تنحفظ عن ظهر قلب. بالحكي بمعظم الحالات منستخدم الـPerfekt — إلا مع sein وhaben والأفعال الشرطية."
   }
  },
  {
@@ -3155,7 +5036,16 @@ const GRAMMAR = [
    "fa": "ماضی بعید و آیندهٔ ساده",
    "uk": "Plusquamperfekt і Futur I",
    "pl": "Plusquamperfekt i Futur I",
-   "tr": "Plusquamperfekt ve Futur I (geçmişin öncesi ve gelecek)"
+   "tr": "Plusquamperfekt ve Futur I (geçmişin öncesi ve gelecek)",
+   "th": "อดีตกาลสมบูรณ์ขั้นก่อน (Plusquamperfekt) และอนาคตกาล (Futur I)",
+   "zh": "过去完成时(Plusquamperfekt)与将来时(Futur I)",
+   "ms": "Plusquamperfekt & Futur I",
+   "sw": "Plusquamperfekt na Futur I",
+   "hi": "Plusquamperfekt और Futur I",
+   "ur": "ماضیِ بعید (Plusquamperfekt) اور مستقبل اول (Futur I)",
+   "ar_eg": "الماضي التام (Plusquamperfekt) والمستقبل (Futur I)",
+   "ar_lb": "الـ Plusquamperfekt (الماضي التام) والـ Futur I (المستقبل)",
+   "ar_sy": "الماضي الأبعد (Plusquamperfekt) والمستقبل الأول (Futur I)"
   },
   "intro": {
    "de": "Zwei Zeitformen für Vergangenheit und Zukunft. Das Plusquamperfekt (hatte/war + Partizip II) beschreibt die Vorvergangenheit — was vor einem anderen Ereignis in der Vergangenheit geschah, oft mit nachdem. Futur I (werden + Infinitiv) drückt Zukunft und Vermutungen aus (wird wohl …).",
@@ -3165,7 +5055,16 @@ const GRAMMAR = [
    "fa": "دو زمان برای گذشته و آینده. ماضی بعید (hatte/war + صفت مفعولی) «گذشتهٔ پیش از گذشته» را نشان می‌دهد — کاری که پیش از رویداد گذشتهٔ دیگری رخ داده، اغلب با nachdem. آیندهٔ ساده (werden + مصدر) برای بیان آینده و گمان به کار می‌رود (wird wohl …).",
    "uk": "Два часи для минулого й майбутнього. Plusquamperfekt (hatte/war + Partizip II) описує передминуле — те, що сталося перед іншою подією в минулому, часто зі сполучником nachdem. Futur I (werden + інфінітив) виражає майбутнє та припущення (wird wohl …).",
    "pl": "Dwa czasy dla przeszłości i przyszłości. Plusquamperfekt (hatte/war + Partizip II) opisuje zaprzeszłość — to, co wydarzyło się przed innym wydarzeniem w przeszłości, często z nachdem. Futur I (werden + bezokolicznik) wyraża przyszłość i przypuszczenia (wird wohl …).",
-   "tr": "Geçmiş ve gelecek için iki zaman biçimi. Plusquamperfekt (hatte/war + Partizip II), geçmişin öncesini anlatır — geçmişte başka bir olaydan önce olan şeyi, çoğu zaman nachdem ile. Futur I (werden + mastar), geleceği ve tahminleri ifade eder (wird wohl … – herhâlde …)."
+   "tr": "Geçmiş ve gelecek için iki zaman biçimi. Plusquamperfekt (hatte/war + Partizip II), geçmişin öncesini anlatır — geçmişte başka bir olaydan önce olan şeyi, çoğu zaman nachdem ile. Futur I (werden + mastar), geleceği ve tahminleri ifade eder (wird wohl … – herhâlde …).",
+   "th": "กาลสองแบบสำหรับอดีตและอนาคต Plusquamperfekt (hatte/war + Partizip II) ใช้บอก 'อดีตก่อนอดีต' คือเหตุการณ์ที่เกิดขึ้นก่อนอีกเหตุการณ์หนึ่งในอดีต มักใช้คู่กับ nachdem ส่วน Futur I (werden + Infinitiv) ใช้บอกอนาคตและการคาดเดา (เช่น wird wohl … = คงจะ...)",
+   "zh": "两种表示过去和将来的时态。过去完成时(hatte/war + 第二分词)描述“过去之前的过去”——即在另一个过去事件之前发生的事情,常与 nachdem(在……之后)连用。将来时 Futur I(werden + 不定式)用来表达将来和推测(wird wohl……大概会……)。",
+   "ms": "Dua bentuk kala untuk masa lampau dan masa depan. Plusquamperfekt (hatte/war + Partizip II) menggambarkan 'lampau sebelum lampau' — sesuatu yang berlaku sebelum peristiwa lampau yang lain, selalunya dengan nachdem. Futur I (werden + infinitif) menyatakan masa depan dan andaian (wird wohl … – mungkin sudah …).",
+   "sw": "Nyakati mbili za sarufi kwa wakati uliopita na wakati ujao. Plusquamperfekt (hatte/war + Partizip II) inaeleza 'wakati uliopita kabla ya uliopita' — kile kilichotokea kabla ya tukio jingine la wakati uliopita, mara nyingi likianza na nachdem (baada ya). Futur I (werden + Infiniti) inaeleza wakati ujao na dhana (wird wohl … – huenda …).",
+   "hi": "भूतकाल और भविष्यकाल के लिए दो काल। Plusquamperfekt (hatte/war + Partizip II) 'भूतकाल से पहले का भूतकाल' बताता है — जो किसी अन्य भूत घटना से पहले हुआ, अक्सर nachdem के साथ। Futur I (werden + इनफ़िनिटिव) भविष्य और अनुमान व्यक्त करता है (wird wohl …)।",
+   "ur": "دو زمانے ماضی اور مستقبل کے لیے۔ Plusquamperfekt (hatte/war + Partizip II) ماضی سے پہلے کا ماضی بیان کرتا ہے — یعنی جو کچھ ماضی کے کسی دوسرے واقعے سے پہلے پیش آیا، اکثر nachdem کے ساتھ۔ Futur I (werden + مصدر) مستقبل اور اندازہ ظاہر کرتا ہے (wird wohl … – شاید ہو)۔",
+   "ar_eg": "زمنين للماضي والمستقبل. الـ Plusquamperfekt (hatte/war + Partizip II) بيوصف «الماضي اللي قبل الماضي» — يعني اللي حصل قبل حدث تاني في الماضي، وغالبًا بييجي مع nachdem. الـ Futur I (werden + المصدر) بيعبّر عن المستقبل والتخمين (wird wohl … يعني «يمكن يكون»).",
+   "ar_lb": "زمنين، وحدة للماضي والتانية للمستقبل. الـ Plusquamperfekt (hatte/war + Partizip II) بيوصف 'الماضي قبل الماضي' — يعني شي صار قبل حدث تاني بالماضي، وغالبًا مع nachdem. الـ Futur I (werden + المصدر) بيعبّر عن المستقبل والتخمين (wird wohl …).",
+   "ar_sy": "صيغتين للماضي والمستقبل. الـPlusquamperfekt (hatte/war + Partizip II) بيوصف 'الماضي قبل الماضي' — يلي صار قبل حدث تاني بالماضي، وبكتير أحيان مع nachdem. الـFutur I (werden + المصدر) بيعبّر عن المستقبل والتخمين (wird wohl …)."
   },
   "tables": [
    {
@@ -3177,7 +5076,16 @@ const GRAMMAR = [
      "fa": "ماضی بعید: hatte/war + صفت مفعولی (Partizip II)",
      "uk": "Plusquamperfekt: hatte/war + Partizip II",
      "pl": "Plusquamperfekt: hatte/war + Partizip II",
-     "tr": "Plusquamperfekt: hatte/war + Partizip II"
+     "tr": "Plusquamperfekt: hatte/war + Partizip II",
+     "th": "Plusquamperfekt: hatte/war + รูปกริยาช่อง 3 (Partizip II)",
+     "zh": "过去完成时:hatte/war + 第二分词",
+     "ms": "Plusquamperfekt: hatte/war + Partizip II",
+     "sw": "Plusquamperfekt: hatte/war + Partizip II",
+     "hi": "Plusquamperfekt: hatte/war + Partizip II",
+     "ur": "Plusquamperfekt: hatte/war + Partizip II",
+     "ar_eg": "Plusquamperfekt: hatte/war + Partizip II",
+     "ar_lb": "الـ Plusquamperfekt: hatte/war + Partizip II",
+     "ar_sy": "Plusquamperfekt: hatte/war + Partizip II"
     },
     "labelHeader": {
      "de": "Person",
@@ -3187,7 +5095,16 @@ const GRAMMAR = [
      "fa": "شخص",
      "uk": "Особа",
      "pl": "Osoba",
-     "tr": "Şahıs"
+     "tr": "Şahıs",
+     "th": "บุรุษ (Person)",
+     "zh": "人称",
+     "ms": "Orang",
+     "sw": "Nafsi",
+     "hi": "पुरुष",
+     "ur": "شخص",
+     "ar_eg": "الضمير",
+     "ar_lb": "الشخص (Person)",
+     "ar_sy": "الشخص"
     },
     "columns": [
      {
@@ -3198,7 +5115,16 @@ const GRAMMAR = [
       "fa": "با haben (machen)",
       "uk": "з haben (machen)",
       "pl": "z haben (machen)",
-      "tr": "haben ile (machen)"
+      "tr": "haben ile (machen)",
+      "th": "กับ haben (เช่น machen)",
+      "zh": "用 haben(以 machen 为例)",
+      "ms": "dengan haben (machen)",
+      "sw": "kwa haben (machen)",
+      "hi": "haben के साथ (machen)",
+      "ur": "haben کے ساتھ (machen)",
+      "ar_eg": "مع haben (مثال machen)",
+      "ar_lb": "مع haben (machen)",
+      "ar_sy": "مع haben (machen)"
      },
      {
       "de": "mit sein (gehen)",
@@ -3208,7 +5134,16 @@ const GRAMMAR = [
       "fa": "با sein (gehen)",
       "uk": "з sein (gehen)",
       "pl": "z sein (gehen)",
-      "tr": "sein ile (gehen)"
+      "tr": "sein ile (gehen)",
+      "th": "กับ sein (เช่น gehen)",
+      "zh": "用 sein(以 gehen 为例)",
+      "ms": "dengan sein (gehen)",
+      "sw": "kwa sein (gehen)",
+      "hi": "sein के साथ (gehen)",
+      "ur": "sein کے ساتھ (gehen)",
+      "ar_eg": "مع sein (مثال gehen)",
+      "ar_lb": "مع sein (gehen)",
+      "ar_sy": "مع sein (gehen)"
      }
     ],
     "rows": [
@@ -3221,7 +5156,16 @@ const GRAMMAR = [
        "fa": "اول‌شخص مفرد",
        "uk": "1-ша особа одн.",
        "pl": "1. os. lp.",
-       "tr": "1. tekil şahıs"
+       "tr": "1. tekil şahıs",
+       "th": "บุรุษที่ 1 เอกพจน์",
+       "zh": "第一人称单数",
+       "ms": "Orang pertama tunggal",
+       "sw": "Nafsi ya 1 umoja",
+       "hi": "प्रथम पुरुष एकवचन",
+       "ur": "واحد متکلم",
+       "ar_eg": "المتكلم المفرد",
+       "ar_lb": "متكلم مفرد",
+       "ar_sy": "متكلم مفرد"
       },
       "cells": [
        "ich hatte gemacht",
@@ -3237,7 +5181,16 @@ const GRAMMAR = [
        "fa": "دوم‌شخص مفرد",
        "uk": "2-га особа одн.",
        "pl": "2. os. lp.",
-       "tr": "2. tekil şahıs"
+       "tr": "2. tekil şahıs",
+       "th": "บุรุษที่ 2 เอกพจน์",
+       "zh": "第二人称单数",
+       "ms": "Orang kedua tunggal",
+       "sw": "Nafsi ya 2 umoja",
+       "hi": "द्वितीय पुरुष एकवचन",
+       "ur": "واحد حاضر",
+       "ar_eg": "المخاطب المفرد",
+       "ar_lb": "مخاطب مفرد",
+       "ar_sy": "مخاطب مفرد"
       },
       "cells": [
        "du hattest gemacht",
@@ -3253,7 +5206,16 @@ const GRAMMAR = [
        "fa": "سوم‌شخص مفرد",
        "uk": "3-тя особа одн.",
        "pl": "3. os. lp.",
-       "tr": "3. tekil şahıs"
+       "tr": "3. tekil şahıs",
+       "th": "บุรุษที่ 3 เอกพจน์",
+       "zh": "第三人称单数",
+       "ms": "Orang ketiga tunggal",
+       "sw": "Nafsi ya 3 umoja",
+       "hi": "तृतीय पुरुष एकवचन",
+       "ur": "واحد غائب",
+       "ar_eg": "الغائب المفرد",
+       "ar_lb": "غائب مفرد",
+       "ar_sy": "غائب مفرد"
       },
       "cells": [
        "er hatte gemacht",
@@ -3269,7 +5231,16 @@ const GRAMMAR = [
        "fa": "اول‌شخص جمع",
        "uk": "1-ша особа мн.",
        "pl": "1. os. lm.",
-       "tr": "1. çoğul şahıs"
+       "tr": "1. çoğul şahıs",
+       "th": "บุรุษที่ 1 พหูพจน์",
+       "zh": "第一人称复数",
+       "ms": "Orang pertama jamak",
+       "sw": "Nafsi ya 1 wingi",
+       "hi": "प्रथम पुरुष बहुवचन",
+       "ur": "جمع متکلم",
+       "ar_eg": "المتكلم الجمع",
+       "ar_lb": "متكلم جمع",
+       "ar_sy": "متكلم جمع"
       },
       "cells": [
        "wir hatten gemacht",
@@ -3287,7 +5258,16 @@ const GRAMMAR = [
      "fa": "آیندهٔ ساده: werden (صرف‌شده) + مصدر در پایان جمله",
      "uk": "Futur I: werden (відмінюване) + інфінітив у кінці речення",
      "pl": "Futur I: werden (odmienione) + bezokolicznik na końcu zdania",
-     "tr": "Futur I: werden (çekimli) + mastar cümlenin sonunda"
+     "tr": "Futur I: werden (çekimli) + mastar cümlenin sonunda",
+     "th": "Futur I: werden (ผันแล้ว) + Infinitiv ท้ายประโยค",
+     "zh": "将来时 Futur I:werden(变位)+ 不定式置于句末",
+     "ms": "Futur I: werden (dikonjugasikan) + infinitif di hujung ayat",
+     "sw": "Futur I: werden (kilichobadilishwa) + Infiniti mwishoni mwa sentensi",
+     "hi": "Futur I: werden (संयुगित) + इनफ़िनिटिव वाक्य के अंत में",
+     "ur": "Futur I: werden (گردان شدہ) + مصدر جملے کے آخر میں",
+     "ar_eg": "Futur I: werden (متصرّف) + المصدر آخر الجملة",
+     "ar_lb": "الـ Futur I: werden (مصرّف) + المصدر بآخر الجملة",
+     "ar_sy": "Futur I: werden (متصرّف) + المصدر بآخر الجملة"
     },
     "labelHeader": {
      "de": "Person",
@@ -3297,7 +5277,16 @@ const GRAMMAR = [
      "fa": "شخص",
      "uk": "Особа",
      "pl": "Osoba",
-     "tr": "Şahıs"
+     "tr": "Şahıs",
+     "th": "บุรุษ (Person)",
+     "zh": "人称",
+     "ms": "Orang",
+     "sw": "Nafsi",
+     "hi": "पुरुष",
+     "ur": "شخص",
+     "ar_eg": "الضمير",
+     "ar_lb": "الشخص (Person)",
+     "ar_sy": "الشخص"
     },
     "columns": [
      {
@@ -3308,7 +5297,16 @@ const GRAMMAR = [
       "fa": "werden + مصدر (machen)",
       "uk": "werden + інфінітив (machen)",
       "pl": "werden + bezokolicznik (machen)",
-      "tr": "werden + mastar (machen)"
+      "tr": "werden + mastar (machen)",
+      "th": "werden + Infinitiv (เช่น machen)",
+      "zh": "werden + 不定式(以 machen 为例)",
+      "ms": "werden + infinitif (machen)",
+      "sw": "werden + Infiniti (machen)",
+      "hi": "werden + इनफ़िनिटिव (machen)",
+      "ur": "werden + مصدر (machen)",
+      "ar_eg": "werden + المصدر (مثال machen)",
+      "ar_lb": "werden + المصدر (machen)",
+      "ar_sy": "werden + المصدر (machen)"
      }
     ],
     "rows": [
@@ -3321,7 +5319,16 @@ const GRAMMAR = [
        "fa": "اول‌شخص مفرد",
        "uk": "1-ша особа одн.",
        "pl": "1. os. lp.",
-       "tr": "1. tekil şahıs"
+       "tr": "1. tekil şahıs",
+       "th": "บุรุษที่ 1 เอกพจน์",
+       "zh": "第一人称单数",
+       "ms": "Orang pertama tunggal",
+       "sw": "Nafsi ya 1 umoja",
+       "hi": "प्रथम पुरुष एकवचन",
+       "ur": "واحد متکلم",
+       "ar_eg": "المتكلم المفرد",
+       "ar_lb": "متكلم مفرد",
+       "ar_sy": "متكلم مفرد"
       },
       "cells": [
        "ich werde machen"
@@ -3336,7 +5343,16 @@ const GRAMMAR = [
        "fa": "دوم‌شخص مفرد",
        "uk": "2-га особа одн.",
        "pl": "2. os. lp.",
-       "tr": "2. tekil şahıs"
+       "tr": "2. tekil şahıs",
+       "th": "บุรุษที่ 2 เอกพจน์",
+       "zh": "第二人称单数",
+       "ms": "Orang kedua tunggal",
+       "sw": "Nafsi ya 2 umoja",
+       "hi": "द्वितीय पुरुष एकवचन",
+       "ur": "واحد حاضر",
+       "ar_eg": "المخاطب المفرد",
+       "ar_lb": "مخاطب مفرد",
+       "ar_sy": "مخاطب مفرد"
       },
       "cells": [
        "du wirst machen"
@@ -3351,7 +5367,16 @@ const GRAMMAR = [
        "fa": "سوم‌شخص مفرد",
        "uk": "3-тя особа одн.",
        "pl": "3. os. lp.",
-       "tr": "3. tekil şahıs"
+       "tr": "3. tekil şahıs",
+       "th": "บุรุษที่ 3 เอกพจน์",
+       "zh": "第三人称单数",
+       "ms": "Orang ketiga tunggal",
+       "sw": "Nafsi ya 3 umoja",
+       "hi": "तृतीय पुरुष एकवचन",
+       "ur": "واحد غائب",
+       "ar_eg": "الغائب المفرد",
+       "ar_lb": "غائب مفرد",
+       "ar_sy": "غائب مفرد"
       },
       "cells": [
        "er wird machen"
@@ -3366,7 +5391,16 @@ const GRAMMAR = [
        "fa": "اول‌شخص جمع",
        "uk": "1-ша особа мн.",
        "pl": "1. os. lm.",
-       "tr": "1. çoğul şahıs"
+       "tr": "1. çoğul şahıs",
+       "th": "บุรุษที่ 1 พหูพจน์",
+       "zh": "第一人称复数",
+       "ms": "Orang pertama jamak",
+       "sw": "Nafsi ya 1 wingi",
+       "hi": "प्रथम पुरुष बहुवचन",
+       "ur": "جمع متکلم",
+       "ar_eg": "المتكلم الجمع",
+       "ar_lb": "متكلم جمع",
+       "ar_sy": "متكلم جمع"
       },
       "cells": [
        "wir werden machen"
@@ -3381,7 +5415,16 @@ const GRAMMAR = [
        "fa": "دوم‌شخص جمع",
        "uk": "2-га особа мн.",
        "pl": "2. os. lm.",
-       "tr": "2. çoğul şahıs"
+       "tr": "2. çoğul şahıs",
+       "th": "บุรุษที่ 2 พหูพจน์",
+       "zh": "第二人称复数",
+       "ms": "Orang kedua jamak",
+       "sw": "Nafsi ya 2 wingi",
+       "hi": "द्वितीय पुरुष बहुवचन",
+       "ur": "جمع حاضر",
+       "ar_eg": "المخاطب الجمع",
+       "ar_lb": "مخاطب جمع",
+       "ar_sy": "مخاطب جمع"
       },
       "cells": [
        "ihr werdet machen"
@@ -3396,7 +5439,16 @@ const GRAMMAR = [
        "fa": "سوم‌شخص جمع",
        "uk": "3-тя особа мн.",
        "pl": "3. os. lm.",
-       "tr": "3. çoğul şahıs"
+       "tr": "3. çoğul şahıs",
+       "th": "บุรุษที่ 3 พหูพจน์",
+       "zh": "第三人称复数",
+       "ms": "Orang ketiga jamak",
+       "sw": "Nafsi ya 3 wingi",
+       "hi": "तृतीय पुरुष बहुवचन",
+       "ur": "جمع غائب",
+       "ar_eg": "الغائب الجمع",
+       "ar_lb": "غائب جمع",
+       "ar_sy": "غائب جمع"
       },
       "cells": [
        "sie werden machen"
@@ -3414,7 +5466,16 @@ const GRAMMAR = [
     "fa": "بعد از اینکه غذا خورده بود، به رختخواب رفت.",
     "uk": "Після того як він поїв, він пішов спати.",
     "pl": "Po tym, jak zjadł, poszedł spać.",
-    "tr": "Yemek yedikten sonra yatağa gitti."
+    "tr": "Yemek yedikten sonra yatağa gitti.",
+    "th": "หลังจากที่เขากินข้าวเสร็จแล้ว เขาก็เข้านอน",
+    "zh": "他吃完饭后,就去睡觉了。",
+    "ms": "Selepas dia makan, dia pergi tidur.",
+    "sw": "Baada ya kula, alikwenda kulala.",
+    "hi": "खाना खाने के बाद वह सोने चला गया।",
+    "ur": "کھانا کھانے کے بعد وہ سونے چلا گیا۔",
+    "ar_eg": "بعد ما كان خلص أكل، راح نام.",
+    "ar_lb": "بعد ما كان أكل، راح نام.",
+    "ar_sy": "بعدما كان أكل، راح عالسرير."
    },
    {
     "de": "Nächstes Jahr werde ich in Berlin studieren.",
@@ -3424,7 +5485,16 @@ const GRAMMAR = [
     "fa": "سال آینده در برلین درس خواهم خواند.",
     "uk": "Наступного року я навчатимуся в Берліні.",
     "pl": "W przyszłym roku będę studiować w Berlinie.",
-    "tr": "Gelecek yıl Berlin'de okuyacağım."
+    "tr": "Gelecek yıl Berlin'de okuyacağım.",
+    "th": "ปีหน้าฉันจะไปเรียนที่เบอร์ลิน",
+    "zh": "明年我将在柏林上大学。",
+    "ms": "Tahun depan saya akan belajar di Berlin.",
+    "sw": "Mwaka ujao nitasoma Berlin.",
+    "hi": "अगले साल मैं बर्लिन में पढ़ाई करूँगा।",
+    "ur": "اگلے سال میں برلن میں تعلیم حاصل کروں گا۔",
+    "ar_eg": "السنة الجاية هدرس في برلين.",
+    "ar_lb": "السنة الجايي رح إدرس ببرلين.",
+    "ar_sy": "السنة الجاية رح ادرس ببرلين."
    },
    {
     "de": "Sie wird wohl schon zu Hause sein.",
@@ -3434,7 +5504,16 @@ const GRAMMAR = [
     "fa": "او احتمالاً الان دیگر خانه است.",
     "uk": "Вона, мабуть, уже вдома.",
     "pl": "Ona pewnie jest już w domu.",
-    "tr": "O, herhâlde çoktan evdedir."
+    "tr": "O, herhâlde çoktan evdedir.",
+    "th": "เธอคงอยู่บ้านแล้วล่ะ",
+    "zh": "她大概已经在家了。",
+    "ms": "Dia mungkin sudah berada di rumah.",
+    "sw": "Huenda tayari yuko nyumbani.",
+    "hi": "वह शायद पहले ही घर पर होगी।",
+    "ur": "وہ شاید پہلے ہی گھر پر ہو۔",
+    "ar_eg": "هي يمكن تكون في البيت خلاص.",
+    "ar_lb": "أكيد هيي هلق بالبيت.",
+    "ar_sy": "هي أكيد صارت بالبيت هلق."
    }
   ],
   "hints": {
@@ -3445,7 +5524,16 @@ const GRAMMAR = [
    "fa": "پلوسکوامپرفکت دقیقاً مثل ماضی بعید فارسی است: «رفته بود» = war gegangen. فوتور I هم مانند آیندهٔ فارسی با فعل کمکی ساخته می‌شود: خواهم رفت ≈ werden + مصدر. فقط دقت کنید که در آلمانی برای افعال حرکتی از war (نه hatte) استفاده می‌شود و صفت مفعولی یا مصدر به آخر جمله می‌رود — درست مثل ساختار فعل‌پایانی فارسی.",
    "uk": "Запам'ятай: у реченні з nachdem допоміжне дієслово стоїть у самому кінці (…gegessen hatte). Обирай war для дієслів руху/зміни стану (gehen, kommen), інакше – hatte. Futur I = werden (відмінюване) + інфінітив у кінці речення.",
    "pl": "Zapamiętaj: w zdaniu z nachdem czasownik posiłkowy stoi na samym końcu (…gegessen hatte). Wybieraj war przy czasownikach ruchu/zmiany stanu (gehen, kommen), w pozostałych przypadkach hatte. Futur I = werden (odmienione) + bezokolicznik na końcu zdania.",
-   "tr": "Unutma: nachdem cümlesinde yardımcı fiil en sonda bulunur (…gegessen hatte). Hareket/durum değişikliği fiillerinde war seç (gehen, kommen), diğerlerinde hatte. Futur I = werden (çekimli) + mastar cümlenin sonunda."
+   "tr": "Unutma: nachdem cümlesinde yardımcı fiil en sonda bulunur (…gegessen hatte). Hareket/durum değişikliği fiillerinde war seç (gehen, kommen), diğerlerinde hatte. Futur I = werden (çekimli) + mastar cümlenin sonunda.",
+   "th": "ข้อควรจำ: ในประโยคที่ขึ้นต้นด้วย nachdem กริยาช่วยจะอยู่ท้ายสุด (…gegessen hatte) ให้เลือกใช้ war กับกริยาที่แสดงการเคลื่อนไหวหรือการเปลี่ยนสภาพ (gehen, kommen) นอกนั้นใช้ hatte ส่วน Futur I = werden (ผันแล้ว) + Infinitiv ที่ท้ายประโยค",
+   "zh": "注意:在 nachdem 从句中,助动词位于句末(……gegessen hatte)。表示位移/状态变化的动词(gehen、kommen)用 war,其余用 hatte。将来时 Futur I = werden(变位)+ 不定式置于句末。",
+   "ms": "Ingat: Dalam ayat nachdem, kata kerja bantu terletak di hujung sekali (…gegessen hatte). Pilih war untuk kata kerja pergerakan/perubahan keadaan (gehen, kommen), selain itu gunakan hatte. Futur I = werden (dikonjugasikan) + infinitif di hujung ayat.",
+   "sw": "Kumbuka: katika kishazi cha nachdem, kitenzi kisaidizi huwa mwishoni kabisa (…gegessen hatte). Chagua war kwa vitenzi vya mwendo/mabadiliko ya hali (gehen, kommen), na kwa vingine hatte. Futur I = werden (kilichobadilishwa) + Infiniti mwishoni mwa sentensi.",
+   "hi": "याद रखें: nachdem वाले वाक्य में सहायक क्रिया बिल्कुल अंत में आती है (…gegessen hatte)। गति/अवस्था-परिवर्तन वाली क्रियाओं (gehen, kommen) के साथ war चुनें, बाकी के लिए hatte। Futur I = werden (संयुगित) + इनफ़िनिटिव वाक्य के अंत में।",
+   "ur": "یاد رکھیں: nachdem والے جملے میں معاون فعل بالکل آخر میں آتا ہے (…gegessen hatte)۔ حرکت/حالت کی تبدیلی والے افعال کے لیے war چنیں (gehen، kommen)، ورنہ hatte۔ Futur I = werden (گردان شدہ) + مصدر جملے کے آخر میں۔",
+   "ar_eg": "احفظ: في جملة nachdem الفعل المساعد بيروح آخر الآخر (…gegessen hatte). اختار war مع أفعال الحركة أو تغيير الحالة (gehen, kommen)، وغير كده hatte. Futur I = werden (متصرّف) + المصدر آخر الجملة.",
+   "ar_lb": "خدها بالك: بجملة nachdem الفعل المساعد بيروح تمام آخر الجملة (…gegessen hatte). استعمل war مع أفعال الحركة/تغيير الحالة (gehen، kommen)، وباقي الحالات hatte. الـ Futur I = werden (مصرّف) + المصدر بآخر الجملة.",
+   "ar_sy": "خد بالك: بجملة nachdem الفعل المساعد بيجي بآخر الجملة (…gegessen hatte). اختار war مع أفعال الحركة/تغيير الحالة (gehen, kommen)، وغيرها hatte. Futur I = werden (متصرّف) + المصدر بآخر الجملة."
   }
  },
  {
@@ -3459,7 +5547,16 @@ const GRAMMAR = [
    "fa": "افعال کمکی وجهی",
    "uk": "Модальні дієслова",
    "pl": "Czasowniki modalne",
-   "tr": "Modal fiiller"
+   "tr": "Modal fiiller",
+   "th": "กริยาโมดัล (Modalverben)",
+   "zh": "情态动词",
+   "ms": "Kata Kerja Modal",
+   "sw": "Vitenzi vya Modali",
+   "hi": "मोडल क्रियाएँ (Modalverben)",
+   "ur": "معاون افعالِ استطاعت (Modalverben)",
+   "ar_eg": "الأفعال الوجهية (Modalverben)",
+   "ar_lb": "الأفعال الشرطية (Modalverben)",
+   "ar_sy": "الأفعال الشرطية (المودال)"
   },
   "intro": {
    "de": "Deutsch hat sechs Modalverben: können, müssen, wollen, sollen, dürfen und mögen (mit der höflichen Form möchte). Sie stehen konjugiert auf Position 2; das Vollverb steht als Infinitiv am Satzende – das ist die Satzklammer.",
@@ -3469,7 +5566,16 @@ const GRAMMAR = [
    "fa": "آلمانی شش فعل کمکی وجهی دارد: können، müssen، wollen، sollen، dürfen و mögen (به‌همراه شکل مؤدبانهٔ möchte). فعل کمکی صرف می‌شود و در جایگاه دوم جمله می‌آید، اما فعل اصلی به‌صورت مصدر به انتهای جمله می‌رود؛ به این ساختار «کمانِ جمله» (Satzklammer) می‌گویند.",
    "uk": "Німецька має шість модальних дієслів: können, müssen, wollen, sollen, dürfen і mögen (з ввічливою формою möchte). Вони стоять у відмінюваній формі на 2-й позиції; повнозначне дієслово – як інфінітив у кінці речення – це рамкова конструкція (Satzklammer).",
    "pl": "Niemiecki ma sześć czasowników modalnych: können, müssen, wollen, sollen, dürfen i mögen (z formą grzecznościową möchte). Stoją one odmienione na drugiej pozycji; czasownik główny stoi jako bezokolicznik na końcu zdania – to klamra zdaniowa (Satzklammer).",
-   "tr": "Almancada altı modal fiil vardır: können, müssen, wollen, sollen, dürfen ve mögen (nazik biçim möchte ile). Bunlar çekimlenmiş olarak 2. konumda bulunur; asıl fiil ise mastar hâlinde cümlenin sonunda yer alır – buna cümle parantezi (Satzklammer) denir."
+   "tr": "Almancada altı modal fiil vardır: können, müssen, wollen, sollen, dürfen ve mögen (nazik biçim möchte ile). Bunlar çekimlenmiş olarak 2. konumda bulunur; asıl fiil ise mastar hâlinde cümlenin sonunda yer alır – buna cümle parantezi (Satzklammer) denir.",
+   "th": "ภาษาเยอรมันมีกริยาโมดัล 6 ตัว ได้แก่ können, müssen, wollen, sollen, dürfen และ mögen (พร้อมรูปสุภาพ möchte) กริยาโมดัลที่ผันแล้วจะอยู่ในตำแหน่งที่ 2 ของประโยค ส่วนกริยาแท้จะอยู่ในรูป Infinitiv ที่ท้ายประโยค ซึ่งเรียกโครงสร้างนี้ว่า Satzklammer (กรอบประโยค)",
+   "zh": "德语有六个情态动词:können、müssen、wollen、sollen、dürfen 和 mögen(其礼貌形式为 möchte)。它们变位后位于句子的第二位;实义动词以不定式形式置于句末——这就是所谓的“框型结构”(Satzklammer)。",
+   "ms": "Bahasa Jerman mempunyai enam kata kerja modal: können, müssen, wollen, sollen, dürfen dan mögen (dengan bentuk sopannya möchte). Kata kerja modal ini dikonjugasikan dan terletak pada kedudukan ke-2; kata kerja utama pula terletak sebagai infinitif di hujung ayat – inilah yang disebut 'kurungan ayat' (Satzklammer).",
+   "sw": "Kijerumani kina vitenzi sita vya modali: können, müssen, wollen, sollen, dürfen na mögen (pamoja na umbo la heshima möchte). Vinasimama vikiwa vimebadilishwa katika nafasi ya 2; kitenzi kikuu husimama kama Infiniti mwishoni mwa sentensi – hii ndiyo inayoitwa 'mabano ya sentensi' (Satzklammer).",
+   "hi": "जर्मन में छह मोडल क्रियाएँ हैं: können, müssen, wollen, sollen, dürfen और mögen (साथ में विनम्र रूप möchte)। ये संयुगित रूप में स्थान 2 पर आती हैं; मुख्य क्रिया इनफ़िनिटिव के रूप में वाक्य के अंत में आती है – इसे Satzklammer (वाक्य-कोष्ठक) कहते हैं।",
+   "ur": "جرمن زبان میں چھ معاون افعالِ استطاعت ہیں: können، müssen، wollen، sollen، dürfen اور mögen (ادب کی صورت möchte کے ساتھ)۔ یہ گردان شدہ حالت میں دوسری جگہ پر آتے ہیں؛ اصل فعل مصدر کی صورت میں جملے کے آخر میں آتا ہے — یہی جملے کا قوسین (Satzklammer) ہے۔",
+   "ar_eg": "الألماني عنده ستة أفعال وجهية: können, müssen, wollen, sollen, dürfen، و mögen (وليها صيغة مؤدبة möchte). بتيجي متصرّفة في المكان التاني في الجملة؛ والفعل الأساسي بييجي كمصدر آخر الجملة – ده اللي اسمه «قوس الجملة».",
+   "ar_lb": "الألماني عندو ستة أفعال شرطية: können، müssen، wollen، sollen، dürfen، وmögen (ومعها صيغة الاحترام möchte). بتنحط مصرّفة بالمكان التاني بالجملة؛ والفعل الأساسي بيضل مصدر (Infinitiv) بآخر الجملة – هيدا اسمو 'قوس الجملة' (Satzklammer).",
+   "ar_sy": "الألماني عندو ستة أفعال شرطية: können وmüssen وwollen وsollen وdürfen وmögen (مع الصيغة المهذبة möchte). بتيجي متصرّفة بالمكان التاني؛ والفعل الأساسي بيضل مصدر بآخر الجملة – هاد اسمو 'قوس الجملة'."
   },
   "tables": [
    {
@@ -3481,7 +5587,16 @@ const GRAMMAR = [
      "fa": "زمان حال: صرف افعال کمکی وجهی",
      "uk": "Präsens: відмінювання модальних дієслів",
      "pl": "Präsens: odmiana czasowników modalnych",
-     "tr": "Präsens: modal fiillerin çekimi"
+     "tr": "Präsens: modal fiillerin çekimi",
+     "th": "ปัจจุบันกาล: การผันกริยาโมดัล",
+     "zh": "现在时:情态动词的变位",
+     "ms": "Präsens: Konjugasi kata kerja modal",
+     "sw": "Präsens: mnyambuliko wa vitenzi vya modali",
+     "hi": "वर्तमान काल: मोडल क्रियाओं का रूपांतरण",
+     "ur": "حال: معاون افعالِ استطاعت کی گردان",
+     "ar_eg": "المضارع: تصريف الأفعال الوجهية",
+     "ar_lb": "المضارع: تصريف الأفعال الشرطية",
+     "ar_sy": "المضارع: تصريف الأفعال الشرطية"
     },
     "labelHeader": {
      "de": "Person",
@@ -3491,7 +5606,16 @@ const GRAMMAR = [
      "fa": "شخص",
      "uk": "Особа",
      "pl": "Osoba",
-     "tr": "Şahıs"
+     "tr": "Şahıs",
+     "th": "บุรุษ (Person)",
+     "zh": "人称",
+     "ms": "Orang",
+     "sw": "Nafsi",
+     "hi": "पुरुष",
+     "ur": "شخص",
+     "ar_eg": "الضمير",
+     "ar_lb": "الشخص (Person)",
+     "ar_sy": "الشخص"
     },
     "columns": [
      {
@@ -3502,7 +5626,16 @@ const GRAMMAR = [
       "fa": "können",
       "uk": "können",
       "pl": "können",
-      "tr": "können"
+      "tr": "können",
+      "th": "können (สามารถ)",
+      "zh": "können(能)",
+      "ms": "können",
+      "sw": "können",
+      "hi": "können",
+      "ur": "können",
+      "ar_eg": "können (يقدر)",
+      "ar_lb": "können",
+      "ar_sy": "können"
      },
      {
       "de": "müssen",
@@ -3512,7 +5645,16 @@ const GRAMMAR = [
       "fa": "müssen",
       "uk": "müssen",
       "pl": "müssen",
-      "tr": "müssen"
+      "tr": "müssen",
+      "th": "müssen (ต้อง)",
+      "zh": "müssen(必须)",
+      "ms": "müssen",
+      "sw": "müssen",
+      "hi": "müssen",
+      "ur": "müssen",
+      "ar_eg": "müssen (لازم)",
+      "ar_lb": "müssen",
+      "ar_sy": "müssen"
      },
      {
       "de": "wollen",
@@ -3522,7 +5664,16 @@ const GRAMMAR = [
       "fa": "wollen",
       "uk": "wollen",
       "pl": "wollen",
-      "tr": "wollen"
+      "tr": "wollen",
+      "th": "wollen (ต้องการ)",
+      "zh": "wollen(想要)",
+      "ms": "wollen",
+      "sw": "wollen",
+      "hi": "wollen",
+      "ur": "wollen",
+      "ar_eg": "wollen (عايز)",
+      "ar_lb": "wollen",
+      "ar_sy": "wollen"
      },
      {
       "de": "sollen",
@@ -3532,7 +5683,16 @@ const GRAMMAR = [
       "fa": "sollen",
       "uk": "sollen",
       "pl": "sollen",
-      "tr": "sollen"
+      "tr": "sollen",
+      "th": "sollen (ควร)",
+      "zh": "sollen(应该)",
+      "ms": "sollen",
+      "sw": "sollen",
+      "hi": "sollen",
+      "ur": "sollen",
+      "ar_eg": "sollen (المفروض)",
+      "ar_lb": "sollen",
+      "ar_sy": "sollen"
      },
      {
       "de": "dürfen",
@@ -3542,7 +5702,16 @@ const GRAMMAR = [
       "fa": "dürfen",
       "uk": "dürfen",
       "pl": "dürfen",
-      "tr": "dürfen"
+      "tr": "dürfen",
+      "th": "dürfen (ได้รับอนุญาต)",
+      "zh": "dürfen(可以)",
+      "ms": "dürfen",
+      "sw": "dürfen",
+      "hi": "dürfen",
+      "ur": "dürfen",
+      "ar_eg": "dürfen (مسموحله)",
+      "ar_lb": "dürfen",
+      "ar_sy": "dürfen"
      },
      {
       "de": "mögen",
@@ -3552,7 +5721,16 @@ const GRAMMAR = [
       "fa": "mögen",
       "uk": "mögen",
       "pl": "mögen",
-      "tr": "mögen"
+      "tr": "mögen",
+      "th": "mögen (ชอบ)",
+      "zh": "mögen(喜欢)",
+      "ms": "mögen",
+      "sw": "mögen",
+      "hi": "mögen",
+      "ur": "mögen",
+      "ar_eg": "mögen (بيحب)",
+      "ar_lb": "mögen",
+      "ar_sy": "mögen"
      }
     ],
     "rows": [
@@ -3565,7 +5743,16 @@ const GRAMMAR = [
        "fa": "ich (من)",
        "uk": "ich (я)",
        "pl": "ich (ja)",
-       "tr": "ich (ben)"
+       "tr": "ich (ben)",
+       "th": "ich (ฉัน)",
+       "zh": "ich(我)",
+       "ms": "ich (saya)",
+       "sw": "ich (mimi)",
+       "hi": "ich (मैं)",
+       "ur": "ich (میں)",
+       "ar_eg": "ich (أنا)",
+       "ar_lb": "ich (أنا)",
+       "ar_sy": "ich (أنا)"
       },
       "cells": [
        "kann",
@@ -3585,7 +5772,16 @@ const GRAMMAR = [
        "fa": "du (تو)",
        "uk": "du (ти)",
        "pl": "du (ty)",
-       "tr": "du (sen)"
+       "tr": "du (sen)",
+       "th": "du (เธอ)",
+       "zh": "du(你)",
+       "ms": "du (awak)",
+       "sw": "du (wewe)",
+       "hi": "du (तुम)",
+       "ur": "du (تم)",
+       "ar_eg": "du (إنت)",
+       "ar_lb": "du (إنتَ/إنتِ)",
+       "ar_sy": "du (إنت)"
       },
       "cells": [
        "kannst",
@@ -3605,7 +5801,16 @@ const GRAMMAR = [
        "fa": "er/sie/es (او/آن)",
        "uk": "er/sie/es (він/вона/воно)",
        "pl": "er/sie/es (on/ona/ono)",
-       "tr": "er/sie/es (o)"
+       "tr": "er/sie/es (o)",
+       "th": "er/sie/es (เขา/เธอ/มัน)",
+       "zh": "er/sie/es(他/她/它)",
+       "ms": "er/sie/es (dia/ia)",
+       "sw": "er/sie/es (yeye/hicho)",
+       "hi": "er/sie/es (वह)",
+       "ur": "er/sie/es (وہ)",
+       "ar_eg": "er/sie/es (هو/هي/هو المحايد)",
+       "ar_lb": "er/sie/es (هو/هي)",
+       "ar_sy": "er/sie/es (هوي/هي)"
       },
       "cells": [
        "kann",
@@ -3625,7 +5830,16 @@ const GRAMMAR = [
        "fa": "wir (ما)",
        "uk": "wir (ми)",
        "pl": "wir (my)",
-       "tr": "wir (biz)"
+       "tr": "wir (biz)",
+       "th": "wir (เรา)",
+       "zh": "wir(我们)",
+       "ms": "wir (kami/kita)",
+       "sw": "wir (sisi)",
+       "hi": "wir (हम)",
+       "ur": "wir (ہم)",
+       "ar_eg": "wir (إحنا)",
+       "ar_lb": "wir (نحنا)",
+       "ar_sy": "wir (نحنا)"
       },
       "cells": [
        "können",
@@ -3645,7 +5859,16 @@ const GRAMMAR = [
        "fa": "ihr (شما)",
        "uk": "ihr (ви)",
        "pl": "ihr (wy)",
-       "tr": "ihr (siz)"
+       "tr": "ihr (siz)",
+       "th": "ihr (พวกเธอ)",
+       "zh": "ihr(你们)",
+       "ms": "ihr (kamu semua)",
+       "sw": "ihr (nyinyi)",
+       "hi": "ihr (तुम सब)",
+       "ur": "ihr (تم سب)",
+       "ar_eg": "ihr (إنتوا)",
+       "ar_lb": "ihr (إنتو)",
+       "ar_sy": "ihr (إنتو)"
       },
       "cells": [
        "könnt",
@@ -3665,7 +5888,16 @@ const GRAMMAR = [
        "fa": "sie/Sie (آنها / شما)",
        "uk": "sie/Sie (вони / Ви ввічл.)",
        "pl": "sie/Sie (oni/one / forma grzecznościowa)",
-       "tr": "sie/Sie (onlar / siz - nazik)"
+       "tr": "sie/Sie (onlar / siz - nazik)",
+       "th": "sie/Sie (พวกเขา/คุณ แบบสุภาพ)",
+       "zh": "sie/Sie(他们/您)",
+       "ms": "sie/Sie (mereka/anda)",
+       "sw": "sie/Sie (wao/wewe kwa heshima)",
+       "hi": "sie/Sie (वे/आप)",
+       "ur": "sie/Sie (وہ لوگ / آپ)",
+       "ar_eg": "sie/Sie (هم/حضرتك)",
+       "ar_lb": "sie/Sie (هنّي/حضرتك)",
+       "ar_sy": "sie/Sie (هنّي/حضرتك)"
       },
       "cells": [
        "können",
@@ -3687,7 +5919,16 @@ const GRAMMAR = [
      "fa": "معنای هر فعل کمکی",
      "uk": "Значення модальних дієслів",
      "pl": "Znaczenie czasowników modalnych",
-     "tr": "Modal fiillerin anlamı"
+     "tr": "Modal fiillerin anlamı",
+     "th": "ความหมายของกริยาโมดัลแต่ละตัว",
+     "zh": "情态动词的含义",
+     "ms": "Makna kata kerja modal",
+     "sw": "Maana ya vitenzi vya modali",
+     "hi": "मोडल क्रियाओं का अर्थ",
+     "ur": "معاون افعالِ استطاعت کے معنی",
+     "ar_eg": "معنى كل فعل وجهي",
+     "ar_lb": "معنى كل فعل شرطي",
+     "ar_sy": "معنى الأفعال الشرطية"
     },
     "labelHeader": {
      "de": "Bedeutung",
@@ -3697,7 +5938,16 @@ const GRAMMAR = [
      "fa": "معنا",
      "uk": "Значення",
      "pl": "Znaczenie",
-     "tr": "Anlam"
+     "tr": "Anlam",
+     "th": "ความหมาย",
+     "zh": "含义",
+     "ms": "Makna",
+     "sw": "Maana",
+     "hi": "अर्थ",
+     "ur": "معنی",
+     "ar_eg": "المعنى",
+     "ar_lb": "المعنى",
+     "ar_sy": "المعنى"
     },
     "columns": [
      {
@@ -3708,7 +5958,16 @@ const GRAMMAR = [
       "fa": "فعل",
       "uk": "Дієслово",
       "pl": "Czasownik",
-      "tr": "Fiil"
+      "tr": "Fiil",
+      "th": "กริยา (Verb)",
+      "zh": "动词",
+      "ms": "Kata kerja",
+      "sw": "Kitenzi",
+      "hi": "क्रिया",
+      "ur": "فعل",
+      "ar_eg": "الفعل",
+      "ar_lb": "الفعل",
+      "ar_sy": "الفعل"
      },
      {
       "de": "Beispiel",
@@ -3718,7 +5977,16 @@ const GRAMMAR = [
       "fa": "مثال",
       "uk": "Приклад",
       "pl": "Przykład",
-      "tr": "Örnek"
+      "tr": "Örnek",
+      "th": "ตัวอย่าง",
+      "zh": "例子",
+      "ms": "Contoh",
+      "sw": "Mfano",
+      "hi": "उदाहरण",
+      "ur": "مثال",
+      "ar_eg": "مثال",
+      "ar_lb": "مثال",
+      "ar_sy": "مثال"
      }
     ],
     "rows": [
@@ -3731,7 +5999,16 @@ const GRAMMAR = [
        "fa": "توانایی / امکان",
        "uk": "здатність / можливість",
        "pl": "zdolność / możliwość",
-       "tr": "Yetenek / olasılık"
+       "tr": "Yetenek / olasılık",
+       "th": "ความสามารถ / ความเป็นไปได้",
+       "zh": "能力/可能性",
+       "ms": "Kebolehan / kemungkinan",
+       "sw": "uwezo / uwezekano",
+       "hi": "क्षमता / संभावना",
+       "ur": "صلاحیت / امکان",
+       "ar_eg": "القدرة / الإمكانية",
+       "ar_lb": "قدرة / إمكانية",
+       "ar_sy": "قدرة / إمكانية"
       },
       "cells": [
        "können",
@@ -3747,7 +6024,16 @@ const GRAMMAR = [
        "fa": "ضرورت / اجبار",
        "uk": "необхідність / примус",
        "pl": "konieczność / przymus",
-       "tr": "Gereklilik / zorunluluk"
+       "tr": "Gereklilik / zorunluluk",
+       "th": "ความจำเป็น / ข้อบังคับ",
+       "zh": "必要性/强制",
+       "ms": "Keperluan / kewajipan",
+       "sw": "ulazima / sharti",
+       "hi": "आवश्यकता / मजबूरी",
+       "ur": "ضرورت / لازمی",
+       "ar_eg": "الضرورة / الإلزام",
+       "ar_lb": "ضرورة / إلزام",
+       "ar_sy": "ضرورة / إلزام"
       },
       "cells": [
        "müssen",
@@ -3763,7 +6049,16 @@ const GRAMMAR = [
        "fa": "خواستن / قصد",
        "uk": "воля / намір",
        "pl": "chęć / zamiar",
-       "tr": "İstek / niyet"
+       "tr": "İstek / niyet",
+       "th": "ความตั้งใจ / เจตนา",
+       "zh": "意愿/意图",
+       "ms": "Kemahuan / niat",
+       "sw": "nia / kusudi",
+       "hi": "इच्छा / इरादा",
+       "ur": "ارادہ / خواہش",
+       "ar_eg": "الرغبة / النية",
+       "ar_lb": "رغبة / نية",
+       "ar_sy": "رغبة / نية"
       },
       "cells": [
        "wollen",
@@ -3779,7 +6074,16 @@ const GRAMMAR = [
        "fa": "باید (به‌خواستِ دیگران)",
        "uk": "спонукання з боку інших",
        "pl": "powinność / polecenie od innych",
-       "tr": "Başkalarından gelen yükümlülük"
+       "tr": "Başkalarından gelen yükümlülük",
+       "th": "คำสั่ง/ความคาดหวังจากผู้อื่น",
+       "zh": "他人的要求",
+       "ms": "Suruhan/permintaan daripada orang lain",
+       "sw": "agizo kutoka kwa wengine",
+       "hi": "दूसरों की अपेक्षा/निर्देश",
+       "ur": "دوسروں کی طرف سے تقاضا",
+       "ar_eg": "طلب من حد تاني",
+       "ar_lb": "طلب من حدا تاني",
+       "ar_sy": "طلب من التانيين"
       },
       "cells": [
        "sollen",
@@ -3795,7 +6099,16 @@ const GRAMMAR = [
        "fa": "اجازه",
        "uk": "дозвіл",
        "pl": "pozwolenie",
-       "tr": "İzin"
+       "tr": "İzin",
+       "th": "การอนุญาต",
+       "zh": "许可",
+       "ms": "Kebenaran",
+       "sw": "ruhusa",
+       "hi": "अनुमति",
+       "ur": "اجازت",
+       "ar_eg": "الإذن/السماح",
+       "ar_lb": "إذن (يجوز)",
+       "ar_sy": "إذن"
       },
       "cells": [
        "dürfen",
@@ -3811,7 +6124,16 @@ const GRAMMAR = [
        "fa": "دوست داشتن / میل (مؤدبانه)",
        "uk": "прихильність / ввічливе бажання",
        "pl": "lubić / grzeczne życzenie",
-       "tr": "Hoşlanma / nazik istek"
+       "tr": "Hoşlanma / nazik istek",
+       "th": "ความชอบ / คำขอที่สุภาพ",
+       "zh": "喜欢/礼貌的愿望",
+       "ms": "Suka / permintaan sopan",
+       "sw": "kupenda / ombi la heshima",
+       "hi": "पसंद / विनम्र इच्छा",
+       "ur": "پسند / مؤدبانہ خواہش",
+       "ar_eg": "الإعجاب / طلب مؤدب",
+       "ar_lb": "تفضيل / رغبة بأدب",
+       "ar_sy": "حب / رغبة مهذبة"
       },
       "cells": [
        "mögen → möchte",
@@ -3830,7 +6152,16 @@ const GRAMMAR = [
     "fa": "من می‌توانم آلمانی را خیلی خوب صحبت کنم.",
     "uk": "Я дуже добре вмію говорити німецькою.",
     "pl": "Umiem bardzo dobrze mówić po niemiecku.",
-    "tr": "Çok iyi Almanca konuşabilirim."
+    "tr": "Çok iyi Almanca konuşabilirim.",
+    "th": "ฉันพูดภาษาเยอรมันได้ดีมาก",
+    "zh": "我德语说得很好。",
+    "ms": "Saya boleh bertutur bahasa Jerman dengan sangat baik.",
+    "sw": "Ninaweza kuzungumza Kijerumani vizuri sana.",
+    "hi": "मैं जर्मन बहुत अच्छी तरह बोल सकता हूँ।",
+    "ur": "میں جرمن زبان بہت اچھی طرح بول سکتا ہوں۔",
+    "ar_eg": "أنا بقدر أتكلم ألماني كويس أوي.",
+    "ar_lb": "بقدر إحكي ألماني منيح كتير.",
+    "ar_sy": "بحكي ألماني منيح كتير."
    },
    {
     "de": "Am Wochenende müssen wir leider arbeiten.",
@@ -3840,7 +6171,16 @@ const GRAMMAR = [
     "fa": "متأسفانه آخر هفته باید کار کنیم.",
     "uk": "На вихідних нам, на жаль, доведеться працювати.",
     "pl": "Niestety w weekend musimy pracować.",
-    "tr": "Hafta sonu maalesef çalışmak zorundayız."
+    "tr": "Hafta sonu maalesef çalışmak zorundayız.",
+    "th": "น่าเสียดายที่เราต้องทำงานในวันหยุดสุดสัปดาห์",
+    "zh": "很遗憾,我们周末必须工作。",
+    "ms": "Malangnya, kami terpaksa bekerja pada hujung minggu.",
+    "sw": "Kwa bahati mbaya, tunapaswa kufanya kazi wikendi.",
+    "hi": "दुर्भाग्य से हमें सप्ताहांत में काम करना पड़ता है।",
+    "ur": "افسوس کہ ہفتہ وار چھٹی پر ہمیں کام کرنا پڑتا ہے۔",
+    "ar_eg": "للأسف لازم نشتغل في الويكند.",
+    "ar_lb": "للأسف لازم نشتغل بعطلة نهاية الأسبوع.",
+    "ar_sy": "للأسف لازم نشتغل بويكند."
    },
    {
     "de": "Ich möchte bitte ein Glas Wasser bestellen.",
@@ -3850,7 +6190,16 @@ const GRAMMAR = [
     "fa": "لطفاً می‌خواهم یک لیوان آب سفارش بدهم.",
     "uk": "Я хотів би замовити склянку води, будь ласка.",
     "pl": "Chciałbym zamówić szklankę wody, proszę.",
-    "tr": "Bir bardak su söylemek istiyorum, lütfen."
+    "tr": "Bir bardak su söylemek istiyorum, lütfen.",
+    "th": "ฉันขอสั่งน้ำเปล่าหนึ่งแก้วค่ะ/ครับ",
+    "zh": "我想点一杯水,谢谢。",
+    "ms": "Saya ingin memesan segelas air, tolong.",
+    "sw": "Ningependa kuagiza glasi ya maji, tafadhali.",
+    "hi": "मैं कृपया एक गिलास पानी मंगवाना चाहूँगा।",
+    "ur": "میں برائے مہربانی ایک گلاس پانی منگوانا چاہوں گا۔",
+    "ar_eg": "لو سمحت عايز أطلب كوباية مية.",
+    "ar_lb": "بدي إطلب كاسة مي لو سمحت.",
+    "ar_sy": "بدي اطلب كاسة ميي لو سمحت."
    }
   ],
   "hints": {
@@ -3861,7 +6210,16 @@ const GRAMMAR = [
    "fa": "در فارسی فعل کمکی مانند می‌توانم/باید/می‌خواهم خودش صرف می‌شود و چون زبان SOV است، فعل اصلی هم ته جمله می‌آید؛ پس این ترتیب برایتان آشناست. در آلمانی هم فعل کمکیِ صرف‌شده در جایگاه دوم و فعل اصلی به‌صورت مصدر و بدون صرف در انتهای جمله می‌نشیند (Satzklammer). فقط یادتان باشد در حالت مفرد، صدای ریشه تغییر می‌کند: ich kann، ich muss.",
    "uk": "Модальне дієслово відмінюється на 2-й позиції, повнозначне – як інфінітив у кінці речення (рамкова конструкція). В однині кореневий голосний змінюється (ich kann, muss, will, soll, darf, mag), у множині – ні. «möchte» – це ввічлива форма від «mögen».",
    "pl": "Czasownik modalny odmieniony na pozycji 2, czasownik główny jako bezokolicznik na końcu zdania (klamra zdaniowa). W liczbie pojedynczej zmienia się samogłoska rdzenna (ich kann, muss, will, soll, darf, mag), w liczbie mnogiej nie. „möchte” to grzeczna forma od „mögen”.",
-   "tr": "Modal fiil çekimli olarak 2. konumda, asıl fiil mastar hâlinde cümlenin sonunda (cümle parantezi). Tekilde kök ünlüsü değişir (ich kann, muss, will, soll, darf, mag), çoğulda değişmez. „möchte“, „mögen“ fiilinin nazik biçimidir."
+   "tr": "Modal fiil çekimli olarak 2. konumda, asıl fiil mastar hâlinde cümlenin sonunda (cümle parantezi). Tekilde kök ünlüsü değişir (ich kann, muss, will, soll, darf, mag), çoğulda değişmez. „möchte“, „mögen“ fiilinin nazik biçimidir.",
+   "th": "กริยาโมดัลที่ผันแล้วอยู่ตำแหน่งที่ 2 ส่วนกริยาแท้อยู่ในรูป Infinitiv ที่ท้ายประโยค (Satzklammer) ในรูปเอกพจน์สระในรากศัพท์จะเปลี่ยน (ich kann, muss, will, soll, darf, mag) แต่ในพหูพจน์ไม่เปลี่ยน „möchte“ คือรูปสุภาพของ „mögen“",
+   "zh": "情态动词变位后位于第二位,实义动词以不定式形式置于句末(框型结构)。单数形式中词干元音会变化(ich kann、muss、will、soll、darf、mag),复数形式则不变。“möchte” 是 “mögen” 的礼貌形式。",
+   "ms": "Kata kerja modal dikonjugasikan pada kedudukan ke-2, kata kerja utama sebagai infinitif di hujung ayat (kurungan ayat). Dalam bentuk tunggal, vokal batang kata berubah (ich kann, muss, will, soll, darf, mag), tetapi tidak dalam bentuk jamak. 'möchte' ialah bentuk sopan bagi 'mögen'.",
+   "sw": "Kitenzi cha modali hubadilishwa na kuwekwa nafasi ya 2, kitenzi kikuu huwa Infiniti mwishoni mwa sentensi (mabano ya sentensi). Katika umoja irabu ya shina hubadilika (ich kann, muss, will, soll, darf, mag), lakini si katika wingi. 'möchte' ni umbo la heshima la 'mögen'.",
+   "hi": "मोडल क्रिया संयुगित रूप में स्थान 2 पर, मुख्य क्रिया इनफ़िनिटिव के रूप में वाक्य के अंत में (Satzklammer)। एकवचन में मूल स्वर बदलता है (ich kann, muss, will, soll, darf, mag), बहुवचन में नहीं। 'möchte' 'mögen' का विनम्र रूप है।",
+   "ur": "معاون فعلِ استطاعت گردان شدہ حالت میں دوسری جگہ پر، اصل فعل مصدر کی صورت میں جملے کے آخر میں (Satzklammer)۔ واحد میں جڑ کا مصوتہ بدلتا ہے (ich kann، muss، will، soll، darf، mag)، جمع میں نہیں۔ ”möchte“ ”mögen“ کی مؤدبانہ صورت ہے۔",
+   "ar_eg": "الفعل الوجهي بييجي متصرّف في المكان التاني، والفعل الأساسي بييجي كمصدر آخر الجملة (قوس الجملة). في المفرد الحرف الصوتي بيتغير (ich kann, muss, will, soll, darf, mag)، في الجمع لأ. «möchte» هي الصيغة المؤدبة لـ «mögen».",
+   "ar_lb": "الفعل الشرطي مصرّف بالمكان التاني، والفعل الأساسي بيضل مصدر بآخر الجملة (Satzklammer). بالمفرد بيتغيّر الصوتي بالجذر (ich kann, muss, will, soll, darf, mag)، بس بالجمع لأ. „möchte“ هيّي الصيغة المؤدّبة من „mögen“.",
+   "ar_sy": "الفعل الشرطي بيتصرّف بالمكان التاني، والفعل الأساسي بيضل مصدر بآخر الجملة (قوس الجملة). بالمفرد الحرف الصوتي بيتغيّر (ich kann, muss, will, soll, darf, mag)، بالجمع لأ. „möchte“ هي الصيغة المهذبة من „mögen“."
   }
  },
  {
@@ -3875,7 +6233,16 @@ const GRAMMAR = [
    "fa": "فعل‌های جداشدنی و جدانشدنی",
    "uk": "Віддільні та невіддільні дієслова",
    "pl": "Czasowniki rozdzielnie i nierozdzielnie złożone",
-   "tr": "Ayrılabilir ve ayrılmaz fiiller"
+   "tr": "Ayrılabilir ve ayrılmaz fiiller",
+   "th": "กริยาที่แยกได้และแยกไม่ได้ (trennbare & untrennbare Verben)",
+   "zh": "可分动词与不可分动词",
+   "ms": "Kata Kerja Boleh Pisah & Tak Boleh Pisah",
+   "sw": "Vitenzi Vyenye Viambishi Vinavyotengana na Visivyotengana",
+   "hi": "विभाज्य और अविभाज्य क्रियाएँ",
+   "ur": "منقسم اور غیر منقسم افعال",
+   "ar_eg": "الأفعال المنفصلة وغير المنفصلة",
+   "ar_lb": "الأفعال المنفصلة وغير المنفصلة",
+   "ar_sy": "الأفعال المنفصلة وغير المنفصلة"
   },
   "intro": {
    "de": "Trennbare Verben haben ein betontes Präfix, das im Hauptsatz ans Satzende rückt (Ich stehe um 7 Uhr auf) und im Partizip II ein -ge- einschließt (aufgestanden). Untrennbare Präfixe (be-, ver- …) sind unbetont, bleiben immer am Verb und bilden das Partizip II ohne ge- (verstanden). Die Betonung verrät den Typ.",
@@ -3885,7 +6252,16 @@ const GRAMMAR = [
    "fa": "فعل‌های جداشدنی یک پیشوند تکیه‌دار دارند که در جملهٔ اصلی به انتهای جمله می‌رود (Ich stehe um 7 Uhr auf) و در وجه وصفی گذشته یک -ge- را در خود جای می‌دهد (aufgestanden). پیشوندهای جدانشدنی (be-, ver- …) بی‌تکیه‌اند، هرگز جدا نمی‌شوند و وجه وصفی را بدون ge- می‌سازند (verstanden). تکیه، نوع فعل را لو می‌دهد.",
    "uk": "Віддільні дієслова мають наголошений префікс, який у головному реченні переходить у кінець (Ich stehe um 7 Uhr auf), а в Partizip II вставляє -ge- усередину (aufgestanden). Невіддільні префікси (be-, ver- …) ненаголошені, завжди залишаються при дієслові й утворюють Partizip II без ge- (verstanden). Тип видає наголос.",
    "pl": "Czasowniki rozdzielnie złożone mają akcentowany przedrostek, który w zdaniu głównym przesuwa się na koniec (Ich stehe um 7 Uhr auf), a w imiesłowie Partizip II obejmuje -ge- (aufgestanden). Przedrostki nierozdzielne (be-, ver- …) są nieakcentowane, zawsze pozostają przy czasowniku i tworzą Partizip II bez ge- (verstanden). Akcent zdradza typ.",
-   "tr": "Ayrılabilir fiillerin vurgulu bir ön eki vardır; bu ön ek ana cümlede cümlenin sonuna kayar (Ich stehe um 7 Uhr auf) ve Partizip II'de araya bir -ge- alır (aufgestanden). Ayrılmaz ön ekler (be-, ver- …) vurgusuzdur, her zaman fiile bağlı kalır ve Partizip II'yi ge- olmadan kurar (verstanden). Vurgu, türü ele verir."
+   "tr": "Ayrılabilir fiillerin vurgulu bir ön eki vardır; bu ön ek ana cümlede cümlenin sonuna kayar (Ich stehe um 7 Uhr auf) ve Partizip II'de araya bir -ge- alır (aufgestanden). Ayrılmaz ön ekler (be-, ver- …) vurgusuzdur, her zaman fiile bağlı kalır ve Partizip II'yi ge- olmadan kurar (verstanden). Vurgu, türü ele verir.",
+   "th": "กริยาที่มีอุปสรรคแยกได้ (trennbar) จะมีอุปสรรคที่เน้นเสียง ซึ่งจะย้ายไปอยู่ท้ายประโยคหลัก (เช่น Ich stehe um 7 Uhr auf) และในรูปกริยาช่อง 3 จะมี -ge- แทรกอยู่ตรงกลาง (aufgestanden) ส่วนอุปสรรคแยกไม่ได้ (untrennbar เช่น be-, ver- …) จะไม่เน้นเสียง ติดอยู่กับกริยาเสมอ และสร้างรูปกริยาช่อง 3 โดยไม่มี ge- (verstanden) การเน้นเสียงคือตัวบ่งบอกว่าเป็นประเภทใด",
+   "zh": "可分动词带有重读前缀,在主句中该前缀会移到句末(Ich stehe um 7 Uhr auf. 我七点起床。),在第二分词中会插入 -ge-(aufgestanden)。不可分前缀(be-、ver- 等)不重读,始终附着在动词上,构成第二分词时不加 ge-(verstanden)。重音可以帮你分辨类型。",
+   "ms": "Kata kerja boleh pisah mempunyai awalan yang ditekankan, yang beralih ke hujung ayat dalam klausa utama (Ich stehe um 7 Uhr auf) dan menyelitkan -ge- dalam Partizip II (aufgestanden). Awalan tak boleh pisah (be-, ver- …) tidak ditekankan, sentiasa kekal pada kata kerja, dan membentuk Partizip II tanpa ge- (verstanden). Tekanan suara itulah yang mendedahkan jenisnya.",
+   "sw": "Vitenzi vyenye viambishi vinavyotengana vina kiambishi awali chenye mkazo, ambacho katika sentensi kuu husogezwa mwishoni (Ich stehe um 7 Uhr auf). Katika Partizip II huongezwa -ge- ndani yake (aufgestanden). Viambishi awali visivyotengana (be-, ver- …) havina mkazo, hubaki daima kwenye kitenzi, na huunda Partizip II bila ge- (verstanden). Mkazo ndio unaoonyesha aina ya kiambishi.",
+   "hi": "विभाज्य क्रियाओं का उपसर्ग बलाघातयुक्त होता है, जो मुख्य वाक्य में वाक्य के अंत में चला जाता है (Ich stehe um 7 Uhr auf) और Partizip II में -ge- शामिल करता है (aufgestanden)। अविभाज्य उपसर्ग (be-, ver- …) बलाघातरहित होते हैं, हमेशा क्रिया से जुड़े रहते हैं और Partizip II बिना ge- के बनाते हैं (verstanden)। बलाघात ही प्रकार बताता है।",
+   "ur": "منقسم افعال کا سابقہ زور کے ساتھ ادا ہوتا ہے، جو مرکزی جملے میں جملے کے آخر تک جاتا ہے (Ich stehe um 7 Uhr auf) اور Partizip II میں -ge- شامل کرتا ہے (aufgestanden)۔ غیر منقسم سابقے (be-، ver- …) بغیر زور کے ہوتے ہیں، ہمیشہ فعل کے ساتھ رہتے ہیں اور Partizip II بغیر ge- کے بناتے ہیں (verstanden)۔ زور ہی بتاتا ہے کہ کون سی قسم ہے۔",
+   "ar_eg": "الأفعال المنفصلة عندها بادئة متشدد عليها بالنطق، وبتروح آخر الجملة في الجملة الرئيسية (Ich stehe um 7 Uhr auf)، وفي الـ Partizip II بتحط -ge- في النص (aufgestanden). البادئات الغير منفصلة (be-, ver- …) مش متشدد عليها، بتفضل ملزّقة في الفعل، وبتكوّن الـ Partizip II من غير ge- (verstanden). النطق هو اللي بيقولك نوع الفعل إيه.",
+   "ar_lb": "الأفعال المنفصلة إلها سابقة مشدّدة (بالنطق) بتروح على آخر الجملة الرئيسية (Ich stehe um 7 Uhr auf)، وبالـ Partizip II بتنضاف -ge- بالنص (aufgestanden). السوابق غير المنفصلة (be-, ver- …) مش مشدّدة، دايمًا بتضل ملزّقة بالفعل، وبيتكوّن الـ Partizip II بلا ge- (verstanden). الشدّة بالنطق هيّي يلي بتفرّق بين النوعين.",
+   "ar_sy": "الأفعال المنفصلة عندها بادئة متشدّدة (بيقع عليها الضغط الصوتي) بتروح لآخر الجملة الأساسية (Ich stehe um 7 Uhr auf) وبـPartizip II بتضم -ge- جواتها (aufgestanden). البادئات الغير منفصلة (be-, ver- …) مو متشدّدة، دايماً بتضل ملزوقة بالفعل وبتشكّل Partizip II بلا ge- (verstanden). الضغط الصوتي هو يلي بيدلّك عالنوع."
   },
   "tables": [
    {
@@ -3897,7 +6273,16 @@ const GRAMMAR = [
      "fa": "پیشوندهای جداشدنی",
      "uk": "Віддільні префікси",
      "pl": "Przedrostki rozdzielne",
-     "tr": "Ayrılabilir ön ekler"
+     "tr": "Ayrılabilir ön ekler",
+     "th": "อุปสรรคที่แยกได้ (trennbare Präfixe)",
+     "zh": "可分前缀",
+     "ms": "Awalan Boleh Pisah",
+     "sw": "Viambishi awali vinavyotengana",
+     "hi": "विभाज्य उपसर्ग",
+     "ur": "منقسم سابقے",
+     "ar_eg": "البادئات المنفصلة",
+     "ar_lb": "السوابق المنفصلة",
+     "ar_sy": "البادئات المنفصلة"
     },
     "labelHeader": {
      "de": "",
@@ -3915,7 +6300,16 @@ const GRAMMAR = [
       "fa": "پیشوند",
       "uk": "Префікс",
       "pl": "Przedrostek",
-      "tr": "Ön ek"
+      "tr": "Ön ek",
+      "th": "อุปสรรค (Präfix)",
+      "zh": "前缀",
+      "ms": "Awalan",
+      "sw": "Kiambishi awali",
+      "hi": "उपसर्ग",
+      "ur": "سابقہ",
+      "ar_eg": "البادئة",
+      "ar_lb": "السابقة (Präfix)",
+      "ar_sy": "البادئة"
      },
      {
       "de": "Beispielverb",
@@ -3925,7 +6319,16 @@ const GRAMMAR = [
       "fa": "فعل نمونه",
       "uk": "Дієслово-приклад",
       "pl": "Przykładowy czasownik",
-      "tr": "Örnek fiil"
+      "tr": "Örnek fiil",
+      "th": "กริยาตัวอย่าง",
+      "zh": "示例动词",
+      "ms": "Contoh kata kerja",
+      "sw": "Kitenzi mfano",
+      "hi": "उदाहरण क्रिया",
+      "ur": "مثالی فعل",
+      "ar_eg": "مثال على فعل",
+      "ar_lb": "مثال فعل",
+      "ar_sy": "فعل مثال"
      },
      {
       "de": "Hauptsatz (Präfix am Ende)",
@@ -3935,7 +6338,16 @@ const GRAMMAR = [
       "fa": "جملهٔ اصلی (پیشوند در پایان)",
       "uk": "Головне речення (префікс у кінці)",
       "pl": "Zdanie główne (przedrostek na końcu)",
-      "tr": "Ana cümle (ön ek sonda)"
+      "tr": "Ana cümle (ön ek sonda)",
+      "th": "ประโยคหลัก (อุปสรรคอยู่ท้ายประโยค)",
+      "zh": "主句(前缀置于句末)",
+      "ms": "Klausa utama (awalan di hujung)",
+      "sw": "Sentensi kuu (kiambishi mwishoni)",
+      "hi": "मुख्य वाक्य (उपसर्ग अंत में)",
+      "ur": "مرکزی جملہ (سابقہ آخر میں)",
+      "ar_eg": "الجملة الرئيسية (البادئة آخر الجملة)",
+      "ar_lb": "الجملة الرئيسية (السابقة بالآخر)",
+      "ar_sy": "الجملة الأساسية (البادئة بالآخر)"
      }
     ],
     "rows": [
@@ -4090,7 +6502,16 @@ const GRAMMAR = [
      "fa": "پیشوندهای جدانشدنی",
      "uk": "Невіддільні префікси",
      "pl": "Przedrostki nierozdzielne",
-     "tr": "Ayrılmaz ön ekler"
+     "tr": "Ayrılmaz ön ekler",
+     "th": "อุปสรรคที่แยกไม่ได้ (untrennbare Präfixe)",
+     "zh": "不可分前缀",
+     "ms": "Awalan Tak Boleh Pisah",
+     "sw": "Viambishi awali visivyotengana",
+     "hi": "अविभाज्य उपसर्ग",
+     "ur": "غیر منقسم سابقے",
+     "ar_eg": "البادئات الغير منفصلة",
+     "ar_lb": "السوابق غير المنفصلة",
+     "ar_sy": "البادئات الغير منفصلة"
     },
     "labelHeader": {
      "de": "",
@@ -4108,7 +6529,16 @@ const GRAMMAR = [
       "fa": "پیشوند",
       "uk": "Префікс",
       "pl": "Przedrostek",
-      "tr": "Ön ek"
+      "tr": "Ön ek",
+      "th": "อุปสรรค (Präfix)",
+      "zh": "前缀",
+      "ms": "Awalan",
+      "sw": "Kiambishi awali",
+      "hi": "उपसर्ग",
+      "ur": "سابقہ",
+      "ar_eg": "البادئة",
+      "ar_lb": "السابقة (Präfix)",
+      "ar_sy": "البادئة"
      },
      {
       "de": "Beispielverb",
@@ -4118,7 +6548,16 @@ const GRAMMAR = [
       "fa": "فعل نمونه",
       "uk": "Дієслово-приклад",
       "pl": "Przykładowy czasownik",
-      "tr": "Örnek fiil"
+      "tr": "Örnek fiil",
+      "th": "กริยาตัวอย่าง",
+      "zh": "示例动词",
+      "ms": "Contoh kata kerja",
+      "sw": "Kitenzi mfano",
+      "hi": "उदाहरण क्रिया",
+      "ur": "مثالی فعل",
+      "ar_eg": "مثال على فعل",
+      "ar_lb": "مثال فعل",
+      "ar_sy": "فعل مثال"
      },
      {
       "de": "Partizip II (ohne ge-)",
@@ -4128,7 +6567,16 @@ const GRAMMAR = [
       "fa": "وجه وصفی گذشته (بدون ge-)",
       "uk": "Partizip II (без ge-)",
       "pl": "Partizip II (bez ge-)",
-      "tr": "Partizip II (ge- olmadan)"
+      "tr": "Partizip II (ge- olmadan)",
+      "th": "รูปกริยาช่อง 3 (ไม่มี ge-)",
+      "zh": "第二分词(不带 ge-)",
+      "ms": "Partizip II (tanpa ge-)",
+      "sw": "Partizip II (bila ge-)",
+      "hi": "Partizip II (बिना ge-)",
+      "ur": "Partizip II (بغیر ge- کے)",
+      "ar_eg": "Partizip II (من غير ge-)",
+      "ar_lb": "Partizip II (بلا ge-)",
+      "ar_sy": "Partizip II (بلا ge-)"
      }
     ],
     "rows": [
@@ -4242,7 +6690,16 @@ const GRAMMAR = [
     "fa": "من هر روز صبح ساعت هفت از خواب بیدار می‌شوم.",
     "uk": "Я щоранку встаю о сьомій годині.",
     "pl": "Codziennie wstaję o siódmej rano.",
-    "tr": "Her sabah saat yedide kalkarım."
+    "tr": "Her sabah saat yedide kalkarım.",
+    "th": "ฉันตื่นนอนตอนเจ็ดโมงเช้าทุกวัน",
+    "zh": "我每天早上七点起床。",
+    "ms": "Saya bangun jam tujuh setiap pagi.",
+    "sw": "Ninaamka kila asubuhi saa moja (7:00).",
+    "hi": "मैं हर सुबह सात बजे उठता हूँ।",
+    "ur": "میں ہر صبح سات بجے اٹھتا ہوں۔",
+    "ar_eg": "أنا بصحى كل يوم الساعة سبعة.",
+    "ar_lb": "كل صبح بفيق الساعة سبعة.",
+    "ar_sy": "بقوم الساعة سبعة كل صبح."
    },
    {
     "de": "Gestern bin ich erst um neun Uhr aufgestanden.",
@@ -4252,7 +6709,16 @@ const GRAMMAR = [
     "fa": "دیروز تازه ساعت نه از خواب بیدار شدم.",
     "uk": "Учора я встав лише о дев'ятій годині.",
     "pl": "Wczoraj wstałem dopiero o dziewiątej.",
-    "tr": "Dün ancak saat dokuzda kalktım."
+    "tr": "Dün ancak saat dokuzda kalktım.",
+    "th": "เมื่อวานฉันเพิ่งตื่นตอนเก้าโมง",
+    "zh": "昨天我九点才起床。",
+    "ms": "Semalam saya baru bangun pada jam sembilan.",
+    "sw": "Jana niliamka saa tatu (9:00) tu.",
+    "hi": "कल मैं नौ बजे ही उठा।",
+    "ur": "کل میں نو بجے ہی اٹھا۔",
+    "ar_eg": "امبارح صحيت متأخر، الساعة تسعة بس.",
+    "ar_lb": "مبارح ما فقت إلا الساعة تسعة.",
+    "ar_sy": "مبارح ما قمت إلا الساعة تسعة."
    },
    {
     "de": "Ich habe die Grammatik endlich verstanden.",
@@ -4262,7 +6728,16 @@ const GRAMMAR = [
     "fa": "بالاخره دستور زبان را فهمیدم.",
     "uk": "Я нарешті зрозумів граматику.",
     "pl": "Wreszcie zrozumiałem gramatykę.",
-    "tr": "Dilbilgisini sonunda anladım."
+    "tr": "Dilbilgisini sonunda anladım.",
+    "th": "ในที่สุดฉันก็เข้าใจไวยากรณ์แล้ว",
+    "zh": "我终于弄懂了这个语法。",
+    "ms": "Akhirnya saya faham tatabahasa itu.",
+    "sw": "Hatimaye nimeelewa sarufi.",
+    "hi": "मैंने आख़िरकार व्याकरण समझ लिया।",
+    "ur": "میں نے آخرکار گرامر سمجھ لی۔",
+    "ar_eg": "أخيرًا فهمت القواعد.",
+    "ar_lb": "أخيرًا فهمت القواعد.",
+    "ar_sy": "بالأخير فهمت القواعد."
    }
   ],
   "hints": {
@@ -4273,7 +6748,16 @@ const GRAMMAR = [
    "fa": "در فارسی، در فعل‌های مرکب مانند «بلند شدن» یا «بیدار شدن»، بارِ معنایی در جزء غیرفعلی است، درست مثل پیشوند جداشدنی آلمانی که به آخر جمله می‌رود؛ چون فارسی هم فعل را ته جمله می‌گذارد، این جابه‌جایی برایتان آشناست. نکته: پیشوند جداشدنی تکیه دارد (ÁUFstehen) و در Partizip II یک -ge- می‌گیرد، اما be-/ver- بی‌تکیه‌اند و ge- نمی‌گیرند.",
    "uk": "Запам'ятай: наголошений префікс = віддільний (летить у кінець речення, дієприкметник із -ge-: aufgestanden). Ненаголошені be-, ge-, er-, ver-, zer-, ent-, emp- = невіддільні (залишаються при дієслові, дієприкметник без ge-: verstanden).",
    "pl": "Zapamiętaj: akcentowany przedrostek = rozdzielny (odlatuje na koniec zdania, imiesłów z -ge-: aufgestanden). Nieakcentowane be-, ge-, er-, ver-, zer-, ent-, emp- = nierozdzielne (pozostają przy czasowniku, imiesłów bez ge-: verstanden).",
-   "tr": "Unutma: vurgulu ön ek = ayrılabilir (cümlenin sonuna uçar, ortaç -ge- ile: aufgestanden). Vurgusuz be-, ge-, er-, ver-, zer-, ent-, emp- = ayrılmaz (fiile bağlı kalır, ortaç ge- olmadan: verstanden)."
+   "tr": "Unutma: vurgulu ön ek = ayrılabilir (cümlenin sonuna uçar, ortaç -ge- ile: aufgestanden). Vurgusuz be-, ge-, er-, ver-, zer-, ent-, emp- = ayrılmaz (fiile bağlı kalır, ortaç ge- olmadan: verstanden).",
+   "th": "ข้อควรจำ: อุปสรรคที่เน้นเสียง = แยกได้ (trennbar) — จะบินไปอยู่ท้ายประโยค รูปกริยาช่อง 3 มี -ge-: aufgestanden ส่วนอุปสรรคที่ไม่เน้นเสียง be-, ge-, er-, ver-, zer-, ent-, emp- = แยกไม่ได้ (untrennbar) — ติดอยู่กับกริยาเสมอ รูปกริยาช่อง 3 ไม่มี ge-: verstanden",
+   "zh": "注意:重读前缀 = 可分(飞到句末,分词带 -ge-:aufgestanden)。不重读的 be-、ge-、er-、ver-、zer-、ent-、emp- = 不可分(留在动词上,分词不带 ge-:verstanden)。",
+   "ms": "Ingat: awalan yang ditekankan = boleh pisah (terbang ke hujung ayat, Partizip dengan -ge-: aufgestanden). Awalan yang tidak ditekankan be-, ge-, er-, ver-, zer-, ent-, emp- = tak boleh pisah (kekal pada kata kerja, Partizip tanpa ge-: verstanden).",
+   "sw": "Kumbuka: kiambishi chenye mkazo = kinachotengana (husogezwa mwishoni mwa sentensi, Partizip huwa na -ge-: aufgestanden). Kiambishi kisicho na mkazo be-, ge-, er-, ver-, zer-, ent-, emp- = kisichotengana (hubaki kwenye kitenzi, Partizip haina ge-: verstanden).",
+   "hi": "याद रखें: बलाघातयुक्त उपसर्ग = विभाज्य (वाक्य के अंत में उड़ जाता है, Partizip में -ge-: aufgestanden)। बलाघातरहित be-, ge-, er-, ver-, zer-, ent-, emp- = अविभाज्य (क्रिया से जुड़ा रहता है, Partizip बिना ge- के: verstanden)।",
+   "ur": "یاد رکھیں: زور دار سابقہ = منقسم (جملے کے آخر میں چلا جاتا ہے، Partizip میں -ge-: aufgestanden)۔ بغیر زور کے be-، ge-، er-، ver-، zer-، ent-، emp- = غیر منقسم (فعل کے ساتھ رہتا ہے، Partizip بغیر ge- کے: verstanden)۔",
+   "ar_eg": "احفظ: البادئة المتشدد عليها = منفصلة (بتطير آخر الجملة، والـ Partizip بيبقى فيه -ge-: aufgestanden). البادئات الغير متشدد عليها زي be-, ge-, er-, ver-, zer-, ent-, emp- = غير منفصلة (بتفضل ملزّقة في الفعل، والـ Partizip من غير ge-: verstanden).",
+   "ar_lb": "خدها بالك: السابقة المشدّدة = منفصلة (بتطير عآخر الجملة، والـ Partizip بـ -ge-: aufgestanden). السوابق غير المشدّدة be-, ge-, er-, ver-, zer-, ent-, emp- = غير منفصلة (بتضل ملزّقة بالفعل، والـ Partizip بلا ge-: verstanden).",
+   "ar_sy": "خد بالك: البادئة المتشدّدة (بالضغط الصوتي) = منفصلة (بتطير لآخر الجملة، Partizip فيها -ge-: aufgestanden). البادئات الغير متشدّدة be-, ge-, er-, ver-, zer-, ent-, emp- = غير منفصلة (بتضل ملزوقة بالفعل، Partizip بلا ge-: verstanden)."
   }
  },
  {
@@ -4287,7 +6771,16 @@ const GRAMMAR = [
    "fa": "افعال انعکاسی (sich)",
    "uk": "Зворотні дієслова (sich)",
    "pl": "Czasowniki zwrotne (sich)",
-   "tr": "Dönüşlü fiiller (sich)"
+   "tr": "Dönüşlü fiiller (sich)",
+   "th": "กริยาสะท้อน (Reflexive Verben กับ sich)",
+   "zh": "反身动词(sich)",
+   "ms": "Kata Kerja Refleksif (sich)",
+   "sw": "Vitenzi Virejeshi (sich)",
+   "hi": "आत्मवाचक क्रियाएँ (sich)",
+   "ur": "انعکاسی افعال (sich)",
+   "ar_eg": "الأفعال الانعكاسية (sich)",
+   "ar_lb": "الأفعال الانعكاسية (sich)",
+   "ar_sy": "الأفعال الانعكاسية (sich)"
   },
   "intro": {
    "de": "Reflexive Verben brauchen ein Reflexivpronomen (sich), das sich auf das Subjekt zurückbezieht. Nur in der 1. und 2. Person Singular unterscheiden sich Akkusativ (mich/dich) und Dativ (mir/dir) – sonst heißt es überall sich. Steht ein zusätzliches Akkusativobjekt im Satz, kommt das Reflexivpronomen in den Dativ: Ich wasche mich, aber Ich wasche mir die Hände.",
@@ -4297,7 +6790,16 @@ const GRAMMAR = [
    "fa": "افعال انعکاسی به یک ضمیر انعکاسی (sich) نیاز دارند که به فاعل بازمی‌گردد. تنها در اول‌شخص و دوم‌شخصِ مفرد است که حالت مفعولی (mich/dich) و برایی (mir/dir) با هم فرق دارند؛ در بقیهٔ موارد همه‌جا sich است. اگر در جمله یک مفعول مستقیمِ دیگر (در حالت مفعولی) هم باشد، ضمیر انعکاسی به حالت برایی می‌رود: Ich wasche mich، اما Ich wasche mir die Hände (دست‌هایم را می‌شویم).",
    "uk": "Зворотні дієслова потребують зворотного займенника (sich), який вказує назад на підмет. Лише в 1-й і 2-й особі однини розрізняються Akkusativ (mich/dich) і Dativ (mir/dir) – в усіх інших випадках вживається sich. Якщо в реченні є ще й окремий прямий додаток у Akkusativ, зворотний займенник переходить у Dativ: Ich wasche mich, але Ich wasche mir die Hände.",
    "pl": "Czasowniki zwrotne wymagają zaimka zwrotnego (sich), który odnosi się z powrotem do podmiotu. Tylko w 1. i 2. osobie liczby pojedynczej biernik (mich/dich) i celownik (mir/dir) różnią się od siebie – poza tym wszędzie jest sich. Jeśli w zdaniu jest dodatkowe dopełnienie w bierniku, zaimek zwrotny przechodzi do celownika: Ich wasche mich, ale Ich wasche mir die Hände.",
-   "tr": "Dönüşlü fiiller, özneye geri gönderme yapan bir dönüşlü zamir (sich) gerektirir. Yalnızca 1. ve 2. tekil şahısta Akkusativ (mich/dich) ile Dativ (mir/dir) birbirinden ayrılır – diğer her yerde sich denir. Cümlede ayrıca bir Akkusativ nesnesi varsa, dönüşlü zamir Dativ'e geçer: Ich wasche mich, ama Ich wasche mir die Hände."
+   "tr": "Dönüşlü fiiller, özneye geri gönderme yapan bir dönüşlü zamir (sich) gerektirir. Yalnızca 1. ve 2. tekil şahısta Akkusativ (mich/dich) ile Dativ (mir/dir) birbirinden ayrılır – diğer her yerde sich denir. Cümlede ayrıca bir Akkusativ nesnesi varsa, dönüşlü zamir Dativ'e geçer: Ich wasche mich, ama Ich wasche mir die Hände.",
+   "th": "กริยาสะท้อน (reflexive Verben) ต้องใช้คู่กับสรรพนามสะท้อน sich ซึ่งชี้กลับไปยังประธานของประโยค มีเพียงบุรุษที่ 1 และ 2 เอกพจน์เท่านั้นที่ Akkusativ (mich/dich) กับ Dativ (mir/dir) ต่างกัน นอกนั้นใช้ sich เหมือนกันหมด หากในประโยคมีกรรมตรง (Akkusativobjekt) อีกตัวหนึ่งอยู่แล้ว สรรพนามสะท้อนจะเปลี่ยนไปเป็น Dativ เช่น Ich wasche mich (ฉันอาบน้ำ) แต่ Ich wasche mir die Hände (ฉันล้างมือของฉัน)",
+   "zh": "反身动词需要一个指回主语的反身代词(sich)。只有在第一、第二人称单数中,第四格(mich/dich)和第三格(mir/dir)才有区别——其余情况一律用 sich。如果句中还有另一个第四格宾语,反身代词就要用第三格形式:Ich wasche mich(我洗澡),但 Ich wasche mir die Hände(我洗手)。",
+   "ms": "Kata kerja refleksif memerlukan kata ganti nama refleksif (sich) yang merujuk kembali kepada subjek. Hanya pada orang pertama dan kedua tunggal, bentuk Akkusativ (mich/dich) dan Dativ (mir/dir) berbeza – selain itu, bentuknya sentiasa sich. Jika terdapat objek Akkusativ tambahan dalam ayat, kata ganti nama refleksif itu bertukar kepada Dativ: Ich wasche mich (saya mandi/membasuh diri), tetapi Ich wasche mir die Hände (saya membasuh tangan saya).",
+   "sw": "Vitenzi virejeshi vinahitaji kiwakilishi kirejeshi (sich) ambacho hurejelea kiima. Ni katika nafsi ya 1 na ya 2 umoja pekee ndipo Akkusativ (mich/dich) na Dativ (mir/dir) hutofautiana – kwa nafsi nyingine zote hutumika sich. Iwapo sentensi ina yambwa nyingine ya Akkusativ, kiwakilishi kirejeshi huhamia Dativ: Ich wasche mich (Ninajiosha), lakini Ich wasche mir die Hände (Ninaosha mikono yangu).",
+   "hi": "आत्मवाचक क्रियाओं को एक आत्मवाचक सर्वनाम (sich) की ज़रूरत होती है, जो कर्ता की ओर वापस इशारा करता है। केवल प्रथम और द्वितीय पुरुष एकवचन में Akkusativ (mich/dich) और Dativ (mir/dir) अलग-अलग होते हैं – बाकी हर जगह sich ही आता है। यदि वाक्य में एक अतिरिक्त Akkusativ कर्म हो, तो आत्मवाचक सर्वनाम Dativ में चला जाता है: Ich wasche mich, लेकिन Ich wasche mir die Hände।",
+   "ur": "انعکاسی افعال کو ایک انعکاسی ضمیر (sich) کی ضرورت ہوتی ہے جو فاعل کی طرف اشارہ کرتا ہے۔ صرف واحد متکلم اور واحد حاضر میں مفعولی (mich/dich) اور دیتی حالت (mir/dir) الگ ہوتے ہیں — باقی ہر جگہ صرف sich ہوتا ہے۔ اگر جملے میں کوئی اضافی مفعولی مفعول موجود ہو تو انعکاسی ضمیر دیتی حالت میں چلا جاتا ہے: Ich wasche mich (میں خود کو دھوتا ہوں)، لیکن Ich wasche mir die Hände (میں اپنے ہاتھ دھوتا ہوں)۔",
+   "ar_eg": "الأفعال الانعكاسية محتاجة ضمير انعكاسي (sich) بيرجع على الفاعل نفسه. بس في المتكلم والمخاطب المفرد بيختلف الـ Akkusativ (mich/dich) عن الـ Dativ (mir/dir) – وغير كده الكلمة دايمًا sich. لو في مفعول به مباشر (Akkusativ) تاني في الجملة، الضمير الانعكاسي بيتحول لـ Dativ: Ich wasche mich (باغسل نفسي)، لكن Ich wasche mir die Hände (باغسل إيدي).",
+   "ar_lb": "الأفعال الانعكاسية بتحتاج ضمير انعكاسي (sich) بيرجع عالفاعل نفسو. بس بالمتكلم والمخاطب المفرد بيختلف الـ Akkusativ (mich/dich) عن الـ Dativ (mir/dir) – وباقي الحالات كلن sich. إذا كان في مفعول به مباشر زيادة بالجملة، الضمير الانعكاسي بيروح عالـ Dativ: Ich wasche mich (عم إغسل حالي)، بس Ich wasche mir die Hände (عم إغسل إيديي).",
+   "ar_sy": "الأفعال الانعكاسية بدها ضمير انعكاسي (sich) بيرجع عالفاعل نفسو. بس بمتكلم ومخاطب مفرد الـAkkusativ (mich/dich) والـDativ (mir/dir) بيختلفوا – بالباقي كلن sich. إذا كان في مفعول به مباشر تاني بالجملة، الضمير الانعكاسي بيصير Dativ: Ich wasche mich (باغسل حالي)، بس Ich wasche mir die Hände (باغسل إيديي)."
   },
   "tables": [
    {
@@ -4309,7 +6811,16 @@ const GRAMMAR = [
      "fa": "ضمایر انعکاسی: حالت مفعولی و برایی",
      "uk": "Зворотні займенники: Akkusativ і Dativ",
      "pl": "Zaimki zwrotne: biernik i celownik",
-     "tr": "Dönüşlü zamirler: Akkusativ ve Dativ"
+     "tr": "Dönüşlü zamirler: Akkusativ ve Dativ",
+     "th": "สรรพนามสะท้อน: กรรมตรง (Akkusativ) และกรรมรอง (Dativ)",
+     "zh": "反身代词:第四格与第三格",
+     "ms": "Kata ganti nama refleksif: Akkusativ dan Dativ",
+     "sw": "Viwakilishi virejeshi: Akkusativ na Dativ",
+     "hi": "आत्मवाचक सर्वनाम: Akkusativ और Dativ",
+     "ur": "انعکاسی ضمائر: مفعولی اور دیتی حالت",
+     "ar_eg": "الضمير الانعكاسي: Akkusativ و Dativ",
+     "ar_lb": "الضمائر الانعكاسية: Akkusativ وDativ",
+     "ar_sy": "الضمائر الانعكاسية: Akkusativ وDativ"
     },
     "labelHeader": {
      "de": "",
@@ -4327,7 +6838,16 @@ const GRAMMAR = [
       "fa": "فاعل",
       "uk": "Підмет",
       "pl": "Podmiot",
-      "tr": "Özne"
+      "tr": "Özne",
+      "th": "ประธาน (Subjekt)",
+      "zh": "主语",
+      "ms": "Subjek",
+      "sw": "Kiima",
+      "hi": "कर्ता",
+      "ur": "فاعل",
+      "ar_eg": "الفاعل",
+      "ar_lb": "الفاعل (Subjekt)",
+      "ar_sy": "الفاعل"
      },
      {
       "de": "Akkusativ",
@@ -4337,7 +6857,16 @@ const GRAMMAR = [
       "fa": "مفعولی (Akkusativ)",
       "uk": "Akkusativ",
       "pl": "Biernik",
-      "tr": "Akkusativ"
+      "tr": "Akkusativ",
+      "th": "กรรมตรง (Akkusativ)",
+      "zh": "Akkusativ",
+      "ms": "Akkusativ",
+      "sw": "Akkusativ",
+      "hi": "Akkusativ",
+      "ur": "مفعولی",
+      "ar_eg": "Akkusativ",
+      "ar_lb": "Akkusativ",
+      "ar_sy": "Akkusativ"
      },
      {
       "de": "Dativ",
@@ -4347,7 +6876,16 @@ const GRAMMAR = [
       "fa": "برایی (Dativ)",
       "uk": "Dativ",
       "pl": "Celownik",
-      "tr": "Dativ"
+      "tr": "Dativ",
+      "th": "กรรมรอง (Dativ)",
+      "zh": "Dativ",
+      "ms": "Dativ",
+      "sw": "Dativ",
+      "hi": "Dativ",
+      "ur": "دیتی حالت",
+      "ar_eg": "Dativ",
+      "ar_lb": "Dativ",
+      "ar_sy": "Dativ"
      }
     ],
     "rows": [
@@ -4446,7 +6984,16 @@ const GRAMMAR = [
      "fa": "افعال انعکاسی پرکاربرد",
      "uk": "Поширені зворотні дієслова",
      "pl": "Częste czasowniki zwrotne",
-     "tr": "Sık kullanılan dönüşlü fiiller"
+     "tr": "Sık kullanılan dönüşlü fiiller",
+     "th": "กริยาสะท้อนที่พบบ่อย",
+     "zh": "常见反身动词",
+     "ms": "Kata kerja refleksif yang lazim",
+     "sw": "Vitenzi virejeshi vya kawaida",
+     "hi": "सामान्य आत्मवाचक क्रियाएँ",
+     "ur": "عام انعکاسی افعال",
+     "ar_eg": "أفعال انعكاسية شائعة",
+     "ar_lb": "أفعال انعكاسية شائعة",
+     "ar_sy": "أفعال انعكاسية شائعة"
     },
     "labelHeader": {
      "de": "Bedeutung",
@@ -4456,7 +7003,16 @@ const GRAMMAR = [
      "fa": "معنی",
      "uk": "Значення",
      "pl": "Znaczenie",
-     "tr": "Anlam"
+     "tr": "Anlam",
+     "th": "ความหมาย",
+     "zh": "含义",
+     "ms": "Makna",
+     "sw": "Maana",
+     "hi": "अर्थ",
+     "ur": "معنی",
+     "ar_eg": "المعنى",
+     "ar_lb": "المعنى",
+     "ar_sy": "المعنى"
     },
     "columns": [
      {
@@ -4467,7 +7023,16 @@ const GRAMMAR = [
       "fa": "فعل + حرف اضافه/حالت",
       "uk": "Дієслово + керування",
       "pl": "Czasownik + rekcja (przypadek/przyimek)",
-      "tr": "Fiil + istem (hâl / edat)"
+      "tr": "Fiil + istem (hâl / edat)",
+      "th": "กริยา + การก/บุพบทที่ตามมา (Rektion)",
+      "zh": "动词 + 支配关系",
+      "ms": "Kata kerja + kes/preposisi",
+      "sw": "Kitenzi + kihusishi/kesi",
+      "hi": "क्रिया + पूर्वसर्ग/कारक",
+      "ur": "فعل + حالت/حرفِ جر",
+      "ar_eg": "الفعل + حرف الجر وحالته",
+      "ar_lb": "الفعل + الحالة/حرف الجر",
+      "ar_sy": "الفعل + الحالة/حرف الجر"
      }
     ],
     "rows": [
@@ -4480,7 +7045,16 @@ const GRAMMAR = [
        "fa": "خوشحال بودن / مشتاق بودن",
        "uk": "sich freuen (радість / передчуття радості)",
        "pl": "cieszyć się (radość / radosne oczekiwanie)",
-       "tr": "sich freuen (sevinme / sevinçle bekleme)"
+       "tr": "sich freuen (sevinme / sevinçle bekleme)",
+       "th": "sich freuen (ดีใจ/ตั้งตารอ)",
+       "zh": "感到高兴/期待(sich freuen)",
+       "ms": "sich freuen (gembira/tidak sabar menantikan)",
+       "sw": "kufurahi / kutazamia kwa furaha",
+       "hi": "sich freuen (प्रसन्न होना / प्रतीक्षा में उत्साहित होना)",
+       "ur": "خوش ہونا / پیشگی خوشی محسوس کرنا",
+       "ar_eg": "sich freuen (يفرح/يتحمس)",
+       "ar_lb": "sich freuen (يفرح / يتحمّس لشي جاي)",
+       "ar_sy": "sich freuen (يفرح/يتحمّس)"
       },
       "cells": [
        "sich freuen über/auf + Akk."
@@ -4495,7 +7069,16 @@ const GRAMMAR = [
        "fa": "علاقه‌مند بودن به",
        "uk": "Interesse haben (цікавитися)",
        "pl": "interesować się",
-       "tr": "Interesse haben (ilgi duymak)"
+       "tr": "Interesse haben (ilgi duymak)",
+       "th": "Interesse haben (สนใจ)",
+       "zh": "对……感兴趣",
+       "ms": "berminat",
+       "sw": "kuwa na hamu ya",
+       "hi": "Interesse haben (रुचि होना)",
+       "ur": "دلچسپی رکھنا",
+       "ar_eg": "Interesse haben (يهتم بـ)",
+       "ar_lb": "Interesse haben (يهتم بـ)",
+       "ar_sy": "يكون مهتم"
       },
       "cells": [
        "sich interessieren für + Akk."
@@ -4510,7 +7093,16 @@ const GRAMMAR = [
        "fa": "به یاد آوردن",
        "uk": "sich erinnern (пригадувати)",
        "pl": "przypominać sobie",
-       "tr": "sich erinnern (hatırlamak)"
+       "tr": "sich erinnern (hatırlamak)",
+       "th": "sich erinnern (จำได้/ระลึกถึง)",
+       "zh": "记得(sich erinnern)",
+       "ms": "sich erinnern (mengingati)",
+       "sw": "kukumbuka",
+       "hi": "sich erinnern (याद करना)",
+       "ur": "یاد رکھنا",
+       "ar_eg": "sich erinnern (يفتكر)",
+       "ar_lb": "sich erinnern (يفتكر)",
+       "ar_sy": "يتذكّر"
       },
       "cells": [
        "sich erinnern an + Akk."
@@ -4525,7 +7117,16 @@ const GRAMMAR = [
        "fa": "شستنِ خود",
        "uk": "sich waschen (митися)",
        "pl": "myć się",
-       "tr": "sich waschen (yıkanmak)"
+       "tr": "sich waschen (yıkanmak)",
+       "th": "sich waschen (อาบน้ำ/ล้างตัวเอง)",
+       "zh": "洗(自己)(sich waschen)",
+       "ms": "sich waschen (membasuh diri)",
+       "sw": "kujiosha",
+       "hi": "sich waschen (स्वयं को धोना)",
+       "ur": "خود کو دھونا",
+       "ar_eg": "sich waschen (يغسل نفسه)",
+       "ar_lb": "sich waschen (يغسل حالو)",
+       "ar_sy": "يغسل حالو"
       },
       "cells": [
        "sich waschen (Akk.); + Objekt → Dat."
@@ -4543,7 +7144,16 @@ const GRAMMAR = [
     "fa": "من خودم را می‌شویم.",
     "uk": "Я миюся.",
     "pl": "Myję się.",
-    "tr": "Yıkanıyorum."
+    "tr": "Yıkanıyorum.",
+    "th": "ฉันอาบน้ำ (ล้างตัวเอง)",
+    "zh": "我洗澡。",
+    "ms": "Saya membasuh diri.",
+    "sw": "Ninajiosha.",
+    "hi": "मैं स्वयं को धोता हूँ।",
+    "ur": "میں خود کو دھوتا ہوں۔",
+    "ar_eg": "أنا باغسل نفسي.",
+    "ar_lb": "عم إغسل حالي.",
+    "ar_sy": "باغسل حالي."
    },
    {
     "de": "Ich wasche mir die Hände.",
@@ -4553,7 +7163,16 @@ const GRAMMAR = [
     "fa": "من دست‌هایم را می‌شویم.",
     "uk": "Я мию собі руки.",
     "pl": "Myję sobie ręce.",
-    "tr": "Ellerimi yıkıyorum."
+    "tr": "Ellerimi yıkıyorum.",
+    "th": "ฉันล้างมือของฉัน",
+    "zh": "我洗手。",
+    "ms": "Saya membasuh tangan saya.",
+    "sw": "Ninaosha mikono yangu.",
+    "hi": "मैं अपने हाथ धोता हूँ।",
+    "ur": "میں اپنے ہاتھ دھوتا ہوں۔",
+    "ar_eg": "أنا باغسل إيدي.",
+    "ar_lb": "عم إغسل إيديي.",
+    "ar_sy": "باغسل إيديي."
    },
    {
     "de": "Ich freue mich auf das Wochenende.",
@@ -4563,7 +7182,16 @@ const GRAMMAR = [
     "fa": "من مشتاقِ آخرِ هفته هستم.",
     "uk": "Я з нетерпінням чекаю на вихідні.",
     "pl": "Cieszę się na weekend.",
-    "tr": "Hafta sonunu iple çekiyorum."
+    "tr": "Hafta sonunu iple çekiyorum.",
+    "th": "ฉันตั้งตารอวันหยุดสุดสัปดาห์",
+    "zh": "我很期待周末。",
+    "ms": "Saya tidak sabar menantikan hujung minggu.",
+    "sw": "Ninatazamia wikendi kwa furaha.",
+    "hi": "मुझे सप्ताहांत का इंतज़ार है।",
+    "ur": "مجھے ہفتہ وار چھٹی کا انتظار ہے۔",
+    "ar_eg": "أنا متحمس للويكند.",
+    "ar_lb": "متحمّس لعطلة نهاية الأسبوع.",
+    "ar_sy": "متحمّس للويكند."
    }
   ],
   "hints": {
@@ -4574,7 +7202,16 @@ const GRAMMAR = [
    "fa": "فارسی برای انعکاس از «خود/خودم» استفاده می‌کند و حالت را نشان نمی‌دهد، اما مفعولِ مستقیمِ معیّن را با «را» می‌آورد. در آلمانی هم وقتی چیزِ دیگری نقشِ مفعولِ مستقیم (همان جایگاهِ «را») را بگیرد، ضمیر انعکاسی به حالت برایی می‌رود: mich → mir (Ich wasche mir die Hände = دست‌هایم را می‌شویم).",
    "uk": "Запам'ятай: лише ich і du розрізняють Akkusativ (mich/dich) і Dativ (mir/dir) – усі інші форми це sich. Щойно в реченні з'являється прямий додаток у Akkusativ, зворотний займенник автоматично переходить у Dativ (Ich wasche mir die Hände).",
    "pl": "Zapamiętaj: tylko ich i du rozróżniają biernik (mich/dich) i celownik (mir/dir) – wszystkie pozostałe formy to sich. Gdy tylko w zdaniu pojawia się dopełnienie w bierniku, zaimek zwrotny automatycznie przechodzi do celownika (Ich wasche mir die Hände).",
-   "tr": "Unutma: Yalnızca ich ve du, Akkusativ (mich/dich) ile Dativ (mir/dir) arasında ayrım yapar – diğer bütün biçimler sich'tir. Cümlede bir Akkusativ nesnesi bulunur bulunmaz, dönüşlü zamir kendiliğinden Dativ'e geçer (Ich wasche mir die Hände)."
+   "tr": "Unutma: Yalnızca ich ve du, Akkusativ (mich/dich) ile Dativ (mir/dir) arasında ayrım yapar – diğer bütün biçimler sich'tir. Cümlede bir Akkusativ nesnesi bulunur bulunmaz, dönüşlü zamir kendiliğinden Dativ'e geçer (Ich wasche mir die Hände).",
+   "th": "ข้อควรจำ: มีเพียง ich และ du เท่านั้นที่แยก Akkusativ (mich/dich) กับ Dativ (mir/dir) ออกจากกัน รูปอื่นทั้งหมดใช้ sich เหมือนกัน ทันทีที่มีกรรมตรง (Akkusativobjekt) อยู่ในประโยค สรรพนามสะท้อนจะเปลี่ยนไปเป็น Dativ โดยอัตโนมัติ (เช่น Ich wasche mir die Hände)",
+   "zh": "注意:只有 ich 和 du 区分第四格(mich/dich)和第三格(mir/dir)——其余形式都是 sich。一旦句中出现第四格宾语,反身代词就会自动变为第三格(Ich wasche mir die Hände. 我洗手。)。",
+   "ms": "Ingat: Hanya ich dan du yang membezakan Akkusativ (mich/dich) dan Dativ (mir/dir) – semua bentuk lain ialah sich. Sebaik sahaja terdapat objek Akkusativ dalam ayat, kata ganti nama refleksif secara automatik beralih kepada Dativ (Ich wasche mir die Hände).",
+   "sw": "Kumbuka: ni ich na du pekee ndio hutofautisha Akkusativ (mich/dich) na Dativ (mir/dir) – maumbo mengine yote ni sich. Mara tu yambwa ya Akkusativ inapokuwepo katika sentensi, kiwakilishi kirejeshi kinahamia moja kwa moja Dativ (Ich wasche mir die Hände).",
+   "hi": "याद रखें: केवल ich और du में Akkusativ (mich/dich) और Dativ (mir/dir) अलग होते हैं – बाकी सभी रूप sich हैं। जैसे ही वाक्य में कोई Akkusativ कर्म हो, आत्मवाचक सर्वनाम अपने आप Dativ में चला जाता है (Ich wasche mir die Hände)।",
+   "ur": "یاد رکھیں: صرف ich اور du میں مفعولی (mich/dich) اور دیتی حالت (mir/dir) الگ ہوتے ہیں — باقی تمام صورتیں sich ہیں۔ جیسے ہی جملے میں کوئی مفعولی مفعول ہو، انعکاسی ضمیر خودبخود دیتی حالت میں چلا جاتا ہے (Ich wasche mir die Hände)۔",
+   "ar_eg": "احفظ: بس ich و du هما اللي بيفرقوا بين Akkusativ (mich/dich) و Dativ (mir/dir) – كل الصيغ التانية sich. بمجرد ما يبقى في مفعول به مباشر (Akkusativ) في الجملة، الضمير الانعكاسي يروح لـ Dativ أوتوماتيك (Ich wasche mir die Hände).",
+   "ar_lb": "خدها بالك: بس ich وdu بيفرّقو بين Akkusativ (mich/dich) وDativ (mir/dir) – كل الصيغ التانية sich. أول ما يكون في مفعول به مباشر بالجملة، الضمير الانعكاسي بيروح أوتوماتيكيًا عالـ Dativ (Ich wasche mir die Hände).",
+   "ar_sy": "خد بالك: بس ich وdu بيفرقوا بين Akkusativ (mich/dich) وDativ (mir/dir) – كل الصيغ التانية sich. أول ما يكون في مفعول به مباشر بالجملة، الضمير الانعكاسي بيصير أوتوماتيكياً Dativ (Ich wasche mir die Hände)."
   }
  },
  {
@@ -4588,7 +7225,16 @@ const GRAMMAR = [
    "fa": "وجه التزامی Konjunktiv II («would»)",
    "uk": "Konjunktiv II (würde / умовний спосіб)",
    "pl": "Konjunktiv II (würde / tryb nierzeczywisty)",
-   "tr": "Konjunktiv II (würde / gerçek dışı)"
+   "tr": "Konjunktiv II (würde / gerçek dışı)",
+   "th": "Konjunktiv II (รูป würde / เงื่อนไขที่ไม่เป็นจริง)",
+   "zh": "第二虚拟式(Konjunktiv II,würde/虚拟语气)",
+   "ms": "Konjunktiv II (würde / andaian tidak benar)",
+   "sw": "Konjunktiv II (würde / Hali Isiyo Halisi)",
+   "hi": "Konjunktiv II (würde / असत्य-काल्पनिक भाव)",
+   "ur": "Konjunktiv II (würde / خلافِ واقعہ)",
+   "ar_eg": "Konjunktiv II (würde / الافتراضي)",
+   "ar_lb": "الـ Konjunktiv II (würde / الحالة الافتراضية)",
+   "ar_sy": "Konjunktiv II (würde / الحالة الافتراضية)"
   },
   "intro": {
    "de": "Der Konjunktiv II drückt Höflichkeit, Wünsche und irreale (hypothetische) Bedingungen aus – das deutsche „würde“. Im Alltag meist würde + Infinitiv, aber sein, haben und die Modalverben haben eigene Formen (wäre, hätte, könnte …).",
@@ -4598,7 +7244,16 @@ const GRAMMAR = [
    "fa": "وجه Konjunktiv II برای ادب، آرزو و شرط‌های غیرواقعی (فرضی) به کار می‌رود — همان «would» انگلیسی. شکل رایج روزمره würde + مصدر است، اما sein و haben و افعال کمکیِ وجهی شکل خاص خود را دارند (wäre، hätte، könnte …).",
    "uk": "Konjunktiv II виражає ввічливість, бажання та нереальні (гіпотетичні) умови – німецьке «би». У повсякденні здебільшого würde + інфінітив, але sein, haben і модальні дієслова мають власні форми (wäre, hätte, könnte …).",
    "pl": "Konjunktiv II wyraża grzeczność, życzenia i nierzeczywiste (hipotetyczne) warunki – niemieckie „würde”. Na co dzień najczęściej würde + bezokolicznik, ale sein, haben i czasowniki modalne mają własne formy (wäre, hätte, könnte …).",
-   "tr": "Konjunktiv II; nezaketi, dilekleri ve gerçek dışı (varsayımsal) koşulları ifade eder – Almancanın „würde“si. Günlük dilde çoğunlukla würde + mastar, ama sein, haben ve modal fiillerin kendi biçimleri vardır (wäre, hätte, könnte …)."
+   "tr": "Konjunktiv II; nezaketi, dilekleri ve gerçek dışı (varsayımsal) koşulları ifade eder – Almancanın „würde“si. Günlük dilde çoğunlukla würde + mastar, ama sein, haben ve modal fiillerin kendi biçimleri vardır (wäre, hätte, könnte …).",
+   "th": "Konjunktiv II ใช้แสดงความสุภาพ ความปรารถนา และเงื่อนไขที่ไม่เป็นจริง (สมมติ) ซึ่งเทียบเท่ากับ 'would' ในภาษาอังกฤษ ในชีวิตประจำวันมักใช้รูป würde + Infinitiv แต่ sein, haben และกริยาโมดัลมีรูปเฉพาะของตัวเอง (wäre, hätte, könnte …)",
+   "zh": "第二虚拟式(Konjunktiv II)用来表达礼貌、愿望以及非真实(假设性)条件——相当于德语中的“würde”。日常生活中通常用 würde + 不定式,但 sein、haben 和情态动词有各自独立的形式(wäre、hätte、könnte……)。",
+   "ms": "Konjunktiv II menyatakan kesopanan, harapan, dan syarat tidak benar (hipotesis) – ini ialah 'würde' dalam bahasa Jerman. Dalam kehidupan seharian, biasanya digunakan würde + infinitif, tetapi sein, haben dan kata kerja modal mempunyai bentuk tersendiri (wäre, hätte, könnte …).",
+   "sw": "Konjunktiv II hueleza heshima, matakwa, na masharti yasiyo halisi (ya kudhania) – 'würde' ya Kijerumani. Katika maisha ya kila siku hutumika zaidi würde + Infiniti, lakini sein, haben na vitenzi vya modali vina maumbo yake mahususi (wäre, hätte, könnte …).",
+   "hi": "Konjunktiv II विनम्रता, इच्छाएँ और असत्य (काल्पनिक) शर्तें व्यक्त करता है – जर्मन का 'würde'। रोज़मर्रा में प्रायः würde + इनफ़िनिटिव, लेकिन sein, haben और मोडल क्रियाओं के अपने रूप होते हैं (wäre, hätte, könnte …)।",
+   "ur": "Konjunktiv II ادب، خواہشات اور خلافِ واقعہ (فرضی) شرائط ظاہر کرتا ہے — یہ جرمن کا ”würde“ ہے۔ روزمرہ زندگی میں عموماً würde + مصدر استعمال ہوتا ہے، لیکن sein، haben اور معاون افعالِ استطاعت کی اپنی الگ صورتیں ہوتی ہیں (wäre، hätte، könnte …)۔",
+   "ar_eg": "الـ Konjunktiv II بيعبّر عن الأدب والتمنيات والحالات الافتراضية (اللي مش حقيقية) – ده الـ «würde» بتاع الألماني. في الكلام العادي غالبًا würde + المصدر، لكن sein و haben والأفعال الوجهية عندهم صيغ خاصة بيهم (wäre, hätte, könnte …).",
+   "ar_lb": "الـ Konjunktiv II بيعبّر عن الأدب، الأمنيات، والشروط الافتراضية (غير حقيقية) – هوي „würde“ بالألماني. باليومي بالأغلب würde + المصدر، بس sein وhaben والأفعال الشرطية إلها صيغ خاصة فيها (wäre, hätte, könnte …).",
+   "ar_sy": "الـKonjunktiv II بيعبّر عن التهذيب والأمنيات والشروط الغير واقعية (الافتراضية) – هاد هو 'لو' الألماني. بالحكي اليومي بمعظم الحالات würde + المصدر، بس sein وhaben والأفعال الشرطية إلها صيغ خاصة فيها (wäre, hätte, könnte …)."
   },
   "tables": [
    {
@@ -4610,7 +7265,16 @@ const GRAMMAR = [
      "fa": "würde + مصدر (مثال: gehen = رفتن)",
      "uk": "würde + інфінітив (приклад: gehen = йти)",
      "pl": "würde + bezokolicznik (przykład: gehen)",
-     "tr": "würde + mastar (örnek: gehen = gitmek)"
+     "tr": "würde + mastar (örnek: gehen = gitmek)",
+     "th": "würde + Infinitiv (ตัวอย่าง: gehen = ไป)",
+     "zh": "würde + 不定式(以 gehen 为例)",
+     "ms": "würde + infinitif (contoh: gehen = pergi)",
+     "sw": "würde + Infiniti (mfano: gehen – kwenda)",
+     "hi": "würde + इनफ़िनिटिव (उदाहरण: gehen = जाना)",
+     "ur": "würde + مصدر (مثال: gehen – جانا)",
+     "ar_eg": "würde + المصدر (مثال: gehen)",
+     "ar_lb": "würde + المصدر (مثال: gehen = يروح)",
+     "ar_sy": "würde + المصدر (مثال: gehen = يروح)"
     },
     "labelHeader": {
      "de": "",
@@ -4628,7 +7292,16 @@ const GRAMMAR = [
       "fa": "شخص",
       "uk": "Особа",
       "pl": "Osoba",
-      "tr": "Şahıs"
+      "tr": "Şahıs",
+      "th": "บุรุษ (Person)",
+      "zh": "人称",
+      "ms": "Orang",
+      "sw": "Nafsi",
+      "hi": "पुरुष",
+      "ur": "شخص",
+      "ar_eg": "الضمير",
+      "ar_lb": "الشخص (Person)",
+      "ar_sy": "الشخص"
      },
      {
       "de": "würde-Form + Infinitiv",
@@ -4638,7 +7311,16 @@ const GRAMMAR = [
       "fa": "شکل würde + مصدر",
       "uk": "форма würde + інфінітив",
       "pl": "forma würde + bezokolicznik",
-      "tr": "würde-biçimi + mastar"
+      "tr": "würde-biçimi + mastar",
+      "th": "รูป würde + Infinitiv",
+      "zh": "würde 形式 + 不定式",
+      "ms": "Bentuk würde + infinitif",
+      "sw": "umbo la würde + Infiniti",
+      "hi": "würde-रूप + इनफ़िनिटिव",
+      "ur": "würde کی صورت + مصدر",
+      "ar_eg": "صيغة würde + المصدر",
+      "ar_lb": "صيغة würde + المصدر",
+      "ar_sy": "صيغة würde + المصدر"
      }
     ],
     "rows": [
@@ -4731,7 +7413,16 @@ const GRAMMAR = [
      "fa": "شکل‌های خاص و مهمِ Konjunktiv II (بی‌قاعده)",
      "uk": "Важливі власні форми Konjunktiv II (неправильні)",
      "pl": "Ważne własne formy Konjunktiv II (nieregularne)",
-     "tr": "Kendine özgü önemli Konjunktiv II biçimleri (düzensiz)"
+     "tr": "Kendine özgü önemli Konjunktiv II biçimleri (düzensiz)",
+     "th": "รูป Konjunktiv II เฉพาะของกริยาสำคัญ (ไม่ปกติ)",
+     "zh": "常见的独立第二虚拟式形式(不规则)",
+     "ms": "Bentuk Konjunktiv II tersendiri yang penting (tak tetap)",
+     "sw": "Maumbo muhimu mahususi ya Konjunktiv II (yasiyo ya kawaida)",
+     "hi": "अपने ख़ास Konjunktiv II रूप वाली महत्वपूर्ण क्रियाएँ (अनियमित)",
+     "ur": "اہم بے قاعدہ Konjunktiv II صورتیں",
+     "ar_eg": "صيغ Konjunktiv II الخاصة والمهمة (شاذة)",
+     "ar_lb": "صيغ Konjunktiv II الخاصة والمهمة (شاذة)",
+     "ar_sy": "صيغ Konjunktiv II الخاصة والمهمة (غير منتظمة)"
     },
     "labelHeader": {
      "de": "Verb",
@@ -4741,7 +7432,16 @@ const GRAMMAR = [
      "fa": "فعل",
      "uk": "Дієслово",
      "pl": "Czasownik",
-     "tr": "Fiil"
+     "tr": "Fiil",
+     "th": "กริยา (Verb)",
+     "zh": "动词",
+     "ms": "Kata kerja",
+     "sw": "Kitenzi",
+     "hi": "क्रिया",
+     "ur": "فعل",
+     "ar_eg": "الفعل",
+     "ar_lb": "الفعل",
+     "ar_sy": "الفعل"
     },
     "columns": [
      {
@@ -4752,7 +7452,16 @@ const GRAMMAR = [
       "fa": "من",
       "uk": "ich (я)",
       "pl": "ich (ja)",
-      "tr": "ich (ben)"
+      "tr": "ich (ben)",
+      "th": "ich (ฉัน)",
+      "zh": "我",
+      "ms": "ich (saya)",
+      "sw": "mimi",
+      "hi": "ich (मैं)",
+      "ur": "میں",
+      "ar_eg": "ich (أنا)",
+      "ar_lb": "ich (أنا)",
+      "ar_sy": "أنا"
      },
      {
       "de": "du",
@@ -4762,7 +7471,16 @@ const GRAMMAR = [
       "fa": "تو",
       "uk": "du (ти)",
       "pl": "du (ty)",
-      "tr": "du (sen)"
+      "tr": "du (sen)",
+      "th": "du (เธอ)",
+      "zh": "你",
+      "ms": "du (awak)",
+      "sw": "wewe",
+      "hi": "du (तुम)",
+      "ur": "تم",
+      "ar_eg": "du (إنت)",
+      "ar_lb": "du (إنتَ/إنتِ)",
+      "ar_sy": "إنت"
      },
      {
       "de": "er/sie/es",
@@ -4772,7 +7490,16 @@ const GRAMMAR = [
       "fa": "او/آن",
       "uk": "er/sie/es (він/вона/воно)",
       "pl": "er/sie/es (on/ona/ono)",
-      "tr": "er/sie/es (o)"
+      "tr": "er/sie/es (o)",
+      "th": "er/sie/es (เขา/เธอ/มัน)",
+      "zh": "他/她/它",
+      "ms": "er/sie/es (dia/ia)",
+      "sw": "yeye/hicho",
+      "hi": "er/sie/es (वह)",
+      "ur": "وہ",
+      "ar_eg": "er/sie/es (هو/هي/هو المحايد)",
+      "ar_lb": "er/sie/es (هو/هي)",
+      "ar_sy": "هوي/هي"
      }
     ],
     "rows": [
@@ -4785,7 +7512,16 @@ const GRAMMAR = [
        "fa": "sein (بودن)",
        "uk": "sein (бути)",
        "pl": "sein (być)",
-       "tr": "sein (olmak - to be)"
+       "tr": "sein (olmak - to be)",
+       "th": "sein (เป็น/อยู่/คือ)",
+       "zh": "sein(是)",
+       "ms": "sein (menjadi/adalah)",
+       "sw": "sein (kuwa)",
+       "hi": "sein (होना)",
+       "ur": "sein (ہونا)",
+       "ar_eg": "sein (يكون)",
+       "ar_lb": "sein (يكون)",
+       "ar_sy": "sein (يكون)"
       },
       "cells": [
        "wäre",
@@ -4802,7 +7538,16 @@ const GRAMMAR = [
        "fa": "haben (داشتن)",
        "uk": "haben (мати)",
        "pl": "haben (mieć)",
-       "tr": "haben (sahip olmak)"
+       "tr": "haben (sahip olmak)",
+       "th": "haben (มี)",
+       "zh": "haben(有)",
+       "ms": "haben (ada/mempunyai)",
+       "sw": "haben (kuwa na)",
+       "hi": "haben (रखना)",
+       "ur": "haben (رکھنا)",
+       "ar_eg": "haben (عنده/يملك)",
+       "ar_lb": "haben (يكون عندو)",
+       "ar_sy": "haben (يكون عندو)"
       },
       "cells": [
        "hätte",
@@ -4819,7 +7564,16 @@ const GRAMMAR = [
        "fa": "werden (شدن / آینده)",
        "uk": "werden (стати / ставати)",
        "pl": "werden (będzie / stawać się)",
-       "tr": "werden (-ecek / olmak)"
+       "tr": "werden (-ecek / olmak)",
+       "th": "werden (จะ/กลายเป็น)",
+       "zh": "werden(将/变成)",
+       "ms": "werden (akan/menjadi)",
+       "sw": "werden (kuwa/kugeuka)",
+       "hi": "werden (बनना)",
+       "ur": "werden (بننا)",
+       "ar_eg": "werden (يبقى/يصبح)",
+       "ar_lb": "werden (رح / يصير)",
+       "ar_sy": "werden (رح/يصير)"
       },
       "cells": [
        "würde",
@@ -4836,7 +7590,16 @@ const GRAMMAR = [
        "fa": "können (توانستن)",
        "uk": "können (могти)",
        "pl": "können (móc)",
-       "tr": "können (-ebilmek)"
+       "tr": "können (-ebilmek)",
+       "th": "können (สามารถ)",
+       "zh": "können(能)",
+       "ms": "können (boleh)",
+       "sw": "können (kuweza)",
+       "hi": "können (सकना)",
+       "ur": "können (سکنا)",
+       "ar_eg": "können (يقدر)",
+       "ar_lb": "können (يقدر)",
+       "ar_sy": "können (فيه)"
       },
       "cells": [
        "könnte",
@@ -4853,7 +7616,16 @@ const GRAMMAR = [
        "fa": "müssen (باید / مجبور بودن)",
        "uk": "müssen (мусити)",
        "pl": "müssen (musieć)",
-       "tr": "müssen (-meli / zorunda olmak)"
+       "tr": "müssen (-meli / zorunda olmak)",
+       "th": "müssen (ต้อง)",
+       "zh": "müssen(必须)",
+       "ms": "müssen (mesti)",
+       "sw": "müssen (kulazimika)",
+       "hi": "müssen (करना पड़ना)",
+       "ur": "müssen (لازم ہونا)",
+       "ar_eg": "müssen (لازم)",
+       "ar_lb": "müssen (لازم)",
+       "ar_sy": "müssen (لازم)"
       },
       "cells": [
        "müsste",
@@ -4870,7 +7642,16 @@ const GRAMMAR = [
        "fa": "dürfen (اجازه داشتن)",
        "uk": "dürfen (мати дозвіл)",
        "pl": "dürfen (móc / mieć pozwolenie)",
-       "tr": "dürfen (izinli olmak)"
+       "tr": "dürfen (izinli olmak)",
+       "th": "dürfen (ได้รับอนุญาต)",
+       "zh": "dürfen(可以/被允许)",
+       "ms": "dürfen (dibenarkan)",
+       "sw": "dürfen (kuruhusiwa)",
+       "hi": "dürfen (अनुमति होना)",
+       "ur": "dürfen (اجازت ہونا)",
+       "ar_eg": "dürfen (مسموحله)",
+       "ar_lb": "dürfen (يجوز/مسموح)",
+       "ar_sy": "dürfen (مسموح)"
       },
       "cells": [
        "dürfte",
@@ -4887,7 +7668,16 @@ const GRAMMAR = [
        "fa": "sollen (باید / بهتر است)",
        "uk": "sollen (бути повинним)",
        "pl": "sollen (powinien)",
-       "tr": "sollen (-meli / gerekmek)"
+       "tr": "sollen (-meli / gerekmek)",
+       "th": "sollen (ควร)",
+       "zh": "sollen(应该)",
+       "ms": "sollen (patut)",
+       "sw": "sollen (kupaswa)",
+       "hi": "sollen (चाहिए)",
+       "ur": "sollen (چاہیے)",
+       "ar_eg": "sollen (المفروض)",
+       "ar_lb": "sollen (لازم/يفضّل)",
+       "ar_sy": "sollen (المفروض)"
       },
       "cells": [
        "sollte",
@@ -4904,7 +7694,16 @@ const GRAMMAR = [
        "fa": "wollen (خواستن)",
        "uk": "wollen (хотіти)",
        "pl": "wollen (chcieć)",
-       "tr": "wollen (istemek)"
+       "tr": "wollen (istemek)",
+       "th": "wollen (ต้องการ)",
+       "zh": "wollen(想要)",
+       "ms": "wollen (mahu)",
+       "sw": "wollen (kutaka)",
+       "hi": "wollen (चाहना)",
+       "ur": "wollen (چاہنا)",
+       "ar_eg": "wollen (عايز)",
+       "ar_lb": "wollen (بدو)",
+       "ar_sy": "wollen (بدو)"
       },
       "cells": [
        "wollte",
@@ -4921,7 +7720,16 @@ const GRAMMAR = [
        "fa": "mögen → möchte (مایل بودن)",
        "uk": "mögen → möchte (хотів би)",
        "pl": "mögen → möchte (chciałbym)",
-       "tr": "mögen → möchte (isterdim)"
+       "tr": "mögen → möchte (isterdim)",
+       "th": "mögen → möchte (อยากจะ)",
+       "zh": "mögen → möchte(想要,礼貌形式)",
+       "ms": "mögen → möchte (ingin)",
+       "sw": "mögen → möchte (kupenda → ningependa)",
+       "hi": "mögen → möchte (पसंद करना → चाहूँगा)",
+       "ur": "mögen → möchte (پسند کرنا → چاہوں گا)",
+       "ar_eg": "mögen ← möchte",
+       "ar_lb": "mögen → möchte (بدو بأدب)",
+       "ar_sy": "mögen ← möchte (بدو - مهذب)"
       },
       "cells": [
        "möchte",
@@ -4941,7 +7749,16 @@ const GRAMMAR = [
     "fa": "ممکن است لطفاً به من کمک کنید؟",
     "uk": "Чи не могли б Ви мені, будь ласка, допомогти?",
     "pl": "Czy mógłby mi Pan/Pani pomóc?",
-    "tr": "Bana yardımcı olabilir misiniz acaba?"
+    "tr": "Bana yardımcı olabilir misiniz acaba?",
+    "th": "คุณช่วยฉันได้ไหมคะ/ครับ (แบบสุภาพ)?",
+    "zh": "您能帮我一下吗?",
+    "ms": "Bolehkah anda tolong saya?",
+    "sw": "Je, mngeweza kunisaidia, tafadhali?",
+    "hi": "क्या आप कृपया मेरी मदद कर सकते हैं?",
+    "ur": "کیا آپ برائے مہربانی میری مدد کر سکتے ہیں؟",
+    "ar_eg": "ممكن حضرتك تساعدني لو سمحت؟",
+    "ar_lb": "ممكن تساعدني لو سمحت؟",
+    "ar_sy": "فيك تساعدني لو سمحت؟"
    },
    {
     "de": "Wenn ich mehr Zeit hätte, würde ich mehr lesen.",
@@ -4951,7 +7768,16 @@ const GRAMMAR = [
     "fa": "اگر وقت بیشتری داشتم، بیشتر می‌خواندم.",
     "uk": "Якби я мав більше часу, я б читав більше.",
     "pl": "Gdybym miał więcej czasu, czytałbym więcej.",
-    "tr": "Daha çok vaktim olsaydı, daha çok okurdum."
+    "tr": "Daha çok vaktim olsaydı, daha çok okurdum.",
+    "th": "ถ้าฉันมีเวลามากกว่านี้ ฉันคงจะอ่านหนังสือมากขึ้น",
+    "zh": "如果我有更多时间,我会多读书。",
+    "ms": "Jika saya mempunyai lebih banyak masa, saya akan membaca lebih banyak.",
+    "sw": "Kama ningekuwa na muda zaidi, ningesoma zaidi.",
+    "hi": "अगर मेरे पास ज़्यादा समय होता, तो मैं ज़्यादा पढ़ता।",
+    "ur": "اگر میرے پاس زیادہ وقت ہوتا تو میں زیادہ پڑھتا۔",
+    "ar_eg": "لو كان عندي وقت أكتر، كنت هاقرا أكتر.",
+    "ar_lb": "لو كان عندي وقت أكتر، كنت رح إقرا أكتر.",
+    "ar_sy": "لو كان عندي وقت أكتر، كنت اقرا أكتر."
    },
    {
     "de": "Du solltest zum Arzt gehen.",
@@ -4961,7 +7787,16 @@ const GRAMMAR = [
     "fa": "بهتر است پیش دکتر بروی.",
     "uk": "Тобі варто піти до лікаря.",
     "pl": "Powinieneś iść do lekarza.",
-    "tr": "Doktora gitmelisin."
+    "tr": "Doktora gitmelisin.",
+    "th": "เธอควรไปหาหมอ",
+    "zh": "你应该去看医生。",
+    "ms": "Awak patut pergi jumpa doktor.",
+    "sw": "Ungepaswa kwenda kwa daktari.",
+    "hi": "तुम्हें डॉक्टर के पास जाना चाहिए।",
+    "ur": "تمہیں ڈاکٹر کے پاس جانا چاہیے۔",
+    "ar_eg": "المفروض تروح الدكتور.",
+    "ar_lb": "لازم تروح عالدكتور.",
+    "ar_sy": "المفروض تروح عالدكتور."
    }
   ],
   "hints": {
@@ -4972,7 +7807,16 @@ const GRAMMAR = [
    "fa": "در فارسی شرط غیرواقعی با «اگر… + ماضی/می‌…» ساخته می‌شود (اگر وقت داشتم، یاد می‌گرفتم). آلمانی هم فعل را عوض می‌کند: würde + مصدر مثل «می‌…»، و hätte = داشتم، wäre = بودم، könnte = می‌توانستم. اشتباه رایج: würde را با sein/haben/können نیاورید؛ مستقیم wäre/hätte/könnte بگویید.",
    "uk": "Повсякдення: würde + інфінітив. Але sein, haben і модальні дієслова беруть власні форми: wäre, hätte, könnte, müsste, dürfte, sollte, wollte, möchte. Правило: уникай «würde sein/haben/können» – кажи одразу wäre/hätte/könnte.",
    "pl": "Na co dzień: würde + bezokolicznik. Ale sein, haben i czasowniki modalne przyjmują własne formy: wäre, hätte, könnte, müsste, dürfte, sollte, wollte, möchte. Zasada: unikaj „würde sein/haben/können” – mów bezpośrednio wäre/hätte/könnte.",
-   "tr": "Günlük dil: würde + mastar. Ama sein, haben ve modal fiiller kendi biçimlerini alır: wäre, hätte, könnte, müsste, dürfte, sollte, wollte, möchte. Kural: „würde sein/haben/können“den kaçın – doğrudan wäre/hätte/könnte de."
+   "tr": "Günlük dil: würde + mastar. Ama sein, haben ve modal fiiller kendi biçimlerini alır: wäre, hätte, könnte, müsste, dürfte, sollte, wollte, möchte. Kural: „würde sein/haben/können“den kaçın – doğrudan wäre/hätte/könnte de.",
+   "th": "ในชีวิตประจำวัน: ใช้รูป würde + Infinitiv แต่ sein, haben และกริยาโมดัลมีรูปเฉพาะของตัวเอง ได้แก่ wäre, hätte, könnte, müsste, dürfte, sollte, wollte, möchte กฎง่าย ๆ คือ หลีกเลี่ยง „würde sein/haben/können“ ให้ใช้ wäre/hätte/könnte โดยตรงแทน",
+   "zh": "日常用法:würde + 不定式。但 sein、haben 和情态动词有各自的形式:wäre、hätte、könnte、müsste、dürfte、sollte、wollte、möchte。经验法则:避免说“würde sein/haben/können”——直接说 wäre/hätte/könnte。",
+   "ms": "Dalam kehidupan seharian: würde + infinitif. Tetapi sein, haben dan kata kerja modal menggunakan bentuk tersendiri: wäre, hätte, könnte, müsste, dürfte, sollte, wollte, möchte. Petua mudah: elakkan 'würde sein/haben/können' – terus gunakan wäre/hätte/könnte.",
+   "sw": "Maisha ya kila siku: würde + Infiniti. Lakini sein, haben na vitenzi vya modali huchukua maumbo yao mahususi: wäre, hätte, könnte, müsste, dürfte, sollte, wollte, möchte. Kanuni rahisi: epuka 'würde sein/haben/können' – sema moja kwa moja wäre/hätte/könnte.",
+   "hi": "रोज़मर्रा: würde + इनफ़िनिटिव। लेकिन sein, haben और मोडल क्रियाएँ अपने ख़ास रूप लेती हैं: wäre, hätte, könnte, müsste, dürfte, sollte, wollte, möchte। सूत्र: 'würde sein/haben/können' से बचें – सीधे wäre/hätte/könnte कहें।",
+   "ur": "روزمرہ استعمال: würde + مصدر۔ لیکن sein، haben اور معاون افعالِ استطاعت اپنی الگ صورتیں لیتے ہیں: wäre، hätte، könnte، müsste، dürfte، sollte، wollte، möchte۔ اصول: ”würde sein/haben/können“ سے گریز کریں — براہِ راست wäre/hätte/könnte کہیں۔",
+   "ar_eg": "في الكلام العادي: würde + المصدر. لكن sein و haben والأفعال الوجهية بتاخد صيغ خاصة: wäre, hätte, könnte, müsste, dürfte, sollte, wollte, möchte. قاعدة سريعة: تجنب «würde sein/haben/können» – قول على طول wäre/hätte/könnte.",
+   "ar_lb": "باليومي: würde + المصدر. بس sein وhaben والأفعال الشرطية إلها صيغ خاصة: wäre, hätte, könnte, müsste, dürfte, sollte, wollte, möchte. قاعدة سريعة: تجنّب „würde sein/haben/können“ – قول مباشرة wäre/hätte/könnte.",
+   "ar_sy": "بالحكي اليومي: würde + المصدر. بس sein وhaben والأفعال الشرطية إلها صيغ خاصة: wäre, hätte, könnte, müsste, dürfte, sollte, wollte, möchte. قاعدة سريعة: تجنّب „würde sein/haben/können“ – قول مباشرة wäre/hätte/könnte."
   }
  },
  {
@@ -4986,7 +7830,16 @@ const GRAMMAR = [
    "fa": "وجه مجهول",
    "uk": "Пасив (Vorgangspassiv)",
    "pl": "Strona bierna (Vorgangspassiv)",
-   "tr": "Edilgen çatı (oluş edilgeni)"
+   "tr": "Edilgen çatı (oluş edilgeni)",
+   "th": "กรรมวาจก (Das Passiv / Vorgangspassiv)",
+   "zh": "被动态(过程被动态,Vorgangspassiv)",
+   "ms": "Pasif (Pasif Proses)",
+   "sw": "Passiv (Kauli Tendwa) — Vorgangspassiv",
+   "hi": "कर्मवाच्य (Vorgangspassiv)",
+   "ur": "مجہول فعل (Vorgangspassiv)",
+   "ar_eg": "المبني للمجهول (Vorgangspassiv)",
+   "ar_lb": "المبني للمجهول (Vorgangspassiv)",
+   "ar_sy": "المبني للمجهول (Vorgangspassiv)"
   },
   "intro": {
    "de": "Das Vorgangspassiv bildet man mit werden (konjugiert) + Partizip II am Satzende. Es rückt die Handlung in den Vordergrund; wer sie ausführt, bleibt oft ungenannt.",
@@ -4996,7 +7849,16 @@ const GRAMMAR = [
    "fa": "مجهولِ رویدادی (Vorgangspassiv) با فعل کمکیِ werden (صرف‌شده) به‌همراه اسم مفعول (Partizip II) در انتهای جمله ساخته می‌شود. تمرکز روی خودِ کنش است و اغلب فاعل ذکر نمی‌شود.",
    "uk": "Vorgangspassiv (пасив дії) утворюють за допомогою werden (відмінюване) + Partizip II у кінці речення. Він висуває на передній план саму дію; той, хто її виконує, часто залишається неназваним.",
    "pl": "Stronę bierną czynnościową (Vorgangspassiv) tworzy się za pomocą odmienionego werden + Partizip II na końcu zdania. Wysuwa ona na pierwszy plan samą czynność; wykonawca często pozostaje niewymieniony.",
-   "tr": "Oluş edilgeni (Vorgangspassiv), werden (çekimli) + cümlenin sonundaki Partizip II ile kurulur. Eylemi ön plana çıkarır; onu yapanın kim olduğu çoğu zaman belirtilmez."
+   "tr": "Oluş edilgeni (Vorgangspassiv), werden (çekimli) + cümlenin sonundaki Partizip II ile kurulur. Eylemi ön plana çıkarır; onu yapanın kim olduğu çoğu zaman belirtilmez.",
+   "th": "Vorgangspassiv สร้างขึ้นโดยใช้ werden (ผันแล้ว) + รูปกริยาช่อง 3 ที่ท้ายประโยค ทำให้เน้นที่ตัวการกระทำเป็นหลัก ส่วนผู้กระทำมักไม่ถูกระบุ",
+   "zh": "过程被动态(Vorgangspassiv)由 werden(变位)+ 置于句末的第二分词构成。它把动作本身放在前景,动作的执行者往往不被提及。",
+   "ms": "Pasif proses dibentuk dengan werden (dikonjugasikan) + Partizip II di hujung ayat. Ia menonjolkan tindakan itu sendiri; siapa yang melakukannya selalunya tidak dinyatakan.",
+   "sw": "Vorgangspassiv (kauli tendwa ya mchakato) huundwa kwa werden (kilichobadilishwa) + Partizip II mwishoni mwa sentensi. Inaweka kitendo mbele; mtendaji mara nyingi hubaki bila kutajwa.",
+   "hi": "Vorgangspassiv werden (संयुगित) + Partizip II वाक्य के अंत में लगाकर बनाया जाता है। यह क्रिया को केंद्र में लाता है; कर्ता अक्सर अनकहा रहता है।",
+   "ur": "عملی مجہول (Vorgangspassiv) werden (گردان شدہ) + Partizip II کے ساتھ جملے کے آخر میں بنایا جاتا ہے۔ یہ عمل کو نمایاں کرتا ہے؛ کرنے والا اکثر غیر مذکور رہتا ہے۔",
+   "ar_eg": "المبني للمجهول اللي بيوصف الحدث (Vorgangspassiv) بيتكوّن من werden (متصرّف) + Partizip II آخر الجملة. بيركز على الفعل نفسه؛ ومين اللي عمله غالبًا مش مذكور.",
+   "ar_lb": "المبني للمجهول (Vorgangspassiv) بيتكوّن من werden (مصرّف) + Partizip II بآخر الجملة. بيحط الفعل بالمقدمة؛ ومين عم يعمل الفعل غالبًا بيضل مش مذكور.",
+   "ar_sy": "المبني للمجهول (Vorgangspassiv) بيتشكّل من werden (متصرّف) + Partizip II بآخر الجملة. بيحط الفعل بالمقدمة؛ مين عم يعملو بمعظم الحالات ما بينذكر."
   },
   "tables": [
    {
@@ -5008,7 +7870,16 @@ const GRAMMAR = [
      "fa": "مجهول در زمان‌های مختلف (فعل نمونه: bauen)",
      "uk": "Пасив у різних часах (дієслово-приклад: bauen)",
      "pl": "Strona bierna w różnych czasach (przykładowy czasownik: bauen)",
-     "tr": "Zamanlara göre edilgen (örnek fiil: bauen = inşa etmek)"
+     "tr": "Zamanlara göre edilgen (örnek fiil: bauen = inşa etmek)",
+     "th": "กรรมวาจกในกาลต่าง ๆ (กริยาตัวอย่าง: bauen = สร้าง)",
+     "zh": "各时态下的被动态(以 bauen 为例)",
+     "ms": "Pasif merentasi kala (contoh kata kerja: bauen = membina)",
+     "sw": "Passiv katika nyakati mbalimbali (kitenzi mfano: bauen – kujenga)",
+     "hi": "सभी कालों में कर्मवाच्य (उदाहरण क्रिया: bauen)",
+     "ur": "زمانوں میں مجہول فعل (مثالی فعل: bauen – بنانا)",
+     "ar_eg": "المبني للمجهول في كل الأزمنة (مثال: bauen)",
+     "ar_lb": "المبني للمجهول بكل الأزمنة (مثال: bauen = يبني)",
+     "ar_sy": "المبني للمجهول عبر الأزمنة (فعل مثال: bauen)"
     },
     "labelHeader": {
      "de": "Zeitform",
@@ -5018,7 +7889,16 @@ const GRAMMAR = [
      "fa": "زمان",
      "uk": "Час",
      "pl": "Czas",
-     "tr": "Zaman biçimi"
+     "tr": "Zaman biçimi",
+     "th": "กาล (Zeitform)",
+     "zh": "时态",
+     "ms": "Bentuk kala",
+     "sw": "Wakati wa sarufi",
+     "hi": "काल",
+     "ur": "زمانہ",
+     "ar_eg": "الزمن",
+     "ar_lb": "الزمن",
+     "ar_sy": "الزمن"
     },
     "columns": [
      {
@@ -5029,7 +7909,16 @@ const GRAMMAR = [
       "fa": "شکل مجهول",
       "uk": "Форма пасиву",
       "pl": "Forma strony biernej",
-      "tr": "Edilgen biçim"
+      "tr": "Edilgen biçim",
+      "th": "รูปกรรมวาจก",
+      "zh": "被动态形式",
+      "ms": "Bentuk pasif",
+      "sw": "Umbo la Passiv",
+      "hi": "कर्मवाच्य रूप",
+      "ur": "مجہول کی صورت",
+      "ar_eg": "صيغة المبني للمجهول",
+      "ar_lb": "صيغة المبني للمجهول",
+      "ar_sy": "صيغة المبني للمجهول"
      },
      {
       "de": "Beispielsatz",
@@ -5039,7 +7928,16 @@ const GRAMMAR = [
       "fa": "جملهٔ نمونه",
       "uk": "Приклад речення",
       "pl": "Zdanie przykładowe",
-      "tr": "Örnek cümle"
+      "tr": "Örnek cümle",
+      "th": "ประโยคตัวอย่าง",
+      "zh": "例句",
+      "ms": "Contoh ayat",
+      "sw": "Sentensi mfano",
+      "hi": "उदाहरण वाक्य",
+      "ur": "مثالی جملہ",
+      "ar_eg": "جملة مثال",
+      "ar_lb": "جملة مثال",
+      "ar_sy": "جملة مثال"
      }
     ],
     "rows": [
@@ -5052,7 +7950,16 @@ const GRAMMAR = [
        "fa": "حال",
        "uk": "Präsens",
        "pl": "Präsens (teraźniejszy)",
-       "tr": "Präsens (şimdiki zaman)"
+       "tr": "Präsens (şimdiki zaman)",
+       "th": "ปัจจุบันกาล (Präsens)",
+       "zh": "现在时",
+       "ms": "Präsens",
+       "sw": "Präsens",
+       "hi": "Präsens (वर्तमान)",
+       "ur": "حال",
+       "ar_eg": "Präsens",
+       "ar_lb": "المضارع (Präsens)",
+       "ar_sy": "المضارع"
       },
       "cells": [
        "wird gebaut",
@@ -5068,7 +7975,16 @@ const GRAMMAR = [
        "fa": "گذشتهٔ ساده",
        "uk": "Präteritum",
        "pl": "Präteritum (przeszły prosty)",
-       "tr": "Präteritum (yalın geçmiş)"
+       "tr": "Präteritum (yalın geçmiş)",
+       "th": "อดีตกาลธรรมดา (Präteritum)",
+       "zh": "简单过去时",
+       "ms": "Präteritum",
+       "sw": "Präteritum",
+       "hi": "Präteritum (सरल भूत)",
+       "ur": "سادہ ماضی",
+       "ar_eg": "Präteritum",
+       "ar_lb": "الماضي البسيط (Präteritum)",
+       "ar_sy": "الماضي البسيط"
       },
       "cells": [
        "wurde gebaut",
@@ -5084,7 +8000,16 @@ const GRAMMAR = [
        "fa": "گذشتهٔ نقلی",
        "uk": "Perfekt",
        "pl": "Perfekt (przeszły złożony)",
-       "tr": "Perfekt (yakın geçmiş)"
+       "tr": "Perfekt (yakın geçmiş)",
+       "th": "อดีตกาลสมบูรณ์ (Perfekt)",
+       "zh": "现在完成时",
+       "ms": "Perfekt",
+       "sw": "Perfekt",
+       "hi": "Perfekt (पूर्ण भूत)",
+       "ur": "ماضیِ قریب",
+       "ar_eg": "Perfekt",
+       "ar_lb": "الـ Perfekt",
+       "ar_sy": "الماضي التام"
       },
       "cells": [
        "ist gebaut worden",
@@ -5100,7 +8025,16 @@ const GRAMMAR = [
        "fa": "آینده",
        "uk": "Futur I",
        "pl": "Futur I (przyszły)",
-       "tr": "Futur I (gelecek)"
+       "tr": "Futur I (gelecek)",
+       "th": "อนาคตกาล (Futur I)",
+       "zh": "将来时",
+       "ms": "Futur I",
+       "sw": "Futur I",
+       "hi": "Futur I (भविष्य)",
+       "ur": "مستقبل",
+       "ar_eg": "Futur I",
+       "ar_lb": "المستقبل (Futur I)",
+       "ar_sy": "المستقبل"
       },
       "cells": [
        "wird gebaut werden",
@@ -5116,7 +8050,16 @@ const GRAMMAR = [
        "fa": "با فعل وجهی",
        "uk": "з модальним дієсловом",
        "pl": "z czasownikiem modalnym",
-       "tr": "modal fiil ile"
+       "tr": "modal fiil ile",
+       "th": "กับกริยาโมดัล",
+       "zh": "带情态动词",
+       "ms": "dengan kata kerja modal",
+       "sw": "pamoja na kitenzi cha modali",
+       "hi": "मोडल क्रिया के साथ",
+       "ur": "معاون فعلِ استطاعت کے ساتھ",
+       "ar_eg": "مع فعل وجهي",
+       "ar_lb": "مع فعل شرطي",
+       "ar_sy": "مع فعل شرطي"
       },
       "cells": [
        "muss gebaut werden",
@@ -5134,7 +8077,16 @@ const GRAMMAR = [
      "fa": "عامل: von یا durch",
      "uk": "Виконавець дії: von чи durch",
      "pl": "Sprawca: von albo durch",
-     "tr": "Eylemi yapan: von ya da durch"
+     "tr": "Eylemi yapan: von ya da durch",
+     "th": "ผู้กระทำ: von หรือ durch",
+     "zh": "动作的执行者:von 还是 durch",
+     "ms": "Pelaku: von atau durch",
+     "sw": "Mtendaji: von au durch",
+     "hi": "कर्ता: von या durch",
+     "ur": "کرنے والا: von یا durch",
+     "ar_eg": "الفاعل الحقيقي: von ولا durch",
+     "ar_lb": "الفاعل الحقيقي: von ولا durch",
+     "ar_sy": "الفاعل الحقيقي: von ولا durch"
     },
     "labelHeader": {
      "de": "Bedeutung",
@@ -5144,7 +8096,16 @@ const GRAMMAR = [
      "fa": "معنا",
      "uk": "Значення",
      "pl": "Znaczenie",
-     "tr": "Anlam"
+     "tr": "Anlam",
+     "th": "ความหมาย",
+     "zh": "含义",
+     "ms": "Makna",
+     "sw": "Maana",
+     "hi": "अर्थ",
+     "ur": "معنی",
+     "ar_eg": "المعنى",
+     "ar_lb": "المعنى",
+     "ar_sy": "المعنى"
     },
     "columns": [
      {
@@ -5155,7 +8116,16 @@ const GRAMMAR = [
       "fa": "حرف اضافه + حالت",
       "uk": "Прийменник + відмінок",
       "pl": "Przyimek + przypadek",
-      "tr": "Edat + hâl"
+      "tr": "Edat + hâl",
+      "th": "คำบุพบท + การก",
+      "zh": "介词 + 格",
+      "ms": "Preposisi + kes",
+      "sw": "Kihusishi + kesi",
+      "hi": "पूर्वसर्ग + कारक",
+      "ur": "حرفِ جر + حالت",
+      "ar_eg": "حرف الجر + الحالة الإعرابية",
+      "ar_lb": "حرف الجر + الحالة",
+      "ar_sy": "حرف الجر + الحالة الإعرابية"
      },
      {
       "de": "Beispiel",
@@ -5165,7 +8135,16 @@ const GRAMMAR = [
       "fa": "مثال",
       "uk": "Приклад",
       "pl": "Przykład",
-      "tr": "Örnek"
+      "tr": "Örnek",
+      "th": "ตัวอย่าง",
+      "zh": "例子",
+      "ms": "Contoh",
+      "sw": "Mfano",
+      "hi": "उदाहरण",
+      "ur": "مثال",
+      "ar_eg": "مثال",
+      "ar_lb": "مثال",
+      "ar_sy": "مثال"
      }
     ],
     "rows": [
@@ -5178,7 +8157,16 @@ const GRAMMAR = [
        "fa": "شخص / عامل (کننده)",
        "uk": "Особа / причина (виконавець)",
        "pl": "Osoba / przyczyna (sprawca)",
-       "tr": "Kişi / sebep (eylemi yapan)"
+       "tr": "Kişi / sebep (eylemi yapan)",
+       "th": "บุคคล/สาเหตุ (ผู้กระทำ)",
+       "zh": "人物/原因(施动者)",
+       "ms": "Orang / punca (pelaku)",
+       "sw": "mtu / chanzo (mtendaji)",
+       "hi": "व्यक्ति / कारण (कर्ता)",
+       "ur": "شخص / وجہ (کرنے والا)",
+       "ar_eg": "شخص / سبب (الفاعل الحقيقي)",
+       "ar_lb": "شخص / سبب (الفاعل)",
+       "ar_sy": "شخص / سبب (الفاعل الحقيقي)"
       },
       "cells": [
        "von + Dativ",
@@ -5194,7 +8182,16 @@ const GRAMMAR = [
        "fa": "وسیله / ابزار",
        "uk": "Засіб / інструмент",
        "pl": "Środek / narzędzie",
-       "tr": "Araç / vasıta"
+       "tr": "Araç / vasıta",
+       "th": "เครื่องมือ/วิธีการ",
+       "zh": "手段/工具",
+       "ms": "Cara / alat",
+       "sw": "njia / chombo",
+       "hi": "साधन / उपकरण",
+       "ur": "ذریعہ / آلہ",
+       "ar_eg": "وسيلة / أداة",
+       "ar_lb": "وسيلة / أداة",
+       "ar_sy": "وسيلة / أداة"
       },
       "cells": [
        "durch + Akkusativ",
@@ -5212,7 +8209,16 @@ const GRAMMAR = [
      "fa": "معلوم به مجهول تبدیل می‌شود",
      "uk": "Активний стан стає пасивним",
      "pl": "Strona czynna staje się bierną",
-     "tr": "Etken, edilgene dönüşür"
+     "tr": "Etken, edilgene dönüşür",
+     "th": "จากกรรตุวาจก (Aktiv) เป็นกรรมวาจก (Passiv)",
+     "zh": "主动态变被动态",
+     "ms": "Aktif bertukar menjadi pasif",
+     "sw": "Aktiv (kauli tendaji) inakuwa Passiv (kauli tendwa)",
+     "hi": "कर्तृवाच्य से कर्मवाच्य",
+     "ur": "معروف مجہول میں بدلتا ہے",
+     "ar_eg": "من المبني للمعلوم للمبني للمجهول",
+     "ar_lb": "من المبني للمعلوم للمبني للمجهول",
+     "ar_sy": "من المبني للمعلوم للمبني للمجهول"
     },
     "labelHeader": {
      "de": "",
@@ -5230,7 +8236,16 @@ const GRAMMAR = [
       "fa": "معلوم",
       "uk": "Aktiv (активний стан)",
       "pl": "Strona czynna",
-      "tr": "Etken"
+      "tr": "Etken",
+      "th": "กรรตุวาจก (Aktiv)",
+      "zh": "主动态",
+      "ms": "Aktif",
+      "sw": "Aktiv (kauli tendaji)",
+      "hi": "कर्तृवाच्य (Aktiv)",
+      "ur": "معروف",
+      "ar_eg": "المبني للمعلوم (Aktiv)",
+      "ar_lb": "المبني للمعلوم (Aktiv)",
+      "ar_sy": "مبني للمعلوم"
      },
      {
       "de": "Passiv",
@@ -5240,7 +8255,16 @@ const GRAMMAR = [
       "fa": "مجهول",
       "uk": "Passiv (пасивний стан)",
       "pl": "Strona bierna",
-      "tr": "Edilgen"
+      "tr": "Edilgen",
+      "th": "กรรมวาจก (Passiv)",
+      "zh": "被动态",
+      "ms": "Pasif",
+      "sw": "Passiv (kauli tendwa)",
+      "hi": "कर्मवाच्य (Passiv)",
+      "ur": "مجہول",
+      "ar_eg": "المبني للمجهول (Passiv)",
+      "ar_lb": "المبني للمجهول (Passiv)",
+      "ar_sy": "مبني للمجهول"
      }
     ],
     "rows": [
@@ -5268,7 +8292,16 @@ const GRAMMAR = [
      "fa": "رویداد (werden) در برابر حالت (sein)",
      "uk": "Дія (werden) vs. стан (sein)",
      "pl": "Czynność (werden) a stan (sein)",
-     "tr": "Oluş (werden) - durum (sein)"
+     "tr": "Oluş (werden) - durum (sein)",
+     "th": "เหตุการณ์ที่กำลังเกิด (werden) กับสภาพผลลัพธ์ (sein)",
+     "zh": "过程(werden)与状态(sein)",
+     "ms": "Proses (werden) lawan keadaan (sein)",
+     "sw": "Mchakato (werden) dhidi ya hali (sein)",
+     "hi": "प्रक्रिया (werden) बनाम अवस्था (sein)",
+     "ur": "عمل (werden) بمقابلہ حالت (sein)",
+     "ar_eg": "الحدث (werden) مقابل الحالة (sein)",
+     "ar_lb": "الحدث (werden) مقابل الحالة (sein)",
+     "ar_sy": "الحدث (werden) مقابل الحالة (sein)"
     },
     "labelHeader": {
      "de": "",
@@ -5286,7 +8319,16 @@ const GRAMMAR = [
       "fa": "مجهول رویدادی – werden",
       "uk": "Vorgangspassiv – werden",
       "pl": "Strona bierna czynnościowa – werden",
-      "tr": "Oluş edilgeni – werden"
+      "tr": "Oluş edilgeni – werden",
+      "th": "กรรมวาจกแสดงเหตุการณ์ (Vorgangspassiv) – werden",
+      "zh": "过程被动态——werden",
+      "ms": "Pasif proses – werden",
+      "sw": "Vorgangspassiv (kauli tendwa ya mchakato) – werden",
+      "hi": "Vorgangspassiv – werden (प्रक्रिया-कर्मवाच्य)",
+      "ur": "عملی مجہول – werden",
+      "ar_eg": "مبني للمجهول للحدث – werden",
+      "ar_lb": "مبني للمجهول للحدث – werden",
+      "ar_sy": "مبني للمجهول للحدث – werden"
      },
      {
       "de": "Zustandspassiv – sein",
@@ -5296,7 +8338,16 @@ const GRAMMAR = [
       "fa": "مجهول حالتی – sein",
       "uk": "Zustandspassiv – sein",
       "pl": "Strona bierna stanowa – sein",
-      "tr": "Durum edilgeni – sein"
+      "tr": "Durum edilgeni – sein",
+      "th": "กรรมวาจกแสดงสภาพ (Zustandspassiv) – sein",
+      "zh": "状态被动态——sein",
+      "ms": "Pasif keadaan – sein",
+      "sw": "Zustandspassiv (kauli tendwa ya hali) – sein",
+      "hi": "Zustandspassiv – sein (अवस्था-कर्मवाच्य)",
+      "ur": "حالتی مجہول – sein",
+      "ar_eg": "مبني للمجهول للحالة – sein",
+      "ar_lb": "مبني للمجهول للحالة – sein",
+      "ar_sy": "مبني للمجهول للحالة – sein"
      }
     ],
     "rows": [
@@ -5325,7 +8376,16 @@ const GRAMMAR = [
     "fa": "نامه فردا توسط منشی نوشته می‌شود.",
     "uk": "Завтра лист буде написаний секретаркою.",
     "pl": "List zostanie napisany jutro przez sekretarkę.",
-    "tr": "Mektup yarın sekreter tarafından yazılacak."
+    "tr": "Mektup yarın sekreter tarafından yazılacak.",
+    "th": "จดหมายจะถูกเลขานุการเขียนพรุ่งนี้",
+    "zh": "这封信明天将由秘书来写。",
+    "ms": "Surat itu akan ditulis oleh setiausaha itu esok.",
+    "sw": "Barua itaandikwa kesho na katibu.",
+    "hi": "पत्र कल सचिव द्वारा लिखा जाएगा।",
+    "ur": "خط کل سیکرٹری کے ذریعے لکھا جائے گا۔",
+    "ar_eg": "الجواب هيتكتب بكرة على إيد السكرتيرة.",
+    "ar_lb": "الرسالة رح تنكتب بكرا من السكرتيرة.",
+    "ar_sy": "الرسالة رح تنكتب من السكرتيرة بكرا."
    },
    {
     "de": "Das alte Rathaus wurde durch einen Brand zerstört.",
@@ -5335,7 +8395,16 @@ const GRAMMAR = [
     "fa": "تالار شهرِ قدیمی بر اثر آتش‌سوزی ویران شد.",
     "uk": "Стара ратуша була зруйнована пожежею.",
     "pl": "Stary ratusz został zniszczony przez pożar.",
-    "tr": "Eski belediye binası bir yangın sonucu yıkıldı."
+    "tr": "Eski belediye binası bir yangın sonucu yıkıldı.",
+    "th": "ศาลาว่าการเก่าถูกไฟไหม้ทำลาย",
+    "zh": "这座老市政厅被一场大火摧毁了。",
+    "ms": "Balai bandar lama itu telah dimusnahkan oleh kebakaran.",
+    "sw": "Jengo la zamani la halmashauri liliharibiwa na moto.",
+    "hi": "पुराना नगरभवन आग से नष्ट हो गया था।",
+    "ur": "پرانی سٹی ہال کو آگ نے تباہ کر دیا۔",
+    "ar_eg": "مبنى البلدية القديم اتدمر بسبب حريق.",
+    "ar_lb": "البلدية القديمة انهدمت بسبب حريق.",
+    "ar_sy": "البلدية القديمة انهدمت بحريق."
    },
    {
     "de": "Die Rechnung muss bis Freitag bezahlt werden.",
@@ -5345,7 +8414,16 @@ const GRAMMAR = [
     "fa": "صورت‌حساب باید تا جمعه پرداخت شود.",
     "uk": "Рахунок потрібно сплатити до п'ятниці.",
     "pl": "Rachunek musi zostać zapłacony do piątku.",
-    "tr": "Fatura cumaya kadar ödenmek zorunda."
+    "tr": "Fatura cumaya kadar ödenmek zorunda.",
+    "th": "ใบแจ้งหนี้ต้องชำระภายในวันศุกร์",
+    "zh": "这张账单必须在周五之前付清。",
+    "ms": "Bil itu mesti dibayar sebelum hari Jumaat.",
+    "sw": "Bili lazima ilipwe kufikia Ijumaa.",
+    "hi": "बिल शुक्रवार तक चुकाना होगा।",
+    "ur": "بل جمعہ تک ادا کیا جانا چاہیے۔",
+    "ar_eg": "الفاتورة لازم تتدفع لحد يوم الجمعة.",
+    "ar_lb": "الفاتورة لازم تنتدفع لحتى يوم الجمعة.",
+    "ar_sy": "الفاتورة لازم تنّدفع لحد الجمعة."
    }
   ],
   "hints": {
@@ -5356,7 +8434,16 @@ const GRAMMAR = [
    "fa": "در فارسی مجهول با «شدن» + اسم مفعول ساخته می‌شود؛ آلمانی همین کار را با werden انجام می‌دهد: das Haus wird gebaut ≈ «خانه ساخته می‌شود». اسم مفعول مانند فارسیِ فعل‌پایانی به انتهای جمله می‌رود. عامل با von (مثل «توسط») و وسیله با durch می‌آید. دقت کنید در گذشتهٔ نقلی «worden» بدون پیشوند ge- می‌آید، نه geworden.",
    "uk": "Vorgangspassiv = werden + Partizip II (дієприкметник у кінець речення). Запам'ятай: у Perfekt це «ist gebaut worden» (worden, а не geworden). Виконавця/причину – через von + Dativ, засіб – через durch + Akkusativ.",
    "pl": "Strona bierna czynnościowa = werden + Partizip II (imiesłów na końcu zdania). Zapamiętaj: w czasie Perfekt mówi się „ist gebaut worden” (worden, nie geworden). Sprawcę/przyczynę oznacza się przez von + celownik, środek przez durch + biernik.",
-   "tr": "Oluş edilgeni = werden + Partizip II (ortaç cümlenin sonuna). Unutma: Perfekt'te „ist gebaut worden“ denir (worden, geworden değil). Eylemi yapan/sebep von + Dativ ile, araç durch + Akkusativ ile."
+   "tr": "Oluş edilgeni = werden + Partizip II (ortaç cümlenin sonuna). Unutma: Perfekt'te „ist gebaut worden“ denir (worden, geworden değil). Eylemi yapan/sebep von + Dativ ile, araç durch + Akkusativ ile.",
+   "th": "Vorgangspassiv = werden + รูปกริยาช่อง 3 (อยู่ท้ายประโยค) ข้อควรจำ: ใน Perfekt จะพูดว่า „ist gebaut worden“ (ใช้ worden ไม่ใช่ geworden) ผู้กระทำ/สาเหตุใช้ von + Dativ ส่วนเครื่องมือ/วิธีการใช้ durch + Akkusativ",
+   "zh": "过程被动态 = werden + 第二分词(分词置于句末)。注意:在现在完成时中要说“ist gebaut worden”(是 worden,不是 geworden)。施动者/原因用 von + 第三格,手段用 durch + 第四格。",
+   "ms": "Pasif proses = werden + Partizip II (Partizip di hujung ayat). Ingat: dalam Perfekt, bentuknya ialah 'ist gebaut worden' (worden, bukan geworden). Pelaku/punca menggunakan von + Dativ, cara/alat menggunakan durch + Akkusativ.",
+   "sw": "Vorgangspassiv = werden + Partizip II (Partizip huwekwa mwishoni mwa sentensi). Kumbuka: katika Perfekt inasemwa 'ist gebaut worden' (worden, si geworden). Mtendaji/chanzo hutumia von + Dativ, na njia/chombo hutumia durch + Akkusativ.",
+   "hi": "Vorgangspassiv = werden + Partizip II (Partizip वाक्य के अंत में)। याद रखें: Perfekt में यह 'ist gebaut worden' होता है (worden, geworden नहीं)। कर्ता/कारण के लिए von + Dativ, साधन के लिए durch + Akkusativ।",
+   "ur": "عملی مجہول = werden + Partizip II (Partizip جملے کے آخر میں)۔ یاد رکھیں: Perfekt میں یہ ”ist gebaut worden“ ہوتا ہے (worden، geworden نہیں)۔ کرنے والا/وجہ von + دیتی حالت کے ساتھ، ذریعہ durch + مفعولی حالت کے ساتھ۔",
+   "ar_eg": "المبني للمجهول للحدث = werden + Partizip II (آخر الجملة). احفظ: في Perfekt بنقول «ist gebaut worden» (worden مش geworden). الفاعل الحقيقي بـ von + Dativ، الوسيلة بـ durch + Akkusativ.",
+   "ar_lb": "المبني للمجهول للحدث = werden + Partizip II (الـ Partizip بآخر الجملة). خدها بالك: بالـ Perfekt بيصير „ist gebaut worden“ (worden، مش geworden). الفاعل/السبب بـ von + Dativ، والوسيلة بـ durch + Akkusativ.",
+   "ar_sy": "Vorgangspassiv = werden + Partizip II (Partizip بآخر الجملة). خد بالك: بالـPerfekt بتصير „ist gebaut worden“ (worden مش geworden). الفاعل الحقيقي/السبب مع von + Dativ، والوسيلة مع durch + Akkusativ."
   }
  },
  {
@@ -5370,7 +8457,16 @@ const GRAMMAR = [
    "fa": "حروف اضافه و حالت‌ها",
    "uk": "Прийменники та відмінки",
    "pl": "Przyimki i przypadki",
-   "tr": "Edatlar ve hâller"
+   "tr": "Edatlar ve hâller",
+   "th": "คำบุพบทและการก (Präpositionen & Fälle)",
+   "zh": "介词与格",
+   "ms": "Preposisi & Kes",
+   "sw": "Vihusishi na Kesi",
+   "hi": "पूर्वसर्ग और कारक",
+   "ur": "حروفِ جر اور حالتیں",
+   "ar_eg": "حروف الجر والحالات الإعرابية",
+   "ar_lb": "حروف الجر والحالات (Präpositionen & Fälle)",
+   "ar_sy": "حروف الجر والحالات الإعرابية"
   },
   "intro": {
    "de": "Präpositionen bestimmen den Fall des folgenden Nomens. Manche verlangen immer den Akkusativ, andere den Dativ oder Genitiv. Neun Wechselpräpositionen wechseln je nach Bedeutung: Akkusativ bei Bewegung (wohin?), Dativ bei Position (wo?).",
@@ -5380,7 +8476,16 @@ const GRAMMAR = [
    "fa": "حروف اضافه تعیین می‌کنند که اسمِ بعد از آن‌ها در چه حالتی (Kasus) باشد. برخی همیشه با حالت مفعولی (Akkusativ)، برخی با حالت به‌ای (Dativ) و برخی با حالت اضافی (Genitiv) می‌آیند. نُه حرفِ دوحالتی بسته به معنا تغییر می‌کنند: هنگام حرکت (به کجا؟ wohin?) مفعولی، و هنگام مکان (در کجا؟ wo?) به‌ای.",
    "uk": "Прийменники визначають відмінок наступного іменника. Одні завжди вимагають Akkusativ, інші – Dativ або Genitiv. Дев'ять прийменників подвійного керування (Wechselpräpositionen) змінюють відмінок залежно від значення: Akkusativ при русі (wohin? – куди?), Dativ при місцезнаходженні (wo? – де?).",
    "pl": "Przyimki określają przypadek następującego po nich rzeczownika. Niektóre wymagają zawsze biernika, inne celownika lub dopełniacza. Dziewięć przyimków wymiennych zmienia przypadek zależnie od znaczenia: biernik przy ruchu (wohin?), celownik przy położeniu (wo?).",
-   "tr": "Edatlar, kendisinden sonra gelen ismin hâlini belirler. Bazıları her zaman Akkusativ, bazıları Dativ ya da Genitiv ister. Dokuz değişken edat (Wechselpräposition) anlama göre değişir: hareket varsa Akkusativ (wohin? / nereye?), konum varsa Dativ (wo? / nerede?)."
+   "tr": "Edatlar, kendisinden sonra gelen ismin hâlini belirler. Bazıları her zaman Akkusativ, bazıları Dativ ya da Genitiv ister. Dokuz değişken edat (Wechselpräposition) anlama göre değişir: hareket varsa Akkusativ (wohin? / nereye?), konum varsa Dativ (wo? / nerede?).",
+   "th": "คำบุพบทเป็นตัวกำหนดการกของคำนามที่ตามมา บางคำต้องตามด้วย Akkusativ เสมอ บางคำต้องตามด้วย Dativ หรือ Genitiv ส่วนคำบุพบทสองทาง (Wechselpräpositionen) 9 คำจะเปลี่ยนการกตามความหมาย คือ Akkusativ เมื่อแสดงการเคลื่อนไหว (wohin? = ไปไหน) และ Dativ เมื่อแสดงตำแหน่ง (wo? = อยู่ที่ไหน)",
+   "zh": "介词决定其后名词的格。有些介词总是要求第四格,有些则要求第三格或第二格。有九个“二格介词”(Wechselpräpositionen)会根据含义变化:表示移动方向(去哪儿?)时用第四格,表示位置(在哪儿?)时用第三格。",
+   "ms": "Preposisi menentukan kes kata nama yang mengikutinya. Sesetengah preposisi sentiasa memerlukan Akkusativ, yang lain pula Dativ atau Genitiv. Sembilan preposisi dwikes berubah mengikut makna: Akkusativ untuk pergerakan (wohin? – ke mana?), Dativ untuk kedudukan (wo? – di mana?).",
+   "sw": "Vihusishi huamua kesi ya nomino inayofuata. Vingine daima huhitaji Akkusativ, vingine Dativ au Genitiv. Vihusishi tisa vinavyobadilika hubadilika kulingana na maana: Akkusativ kwa mwendo (wohin? – kuelekea wapi?), Dativ kwa mahali (wo? – wapi?).",
+   "hi": "पूर्वसर्ग आगे आने वाली संज्ञा का कारक तय करते हैं। कुछ हमेशा Akkusativ लेते हैं, कुछ Dativ या Genitiv। नौ द्वि-कारक पूर्वसर्ग अर्थ के अनुसार बदलते हैं: गति के लिए Akkusativ (wohin?), स्थिति के लिए Dativ (wo?)।",
+   "ur": "حروفِ جر بعد میں آنے والے اسم کی حالت طے کرتے ہیں۔ کچھ ہمیشہ مفعولی حالت مانگتے ہیں، دوسرے دیتی یا اضافتی حالت۔ نو دو طرفہ حروفِ جر معنی کے مطابق بدلتے ہیں: حرکت کے لیے مفعولی حالت (wohin؟ – کہاں کو؟)، مقام کے لیے دیتی حالت (wo؟ – کہاں؟)۔",
+   "ar_eg": "حروف الجر هي اللي بتحدد حالة الاسم اللي بعدها. بعضها دايمًا Akkusativ، وبعضها Dativ أو Genitiv. تسعة حروف جر «مزدوجة» بتتغير حسب المعنى: Akkusativ مع الحركة (رايح فين؟)، و Dativ مع الثبات (فين؟).",
+   "ar_lb": "حروف الجر بتحدد حالة الاسم يلي بعدها. في حروف دايمًا بتاخد Akkusativ، وتانية بتاخد Dativ أو Genitiv. في تسعة حروف جر متحوّلة (Wechselpräpositionen) بتتغيّر حسب المعنى: Akkusativ مع الحركة (لوين؟)، وDativ مع المكان (وين؟).",
+   "ar_sy": "حروف الجر بتحدد حالة الاسم يلي بعدها. في حروف جر دايماً Akkusativ، وفي غيرها Dativ أو Genitiv. تسعة حروف جر متغيّرة بتتغيّر حسب المعنى: Akkusativ مع الحركة (لوين؟)، Dativ مع الموقع (وين؟)."
   },
   "tables": [
    {
@@ -5392,7 +8497,16 @@ const GRAMMAR = [
      "fa": "همیشه با حالت مفعولی (Akkusativ)",
      "uk": "Завжди з Akkusativ",
      "pl": "Zawsze z biernikiem",
-     "tr": "Her zaman Akkusativ ile"
+     "tr": "Her zaman Akkusativ ile",
+     "th": "ตามด้วยกรรมตรง (Akkusativ) เสมอ",
+     "zh": "总是搭配第四格",
+     "ms": "Sentiasa dengan Akkusativ",
+     "sw": "Daima na Akkusativ",
+     "hi": "हमेशा Akkusativ के साथ",
+     "ur": "ہمیشہ مفعولی حالت کے ساتھ",
+     "ar_eg": "دايمًا مع Akkusativ",
+     "ar_lb": "دايمًا مع Akkusativ",
+     "ar_sy": "دايماً مع Akkusativ"
     },
     "labelHeader": {
      "de": "Bedeutung",
@@ -5402,7 +8516,16 @@ const GRAMMAR = [
      "fa": "معنی",
      "uk": "Значення",
      "pl": "Znaczenie",
-     "tr": "Anlam"
+     "tr": "Anlam",
+     "th": "ความหมาย",
+     "zh": "含义",
+     "ms": "Makna",
+     "sw": "Maana",
+     "hi": "अर्थ",
+     "ur": "معنی",
+     "ar_eg": "المعنى",
+     "ar_lb": "المعنى",
+     "ar_sy": "المعنى"
     },
     "columns": [
      {
@@ -5413,7 +8536,16 @@ const GRAMMAR = [
       "fa": "حرف اضافه",
       "uk": "Прийменник",
       "pl": "Przyimek",
-      "tr": "Edat"
+      "tr": "Edat",
+      "th": "คำบุพบท (Präposition)",
+      "zh": "介词",
+      "ms": "Preposisi",
+      "sw": "Kihusishi",
+      "hi": "पूर्वसर्ग",
+      "ur": "حرفِ جر",
+      "ar_eg": "حرف الجر",
+      "ar_lb": "حرف الجر",
+      "ar_sy": "حرف الجر"
      },
      {
       "de": "Beispiel (+Akk)",
@@ -5423,7 +8555,16 @@ const GRAMMAR = [
       "fa": "مثال (+Akk)",
       "uk": "Приклад (+Akk)",
       "pl": "Przykład (+Akk)",
-      "tr": "Örnek (+Akk)"
+      "tr": "Örnek (+Akk)",
+      "th": "ตัวอย่าง (+Akkusativ)",
+      "zh": "例子(+第四格)",
+      "ms": "Contoh (+Akk)",
+      "sw": "Mfano (+Akk)",
+      "hi": "उदाहरण (+Akk)",
+      "ur": "مثال (+مفعولی)",
+      "ar_eg": "مثال (+Akk)",
+      "ar_lb": "مثال (+Akk)",
+      "ar_sy": "مثال (+Akk)"
      }
     ],
     "rows": [
@@ -5436,7 +8577,16 @@ const GRAMMAR = [
        "fa": "از میانِ",
        "uk": "(hin)durch — крізь",
        "pl": "(hin)durch (przez)",
-       "tr": "(hin)durch (içinden / boyunca)"
+       "tr": "(hin)durch (içinden / boyunca)",
+       "th": "(hin)durch (ผ่าน/ทะลุ)",
+       "zh": "穿过((hin)durch)",
+       "ms": "(hin)durch (menerusi)",
+       "sw": "kupitia",
+       "hi": "(hin)durch (के आर-पार)",
+       "ur": "کے راستے سے",
+       "ar_eg": "(hin)durch (خلال)",
+       "ar_lb": "(hin)durch (من خلال)",
+       "ar_sy": "من خلال"
       },
       "cells": [
        "durch",
@@ -5452,7 +8602,16 @@ const GRAMMAR = [
        "fa": "برایِ",
        "uk": "für / zugunsten — для / на користь",
        "pl": "für / zugunsten (dla / na rzecz)",
-       "tr": "für / zugunsten (için / lehine)"
+       "tr": "für / zugunsten (için / lehine)",
+       "th": "für / zugunsten (เพื่อ)",
+       "zh": "为了(für/zugunsten)",
+       "ms": "für / zugunsten (untuk)",
+       "sw": "kwa ajili ya",
+       "hi": "für / zugunsten (के लिए)",
+       "ur": "کے لیے",
+       "ar_eg": "für / zugunsten (عشان/لصالح)",
+       "ar_lb": "für / zugunsten (لأجل)",
+       "ar_sy": "منشان / لصالح"
       },
       "cells": [
        "für",
@@ -5468,7 +8627,16 @@ const GRAMMAR = [
        "fa": "علیهِ / حدودِ (زمان)",
        "uk": "gegen — проти / близько (про час)",
        "pl": "gegen (przeciw / około – o czasie)",
-       "tr": "gegen (karşı / -e doğru [zaman])"
+       "tr": "gegen (karşı / -e doğru [zaman])",
+       "th": "gegen (ต่อต้าน/ประมาณ [เวลา])",
+       "zh": "反对/大约,时间(gegen)",
+       "ms": "gegen (menentang/lawan)",
+       "sw": "dhidi ya / karibu na (wakati)",
+       "hi": "gegen (के विरुद्ध / लगभग-समय)",
+       "ur": "کے خلاف / تقریباً (وقت)",
+       "ar_eg": "gegen (ضد/حوالين)",
+       "ar_lb": "gegen (ضد / حوالي – بالوقت)",
+       "ar_sy": "ضد / حوالي (وقت)"
       },
       "cells": [
        "gegen",
@@ -5484,7 +8652,16 @@ const GRAMMAR = [
        "fa": "بدونِ",
        "uk": "ohne — без",
        "pl": "ohne (bez)",
-       "tr": "ohne (-siz / olmadan)"
+       "tr": "ohne (-siz / olmadan)",
+       "th": "ohne (โดยไม่มี)",
+       "zh": "没有(ohne)",
+       "ms": "ohne (tanpa)",
+       "sw": "bila",
+       "hi": "ohne (के बिना)",
+       "ur": "کے بغیر",
+       "ar_eg": "ohne (من غير)",
+       "ar_lb": "ohne (بلا)",
+       "ar_sy": "بلا"
       },
       "cells": [
        "ohne",
@@ -5500,7 +8677,16 @@ const GRAMMAR = [
        "fa": "دورِ / ساعتِ",
        "uk": "um (… herum) — навколо / о (про час)",
        "pl": "um (… herum) (dookoła / o godzinie)",
-       "tr": "um (… herum) (etrafında / -de [zaman])"
+       "tr": "um (… herum) (etrafında / -de [zaman])",
+       "th": "um (… herum) (รอบ ๆ / เวลาประมาณ)",
+       "zh": "围绕/在……点,时间(um … herum)",
+       "ms": "um (… herum) (sekeliling/pada pukul)",
+       "sw": "kuzunguka / saa (wakati)",
+       "hi": "um (… herum) (के इर्द-गिर्द / समय पर)",
+       "ur": "کے ارد گرد / (وقت پر)",
+       "ar_eg": "um (… herum) (حوالين)",
+       "ar_lb": "um (… herum) (حوالي / بالساعة)",
+       "ar_sy": "حوالين / بالساعة (وقت)"
       },
       "cells": [
        "um",
@@ -5516,7 +8702,16 @@ const GRAMMAR = [
        "fa": "تا",
        "uk": "bis — до",
        "pl": "bis (do / aż do)",
-       "tr": "bis (-e kadar)"
+       "tr": "bis (-e kadar)",
+       "th": "bis (จนถึง)",
+       "zh": "直到(bis)",
+       "ms": "bis (sehingga)",
+       "sw": "hadi",
+       "hi": "bis (तक)",
+       "ur": "تک",
+       "ar_eg": "bis (لحد)",
+       "ar_lb": "bis (لحتى)",
+       "ar_sy": "لحد"
       },
       "cells": [
        "bis",
@@ -5532,7 +8727,16 @@ const GRAMMAR = [
        "fa": "در امتدادِ (پس از اسم)",
        "uk": "entlang (стоїть після іменника) — уздовж",
        "pl": "entlang (w postpozycji) (wzdłuż)",
-       "tr": "entlang (isimden sonra) (boyunca)"
+       "tr": "entlang (isimden sonra) (boyunca)",
+       "th": "entlang (ตามแนว, วางไว้หลังคำนาม)",
+       "zh": "沿着(entlang,后置)",
+       "ms": "entlang (sepanjang, diletak selepas kata nama)",
+       "sw": "kando ya (huwekwa baada ya nomino)",
+       "hi": "entlang (संज्ञा के बाद आता है) (के साथ-साथ)",
+       "ur": "کے ساتھ ساتھ (اسم کے بعد آتا ہے)",
+       "ar_eg": "entlang (بييجي بعد الاسم) (على طول)",
+       "ar_lb": "entlang (بمحاذاة – بيجي بعد الاسم)",
+       "ar_sy": "على طول (بتيجي بعد الاسم)"
       },
       "cells": [
        "entlang",
@@ -5550,7 +8754,16 @@ const GRAMMAR = [
      "fa": "همیشه با حالت به‌ای (Dativ)",
      "uk": "Завжди з Dativ",
      "pl": "Zawsze z celownikiem",
-     "tr": "Her zaman Dativ ile"
+     "tr": "Her zaman Dativ ile",
+     "th": "ตามด้วยกรรมรอง (Dativ) เสมอ",
+     "zh": "总是搭配第三格",
+     "ms": "Sentiasa dengan Dativ",
+     "sw": "Daima na Dativ",
+     "hi": "हमेशा Dativ के साथ",
+     "ur": "ہمیشہ دیتی حالت کے ساتھ",
+     "ar_eg": "دايمًا مع Dativ",
+     "ar_lb": "دايمًا مع Dativ",
+     "ar_sy": "دايماً مع Dativ"
     },
     "labelHeader": {
      "de": "Bedeutung",
@@ -5560,7 +8773,16 @@ const GRAMMAR = [
      "fa": "معنی",
      "uk": "Значення",
      "pl": "Znaczenie",
-     "tr": "Anlam"
+     "tr": "Anlam",
+     "th": "ความหมาย",
+     "zh": "含义",
+     "ms": "Makna",
+     "sw": "Maana",
+     "hi": "अर्थ",
+     "ur": "معنی",
+     "ar_eg": "المعنى",
+     "ar_lb": "المعنى",
+     "ar_sy": "المعنى"
     },
     "columns": [
      {
@@ -5571,7 +8793,16 @@ const GRAMMAR = [
       "fa": "حرف اضافه",
       "uk": "Прийменник",
       "pl": "Przyimek",
-      "tr": "Edat"
+      "tr": "Edat",
+      "th": "คำบุพบท (Präposition)",
+      "zh": "介词",
+      "ms": "Preposisi",
+      "sw": "Kihusishi",
+      "hi": "पूर्वसर्ग",
+      "ur": "حرفِ جر",
+      "ar_eg": "حرف الجر",
+      "ar_lb": "حرف الجر",
+      "ar_sy": "حرف الجر"
      },
      {
       "de": "Beispiel (+Dat)",
@@ -5581,7 +8812,16 @@ const GRAMMAR = [
       "fa": "مثال (+Dat)",
       "uk": "Приклад (+Dat)",
       "pl": "Przykład (+Dat)",
-      "tr": "Örnek (+Dat)"
+      "tr": "Örnek (+Dat)",
+      "th": "ตัวอย่าง (+Dativ)",
+      "zh": "例子(+第三格)",
+      "ms": "Contoh (+Dat)",
+      "sw": "Mfano (+Dat)",
+      "hi": "उदाहरण (+Dat)",
+      "ur": "مثال (+دیتی)",
+      "ar_eg": "مثال (+Dat)",
+      "ar_lb": "مثال (+Dat)",
+      "ar_sy": "مثال (+Dat)"
      }
     ],
     "rows": [
@@ -5594,7 +8834,16 @@ const GRAMMAR = [
        "fa": "از (درونِ)",
        "uk": "aus (heraus) — з / із",
        "pl": "aus (heraus) (z / ze środka)",
-       "tr": "aus (heraus) (-den / içinden dışarı)"
+       "tr": "aus (heraus) (-den / içinden dışarı)",
+       "th": "aus (จากข้างใน/มาจาก)",
+       "zh": "从……出来(aus)",
+       "ms": "aus (heraus) (dari/keluar dari)",
+       "sw": "kutoka",
+       "hi": "aus (heraus) (से बाहर)",
+       "ur": "سے (باہر)",
+       "ar_eg": "aus (من جوه)",
+       "ar_lb": "aus (heraus) (من جوا / من)",
+       "ar_sy": "من (طالع من)"
       },
       "cells": [
        "aus",
@@ -5610,7 +8859,16 @@ const GRAMMAR = [
        "fa": "نزدِ / کنارِ",
        "uk": "bei / nahe — біля / коло / у (когось)",
        "pl": "bei / nahe (przy / blisko / u)",
-       "tr": "bei / nahe (yanında / yakınında)"
+       "tr": "bei / nahe (yanında / yakınında)",
+       "th": "bei / nahe (ที่/ใกล้)",
+       "zh": "在……附近/在……那里(bei/nahe)",
+       "ms": "bei / nahe (di/berhampiran/bersama)",
+       "sw": "karibu na / kwa",
+       "hi": "bei / nahe (के पास / के यहाँ)",
+       "ur": "کے پاس / قریب",
+       "ar_eg": "bei / nahe (عند/قريب من)",
+       "ar_lb": "bei / nahe (عند / قريب من)",
+       "ar_sy": "عند / قريب من"
       },
       "cells": [
        "bei",
@@ -5626,7 +8884,16 @@ const GRAMMAR = [
        "fa": "با",
        "uk": "mit / mittels — з / за допомогою",
        "pl": "mit / mittels (z / za pomocą)",
-       "tr": "mit / mittels (ile / aracılığıyla)"
+       "tr": "mit / mittels (ile / aracılığıyla)",
+       "th": "mit / mittels (กับ/ด้วย)",
+       "zh": "用/借助(mit/mittels)",
+       "ms": "mit / mittels (dengan/menggunakan)",
+       "sw": "pamoja na / kwa njia ya",
+       "hi": "mit / mittels (के साथ / के ज़रिए)",
+       "ur": "کے ساتھ / کے ذریعے",
+       "ar_eg": "mit / mittels (مع/بواسطة)",
+       "ar_lb": "mit / mittels (مع / بواسطة)",
+       "ar_sy": "مع / بواسطة"
       },
       "cells": [
        "mit",
@@ -5642,7 +8909,16 @@ const GRAMMAR = [
        "fa": "بعد از / به‌سویِ",
        "uk": "nach / zu (місця) — після / до (місць, міст)",
        "pl": "nach / zu (miejsca) (po / do)",
-       "tr": "nach / zu (yerler) (-den sonra / -e [yerler, şehirler])"
+       "tr": "nach / zu (yerler) (-den sonra / -e [yerler, şehirler])",
+       "th": "nach / zu (ไปยังสถานที่)",
+       "zh": "之后/去某地(nach/zu)",
+       "ms": "nach / zu (tempat)",
+       "sw": "kuelekea / hadi (maeneo)",
+       "hi": "nach / zu (Orte) (बाद में / की ओर – स्थान)",
+       "ur": "کے بعد / کی طرف (مقامات)",
+       "ar_eg": "nach / zu (أماكن) (لـ/على)",
+       "ar_lb": "nach / zu (بعد / لَعند – أماكن ومدن)",
+       "ar_sy": "بعد / لـ (أماكن)"
       },
       "cells": [
        "nach",
@@ -5658,7 +8934,16 @@ const GRAMMAR = [
        "fa": "از (زمانِ)",
        "uk": "seit — від / протягом (про тривалість)",
        "pl": "seit (od – czasu / trwania)",
-       "tr": "seit (-den beri / süredir)"
+       "tr": "seit (-den beri / süredir)",
+       "th": "seit (ตั้งแต่)",
+       "zh": "自从/……以来(seit)",
+       "ms": "seit (sejak)",
+       "sw": "tangu / kwa muda wa",
+       "hi": "seit (से – समयावधि)",
+       "ur": "سے (وقت سے)",
+       "ar_eg": "seit (من ساعة)",
+       "ar_lb": "seit (من / منذ – مدة)",
+       "ar_sy": "من (مدة زمنية)"
       },
       "cells": [
        "seit",
@@ -5674,7 +8959,16 @@ const GRAMMAR = [
        "fa": "از / از طرفِ",
        "uk": "von — від / з / (ким)",
        "pl": "von (od / z / przez)",
-       "tr": "von (-den / -in / tarafından)"
+       "tr": "von (-den / -in / tarafından)",
+       "th": "von (จาก/ของ/โดย)",
+       "zh": "从/属于/被(von)",
+       "ms": "von (dari/kepunyaan/oleh)",
+       "sw": "kutoka / la / na",
+       "hi": "von (से / का / द्वारा)",
+       "ur": "سے / کا / کے ذریعے",
+       "ar_eg": "von (من)",
+       "ar_lb": "von (من)",
+       "ar_sy": "من"
       },
       "cells": [
        "von",
@@ -5690,7 +8984,16 @@ const GRAMMAR = [
        "fa": "به‌سویِ / نزدِ",
        "uk": "zu (люди/місця) — до (людей / місць)",
        "pl": "zu (osoby/miejsca) (do)",
-       "tr": "zu (kişiler/yerler) (-e [kişiler / yerler])"
+       "tr": "zu (kişiler/yerler) (-e [kişiler / yerler])",
+       "th": "zu (ไปหาคน/สถานที่)",
+       "zh": "去某人/某地(zu)",
+       "ms": "zu (orang/tempat)",
+       "sw": "kwa (watu/maeneo)",
+       "hi": "zu (Personen/Orte) (की ओर – व्यक्ति/स्थान)",
+       "ur": "کی طرف (افراد/مقامات)",
+       "ar_eg": "zu (أشخاص/أماكن) (لـ)",
+       "ar_lb": "zu (لَعند – أشخاص وأماكن)",
+       "ar_sy": "لـ (أشخاص/أماكن)"
       },
       "cells": [
        "zu",
@@ -5706,7 +9009,16 @@ const GRAMMAR = [
        "fa": "روبه‌رویِ",
        "uk": "gegenüber — навпроти",
        "pl": "gegenüber (naprzeciwko)",
-       "tr": "gegenüber (karşısında)"
+       "tr": "gegenüber (karşısında)",
+       "th": "gegenüber (ตรงข้ามกับ)",
+       "zh": "对面/相对于(gegenüber)",
+       "ms": "gegenüber (bertentangan/berhadapan)",
+       "sw": "ng'ambo ya / mkabala na",
+       "hi": "gegenüber (के सामने)",
+       "ur": "کے سامنے / مقابل",
+       "ar_eg": "gegenüber (قصاد/مقابل)",
+       "ar_lb": "gegenüber (مقابل)",
+       "ar_sy": "مقابل"
       },
       "cells": [
        "gegenüber",
@@ -5724,7 +9036,16 @@ const GRAMMAR = [
      "fa": "حروف دوحالتی: مفعولی (wohin? = حرکت) یا به‌ای (wo? = مکان)",
      "uk": "Прийменники подвійного керування: Akkusativ (wohin? = рух) або Dativ (wo? = місце)",
      "pl": "Przyimki wymienne: biernik (wohin?) lub celownik (wo?)",
-     "tr": "Değişken edatlar: Akkusativ (wohin? / nereye?) ya da Dativ (wo? / nerede?)"
+     "tr": "Değişken edatlar: Akkusativ (wohin? / nereye?) ya da Dativ (wo? / nerede?)",
+     "th": "คำบุพบทสองทาง (Wechselpräpositionen): กรรมตรง (wohin? = ไปไหน) หรือกรรมรอง (wo? = อยู่ที่ไหน)",
+     "zh": "二格介词:第四格(去哪儿?)或第三格(在哪儿?)",
+     "ms": "Preposisi dwikes: Akkusativ (wohin? – ke mana?) atau Dativ (wo? – di mana?)",
+     "sw": "Vihusishi vinavyobadilika: Akkusativ (wohin?) au Dativ (wo?)",
+     "hi": "द्वि-कारक पूर्वसर्ग: Akkusativ (wohin?) या Dativ (wo?)",
+     "ur": "دو طرفہ حروفِ جر: مفعولی (wohin؟ – کہاں کو؟) یا دیتی (wo؟ – کہاں؟)",
+     "ar_eg": "حروف الجر المزدوجة: Akkusativ (رايح فين؟) أو Dativ (فين؟)",
+     "ar_lb": "حروف الجر المتحوّلة: Akkusativ (لوين؟) أو Dativ (وين؟)",
+     "ar_sy": "حروف الجر المتغيّرة: Akkusativ (لوين؟) أو Dativ (وين؟)"
     },
     "labelHeader": {
      "de": "Bedeutung",
@@ -5734,7 +9055,16 @@ const GRAMMAR = [
      "fa": "معنی",
      "uk": "Значення",
      "pl": "Znaczenie",
-     "tr": "Anlam"
+     "tr": "Anlam",
+     "th": "ความหมาย",
+     "zh": "含义",
+     "ms": "Makna",
+     "sw": "Maana",
+     "hi": "अर्थ",
+     "ur": "معنی",
+     "ar_eg": "المعنى",
+     "ar_lb": "المعنى",
+     "ar_sy": "المعنى"
     },
     "columns": [
      {
@@ -5745,7 +9075,16 @@ const GRAMMAR = [
       "fa": "حرف اضافه",
       "uk": "Прийменник",
       "pl": "Przyimek",
-      "tr": "Edat"
+      "tr": "Edat",
+      "th": "คำบุพบท (Präposition)",
+      "zh": "介词",
+      "ms": "Preposisi",
+      "sw": "Kihusishi",
+      "hi": "पूर्वसर्ग",
+      "ur": "حرفِ جر",
+      "ar_eg": "حرف الجر",
+      "ar_lb": "حرف الجر",
+      "ar_sy": "حرف الجر"
      },
      {
       "de": "wohin? +Akk",
@@ -5755,7 +9094,16 @@ const GRAMMAR = [
       "fa": "wohin? (به کجا) +Akk",
       "uk": "wohin? +Akk — куди? (рух)",
       "pl": "wohin? (ruch) +Akk",
-      "tr": "wohin? (hareket) +Akk"
+      "tr": "wohin? (hareket) +Akk",
+      "th": "wohin? (ไปไหน) +Akkusativ",
+      "zh": "去哪儿?+第四格",
+      "ms": "wohin? (pergerakan) +Akk",
+      "sw": "wohin? (mwendo) +Akk",
+      "hi": "wohin? (गति) +Akk",
+      "ur": "کہاں کو؟ +مفعولی",
+      "ar_eg": "رايح فين؟ +Akk",
+      "ar_lb": "لوين؟ (حركة) +Akk",
+      "ar_sy": "لوين؟ (حركة) +Akk"
      },
      {
       "de": "wo? +Dat",
@@ -5765,7 +9113,16 @@ const GRAMMAR = [
       "fa": "wo? (در کجا) +Dat",
       "uk": "wo? +Dat — де? (місцезнаходження)",
       "pl": "wo? (położenie) +Dat",
-      "tr": "wo? (konum) +Dat"
+      "tr": "wo? (konum) +Dat",
+      "th": "wo? (อยู่ที่ไหน) +Dativ",
+      "zh": "在哪儿?+第三格",
+      "ms": "wo? (kedudukan) +Dat",
+      "sw": "wo? (mahali) +Dat",
+      "hi": "wo? (स्थिति) +Dat",
+      "ur": "کہاں؟ +دیتی",
+      "ar_eg": "فين؟ +Dat",
+      "ar_lb": "وين؟ (مكان) +Dat",
+      "ar_sy": "وين؟ (موقع) +Dat"
      }
     ],
     "rows": [
@@ -5778,7 +9135,16 @@ const GRAMMAR = [
        "fa": "کنارِ / رویِ",
        "uk": "an (край/поверхня) — біля / на (край)",
        "pl": "an (krawędź/płaszczyzna) (przy / na)",
-       "tr": "an (kenar/yüzey) (-de / -e [kenar, yüzey])"
+       "tr": "an (kenar/yüzey) (-de / -e [kenar, yüzey])",
+       "th": "an (ติดขอบ/ติดพื้นผิวตั้ง)",
+       "zh": "在……旁边/贴着边缘或表面(an)",
+       "ms": "an (tepi/permukaan menegak)",
+       "sw": "kwenye (ukingo/uso)",
+       "hi": "an (Kante/Fläche) (किनारे पर)",
+       "ur": "کنارے/سطح پر",
+       "ar_eg": "an (على حافة/سطح)",
+       "ar_lb": "an (عند / عالحافة)",
+       "ar_sy": "عند/عل (حافة/سطح عمودي)"
       },
       "cells": [
        "an",
@@ -5795,7 +9161,16 @@ const GRAMMAR = [
        "fa": "رویِ",
        "uk": "auf (поверхня) — на (згори)",
        "pl": "auf (powierzchnia) (na)",
-       "tr": "auf (yüzey) (üstünde / üstüne)"
+       "tr": "auf (yüzey) (üstünde / üstüne)",
+       "th": "auf (บนพื้นผิว)",
+       "zh": "在……上面,表面(auf)",
+       "ms": "auf (atas permukaan)",
+       "sw": "juu ya (uso)",
+       "hi": "auf (Oberfläche) (ऊपर सतह पर)",
+       "ur": "اوپر (سطح پر)",
+       "ar_eg": "auf (على سطح)",
+       "ar_lb": "auf (فوق/عالسطح)",
+       "ar_sy": "عل (فوق سطح)"
       },
       "cells": [
        "auf",
@@ -5812,7 +9187,16 @@ const GRAMMAR = [
        "fa": "پشتِ",
        "uk": "hinter — за / позаду",
        "pl": "hinter (za)",
-       "tr": "hinter (arkasında / arkasına)"
+       "tr": "hinter (arkasında / arkasına)",
+       "th": "hinter (ข้างหลัง)",
+       "zh": "在……后面(hinter)",
+       "ms": "hinter (di belakang)",
+       "sw": "nyuma ya",
+       "hi": "hinter (पीछे)",
+       "ur": "کے پیچھے",
+       "ar_eg": "hinter (ورا)",
+       "ar_lb": "hinter (ورا)",
+       "ar_sy": "ورا"
       },
       "cells": [
        "hinter",
@@ -5829,7 +9213,16 @@ const GRAMMAR = [
        "fa": "در / داخلِ",
        "uk": "in — у / в / всередину",
        "pl": "in (w / do)",
-       "tr": "in (içinde / içine)"
+       "tr": "in (içinde / içine)",
+       "th": "in (ใน/เข้าไปใน)",
+       "zh": "在……里面/进入(in)",
+       "ms": "in (di dalam/ke dalam)",
+       "sw": "ndani ya",
+       "hi": "in (अंदर)",
+       "ur": "میں/اندر",
+       "ar_eg": "in (جوه/في)",
+       "ar_lb": "in (بـ / جوا)",
+       "ar_sy": "بـ / جوا"
       },
       "cells": [
        "in",
@@ -5846,7 +9239,16 @@ const GRAMMAR = [
        "fa": "کنارِ",
        "uk": "neben — поряд / біля",
        "pl": "neben (obok)",
-       "tr": "neben (yanında / yanına)"
+       "tr": "neben (yanında / yanına)",
+       "th": "neben (ข้าง ๆ)",
+       "zh": "在……旁边(neben)",
+       "ms": "neben (di sebelah)",
+       "sw": "kando ya / karibu na",
+       "hi": "neben (बगल में)",
+       "ur": "کے ساتھ (برابر)",
+       "ar_eg": "neben (جنب)",
+       "ar_lb": "neben (جنب)",
+       "ar_sy": "جنب"
       },
       "cells": [
        "neben",
@@ -5863,7 +9265,16 @@ const GRAMMAR = [
        "fa": "بالای / رویِ",
        "uk": "über — над / понад",
        "pl": "über (nad / ponad)",
-       "tr": "über (üzerinde / üzerine)"
+       "tr": "über (üzerinde / üzerine)",
+       "th": "über (เหนือ/ข้ามผ่าน)",
+       "zh": "在……上方(über)",
+       "ms": "über (di atas)",
+       "sw": "juu ya (bila kugusa)",
+       "hi": "über (ऊपर से)",
+       "ur": "کے اوپر",
+       "ar_eg": "über (فوق)",
+       "ar_lb": "über (فوق)",
+       "ar_sy": "فوق"
       },
       "cells": [
        "über",
@@ -5880,7 +9291,16 @@ const GRAMMAR = [
        "fa": "زیرِ / میانِ",
        "uk": "unter — під / серед",
        "pl": "unter (pod / wśród)",
-       "tr": "unter (altında / arasında)"
+       "tr": "unter (altında / arasında)",
+       "th": "unter (ใต้/ท่ามกลาง)",
+       "zh": "在……下面/在……之中(unter)",
+       "ms": "unter (di bawah/di kalangan)",
+       "sw": "chini ya / miongoni mwa",
+       "hi": "unter (नीचे)",
+       "ur": "کے نیچے/میں",
+       "ar_eg": "unter (تحت)",
+       "ar_lb": "unter (تحت)",
+       "ar_sy": "تحت"
       },
       "cells": [
        "unter",
@@ -5897,7 +9317,16 @@ const GRAMMAR = [
        "fa": "جلویِ / پیش از",
        "uk": "vor (місце/час) — перед",
        "pl": "vor (miejsce/czas) (przed)",
-       "tr": "vor (yer/zaman) (önünde / önce)"
+       "tr": "vor (yer/zaman) (önünde / önce)",
+       "th": "vor (ข้างหน้า/ก่อน [เวลา])",
+       "zh": "在……前面/之前,地点或时间(vor)",
+       "ms": "vor (tempat/masa) (di depan/sebelum)",
+       "sw": "mbele ya / kabla ya (mahali/wakati)",
+       "hi": "vor (Ort/Zeit) (सामने / पहले)",
+       "ur": "کے سامنے/پہلے (جگہ/وقت)",
+       "ar_eg": "vor (قدام/قبل)",
+       "ar_lb": "vor (قدام / قبل)",
+       "ar_sy": "قدام (مكان/وقت)"
       },
       "cells": [
        "vor",
@@ -5914,7 +9343,16 @@ const GRAMMAR = [
        "fa": "بینِ / میانِ",
        "uk": "zwischen — між",
        "pl": "zwischen (między)",
-       "tr": "zwischen (arasında / arasına)"
+       "tr": "zwischen (arasında / arasına)",
+       "th": "zwischen (ระหว่าง)",
+       "zh": "在……之间(zwischen)",
+       "ms": "zwischen (di antara)",
+       "sw": "kati ya",
+       "hi": "zwischen (बीच में)",
+       "ur": "کے درمیان",
+       "ar_eg": "zwischen (بين)",
+       "ar_lb": "zwischen (بين)",
+       "ar_sy": "بين"
       },
       "cells": [
        "zwischen",
@@ -5933,7 +9371,16 @@ const GRAMMAR = [
      "fa": "با حالت اضافی (Genitiv)؛ در گفتار محاوره اغلب به‌ای",
      "uk": "З Genitiv (у розмовній мові часто Dativ)",
      "pl": "Z dopełniaczem (w mowie potocznej często celownik)",
-     "tr": "Genitiv ile (günlük dilde çoğu zaman Dativ)"
+     "tr": "Genitiv ile (günlük dilde çoğu zaman Dativ)",
+     "th": "ตามด้วยการกแสดงความเป็นเจ้าของ (Genitiv) (ภาษาพูดมักใช้ Dativ)",
+     "zh": "搭配第二格(口语中常用第三格)",
+     "ms": "Dengan Genitiv (dalam bahasa harian selalunya Dativ)",
+     "sw": "Na Genitiv (mazungumzoni mara nyingi Dativ)",
+     "hi": "Genitiv के साथ (बोलचाल में अक्सर Dativ)",
+     "ur": "اضافتی حالت کے ساتھ (بول چال میں اکثر دیتی حالت)",
+     "ar_eg": "مع Genitiv (في الكلام العامي غالبًا Dativ)",
+     "ar_lb": "مع Genitiv (وبالعامية غالبًا Dativ)",
+     "ar_sy": "مع Genitiv (بالعامية بكتير أحيان Dativ)"
     },
     "labelHeader": {
      "de": "Bedeutung",
@@ -5943,7 +9390,16 @@ const GRAMMAR = [
      "fa": "معنی",
      "uk": "Значення",
      "pl": "Znaczenie",
-     "tr": "Anlam"
+     "tr": "Anlam",
+     "th": "ความหมาย",
+     "zh": "含义",
+     "ms": "Makna",
+     "sw": "Maana",
+     "hi": "अर्थ",
+     "ur": "معنی",
+     "ar_eg": "المعنى",
+     "ar_lb": "المعنى",
+     "ar_sy": "المعنى"
     },
     "columns": [
      {
@@ -5954,7 +9410,16 @@ const GRAMMAR = [
       "fa": "حرف اضافه",
       "uk": "Прийменник",
       "pl": "Przyimek",
-      "tr": "Edat"
+      "tr": "Edat",
+      "th": "คำบุพบท (Präposition)",
+      "zh": "介词",
+      "ms": "Preposisi",
+      "sw": "Kihusishi",
+      "hi": "पूर्वसर्ग",
+      "ur": "حرفِ جر",
+      "ar_eg": "حرف الجر",
+      "ar_lb": "حرف الجر",
+      "ar_sy": "حرف الجر"
      },
      {
       "de": "Beispiel (+Gen)",
@@ -5964,7 +9429,16 @@ const GRAMMAR = [
       "fa": "مثال (+Gen)",
       "uk": "Приклад (+Gen)",
       "pl": "Przykład (+Gen)",
-      "tr": "Örnek (+Gen)"
+      "tr": "Örnek (+Gen)",
+      "th": "ตัวอย่าง (+Genitiv)",
+      "zh": "例子(+第二格)",
+      "ms": "Contoh (+Gen)",
+      "sw": "Mfano (+Gen)",
+      "hi": "उदाहरण (+Gen)",
+      "ur": "مثال (+اضافتی)",
+      "ar_eg": "مثال (+Gen)",
+      "ar_lb": "مثال (+Gen)",
+      "ar_sy": "مثال (+Gen)"
      }
     ],
     "rows": [
@@ -5977,7 +9451,16 @@ const GRAMMAR = [
        "fa": "در طولِ / هنگامِ",
        "uk": "während — під час",
        "pl": "während (podczas)",
-       "tr": "während (-sırasında / esnasında)"
+       "tr": "während (-sırasında / esnasında)",
+       "th": "während (ระหว่าง [ช่วงเวลา])",
+       "zh": "在……期间(während)",
+       "ms": "während (semasa)",
+       "sw": "wakati wa",
+       "hi": "während (के दौरान)",
+       "ur": "کے دوران",
+       "ar_eg": "während (أثناء)",
+       "ar_lb": "während (خلال)",
+       "ar_sy": "خلال"
       },
       "cells": [
        "während",
@@ -5993,7 +9476,16 @@ const GRAMMAR = [
        "fa": "به‌خاطرِ / به‌دلیلِ",
        "uk": "wegen — через / з причини",
        "pl": "wegen (z powodu)",
-       "tr": "wegen (-den dolayı / yüzünden)"
+       "tr": "wegen (-den dolayı / yüzünden)",
+       "th": "wegen (เพราะ/เนื่องจาก)",
+       "zh": "因为(wegen)",
+       "ms": "wegen (kerana/disebabkan)",
+       "sw": "kwa sababu ya",
+       "hi": "wegen (की वजह से)",
+       "ur": "کی وجہ سے",
+       "ar_eg": "wegen (بسبب)",
+       "ar_lb": "wegen (بسبب)",
+       "ar_sy": "بسبب"
       },
       "cells": [
        "wegen",
@@ -6009,7 +9501,16 @@ const GRAMMAR = [
        "fa": "با وجودِ / علی‌رغمِ",
        "uk": "trotz — попри / незважаючи на",
        "pl": "trotz (mimo / pomimo)",
-       "tr": "trotz (-e rağmen)"
+       "tr": "trotz (-e rağmen)",
+       "th": "trotz (ทั้ง ๆ ที่/แม้จะ)",
+       "zh": "尽管(trotz)",
+       "ms": "trotz (walaupun/meskipun)",
+       "sw": "licha ya",
+       "hi": "trotz (के बावजूद)",
+       "ur": "کے باوجود",
+       "ar_eg": "trotz (رغم)",
+       "ar_lb": "trotz (رغم)",
+       "ar_sy": "بالرغم من"
       },
       "cells": [
        "trotz",
@@ -6025,7 +9526,16 @@ const GRAMMAR = [
        "fa": "به‌جایِ",
        "uk": "(an)statt — замість",
        "pl": "(an)statt (zamiast)",
-       "tr": "(an)statt (-in yerine)"
+       "tr": "(an)statt (-in yerine)",
+       "th": "(an)statt (แทนที่จะ)",
+       "zh": "而不是/代替((an)statt)",
+       "ms": "(an)statt (sebagai ganti)",
+       "sw": "badala ya",
+       "hi": "(an)statt (के बजाय)",
+       "ur": "کی بجائے",
+       "ar_eg": "(an)statt (بدل)",
+       "ar_lb": "(an)statt (بدل)",
+       "ar_sy": "بدل"
       },
       "cells": [
        "(an)statt",
@@ -6043,7 +9553,16 @@ const GRAMMAR = [
      "fa": "ادغام‌های رایج (حرف اضافه + حرف تعریف)",
      "uk": "Поширені злиття (прийменник + артикль)",
      "pl": "Częste ściągnięcia (przyimek + rodzajnik)",
-     "tr": "Sık kullanılan kaynaşmalar (edat + artikel)"
+     "tr": "Sık kullanılan kaynaşmalar (edat + artikel)",
+     "th": "การหดคำที่พบบ่อย (คำบุพบท + คำนำหน้านาม)",
+     "zh": "常见的介词冠词缩合形式",
+     "ms": "Gabungan lazim (preposisi + artikel)",
+     "sw": "Miunganiko ya kawaida (kihusishi + artikeli)",
+     "hi": "सामान्य संकुचित रूप (पूर्वसर्ग + आर्टिकल)",
+     "ur": "عام ادغام (حرفِ جر + آرٹیکل)",
+     "ar_eg": "دمج شائع (حرف جر + أداة)",
+     "ar_lb": "الدمج الشائع (حرف جر + أداة)",
+     "ar_sy": "دمج شائع (حرف الجر + الأداة)"
     },
     "labelHeader": {
      "de": "",
@@ -6061,7 +9580,16 @@ const GRAMMAR = [
       "fa": "ادغام",
       "uk": "Злиття",
       "pl": "Ściągnięcie",
-      "tr": "Kaynaşma"
+      "tr": "Kaynaşma",
+      "th": "คำที่หดรวมกัน (Verschmelzung)",
+      "zh": "缩合形式",
+      "ms": "Gabungan",
+      "sw": "Muunganiko",
+      "hi": "संकुचित रूप",
+      "ur": "ادغام",
+      "ar_eg": "الدمج",
+      "ar_lb": "الدمج (Verschmelzung)",
+      "ar_sy": "الدمج"
      },
      {
       "de": "= Präp. + Artikel",
@@ -6071,7 +9599,16 @@ const GRAMMAR = [
       "fa": "= حرف اضافه + حرف تعریف",
       "uk": "= прийм. + артикль",
       "pl": "= przyim. + rodzajnik",
-      "tr": "= edat + artikel"
+      "tr": "= edat + artikel",
+      "th": "= คำบุพบท + คำนำหน้านาม",
+      "zh": "= 介词 + 冠词",
+      "ms": "= preposisi + artikel",
+      "sw": "= kihusishi + artikeli",
+      "hi": "= पूर्वसर्ग + आर्टिकल",
+      "ur": "= حرفِ جر + آرٹیکل",
+      "ar_eg": "= حرف الجر + الأداة",
+      "ar_lb": "= حرف جر + أداة",
+      "ar_sy": "= حرف الجر + الأداة"
      },
      {
       "de": "Beispiel",
@@ -6081,7 +9618,16 @@ const GRAMMAR = [
       "fa": "مثال",
       "uk": "Приклад",
       "pl": "Przykład",
-      "tr": "Örnek"
+      "tr": "Örnek",
+      "th": "ตัวอย่าง",
+      "zh": "例子",
+      "ms": "Contoh",
+      "sw": "Mfano",
+      "hi": "उदाहरण",
+      "ur": "مثال",
+      "ar_eg": "مثال",
+      "ar_lb": "مثال",
+      "ar_sy": "مثال"
      }
     ],
     "rows": [
@@ -6209,7 +9755,16 @@ const GRAMMAR = [
     "fa": "من از میانِ پارک می‌گذرم.",
     "uk": "Я йду крізь парк.",
     "pl": "Idę przez park.",
-    "tr": "Parkın içinden geçiyorum."
+    "tr": "Parkın içinden geçiyorum.",
+    "th": "ฉันเดินผ่านสวนสาธารณะ",
+    "zh": "我穿过公园。",
+    "ms": "Saya berjalan melalui taman itu.",
+    "sw": "Ninatembea kupitia bustani.",
+    "hi": "मैं पार्क से होकर जाता हूँ।",
+    "ur": "میں پارک کے راستے سے گزرتا ہوں۔",
+    "ar_eg": "أنا رايح ماشي في الحديقة.",
+    "ar_lb": "عم إمشي عبر الحديقة.",
+    "ar_sy": "عم امشي من خلال الحديقة."
    },
    {
     "de": "Wir fahren mit dem Bus in die Stadt.",
@@ -6219,7 +9774,16 @@ const GRAMMAR = [
     "fa": "ما با اتوبوس به شهر می‌رویم.",
     "uk": "Ми їдемо автобусом до міста.",
     "pl": "Jedziemy autobusem do miasta.",
-    "tr": "Otobüsle şehre gidiyoruz."
+    "tr": "Otobüsle şehre gidiyoruz.",
+    "th": "เรานั่งรถบัสเข้าไปในเมือง",
+    "zh": "我们坐公交车进城。",
+    "ms": "Kami pergi ke bandar dengan bas.",
+    "sw": "Tunaenda mjini kwa basi.",
+    "hi": "हम बस से शहर जाते हैं।",
+    "ur": "ہم بس کے ذریعے شہر جاتے ہیں۔",
+    "ar_eg": "إحنا رايحين الوسط بالأتوبيس.",
+    "ar_lb": "منروح عالمدينة بالباص.",
+    "ar_sy": "منروح عالمدينة بالباص."
    },
    {
     "de": "Trotz des Regens spielen die Kinder im Garten.",
@@ -6229,7 +9793,16 @@ const GRAMMAR = [
     "fa": "با وجودِ باران، بچه‌ها در باغ بازی می‌کنند.",
     "uk": "Попри дощ, діти граються в саду.",
     "pl": "Mimo deszczu dzieci bawią się w ogrodzie.",
-    "tr": "Yağmura rağmen çocuklar bahçede oynuyor."
+    "tr": "Yağmura rağmen çocuklar bahçede oynuyor.",
+    "th": "แม้จะฝนตก เด็ก ๆ ก็ยังเล่นอยู่ในสวน",
+    "zh": "尽管下着雨,孩子们还是在花园里玩。",
+    "ms": "Walaupun hujan, kanak-kanak itu bermain di taman.",
+    "sw": "Licha ya mvua, watoto wanacheza bustanini.",
+    "hi": "बारिश के बावजूद बच्चे बगीचे में खेल रहे हैं।",
+    "ur": "بارش کے باوجود بچے باغ میں کھیل رہے ہیں۔",
+    "ar_eg": "رغم المطر، العيال بيلعبوا في الجنينة.",
+    "ar_lb": "رغم الشتي، الولاد عم يلعبو بالجنينة.",
+    "ar_sy": "بالرغم من الشتي، الولاد عم يلعبوا بالحديقة."
    }
   ],
   "hints": {
@@ -6240,7 +9813,16 @@ const GRAMMAR = [
    "fa": "در فارسی رابطه‌ها با حروف اضافه، اضافه (ezāfe) و نشانهٔ مفعولیِ «را» ساخته می‌شوند، اما اسم برای «حالت» صرف نمی‌شود. در آلمانی خودِ حرف اضافه حالت را تعیین می‌کند و همان حالت، حرفِ تعریف را تغییر می‌دهد (der → den/dem). «از» ≈ aus/von، «با» ≈ mit، «در» ≈ in؛ منتظرِ نشانه‌ای مانند «را» نباشید — حالت را حرفِ تعریف نشان می‌دهد. برای دوحالتی‌ها: حرکت (به کجا؟) → Akkusativ، مکان (در کجا؟) → Dativ.",
    "uk": "Правило: після кожного прийменника стоїть свій сталий відмінок. У дев'яти прийменників подвійного керування вирішує запитання: wohin? → Akkusativ (рух), wo? → Dativ (місце). Коротко: «Wohin? бери Akkusativ – wo? лишайся при Dativ.»",
    "pl": "Zdanie do zapamiętania: po każdym przyimku stoi ustalony przypadek. Przy dziewięciu przyimkach wymiennych decyduje pytanie: wohin? → biernik (ruch), wo? → celownik (miejsce). Krótko: „Wohin? weź biernik – wo? zostań przy celowniku.”",
-   "tr": "Hatırlatma: Her edattan sonra belirli bir hâl gelir. Dokuz değişken edatta karar soruyla verilir: wohin? (nereye?) → Akkusativ (hareket), wo? (nerede?) → Dativ (yer). Kısacası: „Wohin? ise Akkusativ al – wo? ise Dativ'de kal.“"
+   "tr": "Hatırlatma: Her edattan sonra belirli bir hâl gelir. Dokuz değişken edatta karar soruyla verilir: wohin? (nereye?) → Akkusativ (hareket), wo? (nerede?) → Dativ (yer). Kısacası: „Wohin? ise Akkusativ al – wo? ise Dativ'de kal.“",
+   "th": "หลักจำง่าย ๆ: หลังคำบุพบททุกตัวจะตามด้วยการกที่ตายตัว สำหรับคำบุพบทสองทาง 9 คำ ให้ตัดสินด้วยคำถาม: wohin? (ไปไหน) → Akkusativ (การเคลื่อนไหว), wo? (อยู่ที่ไหน) → Dativ (ตำแหน่ง) พูดสั้น ๆ ว่า „ไปไหน? ใช้ Akkusativ – อยู่ที่ไหน? ใช้ Dativ“",
+   "zh": "记忆口诀:每个介词后面都固定搭配某一个格。对于九个二格介词,由问题决定:去哪儿?→ 第四格(移动);在哪儿?→ 第三格(位置)。简而言之:“去哪儿,用第四格——在哪儿,用第三格。”",
+   "ms": "Petua: Setiap preposisi diikuti oleh satu kes yang tetap. Bagi sembilan preposisi dwikes, soalan berikut menentukannya: wohin? (ke mana?) → Akkusativ (pergerakan), wo? (di mana?) → Dativ (kedudukan). Ringkasnya: 'Wohin? gunakan Akkusativ – wo? kekal dengan Dativ.'",
+   "sw": "Kanuni ya kukumbuka: baada ya kila kihusishi kuna kesi maalum. Kwa vihusishi tisa vinavyobadilika, swali ndilo linaloamua: wohin? → Akkusativ (mwendo), wo? → Dativ (mahali). Kwa ufupi: 'Kuelekea wapi? chukua Akkusativ – wapi? baki na Dativ.'",
+   "hi": "सूत्र वाक्य: हर पूर्वसर्ग के बाद एक निश्चित कारक आता है। नौ द्वि-कारक पूर्वसर्गों में प्रश्न तय करता है: wohin? → Akkusativ (गति), wo? → Dativ (स्थिति)। संक्षेप में: 'wohin? तो Akkusativ लो – wo? तो Dativ पर रहो।'",
+   "ur": "یاد رکھیں: ہر حرفِ جر کے بعد ایک مقررہ حالت آتی ہے۔ نو دو طرفہ حروفِ جر میں یہ سوال فیصلہ کرتا ہے: کہاں کو؟ → مفعولی حالت (حرکت)، کہاں؟ → دیتی حالت (مقام)۔ مختصراً: ”کہاں کو؟ تو مفعولی لو — کہاں؟ تو دیتی پر رہو۔“",
+   "ar_eg": "قاعدة سهلة: كل حرف جر ليه حالة إعرابية ثابتة. في التسعة حروف الجر المزدوجة، السؤال هو اللي بيحدد: رايح فين؟ ← Akkusativ (حركة)، فين؟ ← Dativ (مكان ثابت). باختصار: «رايح فين؟ خد Akkusativ – فين؟ استنى مع Dativ».",
+   "ar_lb": "قاعدة تحفظها: كل حرف جر إلو حالة ثابتة بعدو. بالتسعة حروف المتحوّلة، السؤال هوي يلي بيحدد: لوين؟ → Akkusativ (حركة)، وين؟ → Dativ (مكان). باختصار: „لوين؟ خد الـ Akkusativ – وين؟ ضل عالـ Dativ.“",
+   "ar_sy": "قاعدة تحفظ: بعد كل حرف جر في حالة إعرابية تابتة. بالتسعة حروف جر المتغيّرة السؤال هو يلي بيحدد: لوين؟ ← Akkusativ (حركة)، وين؟ ← Dativ (موقع). بالمختصر: „لوين؟ خد Akkusativ – وين؟ ضل عDativ.“"
   }
  },
  {
@@ -6254,7 +9836,16 @@ const GRAMMAR = [
    "fa": "فعل‌ها با حروف اضافه‌ی ثابت",
    "uk": "Дієслова зі сталими прийменниками",
    "pl": "Czasowniki z ustalonymi przyimkami",
-   "tr": "Belirli edatlarla kullanılan fiiller"
+   "tr": "Belirli edatlarla kullanılan fiiller",
+   "th": "กริยาที่ใช้คู่กับคำบุพบทตายตัว",
+   "zh": "带固定介词的动词",
+   "ms": "Kata Kerja dengan Preposisi Tetap",
+   "sw": "Vitenzi Vyenye Vihusishi Maalum",
+   "hi": "निश्चित पूर्वसर्ग वाली क्रियाएँ",
+   "ur": "مقررہ حروفِ جر والے افعال",
+   "ar_eg": "أفعال بحروف جر ثابتة",
+   "ar_lb": "أفعال مع حروف جر ثابتة",
+   "ar_sy": "أفعال مع حروف جر تابتة"
   },
   "intro": {
    "de": "Viele Verben verlangen eine feste Präposition mit festem Kasus – lerne beides zusammen als Einheit. Für Sachen ersetzt man Präposition + Pronomen durch ein da-Kompositum (darauf), in Fragen durch ein wo-Kompositum (worauf). Beginnt die Präposition mit einem Vokal, wird ein -r- eingefügt (da + r + auf).",
@@ -6264,7 +9855,16 @@ const GRAMMAR = [
    "fa": "بسیاری از فعل‌ها یک حرف اضافه‌ی ثابت با یک حالت (Kasus) ثابت می‌گیرند — کل واحد را با هم حفظ کنید. برای اشیا، «حرف اضافه + ضمیر» به ترکیب da- تبدیل می‌شود (darauf) و در پرسش‌ها به ترکیب wo- (worauf). اگر حرف اضافه با مصوت آغاز شود، یک ‑r‑ افزوده می‌شود (da + r + auf).",
    "uk": "Багато дієслів вимагають сталого прийменника зі сталим відмінком – вчи їх разом як єдине ціле. Для речей прийменник + займенник замінюють на da-конструкцію (darauf), у запитаннях – на wo-конструкцію (worauf). Якщо прийменник починається з голосного, вставляють -r- (da + r + auf).",
    "pl": "Wiele czasowników wymaga ustalonego przyimka z ustalonym przypadkiem – ucz się obu razem jako całości. Dla rzeczy przyimek + zaimek zastępuje się złożeniem z da- (darauf), w pytaniach złożeniem z wo- (worauf). Jeśli przyimek zaczyna się od samogłoski, wstawia się -r- (da + r + auf).",
-   "tr": "Birçok fiil, belirli bir hâlle birlikte belirli bir edat gerektirir – ikisini bir bütün olarak birlikte öğren. Eşyalar için edat + zamir yerine bir da-bileşiği kullanılır (darauf), sorularda bir wo-bileşiği (worauf). Edat bir ünlüyle başlıyorsa araya bir -r- eklenir (da + r + auf)."
+   "tr": "Birçok fiil, belirli bir hâlle birlikte belirli bir edat gerektirir – ikisini bir bütün olarak birlikte öğren. Eşyalar için edat + zamir yerine bir da-bileşiği kullanılır (darauf), sorularda bir wo-bileşiği (worauf). Edat bir ünlüyle başlıyorsa araya bir -r- eklenir (da + r + auf).",
+   "th": "กริยาหลายตัวต้องใช้คู่กับคำบุพบทและการกที่ตายตัว จึงควรเรียนทั้งสองส่วนไปด้วยกันเป็นหน่วยเดียว สำหรับสิ่งของ ให้แทนที่คำบุพบท + สรรพนามด้วยคำประสม da- (เช่น darauf) และในประโยคคำถามให้ใช้คำประสม wo- (เช่น worauf) ถ้าคำบุพบทขึ้นต้นด้วยสระ จะต้องแทรก -r- เข้าไป (da + r + auf)",
+   "zh": "许多动词都要求搭配固定的介词和固定的格——要把两者作为一个整体一起学。指代事物时,用 da- 复合词(darauf)代替“介词+代词”;在疑问句中则用 wo- 复合词(worauf)。如果介词以元音开头,要插入 -r-(da + r + auf)。",
+   "ms": "Banyak kata kerja memerlukan preposisi tetap dengan kes yang tetap – hafal kedua-duanya bersama sebagai satu unit. Untuk benda, preposisi + kata ganti nama digantikan dengan gabungan da- (darauf), dan dalam soalan dengan gabungan wo- (worauf). Jika preposisi bermula dengan vokal, huruf -r- diselitkan (da + r + auf).",
+   "sw": "Vitenzi vingi vinahitaji kihusishi maalum chenye kesi maalum – jifunze vyote viwili pamoja kama kitu kimoja. Kwa vitu, kihusishi + kiwakilishi hubadilishwa na muunganiko wa da- (darauf); katika maswali, muunganiko wa wo- (worauf). Iwapo kihusishi kinaanza na irabu, huongezwa -r- (da + r + auf).",
+   "hi": "कई क्रियाओं को एक निश्चित कारक वाला निश्चित पूर्वसर्ग चाहिए होता है – दोनों को एक साथ इकाई के रूप में सीखें। चीज़ों के लिए पूर्वसर्ग + सर्वनाम को da-यौगिक (darauf) से बदला जाता है, प्रश्नों में wo-यौगिक (worauf) से। अगर पूर्वसर्ग स्वर से शुरू होता है, तो बीच में -r- जोड़ा जाता है (da + r + auf)।",
+   "ur": "بہت سے افعال کو ایک مقررہ حرفِ جر اور مقررہ حالت کی ضرورت ہوتی ہے — دونوں کو ایک اکائی کے طور پر ساتھ سیکھیں۔ چیزوں کے لیے حرفِ جر + ضمیر کی جگہ da- والا مرکب لفظ استعمال ہوتا ہے (darauf)، سوالات میں wo- والا مرکب لفظ (worauf)۔ اگر حرفِ جر مصوتے سے شروع ہو تو ایک -r- شامل کیا جاتا ہے (da + r + auf)۔",
+   "ar_eg": "أفعال كتير محتاجة حرف جر ثابت بحالة إعرابية ثابتة – احفظهم مع بعض كوحدة واحدة. عشان الحاجات، حرف الجر + الضمير بيتحول لكلمة مركبة بـ da- (زي darauf)، وفي الأسئلة بكلمة مركبة بـ wo- (زي worauf). لو حرف الجر بيبدأ بحرف صوتي، بتتضاف -r- (da + r + auf).",
+   "ar_lb": "كتير أفعال بتحتاج حرف جر ثابت مع حالة ثابتة – احفظهم سوا كوحدة وحدة. بالنسبة للأشياء، حرف الجر + الضمير بينستبدل بمركّب da- (darauf)، وبالأسئلة بمركّب wo- (worauf). إذا حرف الجر بلش بحرف صوتي، بتنضاف -r- بالنص (da + r + auf).",
+   "ar_sy": "كتير أفعال بدها حرف جر تابت مع حالة إعرابية تابتة – احفظهن سوا كوحدة وحدة. للأشياء، حرف الجر + الضمير بينبدّل بمركّب da- (darauf)، وبالأسئلة بمركّب wo- (worauf). إذا حرف الجر بيبلش بحرف صوتي، بتنحط -r- بالنص (da + r + auf)."
   },
   "tables": [
    {
@@ -6276,7 +9876,16 @@ const GRAMMAR = [
      "fa": "فعل + حرف اضافه‌ی ثابت + حالت",
      "uk": "Дієслово + сталий прийменник + відмінок",
      "pl": "Czasownik + ustalony przyimek + przypadek",
-     "tr": "Fiil + belirli edat + hâl"
+     "tr": "Fiil + belirli edat + hâl",
+     "th": "กริยา + คำบุพบทตายตัว + การก",
+     "zh": "动词 + 固定介词 + 格",
+     "ms": "Kata kerja + preposisi tetap + kes",
+     "sw": "Kitenzi + kihusishi maalum + kesi",
+     "hi": "क्रिया + निश्चित पूर्वसर्ग + कारक",
+     "ur": "فعل + مقررہ حرفِ جر + حالت",
+     "ar_eg": "الفعل + حرف الجر الثابت + الحالة الإعرابية",
+     "ar_lb": "الفعل + حرف الجر الثابت + الحالة",
+     "ar_sy": "الفعل + حرف جر تابت + الحالة الإعرابية"
     },
     "labelHeader": {
      "de": "Bedeutung",
@@ -6286,7 +9895,16 @@ const GRAMMAR = [
      "fa": "معنی",
      "uk": "Значення",
      "pl": "Znaczenie",
-     "tr": "Anlam"
+     "tr": "Anlam",
+     "th": "ความหมาย",
+     "zh": "含义",
+     "ms": "Makna",
+     "sw": "Maana",
+     "hi": "अर्थ",
+     "ur": "معنی",
+     "ar_eg": "المعنى",
+     "ar_lb": "المعنى",
+     "ar_sy": "المعنى"
     },
     "columns": [
      {
@@ -6297,7 +9915,16 @@ const GRAMMAR = [
       "fa": "فعل + حرف اضافه",
       "uk": "Дієслово + прийменник",
       "pl": "Czasownik + przyimek",
-      "tr": "Fiil + edat"
+      "tr": "Fiil + edat",
+      "th": "กริยา + คำบุพบท",
+      "zh": "动词 + 介词",
+      "ms": "Kata kerja + preposisi",
+      "sw": "Kitenzi + kihusishi",
+      "hi": "क्रिया + पूर्वसर्ग",
+      "ur": "فعل + حرفِ جر",
+      "ar_eg": "الفعل + حرف الجر",
+      "ar_lb": "الفعل + حرف الجر",
+      "ar_sy": "الفعل + حرف الجر"
      },
      {
       "de": "Kasus",
@@ -6307,7 +9934,16 @@ const GRAMMAR = [
       "fa": "حالت (Kasus)",
       "uk": "Відмінок",
       "pl": "Przypadek",
-      "tr": "Hâl"
+      "tr": "Hâl",
+      "th": "การก (Kasus)",
+      "zh": "格",
+      "ms": "Kes",
+      "sw": "Kesi",
+      "hi": "कारक",
+      "ur": "حالت",
+      "ar_eg": "الحالة الإعرابية",
+      "ar_lb": "الحالة (Kasus)",
+      "ar_sy": "الحالة الإعرابية"
      }
     ],
     "rows": [
@@ -6320,7 +9956,16 @@ const GRAMMAR = [
        "fa": "منتظر بودن",
        "uk": "erwarten — очікувати / чекати на",
        "pl": "czekać na / oczekiwać",
-       "tr": "erwarten (beklemek)"
+       "tr": "erwarten (beklemek)",
+       "th": "รอคอย, คาดหวัง (erwarten)",
+       "zh": "等待",
+       "ms": "menanti/menunggu",
+       "sw": "kusubiri / kutarajia",
+       "hi": "erwarten (प्रतीक्षा करना)",
+       "ur": "کا انتظار کرنا",
+       "ar_eg": "erwarten (يستنى)",
+       "ar_lb": "erwarten (يستنى/يترقّب)",
+       "ar_sy": "erwarten (يستنى)"
       },
       "cells": [
        "warten auf",
@@ -6336,7 +9981,16 @@ const GRAMMAR = [
        "fa": "فکر کردن به",
        "uk": "im Sinn haben — мати на думці",
        "pl": "mieć na myśli",
-       "tr": "im Sinn haben (aklında olmak / düşünmek)"
+       "tr": "im Sinn haben (aklında olmak / düşünmek)",
+       "th": "คิดถึง, นึกถึง (im Sinn haben)",
+       "zh": "惦记/想着",
+       "ms": "memikirkan",
+       "sw": "kufikiria juu ya",
+       "hi": "im Sinn haben (के बारे में सोचना)",
+       "ur": "کے بارے میں سوچنا",
+       "ar_eg": "im Sinn haben (يفكر في)",
+       "ar_lb": "im Sinn haben (يفكّر بـ)",
+       "ar_sy": "im Sinn haben (يفكر بـ)"
       },
       "cells": [
        "denken an",
@@ -6352,7 +10006,16 @@ const GRAMMAR = [
        "fa": "بی‌صبرانه منتظر بودن",
        "uk": "Vorfreude haben — з нетерпінням чекати на",
        "pl": "cieszyć się na coś",
-       "tr": "Vorfreude haben (sevinçle beklemek / iple çekmek)"
+       "tr": "Vorfreude haben (sevinçle beklemek / iple çekmek)",
+       "th": "ตั้งตารอ (Vorfreude haben)",
+       "zh": "期待",
+       "ms": "tidak sabar menantikan",
+       "sw": "kutazamia kwa hamu",
+       "hi": "Vorfreude haben (उत्सुकता से प्रतीक्षा करना)",
+       "ur": "کا شوق سے انتظار کرنا",
+       "ar_eg": "Vorfreude haben (يتحمس لـ)",
+       "ar_lb": "Vorfreude haben (يتحمّس لشي جاي)",
+       "ar_sy": "Vorfreude haben (يتحمّس لـ)"
       },
       "cells": [
        "sich freuen auf",
@@ -6368,7 +10031,16 @@ const GRAMMAR = [
        "fa": "خوشحال بودن از",
        "uk": "froh sein über — радіти (чомусь)",
        "pl": "cieszyć się z / być zadowolonym z",
-       "tr": "froh sein über (-e sevinmek / memnun olmak)"
+       "tr": "froh sein über (-e sevinmek / memnun olmak)",
+       "th": "ดีใจเกี่ยวกับ (froh sein über)",
+       "zh": "对……感到高兴",
+       "ms": "gembira tentang",
+       "sw": "kufurahia",
+       "hi": "froh sein über (से खुश होना)",
+       "ur": "پر خوش ہونا",
+       "ar_eg": "froh sein über (يبقى مبسوط بـ)",
+       "ar_lb": "froh sein über (يفرح بـ)",
+       "ar_sy": "froh sein über (يفرح بـ)"
       },
       "cells": [
        "sich freuen über",
@@ -6384,7 +10056,16 @@ const GRAMMAR = [
        "fa": "علاقه داشتن به",
        "uk": "Interesse haben — цікавитися",
        "pl": "interesować się",
-       "tr": "Interesse haben (ilgi duymak)"
+       "tr": "Interesse haben (ilgi duymak)",
+       "th": "Interesse haben (สนใจ)",
+       "zh": "对……感兴趣",
+       "ms": "berminat dalam",
+       "sw": "kuwa na hamu ya",
+       "hi": "Interesse haben (रुचि होना)",
+       "ur": "میں دلچسپی رکھنا",
+       "ar_eg": "Interesse haben (يهتم بـ)",
+       "ar_lb": "Interesse haben (يهتم بـ)",
+       "ar_sy": "Interesse haben (يهتم بـ)"
       },
       "cells": [
        "sich interessieren für",
@@ -6400,7 +10081,16 @@ const GRAMMAR = [
        "fa": "به یاد آوردن",
        "uk": "sich ins Gedächtnis rufen — пригадувати",
        "pl": "przypominać sobie",
-       "tr": "sich ins Gedächtnis rufen (hatırlamak / anımsamak)"
+       "tr": "sich ins Gedächtnis rufen (hatırlamak / anımsamak)",
+       "th": "จดจำ, ระลึกถึง (sich ins Gedächtnis rufen)",
+       "zh": "记得,回想起",
+       "ms": "mengingati",
+       "sw": "kukumbuka",
+       "hi": "sich ins Gedächtnis rufen (याद करना)",
+       "ur": "یاد کرنا",
+       "ar_eg": "sich ins Gedächtnis rufen (يفتكر)",
+       "ar_lb": "sich ins Gedächtnis rufen (يفتكر)",
+       "ar_sy": "sich ins Gedächtnis rufen (يتذكّر)"
       },
       "cells": [
        "sich erinnern an",
@@ -6416,7 +10106,16 @@ const GRAMMAR = [
        "fa": "عصبانی/دلخور شدن از",
        "uk": "verärgert sein — бути роздратованим (через)",
        "pl": "być zirytowanym / złościć się na",
-       "tr": "verärgert sein (-e kızgın olmak)"
+       "tr": "verärgert sein (-e kızgın olmak)",
+       "th": "รู้สึกรำคาญ/โมโห (verärgert sein)",
+       "zh": "对……感到生气",
+       "ms": "berasa kesal/marah tentang",
+       "sw": "kukasirishwa na",
+       "hi": "verärgert sein (से नाराज़ होना)",
+       "ur": "پر ناراض ہونا",
+       "ar_eg": "verärgert sein (يبقى زعلان من)",
+       "ar_lb": "verärgert sein (يزعل من)",
+       "ar_sy": "verärgert sein (ينرفز من)"
       },
       "cells": [
        "sich ärgern über",
@@ -6432,7 +10131,16 @@ const GRAMMAR = [
        "fa": "درخواست کردن",
        "uk": "erbitten — просити (про щось)",
        "pl": "prosić o",
-       "tr": "erbitten (rica etmek / istemek)"
+       "tr": "erbitten (rica etmek / istemek)",
+       "th": "ขอร้อง, ร้องขอ (erbitten)",
+       "zh": "请求,索要",
+       "ms": "meminta",
+       "sw": "kuomba",
+       "hi": "erbitten (माँगना, अनुरोध करना)",
+       "ur": "درخواست کرنا",
+       "ar_eg": "erbitten (يطلب)",
+       "ar_lb": "erbitten (يطلب)",
+       "ar_sy": "erbitten (يطلب)"
       },
       "cells": [
        "bitten um",
@@ -6448,7 +10156,16 @@ const GRAMMAR = [
        "fa": "رسیدگی/مراقبت کردن",
        "uk": "sorgen für, betreuen — піклуватися про",
        "pl": "troszczyć się o, opiekować się",
-       "tr": "sorgen für, betreuen (-e bakmak / ilgilenmek)"
+       "tr": "sorgen für, betreuen (-e bakmak / ilgilenmek)",
+       "th": "ดูแล, เอาใจใส่ (sorgen für, betreuen)",
+       "zh": "照顾,照料",
+       "ms": "menjaga, mengambil berat tentang",
+       "sw": "kutunza, kuangalia",
+       "hi": "sorgen für, betreuen (देखभाल करना)",
+       "ur": "کی دیکھ بھال کرنا",
+       "ar_eg": "sorgen für, betreuen (يهتم بـ)",
+       "ar_lb": "sorgen für, betreuen (يهتم/يعتني بـ)",
+       "ar_sy": "sorgen für (يعتني بـ)"
       },
       "cells": [
        "sich kümmern um",
@@ -6464,7 +10181,16 @@ const GRAMMAR = [
        "fa": "شرکت کردن در",
        "uk": "mitmachen — брати участь",
        "pl": "brać udział w",
-       "tr": "mitmachen (katılmak)"
+       "tr": "mitmachen (katılmak)",
+       "th": "เข้าร่วม (mitmachen)",
+       "zh": "参加",
+       "ms": "mengambil bahagian dalam",
+       "sw": "kushiriki katika",
+       "hi": "mitmachen (भाग लेना)",
+       "ur": "میں حصہ لینا",
+       "ar_eg": "mitmachen (يشارك في)",
+       "ar_lb": "mitmachen (يشارك بـ)",
+       "ar_sy": "mitmachen (يشارك بـ)"
       },
       "cells": [
        "teilnehmen an",
@@ -6480,7 +10206,16 @@ const GRAMMAR = [
        "fa": "متعلق بودن به",
        "uk": "dazugehören — належати до",
        "pl": "należeć do",
-       "tr": "dazugehören (-e ait olmak)"
+       "tr": "dazugehören (-e ait olmak)",
+       "th": "เป็นส่วนหนึ่งของ (dazugehören)",
+       "zh": "属于",
+       "ms": "tergolong dalam",
+       "sw": "kuwa sehemu ya",
+       "hi": "dazugehören (का हिस्सा होना)",
+       "ur": "سے تعلق رکھنا",
+       "ar_eg": "dazugehören (ينتمي لـ)",
+       "ar_lb": "dazugehören (يعود لـ / تابع لـ)",
+       "ar_sy": "dazugehören (ينتمي لـ)"
       },
       "cells": [
        "gehören zu",
@@ -6496,7 +10231,16 @@ const GRAMMAR = [
        "fa": "بستگی داشتن به",
        "uk": "abhängig sein von — залежати від",
        "pl": "być zależnym od",
-       "tr": "abhängig sein von (-e bağlı olmak)"
+       "tr": "abhängig sein von (-e bağlı olmak)",
+       "th": "ขึ้นอยู่กับ (abhängig sein von)",
+       "zh": "取决于,依赖于",
+       "ms": "bergantung kepada",
+       "sw": "kutegemea",
+       "hi": "abhängig sein von (पर निर्भर होना)",
+       "ur": "پر منحصر ہونا",
+       "ar_eg": "abhängig sein von (يعتمد على)",
+       "ar_lb": "abhängig sein von (يعتمد على)",
+       "ar_sy": "abhängig sein von (بيعتمد عـ)"
       },
       "cells": [
        "abhängen von",
@@ -6512,7 +10256,16 @@ const GRAMMAR = [
        "fa": "خواب دیدن / رؤیای ... را داشتن",
        "uk": "sich erträumen — мріяти про",
        "pl": "marzyć o",
-       "tr": "sich erträumen (hayalini kurmak)"
+       "tr": "sich erträumen (hayalini kurmak)",
+       "th": "ใฝ่ฝันถึง (sich erträumen)",
+       "zh": "梦想,渴望",
+       "ms": "mengimpikan",
+       "sw": "kuota juu ya",
+       "hi": "sich erträumen (के सपने देखना)",
+       "ur": "کا خواب دیکھنا",
+       "ar_eg": "sich erträumen (يحلم بـ)",
+       "ar_lb": "sich erträumen (يحلم بـ)",
+       "ar_sy": "sich erträumen (يحلم بـ)"
       },
       "cells": [
        "träumen von",
@@ -6528,7 +10281,16 @@ const GRAMMAR = [
        "fa": "صحبت کردن درباره‌ی",
        "uk": "reden über — говорити / розмовляти про",
        "pl": "mówić / rozmawiać o",
-       "tr": "reden über (-den söz etmek / konuşmak)"
+       "tr": "reden über (-den söz etmek / konuşmak)",
+       "th": "พูดคุยเกี่ยวกับ (reden über)",
+       "zh": "谈论",
+       "ms": "bercakap tentang",
+       "sw": "kuzungumzia",
+       "hi": "reden über (के बारे में बात करना)",
+       "ur": "کے بارے میں بات کرنا",
+       "ar_eg": "reden über (يتكلم عن)",
+       "ar_lb": "reden über (يحكي عن)",
+       "ar_sy": "reden über (يحكي عن)"
       },
       "cells": [
        "sprechen über / von",
@@ -6544,7 +10306,16 @@ const GRAMMAR = [
        "fa": "مشغول بودن به، پرداختن به",
        "uk": "sich befassen mit — займатися / мати справу з",
        "pl": "zajmować się",
-       "tr": "sich befassen mit (-le uğraşmak / meşgul olmak)"
+       "tr": "sich befassen mit (-le uğraşmak / meşgul olmak)",
+       "th": "จัดการ/เกี่ยวข้องกับ (sich befassen mit)",
+       "zh": "从事,处理",
+       "ms": "menangani / berkaitan dengan",
+       "sw": "kushughulikia",
+       "hi": "sich befassen mit (से निपटना/जुड़ा होना)",
+       "ur": "سے نمٹنا / میں مصروف ہونا",
+       "ar_eg": "sich befassen mit (يشتغل/ينشغل بـ)",
+       "ar_lb": "sich befassen mit (يشتغل/يهتم بموضوع)",
+       "ar_sy": "sich befassen mit (يهتم/يشتغل عـ)"
       },
       "cells": [
        "sich beschäftigen mit",
@@ -6562,7 +10333,16 @@ const GRAMMAR = [
      "fa": "ترکیب‌های da-/wo- (جایگزین حرف اضافه + ضمیر)",
      "uk": "da-/wo-конструкції (замінюють прийменник + займенник)",
      "pl": "Złożenia z da-/wo- (zastępują przyimek + zaimek)",
-     "tr": "da-/wo-bileşikleri (edat + zamirin yerine geçer)"
+     "tr": "da-/wo-bileşikleri (edat + zamirin yerine geçer)",
+     "th": "คำประสม da-/wo- (ใช้แทนคำบุพบท + สรรพนาม)",
+     "zh": "da-/wo- 复合词(替代“介词+代词”)",
+     "ms": "Gabungan da-/wo- (menggantikan preposisi + kata ganti nama)",
+     "sw": "Miunganiko ya da-/wo- (inabadilisha kihusishi + kiwakilishi)",
+     "hi": "da-/wo- यौगिक (पूर्वसर्ग + सर्वनाम की जगह)",
+     "ur": "da-/wo- مرکبات (حرفِ جر + ضمیر کی جگہ)",
+     "ar_eg": "كلمات da-/wo- المركبة (بدل حرف الجر + الضمير)",
+     "ar_lb": "مركّبات da-/wo- (بتستبدل حرف الجر + الضمير)",
+     "ar_sy": "مركّبات da-/wo- (بتعوّض عن حرف الجر + الضمير)"
     },
     "labelHeader": {
      "de": "",
@@ -6580,7 +10360,16 @@ const GRAMMAR = [
       "fa": "حرف اضافه",
       "uk": "Прийменник",
       "pl": "Przyimek",
-      "tr": "Edat"
+      "tr": "Edat",
+      "th": "คำบุพบท (Präposition)",
+      "zh": "介词",
+      "ms": "Preposisi",
+      "sw": "Kihusishi",
+      "hi": "पूर्वसर्ग",
+      "ur": "حرفِ جر",
+      "ar_eg": "حرف الجر",
+      "ar_lb": "حرف الجر",
+      "ar_sy": "حرف الجر"
      },
      {
       "de": "da- (Sache)",
@@ -6590,7 +10379,16 @@ const GRAMMAR = [
       "fa": "da- (برای اشیا)",
       "uk": "da- (річ)",
       "pl": "da- (rzecz)",
-      "tr": "da- (eşya)"
+      "tr": "da- (eşya)",
+      "th": "da- (สิ่งของ)",
+      "zh": "da-(指物)",
+      "ms": "da- (benda)",
+      "sw": "da- (kitu)",
+      "hi": "da- (वस्तु के लिए)",
+      "ur": "da- (چیز کے لیے)",
+      "ar_eg": "da- (لحاجة)",
+      "ar_lb": "da- (لشي)",
+      "ar_sy": "da- (شي)"
      },
      {
       "de": "wo- (Frage)",
@@ -6600,7 +10398,16 @@ const GRAMMAR = [
       "fa": "wo- (پرسش)",
       "uk": "wo- (запитання)",
       "pl": "wo- (pytanie)",
-      "tr": "wo- (soru)"
+      "tr": "wo- (soru)",
+      "th": "wo- (คำถาม)",
+      "zh": "wo-(疑问)",
+      "ms": "wo- (soalan)",
+      "sw": "wo- (swali)",
+      "hi": "wo- (प्रश्न के लिए)",
+      "ur": "wo- (سوال کے لیے)",
+      "ar_eg": "wo- (للسؤال)",
+      "ar_lb": "wo- (للسؤال)",
+      "ar_sy": "wo- (سؤال)"
      }
     ],
     "rows": [
@@ -6700,7 +10507,16 @@ const GRAMMAR = [
     "fa": "من منتظر اتوبوس هستم.",
     "uk": "Я чекаю на автобус.",
     "pl": "Czekam na autobus.",
-    "tr": "Otobüsü bekliyorum."
+    "tr": "Otobüsü bekliyorum.",
+    "th": "ฉันกำลังรอรถบัส",
+    "zh": "我在等公交车。",
+    "ms": "Saya menunggu bas.",
+    "sw": "Ninasubiri basi.",
+    "hi": "मैं बस का इंतज़ार कर रहा हूँ।",
+    "ur": "میں بس کا انتظار کر رہا ہوں۔",
+    "ar_eg": "أنا مستني الأتوبيس.",
+    "ar_lb": "عم إستنى الباص.",
+    "ar_sy": "عم استنى الباص."
    },
    {
     "de": "Woran denkst du? – Ich denke an die Ferien.",
@@ -6710,7 +10526,16 @@ const GRAMMAR = [
     "fa": "به چه چیزی فکر می‌کنی؟ – من به تعطیلات فکر می‌کنم.",
     "uk": "Про що ти думаєш? – Я думаю про канікули.",
     "pl": "O czym myślisz? – Myślę o wakacjach.",
-    "tr": "Neyi düşünüyorsun? – Tatili düşünüyorum."
+    "tr": "Neyi düşünüyorsun? – Tatili düşünüyorum.",
+    "th": "เธอกำลังคิดถึงอะไรอยู่? – ฉันกำลังคิดถึงวันหยุด",
+    "zh": "你在想什么?——我在想假期。",
+    "ms": "Apa yang awak fikirkan? – Saya sedang memikirkan cuti.",
+    "sw": "Unafikiria juu ya nini? – Ninafikiria juu ya likizo.",
+    "hi": "तुम किस बारे में सोच रहे हो? – मैं छुट्टियों के बारे में सोच रहा हूँ।",
+    "ur": "تم کس کے بارے میں سوچ رہے ہو؟ – میں چھٹیوں کے بارے میں سوچ رہا ہوں۔",
+    "ar_eg": "بتفكر في إيه؟ – باقكر في الأجازة.",
+    "ar_lb": "عم تفكّر بشو؟ – عم إفكّر بالعطلة.",
+    "ar_sy": "عمبتفكر بشو؟ – عم افكر بالعطلة."
    },
    {
     "de": "Sie nimmt an einem Deutschkurs teil.",
@@ -6720,7 +10545,16 @@ const GRAMMAR = [
     "fa": "او در یک دوره‌ی زبان آلمانی شرکت می‌کند.",
     "uk": "Вона бере участь у курсі німецької мови.",
     "pl": "Ona bierze udział w kursie niemieckiego.",
-    "tr": "O, bir Almanca kursuna katılıyor."
+    "tr": "O, bir Almanca kursuna katılıyor.",
+    "th": "เธอเข้าร่วมคอร์สเรียนภาษาเยอรมัน",
+    "zh": "她在参加一个德语课程。",
+    "ms": "Dia mengikuti kursus bahasa Jerman.",
+    "sw": "Anashiriki katika kozi ya Kijerumani.",
+    "hi": "वह एक जर्मन कोर्स में भाग ले रही है।",
+    "ur": "وہ ایک جرمن زبان کے کورس میں حصہ لے رہی ہے۔",
+    "ar_eg": "هي بتحضر كورس ألماني.",
+    "ar_lb": "هيي عم تشارك بكورس ألماني.",
+    "ar_sy": "عم تاخد دورة ألماني."
    }
   ],
   "hints": {
@@ -6731,7 +10565,16 @@ const GRAMMAR = [
    "fa": "در فارسی هم فعل‌ها حرف اضافه‌ی ثابت دارند (مثلِ «فکر کردن به»، «علاقه داشتن به»)، پس این ایده آشناست؛ اما در آلمانی افزون بر حرف اضافه باید «حالت» (Akkusativ یا Dativ) هم رعایت شود و حرف تعریف/صفت بر همان اساس تغییر کند. حرف اضافه را از فارسی یا انگلیسی ترجمه نکنید و کل واحدِ فعل + حرف اضافه + حالت را با هم حفظ کنید.",
    "uk": "Прийменник і відмінок нерозривно належать до дієслова: «warten auf» завжди + Akkusativ, «teilnehmen an» завжди + Dativ. Не покладайся на значення – англійське «wait FOR» має інший прийменник, ніж німецьке «warten AUF».",
    "pl": "Przyimek i przypadek należą nierozłącznie do czasownika: 'warten auf' zawsze + biernik, 'teilnehmen an' zawsze + celownik. Nie polegaj na znaczeniu – angielskie 'wait FOR' ma inny przyimek niż niemieckie 'warten AUF'.",
-   "tr": "Edat ve hâl, fiile ayrılmaz biçimde bağlıdır: 'warten auf' her zaman + Akkusativ, 'teilnehmen an' her zaman + Dativ. Anlama güvenme – İngilizcedeki 'wait FOR', Almancadaki 'warten AUF'tan farklı bir edata sahiptir."
+   "tr": "Edat ve hâl, fiile ayrılmaz biçimde bağlıdır: 'warten auf' her zaman + Akkusativ, 'teilnehmen an' her zaman + Dativ. Anlama güvenme – İngilizcedeki 'wait FOR', Almancadaki 'warten AUF'tan farklı bir edata sahiptir.",
+   "th": "คำบุพบทและการกเป็นส่วนหนึ่งของกริยาอย่างแยกไม่ได้: 'warten auf' ต้องตามด้วย Akkusativ เสมอ 'teilnehmen an' ต้องตามด้วย Dativ เสมอ อย่าอาศัยความหมายในการเดา — คำว่า 'wait FOR' ในภาษาอังกฤษใช้คำบุพบทต่างจาก 'warten AUF' ในภาษาเยอรมัน",
+   "zh": "介词和格与动词密不可分:“warten auf” 总是搭配第四格,“teilnehmen an” 总是搭配第三格。不要依赖词义去猜——英语的 “wait FOR” 所用的介词就和德语的 “warten AUF” 不同。",
+   "ms": "Preposisi dan kes tergolong tidak boleh dipisahkan daripada kata kerja: 'warten auf' sentiasa + Akkusativ, 'teilnehmen an' sentiasa + Dativ. Jangan bergantung pada makna sahaja – 'wait FOR' dalam bahasa Inggeris menggunakan preposisi yang berbeza daripada 'warten AUF' dalam bahasa Jerman.",
+   "sw": "Kihusishi na kesi ni sehemu isiyoondoka ya kitenzi: 'warten auf' daima + Akkusativ, 'teilnehmen an' daima + Dativ. Usitegemee maana pekee – kihusishi cha Kiingereza 'wait FOR' ni tofauti na cha Kijerumani 'warten AUF'.",
+   "hi": "पूर्वसर्ग और कारक क्रिया से अटूट रूप से जुड़े होते हैं: 'warten auf' हमेशा + Akkusativ, 'teilnehmen an' हमेशा + Dativ। अर्थ के भरोसे मत रहें – अंग्रेज़ी का 'wait FOR' जर्मन के 'warten AUF' से अलग पूर्वसर्ग रखता है।",
+   "ur": "حرفِ جر اور حالت فعل کے ساتھ ناقابلِ علیحدگی جڑے ہوتے ہیں: 'warten auf' ہمیشہ + مفعولی حالت، 'teilnehmen an' ہمیشہ + دیتی حالت۔ معنی پر بھروسہ نہ کریں — انگریزی کے 'wait FOR' میں جرمن 'warten AUF' سے مختلف حرفِ جر ہے۔",
+   "ar_eg": "حرف الجر والحالة الإعرابية بيبقوا ملزّقين في الفعل مش ممكن تفصلهم: 'warten auf' دايمًا + Akkusativ، 'teilnehmen an' دايمًا + Dativ. متعتمدش على المعنى بالإنجليزي – 'wait FOR' الإنجليزي حرف الجر بتاعه مختلف عن 'warten AUF' الألماني.",
+   "ar_lb": "حرف الجر والحالة جزء ثابت من الفعل، ما بينفصلو: 'warten auf' دايمًا + Akkusativ، 'teilnehmen an' دايمًا + Dativ. ما تعتمد ع المعنى بس – الإنكليزي 'wait FOR' إلو حرف جر مختلف عن الألماني 'warten AUF'.",
+   "ar_sy": "حرف الجر والحالة الإعرابية جزء ما بينفصل عن الفعل: 'warten auf' دايماً + Akkusativ، 'teilnehmen an' دايماً + Dativ. ما تعتمد عالمعنى – 'wait FOR' بالإنكليزي حرف جر مختلف عن 'warten AUF' بالألماني."
   }
  },
  {
@@ -6745,7 +10588,16 @@ const GRAMMAR = [
    "fa": "صفت برتر و عالی",
    "uk": "Вищий і найвищий ступінь порівняння",
    "pl": "Stopień wyższy i najwyższy",
-   "tr": "Karşılaştırma ve üstünlük (Komparativ ve Superlativ)"
+   "tr": "Karşılaştırma ve üstünlük (Komparativ ve Superlativ)",
+   "th": "ขั้นกว่าและขั้นสุด (Komparativ und Superlativ)",
+   "zh": "比较级与最高级",
+   "ms": "Komparatif dan Superlatif",
+   "sw": "Komparativ na Superlativ (Viwango vya Kulinganisha)",
+   "hi": "तुलनात्मक (Komparativ) और सर्वोत्तम (Superlativ)",
+   "ur": "تفضیلی اور تفصیلی درجات (Komparativ اور Superlativ)",
+   "ar_eg": "صيغة المقارنة (Komparativ) وصيغة التفضيل (Superlativ)",
+   "ar_lb": "المقارنة والتفضيل (Komparativ وSuperlativ)",
+   "ar_sy": "المقارنة والتفضيل (Komparativ وSuperlativ)"
   },
   "intro": {
    "de": "Adjektive und Adverbien haben drei Stufen: Positiv (schnell), Komparativ (schneller, +er) und Superlativ (am schnellsten oder der/die/das schnellste). Viele einsilbige Adjektive mit a/o/u bekommen einen Umlaut. „als“ steht beim Vergleich (größer als), „(genau)so … wie“ bei Gleichheit.",
@@ -6755,7 +10607,16 @@ const GRAMMAR = [
    "fa": "صفت‌ها و قیدهای آلمانی سه درجه دارند: مثبت (schnell)، برتر (schneller با پسوند er-) و عالی (am schnellsten یا der/die/das schnellste). بسیاری از صفت‌های کوتاه واکه‌شان تغییر می‌کند (Umlaut). برای مقایسه از als («از») و برای برابری از (genau)so … wie استفاده کنید.",
    "uk": "Прикметники й прислівники мають три ступені: звичайний (schnell), вищий (schneller, +er) і найвищий (am schnellsten або der/die/das schnellste). Багато односкладових прикметників з a/o/u отримують умлаут. «als» ставиться при порівнянні (größer als), «(genau)so … wie» – при рівності.",
    "pl": "Przymiotniki i przysłówki mają trzy stopnie: równy (schnell), wyższy (schneller, +er) i najwyższy (am schnellsten albo der/die/das schnellste). Wiele jednosylabowych przymiotników z a/o/u otrzymuje przegłos. „als” występuje przy porównaniu (größer als), „(genau)so … wie” przy równości.",
-   "tr": "Sıfat ve zarfların üç derecesi vardır: olağan (schnell), karşılaştırma (schneller, +er) ve üstünlük (am schnellsten ya da der/die/das schnellste). a/o/u içeren birçok tek heceli sıfat bir Umlaut alır. Karşılaştırmada „als“ kullanılır (größer als), eşitlikte „(genau)so … wie“."
+   "tr": "Sıfat ve zarfların üç derecesi vardır: olağan (schnell), karşılaştırma (schneller, +er) ve üstünlük (am schnellsten ya da der/die/das schnellste). a/o/u içeren birçok tek heceli sıfat bir Umlaut alır. Karşılaştırmada „als“ kullanılır (größer als), eşitlikte „(genau)so … wie“.",
+   "th": "คำคุณศัพท์และคำวิเศษณ์มีสามขั้น คือ ขั้นปกติ (Positiv เช่น schnell) ขั้นกว่า (Komparativ เช่น schneller เติม -er) และขั้นสุด (Superlativ เช่น am schnellsten หรือ der/die/das schnellste) คำคุณศัพท์พยางค์เดียวที่มีสระ a/o/u หลายคำจะเปลี่ยนเป็นเสียง Umlaut ใช้ „als“ ในการเปรียบเทียบ (größer als = ใหญ่กว่า) และใช้ „(genau)so … wie“ เมื่อเท่ากัน",
+   "zh": "形容词和副词有三个级别:原级(schnell)、比较级(schneller,加 -er)和最高级(am schnellsten 或 der/die/das schnellste)。许多带 a/o/u 的单音节形容词会加变元音。表示比较时用“als”(größer als,比……更大),表示同等程度时用“(genau)so … wie”。",
+   "ms": "Kata sifat dan kata keterangan mempunyai tiga darjat: Positif (schnell), Komparatif (schneller, +er) dan Superlatif (am schnellsten atau der/die/das schnellste). Banyak kata sifat sesuku kata dengan a/o/u menerima umlaut. 'als' digunakan untuk perbandingan (größer als – lebih besar daripada), '(genau)so … wie' untuk kesamaan.",
+   "sw": "Vivumishi na vielezi vina viwango vitatu: Positiv (schnell – haraka), Komparativ (schneller, ongeza +er), na Superlativ (am schnellsten au der/die/das schnellste). Vivumishi vingi vyenye silabi moja na irabu a/o/u hupata Umlaut. 'als' hutumika katika ulinganisho (größer als – kubwa kuliko), na '(genau)so … wie' katika usawa.",
+   "hi": "विशेषणों और क्रियाविशेषणों की तीन अवस्थाएँ होती हैं: सामान्य (Positiv – schnell), तुलनात्मक (Komparativ – schneller, +er) और सर्वोत्तम (Superlativ – am schnellsten या der/die/das schnellste)। a/o/u वाले कई एकाक्षरी विशेषणों में उमलाउट आता है। तुलना में 'als' आता है (größer als), समानता में '(genau)so … wie'।",
+   "ur": "صفات اور احوال کے تین درجے ہوتے ہیں: اصلی درجہ (schnell)، تفضیلی درجہ (schneller، +er) اور تفصیلی درجہ (am schnellsten یا der/die/das schnellste)۔ a/o/u والی بہت سی یک حرفی صفات Umlaut لیتی ہیں۔ موازنے میں ”als“ آتا ہے (größer als)، برابری میں ”(genau)so … wie“۔",
+   "ar_eg": "الصفة والظرف عندهم ثلاث درجات: العادية (schnell)، والمقارنة (schneller، بإضافة +er)، والتفضيل (am schnellsten أو der/die/das schnellste). كتير من الصفات المقطع الواحد اللي فيها a/o/u بتاخد Umlaut. «als» بتتستخدم في المقارنة (größer als)، و«(genau)so … wie» في التساوي.",
+   "ar_lb": "الصفات والظروف إلها تلات درجات: الأساسية (Positiv – schnell)، المقارنة (Komparativ – schneller، يعني +er)، والتفضيل (Superlativ – am schnellsten أو der/die/das schnellste). كتير صفات مقطع واحد فيها a/o/u بتاخد Umlaut. „als“ بتنستعمل بالمقارنة (größer als)، و„(genau)so … wie“ بالتساوي.",
+   "ar_sy": "الصفات والظروف إلها تلات درجات: الأصل (schnell)، المقارنة (schneller، بزيادة -er)، والتفضيل (am schnellsten أو der/die/das schnellste). كتير صفات مقطع واحد فيها a/o/u بتاخد تغيير بالحرف الصوتي (Umlaut). „als“ بتنستخدم بالمقارنة (größer als)، و„(genau)so … wie“ بالتساوي."
   },
   "tables": [
    {
@@ -6767,7 +10628,16 @@ const GRAMMAR = [
      "fa": "صرف قاعده‌مند",
      "uk": "Регулярне ступенювання",
      "pl": "Regularne stopniowanie",
-     "tr": "Düzenli derecelendirme"
+     "tr": "Düzenli derecelendirme",
+     "th": "การเปรียบเทียบขั้นปกติ (แบบสม่ำเสมอ)",
+     "zh": "规则变化",
+     "ms": "Peningkatan darjat biasa",
+     "sw": "Ulinganishaji wa kawaida",
+     "hi": "नियमित तुलना (Steigerung)",
+     "ur": "باقاعدہ موازنہ",
+     "ar_eg": "المقارنة المنتظمة",
+     "ar_lb": "المقارنة المنتظمة",
+     "ar_sy": "المقارنة المنتظمة"
     },
     "labelHeader": {
      "de": "",
@@ -6785,7 +10655,16 @@ const GRAMMAR = [
       "fa": "مثبت",
       "uk": "Звичайний",
       "pl": "Stopień równy",
-      "tr": "Olağan (Positiv)"
+      "tr": "Olağan (Positiv)",
+      "th": "ขั้นปกติ (Positiv)",
+      "zh": "原级",
+      "ms": "Positif",
+      "sw": "Positiv",
+      "hi": "सामान्य (Positiv)",
+      "ur": "اصلی درجہ",
+      "ar_eg": "Positiv (الصيغة الأصلية)",
+      "ar_lb": "الأساسية (Positiv)",
+      "ar_sy": "الأصل"
      },
      {
       "de": "Komparativ",
@@ -6795,7 +10674,16 @@ const GRAMMAR = [
       "fa": "برتر",
       "uk": "Вищий",
       "pl": "Stopień wyższy",
-      "tr": "Karşılaştırma (Komparativ)"
+      "tr": "Karşılaştırma (Komparativ)",
+      "th": "ขั้นกว่า (Komparativ)",
+      "zh": "比较级",
+      "ms": "Komparatif",
+      "sw": "Komparativ",
+      "hi": "तुलनात्मक (Komparativ)",
+      "ur": "تفضیلی درجہ",
+      "ar_eg": "Komparativ (صيغة المقارنة)",
+      "ar_lb": "المقارنة (Komparativ)",
+      "ar_sy": "المقارنة"
      },
      {
       "de": "Superlativ",
@@ -6805,7 +10693,16 @@ const GRAMMAR = [
       "fa": "عالی",
       "uk": "Найвищий",
       "pl": "Stopień najwyższy",
-      "tr": "Üstünlük (Superlativ)"
+      "tr": "Üstünlük (Superlativ)",
+      "th": "ขั้นสุด (Superlativ)",
+      "zh": "最高级",
+      "ms": "Superlatif",
+      "sw": "Superlativ",
+      "hi": "सर्वोत्तम (Superlativ)",
+      "ur": "تفصیلی درجہ",
+      "ar_eg": "Superlativ (صيغة التفضيل)",
+      "ar_lb": "التفضيل (Superlativ)",
+      "ar_sy": "التفضيل"
      }
     ],
     "rows": [
@@ -6862,7 +10759,16 @@ const GRAMMAR = [
      "fa": "اوملاوت در صفت‌های تک‌هجایی",
      "uk": "Умлаут в односкладових прикметниках",
      "pl": "Przegłos w przymiotnikach jednosylabowych",
-     "tr": "Tek heceli sıfatlarda Umlaut"
+     "tr": "Tek heceli sıfatlarda Umlaut",
+     "th": "การเปลี่ยนเสียงสระ (Umlaut) ในคำคุณศัพท์พยางค์เดียว",
+     "zh": "单音节形容词的变元音",
+     "ms": "Umlaut pada kata sifat sesuku kata",
+     "sw": "Umlaut katika vivumishi vya silabi moja",
+     "hi": "एकाक्षरी विशेषणों में उमलाउट",
+     "ur": "یک حرفی صفات میں Umlaut",
+     "ar_eg": "الـ Umlaut في الصفات المقطع الواحد",
+     "ar_lb": "الـ Umlaut بالصفات مقطع واحد",
+     "ar_sy": "تغيير الحرف الصوتي (Umlaut) بالصفات مقطع واحد"
     },
     "labelHeader": {
      "de": "",
@@ -6880,7 +10786,16 @@ const GRAMMAR = [
       "fa": "مثبت",
       "uk": "Звичайний",
       "pl": "Stopień równy",
-      "tr": "Olağan (Positiv)"
+      "tr": "Olağan (Positiv)",
+      "th": "ขั้นปกติ (Positiv)",
+      "zh": "原级",
+      "ms": "Positif",
+      "sw": "Positiv",
+      "hi": "सामान्य (Positiv)",
+      "ur": "اصلی درجہ",
+      "ar_eg": "Positiv (الصيغة الأصلية)",
+      "ar_lb": "الأساسية (Positiv)",
+      "ar_sy": "الأصل"
      },
      {
       "de": "Komparativ",
@@ -6890,7 +10805,16 @@ const GRAMMAR = [
       "fa": "برتر",
       "uk": "Вищий",
       "pl": "Stopień wyższy",
-      "tr": "Karşılaştırma (Komparativ)"
+      "tr": "Karşılaştırma (Komparativ)",
+      "th": "ขั้นกว่า (Komparativ)",
+      "zh": "比较级",
+      "ms": "Komparatif",
+      "sw": "Komparativ",
+      "hi": "तुलनात्मक (Komparativ)",
+      "ur": "تفضیلی درجہ",
+      "ar_eg": "Komparativ (صيغة المقارنة)",
+      "ar_lb": "المقارنة (Komparativ)",
+      "ar_sy": "المقارنة"
      },
      {
       "de": "Superlativ",
@@ -6900,7 +10824,16 @@ const GRAMMAR = [
       "fa": "عالی",
       "uk": "Найвищий",
       "pl": "Stopień najwyższy",
-      "tr": "Üstünlük (Superlativ)"
+      "tr": "Üstünlük (Superlativ)",
+      "th": "ขั้นสุด (Superlativ)",
+      "zh": "最高级",
+      "ms": "Superlatif",
+      "sw": "Superlativ",
+      "hi": "सर्वोत्तम (Superlativ)",
+      "ur": "تفصیلی درجہ",
+      "ar_eg": "Superlativ (صيغة التفضيل)",
+      "ar_lb": "التفضيل (Superlativ)",
+      "ar_sy": "التفضيل"
      }
     ],
     "rows": [
@@ -6985,7 +10918,16 @@ const GRAMMAR = [
      "fa": "صورت‌های بی‌قاعده",
      "uk": "Неправильні форми",
      "pl": "Formy nieregularne",
-     "tr": "Düzensiz biçimler"
+     "tr": "Düzensiz biçimler",
+     "th": "รูปแบบไม่ปกติ",
+     "zh": "不规则形式",
+     "ms": "Bentuk tak tetap",
+     "sw": "Maumbo yasiyo ya kawaida",
+     "hi": "अनियमित रूप",
+     "ur": "بے قاعدہ صورتیں",
+     "ar_eg": "الصيغ الشاذة",
+     "ar_lb": "الصيغ الشاذة",
+     "ar_sy": "صيغ غير منتظمة"
     },
     "labelHeader": {
      "de": "",
@@ -7003,7 +10945,16 @@ const GRAMMAR = [
       "fa": "مثبت",
       "uk": "Звичайний",
       "pl": "Stopień równy",
-      "tr": "Olağan (Positiv)"
+      "tr": "Olağan (Positiv)",
+      "th": "ขั้นปกติ (Positiv)",
+      "zh": "原级",
+      "ms": "Positif",
+      "sw": "Positiv",
+      "hi": "सामान्य (Positiv)",
+      "ur": "اصلی درجہ",
+      "ar_eg": "Positiv (الصيغة الأصلية)",
+      "ar_lb": "الأساسية (Positiv)",
+      "ar_sy": "الأصل"
      },
      {
       "de": "Komparativ",
@@ -7013,7 +10964,16 @@ const GRAMMAR = [
       "fa": "برتر",
       "uk": "Вищий",
       "pl": "Stopień wyższy",
-      "tr": "Karşılaştırma (Komparativ)"
+      "tr": "Karşılaştırma (Komparativ)",
+      "th": "ขั้นกว่า (Komparativ)",
+      "zh": "比较级",
+      "ms": "Komparatif",
+      "sw": "Komparativ",
+      "hi": "तुलनात्मक (Komparativ)",
+      "ur": "تفضیلی درجہ",
+      "ar_eg": "Komparativ (صيغة المقارنة)",
+      "ar_lb": "المقارنة (Komparativ)",
+      "ar_sy": "المقارنة"
      },
      {
       "de": "Superlativ",
@@ -7023,7 +10983,16 @@ const GRAMMAR = [
       "fa": "عالی",
       "uk": "Найвищий",
       "pl": "Stopień najwyższy",
-      "tr": "Üstünlük (Superlativ)"
+      "tr": "Üstünlük (Superlativ)",
+      "th": "ขั้นสุด (Superlativ)",
+      "zh": "最高级",
+      "ms": "Superlatif",
+      "sw": "Superlativ",
+      "hi": "सर्वोत्तम (Superlativ)",
+      "ur": "تفصیلی درجہ",
+      "ar_eg": "Superlativ (صيغة التفضيل)",
+      "ar_lb": "التفضيل (Superlativ)",
+      "ar_sy": "التفضيل"
      }
     ],
     "rows": [
@@ -7108,7 +11077,16 @@ const GRAMMAR = [
      "fa": "مقایسه: als و (genau)so … wie",
      "uk": "Порівняння: als і (genau)so … wie",
      "pl": "Porównania: als oraz (genau)so … wie",
-     "tr": "Karşılaştırmalar: als ve (genau)so … wie"
+     "tr": "Karşılaştırmalar: als ve (genau)so … wie",
+     "th": "การเปรียบเทียบ: als และ (genau)so … wie",
+     "zh": "比较句式:als 和 (genau)so … wie",
+     "ms": "Perbandingan: als dan (genau)so … wie",
+     "sw": "Ulinganisho: als na (genau)so … wie",
+     "hi": "तुलना: als और (genau)so … wie",
+     "ur": "موازنہ: als اور (genau)so … wie",
+     "ar_eg": "المقارنات: als و (genau)so … wie",
+     "ar_lb": "المقارنات: als وَ(genau)so … wie",
+     "ar_sy": "المقارنات: als و(genau)so … wie"
     },
     "labelHeader": {
      "de": "Verhältnis",
@@ -7118,7 +11096,16 @@ const GRAMMAR = [
      "fa": "نسبت",
      "uk": "Відношення",
      "pl": "Relacja",
-     "tr": "İlişki"
+     "tr": "İlişki",
+     "th": "ความสัมพันธ์ (การเปรียบเทียบ)",
+     "zh": "关系",
+     "ms": "Hubungan",
+     "sw": "Uhusiano",
+     "hi": "संबंध",
+     "ur": "تعلق",
+     "ar_eg": "العلاقة",
+     "ar_lb": "العلاقة",
+     "ar_sy": "العلاقة"
     },
     "columns": [
      {
@@ -7129,7 +11116,16 @@ const GRAMMAR = [
       "fa": "ساختار",
       "uk": "Структура",
       "pl": "Struktura",
-      "tr": "Yapı"
+      "tr": "Yapı",
+      "th": "โครงสร้าง",
+      "zh": "结构",
+      "ms": "Struktur",
+      "sw": "Muundo",
+      "hi": "संरचना",
+      "ur": "ساخت",
+      "ar_eg": "التركيب",
+      "ar_lb": "التركيب",
+      "ar_sy": "التركيب"
      },
      {
       "de": "Beispiel",
@@ -7139,7 +11135,16 @@ const GRAMMAR = [
       "fa": "مثال",
       "uk": "Приклад",
       "pl": "Przykład",
-      "tr": "Örnek"
+      "tr": "Örnek",
+      "th": "ตัวอย่าง",
+      "zh": "例子",
+      "ms": "Contoh",
+      "sw": "Mfano",
+      "hi": "उदाहरण",
+      "ur": "مثال",
+      "ar_eg": "مثال",
+      "ar_lb": "مثال",
+      "ar_sy": "مثال"
      }
     ],
     "rows": [
@@ -7152,7 +11157,16 @@ const GRAMMAR = [
        "fa": "نابرابری (بیشتر)",
        "uk": "Нерівність (більше)",
        "pl": "Nierówność (więcej)",
-       "tr": "Eşitsizlik (daha çok)"
+       "tr": "Eşitsizlik (daha çok)",
+       "th": "ความไม่เท่ากัน (มากกว่า)",
+       "zh": "不等(更多)",
+       "ms": "Ketidaksamaan (lebih)",
+       "sw": "Kutolingana (zaidi)",
+       "hi": "असमानता (अधिक)",
+       "ur": "عدم مساوات (زیادہ)",
+       "ar_eg": "عدم تساوي (أكتر)",
+       "ar_lb": "عدم تساوي (أكتر)",
+       "ar_sy": "عدم تساوي (أكتر)"
       },
       "cells": [
        "Komparativ + als",
@@ -7168,7 +11182,16 @@ const GRAMMAR = [
        "fa": "برابری",
        "uk": "Рівність",
        "pl": "Równość",
-       "tr": "Eşitlik"
+       "tr": "Eşitlik",
+       "th": "ความเท่ากัน",
+       "zh": "同等",
+       "ms": "Kesamaan",
+       "sw": "Usawa",
+       "hi": "समानता",
+       "ur": "مساوات",
+       "ar_eg": "تساوي",
+       "ar_lb": "تساوي",
+       "ar_sy": "تساوي"
       },
       "cells": [
        "(genau)so + Positiv + wie",
@@ -7184,7 +11207,16 @@ const GRAMMAR = [
        "fa": "نابرابری (کمتر)",
        "uk": "Нерівність (менше)",
        "pl": "Nierówność (mniej)",
-       "tr": "Eşitsizlik (daha az)"
+       "tr": "Eşitsizlik (daha az)",
+       "th": "ความไม่เท่ากัน (น้อยกว่า)",
+       "zh": "不等(更少)",
+       "ms": "Ketidaksamaan (kurang)",
+       "sw": "Kutolingana (kidogo)",
+       "hi": "असमानता (कम)",
+       "ur": "عدم مساوات (کم)",
+       "ar_eg": "عدم تساوي (أقل)",
+       "ar_lb": "عدم تساوي (أقل)",
+       "ar_sy": "عدم تساوي (أقل)"
       },
       "cells": [
        "nicht so + Positiv + wie",
@@ -7203,7 +11235,16 @@ const GRAMMAR = [
     "fa": "قطار سریع‌السیر از اتوبوس سریع‌تر است، اما هواپیما سریع‌ترین است.",
     "uk": "Швидкісний потяг ICE швидший за автобус, але літак – найшвидший.",
     "pl": "ICE jest szybszy niż autobus, ale samolot jest najszybszy.",
-    "tr": "ICE (hızlı tren) otobüsten daha hızlıdır, ama uçak en hızlısıdır."
+    "tr": "ICE (hızlı tren) otobüsten daha hızlıdır, ama uçak en hızlısıdır.",
+    "th": "รถไฟความเร็วสูง ICE เร็วกว่ารถบัส แต่เครื่องบินเร็วที่สุด",
+    "zh": "城际特快列车比公交车快,但飞机是最快的。",
+    "ms": "ICE (kereta api laju) itu lebih laju daripada bas, tetapi kapal terbang itu paling laju.",
+    "sw": "Treni ya ICE ni ya haraka zaidi kuliko basi, lakini ndege ndiyo ya haraka zaidi kuliko zote.",
+    "hi": "ICE ट्रेन बस से तेज़ है, लेकिन हवाई जहाज़ सबसे तेज़ है।",
+    "ur": "تیز رفتار ٹرین بس سے تیز ہے، لیکن ہوائی جہاز سب سے تیز ہے۔",
+    "ar_eg": "قطر الـ ICE أسرع من الأتوبيس، بس الطيارة هي الأسرع.",
+    "ar_lb": "القطار السريع أسرع من الباص، بس الطيارة هيّي الأسرع.",
+    "ar_sy": "قطار الـICE أسرع من الباص، بس الطيارة هي الأسرع."
    },
    {
     "de": "Meine Schwester ist genauso alt wie ich.",
@@ -7213,7 +11254,16 @@ const GRAMMAR = [
     "fa": "خواهرم دقیقاً هم‌سنِ من است.",
     "uk": "Моя сестра така сама на вік, як я.",
     "pl": "Moja siostra jest dokładnie tak samo stara jak ja.",
-    "tr": "Kız kardeşim tam benim kadar yaşında."
+    "tr": "Kız kardeşim tam benim kadar yaşında.",
+    "th": "น้องสาว/พี่สาวของฉันอายุเท่ากับฉันพอดี",
+    "zh": "我姐姐和我年纪一样大。",
+    "ms": "Saudara perempuan saya sebaya dengan saya.",
+    "sw": "Dada yangu ana umri sawa na mimi.",
+    "hi": "मेरी बहन बिल्कुल मेरी ही उम्र की है।",
+    "ur": "میری بہن بالکل میری عمر کی ہے۔",
+    "ar_eg": "أختي في نفس سني بالظبط.",
+    "ar_lb": "إختي بنفس عمري بالضبط.",
+    "ar_sy": "أختي بنفس عمري بالضبط."
    },
    {
     "de": "Das ist der beste Film des Jahres.",
@@ -7223,7 +11273,16 @@ const GRAMMAR = [
     "fa": "این بهترین فیلم سال است.",
     "uk": "Це найкращий фільм року.",
     "pl": "To jest najlepszy film roku.",
-    "tr": "Bu, yılın en iyi filmidir."
+    "tr": "Bu, yılın en iyi filmidir.",
+    "th": "นี่คือภาพยนตร์ที่ดีที่สุดแห่งปี",
+    "zh": "这是今年最好的电影。",
+    "ms": "Itulah filem terbaik tahun ini.",
+    "sw": "Hii ndiyo filamu bora ya mwaka.",
+    "hi": "यह साल की सबसे अच्छी फ़िल्म है।",
+    "ur": "یہ سال کی بہترین فلم ہے۔",
+    "ar_eg": "ده أحسن فيلم في السنة.",
+    "ar_lb": "هيدا أحسن فيلم بالسنة.",
+    "ar_sy": "هاد أحسن فيلم بالسنة."
    }
   ],
   "hints": {
@@ -7234,7 +11293,16 @@ const GRAMMAR = [
    "fa": "آلمانی درست مثل فارسی پسوند می‌گیرد: er- مانند «تر-» (schnell → schneller ≈ سریع‌تر) و am ...-sten مانند «ترین-» (am schnellsten ≈ سریع‌ترین). als آلمانی همان «از» فارسی است (größer als = بزرگ‌تر از). فقط مراقب صفت‌های بی‌قاعده باشید، مثل gut → besser که مانند «خوب → بهتر» فارسی است.",
    "uk": "Односкладові прикметники з a/o/u часто отримують умлаут (alt → älter, groß → größer). Запам'ятай: «als» при нерівності (größer als), «wie» при рівності ((genau)so groß wie).",
    "pl": "Jednosylabowe przymiotniki z a/o/u często otrzymują przegłos (alt → älter, groß → größer). Zapamiętaj: „als” przy nierówności (größer als), „wie” przy równości ((genau)so groß wie).",
-   "tr": "a/o/u içeren tek heceli sıfatlar çoğu zaman bir Umlaut alır (alt → älter, groß → größer). Unutma: eşitsizlikte „als“ (größer als), eşitlikte „wie“ ((genau)so groß wie)."
+   "tr": "a/o/u içeren tek heceli sıfatlar çoğu zaman bir Umlaut alır (alt → älter, groß → größer). Unutma: eşitsizlikte „als“ (größer als), eşitlikte „wie“ ((genau)so groß wie).",
+   "th": "คำคุณศัพท์พยางค์เดียวที่มีสระ a/o/u มักเปลี่ยนเป็นเสียง Umlaut (alt → älter, groß → größer) ข้อควรจำ: ใช้ „als“ เมื่อไม่เท่ากัน (größer als) และใช้ „wie“ เมื่อเท่ากัน ((genau)so groß wie)",
+   "zh": "带 a/o/u 的单音节形容词常常会加变元音(alt → älter,groß → größer)。注意:表示不等时用“als”(größer als,比……更大),表示同等时用“wie”((genau)so groß wie,和……一样大)。",
+   "ms": "Kata sifat sesuku kata dengan a/o/u selalunya menerima umlaut (alt → älter, groß → größer). Ingat: 'als' digunakan untuk ketidaksamaan (größer als), 'wie' untuk kesamaan ((genau)so groß wie).",
+   "sw": "Vivumishi vya silabi moja vyenye a/o/u mara nyingi hupata Umlaut (alt → älter, groß → größer). Kumbuka: 'als' hutumika kwa kutolingana (größer als – kubwa kuliko), 'wie' hutumika kwa usawa ((genau)so groß wie – kubwa sawa na).",
+   "hi": "a/o/u वाले एकाक्षरी विशेषणों में अक्सर उमलाउट आता है (alt → älter, groß → größer)। याद रखें: असमानता में 'als' (größer als), समानता में 'wie' ((genau)so groß wie)।",
+   "ur": "a/o/u والی یک حرفی صفات اکثر Umlaut لیتی ہیں (alt → älter، groß → größer)۔ یاد رکھیں: عدم مساوات میں ”als“ (größer als)، مساوات میں ”wie“ ((genau)so groß wie)۔",
+   "ar_eg": "الصفات المقطع الواحد اللي فيها a/o/u غالبًا بتاخد Umlaut (alt → älter, groß → größer). احفظ: «als» في عدم التساوي (größer als)، و«wie» في التساوي ((genau)so groß wie).",
+   "ar_lb": "الصفات مقطع واحد فيها a/o/u بالغالب بتاخد Umlaut (alt → älter، groß → größer). خدها بالك: „als“ بعدم التساوي (größer als)، و„wie“ بالتساوي ((genau)so groß wie).",
+   "ar_sy": "الصفات مقطع واحد يلي فيها a/o/u بكتير أحيان بتاخد Umlaut (alt → älter, groß → größer). خد بالك: „als“ بعدم التساوي (größer als)، „wie“ بالتساوي ((genau)so groß wie)."
   }
  },
  {
@@ -7248,7 +11316,16 @@ const GRAMMAR = [
    "fa": "ترتیب کلمات (جملهٔ اصلی)",
    "uk": "Порядок слів (головне речення)",
    "pl": "Szyk wyrazów (zdanie główne)",
-   "tr": "Sözcük dizilişi (ana cümle)"
+   "tr": "Sözcük dizilişi (ana cümle)",
+   "th": "การเรียงลำดับคำ (ประโยคหลัก)",
+   "zh": "语序(主句)",
+   "ms": "Susunan Kata (Klausa Utama)",
+   "sw": "Mpangilio wa Maneno (Sentensi Kuu)",
+   "hi": "शब्द क्रम (मुख्य वाक्य)",
+   "ur": "جملے میں الفاظ کی ترتیب (مرکزی جملہ)",
+   "ar_eg": "ترتيب الكلام (الجملة الرئيسية)",
+   "ar_lb": "ترتيب الكلمات (الجملة الرئيسية)",
+   "ar_sy": "ترتيب الكلمات (الجملة الأساسية)"
   },
   "intro": {
    "de": "Im Hauptsatz steht das gebeugte Verb immer an Position 2. Auf Position 1 kann das Subjekt oder ein anderes Element stehen – steht dort etwas anderes, rückt das Subjekt hinter das Verb (Inversion). Das Mittelfeld folgt der Reihenfolge TeKaMoLo (temporal–kausal–modal–lokal). Ja/Nein-Fragen beginnen mit dem Verb, W-Fragen mit dem Fragewort + Verb.",
@@ -7258,7 +11335,16 @@ const GRAMMAR = [
    "fa": "در جملهٔ اصلی، فعلِ صرف‌شده همیشه در جایگاه دوم قرار می‌گیرد. جایگاه اول می‌تواند فاعل یا عنصر دیگری باشد؛ اگر عنصر دیگری باشد، فاعل به بعد از فعل می‌رود (وارونگی). میانهٔ جمله از ترتیب TeKaMoLo پیروی می‌کند (زمان–علت–حالت–مکان). پرسش‌های بله/خیر با فعل آغاز می‌شوند و پرسش‌های پرسش‌واژه‌ای با کلمهٔ پرسشی + فعل.",
    "uk": "У головному реченні відмінюване дієслово завжди стоїть на 2-й позиції. На 1-й позиції може стояти підмет або інший елемент – якщо там щось інше, підмет переходить за дієслово (інверсія). Середнє поле (Mittelfeld) дотримується порядку TeKaMoLo (час–причина–спосіб–місце). Питання так/ні починаються з дієслова, W-питання – з питального слова + дієслово.",
    "pl": "W zdaniu głównym odmieniony czasownik stoi zawsze na pozycji 2. Na pozycji 1 może stać podmiot lub inny element – jeśli stoi tam coś innego, podmiot przesuwa się za czasownik (inwersja). Pole środkowe (Mittelfeld) zachowuje kolejność TeKaMoLo (czas–przyczyna–sposób–miejsce). Pytania rozstrzygające zaczynają się od czasownika, pytania z zaimkiem pytającym (W-Fragen) od słowa pytającego + czasownik.",
-   "tr": "Ana cümlede çekimli fiil her zaman 2. konumda bulunur. 1. konumda özne ya da başka bir öğe yer alabilir – orada başka bir şey varsa özne fiilin arkasına kayar (devrik dizim). Orta alan (Mittelfeld) TeKaMoLo sırasını izler (zaman–sebep–tarz–yer). Evet/Hayır soruları fiille başlar, W-soruları soru sözcüğü + fiille."
+   "tr": "Ana cümlede çekimli fiil her zaman 2. konumda bulunur. 1. konumda özne ya da başka bir öğe yer alabilir – orada başka bir şey varsa özne fiilin arkasına kayar (devrik dizim). Orta alan (Mittelfeld) TeKaMoLo sırasını izler (zaman–sebep–tarz–yer). Evet/Hayır soruları fiille başlar, W-soruları soru sözcüğü + fiille.",
+   "th": "ในประโยคหลัก กริยาที่ผันแล้วจะอยู่ในตำแหน่งที่ 2 เสมอ ตำแหน่งที่ 1 อาจเป็นประธานหรือส่วนอื่นของประโยคก็ได้ — ถ้าเป็นส่วนอื่นที่ไม่ใช่ประธาน ประธานจะเลื่อนไปอยู่หลังกริยาแทน (เรียกว่า Inversion) ส่วนกลางประโยค (Mittelfeld) เรียงตามลำดับ TeKaMoLo (เวลา–เหตุผล–ลักษณะ–สถานที่) คำถามใช่/ไม่ใช่ขึ้นต้นด้วยกริยา ส่วนคำถามแบบ W ขึ้นต้นด้วยคำคำถาม + กริยา",
+   "zh": "在主句中,变位动词始终位于第二位。第一位可以是主语,也可以是其他成分——如果第一位是其他成分,主语就要移到动词后面(倒装)。句中主体部分(中场)遵循 TeKaMoLo 顺序(时间–原因–方式–地点)。是非疑问句以动词开头,特殊疑问句以疑问词加动词开头。",
+   "ms": "Dalam klausa utama, kata kerja yang dikonjugasikan sentiasa berada pada kedudukan ke-2. Pada kedudukan ke-1 boleh terletak subjek atau unsur lain – jika unsur lain yang berada di situ, subjek beralih ke belakang kata kerja (songsangan). Medan tengah ayat mengikut susunan TeKaMoLo (masa–sebab–cara–tempat). Soalan ya/tidak bermula dengan kata kerja, soalan-W bermula dengan kata tanya + kata kerja.",
+   "sw": "Katika sentensi kuu, kitenzi kilichobadilishwa daima huwa nafasi ya 2. Nafasi ya 1 inaweza kubeba kiima au kipengele kingine – iwapo kipengele kingine kiko pale, kiima kinasogea nyuma ya kitenzi (inversion, yaani ubadilishaji wa mpangilio). Sehemu ya kati (Mittelfeld) hufuata mpangilio wa TeKaMoLo (wakati–sababu–jinsi–mahali). Maswali ya ndiyo/hapana huanza na kitenzi, maswali ya W huanza na neno-uliza + kitenzi.",
+   "hi": "मुख्य वाक्य में संयुगित क्रिया हमेशा स्थान 2 पर होती है। स्थान 1 पर कर्ता या कोई अन्य तत्व आ सकता है – अगर वहाँ कुछ और हो, तो कर्ता क्रिया के पीछे चला जाता है (Inversion)। मध्य क्षेत्र TeKaMoLo क्रम का पालन करता है (काल–कारण–रीति–स्थान)। हाँ/नहीं वाले प्रश्न क्रिया से शुरू होते हैं, W-प्रश्न प्रश्नवाचक शब्द + क्रिया से।",
+   "ur": "مرکزی جملے میں گردان شدہ فعل ہمیشہ دوسری جگہ پر ہوتا ہے۔ پہلی جگہ پر فاعل یا کوئی اور جزو آ سکتا ہے — اگر وہاں کچھ اور ہو تو فاعل فعل کے بعد چلا جاتا ہے (Inversion)۔ درمیانی حصہ TeKaMoLo (وقت–وجہ–طریقہ–مقام) کی ترتیب پر چلتا ہے۔ ہاں/نہیں سوالات فعل سے شروع ہوتے ہیں، W-سوالات سوالیہ لفظ + فعل سے۔",
+   "ar_eg": "في الجملة الرئيسية الفعل المتصرّف دايمًا في المكان التاني. المكان الأول ممكن يكون الفاعل أو أي عنصر تاني – لو حط فيه حاجة تانية، الفاعل بيتحرك لورا الفعل (Inversion). النص بيمشي على ترتيب TeKaMoLo (زمن–سبب–طريقة–مكان). الأسئلة اللي جوابها آه/لأ بتبدأ بالفعل، وأسئلة الـ W بتبدأ بأداة السؤال + الفعل.",
+   "ar_lb": "بالجملة الرئيسية، الفعل المصرّف دايمًا بالمكان التاني. بالمكان الأول ممكن يكون الفاعل أو عنصر تاني – وإذا كان في شي تاني بالأول، الفاعل بيروح ورا الفعل (Inversion). النص (Mittelfeld) بيتبع ترتيب TeKaMoLo (زمن–سبب–طريقة–مكان). أسئلة نعم/لأ بتبلش بالفعل، وأسئلة الاستفهام (W-Fragen) بتبلش بأداة السؤال + الفعل.",
+   "ar_sy": "بالجملة الأساسية الفعل المتصرّف دايماً بالمكان التاني. بالمكان الأول ممكن يكون الفاعل أو عنصر تاني – إذا كان في شي تاني بالأول، الفاعل بيتأخر لورا الفعل (انقلاب). المجال الأوسط بيتبع ترتيب TeKaMoLo (زمان–سبب–طريقة–مكان). أسئلة نعم/لأ بتبلش بالفعل، وأسئلة الاستفهام (W-Fragen) بتبلش بأداة الاستفهام + الفعل."
   },
   "tables": [
    {
@@ -7270,7 +11356,16 @@ const GRAMMAR = [
      "fa": "فعل در جایگاه دوم: جایگاه ۱ / فعل / بقیه",
      "uk": "Дієслово на другому місці: позиція 1 / дієслово / решта",
      "pl": "Czasownik na drugim miejscu: pozycja 1 / czasownik / reszta",
-     "tr": "Fiilin ikinci konumu: Konum 1 / Fiil / Geri kalan"
+     "tr": "Fiilin ikinci konumu: Konum 1 / Fiil / Geri kalan",
+     "th": "กฎกริยาอยู่ตำแหน่งที่สอง: ตำแหน่งที่ 1 / กริยา / ส่วนที่เหลือ",
+     "zh": "动词第二位规则:第一位 / 动词 / 其余部分",
+     "ms": "Kedudukan kata kerja ke-2: Kedudukan 1 / Kata kerja / Selebihnya",
+     "sw": "Nafasi ya pili ya kitenzi: Nafasi ya 1 / Kitenzi / Iliyobaki",
+     "hi": "क्रिया-द्वितीय नियम: स्थान 1 / क्रिया / शेष",
+     "ur": "فعل کی دوسری جگہ: جگہ 1 / فعل / باقی جملہ",
+     "ar_eg": "الفعل في المكان التاني: المكان الأول / الفعل / الباقي",
+     "ar_lb": "قاعدة الفعل بالمكان التاني: المكان الأول / الفعل / الباقي",
+     "ar_sy": "الفعل بالمكان التاني: المكان 1 / الفعل / الباقي"
     },
     "labelHeader": {
      "de": "Vorfeld",
@@ -7280,7 +11375,16 @@ const GRAMMAR = [
      "fa": "جایگاه اول",
      "uk": "Переднє поле (Vorfeld)",
      "pl": "Przedpole (Vorfeld)",
-     "tr": "Ön alan (Vorfeld)"
+     "tr": "Ön alan (Vorfeld)",
+     "th": "ตำแหน่งหน้าประโยค (Vorfeld)",
+     "zh": "前场",
+     "ms": "Medan depan",
+     "sw": "Nafasi ya mbele",
+     "hi": "अग्र-क्षेत्र (Vorfeld)",
+     "ur": "پیشگی حصہ (Vorfeld)",
+     "ar_eg": "المكان الأول (Vorfeld)",
+     "ar_lb": "المكان القبلي (Vorfeld)",
+     "ar_sy": "المجال الأمامي"
     },
     "columns": [
      {
@@ -7291,7 +11395,16 @@ const GRAMMAR = [
       "fa": "جایگاه ۱",
       "uk": "Позиція 1",
       "pl": "Pozycja 1",
-      "tr": "Konum 1"
+      "tr": "Konum 1",
+      "th": "ตำแหน่งที่ 1",
+      "zh": "第一位",
+      "ms": "Kedudukan 1",
+      "sw": "Nafasi ya 1",
+      "hi": "स्थान 1",
+      "ur": "جگہ 1",
+      "ar_eg": "المكان الأول",
+      "ar_lb": "المكان الأول",
+      "ar_sy": "المكان 1"
      },
      {
       "de": "Verb (Pos. 2)",
@@ -7301,7 +11414,16 @@ const GRAMMAR = [
       "fa": "فعل (جایگاه ۲)",
       "uk": "Дієслово (поз. 2)",
       "pl": "Czasownik (poz. 2)",
-      "tr": "Fiil (Konum 2)"
+      "tr": "Fiil (Konum 2)",
+      "th": "กริยา (ตำแหน่งที่ 2)",
+      "zh": "动词(第二位)",
+      "ms": "Kata kerja (kedudukan 2)",
+      "sw": "Kitenzi (Nafasi ya 2)",
+      "hi": "क्रिया (स्थान 2)",
+      "ur": "فعل (جگہ 2)",
+      "ar_eg": "الفعل (المكان التاني)",
+      "ar_lb": "الفعل (المكان 2)",
+      "ar_sy": "الفعل (المكان 2)"
      },
      {
       "de": "Rest / Mittelfeld",
@@ -7311,7 +11433,16 @@ const GRAMMAR = [
       "fa": "بقیهٔ جمله",
       "uk": "Решта / середнє поле",
       "pl": "Reszta / pole środkowe",
-      "tr": "Geri kalan / orta alan"
+      "tr": "Geri kalan / orta alan",
+      "th": "ส่วนที่เหลือ / กลางประโยค (Mittelfeld)",
+      "zh": "其余部分/中场",
+      "ms": "Selebihnya / medan tengah",
+      "sw": "Iliyobaki / sehemu ya kati",
+      "hi": "शेष / मध्य-क्षेत्र",
+      "ur": "باقی / درمیانی حصہ",
+      "ar_eg": "الباقي / النص",
+      "ar_lb": "الباقي / النص (Mittelfeld)",
+      "ar_sy": "الباقي / المجال الأوسط"
      }
     ],
     "rows": [
@@ -7324,7 +11455,16 @@ const GRAMMAR = [
        "fa": "فاعل",
        "uk": "Підмет",
        "pl": "Podmiot",
-       "tr": "Özne"
+       "tr": "Özne",
+       "th": "ประธาน (Subjekt)",
+       "zh": "主语",
+       "ms": "Subjek",
+       "sw": "Kiima",
+       "hi": "कर्ता",
+       "ur": "فاعل",
+       "ar_eg": "الفاعل",
+       "ar_lb": "الفاعل (Subjekt)",
+       "ar_sy": "الفاعل"
       },
       "cells": [
        "Ich",
@@ -7341,7 +11481,16 @@ const GRAMMAR = [
        "fa": "زمان",
        "uk": "Час",
        "pl": "Czas",
-       "tr": "Zaman"
+       "tr": "Zaman",
+       "th": "เวลา",
+       "zh": "时间",
+       "ms": "Masa",
+       "sw": "Wakati",
+       "hi": "समय",
+       "ur": "وقت",
+       "ar_eg": "الوقت",
+       "ar_lb": "الوقت",
+       "ar_sy": "الوقت"
       },
       "cells": [
        "Morgen",
@@ -7358,7 +11507,16 @@ const GRAMMAR = [
        "fa": "مکان",
        "uk": "Місце",
        "pl": "Miejsce",
-       "tr": "Yer"
+       "tr": "Yer",
+       "th": "สถานที่",
+       "zh": "地点",
+       "ms": "Tempat",
+       "sw": "Mahali",
+       "hi": "स्थान",
+       "ur": "جگہ",
+       "ar_eg": "المكان",
+       "ar_lb": "المكان",
+       "ar_sy": "المكان"
       },
       "cells": [
        "Nach Berlin",
@@ -7377,7 +11535,16 @@ const GRAMMAR = [
      "fa": "میانهٔ جمله: TeKaMoLo (ترتیب قیدها) – مثلاً Ich fahre …",
      "uk": "Середнє поле: TeKaMoLo (порядок обставин) – напр., Ich fahre …",
      "pl": "Pole środkowe: TeKaMoLo (kolejność okoliczników) – np. Ich fahre …",
-     "tr": "Orta alan: TeKaMoLo (belirteçlerin sırası) – ör. Ich fahre …"
+     "tr": "Orta alan: TeKaMoLo (belirteçlerin sırası) – ör. Ich fahre …",
+     "th": "กลางประโยค (Mittelfeld): ลำดับ TeKaMoLo – เช่น Ich fahre …",
+     "zh": "中场:TeKaMoLo(状语顺序)——例如 Ich fahre……",
+     "ms": "Medan tengah: TeKaMoLo (susunan keterangan) – cth. Ich fahre …",
+     "sw": "Sehemu ya kati: TeKaMoLo (mpangilio wa maelezo) – mfano: Ich fahre … (Ninaenda …)",
+     "hi": "मध्य-क्षेत्र: TeKaMoLo (विवरणों का क्रम) – जैसे Ich fahre …",
+     "ur": "درمیانی حصہ: TeKaMoLo (تفصیلات کی ترتیب) – مثلاً Ich fahre …",
+     "ar_eg": "النص: ترتيب TeKaMoLo – مثلًا Ich fahre …",
+     "ar_lb": "النص (Mittelfeld): TeKaMoLo (ترتيب الظروف) – متلًا Ich fahre …",
+     "ar_sy": "المجال الأوسط: TeKaMoLo (ترتيب المعلومات) – متل: Ich fahre …"
     },
     "labelHeader": {
      "de": "",
@@ -7395,7 +11562,16 @@ const GRAMMAR = [
       "fa": "زمان – کِی؟ (Te)",
       "uk": "Час – коли? (Te)",
       "pl": "Okolicznik czasu – wann? (Te)",
-      "tr": "Zaman – ne zaman? (Te)"
+      "tr": "Zaman – ne zaman? (Te)",
+      "th": "เวลา – เมื่อไร? (Te)",
+      "zh": "时间——什么时候?(Te)",
+      "ms": "Masa – bila? (Te)",
+      "sw": "Wakati – lini? (Te)",
+      "hi": "काल – कब? (Te)",
+      "ur": "وقتی – کب؟ (Te)",
+      "ar_eg": "الزمن – إمتى؟ (Te)",
+      "ar_lb": "زمن – إيمتى؟ (Te)",
+      "ar_sy": "زمان – إيمتى؟ (Te)"
      },
      {
       "de": "Kausal – warum? (Ka)",
@@ -7405,7 +11581,16 @@ const GRAMMAR = [
       "fa": "علت – چرا؟ (Ka)",
       "uk": "Причина – чому? (Ka)",
       "pl": "Przyczyna – warum? (Ka)",
-      "tr": "Sebep – neden? (Ka)"
+      "tr": "Sebep – neden? (Ka)",
+      "th": "เหตุผล – ทำไม? (Ka)",
+      "zh": "原因——为什么?(Ka)",
+      "ms": "Sebab – kenapa? (Ka)",
+      "sw": "Sababu – kwa nini? (Ka)",
+      "hi": "कारण – क्यों? (Ka)",
+      "ur": "وجہ – کیوں؟ (Ka)",
+      "ar_eg": "السبب – ليه؟ (Ka)",
+      "ar_lb": "سبب – ليش؟ (Ka)",
+      "ar_sy": "سبب – ليش؟ (Ka)"
      },
      {
       "de": "Modal – wie? (Mo)",
@@ -7415,7 +11600,16 @@ const GRAMMAR = [
       "fa": "حالت – چگونه؟ (Mo)",
       "uk": "Спосіб – як? (Mo)",
       "pl": "Sposób – wie? (Mo)",
-      "tr": "Tarz – nasıl? (Mo)"
+      "tr": "Tarz – nasıl? (Mo)",
+      "th": "ลักษณะ/วิธีการ – อย่างไร? (Mo)",
+      "zh": "方式——怎样?(Mo)",
+      "ms": "Cara – bagaimana? (Mo)",
+      "sw": "Jinsi – vipi? (Mo)",
+      "hi": "रीति – कैसे? (Mo)",
+      "ur": "طریقہ – کیسے؟ (Mo)",
+      "ar_eg": "الطريقة – إزاي؟ (Mo)",
+      "ar_lb": "طريقة – كيف؟ (Mo)",
+      "ar_sy": "طريقة – كيف؟ (Mo)"
      },
      {
       "de": "Lokal – wo/wohin? (Lo)",
@@ -7425,7 +11619,16 @@ const GRAMMAR = [
       "fa": "مکان – کجا؟ (Lo)",
       "uk": "Місце – де/куди? (Lo)",
       "pl": "Miejsce – wo/wohin? (Lo)",
-      "tr": "Yer – nerede/nereye? (Lo)"
+      "tr": "Yer – nerede/nereye? (Lo)",
+      "th": "สถานที่ – ที่ไหน/ไปไหน? (Lo)",
+      "zh": "地点——在哪儿/去哪儿?(Lo)",
+      "ms": "Tempat – di mana/ke mana? (Lo)",
+      "sw": "Mahali – wapi/kuelekea wapi? (Lo)",
+      "hi": "स्थान – कहाँ/कहाँ को? (Lo)",
+      "ur": "مکانی – کہاں/کہاں کو؟ (Lo)",
+      "ar_eg": "المكان – فين/رايح فين؟ (Lo)",
+      "ar_lb": "مكان – وين/لوين؟ (Lo)",
+      "ar_sy": "مكان – وين/لوين؟ (Lo)"
      }
     ],
     "rows": [
@@ -7455,7 +11658,16 @@ const GRAMMAR = [
      "fa": "پرسش‌ها: بله/خیر و پرسش‌واژه‌ای",
      "uk": "Питання: так/ні та W-питання",
      "pl": "Pytania: rozstrzygające (Ja/Nein) i pytania z W-",
-     "tr": "Sorular: Evet/Hayır ve W-soruları"
+     "tr": "Sorular: Evet/Hayır ve W-soruları",
+     "th": "คำถาม: คำถามใช่/ไม่ใช่ และคำถามแบบ W (W-Fragen)",
+     "zh": "疑问句:是非疑问句与特殊疑问句",
+     "ms": "Soalan: Ya/Tidak dan Soalan-W",
+     "sw": "Maswali: ndiyo/hapana na maswali ya W",
+     "hi": "प्रश्न: हाँ/नहीं और W-प्रश्न",
+     "ur": "سوالات: ہاں/نہیں اور W-سوالات",
+     "ar_eg": "الأسئلة: آه/لأ وأسئلة الـ W",
+     "ar_lb": "الأسئلة: نعم/لأ وأسئلة الاستفهام",
+     "ar_sy": "الأسئلة: نعم/لأ وأسئلة الاستفهام"
     },
     "labelHeader": {
      "de": "Fragetyp",
@@ -7465,7 +11677,16 @@ const GRAMMAR = [
      "fa": "نوع پرسش",
      "uk": "Тип питання",
      "pl": "Typ pytania",
-     "tr": "Soru türü"
+     "tr": "Soru türü",
+     "th": "ประเภทคำถาม",
+     "zh": "疑问句类型",
+     "ms": "Jenis soalan",
+     "sw": "Aina ya swali",
+     "hi": "प्रश्न का प्रकार",
+     "ur": "سوال کی قسم",
+     "ar_eg": "نوع السؤال",
+     "ar_lb": "نوع السؤال",
+     "ar_sy": "نوع السؤال"
     },
     "columns": [
      {
@@ -7476,7 +11697,16 @@ const GRAMMAR = [
       "fa": "ساختار",
       "uk": "Структура",
       "pl": "Struktura",
-      "tr": "Yapı"
+      "tr": "Yapı",
+      "th": "โครงสร้าง",
+      "zh": "结构",
+      "ms": "Struktur",
+      "sw": "Muundo",
+      "hi": "संरचना",
+      "ur": "ساخت",
+      "ar_eg": "التركيب",
+      "ar_lb": "التركيب",
+      "ar_sy": "التركيب"
      },
      {
       "de": "Beispiel",
@@ -7486,7 +11716,16 @@ const GRAMMAR = [
       "fa": "مثال",
       "uk": "Приклад",
       "pl": "Przykład",
-      "tr": "Örnek"
+      "tr": "Örnek",
+      "th": "ตัวอย่าง",
+      "zh": "例子",
+      "ms": "Contoh",
+      "sw": "Mfano",
+      "hi": "उदाहरण",
+      "ur": "مثال",
+      "ar_eg": "مثال",
+      "ar_lb": "مثال",
+      "ar_sy": "مثال"
      }
     ],
     "rows": [
@@ -7499,7 +11738,16 @@ const GRAMMAR = [
        "fa": "پرسش بله/خیر",
        "uk": "Питання так/ні",
        "pl": "Pytanie rozstrzygające (Ja/Nein)",
-       "tr": "Evet/Hayır sorusu"
+       "tr": "Evet/Hayır sorusu",
+       "th": "คำถามใช่/ไม่ใช่",
+       "zh": "是非疑问句",
+       "ms": "Soalan ya/tidak",
+       "sw": "Swali la ndiyo/hapana",
+       "hi": "हाँ/नहीं वाला प्रश्न",
+       "ur": "ہاں/نہیں سوال",
+       "ar_eg": "سؤال آه/لأ",
+       "ar_lb": "سؤال نعم/لأ",
+       "ar_sy": "سؤال نعم/لأ"
       },
       "cells": [
        "Verb + Subjekt …?",
@@ -7515,7 +11763,16 @@ const GRAMMAR = [
        "fa": "پرسش پرسش‌واژه‌ای",
        "uk": "W-питання (з питальним словом)",
        "pl": "Pytanie szczegółowe (W-Frage)",
-       "tr": "W-sorusu"
+       "tr": "W-sorusu",
+       "th": "คำถามแบบ W (ขึ้นต้นด้วยคำถาม)",
+       "zh": "特殊疑问句(W-疑问句)",
+       "ms": "Soalan-W",
+       "sw": "Swali la W (neno-uliza)",
+       "hi": "W-प्रश्न",
+       "ur": "W-سوال",
+       "ar_eg": "سؤال بأداة استفهام (W)",
+       "ar_lb": "سؤال استفهام (W-Frage)",
+       "ar_sy": "سؤال استفهام (W-Frage)"
       },
       "cells": [
        "W-Wort + Verb + Subjekt …?",
@@ -7534,7 +11791,16 @@ const GRAMMAR = [
     "fa": "امشب من به سینما می‌روم.",
     "uk": "Сьогодні ввечері я йду в кіно.",
     "pl": "Dziś wieczorem idę do kina.",
-    "tr": "Bu akşam sinemaya gidiyorum."
+    "tr": "Bu akşam sinemaya gidiyorum.",
+    "th": "เย็นนี้ฉันจะไปดูหนัง",
+    "zh": "今天晚上我要去看电影。",
+    "ms": "Malam ini saya akan pergi ke pawagam.",
+    "sw": "Jioni ya leo nitaenda sinema.",
+    "hi": "आज शाम मैं सिनेमा जा रहा हूँ।",
+    "ur": "آج شام میں سنیما جا رہا ہوں۔",
+    "ar_eg": "النهارده بالليل هروح السينما.",
+    "ar_lb": "الليلة رح روح عالسينما.",
+    "ar_sy": "هالمسا رايح عالسينما."
    },
    {
     "de": "Warum antwortest du nicht?",
@@ -7544,7 +11810,16 @@ const GRAMMAR = [
     "fa": "چرا جواب نمی‌دهی؟",
     "uk": "Чому ти не відповідаєш?",
     "pl": "Dlaczego nie odpowiadasz?",
-    "tr": "Neden cevap vermiyorsun?"
+    "tr": "Neden cevap vermiyorsun?",
+    "th": "ทำไมเธอไม่ตอบ?",
+    "zh": "你为什么不回答?",
+    "ms": "Kenapa awak tidak menjawab?",
+    "sw": "Kwa nini hujibu?",
+    "hi": "तुम जवाब क्यों नहीं देते?",
+    "ur": "تم جواب کیوں نہیں دیتے؟",
+    "ar_eg": "ليه مش بتردّ؟",
+    "ar_lb": "ليش ما عم تجاوب؟",
+    "ar_sy": "ليش ما عم تجاوب؟"
    },
    {
     "de": "Ich fahre heute wegen des Wetters mit dem Bus zur Arbeit.",
@@ -7554,7 +11829,16 @@ const GRAMMAR = [
     "fa": "امروز به‌خاطرِ هوا با اتوبوس به سرِ کار می‌روم.",
     "uk": "Сьогодні через погоду я їду на роботу автобусом.",
     "pl": "Dziś z powodu pogody jadę do pracy autobusem.",
-    "tr": "Bugün hava yüzünden işe otobüsle gidiyorum."
+    "tr": "Bugün hava yüzünden işe otobüsle gidiyorum.",
+    "th": "วันนี้ฉันนั่งรถบัสไปทำงานเพราะสภาพอากาศ",
+    "zh": "由于今天天气的缘故,我坐公交车去上班。",
+    "ms": "Hari ini saya pergi bekerja dengan bas kerana cuaca.",
+    "sw": "Leo ninaenda kazini kwa basi kwa sababu ya hali ya hewa.",
+    "hi": "आज मौसम की वजह से मैं बस से काम पर जा रहा हूँ।",
+    "ur": "آج موسم کی وجہ سے میں بس کے ذریعے کام پر جا رہا ہوں۔",
+    "ar_eg": "النهارده هروح الشغل بالأتوبيس بسبب الجو.",
+    "ar_lb": "اليوم رح روح عالشغل بالباص بسبب الطقس.",
+    "ar_sy": "اليوم، بسبب الطقس، رايح عالشغل بالباص."
    }
   ],
   "hints": {
@@ -7565,7 +11849,16 @@ const GRAMMAR = [
    "fa": "فارسی SOV است و فعل به آخرِ جمله می‌رود؛ اما در جملهٔ اصلیِ آلمانی فعلِ صرف‌شده در جایگاه دوم می‌نشیند (فقط در جملهٔ پیرو، مثلِ فارسی، به آخر می‌رود). برخلافِ «را» در فارسی، آلمانی مفعول را با حالت (Akkusativ) نشان می‌دهد و جای قیدها از TeKaMoLo پیروی می‌کند. 'nicht' برای نفیِ کل جمله در پایان می‌آید و برای نفیِ یک واژه، درست پیش از آن.",
    "uk": "Відмінюване дієслово завжди стоїть на 2-й позиції. Якщо попереду стоїть щось інше, ніж підмет, підмет переходить одразу за дієслово (інверсія). У середньому полі діє TeKaMoLo; «nicht» стоїть безпосередньо перед запереченим словом, а при запереченні всього речення – у кінці, але перед частинами дієслова, як-от дієприкметник чи інфінітив.",
    "pl": "Odmieniony czasownik stoi zawsze na pozycji 2. Jeśli na początku stoi coś innego niż podmiot, podmiot przesuwa się bezpośrednio za czasownik (inwersja). W polu środkowym obowiązuje TeKaMoLo; 'nicht' stoi bezpośrednio przed przeczonym słowem, a przy przeczeniu całego zdania na końcu zdania – ale przed częściami czasownika, takimi jak imiesłów czy bezokolicznik.",
-   "tr": "Çekimli fiil her zaman 2. konumdadır. Başa özneden farklı bir şey gelirse, özne doğrudan fiilin arkasına kayar (devrik dizim). Orta alanda TeKaMoLo geçerlidir; 'nicht' olumsuzlanan sözcüğün hemen önünde bulunur, tüm cümle olumsuzlanıyorsa cümlenin sonunda – ama ortaç ya da mastar gibi fiil parçalarından önce."
+   "tr": "Çekimli fiil her zaman 2. konumdadır. Başa özneden farklı bir şey gelirse, özne doğrudan fiilin arkasına kayar (devrik dizim). Orta alanda TeKaMoLo geçerlidir; 'nicht' olumsuzlanan sözcüğün hemen önünde bulunur, tüm cümle olumsuzlanıyorsa cümlenin sonunda – ama ortaç ya da mastar gibi fiil parçalarından önce.",
+   "th": "กริยาที่ผันแล้วจะอยู่ในตำแหน่งที่ 2 เสมอ ถ้าส่วนหน้าประโยคเป็นสิ่งอื่นที่ไม่ใช่ประธาน ประธานจะเลื่อนไปอยู่หลังกริยาทันที (Inversion) ในกลางประโยคใช้กฎ TeKaMoLo ส่วน 'nicht' จะอยู่หน้าคำที่ถูกปฏิเสธโดยตรง หรืออยู่ท้ายประโยคหากปฏิเสธทั้งประโยค แต่ต้องอยู่หน้าส่วนของกริยาอย่างรูปกริยาช่อง 3 หรือ Infinitiv",
+   "zh": "变位动词始终位于第二位。如果句首出现的不是主语,主语就要紧跟在动词后面(倒装)。中场部分遵循 TeKaMoLo 顺序;“nicht” 直接放在被否定的词前面,如果是整句否定,则放在句末——但要放在分词或不定式等动词成分之前。",
+   "ms": "Kata kerja yang dikonjugasikan sentiasa berada pada kedudukan ke-2. Jika sesuatu selain subjek berada di hadapan, subjek beralih terus ke belakang kata kerja (songsangan). Dalam medan tengah, susunan TeKaMoLo terpakai; 'nicht' terletak betul-betul sebelum perkataan yang dinafikan, atau di hujung ayat bagi penafian seluruh ayat – tetapi sebelum bahagian kata kerja seperti Partizip atau infinitif.",
+   "sw": "Kitenzi kilichobadilishwa daima huwa nafasi ya 2. Iwapo kipengele kisichokuwa kiima kinawekwa mbele, kiima kinasogea moja kwa moja nyuma ya kitenzi (inversion). Katika sehemu ya kati kanuni ya TeKaMoLo inatumika; 'nicht' huwekwa moja kwa moja kabla ya neno linalokanushwa, na katika ukanushaji wa sentensi nzima huwekwa mwishoni mwa sentensi – lakini kabla ya sehemu za kitenzi kama Partizip au Infiniti.",
+   "hi": "संयुगित क्रिया हमेशा स्थान 2 पर होती है। अगर आगे कर्ता के अलावा कुछ और आए, तो कर्ता सीधे क्रिया के पीछे खिसक जाता है (Inversion)। मध्य-क्षेत्र में TeKaMoLo लागू होता है; 'nicht' निषेध किए गए शब्द से ठीक पहले आता है, पूर्ण वाक्य-निषेध में वाक्य के अंत में – लेकिन Partizip या इनफ़िनिटिव जैसे क्रिया-भागों से पहले।",
+   "ur": "گردان شدہ فعل ہمیشہ دوسری جگہ پر ہوتا ہے۔ اگر آگے فاعل کے بجائے کچھ اور ہو تو فاعل فوراً فعل کے بعد چلا جاتا ہے (Inversion)۔ درمیانی حصے میں TeKaMoLo لاگو ہوتا ہے؛ 'nicht' منفی کیے گئے لفظ سے فوراً پہلے آتا ہے، جبکہ مکمل جملے کی نفی میں جملے کے آخر میں — لیکن Partizip یا مصدر جیسے فعل کے اجزاء سے پہلے۔",
+   "ar_eg": "الفعل المتصرّف دايمًا في المكان التاني. لو حاجة تانية غير الفاعل جت الأول، الفاعل بيتحرك على طول ورا الفعل (Inversion). في النص بنمشي على ترتيب TeKaMoLo؛ «nicht» بتيجي قبل الكلمة اللي بتنفيها على طول، أما نفي الجملة كلها فبتيجي آخر الجملة – لكن قبل أجزاء الفعل زي Partizip أو المصدر.",
+   "ar_lb": "الفعل المصرّف دايمًا بالمكان التاني. إذا إجا بالأول شي غير الفاعل، الفاعل بيروح مباشرة ورا الفعل (Inversion). بالنص بتنطبق قاعدة TeKaMoLo؛ 'nicht' بتنحط مباشرة قبل الكلمة يلي عم تُنفى، وبالنفي العام للجملة بآخرها – بس قبل أجزاء الفعل متل الـ Partizip أو المصدر.",
+   "ar_sy": "الفعل المتصرّف دايماً بالمكان التاني. إذا جا بالأول شي غير الفاعل، الفاعل بيتأخر مباشرة لورا الفعل (انقلاب). بالمجال الأوسط قاعدة TeKaMoLo؛ 'nicht' بتيجي مباشرة قبل الكلمة المنفية، وبنفي الجملة كلا بآخر الجملة – بس قبل أجزاء الفعل متل Partizip أو المصدر."
   }
  },
  {
@@ -7579,7 +11872,16 @@ const GRAMMAR = [
    "fa": "جمله‌های پیرو و حروف ربط",
    "uk": "Підрядні речення та сполучники",
    "pl": "Zdania podrzędne i spójniki",
-   "tr": "Yan cümleler ve bağlaçlar"
+   "tr": "Yan cümleler ve bağlaçlar",
+   "th": "อนุประโยคและคำสันธาน (Nebensätze & Konjunktionen)",
+   "zh": "从句与连词",
+   "ms": "Klausa Bawahan & Konjungsi",
+   "sw": "Vishazi Tegemezi na Viunganishi",
+   "hi": "आश्रित उपवाक्य और संयोजक",
+   "ur": "ماتحت جملے اور حروفِ عطف",
+   "ar_eg": "الجمل الفرعية وأدوات الربط",
+   "ar_lb": "الجمل الفرعية وأدوات الربط (Konjunktionen)",
+   "ar_sy": "الجمل الفرعية وأدوات الربط"
   },
   "intro": {
    "de": "In Nebensätzen wandert das konjugierte Verb ans Satzende. Unterordnende Konjunktionen wie weil, dass oder wenn lösen diese Endstellung aus; nebenordnende wie und, aber, denn ändern die Wortstellung nicht. Steht der Nebensatz vorne, folgt gleich nach dem Komma das Verb des Hauptsatzes.",
@@ -7589,7 +11891,16 @@ const GRAMMAR = [
    "fa": "در جملهٔ پیرو، فعلِ صرف‌شده به انتهای جمله می‌رود. حروف ربط وابسته‌ساز (weil، dass، wenn) این جایگاه پایانی را ایجاد می‌کنند، اما حروف ربط هم‌پایه (und، aber، denn) ترتیب کلمات را تغییر نمی‌دهند. اگر جملهٔ پیرو در ابتدا بیاید، فعلِ جملهٔ اصلی بلافاصله پس از ویرگول قرار می‌گیرد.",
    "uk": "У підрядних реченнях відмінюване дієслово переходить у кінець речення. Підрядні сполучники, як-от weil, dass або wenn, спричиняють цю кінцеву позицію; сурядні, як-от und, aber, denn, не змінюють порядок слів. Якщо підрядне речення стоїть попереду, одразу після коми йде дієслово головного речення.",
    "pl": "W zdaniach podrzędnych odmieniony czasownik przesuwa się na koniec zdania. Spójniki podrzędne, takie jak weil, dass czy wenn, wywołują tę końcową pozycję; spójniki współrzędne, takie jak und, aber, denn, nie zmieniają szyku wyrazów. Jeśli zdanie podrzędne stoi na początku, zaraz po przecinku następuje czasownik zdania głównego.",
-   "tr": "Yan cümlelerde çekimli fiil cümlenin sonuna kayar. weil, dass ya da wenn gibi yan cümle bağlaçları bu son konumu tetikler; und, aber, denn gibi sıralama bağlaçları sözcük dizilişini değiştirmez. Yan cümle başta yer alıyorsa, virgülden hemen sonra ana cümlenin fiili gelir."
+   "tr": "Yan cümlelerde çekimli fiil cümlenin sonuna kayar. weil, dass ya da wenn gibi yan cümle bağlaçları bu son konumu tetikler; und, aber, denn gibi sıralama bağlaçları sözcük dizilişini değiştirmez. Yan cümle başta yer alıyorsa, virgülden hemen sonra ana cümlenin fiili gelir.",
+   "th": "ในอนุประโยค กริยาที่ผันแล้วจะย้ายไปอยู่ท้ายประโยค คำสันธานเชื่อมอนุประโยค (unterordnend) เช่น weil, dass หรือ wenn เป็นตัวกระตุ้นให้เกิดการย้ายนี้ ส่วนคำสันธานเชื่อมประโยคเสมอกัน (nebenordnend) เช่น und, aber, denn จะไม่เปลี่ยนลำดับคำ หากอนุประโยคอยู่ข้างหน้า กริยาของประโยคหลักจะตามมาทันทีหลังเครื่องหมายจุลภาค",
+   "zh": "在从句中,变位动词要移到句末。像 weil、dass 或 wenn 这样的从属连词会引发这种动词后置;而像 und、aber、denn 这样的并列连词则不会改变语序。如果从句在前,主句的动词紧跟在逗号后面。",
+   "ms": "Dalam klausa bawahan, kata kerja yang dikonjugasikan beralih ke hujung ayat. Konjungsi subordinatif seperti weil, dass atau wenn mencetuskan kedudukan akhir ini; konjungsi koordinatif seperti und, aber, denn tidak mengubah susunan kata. Jika klausa bawahan berada di hadapan, kata kerja klausa utama terus mengikuti selepas koma.",
+   "sw": "Katika vishazi tegemezi, kitenzi kilichobadilishwa husogea mwishoni mwa sentensi. Viunganishi tegemezi kama weil, dass au wenn ndivyo vinavyosababisha nafasi hii ya mwisho; viunganishi huru kama und, aber, denn havibadilishi mpangilio wa maneno. Iwapo kishazi tegemezi kinakuja kwanza, kitenzi cha sentensi kuu hufuata mara moja baada ya mkato (koma).",
+   "hi": "आश्रित उपवाक्यों में संयुगित क्रिया वाक्य के अंत में चली जाती है। weil, dass या wenn जैसे अधीनतासूचक संयोजक यह अंत-स्थिति उत्पन्न करते हैं; und, aber, denn जैसे समानतासूचक संयोजक शब्द क्रम नहीं बदलते। अगर आश्रित उपवाक्य पहले आए, तो अल्पविराम के तुरंत बाद मुख्य वाक्य की क्रिया आती है।",
+   "ur": "ماتحت جملوں میں گردان شدہ فعل جملے کے آخر میں چلا جاتا ہے۔ weil، dass یا wenn جیسے ماتحت کرنے والے حروفِ عطف یہ اختتامی جگہ پیدا کرتے ہیں؛ und، aber، denn جیسے ہم پلہ حروفِ عطف الفاظ کی ترتیب نہیں بدلتے۔ اگر ماتحت جملہ پہلے آئے تو کوما کے فوراً بعد مرکزی جملے کا فعل آتا ہے۔",
+   "ar_eg": "في الجمل الفرعية الفعل المتصرّف بيمشي لآخر الجملة. أدوات الربط التابعة زي weil أو dass أو wenn هي اللي بتخلي الفعل يروح آخر الجملة؛ أما أدوات الربط المتعادلة زي und, aber, denn فمبتغيّرش ترتيب الكلام. لو الجملة الفرعية جت الأول، بعد الفاصلة على طول بييجي فعل الجملة الرئيسية.",
+   "ar_lb": "بالجمل الفرعية، الفعل المصرّف بيروح على آخر الجملة. أدوات الربط التابعة (unterordnend) متل weil، dass، أو wenn هيّي يلي بتسبب هالموقع الأخير؛ بينما أدوات الربط المتناسقة (nebenordnend) متل und، aber، denn ما بتغيّر ترتيب الكلمات. إذا الجملة الفرعية إجت بالأول، فعل الجملة الرئيسية بيجي فورًا بعد الفاصلة.",
+   "ar_sy": "بالجمل الفرعية الفعل المتصرّف بيروح لآخر الجملة. أدوات الربط التابعة متل weil وdass وwenn هني يلي بيسببوا هالانتقال؛ أدوات الربط المتساوية متل und وaber وdenn ما بتغيّر ترتيب الكلمات. إذا الجملة الفرعية جت بالأول، فعل الجملة الأساسية بيجي مباشرة بعد الفاصلة."
   },
   "tables": [
    {
@@ -7601,7 +11912,16 @@ const GRAMMAR = [
      "fa": "حروف ربط وابسته‌ساز — فعل به انتها می‌رود",
      "uk": "Підрядні сполучники – дієслово в кінець речення",
      "pl": "Spójniki podrzędne – czasownik na koniec zdania",
-     "tr": "Yan cümle bağlaçları – fiil cümlenin sonuna"
+     "tr": "Yan cümle bağlaçları – fiil cümlenin sonuna",
+     "th": "คำสันธานเชื่อมอนุประโยค (unterordnende Konjunktionen) – กริยาไปอยู่ท้ายประโยค",
+     "zh": "从属连词——动词移至句末",
+     "ms": "Konjungsi Subordinatif – Kata Kerja ke Hujung Ayat",
+     "sw": "Viunganishi tegemezi – kitenzi huenda mwishoni",
+     "hi": "अधीनतासूचक संयोजक – क्रिया वाक्य के अंत में",
+     "ur": "ماتحت کرنے والے حروفِ عطف – فعل جملے کے آخر میں",
+     "ar_eg": "أدوات ربط تابعة – الفعل يروح آخر الجملة",
+     "ar_lb": "أدوات الربط التابعة – الفعل عآخر الجملة",
+     "ar_sy": "أدوات ربط تابعة – الفعل بيروح لآخر الجملة"
     },
     "labelHeader": {
      "de": "Bedeutung / Funktion",
@@ -7611,7 +11931,16 @@ const GRAMMAR = [
      "fa": "معنی",
      "uk": "Значення / функція",
      "pl": "Znaczenie / funkcja",
-     "tr": "Anlam / işlev"
+     "tr": "Anlam / işlev",
+     "th": "ความหมาย / หน้าที่",
+     "zh": "含义/功能",
+     "ms": "Makna / Fungsi",
+     "sw": "Maana / kazi",
+     "hi": "अर्थ / कार्य",
+     "ur": "معنی / کام",
+     "ar_eg": "المعنى / الوظيفة",
+     "ar_lb": "المعنى/الوظيفة",
+     "ar_sy": "المعنى / الوظيفة"
     },
     "columns": [
      {
@@ -7622,7 +11951,16 @@ const GRAMMAR = [
       "fa": "حرف ربط",
       "uk": "Сполучник",
       "pl": "Spójnik",
-      "tr": "Bağlaç"
+      "tr": "Bağlaç",
+      "th": "คำสันธาน (Konjunktion)",
+      "zh": "连词",
+      "ms": "Konjungsi",
+      "sw": "Kiunganishi",
+      "hi": "संयोजक",
+      "ur": "حرفِ عطف",
+      "ar_eg": "أداة الربط",
+      "ar_lb": "أداة الربط (Konjunktion)",
+      "ar_sy": "أداة الربط"
      },
      {
       "de": "Beispiel (Verb am Satzende)",
@@ -7632,7 +11970,16 @@ const GRAMMAR = [
       "fa": "مثال (فعل در انتهای جمله)",
       "uk": "Приклад (дієслово в кінці речення)",
       "pl": "Przykład (czasownik na końcu zdania)",
-      "tr": "Örnek (fiil cümlenin sonunda)"
+      "tr": "Örnek (fiil cümlenin sonunda)",
+      "th": "ตัวอย่าง (กริยาอยู่ท้ายประโยค)",
+      "zh": "例子(动词位于句末)",
+      "ms": "Contoh (kata kerja di hujung ayat)",
+      "sw": "Mfano (kitenzi mwishoni mwa sentensi)",
+      "hi": "उदाहरण (क्रिया वाक्य के अंत में)",
+      "ur": "مثال (فعل جملے کے آخر میں)",
+      "ar_eg": "مثال (الفعل آخر الجملة)",
+      "ar_lb": "مثال (الفعل بالآخر)",
+      "ar_sy": "مثال (الفعل بآخر الجملة)"
      }
     ],
     "rows": [
@@ -7645,7 +11992,16 @@ const GRAMMAR = [
        "fa": "چون / زیرا",
        "uk": "причина (чому?)",
        "pl": "przyczyna (warum?)",
-       "tr": "Sebep (neden?)"
+       "tr": "Sebep (neden?)",
+       "th": "เหตุผล (ทำไม?)",
+       "zh": "原因(为什么?)",
+       "ms": "Sebab (kenapa?)",
+       "sw": "sababu (kwa nini?)",
+       "hi": "कारण (क्यों?)",
+       "ur": "وجہ (کیوں؟)",
+       "ar_eg": "السبب (ليه؟)",
+       "ar_lb": "سبب (ليش؟)",
+       "ar_sy": "سبب (ليش؟)"
       },
       "cells": [
        "weil",
@@ -7661,7 +12017,16 @@ const GRAMMAR = [
        "fa": "که",
        "uk": "зміст (що?)",
        "pl": "treść (was?)",
-       "tr": "İçerik (ne?)"
+       "tr": "İçerik (ne?)",
+       "th": "เนื้อหา (อะไร?)",
+       "zh": "内容(什么?)",
+       "ms": "Kandungan (apa?)",
+       "sw": "yaliyomo (nini?)",
+       "hi": "विषय-वस्तु (क्या?)",
+       "ur": "مضمون (کیا؟)",
+       "ar_eg": "المضمون (إيه؟)",
+       "ar_lb": "مضمون (شو؟)",
+       "ar_sy": "مضمون (شو؟)"
       },
       "cells": [
        "dass",
@@ -7677,7 +12042,16 @@ const GRAMMAR = [
        "fa": "اگر / وقتی",
        "uk": "умова / час",
        "pl": "warunek / czas",
-       "tr": "Koşul / zaman"
+       "tr": "Koşul / zaman",
+       "th": "เงื่อนไข / เวลา",
+       "zh": "条件/时间",
+       "ms": "Syarat / masa",
+       "sw": "sharti / wakati",
+       "hi": "शर्त / समय",
+       "ur": "شرط / وقت",
+       "ar_eg": "الشرط / الزمن",
+       "ar_lb": "شرط / زمن",
+       "ar_sy": "شرط / وقت"
       },
       "cells": [
        "wenn",
@@ -7693,7 +12067,16 @@ const GRAMMAR = [
        "fa": "وقتی (رویداد یک‌بارهٔ گذشته)",
        "uk": "одноразова подія в минулому",
        "pl": "jednorazowe zdarzenie w przeszłości",
-       "tr": "geçmişte tek seferlik"
+       "tr": "geçmişte tek seferlik",
+       "th": "เหตุการณ์เดียวในอดีต",
+       "zh": "过去某一次(单次过去事件)",
+       "ms": "sekali sahaja pada masa lampau",
+       "sw": "tukio moja la wakati uliopita",
+       "hi": "भूतकाल में एक बार",
+       "ur": "ماضی میں ایک بار",
+       "ar_eg": "مرة واحدة في الماضي",
+       "ar_lb": "مرة وحدة بالماضي",
+       "ar_sy": "مرة وحدة بالماضي"
       },
       "cells": [
        "als",
@@ -7709,7 +12092,16 @@ const GRAMMAR = [
        "fa": "با اینکه / اگرچه",
        "uk": "протиставлення (хоча)",
        "pl": "przeciwstawienie (chociaż)",
-       "tr": "Karşıtlık"
+       "tr": "Karşıtlık",
+       "th": "ความขัดแย้ง/ตรงข้าม",
+       "zh": "转折",
+       "ms": "Percanggahan",
+       "sw": "upinzani",
+       "hi": "विरोधाभास",
+       "ur": "تضاد",
+       "ar_eg": "التضاد",
+       "ar_lb": "تعارض (رغم إنو)",
+       "ar_sy": "تضاد"
       },
       "cells": [
        "obwohl",
@@ -7725,7 +12117,16 @@ const GRAMMAR = [
        "fa": "برای اینکه (هدف)",
        "uk": "мета (для чого?)",
        "pl": "cel (wozu?)",
-       "tr": "Amaç (ne için?)"
+       "tr": "Amaç (ne için?)",
+       "th": "จุดประสงค์ (เพื่ออะไร?)",
+       "zh": "目的(为了什么?)",
+       "ms": "Tujuan (untuk apa?)",
+       "sw": "kusudi (kwa nini/ili nini?)",
+       "hi": "उद्देश्य (किसलिए?)",
+       "ur": "مقصد (کس لیے؟)",
+       "ar_eg": "الغرض (عشان إيه؟)",
+       "ar_lb": "غاية (لشو؟)",
+       "ar_sy": "غاية (لشو؟)"
       },
       "cells": [
        "damit",
@@ -7741,7 +12142,16 @@ const GRAMMAR = [
        "fa": "در حالی که",
        "uk": "одночасність (поки)",
        "pl": "równocześnie",
-       "tr": "aynı zamanda"
+       "tr": "aynı zamanda",
+       "th": "พร้อมกัน",
+       "zh": "同时",
+       "ms": "serentak",
+       "sw": "wakati mmoja",
+       "hi": "साथ-साथ (एक ही समय)",
+       "ur": "بیک وقت",
+       "ar_eg": "في نفس الوقت",
+       "ar_lb": "بنفس الوقت",
+       "ar_sy": "بنفس الوقت"
       },
       "cells": [
        "während",
@@ -7757,7 +12167,16 @@ const GRAMMAR = [
        "fa": "پیش از اینکه",
        "uk": "раніше (перед тим як)",
        "pl": "wcześniej (przed)",
-       "tr": "önce"
+       "tr": "önce",
+       "th": "ก่อนหน้า",
+       "zh": "之前",
+       "ms": "sebelum itu",
+       "sw": "kabla",
+       "hi": "पहले",
+       "ur": "پہلے",
+       "ar_eg": "قبل كده",
+       "ar_lb": "قبل",
+       "ar_sy": "قبل"
       },
       "cells": [
        "bevor",
@@ -7773,7 +12192,16 @@ const GRAMMAR = [
        "fa": "پس از اینکه",
        "uk": "потім (після того як)",
        "pl": "potem (po)",
-       "tr": "sonra"
+       "tr": "sonra",
+       "th": "หลังจากนั้น",
+       "zh": "之后",
+       "ms": "selepas itu",
+       "sw": "baada",
+       "hi": "बाद में",
+       "ur": "بعد میں",
+       "ar_eg": "بعد كده",
+       "ar_lb": "بعد",
+       "ar_sy": "بعدين"
       },
       "cells": [
        "nachdem",
@@ -7789,7 +12217,16 @@ const GRAMMAR = [
        "fa": "آیا",
        "uk": "непряме питання (чи)",
        "pl": "pytanie zależne (czy)",
-       "tr": "dolaylı soru"
+       "tr": "dolaylı soru",
+       "th": "คำถามทางอ้อม",
+       "zh": "间接疑问",
+       "ms": "soalan tidak langsung",
+       "sw": "swali lisilo la moja kwa moja",
+       "hi": "अप्रत्यक्ष प्रश्न",
+       "ur": "بالواسطہ سوال",
+       "ar_eg": "سؤال غير مباشر",
+       "ar_lb": "سؤال غير مباشر",
+       "ar_sy": "سؤال غير مباشر"
       },
       "cells": [
        "ob",
@@ -7805,7 +12242,16 @@ const GRAMMAR = [
        "fa": "در صورتی که",
        "uk": "на випадок",
        "pl": "warunek (w razie)",
-       "tr": "Koşul"
+       "tr": "Koşul",
+       "th": "เงื่อนไข",
+       "zh": "条件",
+       "ms": "Syarat",
+       "sw": "sharti",
+       "hi": "शर्त",
+       "ur": "شرط",
+       "ar_eg": "الشرط",
+       "ar_lb": "شرط",
+       "ar_sy": "شرط"
       },
       "cells": [
        "falls",
@@ -7821,7 +12267,16 @@ const GRAMMAR = [
        "fa": "از وقتی که",
        "uk": "час від певного моменту",
        "pl": "czas od pewnego momentu",
-       "tr": "Bir noktadan itibaren zaman"
+       "tr": "Bir noktadan itibaren zaman",
+       "th": "ช่วงเวลาตั้งแต่จุดหนึ่ง",
+       "zh": "从某一时间点起",
+       "ms": "masa bermula dari satu titik",
+       "sw": "wakati kuanzia hatua fulani",
+       "hi": "किसी बिंदु से समय (तब से)",
+       "ur": "کسی وقت سے شروع ہونے والا عرصہ",
+       "ar_eg": "الزمن من نقطة معينة",
+       "ar_lb": "من وقت معيّن ومتابع",
+       "ar_sy": "وقت من نقطة معينة"
       },
       "cells": [
        "seitdem",
@@ -7839,7 +12294,16 @@ const GRAMMAR = [
      "fa": "حروف ربط هم‌پایه — ترتیب کلمات تغییر نمی‌کند",
      "uk": "Сурядні сполучники – порядок слів не змінюється",
      "pl": "Spójniki współrzędne – szyk wyrazów pozostaje bez zmian",
-     "tr": "Sıralama bağlaçları – sözcük dizilişi aynı kalır"
+     "tr": "Sıralama bağlaçları – sözcük dizilişi aynı kalır",
+     "th": "คำสันธานเชื่อมประโยคเสมอกัน (nebenordnende Konjunktionen) – ลำดับคำไม่เปลี่ยน",
+     "zh": "并列连词——语序保持不变",
+     "ms": "Konjungsi Koordinatif – Susunan Kata Kekal Sama",
+     "sw": "Viunganishi huru – mpangilio wa maneno haubadiliki",
+     "hi": "समानतासूचक संयोजक – शब्द क्रम वही रहता है",
+     "ur": "ہم پلہ حروفِ عطف – الفاظ کی ترتیب برقرار رہتی ہے",
+     "ar_eg": "أدوات ربط متعادلة – ترتيب الكلام بيفضل زي ما هو",
+     "ar_lb": "أدوات الربط المتناسقة – الترتيب ما بيتغيّر",
+     "ar_sy": "أدوات ربط متساوية – الترتيب بيضل متل ما هوي"
     },
     "labelHeader": {
      "de": "Bedeutung / Funktion",
@@ -7849,7 +12313,16 @@ const GRAMMAR = [
      "fa": "معنی",
      "uk": "Значення / функція",
      "pl": "Znaczenie / funkcja",
-     "tr": "Anlam / işlev"
+     "tr": "Anlam / işlev",
+     "th": "ความหมาย / หน้าที่",
+     "zh": "含义/功能",
+     "ms": "Makna / Fungsi",
+     "sw": "Maana / kazi",
+     "hi": "अर्थ / कार्य",
+     "ur": "معنی / کام",
+     "ar_eg": "المعنى / الوظيفة",
+     "ar_lb": "المعنى/الوظيفة",
+     "ar_sy": "المعنى / الوظيفة"
     },
     "columns": [
      {
@@ -7860,7 +12333,16 @@ const GRAMMAR = [
       "fa": "حرف ربط",
       "uk": "Сполучник",
       "pl": "Spójnik",
-      "tr": "Bağlaç"
+      "tr": "Bağlaç",
+      "th": "คำสันธาน (Konjunktion)",
+      "zh": "连词",
+      "ms": "Konjungsi",
+      "sw": "Kiunganishi",
+      "hi": "संयोजक",
+      "ur": "حرفِ عطف",
+      "ar_eg": "أداة الربط",
+      "ar_lb": "أداة الربط (Konjunktion)",
+      "ar_sy": "أداة الربط"
      },
      {
       "de": "Beispiel (Verb bleibt auf Position 2)",
@@ -7870,7 +12352,16 @@ const GRAMMAR = [
       "fa": "مثال (فعل در جایگاه دوم)",
       "uk": "Приклад (дієслово залишається на 2-й позиції)",
       "pl": "Przykład (czasownik pozostaje na pozycji 2)",
-      "tr": "Örnek (fiil 2. konumda kalır)"
+      "tr": "Örnek (fiil 2. konumda kalır)",
+      "th": "ตัวอย่าง (กริยายังอยู่ตำแหน่งที่ 2)",
+      "zh": "例子(动词保持在第二位)",
+      "ms": "Contoh (kata kerja kekal pada kedudukan ke-2)",
+      "sw": "Mfano (kitenzi kinabaki nafasi ya 2)",
+      "hi": "उदाहरण (क्रिया स्थान 2 पर रहती है)",
+      "ur": "مثال (فعل دوسری جگہ پر رہتا ہے)",
+      "ar_eg": "مثال (الفعل يفضل في المكان التاني)",
+      "ar_lb": "مثال (الفعل بيضل بالمكان 2)",
+      "ar_sy": "مثال (الفعل بيضل بالمكان التاني)"
      }
     ],
     "rows": [
@@ -7883,7 +12374,16 @@ const GRAMMAR = [
        "fa": "و",
        "uk": "додавання (і)",
        "pl": "łączenie (i)",
-       "tr": "Ekleme"
+       "tr": "Ekleme",
+       "th": "การเพิ่มเติม (และ)",
+       "zh": "并列/递加",
+       "ms": "Tambahan",
+       "sw": "nyongeza",
+       "hi": "योग (और)",
+       "ur": "اضافہ",
+       "ar_eg": "الإضافة",
+       "ar_lb": "إضافة (و)",
+       "ar_sy": "إضافة"
       },
       "cells": [
        "und",
@@ -7899,7 +12399,16 @@ const GRAMMAR = [
        "fa": "اما / ولی",
        "uk": "протиставлення (але)",
        "pl": "przeciwstawienie (ale)",
-       "tr": "Karşıtlık"
+       "tr": "Karşıtlık",
+       "th": "ความขัดแย้ง/ตรงข้าม",
+       "zh": "转折",
+       "ms": "Percanggahan",
+       "sw": "upinzani",
+       "hi": "विरोधाभास (लेकिन)",
+       "ur": "تضاد",
+       "ar_eg": "التضاد",
+       "ar_lb": "تعارض (بس)",
+       "ar_sy": "تضاد"
       },
       "cells": [
        "aber",
@@ -7915,7 +12424,16 @@ const GRAMMAR = [
        "fa": "یا",
        "uk": "альтернатива (або)",
        "pl": "alternatywa (lub)",
-       "tr": "Seçenek"
+       "tr": "Seçenek",
+       "th": "ทางเลือก (หรือ)",
+       "zh": "选择",
+       "ms": "Alternatif",
+       "sw": "mbadala",
+       "hi": "विकल्प (या)",
+       "ur": "متبادل",
+       "ar_eg": "البديل",
+       "ar_lb": "بديل (أو)",
+       "ar_sy": "بديل"
       },
       "cells": [
        "oder",
@@ -7931,7 +12449,16 @@ const GRAMMAR = [
        "fa": "چون (= weil)",
        "uk": "причина (= weil)",
        "pl": "przyczyna (= weil)",
-       "tr": "Sebep (= weil)"
+       "tr": "Sebep (= weil)",
+       "th": "เหตุผล (เท่ากับ weil)",
+       "zh": "原因(相当于 weil)",
+       "ms": "Sebab (= weil)",
+       "sw": "sababu (= weil)",
+       "hi": "कारण (= weil)",
+       "ur": "وجہ (= weil)",
+       "ar_eg": "السبب (= weil)",
+       "ar_lb": "سبب (متل weil)",
+       "ar_sy": "سبب (= weil)"
       },
       "cells": [
        "denn",
@@ -7947,7 +12474,16 @@ const GRAMMAR = [
        "fa": "بلکه (پس از نفی)",
        "uk": "протиставлення після заперечення (а навпаки)",
        "pl": "przeciwstawienie po przeczeniu (lecz)",
-       "tr": "Olumsuzluktan sonra karşıtlık"
+       "tr": "Olumsuzluktan sonra karşıtlık",
+       "th": "ความขัดแย้งหลังการปฏิเสธ (แต่กลับเป็น)",
+       "zh": "否定后的转折(而是)",
+       "ms": "Percanggahan selepas penafian",
+       "sw": "upinzani baada ya ukanushaji",
+       "hi": "निषेध के बाद विरोधाभास (बल्कि)",
+       "ur": "نفی کے بعد تضاد",
+       "ar_eg": "التضاد بعد النفي",
+       "ar_lb": "تعارض بعد نفي (إنما)",
+       "ar_sy": "تضاد بعد النفي"
       },
       "cells": [
        "sondern",
@@ -7965,7 +12501,16 @@ const GRAMMAR = [
      "fa": "weil در برابر denn — یک معنی، ترتیب متفاوت",
      "uk": "weil vs. denn – однакове значення, різний порядок слів",
      "pl": "weil vs. denn – to samo znaczenie, inny szyk wyrazów",
-     "tr": "weil - denn – aynı anlam, farklı sözcük dizilişi"
+     "tr": "weil - denn – aynı anlam, farklı sözcük dizilişi",
+     "th": "weil กับ denn – ความหมายเหมือนกัน แต่ลำดับคำต่างกัน",
+     "zh": "weil 与 denn——含义相同,语序不同",
+     "ms": "weil lawan denn – makna sama, susunan kata berbeza",
+     "sw": "weil dhidi ya denn – maana sawa, mpangilio tofauti wa maneno",
+     "hi": "weil बनाम denn – एक ही अर्थ, अलग शब्द क्रम",
+     "ur": "weil بمقابلہ denn – ایک ہی معنی، مختلف ترتیب",
+     "ar_eg": "weil مقابل denn – نفس المعنى، ترتيب كلام مختلف",
+     "ar_lb": "weil مقابل denn – نفس المعنى، ترتيب مختلف",
+     "ar_sy": "weil مقابل denn – نفس المعنى، ترتيب كلمات مختلف"
     },
     "labelHeader": {
      "de": "Konjunktion",
@@ -7975,7 +12520,16 @@ const GRAMMAR = [
      "fa": "حرف ربط",
      "uk": "Сполучник",
      "pl": "Spójnik",
-     "tr": "Bağlaç"
+     "tr": "Bağlaç",
+     "th": "คำสันธาน (Konjunktion)",
+     "zh": "连词",
+     "ms": "Konjungsi",
+     "sw": "Kiunganishi",
+     "hi": "संयोजक",
+     "ur": "حرفِ عطف",
+     "ar_eg": "أداة الربط",
+     "ar_lb": "أداة الربط (Konjunktion)",
+     "ar_sy": "أداة الربط"
     },
     "columns": [
      {
@@ -7986,7 +12540,16 @@ const GRAMMAR = [
       "fa": "نوع جمله",
       "uk": "Тип речення",
       "pl": "Typ zdania",
-      "tr": "Cümle türü"
+      "tr": "Cümle türü",
+      "th": "ประเภทประโยค",
+      "zh": "句子类型",
+      "ms": "Jenis klausa",
+      "sw": "Aina ya sentensi/kishazi",
+      "hi": "वाक्य का प्रकार",
+      "ur": "جملے کی قسم",
+      "ar_eg": "نوع الجملة",
+      "ar_lb": "نوع الجملة",
+      "ar_sy": "نوع الجملة"
      },
      {
       "de": "Wortstellung",
@@ -7996,7 +12559,16 @@ const GRAMMAR = [
       "fa": "ترتیب کلمات",
       "uk": "Порядок слів",
       "pl": "Szyk wyrazów",
-      "tr": "Sözcük dizilişi"
+      "tr": "Sözcük dizilişi",
+      "th": "การเรียงลำดับคำ",
+      "zh": "语序",
+      "ms": "Susunan kata",
+      "sw": "Mpangilio wa maneno",
+      "hi": "शब्द क्रम",
+      "ur": "الفاظ کی ترتیب",
+      "ar_eg": "ترتيب الكلام",
+      "ar_lb": "ترتيب الكلمات",
+      "ar_sy": "ترتيب الكلمات"
      },
      {
       "de": "Beispiel (gleiche Bedeutung)",
@@ -8006,7 +12578,16 @@ const GRAMMAR = [
       "fa": "مثال (هم‌معنی)",
       "uk": "Приклад (однакове значення)",
       "pl": "Przykład (to samo znaczenie)",
-      "tr": "Örnek (aynı anlam)"
+      "tr": "Örnek (aynı anlam)",
+      "th": "ตัวอย่าง (ความหมายเหมือนกัน)",
+      "zh": "例子(含义相同)",
+      "ms": "Contoh (makna sama)",
+      "sw": "Mfano (maana sawa)",
+      "hi": "उदाहरण (एक ही अर्थ)",
+      "ur": "مثال (ایک ہی معنی)",
+      "ar_eg": "مثال (بنفس المعنى)",
+      "ar_lb": "مثال (نفس المعنى)",
+      "ar_sy": "مثال (نفس المعنى)"
      }
     ],
     "rows": [
@@ -8019,7 +12600,16 @@ const GRAMMAR = [
        "fa": "weil",
        "uk": "weil",
        "pl": "weil",
-       "tr": "weil"
+       "tr": "weil",
+       "th": "weil (เพราะว่า)",
+       "zh": "weil",
+       "ms": "weil",
+       "sw": "weil",
+       "hi": "weil",
+       "ur": "weil",
+       "ar_eg": "weil",
+       "ar_lb": "weil",
+       "ar_sy": "weil"
       },
       "cells": [
        "Nebensatz",
@@ -8036,7 +12626,16 @@ const GRAMMAR = [
        "fa": "denn",
        "uk": "denn",
        "pl": "denn",
-       "tr": "denn"
+       "tr": "denn",
+       "th": "denn (เพราะว่า)",
+       "zh": "denn",
+       "ms": "denn",
+       "sw": "denn",
+       "hi": "denn",
+       "ur": "denn",
+       "ar_eg": "denn",
+       "ar_lb": "denn",
+       "ar_sy": "denn"
       },
       "cells": [
        "Hauptsatz",
@@ -8056,7 +12655,16 @@ const GRAMMAR = [
     "fa": "چون مریض هستم، در خانه می‌مانم.",
     "uk": "Оскільки я хворий, я залишаюся вдома.",
     "pl": "Ponieważ jestem chory, zostaję w domu.",
-    "tr": "Hasta olduğum için evde kalıyorum."
+    "tr": "Hasta olduğum için evde kalıyorum.",
+    "th": "เพราะฉันป่วย ฉันเลยอยู่บ้าน",
+    "zh": "因为我生病了,所以我待在家里。",
+    "ms": "Oleh sebab saya sakit, saya tinggal di rumah.",
+    "sw": "Kwa sababu ninaumwa, ninabaki nyumbani.",
+    "hi": "क्योंकि मैं बीमार हूँ, इसलिए मैं घर पर रहता हूँ।",
+    "ur": "چونکہ میں بیمار ہوں، اس لیے میں گھر پر رہتا ہوں۔",
+    "ar_eg": "علشان أنا تعبان، هفضل في البيت.",
+    "ar_lb": "لأنو أنا مريض، رح ضل بالبيت.",
+    "ar_sy": "لأني مريض، رح ضل بالبيت."
    },
    {
     "de": "Obwohl es regnet, gehen wir spazieren.",
@@ -8066,7 +12674,16 @@ const GRAMMAR = [
     "fa": "با اینکه باران می‌بارد، ما به پیاده‌روی می‌رویم.",
     "uk": "Хоча йде дощ, ми йдемо на прогулянку.",
     "pl": "Chociaż pada deszcz, idziemy na spacer.",
-    "tr": "Yağmur yağmasına rağmen yürüyüşe çıkıyoruz."
+    "tr": "Yağmur yağmasına rağmen yürüyüşe çıkıyoruz.",
+    "th": "แม้ว่าฝนจะตก เราก็ยังออกไปเดินเล่น",
+    "zh": "尽管在下雨,我们还是要去散步。",
+    "ms": "Walaupun hujan, kami tetap pergi berjalan-jalan.",
+    "sw": "Ingawa mvua inanyesha, tunaenda kutembea.",
+    "hi": "बारिश हो रही है फिर भी हम टहलने जा रहे हैं।",
+    "ur": "اگرچہ بارش ہو رہی ہے، ہم سیر کو جا رہے ہیں۔",
+    "ar_eg": "رغم إنها بتمطر، إحنا رايحين نتمشى.",
+    "ar_lb": "رغم إنو عم تشتي، رح نطلع نتمشى.",
+    "ar_sy": "بالرغم إنو عم تشتي، رح نطلع نتمشى."
    },
    {
     "de": "Ich rufe dich an, wenn ich ankomme.",
@@ -8076,7 +12693,16 @@ const GRAMMAR = [
     "fa": "وقتی برسم، به تو زنگ می‌زنم.",
     "uk": "Я зателефоную тобі, коли приїду.",
     "pl": "Zadzwonię do ciebie, kiedy przyjadę.",
-    "tr": "Vardığımda seni ararım."
+    "tr": "Vardığımda seni ararım.",
+    "th": "ฉันจะโทรหาเธอตอนที่ฉันมาถึง",
+    "zh": "我到了就给你打电话。",
+    "ms": "Saya akan telefon awak apabila saya sampai.",
+    "sw": "Nitakupigia simu nitakapowasili.",
+    "hi": "जब मैं पहुँचूँगा, तो मैं तुम्हें फ़ोन करूँगा।",
+    "ur": "جب میں پہنچوں گا تو تمہیں فون کروں گا۔",
+    "ar_eg": "هكلمك لما أوصل.",
+    "ar_lb": "رح إتصل فيك لما وصل.",
+    "ar_sy": "رح دقلك لما وصل."
    }
   ],
   "hints": {
@@ -8087,7 +12713,16 @@ const GRAMMAR = [
    "fa": "زبان فارسی خودش SOV است و فعل معمولاً ته جمله می‌آید، پس «چون مریض هستم» برایتان آشناست؛ همین حس را به جملهٔ پیروِ آلمانی منتقل کنید: بعد از weil/dass/wenn فعل به انتها می‌رود (…weil ich krank BIN). فقط حواستان باشد که denn (هم‌معنیِ weil) این کار را نمی‌کند و فعل در جایگاه دوم می‌ماند.",
    "uk": "Запам'ятай: підрядні (weil, dass, wenn, obwohl …) → дієслово в кінець; сурядні (und, aber, oder, denn, sondern) → дієслово залишається на 2-й позиції. Якщо підрядне речення стоїть попереду, одразу після коми йде дієслово головного речення: «Weil ich müde bin, gehe ich schlafen.»",
    "pl": "Zapamiętaj: podrzędne (weil, dass, wenn, obwohl …) → czasownik na koniec; współrzędne (und, aber, oder, denn, sondern) → czasownik pozostaje na pozycji 2. Jeśli zdanie podrzędne stoi na początku, zaraz po przecinku następuje czasownik zdania głównego: „Weil ich müde bin, gehe ich schlafen.”",
-   "tr": "Unutma: yan cümle bağlaçları (weil, dass, wenn, obwohl …) → fiil sona; sıralama bağlaçları (und, aber, oder, denn, sondern) → fiil 2. konumda kalır. Yan cümle başta ise virgülden hemen sonra ana cümlenin fiili gelir: „Weil ich müde bin, gehe ich schlafen.“"
+   "tr": "Unutma: yan cümle bağlaçları (weil, dass, wenn, obwohl …) → fiil sona; sıralama bağlaçları (und, aber, oder, denn, sondern) → fiil 2. konumda kalır. Yan cümle başta ise virgülden hemen sonra ana cümlenin fiili gelir: „Weil ich müde bin, gehe ich schlafen.“",
+   "th": "ข้อควรจำ: คำสันธานเชื่อมอนุประโยค (weil, dass, wenn, obwohl …) → กริยาไปอยู่ท้ายประโยค คำสันธานเชื่อมประโยคเสมอกัน (und, aber, oder, denn, sondern) → กริยายังอยู่ตำแหน่งที่ 2 หากอนุประโยคอยู่ข้างหน้า กริยาของประโยคหลักจะตามมาทันทีหลังเครื่องหมายจุลภาค เช่น „Weil ich müde bin, gehe ich schlafen.“",
+   "zh": "注意:从属连词(weil、dass、wenn、obwohl……)→ 动词移到句末;并列连词(und、aber、oder、denn、sondern)→ 动词保持在第二位。如果从句在前,主句的动词紧跟在逗号后面:“Weil ich müde bin, gehe ich schlafen.”(因为我累了,所以我要去睡觉。)",
+   "ms": "Ingat: subordinatif (weil, dass, wenn, obwohl …) → kata kerja ke hujung ayat; koordinatif (und, aber, oder, denn, sondern) → kata kerja kekal pada kedudukan ke-2. Jika klausa bawahan berada di hadapan, kata kerja klausa utama terus mengikuti selepas koma: 'Weil ich müde bin, gehe ich schlafen.' (Oleh sebab saya letih, saya pergi tidur.)",
+   "sw": "Kumbuka: kiunganishi tegemezi (weil, dass, wenn, obwohl …) → kitenzi huenda mwishoni; kiunganishi huru (und, aber, oder, denn, sondern) → kitenzi kinabaki nafasi ya 2. Iwapo kishazi tegemezi kinakuja kwanza, kitenzi cha sentensi kuu hufuata moja kwa moja baada ya koma: 'Weil ich müde bin, gehe ich schlafen' (Kwa sababu nimechoka, ninaenda kulala).",
+   "hi": "याद रखें: अधीनतासूचक (weil, dass, wenn, obwohl …) → क्रिया अंत में जाती है; समानतासूचक (und, aber, oder, denn, sondern) → क्रिया स्थान 2 पर रहती है। अगर आश्रित उपवाक्य पहले आए, तो अल्पविराम के तुरंत बाद मुख्य वाक्य की क्रिया आती है: 'Weil ich müde bin, gehe ich schlafen.'",
+   "ur": "یاد رکھیں: ماتحت کرنے والے حروفِ عطف (weil، dass، wenn، obwohl …) → فعل آخر میں؛ ہم پلہ حروفِ عطف (und، aber، oder، denn، sondern) → فعل دوسری جگہ پر رہتا ہے۔ اگر ماتحت جملہ پہلے آئے تو کوما کے فوراً بعد مرکزی جملے کا فعل آتا ہے: ”Weil ich müde bin, gehe ich schlafen.“",
+   "ar_eg": "احفظ: أدوات الربط التابعة (weil, dass, wenn, obwohl …) ← الفعل يروح آخر الجملة؛ أدوات الربط المتعادلة (und, aber, oder, denn, sondern) ← الفعل يفضل في المكان التاني. لو الجملة الفرعية جت الأول، بعد الفاصلة على طول بييجي فعل الجملة الرئيسية: «Weil ich müde bin, gehe ich schlafen.»",
+   "ar_lb": "خدها بالك: أدوات الربط التابعة (weil, dass, wenn, obwohl …) → الفعل عآخر الجملة؛ أدوات الربط المتناسقة (und, aber, oder, denn, sondern) → الفعل بيضل بالمكان 2. إذا الجملة الفرعية إجت بالأول، فعل الجملة الرئيسية بيجي مباشرة بعد الفاصلة: „Weil ich müde bin, gehe ich schlafen.“ (لأنو أنا تعبان، رح روح نام).",
+   "ar_sy": "خد بالك: التابعة (weil, dass, wenn, obwohl …) ← الفعل عالآخر؛ المتساوية (und, aber, oder, denn, sondern) ← الفعل بيضل بالمكان التاني. إذا الجملة الفرعية جت بالأول، فعل الجملة الأساسية بيجي مباشرة بعد الفاصلة: „Weil ich müde bin, gehe ich schlafen.“"
   }
  },
  {
@@ -8101,7 +12736,16 @@ const GRAMMAR = [
    "fa": "جمله‌های موصولی",
    "uk": "Відносні речення (Relativsätze)",
    "pl": "Zdania względne",
-   "tr": "İlgi cümleleri (sıfat cümleleri)"
+   "tr": "İlgi cümleleri (sıfat cümleleri)",
+   "th": "อนุประโยคขยายความ (Relativsätze)",
+   "zh": "关系从句",
+   "ms": "Klausa Relatif",
+   "sw": "Vishazi Husishi",
+   "hi": "संबंधवाचक उपवाक्य (Relativsätze)",
+   "ur": "موصولی جملے (Relativsätze)",
+   "ar_eg": "جمل الصلة (Relativsätze)",
+   "ar_lb": "الجمل الوصلية (Relativsätze)",
+   "ar_sy": "الجمل الوصلية (الموصولة)"
   },
   "intro": {
    "de": "Ein Relativsatz beschreibt ein Nomen genauer; das Verb steht am Ende. Das Relativpronomen richtet sich in Genus und Numerus nach dem Bezugsnomen, seinen Kasus bekommt es aber von seiner Rolle im Relativsatz. Der Relativsatz steht zwischen Kommas.",
@@ -8111,7 +12755,16 @@ const GRAMMAR = [
    "fa": "جملهٔ موصولی دربارهٔ یک اسم توضیح بیشتری می‌دهد و فعلِ آن به انتهای جمله می‌رود. ضمیر موصولی از نظر جنس و شمار با اسم مطابقت می‌کند، اما حالت (کاسوس) خود را از نقشی که درون جملهٔ موصولی دارد می‌گیرد. این جمله با ویرگول جدا می‌شود.",
    "uk": "Відносне речення докладніше описує іменник; дієслово стоїть у кінці. Відносний займенник узгоджується з означуваним іменником у роді та числі, а свій відмінок отримує від ролі у відносному реченні. Відносне речення виділяється комами.",
    "pl": "Zdanie względne bliżej opisuje rzeczownik; czasownik stoi na końcu. Zaimek względny zgadza się z rzeczownikiem nadrzędnym co do rodzaju i liczby, ale swój przypadek otrzymuje od swojej roli w zdaniu względnym. Zdanie względne stoi między przecinkami.",
-   "tr": "Bir ilgi cümlesi bir ismi daha ayrıntılı olarak niteler; fiil sonda bulunur. İlgi zamiri, cins ve sayı bakımından ilgili isme uyar, hâlini ise ilgi cümlesindeki rolünden alır. İlgi cümlesi virgüller arasında yer alır."
+   "tr": "Bir ilgi cümlesi bir ismi daha ayrıntılı olarak niteler; fiil sonda bulunur. İlgi zamiri, cins ve sayı bakımından ilgili isme uyar, hâlini ise ilgi cümlesindeki rolünden alır. İlgi cümlesi virgüller arasında yer alır.",
+   "th": "อนุประโยคขยายความ (Relativsatz) ใช้อธิบายคำนามให้ชัดเจนยิ่งขึ้น โดยกริยาจะอยู่ท้ายประโยค สรรพนามเชื่อมประโยค (Relativpronomen) จะมีเพศและพจน์ตามคำนามที่มันขยาย แต่การกของมันขึ้นอยู่กับบทบาทภายในอนุประโยคนั้น อนุประโยคขยายความจะถูกคั่นด้วยเครื่องหมายจุลภาคทั้งสองด้าน",
+   "zh": "关系从句用来更详细地描述某个名词,动词位于从句末尾。关系代词的性和数取决于它所指代的名词,但它的格则取决于它在关系从句中所承担的作用。关系从句要用逗号隔开。",
+   "ms": "Klausa relatif menghuraikan sesuatu kata nama dengan lebih terperinci; kata kerjanya terletak di hujung. Kata ganti nama relatif menyesuaikan diri dengan jantina dan bilangan kata nama yang dirujuknya, tetapi kesnya pula ditentukan oleh peranannya dalam klausa relatif itu. Klausa relatif diapit oleh koma.",
+   "sw": "Kishazi husishi kinaeleza kwa undani zaidi kuhusu nomino; kitenzi huwa mwishoni. Kiwakilishi husishi hufuata jinsia na idadi ya nomino inayorejelewa, lakini kesi yake hutokana na nafasi yake ndani ya kishazi husishi. Kishazi husishi huwekwa kati ya koma mbili.",
+   "hi": "संबंधवाचक उपवाक्य किसी संज्ञा के बारे में अधिक विवरण देता है; इसकी क्रिया अंत में आती है। संबंधवाचक सर्वनाम लिंग और वचन में अपने संदर्भ-संज्ञा से मेल खाता है, लेकिन उसका कारक संबंधवाचक उपवाक्य में उसकी भूमिका से मिलता है। संबंधवाचक उपवाक्य अल्पविरामों के बीच आता है।",
+   "ur": "موصولی جملہ کسی اسم کی مزید وضاحت کرتا ہے؛ فعل آخر میں آتا ہے۔ موصولی ضمیر جنس اور عدد میں متعلقہ اسم کے مطابق ہوتا ہے، لیکن اس کی حالت موصولی جملے میں اس کے کردار سے ملتی ہے۔ موصولی جملہ کوموں کے درمیان آتا ہے۔",
+   "ar_eg": "جملة الصلة بتوضّح تفاصيل أكتر عن اسم؛ والفعل بيروح آخر الجملة. اسم الموصول (الضمير الموصول) بياخد جنسه وعدده من الاسم اللي بيرجع عليه، لكن حالته الإعرابية بتيجي من دوره جوه جملة الصلة. جملة الصلة بتتحط بين فاصلتين.",
+   "ar_lb": "الجملة الوصلية بتوصف الاسم بشكل أدق؛ والفعل بيروح عآخرها. الضمير الوصلي بياخد نوعو وعددو من الاسم يلي عم يوصفو، بس حالتو (Kasus) بياخدها من دورو جوا الجملة الوصلية. الجملة الوصلية بتنحط بين فاصلتين.",
+   "ar_sy": "الجملة الوصلية بتوصف الاسم بتفصيل أكتر؛ الفعل بيجي بآخرها. اسم الموصول بيتبع جنس وعدد الاسم الأصلي، بس حالتو الإعرابية بتجي من دورو جوا الجملة الوصلية. الجملة الوصلية بتنحط بين فاصلتين."
   },
   "tables": [
    {
@@ -8123,7 +12776,16 @@ const GRAMMAR = [
      "fa": "صرف ضمیر موصولی",
      "uk": "Відмінювання відносного займенника",
      "pl": "Odmiana zaimka względnego",
-     "tr": "İlgi zamirinin çekimi"
+     "tr": "İlgi zamirinin çekimi",
+     "th": "การผันสรรพนามเชื่อมประโยค (Relativpronomen)",
+     "zh": "关系代词的变格",
+     "ms": "Deklinasi kata ganti nama relatif",
+     "sw": "Ubadilishaji wa kiwakilishi husishi",
+     "hi": "संबंधवाचक सर्वनाम का रूपांतरण",
+     "ur": "موصولی ضمیر کی گردان",
+     "ar_eg": "تصريف الضمير الموصول",
+     "ar_lb": "تصريف الضمير الوصلي",
+     "ar_sy": "تصريف اسم الموصول"
     },
     "labelHeader": {
      "de": "Kasus",
@@ -8133,7 +12795,16 @@ const GRAMMAR = [
      "fa": "حالت",
      "uk": "Відмінок",
      "pl": "Przypadek",
-     "tr": "Hâl"
+     "tr": "Hâl",
+     "th": "การก (Kasus)",
+     "zh": "格",
+     "ms": "Kes",
+     "sw": "Kesi",
+     "hi": "कारक",
+     "ur": "حالت",
+     "ar_eg": "الحالة الإعرابية",
+     "ar_lb": "الحالة (Kasus)",
+     "ar_sy": "الحالة الإعرابية"
     },
     "columns": [
      {
@@ -8144,7 +12815,16 @@ const GRAMMAR = [
       "fa": "مذکر",
       "uk": "чоловічий",
       "pl": "męski",
-      "tr": "eril"
+      "tr": "eril",
+      "th": "เพศชาย (maskulin)",
+      "zh": "阳性",
+      "ms": "maskulin",
+      "sw": "kiume",
+      "hi": "पुल्लिंग",
+      "ur": "مذکر",
+      "ar_eg": "مذكر",
+      "ar_lb": "مذكر",
+      "ar_sy": "مذكر"
      },
      {
       "de": "feminin",
@@ -8154,7 +12834,16 @@ const GRAMMAR = [
       "fa": "مؤنث",
       "uk": "жіночий",
       "pl": "żeński",
-      "tr": "dişil"
+      "tr": "dişil",
+      "th": "เพศหญิง (feminin)",
+      "zh": "阴性",
+      "ms": "feminin",
+      "sw": "kike",
+      "hi": "स्त्रीलिंग",
+      "ur": "مؤنث",
+      "ar_eg": "مؤنث",
+      "ar_lb": "مؤنث",
+      "ar_sy": "مؤنث"
      },
      {
       "de": "neutral",
@@ -8164,7 +12853,16 @@ const GRAMMAR = [
       "fa": "خنثی",
       "uk": "середній",
       "pl": "nijaki",
-      "tr": "nötr"
+      "tr": "nötr",
+      "th": "เพศกลาง (neutral)",
+      "zh": "中性",
+      "ms": "neutral",
+      "sw": "isiyo na jinsia",
+      "hi": "नपुंसकलिंग",
+      "ur": "غیر جانبدار",
+      "ar_eg": "محايد",
+      "ar_lb": "محايد",
+      "ar_sy": "محايد"
      },
      {
       "de": "Plural",
@@ -8174,7 +12872,16 @@ const GRAMMAR = [
       "fa": "جمع",
       "uk": "множина",
       "pl": "liczba mnoga",
-      "tr": "çoğul"
+      "tr": "çoğul",
+      "th": "พหูพจน์ (Plural)",
+      "zh": "复数",
+      "ms": "Jamak",
+      "sw": "wingi",
+      "hi": "बहुवचन",
+      "ur": "جمع",
+      "ar_eg": "جمع",
+      "ar_lb": "جمع",
+      "ar_sy": "جمع"
      }
     ],
     "rows": [
@@ -8187,7 +12894,16 @@ const GRAMMAR = [
        "fa": "نهادی (Nominativ)",
        "uk": "Nominativ",
        "pl": "Mianownik",
-       "tr": "Nominativ"
+       "tr": "Nominativ",
+       "th": "การกประธาน (Nominativ)",
+       "zh": "Nominativ",
+       "ms": "Nominativ",
+       "sw": "Nominativ",
+       "hi": "Nominativ",
+       "ur": "نامیہ",
+       "ar_eg": "Nominativ",
+       "ar_lb": "Nominativ",
+       "ar_sy": "Nominativ"
       },
       "cells": [
        "der",
@@ -8205,7 +12921,16 @@ const GRAMMAR = [
        "fa": "مفعولی مستقیم (Akkusativ)",
        "uk": "Akkusativ",
        "pl": "Biernik",
-       "tr": "Akkusativ"
+       "tr": "Akkusativ",
+       "th": "กรรมตรง (Akkusativ)",
+       "zh": "Akkusativ",
+       "ms": "Akkusativ",
+       "sw": "Akkusativ",
+       "hi": "Akkusativ",
+       "ur": "مفعولی",
+       "ar_eg": "Akkusativ",
+       "ar_lb": "Akkusativ",
+       "ar_sy": "Akkusativ"
       },
       "cells": [
        "den",
@@ -8223,7 +12948,16 @@ const GRAMMAR = [
        "fa": "مفعولی غیرمستقیم (Dativ)",
        "uk": "Dativ",
        "pl": "Celownik",
-       "tr": "Dativ"
+       "tr": "Dativ",
+       "th": "กรรมรอง (Dativ)",
+       "zh": "Dativ",
+       "ms": "Dativ",
+       "sw": "Dativ",
+       "hi": "Dativ",
+       "ur": "دیتی حالت",
+       "ar_eg": "Dativ",
+       "ar_lb": "Dativ",
+       "ar_sy": "Dativ"
       },
       "cells": [
        "dem",
@@ -8241,7 +12975,16 @@ const GRAMMAR = [
        "fa": "اضافی/ملکی (Genitiv)",
        "uk": "Genitiv",
        "pl": "Dopełniacz",
-       "tr": "Genitiv"
+       "tr": "Genitiv",
+       "th": "การกแสดงความเป็นเจ้าของ (Genitiv)",
+       "zh": "Genitiv",
+       "ms": "Genitiv",
+       "sw": "Genitiv",
+       "hi": "Genitiv",
+       "ur": "اضافتی",
+       "ar_eg": "Genitiv",
+       "ar_lb": "Genitiv",
+       "ar_sy": "Genitiv"
       },
       "cells": [
        "dessen",
@@ -8261,7 +13004,16 @@ const GRAMMAR = [
      "fa": "حرف اضافه + ضمیر موصولی (حرف اضافه حالت را تعیین می‌کند)",
      "uk": "Прийменник + відносний займенник (прийменник визначає відмінок)",
      "pl": "Przyimek + zaimek względny (przyimek określa przypadek)",
-     "tr": "Edat + ilgi zamiri (hâli edat belirler)"
+     "tr": "Edat + ilgi zamiri (hâli edat belirler)",
+     "th": "คำบุพบท + สรรพนามเชื่อมประโยค (คำบุพบทเป็นตัวกำหนดการก)",
+     "zh": "介词 + 关系代词(格由介词决定)",
+     "ms": "Preposisi + kata ganti nama relatif (preposisi menentukan kes)",
+     "sw": "Kihusishi + kiwakilishi husishi (kihusishi ndicho huamua kesi)",
+     "hi": "पूर्वसर्ग + संबंधवाचक सर्वनाम (पूर्वसर्ग ही कारक तय करता है)",
+     "ur": "حرفِ جر + موصولی ضمیر (حرفِ جر حالت طے کرتا ہے)",
+     "ar_eg": "حرف الجر + الضمير الموصول (حرف الجر هو اللي بيحدد الحالة الإعرابية)",
+     "ar_lb": "حرف الجر + الضمير الوصلي (حرف الجر بيحدد الحالة)",
+     "ar_sy": "حرف الجر + اسم الموصول (حرف الجر بيحدد الحالة الإعرابية)"
     },
     "labelHeader": {
      "de": "Präposition (Kasus)",
@@ -8271,7 +13023,16 @@ const GRAMMAR = [
      "fa": "حرف اضافه (حالت)",
      "uk": "Прийменник (відмінок)",
      "pl": "Przyimek (przypadek)",
-     "tr": "Edat (hâl)"
+     "tr": "Edat (hâl)",
+     "th": "คำบุพบท (การก)",
+     "zh": "介词(所需格)",
+     "ms": "Preposisi (kes)",
+     "sw": "Kihusishi (kesi)",
+     "hi": "पूर्वसर्ग (कारक)",
+     "ur": "حرفِ جر (حالت)",
+     "ar_eg": "حرف الجر (الحالة الإعرابية)",
+     "ar_lb": "حرف الجر (الحالة)",
+     "ar_sy": "حرف الجر (الحالة الإعرابية)"
     },
     "columns": [
      {
@@ -8282,7 +13043,16 @@ const GRAMMAR = [
       "fa": "مذکر",
       "uk": "чоловічий",
       "pl": "męski",
-      "tr": "eril"
+      "tr": "eril",
+      "th": "เพศชาย (maskulin)",
+      "zh": "阳性",
+      "ms": "maskulin",
+      "sw": "kiume",
+      "hi": "पुल्लिंग",
+      "ur": "مذکر",
+      "ar_eg": "مذكر",
+      "ar_lb": "مذكر",
+      "ar_sy": "مذكر"
      },
      {
       "de": "feminin",
@@ -8292,7 +13062,16 @@ const GRAMMAR = [
       "fa": "مؤنث",
       "uk": "жіночий",
       "pl": "żeński",
-      "tr": "dişil"
+      "tr": "dişil",
+      "th": "เพศหญิง (feminin)",
+      "zh": "阴性",
+      "ms": "feminin",
+      "sw": "kike",
+      "hi": "स्त्रीलिंग",
+      "ur": "مؤنث",
+      "ar_eg": "مؤنث",
+      "ar_lb": "مؤنث",
+      "ar_sy": "مؤنث"
      },
      {
       "de": "neutral",
@@ -8302,7 +13081,16 @@ const GRAMMAR = [
       "fa": "خنثی",
       "uk": "середній",
       "pl": "nijaki",
-      "tr": "nötr"
+      "tr": "nötr",
+      "th": "เพศกลาง (neutral)",
+      "zh": "中性",
+      "ms": "neutral",
+      "sw": "isiyo na jinsia",
+      "hi": "नपुंसकलिंग",
+      "ur": "غیر جانبدار",
+      "ar_eg": "محايد",
+      "ar_lb": "محايد",
+      "ar_sy": "محايد"
      },
      {
       "de": "Plural",
@@ -8312,7 +13100,16 @@ const GRAMMAR = [
       "fa": "جمع",
       "uk": "множина",
       "pl": "liczba mnoga",
-      "tr": "çoğul"
+      "tr": "çoğul",
+      "th": "พหูพจน์ (Plural)",
+      "zh": "复数",
+      "ms": "Jamak",
+      "sw": "wingi",
+      "hi": "बहुवचन",
+      "ur": "جمع",
+      "ar_eg": "جمع",
+      "ar_lb": "جمع",
+      "ar_sy": "جمع"
      }
     ],
     "rows": [
@@ -8325,7 +13122,16 @@ const GRAMMAR = [
        "fa": "mit — با (Dativ)",
        "uk": "mit (Dativ) — з (Dat.)",
        "pl": "mit — z (celownik)",
-       "tr": "mit — ile (Dativ)"
+       "tr": "mit — ile (Dativ)",
+       "th": "mit (กรรมรอง, Dativ)",
+       "zh": "mit——用/和(第三格)",
+       "ms": "mit (Dativ) – dengan",
+       "sw": "mit – pamoja na (Dativ)",
+       "hi": "mit (Dativ) (के साथ)",
+       "ur": "mit — کے ساتھ (دیتی حالت)",
+       "ar_eg": "mit — مع (Dativ)",
+       "ar_lb": "mit (مع — Dativ)",
+       "ar_sy": "mit — مع (Dativ)"
       },
       "cells": [
        "mit dem",
@@ -8343,7 +13149,16 @@ const GRAMMAR = [
        "fa": "für — برای (Akkusativ)",
        "uk": "für (Akkusativ) — для (Akk.)",
        "pl": "für — dla (biernik)",
-       "tr": "für — için (Akkusativ)"
+       "tr": "für — için (Akkusativ)",
+       "th": "für (กรรมตรง, Akkusativ)",
+       "zh": "für——为了(第四格)",
+       "ms": "für (Akkusativ) – untuk",
+       "sw": "für – kwa ajili ya (Akkusativ)",
+       "hi": "für (Akkusativ) (के लिए)",
+       "ur": "für — کے لیے (مفعولی حالت)",
+       "ar_eg": "für — عشان (Akkusativ)",
+       "ar_lb": "für (لأجل — Akkusativ)",
+       "ar_sy": "für — منشان (Akkusativ)"
       },
       "cells": [
        "für den",
@@ -8364,7 +13179,16 @@ const GRAMMAR = [
     "fa": "مردی که آنجا ایستاده است، معلمِ من است.",
     "uk": "Чоловік, який там стоїть, – мій учитель.",
     "pl": "Mężczyzna, który tam stoi, jest moim nauczycielem.",
-    "tr": "Orada duran adam, benim öğretmenimdir."
+    "tr": "Orada duran adam, benim öğretmenimdir.",
+    "th": "ผู้ชายที่ยืนอยู่ตรงนั้นคือครูของฉัน",
+    "zh": "站在那儿的那个男人是我的老师。",
+    "ms": "Lelaki yang berdiri di sana itu ialah guru saya.",
+    "sw": "Mwanaume anayesimama pale ni mwalimu wangu.",
+    "hi": "वह आदमी, जो वहाँ खड़ा है, मेरा अध्यापक है।",
+    "ur": "وہ آدمی جو وہاں کھڑا ہے، میرا استاد ہے۔",
+    "ar_eg": "الراجل اللي واقف هناك هو مدرّسي.",
+    "ar_lb": "الرجّال يلي واقف هونيك هوي أستاذي.",
+    "ar_sy": "الرجّال يلي واقف هونيك هوي أستاذي."
    },
    {
     "de": "Der Mann, den ich kenne, wohnt in Berlin.",
@@ -8374,7 +13198,16 @@ const GRAMMAR = [
     "fa": "مردی که می‌شناسمش، در برلین زندگی می‌کند.",
     "uk": "Чоловік, якого я знаю, живе в Берліні.",
     "pl": "Mężczyzna, którego znam, mieszka w Berlinie.",
-    "tr": "Tanıdığım adam Berlin'de oturuyor."
+    "tr": "Tanıdığım adam Berlin'de oturuyor.",
+    "th": "ผู้ชายที่ฉันรู้จักอาศัยอยู่ที่เบอร์ลิน",
+    "zh": "我认识的那个男人住在柏林。",
+    "ms": "Lelaki yang saya kenali itu tinggal di Berlin.",
+    "sw": "Mwanaume ninayemfahamu anaishi Berlin.",
+    "hi": "वह आदमी, जिसे मैं जानता हूँ, बर्लिन में रहता है।",
+    "ur": "وہ آدمی جسے میں جانتا ہوں، برلن میں رہتا ہے۔",
+    "ar_eg": "الراجل اللي أنا عارفه ساكن في برلين.",
+    "ar_lb": "الرجّال يلي بعرفو ساكن ببرلين.",
+    "ar_sy": "الرجّال يلي بعرفو ساكن ببرلين."
    },
    {
     "de": "Der Mann, dem ich helfe, ist mein Nachbar.",
@@ -8384,7 +13217,16 @@ const GRAMMAR = [
     "fa": "مردی که به او کمک می‌کنم، همسایهٔ من است.",
     "uk": "Чоловік, якому я допомагаю, – мій сусід.",
     "pl": "Mężczyzna, któremu pomagam, jest moim sąsiadem.",
-    "tr": "Yardım ettiğim adam benim komşumdur."
+    "tr": "Yardım ettiğim adam benim komşumdur.",
+    "th": "ผู้ชายที่ฉันช่วยเหลืออยู่คือเพื่อนบ้านของฉัน",
+    "zh": "我在帮助的那个男人是我的邻居。",
+    "ms": "Lelaki yang saya tolong itu ialah jiran saya.",
+    "sw": "Mwanaume ninayemsaidia ni jirani yangu.",
+    "hi": "वह आदमी, जिसकी मैं मदद करता हूँ, मेरा पड़ोसी है।",
+    "ur": "وہ آدمی جس کی میں مدد کر رہا ہوں، میرا پڑوسی ہے۔",
+    "ar_eg": "الراجل اللي أنا بساعده هو جاري.",
+    "ar_lb": "الرجّال يلي عم ساعدو هوي جاري.",
+    "ar_sy": "الرجّال يلي عم ساعدو هوي جاري."
    },
    {
     "de": "Der Mann, dessen Auto rot ist, ist Arzt.",
@@ -8394,7 +13236,16 @@ const GRAMMAR = [
     "fa": "مردی که ماشینش قرمز است، پزشک است.",
     "uk": "Чоловік, чиє авто червоне, – лікар.",
     "pl": "Mężczyzna, którego samochód jest czerwony, jest lekarzem.",
-    "tr": "Arabası kırmızı olan adam doktordur."
+    "tr": "Arabası kırmızı olan adam doktordur.",
+    "th": "ผู้ชายที่รถของเขาสีแดงเป็นหมอ",
+    "zh": "那位车是红色的男士是一名医生。",
+    "ms": "Lelaki yang keretanya berwarna merah itu ialah seorang doktor.",
+    "sw": "Mwanaume ambaye gari lake ni jekundu ni daktari.",
+    "hi": "वह आदमी, जिसकी कार लाल है, डॉक्टर है।",
+    "ur": "وہ آدمی جس کی گاڑی سرخ ہے، ڈاکٹر ہے۔",
+    "ar_eg": "الراجل اللي عربيته حمرا هو دكتور.",
+    "ar_lb": "الرجّال يلي سيارتو حمرا هوي دكتور.",
+    "ar_sy": "الرجّال يلي سيارتو حمرا هوي دكتور."
    },
    {
     "de": "Die Frau, mit der ich spreche, ist Ärztin.",
@@ -8404,7 +13255,16 @@ const GRAMMAR = [
     "fa": "زنی که با او صحبت می‌کنم، پزشک است.",
     "uk": "Жінка, з якою я розмовляю, – лікарка.",
     "pl": "Kobieta, z którą rozmawiam, jest lekarką.",
-    "tr": "Kendisiyle konuştuğum kadın doktordur."
+    "tr": "Kendisiyle konuştuğum kadın doktordur.",
+    "th": "ผู้หญิงที่ฉันกำลังคุยด้วยเป็นหมอ",
+    "zh": "跟我说话的那位女士是医生。",
+    "ms": "Wanita yang saya bercakap dengannya itu ialah seorang doktor.",
+    "sw": "Mwanamke ninayezungumza naye ni daktari.",
+    "hi": "वह औरत, जिससे मैं बात कर रहा हूँ, डॉक्टर है।",
+    "ur": "وہ عورت جس سے میں بات کر رہا ہوں، ڈاکٹر ہے۔",
+    "ar_eg": "الست اللي أنا بتكلم معاها هي دكتورة.",
+    "ar_lb": "المرا يلي عم إحكي معها هيّي دكتورة.",
+    "ar_sy": "المرا يلي عم احكي معا هي دكتورة."
    }
   ],
   "hints": {
@@ -8415,7 +13275,16 @@ const GRAMMAR = [
    "fa": "در فارسی فقط «که» داریم که تغییر نمی‌کند و اغلب یک ضمیر برگردان (مثل «-ش» در «می‌شناسمش») می‌آید؛ اما در آلمانی ضمیر موصولی خودش صرف می‌شود و ضمیر تکراری نمی‌آید. دو گام: جنس و شمار را از اسم، و حالت را از نقش ضمیر در جملهٔ موصولی بگیرید؛ چون فارسی جنس دستوری ندارد، ستون‌های مذکر/مؤنث/خنثی را باید جدا حفظ کنید. «مالِ او» (اضافه) همیشه dessen (مذکر/خنثی) یا deren (مؤنث/جمع) است.",
    "uk": "Запам'ятай: рід і число походять від означуваного іменника, а відмінок – від функції у відносному реченні. Якщо перед ним стоїть прийменник, він визначає відмінок (mit dem, für den), і дієслово переходить у кінець речення. Genitiv – це завжди dessen/deren, ніколи не sein/ihr.",
    "pl": "Zapamiętaj: rodzaj i liczba pochodzą od rzeczownika nadrzędnego, a przypadek od funkcji w zdaniu względnym. Jeśli stoi przed nim przyimek, to on określa przypadek (mit dem, für den), a czasownik przesuwa się na koniec zdania. Dopełniacz to zawsze dessen/deren – nigdy sein/ihr.",
-   "tr": "Unutma: Cins ve sayı ilgili isimden, hâl ise ilgi cümlesindeki işlevden gelir. Önünde bir edat varsa hâli o belirler (mit dem, für den) ve fiil cümlenin sonuna kayar. Genitiv her zaman dessen/deren'dir – asla sein/ihr değil."
+   "tr": "Unutma: Cins ve sayı ilgili isimden, hâl ise ilgi cümlesindeki işlevden gelir. Önünde bir edat varsa hâli o belirler (mit dem, für den) ve fiil cümlenin sonuna kayar. Genitiv her zaman dessen/deren'dir – asla sein/ihr değil.",
+   "th": "ข้อควรจำ: เพศและพจน์มาจากคำนามที่ถูกขยาย ส่วนการกมาจากบทบาทในอนุประโยค หากมีคำบุพบทอยู่ข้างหน้า คำบุพบทนั้นจะเป็นตัวกำหนดการก (mit dem, für den) และกริยาจะเลื่อนไปอยู่ท้ายประโยค รูป Genitiv จะใช้ dessen/deren เสมอ ไม่ใช่ sein/ihr",
+   "zh": "注意:性和数取决于所指代的名词,格取决于在关系从句中的作用。如果前面有介词,格由介词决定(mit dem、für den),动词则移到句末。属格(Genitiv)始终用 dessen/deren——绝不用 sein/ihr。",
+   "ms": "Ingat: jantina dan bilangan datang daripada kata nama yang dirujuk, manakala kes datang daripada fungsinya dalam klausa relatif. Jika terdapat preposisi sebelumnya, preposisi itu menentukan kesnya (mit dem, für den), dan kata kerja beralih ke hujung ayat. Genitiv sentiasa dessen/deren – tidak pernah sein/ihr.",
+   "sw": "Kumbuka: jinsia na idadi hutokana na nomino inayorejelewa, na kesi hutokana na nafasi ndani ya kishazi husishi. Iwapo kihusishi kinatangulia, ndicho huamua kesi (mit dem, für den), na kitenzi husogea mwishoni mwa sentensi. Genitiv daima ni dessen/deren – kamwe si sein/ihr.",
+   "hi": "याद रखें: लिंग और वचन संदर्भ-संज्ञा से आते हैं, कारक संबंधवाचक उपवाक्य में भूमिका से। अगर पहले कोई पूर्वसर्ग हो, तो वही कारक तय करता है (mit dem, für den), और क्रिया वाक्य के अंत में चली जाती है। Genitiv हमेशा dessen/deren होता है – कभी sein/ihr नहीं।",
+   "ur": "یاد رکھیں: جنس اور عدد متعلقہ اسم سے آتے ہیں، حالت موصولی جملے میں کردار سے۔ اگر پہلے کوئی حرفِ جر ہو تو وہی حالت طے کرتا ہے (mit dem، für den)، اور فعل جملے کے آخر میں چلا جاتا ہے۔ اضافتی حالت ہمیشہ dessen/deren ہوتی ہے — کبھی sein/ihr نہیں۔",
+   "ar_eg": "احفظ: الجنس والعدد بييجوا من الاسم اللي جملة الصلة بترجع عليه، والحالة الإعرابية بتيجي من وظيفته جوه الجملة. لو في حرف جر قبله، هو اللي بيحدد الحالة (mit dem, für den)، والفعل بيروح آخر الجملة. الـ Genitiv دايمًا بيبقى dessen/deren – مش sein/ihr.",
+   "ar_lb": "خدها بالك: النوع والعدد جايين من الاسم يلي عم يوصف، والحالة جايي من دور الضمير جوا الجملة الوصلية. إذا كان في حرف جر قبلو، هوي يلي بيحدد الحالة (mit dem, für den)، والفعل بيروح عآخر الجملة. الـ Genitiv دايمًا dessen/deren – أبدًا مش sein/ihr.",
+   "ar_sy": "خد بالك: الجنس والعدد جايين من الاسم الأصلي، والحالة الإعرابية من دور اسم الموصول جوا الجملة الوصلية. إذا كان في حرف جر قبلو، هوي يلي بيحدد الحالة (mit dem, für den)، والفعل بيتأخر لآخر الجملة. الـGenitiv دايماً dessen/deren – مو sein/ihr."
   }
  }
 ];
