@@ -97,6 +97,21 @@ body {
 #themeToggle:active,
 #resetBtn:active { transform: scale(0.92); }
 
+/* Cards-per-session selector: matched to the level-switch chip aesthetic. */
+#sessionSize {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 5px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+
+#sessionSize.hidden { display: none; }
+
 /* ---- language dropdowns (Ask / Show) ---------------------------------- */
 #langDrops {
   display: flex;

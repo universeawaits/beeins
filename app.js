@@ -4,7 +4,7 @@
   // state to the new key names so returning users keep their progress. Safe
   // to run every load: it never overwrites a value already under the new key.
   try {
-    var _migKeys = ["theme", "level", "titleLangs", "showLangs", "progress"];
+    var _migKeys = ["theme", "level", "titleLangs", "showLangs", "sessionSize"];
     for (var _i = 0; _i < _migKeys.length; _i++) {
       var _old = "swipua_" + _migKeys[_i], _new = "beeins_" + _migKeys[_i];
       var _v = window.localStorage.getItem(_old);
@@ -12,6 +12,11 @@
         window.localStorage.setItem(_new, _v);
       }
     }
+    // Sessions used to persist in localStorage (surviving browser exits). They
+    // now live in sessionStorage so a closed browser starts fresh, while the
+    // learning curve persists separately in localStorage. Drop the stale copy.
+    window.localStorage.removeItem("beeins_progress");
+    window.localStorage.removeItem("swipua_progress");
   } catch (e) {}
 
   var source = (typeof WORDS !== "undefined") ? WORDS : [];
@@ -25,9 +30,87 @@
     try { var v = window.localStorage.getItem("beeins_level"); if (LEVEL_ORDER[v]) return v; } catch (e) {}
     return "B1";
   }
+
+  // ---- session size (how many cards make up one study run) ---------------
+  // A persistent preference (localStorage): a number, or "all" for the whole
+  // level. Changing it starts a fresh session.
+  var SESSION_SIZES = [10, 25, 50, 100];
+  var DEFAULT_SIZE = 25;
+  var REVIEW_SHARE = 0.3; // ~30% of a sized session is already-mastered review
+  var sessionSize = loadSessionSize();
+  function loadSessionSize() {
+    try {
+      var v = window.localStorage.getItem("beeins_sessionSize");
+      if (v === "all") return "all";
+      var n = parseInt(v, 10);
+      if (SESSION_SIZES.indexOf(n) !== -1) return n;
+    } catch (e) {}
+    return DEFAULT_SIZE;
+  }
+  function saveSessionSize() {
+    try { window.localStorage.setItem("beeins_sessionSize", String(sessionSize)); } catch (e) {}
+  }
+
+  // ---- learning curve (persistent per-word mastery) ----------------------
+  // Unlike the session (ephemeral — sessionStorage, see below), what the
+  // learner knows is kept in localStorage so it survives a browser exit. A word
+  // becomes "mastered" after MASTERY_STREAK correct "Know" answers in a row; a
+  // single "Don't know" resets the streak. Keyed by the German word, which is
+  // unique across the corpus, so it survives data updates that reorder arrays.
+  var LEARN_KEY = "beeins_learning";
+  var MASTERY_STREAK = 3;
+  var learning = loadLearning(); // { <germanWord>: { s:streak, k:knowTaps, u:dontTaps } }
+  function loadLearning() {
+    try {
+      var d = JSON.parse(window.localStorage.getItem(LEARN_KEY));
+      if (d && d.v === 1 && d.w && typeof d.w === "object") return d.w;
+    } catch (e) {}
+    return {};
+  }
+  function saveLearning() {
+    try { window.localStorage.setItem(LEARN_KEY, JSON.stringify({ v: 1, w: learning })); } catch (e) {}
+  }
+  // Read-merge-write against the freshest stored copy: the learning curve is
+  // shared across every tab on this origin (localStorage), so folding this
+  // word's update into the latest snapshot keeps a concurrent write from
+  // another tab from being clobbered by this tab's in-memory copy.
+  function recordAnswer(word, isKnown) {
+    var merged = loadLearning();
+    var rec = merged[word] || learning[word] || { s: 0, k: 0, u: 0 };
+    if (isKnown) { rec.k++; rec.s++; } else { rec.u++; rec.s = 0; }
+    merged[word] = rec;
+    learning = merged; // adopt the merged map (also picks up other tabs' words)
+    saveLearning();
+  }
+  function isSeen(word) { return Object.prototype.hasOwnProperty.call(learning, word); }
+  function isMastered(word) { var r = learning[word]; return !!(r && r.s >= MASTERY_STREAK); }
+
   function wordLevel(w) { return LEVEL_ORDER[w.level] ? w.level : "B1"; }
   function inCurrentLevel(w) { return LEVEL_ORDER[wordLevel(w)] <= LEVEL_ORDER[currentLevel]; }
-  function buildDeck() { return shuffle(source.filter(inCurrentLevel)); }
+
+  // Build one session's deck from the words at the current level. Unless the
+  // size is "All", it's a review mix: ~30% already-mastered words (kept fresh),
+  // ~70% weak/new — previously-missed words prioritised over never-seen ones.
+  // If one bucket falls short the other fills in, so the deck reaches its size.
+  function buildDeck() {
+    var pool = source.filter(inCurrentLevel);
+    if (sessionSize === "all" || pool.length === 0) return shuffle(pool.slice());
+
+    var N = Math.min(sessionSize, pool.length);
+    var weak = [], mastered = [];
+    pool.forEach(function (w) { (isMastered(w.word) ? mastered : weak).push(w); });
+
+    var missed = [], fresh = [];
+    weak.forEach(function (w) { (isSeen(w.word) ? missed : fresh).push(w); });
+    var weakOrdered = shuffle(missed).concat(shuffle(fresh));
+    var reviewPool = shuffle(mastered);
+
+    var reviewN = Math.min(Math.round(N * REVIEW_SHARE), reviewPool.length);
+    var weakN = Math.min(N - reviewN, weakOrdered.length);
+    reviewN = Math.min(reviewPool.length, N - weakN); // backfill if weak ran short
+
+    return shuffle(weakOrdered.slice(0, weakN).concat(reviewPool.slice(0, reviewN)));
+  }
 
   // ---- deck state --------------------------------------------------------
   // `deck` is a working queue. A card leaves the deck only when it is marked
@@ -144,6 +227,7 @@
   var elBtnReload = document.getElementById("btnReload");
   var elThemeToggle = document.getElementById("themeToggle");
   var elResetBtn = document.getElementById("resetBtn");
+  var elSessionSize = document.getElementById("sessionSize");
   var elAskPanel = document.getElementById("askPanel");
   var elShowPanel = document.getElementById("showPanel");
   var elAskBtn = document.getElementById("askDropBtn");
@@ -189,6 +273,46 @@
       "ar_eg": "كروت",
       "ar_lb": "بطاقات",
       "ar_sy": "كروت"
+    },
+    sessionTip: {
+      "de": "Karten pro Sitzung",
+      "en": "Cards per session",
+      "ru": "Карточек за сессию",
+      "vi": "Số thẻ mỗi phiên",
+      "fa": "کارت در هر جلسه",
+      "uk": "Карток за сесію",
+      "th": "การ์ดต่อรอบ",
+      "zh": "每轮学习卡片数",
+      "ms": "Kad setiap sesi",
+      "tr": "Oturum başına kart",
+      "pl": "Kart na sesję",
+      "sw": "Kadi kwa kila kipindi",
+      "am": "በአንድ ክፍለ ጊዜ ካርዶች",
+      "hi": "प्रति सत्र कार्ड",
+      "ur": "فی سیشن کارڈز",
+      "ar_eg": "كروت في الجلسة",
+      "ar_lb": "بطاقات بالجلسة",
+      "ar_sy": "كروت بالجلسة"
+    },
+    sessionAll: {
+      "de": "Alle",
+      "en": "All",
+      "ru": "Все",
+      "vi": "Tất cả",
+      "fa": "همه",
+      "uk": "Усі",
+      "th": "ทั้งหมด",
+      "zh": "全部",
+      "ms": "Semua",
+      "tr": "Tümü",
+      "pl": "Wszystkie",
+      "sw": "Zote",
+      "am": "ሁሉም",
+      "hi": "सभी",
+      "ur": "تمام",
+      "ar_eg": "الكل",
+      "ar_lb": "الكل",
+      "ar_sy": "الكل"
     },
     grammar: {
       "de": "Grammatik",
@@ -683,13 +807,15 @@
     try { window.localStorage.setItem(storageKeyFor(name), JSON.stringify(setForName(name))); } catch (e) {}
   }
 
-  // ---- session persistence ----------------------------------------------
-  // The whole session (which cards are learned / still queued, the history,
-  // and the live card + its reveal state) is mirrored to localStorage so a
-  // learner who closes the tab picks up exactly where they left off. Cards are
-  // stored by their German word, which is unique across the corpus, so the
-  // save survives data updates that shuffle array positions.
-  var PROG_KEY = "beeins_progress";
+  // ---- session persistence (ephemeral) -----------------------------------
+  // The live session (which cards are still queued, the history, and the live
+  // card + its reveal state) is mirrored to sessionStorage. That survives a
+  // page reload but is wiped when the browser/tab closes, so a closed browser
+  // starts a brand-new session. The long-term learning curve lives separately
+  // in localStorage (see above) and is NOT touched here. Cards are stored by
+  // their German word, which is unique across the corpus, so the save survives
+  // data updates that shuffle array positions.
+  var SESSION_KEY = "beeins_session";
   var byWord = {};
   source.forEach(function (w) { byWord[w.word] = w; });
 
@@ -705,17 +831,17 @@
         seen: seen.map(function (s) { return [s.word.word, s.frontKey]; }),
         cur: { front: currentFrontKey, revealed: revealed, peek: peekPos }
       };
-      window.localStorage.setItem(PROG_KEY, JSON.stringify(data));
+      window.sessionStorage.setItem(SESSION_KEY, JSON.stringify(data));
     } catch (e) {}
   }
 
   function clearProgress() {
-    try { window.localStorage.removeItem(PROG_KEY); } catch (e) {}
+    try { window.sessionStorage.removeItem(SESSION_KEY); } catch (e) {}
   }
 
   function loadProgress() {
     try {
-      var raw = window.localStorage.getItem(PROG_KEY);
+      var raw = window.sessionStorage.getItem(SESSION_KEY);
       if (!raw) return null;
       var d = JSON.parse(raw);
       if (!d || d.v !== 1 || !LEVEL_ORDER[d.level]) return null;
@@ -891,6 +1017,7 @@
 
     var w = deck.shift();
     seen.push({ word: w, frontKey: currentFrontKey });
+    recordAnswer(w.word, isKnown); // update the persistent learning curve
 
     if (isKnown) {
       knownCount++;
@@ -1003,6 +1130,13 @@
     if (elStatsTitle) elStatsTitle.textContent = tr(UISTR.done, k);
     if (elBtnReload) elBtnReload.textContent = tr(UISTR.reload, k);
     if (elResetBtn) elResetBtn.setAttribute("title", tr(UISTR.resetTip, k));
+    if (elSessionSize) {
+      var sTip = tr(UISTR.sessionTip, k);
+      elSessionSize.setAttribute("title", sTip);
+      elSessionSize.setAttribute("aria-label", sTip);
+      var allOpt = elSessionSize.querySelector('option[value="all"]');
+      if (allOpt) allOpt.textContent = tr(UISTR.sessionAll, k);
+    }
     // The dropdown option lists carry names in the interface language, so
     // rebuild them whenever that language changes.
     renderPanel("title");
@@ -1217,6 +1351,7 @@
     // right, pinning it to the far edge.
     elProgress.classList.toggle("hidden", grammar);
     elResetBtn.classList.toggle("hidden", grammar);
+    if (elSessionSize) elSessionSize.classList.toggle("hidden", grammar);
     if (grammar) renderGrammar();
   }
 
@@ -1399,10 +1534,33 @@
   elResetBtn.addEventListener("click", confirmReset);
   elBtnReload.addEventListener("click", confirmReset);
 
+  // Cards-per-session selector. Changing it saves the preference and starts a
+  // fresh session (like switching level); the learning curve is left intact.
+  function setSessionSize(v) {
+    var nv = v === "all" ? "all" : parseInt(v, 10);
+    if (nv !== "all" && SESSION_SIZES.indexOf(nv) === -1) nv = DEFAULT_SIZE;
+    if (nv === sessionSize) return;
+    sessionSize = nv;
+    saveSessionSize();
+    resetSession();
+  }
+  function initSessionSize() {
+    if (!elSessionSize) return;
+    elSessionSize.value = String(sessionSize);
+    elSessionSize.addEventListener("change", function () { setSessionSize(elSessionSize.value); });
+  }
+
   // Backstop saves for when a render endpoint didn't fire (tab hidden/closed).
   window.addEventListener("pagehide", saveProgress);
   document.addEventListener("visibilitychange", function () {
     if (document.visibilityState === "hidden") saveProgress();
+  });
+
+  // Another tab on this origin writes the shared learning curve to localStorage;
+  // adopt its update so our in-memory copy (which composes the next session)
+  // stays current. The live session is per-tab (sessionStorage) and not shared.
+  window.addEventListener("storage", function (e) {
+    if (e.key === null || e.key === LEARN_KEY) learning = loadLearning();
   });
 
   // ---- theme (light = VS Code "Quiet Light", dark = default) -------------
@@ -1527,6 +1685,7 @@
   // ---- boot --------------------------------------------------------------
   initLangDrops();
   initTheme();
+  initSessionSize();
 
   // Restore a saved session if there is one; otherwise the fresh deck built at
   // the top stands.
