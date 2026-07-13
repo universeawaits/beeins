@@ -1,4 +1,4 @@
-# swipua
+# beeins
 
 A tiny swipe-to-learn German vocabulary flashcard app with translations in English, Russian, Vietnamese, and Persian, plus example sentences.
 

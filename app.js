@@ -1,4 +1,19 @@
 (function () {
+  // ---- one-time key migration (swipua_* -> beeins_*) --------------------
+  // The app was renamed from "swipua" to "beeins". Copy any existing saved
+  // state to the new key names so returning users keep their progress. Safe
+  // to run every load: it never overwrites a value already under the new key.
+  try {
+    var _migKeys = ["theme", "level", "titleLangs", "showLangs", "progress"];
+    for (var _i = 0; _i < _migKeys.length; _i++) {
+      var _old = "swipua_" + _migKeys[_i], _new = "beeins_" + _migKeys[_i];
+      var _v = window.localStorage.getItem(_old);
+      if (_v != null && window.localStorage.getItem(_new) == null) {
+        window.localStorage.setItem(_new, _v);
+      }
+    }
+  } catch (e) {}
+
   var source = (typeof WORDS !== "undefined") ? WORDS : [];
 
   // ---- level (CEFR) ------------------------------------------------------
@@ -7,7 +22,7 @@
   var LEVEL_ORDER = { A1: 1, A2: 2, B1: 3 };
   var currentLevel = loadLevel();
   function loadLevel() {
-    try { var v = window.localStorage.getItem("swipua_level"); if (LEVEL_ORDER[v]) return v; } catch (e) {}
+    try { var v = window.localStorage.getItem("beeins_level"); if (LEVEL_ORDER[v]) return v; } catch (e) {}
     return "B1";
   }
   function wordLevel(w) { return LEVEL_ORDER[w.level] ? w.level : "B1"; }
@@ -95,8 +110,8 @@
   // Two independent language sets:
   //  titleLangs — which languages may appear as the big prompt (title) word.
   //  showLangs  — which languages appear as translations / example lines after reveal.
-  var titleLangs = loadLangSet("swipua_titleLangs");
-  var showLangs = loadLangSet("swipua_showLangs");
+  var titleLangs = loadLangSet("beeins_titleLangs");
+  var showLangs = loadLangSet("beeins_showLangs");
   // German is the language being learned, so it is always shown as the answer.
   showLangs.de = true;
 
@@ -249,7 +264,7 @@
   }
 
   function setForName(name) { return name === "show" ? showLangs : titleLangs; }
-  function storageKeyFor(name) { return name === "show" ? "swipua_showLangs" : "swipua_titleLangs"; }
+  function storageKeyFor(name) { return name === "show" ? "beeins_showLangs" : "beeins_titleLangs"; }
 
   function saveLangSet(name) {
     try { window.localStorage.setItem(storageKeyFor(name), JSON.stringify(setForName(name))); } catch (e) {}
@@ -261,7 +276,7 @@
   // learner who closes the tab picks up exactly where they left off. Cards are
   // stored by their German word, which is unique across the corpus, so the
   // save survives data updates that shuffle array positions.
-  var PROG_KEY = "swipua_progress";
+  var PROG_KEY = "beeins_progress";
   var byWord = {};
   source.forEach(function (w) { byWord[w.word] = w; });
 
@@ -805,7 +820,7 @@
   function setLevel(lvl) {
     if (!LEVEL_ORDER[lvl] || lvl === currentLevel) { updateLevelNav(); return; }
     currentLevel = lvl;
-    try { window.localStorage.setItem("swipua_level", lvl); } catch (e) {}
+    try { window.localStorage.setItem("beeins_level", lvl); } catch (e) {}
     deck = buildDeck();
     totalWords = deck.length;
     knownCount = 0;
@@ -990,14 +1005,14 @@
   }
   function initTheme() {
     var stored = null;
-    try { stored = window.localStorage.getItem("swipua_theme"); } catch (e) {}
+    try { stored = window.localStorage.getItem("beeins_theme"); } catch (e) {}
     if (stored === "dark" || stored === "light") document.documentElement.setAttribute("data-theme", stored);
     paintThemeIcon();
   }
   elThemeToggle.addEventListener("click", function () {
     var next = effectiveTheme() === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", next);
-    try { window.localStorage.setItem("swipua_theme", next); } catch (e) {}
+    try { window.localStorage.setItem("beeins_theme", next); } catch (e) {}
     paintThemeIcon();
   });
 
@@ -1104,7 +1119,7 @@
   // the top stands.
   var saved = loadProgress();
   var restored = saved ? restoreSession(saved) : false;
-  if (restored) { try { window.localStorage.setItem("swipua_level", currentLevel); } catch (e) {} }
+  if (restored) { try { window.localStorage.setItem("beeins_level", currentLevel); } catch (e) {} }
 
   applyUiLang();
   updateLevelNav();
