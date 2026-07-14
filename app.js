@@ -159,7 +159,8 @@
     { key: "ar_lb", flag: "🇱🇧", label: "AR-LB", endo: "لبناني",        names: { de: "Libanesisch-Arabisch", en: "Lebanese Arabic", ru: "Ливанский арабский", vi: "Tiếng Ả Rập Liban", fa: "عربی لبنانی" } },
     { key: "ar_sy", flag: "🇸🇾", label: "AR-SY", endo: "سوري",          names: { de: "Syrisch-Arabisch", en: "Syrian Arabic", ru: "Сирийский арабский", vi: "Tiếng Ả Rập Syria", fa: "عربی سوری" } },
     { key: "es_mx", flag: "🇲🇽", label: "ES-MX", endo: "Español (México)", names: { de: "Mexikanisches Spanisch", en: "Mexican Spanish", ru: "Мексиканский испанский", vi: "Tiếng Tây Ban Nha (Mexico)", fa: "اسپانیایی مکزیکی" } },
-    { key: "ca",    flag: "🇦🇩", label: "CA",    endo: "Català",        names: { de: "Katalanisch", en: "Catalan", ru: "Каталанский", vi: "Tiếng Catalan", fa: "کاتالان" } }
+    { key: "ca",    flag: "🇦🇩", label: "CA",    endo: "Català",        names: { de: "Katalanisch", en: "Catalan", ru: "Каталанский", vi: "Tiếng Catalan", fa: "کاتالان" } },
+    { key: "hr",    flag: "🇭🇷", label: "HR",    endo: "Hrvatski",      names: { de: "Kroatisch", en: "Croatian", ru: "Хорватский", vi: "Tiếng Croatia", fa: "کرواتی" } }
   ];
 
   var LANG_BY_KEY = {};
@@ -252,9 +253,9 @@
 
   // Small UI dictionary for the grammar view chrome, shown in the explain language.
   var GUI = {
-    examples: { de: "Beispiele", en: "Examples", ru: "Примеры", vi: "Ví dụ", fa: "مثال‌ها", es_mx: "Ejemplos", ca: "Exemples" },
-    analogues: { de: "Sprachvergleich", en: "In your language", ru: "В вашем языке", vi: "Trong ngôn ngữ của bạn", fa: "در زبان شما", es_mx: "En tu idioma", ca: "En la teva llengua" },
-    empty: { de: "Grammatikinhalt wird vorbereitet.", en: "Grammar content is being prepared.", ru: "Грамматический материал готовится.", vi: "Nội dung ngữ pháp đang được chuẩn bị.", fa: "محتوای گرامر در حال آماده‌سازی است.", es_mx: "El contenido de gramática se está preparando.", ca: "El contingut de gramàtica s'està preparant." }
+    examples: { de: "Beispiele", en: "Examples", ru: "Примеры", vi: "Ví dụ", fa: "مثال‌ها", es_mx: "Ejemplos", ca: "Exemples", hr: "Primjeri" },
+    analogues: { de: "Sprachvergleich", en: "In your language", ru: "В вашем языке", vi: "Trong ngôn ngữ của bạn", fa: "در زبان شما", es_mx: "En tu idioma", ca: "En la teva llengua", hr: "Na tvom jeziku" },
+    empty: { de: "Grammatikinhalt wird vorbereitet.", en: "Grammar content is being prepared.", ru: "Грамматический материал готовится.", vi: "Nội dung ngữ pháp đang được chuẩn bị.", fa: "محتوای گرامر در حال آماده‌سازی است.", es_mx: "El contenido de gramática se está preparando.", ca: "El contingut de gramàtica s'està preparant.", hr: "Sadržaj gramatike se priprema." }
   };
 
   // Interface chrome (nav, buttons, progress, stats). Rendered in the first
@@ -280,7 +281,8 @@
       "ar_lb": "بطاقات",
       "ar_sy": "كروت",
       "es_mx": "Tarjetas",
-      "ca": "Targetes"
+      "ca": "Targetes",
+      "hr": "Kartice"
     },
     sessionTip: {
       "de": "Karten pro Sitzung",
@@ -302,7 +304,8 @@
       "ar_lb": "بطاقات بالجلسة",
       "ar_sy": "كروت بالجلسة",
       "es_mx": "Tarjetas por sesión",
-      "ca": "Targetes per sessió"
+      "ca": "Targetes per sessió",
+      "hr": "Kartice po sesiji"
     },
     sessionAll: {
       "de": "Alle",
@@ -324,7 +327,8 @@
       "ar_lb": "الكل",
       "ar_sy": "الكل",
       "es_mx": "Todas",
-      "ca": "Totes"
+      "ca": "Totes",
+      "hr": "Sve"
     },
     grammar: {
       "de": "Grammatik",
@@ -346,7 +350,8 @@
       "ar_lb": "قواعد",
       "ar_sy": "قواعد",
       "es_mx": "Gramática",
-      "ca": "Gramàtica"
+      "ca": "Gramàtica",
+      "hr": "Gramatika"
     },
     ask: {
       "de": "Frage",
@@ -368,7 +373,8 @@
       "ar_lb": "سؤال",
       "ar_sy": "سؤال",
       "es_mx": "Pregunta",
-      "ca": "Pregunta"
+      "ca": "Pregunta",
+      "hr": "Pitanje"
     },
     show: {
       "de": "Antwort",
@@ -390,7 +396,8 @@
       "ar_lb": "جواب",
       "ar_sy": "جواب",
       "es_mx": "Respuesta",
-      "ca": "Resposta"
+      "ca": "Resposta",
+      "hr": "Odgovor"
     },
     reveal: {
       "de": "Tippe die Karte oder drücke eine beliebige Taste zum Aufdecken",
@@ -412,7 +419,8 @@
       "ar_lb": "دوس عالبطاقة أو اكبس أي زرّ لتشوف الجواب",
       "ar_sy": "اضغط عالكرت أو اكبس أي زر لتشوف الجواب",
       "es_mx": "Toca la tarjeta o presiona cualquier tecla para revelar",
-      "ca": "Toca la targeta o prem qualsevol tecla per revelar"
+      "ca": "Toca la targeta o prem qualsevol tecla per revelar",
+      "hr": "Dodirni karticu ili pritisni bilo koju tipku za prikaz"
     },
     back: {
       "de": "Zurück",
@@ -434,7 +442,8 @@
       "ar_lb": "رجوع",
       "ar_sy": "رجوع",
       "es_mx": "Atrás",
-      "ca": "Enrere"
+      "ca": "Enrere",
+      "hr": "Natrag"
     },
     dontknow: {
       "de": "Weiß ich nicht",
@@ -456,7 +465,8 @@
       "ar_lb": "ما بعرف",
       "ar_sy": "ما بعرف",
       "es_mx": "No lo sé",
-      "ca": "No ho sé"
+      "ca": "No ho sé",
+      "hr": "Ne znam"
     },
     know: {
       "de": "Weiß ich",
@@ -478,7 +488,8 @@
       "ar_lb": "بعرف",
       "ar_sy": "بعرف",
       "es_mx": "Lo sé",
-      "ca": "Ho sé"
+      "ca": "Ho sé",
+      "hr": "Znam"
     },
     backcurrent: {
       "de": "Zur aktuellen Karte",
@@ -500,7 +511,8 @@
       "ar_lb": "رجوع عالبطاقة الحالية",
       "ar_sy": "رجوع للكرت الحالي",
       "es_mx": "Volver a la actual",
-      "ca": "Torna a l'actual"
+      "ca": "Torna a l'actual",
+      "hr": "Natrag na trenutnu"
     },
     learned: {
       "de": "gelernt",
@@ -522,7 +534,8 @@
       "ar_lb": "متعلَّمة",
       "ar_sy": "متعلّمة",
       "es_mx": "aprendidas",
-      "ca": "apreses"
+      "ca": "apreses",
+      "hr": "naučeno"
     },
     left: {
       "de": "übrig",
@@ -544,7 +557,8 @@
       "ar_lb": "باقية",
       "ar_sy": "باقية",
       "es_mx": "restantes",
-      "ca": "restants"
+      "ca": "restants",
+      "hr": "preostalo"
     },
     prevcard: {
       "de": "vorherige Karte",
@@ -566,7 +580,8 @@
       "ar_lb": "البطاقة اللي قبل",
       "ar_sy": "الكرت السابق",
       "es_mx": "tarjeta anterior",
-      "ca": "targeta anterior"
+      "ca": "targeta anterior",
+      "hr": "prethodna kartica"
     },
     done: {
       "de": "Fertig!",
@@ -588,7 +603,8 @@
       "ar_lb": "خلّصنا!",
       "ar_sy": "خلّصنا!",
       "es_mx": "¡Listo!",
-      "ca": "Fet!"
+      "ca": "Fet!",
+      "hr": "Gotovo!"
     },
     words: {
       "de": "Wörter",
@@ -610,7 +626,8 @@
       "ar_lb": "كلمة",
       "ar_sy": "كلمة",
       "es_mx": "palabras",
-      "ca": "paraules"
+      "ca": "paraules",
+      "hr": "riječi"
     },
     slips: {
       "de": "Fehler",
@@ -632,7 +649,8 @@
       "ar_lb": "غلطة",
       "ar_sy": "غلطة",
       "es_mx": "errores",
-      "ca": "errors"
+      "ca": "errors",
+      "hr": "pogreške"
     },
     allremembered: {
       "de": "Alle Wörter behalten — super.",
@@ -654,7 +672,8 @@
       "ar_lb": "حفظت كل الكلمات — برافو.",
       "ar_sy": "حفظت كل الكلمات — حلو كتير.",
       "es_mx": "Recordaste todas las palabras — bien.",
-      "ca": "Has recordat totes les paraules — molt bé."
+      "ca": "Has recordat totes les paraules — molt bé.",
+      "hr": "Sve riječi zapamćene — odlično."
     },
     reload: {
       "de": "Neu laden zum Neustart",
@@ -676,7 +695,8 @@
       "ar_lb": "عيد تحميل الصفحة لتبلّش من الأول",
       "ar_sy": "عيد تحميل الصفحة لتبلّش من جديد",
       "es_mx": "Recarga la página para empezar de nuevo",
-      "ca": "Torna a carregar la pàgina per començar de nou"
+      "ca": "Torna a carregar la pàgina per començar de nou",
+      "hr": "Ponovno učitaj stranicu za početak iznova"
     },
     resetTip: {
       "de": "Fortschritt zurücksetzen und neu mischen",
@@ -698,7 +718,8 @@
       "ar_lb": "صفّر التقدّم وخلّط البطاقات من جديد",
       "ar_sy": "صفّر التقدّم واخلط الكروت من جديد",
       "es_mx": "Reiniciar el progreso y volver a barajar",
-      "ca": "Reinicia el progrés i torna a barrejar"
+      "ca": "Reinicia el progrés i torna a barrejar",
+      "hr": "Poništi napredak i ponovno promiješaj"
     },
     resetConfirm: {
       "de": "Deinen Lernfortschritt zurücksetzen? Alle in dieser Sitzung gelernten Karten gehen verloren.",
@@ -720,7 +741,8 @@
       "ar_lb": "بدّك تصفّر تقدّمك؟ كل البطاقات اللي تعلّمتها بهالجلسة رح تنمحي.",
       "ar_sy": "بدك تصفّر تقدّمك؟ كل الكروت يلي تعلمتها بهالجلسة رح تنمسح.",
       "es_mx": "¿Reiniciar tu progreso? Se borrarán todas las tarjetas aprendidas en esta sesión.",
-      "ca": "Vols reiniciar el teu progrés? S'esborraran totes les targetes apreses en aquesta sessió."
+      "ca": "Vols reiniciar el teu progrés? S'esborraran totes les targetes apreses en aquesta sessió.",
+      "hr": "Poništiti napredak? Sve kartice naučene u ovoj sesiji bit će izbrisane."
     },
     askTip: {
       "de": "In welchen Sprachen die Frage erscheinen darf — das Aufforderungswort, das du vor dem Aufdecken siehst.",
@@ -742,7 +764,8 @@
       "ar_lb": "بأي لغات فيها بيطلع السؤال — الكلمة اللي بتشوفها قبل ما تكشف الجواب.",
       "ar_sy": "بأي لغات ممكن يطلع السؤال — الكلمة يلي بتشوفها قبل ما تكشف الجواب.",
       "es_mx": "En qué idiomas puede aparecer la pregunta — la palabra que ves antes de revelar.",
-      "ca": "En quines llengües pot aparèixer la pregunta — la paraula que veus abans de revelar."
+      "ca": "En quines llengües pot aparèixer la pregunta — la paraula que veus abans de revelar.",
+      "hr": "Na kojim se jezicima može pojaviti pitanje — riječ-natuknica koju vidiš prije otkrivanja."
     },
     showTip: {
       "de": "In welchen Sprachen die Antwort nach dem Aufdecken erscheint. Deutsch wird immer gezeigt — das lernst du.",
@@ -764,7 +787,8 @@
       "ar_lb": "بأي لغات بيطلع الجواب بعد ما تكشف. الألماني دايمًا بيبيّن — هوّي اللي عم تتعلّمه.",
       "ar_sy": "بأي لغات بيطلع الجواب بعد ما تكشف الكرت. الألماني دايماً بيظهر — هو يلي عم تتعلمو.",
       "es_mx": "En qué idiomas aparece la respuesta después de revelar. El alemán siempre se muestra — es lo que estás aprendiendo.",
-      "ca": "En quines llengües apareix la resposta després de revelar. L'alemany sempre es mostra — és el que estàs aprenent."
+      "ca": "En quines llengües apareix la resposta després de revelar. L'alemany sempre es mostra — és el que estàs aprenent.",
+      "hr": "Na kojim se jezicima pojavljuje odgovor nakon otkrivanja. Njemački se uvijek prikazuje — to je ono što učiš."
     },
     deLocked: {
       "de": "Deutsch wird immer angezeigt — das ist die Sprache, die du lernst.",
@@ -786,7 +810,8 @@
       "ar_lb": "الألماني دايمًا بيبيّن — هوّي اللغة اللي عم تتعلّمها.",
       "ar_sy": "الألماني دايماً بيظهر — هو اللغة يلي عم تتعلمها.",
       "es_mx": "El alemán siempre se muestra — es el idioma que estás aprendiendo.",
-      "ca": "L'alemany sempre es mostra — és la llengua que estàs aprenent."
+      "ca": "L'alemany sempre es mostra — és la llengua que estàs aprenent.",
+      "hr": "Njemački se uvijek prikazuje — to je jezik koji učiš."
     },
     levelTip: {
       "de": "Lernstufe: zeigt Wörter bis A1, A2 oder B1 (kumulativ).",
@@ -808,7 +833,8 @@
       "ar_lb": "مستوى الدراسة: بيعرض الكلمات لحد A1، A2 أو B1 (تراكمي).",
       "ar_sy": "مستوى التعلّم: بيعرض الكلمات لحد A1 أو A2 أو B1 (تراكمي).",
       "es_mx": "Nivel de estudio: muestra palabras hasta A1, A2 o B1 (acumulativo).",
-      "ca": "Nivell d'estudi: mostra paraules fins a A1, A2 o B1 (acumulatiu)."
+      "ca": "Nivell d'estudi: mostra paraules fins a A1, A2 o B1 (acumulatiu).",
+      "hr": "Razina učenja: prikazuje riječi do A1, A2 ili B1 (kumulativno)."
     }
   };
 
