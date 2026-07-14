@@ -344,11 +344,19 @@ body {
 
 #translations {
   display: flex;
-  gap: 18px;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 24px;
   font-size: 1.05rem;
+}
+
+/* Each row wraps its badges; German gets its own row above the rest. */
+.trRow {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 #translations span {
@@ -356,6 +364,14 @@ body {
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 6px 12px;
+}
+
+/* The German translation is the word being learned — always highlighted with a
+   soft green glowing outline when the card is revealed. */
+#translations .deBadge {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent),
+              0 0 12px 1px color-mix(in srgb, var(--accent) 45%, transparent);
 }
 
 #revealHint {
@@ -533,6 +549,8 @@ kbd {
 }
 
 #card.answer-hidden #synonyms { display: none; }
+/* No synonyms for this word → collapse the row so it adds no gap. */
+#synonyms:empty { display: none; }
 
 /* ---- grammar cheat sheet ---------------------------------------------- */
 #grammar {

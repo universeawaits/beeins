@@ -989,7 +989,13 @@
     // Speak the title when it is the German word (the language being learned).
     if (TTS_OK && frontKey === "de") elWord.appendChild(makeSpeakBtn(w.word));
 
+    // German (the word being learned) goes first on its own highlighted row;
+    // every other translation wraps onto the row below it.
     elTranslations.innerHTML = "";
+    var deRow = document.createElement("div");
+    deRow.className = "trRow trRowDe";
+    var otherRow = document.createElement("div");
+    otherRow.className = "trRow trRowOther";
     AVAIL.forEach(function (l) {
       // show a translation only if it's not the title and its "show" flag is on
       if (l.key === frontKey || !showLangs[l.key]) return;
@@ -997,10 +1003,17 @@
       // <bdi> isolates the value's direction so mixing LTR labels with
       // RTL (Persian/Arabic) values stays readable
       span.innerHTML = l.label + ": <bdi>" + escapeHtml(wordVal(w, l.key)) + "</bdi>";
-      // German is the word being learned — let it be heard from here too.
-      if (TTS_OK && l.key === "de") span.appendChild(makeSpeakBtn(w.word));
-      elTranslations.appendChild(span);
+      if (l.key === "de") {
+        span.className = "deBadge";
+        // German is the word being learned — let it be heard from here too.
+        if (TTS_OK) span.appendChild(makeSpeakBtn(w.word));
+        deRow.appendChild(span);
+      } else {
+        otherRow.appendChild(span);
+      }
     });
+    if (deRow.childNodes.length) elTranslations.appendChild(deRow);
+    if (otherRow.childNodes.length) elTranslations.appendChild(otherRow);
 
     // German synonyms — alternatives you can sometimes swap the word for.
     // Built regardless of reveal state (CSS hides them until revealed).
