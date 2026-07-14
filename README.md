@@ -2,7 +2,9 @@
 
 A swipe-to-learn app for building German vocabulary and brushing up on German grammar — with everything translated into your own language. It runs in any browser, works on phone and desktop, and needs no account or install.
 
-Try it: open `index.html`, or serve the folder and visit it in a browser.
+**Play online: [universeawaits.github.io/beeins](https://universeawaits.github.io/beeins/)**
+
+Or run it locally: open `index.html`, or serve the folder and visit it in a browser.
 
 ## What it does
 
@@ -18,6 +20,7 @@ beeins has two sides, switchable from the top-left tabs:
 - **Look back** — step back through cards you've already seen without losing your place.
 - **Automatic progress saving** — close the tab and pick up exactly where you left off. A reset button reshuffles and starts fresh.
 - **See German synonyms** and the word's example sentence translated into every language you've turned on.
+- **Hear it spoken** — a small speaker button next to the German word and each German example plays its pronunciation, using your device's built-in text-to-speech (no downloads, works offline).
 
 ### 📖 Grammar — a plain-language reference
 
