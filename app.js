@@ -255,7 +255,7 @@
     "cases-overview": "A2",
     "pronouns": "A1",
     "possessives": "A1",
-    "adjective-endings": "A2",
+    "adjective-endings": "B1",
     "present-tense": "A1",
     "perfekt": "A1",
     "praeteritum": "A2",
