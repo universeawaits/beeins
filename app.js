@@ -1169,6 +1169,16 @@
       var primary = String(locales[i] || "").toLowerCase().split(/[-_]/)[0];
       if (!primary) continue;
       var key = alias.hasOwnProperty(primary) ? alias[primary] : primary;
+      // Prefer the exact/aliased key; but if it isn't available for this target
+      // (e.g. Egyptian Arabic when learning Turkish, whose only Arabic is
+      // Syrian), fall back to any available variant of the same base language.
+      if (key === LEARN || !AVAIL_SET[key]) {
+        key = null;
+        for (var j = 0; j < AVAIL.length; j++) {
+          var k = AVAIL[j].key;
+          if (k !== LEARN && k.split("_")[0] === primary) { key = k; break; }
+        }
+      }
       if (key && key !== LEARN && AVAIL_SET[key]) return key;
     }
     return null;
