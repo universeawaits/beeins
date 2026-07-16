@@ -47,7 +47,10 @@
     // Argentinian (Rioplatense) Spanish — voseo, sheísmo, ustedes. Studied from
     // Russian, English, German or Turkish. The es-AR speech locale and Piper's
     // Argentine voice give the accent; the corpus uses Argentine word choices.
-    { key: "es_ar", flag: "🇦🇷", endo: "Español rioplatense",  tts: "es-AR", piper: "es_AR-daniela-high",    level: "level", grammar: true, allow: ["ru", "en", "de", "tr"] }
+    { key: "es_ar", flag: "🇦🇷", endo: "Español rioplatense",  tts: "es-AR", piper: "es_AR-daniela-high",    level: "level", grammar: true, allow: ["ru", "en", "de", "tr"] },
+    // French (France) — studied from Russian, English, German, Turkish, Spanish,
+    // Italian or Syrian Arabic.
+    { key: "fr",    flag: "🇫🇷", endo: "Français",             tts: "fr-FR", piper: "fr_FR-siwis-medium",    level: "level", grammar: true, allow: ["ru", "en", "de", "tr", "es_ar", "it", "ar_sy"] }
   ];
   var TARGET_BY_KEY = {};
   TARGETS.forEach(function (t) { TARGET_BY_KEY[t.key] = t; });
@@ -208,6 +211,8 @@
     { key: "ar_sy", flag: "🇸🇾", label: "AR-SY", endo: "سوري",          names: { de: "Syrisch-Arabisch", en: "Syrian Arabic", ru: "Сирийский арабский", vi: "Tiếng Ả Rập Syria", fa: "عربی سوری" } },
     { key: "es_mx", flag: "🇲🇽", label: "ES-MX", endo: "Español (México)", names: { de: "Mexikanisches Spanisch", en: "Mexican Spanish", ru: "Мексиканский испанский", vi: "Tiếng Tây Ban Nha (Mexico)", fa: "اسپانیایی مکزیکی" } },
     { key: "es_ar", flag: "🇦🇷", label: "ES-AR", endo: "Español rioplatense", names: { de: "Argentinisches Spanisch", en: "Argentinian Spanish", ru: "Аргентинский испанский", tr: "Arjantin İspanyolcası", vi: "Tiếng Tây Ban Nha (Argentina)", fa: "اسپانیایی آرژانتینی" } },
+    { key: "fr",    flag: "🇫🇷", label: "FR",    endo: "Français",      names: { de: "Französisch", en: "French", ru: "Французский", tr: "Fransızca", es_ar: "Francés", it: "Francese", uk: "Французька", fa: "فرانسوی", ar_sy: "فرنسي" } },
+    { key: "it",    flag: "🇮🇹", label: "IT",    endo: "Italiano",      names: { de: "Italienisch", en: "Italian", ru: "Итальянский", tr: "İtalyanca", es_ar: "Italiano", fr: "Italien", uk: "Італійська", fa: "ایتالیایی", ar_sy: "إيطالي" } },
     { key: "ca",    flag: "🇦🇩", label: "CA",    endo: "Català",        names: { de: "Katalanisch", en: "Catalan", ru: "Каталанский", vi: "Tiếng Catalan", fa: "کاتالان" } },
     { key: "hr",    flag: "🇭🇷", label: "HR",    endo: "Hrvatski",      names: { de: "Kroatisch", en: "Croatian", ru: "Хорватский", vi: "Tiếng Croatia", fa: "کرواتی" } },
     { key: "sr",    flag: "🇷🇸", label: "SR",    endo: "Српски",        names: { de: "Serbisch", en: "Serbian", ru: "Сербский", vi: "Tiếng Serbia", fa: "صربی" } },
