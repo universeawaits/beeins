@@ -1,0 +1,1218 @@
+// Argentinian (Rioplatense) Spanish A1-B1 grammar cheat-sheet data.
+// Each topic: { id, icon, level, title, intro, tables[], examples[], hints }
+// title/intro/captions/labels carry {es_ar,en,ru,de,tr}; table cells hold Spanish
+// forms verbatim. examples carry {es_ar,en,ru,de,tr}; hints carry {en,ru,de,tr}.
+//
+// The dialect is Rioplatense (Argentina/Uruguay): VOSEO (vos instead of tú),
+// USTEDES for the 2nd-person plural (never vosotros), and SHEÍSMO (ll/y sound
+// like the "s" in "measure" / English "sh"). Verb tables give the vos form in the
+// tú slot and drop vosotros. Grammar itself is standard Spanish per the Plan
+// Curricular del Instituto Cervantes (PCIC) A1-B1 and the DELE/CELU/SIELE
+// syllabi; the Argentine variety is flagged in every relevant topic.
+const GRAMMAR = [
+ {
+  "id": "alfabeto-pronunciacion",
+  "icon": "🔤",
+  "level": "A1",
+  "title": {
+   "es_ar": "El alfabeto y la pronunciación",
+   "en": "The alphabet & pronunciation",
+   "ru": "Алфавит и произношение",
+   "de": "Das Alphabet & die Aussprache",
+   "tr": "Alfabe ve telaffuz"
+  },
+  "intro": {
+   "es_ar": "El español se escribe casi como se pronuncia. En el Río de la Plata hay dos rasgos propios: el SESEO (c antes de e/i y la z suenan como s, nunca como la 'th' inglesa) y el SHEÍSMO — la 'll' y la 'y' se pronuncian como la 'sh' inglesa o la 'j' francesa: 'calle' suena 'ca-she', 'yo' suena 'sho'. La 'h' es siempre muda. La 'ñ' suena como 'ni' en 'onion'.",
+   "en": "Spanish is spelled almost the way it sounds. The Río de la Plata has two local traits: SESEO (c before e/i and z sound like s, never English 'th') and SHEÍSMO — 'll' and 'y' are pronounced like English 'sh' or the 's' in 'measure': 'calle' sounds like 'ca-sheh', 'yo' like 'sho'. 'h' is always silent. 'ñ' sounds like the 'ni' in 'onion'.",
+   "ru": "Испанский пишется почти так же, как звучит. В регионе Ла-Платы две местные особенности: СЕСЕО (c перед e/i и z звучат как «с», никогда как английское «th») и ШЕИЗМО — «ll» и «y» произносятся как английское «sh» или как «ж»: 'calle' звучит «ка-ше», 'yo' — «шо». Буква «h» всегда немая. «ñ» звучит как «нь».",
+   "de": "Spanisch wird fast so geschrieben, wie es klingt. Am Río de la Plata gibt es zwei Besonderheiten: SESEO (c vor e/i und z klingen wie s, nie wie das englische 'th') und SHEÍSMO — 'll' und 'y' werden wie das deutsche 'sch' bzw. das 'j' in 'Journal' gesprochen: 'calle' klingt wie 'ka-sche', 'yo' wie 'scho'. 'h' ist immer stumm. 'ñ' klingt wie 'nj'.",
+   "tr": "İspanyolca neredeyse yazıldığı gibi okunur. Río de la Plata bölgesinde iki yerel özellik var: SESEO (e/i önündeki c ve z, İngilizce 'th' değil 's' gibi okunur) ve SHEÍSMO — 'll' ve 'y' Türkçe 'j' (jale) gibi okunur: 'calle' 'ka-je', 'yo' 'jo' gibi. 'h' her zaman okunmaz. 'ñ' 'ny' gibidir."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Letras que sorprenden", "en": "Letters that surprise you", "ru": "Буквы-ловушки", "de": "Überraschende Buchstaben", "tr": "Şaşırtan harfler" },
+    "columns": [
+     { "es_ar": "Letra", "en": "Letter", "ru": "Буква", "de": "Buchstabe", "tr": "Harf" },
+     { "es_ar": "Suena como", "en": "Sounds like", "ru": "Звучит как", "de": "Klingt wie", "tr": "Okunuşu" },
+     { "es_ar": "Ejemplo", "en": "Example", "ru": "Пример", "de": "Beispiel", "tr": "Örnek" }
+    ],
+    "rows": [
+     { "cells": ["ll / y", "«sh» / «j» (rioplatense)", "calle, playa, yo"] },
+     { "cells": ["h", "muda / silent", "hola, ahora, hay"] },
+     { "cells": ["j / g(e,i)", "«j» aspirada (like a hard h)", "jugo, gente, girar"] },
+     { "cells": ["ñ", "«ny»", "niño, mañana, año"] },
+     { "cells": ["z / c(e,i)", "«s» (seseo)", "plaza, cine, gracias"] },
+     { "cells": ["v / b", "igual, suenan «b»", "vaca = baca"] },
+     { "cells": ["rr", "vibrante fuerte", "perro, carro"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "¿Cómo te llamás?", "en": "What's your name? (voseo)", "ru": "Как тебя зовут? (voseo)", "de": "Wie heißt du? (voseo)", "tr": "Adın ne? (voseo)" },
+   { "es_ar": "Me llamo Julieta, vivo en la calle Corrientes.", "en": "My name is Julieta, I live on Corrientes street.", "ru": "Меня зовут Хульета, я живу на улице Корриентес.", "de": "Ich heiße Julieta, ich wohne in der Corrientes-Straße.", "tr": "Adım Julieta, Corrientes caddesinde oturuyorum." },
+   { "es_ar": "La lluvia cae sobre la playa.", "en": "The rain falls on the beach. (both 'll' and 'y' → sh)", "ru": "Дождь падает на пляж. (и «ll», и «y» → ш)", "de": "Der Regen fällt auf den Strand. ('ll' und 'y' → sch)", "tr": "Yağmur plaja yağıyor. ('ll' ve 'y' → j)" }
+  ],
+  "hints": {
+   "en": "Don't lisp: Argentine Spanish has no English 'th' sound — 'z' and soft 'c' are plain 's'. And train your ear for the 'sh': 'ella' is 'e-sha', not 'e-ya'.",
+   "ru": "Никакого «th»: в аргентинском 'z' и мягкое 'c' — это просто «с». И привыкайте к «ш»: 'ella' звучит «э-ша», а не «э-я».",
+   "de": "Kein 'th' wie in Spanien: 'z' und weiches 'c' sind einfach 's'. Und gewöhne dein Ohr an das 'sch': 'ella' ist 'e-scha', nicht 'e-ja'.",
+   "tr": "İspanya'daki 'th' sesi yok: 'z' ve yumuşak 'c' sadece 's'. Ve 'j' sesine kulağını alıştır: 'ella' 'e-ya' değil 'e-ja'."
+  }
+ },
+ {
+  "id": "articulos-genero",
+  "icon": "🚻",
+  "level": "A1",
+  "title": {
+   "es_ar": "Artículos, género y número",
+   "en": "Articles, gender & number",
+   "ru": "Артикли, род и число",
+   "de": "Artikel, Genus & Numerus",
+   "tr": "Artikeller, cinsiyet ve sayı"
+  },
+  "intro": {
+   "es_ar": "Todo sustantivo es masculino o femenino. Suelen (no siempre) terminar en -o los masculinos y en -a los femeninos. El artículo y el adjetivo concuerdan en género y número: el gato negro, la casa blanca, los libros nuevos, las mesas viejas. El artículo definido es el/la/los/las; el indefinido, un/una/unos/unas.",
+   "en": "Every noun is masculine or feminine. Masculine ones usually (not always) end in -o, feminine in -a. The article and adjective agree in gender and number: el gato negro, la casa blanca, los libros nuevos, las mesas viejas. Definite article: el/la/los/las; indefinite: un/una/unos/unas.",
+   "ru": "Каждое существительное мужского или женского рода. Мужские обычно (не всегда) на -o, женские на -a. Артикль и прилагательное согласуются в роде и числе: el gato negro, la casa blanca, los libros nuevos, las mesas viejas. Определённый артикль: el/la/los/las; неопределённый: un/una/unos/unas.",
+   "de": "Jedes Substantiv ist maskulin oder feminin. Maskuline enden meist (nicht immer) auf -o, feminine auf -a. Artikel und Adjektiv richten sich nach Genus und Numerus: el gato negro, la casa blanca, los libros nuevos, las mesas viejas. Bestimmter Artikel: el/la/los/las; unbestimmter: un/una/unos/unas.",
+   "tr": "Her isim eril ya da dişildir. Eril olanlar genelde (her zaman değil) -o, dişil olanlar -a ile biter. Artikel ve sıfat, cinsiyet ve sayıda uyum sağlar: el gato negro, la casa blanca, los libros nuevos, las mesas viejas. Belirli artikel: el/la/los/las; belirsiz: un/una/unos/unas."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Los cuatro artículos definidos e indefinidos", "en": "The definite & indefinite articles", "ru": "Определённые и неопределённые артикли", "de": "Bestimmte & unbestimmte Artikel", "tr": "Belirli ve belirsiz artikeller" },
+    "labelHeader": { "es_ar": "", "en": "", "ru": "", "de": "", "tr": "" },
+    "columns": [
+     { "es_ar": "Masc. sing.", "en": "Masc. sing.", "ru": "М. ед.", "de": "Mask. Sing.", "tr": "Eril tekil" },
+     { "es_ar": "Fem. sing.", "en": "Fem. sing.", "ru": "Ж. ед.", "de": "Fem. Sing.", "tr": "Dişil tekil" },
+     { "es_ar": "Masc. plur.", "en": "Masc. plur.", "ru": "М. мн.", "de": "Mask. Plur.", "tr": "Eril çoğul" },
+     { "es_ar": "Fem. plur.", "en": "Fem. plur.", "ru": "Ж. мн.", "de": "Fem. Plur.", "tr": "Dişil çoğul" }
+    ],
+    "rows": [
+     { "label": { "es_ar": "definido", "en": "definite", "ru": "определ.", "de": "bestimmt", "tr": "belirli" }, "cells": ["el", "la", "los", "las"] },
+     { "label": { "es_ar": "indefinido", "en": "indefinite", "ru": "неопред.", "de": "unbestimmt", "tr": "belirsiz" }, "cells": ["un", "una", "unos", "unas"] }
+    ]
+   },
+   {
+    "caption": { "es_ar": "Cómo formar el plural", "en": "How to form the plural", "ru": "Как образовать множественное", "de": "Pluralbildung", "tr": "Çoğul yapımı" },
+    "columns": [
+     { "es_ar": "Termina en…", "en": "Ends in…", "ru": "Оканчивается на…", "de": "Endet auf…", "tr": "Biter…" },
+     { "es_ar": "Regla", "en": "Rule", "ru": "Правило", "de": "Regel", "tr": "Kural" },
+     { "es_ar": "Ejemplo", "en": "Example", "ru": "Пример", "de": "Beispiel", "tr": "Örnek" }
+    ],
+    "rows": [
+     { "cells": ["vocal", "+ s", "gato → gatos, calle → calles"] },
+     { "cells": ["consonante", "+ es", "ciudad → ciudades, mes → meses"] },
+     { "cells": ["-z", "-z → -ces", "lápiz → lápices, vez → veces"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "El auto es nuevo, pero la bici es vieja.", "en": "The car is new, but the bike is old.", "ru": "Машина новая, а велосипед старый.", "de": "Das Auto ist neu, aber das Fahrrad ist alt.", "tr": "Araba yeni ama bisiklet eski." },
+   { "es_ar": "Compré unas frutillas y un kilo de papas.", "en": "I bought some strawberries and a kilo of potatoes.", "ru": "Я купил(а) клубнику и килограмм картошки.", "de": "Ich habe ein paar Erdbeeren und ein Kilo Kartoffeln gekauft.", "tr": "Biraz çilek ve bir kilo patates aldım." },
+   { "es_ar": "Los chicos y las chicas juegan en la plaza.", "en": "The boys and the girls are playing in the square.", "ru": "Мальчики и девочки играют на площади.", "de": "Die Jungen und die Mädchen spielen auf dem Platz.", "tr": "Çocuklar (erkek ve kız) meydanda oynuyor." }
+  ],
+  "hints": {
+   "en": "Gender is grammatical, not logical: 'el problema', 'el día', 'el mapa' are masculine; 'la mano', 'la foto' are feminine. Learn each noun WITH its article.",
+   "ru": "Род грамматический, не логичный: 'el problema', 'el día', 'el mapa' — мужского рода; 'la mano', 'la foto' — женского. Учите слово ВМЕСТЕ с артиклем.",
+   "de": "Das Genus ist grammatisch, nicht logisch: 'el problema', 'el día', 'el mapa' sind maskulin; 'la mano', 'la foto' feminin. Lerne jedes Nomen MIT Artikel.",
+   "tr": "Cinsiyet mantıksal değil dilbilgiseldir: 'el problema', 'el día', 'el mapa' erildir; 'la mano', 'la foto' dişildir. Her ismi artikeliyle birlikte öğren."
+  }
+ },
+ {
+  "id": "pronombres-voseo",
+  "icon": "🫵",
+  "level": "A1",
+  "title": {
+   "es_ar": "Pronombres personales y el voseo",
+   "en": "Subject pronouns & the voseo",
+   "ru": "Личные местоимения и voseo",
+   "de": "Personalpronomen & das Voseo",
+   "tr": "Kişi zamirleri ve voseo"
+  },
+  "intro": {
+   "es_ar": "En Argentina y Uruguay, la 2.ª persona del singular es VOS, no 'tú'. Vos usa formas verbales propias: vos sos, vos tenés, vos querés, vos vivís. El 'tú' se entiende, pero suena raro o de otra región. En plural no existe 'vosotros': para todos se dice USTEDES (con verbo en 3.ª del plural). 'Usted' sigue siendo el trato formal.",
+   "en": "In Argentina and Uruguay the 2nd-person singular is VOS, not 'tú'. Vos has its own verb forms: vos sos, vos tenés, vos querés, vos vivís. 'Tú' is understood but sounds foreign or regional. There is no 'vosotros': for everyone you say USTEDES (with the 3rd-person-plural verb). 'Usted' is still the formal address.",
+   "ru": "В Аргентине и Уругвае 2-е лицо единственного числа — VOS, а не «tú». У vos свои формы глагола: vos sos, vos tenés, vos querés, vos vivís. «Tú» понимают, но оно звучит чужеродно. «Vosotros» нет: ко всем обращаются USTEDES (глагол в 3-м лице мн. ч.). «Usted» — по-прежнему вежливое обращение.",
+   "de": "In Argentinien und Uruguay ist die 2. Person Singular VOS, nicht 'tú'. Vos hat eigene Verbformen: vos sos, vos tenés, vos querés, vos vivís. 'Tú' versteht man, klingt aber fremd. 'Vosotros' gibt es nicht: für alle sagt man USTEDES (Verb in der 3. Person Plural). 'Usted' bleibt die höfliche Anrede.",
+   "tr": "Arjantin ve Uruguay'da 2. tekil şahıs 'tú' değil VOS'tur. Vos'un kendi fiil biçimleri var: vos sos, vos tenés, vos querés, vos vivís. 'Tú' anlaşılır ama yabancı gelir. 'Vosotros' yoktur: herkes için USTEDES denir (fiil 3. çoğul şahıs). 'Usted' hâlâ resmi hitaptır."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Pronombres sujeto (rioplatense)", "en": "Subject pronouns (Rioplatense)", "ru": "Местоимения-подлежащие (риоплатенсе)", "de": "Subjektpronomen (Rioplatense)", "tr": "Özne zamirleri (Rioplatense)" },
+    "labelHeader": { "es_ar": "Persona", "en": "Person", "ru": "Лицо", "de": "Person", "tr": "Şahıs" },
+    "columns": [
+     { "es_ar": "Singular", "en": "Singular", "ru": "Ед.", "de": "Singular", "tr": "Tekil" },
+     { "es_ar": "Plural", "en": "Plural", "ru": "Мн.", "de": "Plural", "tr": "Çoğul" }
+    ],
+    "rows": [
+     { "label": { "es_ar": "1.ª", "en": "1st", "ru": "1-е", "de": "1.", "tr": "1." }, "cells": ["yo", "nosotros / nosotras"] },
+     { "label": { "es_ar": "2.ª", "en": "2nd", "ru": "2-е", "de": "2.", "tr": "2." }, "cells": ["vos (informal)", "ustedes"] },
+     { "label": { "es_ar": "3.ª / formal", "en": "3rd / formal", "ru": "3-е / вежл.", "de": "3. / höflich", "tr": "3. / resmi" }, "cells": ["él / ella / usted", "ellos / ellas / ustedes"] }
+    ]
+   },
+   {
+    "caption": { "es_ar": "'Tú' peninsular vs. 'vos' rioplatense (presente)", "en": "Peninsular 'tú' vs. Rioplatense 'vos' (present)", "ru": "Пиренейское «tú» и риоплатское «vos» (наст.)", "de": "Iberisches 'tú' vs. Rioplatense 'vos' (Präsens)", "tr": "İber 'tú' ile Rioplatense 'vos' (şimdiki)" },
+    "columns": [
+     { "es_ar": "Verbo", "en": "Verb", "ru": "Глагол", "de": "Verb", "tr": "Fiil" },
+     { "es_ar": "tú (España)", "en": "tú (Spain)", "ru": "tú (Испания)", "de": "tú (Spanien)", "tr": "tú (İspanya)" },
+     { "es_ar": "vos (Argentina)", "en": "vos (Argentina)", "ru": "vos (Аргентина)", "de": "vos (Argentinien)", "tr": "vos (Arjantin)" }
+    ],
+    "rows": [
+     { "cells": ["ser", "tú eres", "vos sos"] },
+     { "cells": ["tener", "tú tienes", "vos tenés"] },
+     { "cells": ["poder", "tú puedes", "vos podés"] },
+     { "cells": ["querer", "tú quieres", "vos querés"] },
+     { "cells": ["venir", "tú vienes", "vos venís"] },
+     { "cells": ["hablar", "tú hablas", "vos hablás"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "¿Vos de dónde sos?", "en": "Where are you from? (voseo)", "ru": "Ты откуда? (voseo)", "de": "Woher kommst du? (voseo)", "tr": "Sen neredensin? (voseo)" },
+   { "es_ar": "¿Ustedes quieren un café?", "en": "Do you (all) want a coffee?", "ru": "Вы хотите кофе?", "de": "Wollt ihr einen Kaffee?", "tr": "Kahve ister misiniz (siz)?" },
+   { "es_ar": "¿Usted podría ayudarme, por favor?", "en": "Could you help me, please? (formal)", "ru": "Вы не могли бы мне помочь? (вежл.)", "de": "Könnten Sie mir bitte helfen? (förmlich)", "tr": "Bana yardım eder misiniz lütfen? (resmi)" }
+  ],
+  "hints": {
+   "en": "The voseo present is easy: take the infinitive, drop the -r, add -s, and stress the last vowel — habla(r)→hablás, come(r)→comés, vivi(r)→vivís. No stem changes (podés, not *puedés).",
+   "ru": "Настоящее время vos простое: берём инфинитив, убираем -r, добавляем -s и ставим ударение на последний гласный — habla(r)→hablás, come(r)→comés, vivi(r)→vivís. Без чередований в корне (podés, а не *puedés).",
+   "de": "Das Voseo-Präsens ist einfach: Infinitiv nehmen, -r weg, -s dran, letzten Vokal betonen — habla(r)→hablás, come(r)→comés, vivi(r)→vivís. Kein Stammwechsel (podés, nicht *puedés).",
+   "tr": "Vos şimdiki zamanı kolaydır: mastardan -r'yi at, -s ekle, son sesliyi vurgula — habla(r)→hablás, come(r)→comés, vivi(r)→vivís. Kök değişmez (podés, *puedés değil)."
+  }
+ },
+ {
+  "id": "ser-estar",
+  "icon": "⚖️",
+  "level": "A1",
+  "title": {
+   "es_ar": "Ser vs. estar (los dos «ser»)",
+   "en": "Ser vs. estar (two 'to be' verbs)",
+   "ru": "Ser и estar (два глагола «быть»)",
+   "de": "Ser vs. estar (zwei Verben für «sein»)",
+   "tr": "Ser ve estar (iki «olmak» fiili)"
+  },
+  "intro": {
+   "es_ar": "El español tiene dos verbos para «ser/estar». SER define lo permanente o esencial: identidad, origen, profesión, la hora, características. ESTAR marca lo temporal o el lugar: estados de ánimo, posición, situaciones que cambian. Compará: 'Ana es alegre' (es su carácter) vs. 'Ana está alegre hoy' (hoy, ahora).",
+   "en": "Spanish has two verbs for 'to be'. SER states the permanent or essential: identity, origin, profession, time, characteristics. ESTAR marks the temporary or location: moods, position, changing situations. Compare: 'Ana es alegre' (her character) vs. 'Ana está alegre hoy' (today, right now).",
+   "ru": "В испанском два глагола «быть». SER — постоянное, сущностное: личность, происхождение, профессия, время, свойства. ESTAR — временное или местоположение: настроение, положение, меняющиеся состояния. Сравните: 'Ana es alegre' (характер) и 'Ana está alegre hoy' (сегодня, сейчас).",
+   "de": "Spanisch hat zwei Verben für «sein». SER nennt Dauerhaftes/Wesentliches: Identität, Herkunft, Beruf, Uhrzeit, Eigenschaften. ESTAR markiert Vorübergehendes oder den Ort: Stimmung, Lage, wechselnde Zustände. Vergleiche: 'Ana es alegre' (Charakter) vs. 'Ana está alegre hoy' (heute, jetzt).",
+   "tr": "İspanyolcada «olmak» için iki fiil var. SER kalıcı/özsel olanı belirtir: kimlik, köken, meslek, saat, özellikler. ESTAR geçici olanı ya da yeri belirtir: ruh hâli, konum, değişen durumlar. Karşılaştır: 'Ana es alegre' (karakteri) ve 'Ana está alegre hoy' (bugün, şu an)."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Presente de ser y estar (voseo)", "en": "Present of ser & estar (voseo)", "ru": "Настоящее ser и estar (voseo)", "de": "Präsens von ser & estar (voseo)", "tr": "ser ve estar şimdiki zaman (voseo)" },
+    "labelHeader": { "es_ar": "Persona", "en": "Person", "ru": "Лицо", "de": "Person", "tr": "Şahıs" },
+    "columns": [
+     { "es_ar": "ser", "en": "ser", "ru": "ser", "de": "ser", "tr": "ser" },
+     { "es_ar": "estar", "en": "estar", "ru": "estar", "de": "estar", "tr": "estar" }
+    ],
+    "rows": [
+     { "label": { "es_ar": "yo", "en": "yo", "ru": "yo", "de": "yo", "tr": "yo" }, "cells": ["soy", "estoy"] },
+     { "label": { "es_ar": "vos", "en": "vos", "ru": "vos", "de": "vos", "tr": "vos" }, "cells": ["sos", "estás"] },
+     { "label": { "es_ar": "él/ella/usted", "en": "él/ella/usted", "ru": "él/ella/usted", "de": "él/ella/usted", "tr": "él/ella/usted" }, "cells": ["es", "está"] },
+     { "label": { "es_ar": "nosotros", "en": "nosotros", "ru": "nosotros", "de": "nosotros", "tr": "nosotros" }, "cells": ["somos", "estamos"] },
+     { "label": { "es_ar": "ustedes/ellos", "en": "ustedes/ellos", "ru": "ustedes/ellos", "de": "ustedes/ellos", "tr": "ustedes/ellos" }, "cells": ["son", "están"] }
+    ]
+   },
+   {
+    "caption": { "es_ar": "¿Cuál uso?", "en": "Which one do I use?", "ru": "Какой выбрать?", "de": "Welches nehme ich?", "tr": "Hangisini kullanırım?" },
+    "columns": [
+     { "es_ar": "SER →", "en": "SER →", "ru": "SER →", "de": "SER →", "tr": "SER →" },
+     { "es_ar": "ESTAR →", "en": "ESTAR →", "ru": "ESTAR →", "de": "ESTAR →", "tr": "ESTAR →" }
+    ],
+    "rows": [
+     { "cells": ["Soy de Argentina.", "Estoy en Buenos Aires."] },
+     { "cells": ["Es médica.", "Está cansada."] },
+     { "cells": ["Son las tres.", "Está lloviendo."] },
+     { "cells": ["El hielo es frío.", "El mate está frío."] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "Soy profesor, pero hoy estoy de vacaciones.", "en": "I'm a teacher, but today I'm on holiday.", "ru": "Я учитель, но сегодня я в отпуске.", "de": "Ich bin Lehrer, aber heute bin ich im Urlaub.", "tr": "Öğretmenim ama bugün tatildeyim." },
+   { "es_ar": "¿Cómo estás? — Bien, ¿y vos?", "en": "How are you? — Good, and you?", "ru": "Как ты? — Хорошо, а ты?", "de": "Wie geht's dir? — Gut, und dir?", "tr": "Nasılsın? — İyiyim, ya sen?" },
+   { "es_ar": "La sopa está riquísima.", "en": "The soup is delicious (right now).", "ru": "Суп очень вкусный (сейчас).", "de": "Die Suppe schmeckt köstlich (gerade).", "tr": "Çorba çok lezzetli (şu an)." }
+  ],
+  "hints": {
+   "en": "Location of things/people → always ESTAR (está en la mesa). But location of an EVENT → SER (la fiesta es en mi casa). Some adjectives flip meaning: 'es aburrido' = boring, 'está aburrido' = bored.",
+   "ru": "Местонахождение предметов/людей → всегда ESTAR (está en la mesa). Но место СОБЫТИЯ → SER (la fiesta es en mi casa). Некоторые прилагательные меняют смысл: 'es aburrido' = скучный, 'está aburrido' = скучающий.",
+   "de": "Ort von Dingen/Personen → immer ESTAR (está en la mesa). Aber Ort eines EREIGNISSES → SER (la fiesta es en mi casa). Manche Adjektive wechseln die Bedeutung: 'es aburrido' = langweilig, 'está aburrido' = gelangweilt.",
+   "tr": "Nesne/kişinin yeri → her zaman ESTAR (está en la mesa). Ama bir ETKİNLİĞİN yeri → SER (la fiesta es en mi casa). Bazı sıfatlar anlam değiştirir: 'es aburrido' = sıkıcı, 'está aburrido' = sıkılmış."
+  }
+ },
+ {
+  "id": "presente-indicativo",
+  "icon": "⏱️",
+  "level": "A1",
+  "title": {
+   "es_ar": "El presente de indicativo",
+   "en": "The present tense",
+   "ru": "Настоящее время",
+   "de": "Das Präsens",
+   "tr": "Şimdiki/geniş zaman (presente)"
+  },
+  "intro": {
+   "es_ar": "Los verbos se agrupan por su terminación: -AR (hablar), -ER (comer), -IR (vivir). Se saca la terminación y se agregan las desinencias de cada persona. Ojo con el voseo: la forma de 'vos' lleva el acento en la última sílaba (hablás, comés, vivís) y no cambia la raíz aunque el verbo sea irregular en 'tú'.",
+   "en": "Verbs fall into three groups by ending: -AR (hablar), -ER (comer), -IR (vivir). Drop the ending and add the personal endings. Note the voseo: the 'vos' form stresses the last syllable (hablás, comés, vivís) and keeps the plain stem even when 'tú' would be irregular.",
+   "ru": "Глаголы делятся по окончанию: -AR (hablar), -ER (comer), -IR (vivir). Убираем окончание и добавляем личные окончания. Внимание к voseo: форма «vos» имеет ударение на последнем слоге (hablás, comés, vivís) и сохраняет обычный корень, даже если «tú» был бы неправильным.",
+   "de": "Verben gehören zu drei Gruppen nach Endung: -AR (hablar), -ER (comer), -IR (vivir). Endung weg, Personalendungen dran. Beachte das Voseo: die 'vos'-Form betont die letzte Silbe (hablás, comés, vivís) und behält den einfachen Stamm, auch wenn 'tú' unregelmäßig wäre.",
+   "tr": "Fiiller sonlarına göre üç gruba ayrılır: -AR (hablar), -ER (comer), -IR (vivir). Sonu at, kişi eklerini ekle. Voseo'ya dikkat: 'vos' biçimi son heceyi vurgular (hablás, comés, vivís) ve 'tú' düzensiz olsa bile kökü değiştirmez."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Verbos regulares (voseo)", "en": "Regular verbs (voseo)", "ru": "Правильные глаголы (voseo)", "de": "Regelmäßige Verben (voseo)", "tr": "Düzenli fiiller (voseo)" },
+    "labelHeader": { "es_ar": "Persona", "en": "Person", "ru": "Лицо", "de": "Person", "tr": "Şahıs" },
+    "columns": [
+     { "es_ar": "hablar", "en": "hablar", "ru": "hablar", "de": "hablar", "tr": "hablar" },
+     { "es_ar": "comer", "en": "comer", "ru": "comer", "de": "comer", "tr": "comer" },
+     { "es_ar": "vivir", "en": "vivir", "ru": "vivir", "de": "vivir", "tr": "vivir" }
+    ],
+    "rows": [
+     { "label": { "es_ar": "yo", "en": "yo", "ru": "yo", "de": "yo", "tr": "yo" }, "cells": ["hablo", "como", "vivo"] },
+     { "label": { "es_ar": "vos", "en": "vos", "ru": "vos", "de": "vos", "tr": "vos" }, "cells": ["hablás", "comés", "vivís"] },
+     { "label": { "es_ar": "él/ella/usted", "en": "él/ella/usted", "ru": "él/ella/usted", "de": "él/ella/usted", "tr": "él/ella/usted" }, "cells": ["habla", "come", "vive"] },
+     { "label": { "es_ar": "nosotros", "en": "nosotros", "ru": "nosotros", "de": "nosotros", "tr": "nosotros" }, "cells": ["hablamos", "comemos", "vivimos"] },
+     { "label": { "es_ar": "ustedes/ellos", "en": "ustedes/ellos", "ru": "ustedes/ellos", "de": "ustedes/ellos", "tr": "ustedes/ellos" }, "cells": ["hablan", "comen", "viven"] }
+    ]
+   },
+   {
+    "caption": { "es_ar": "Irregulares muy usados (yo + vos)", "en": "Very common irregulars (yo + vos)", "ru": "Частые неправильные (yo + vos)", "de": "Häufige unregelmäßige (yo + vos)", "tr": "Sık düzensizler (yo + vos)" },
+    "columns": [
+     { "es_ar": "Verbo", "en": "Verb", "ru": "Глагол", "de": "Verb", "tr": "Fiil" },
+     { "es_ar": "yo", "en": "yo", "ru": "yo", "de": "yo", "tr": "yo" },
+     { "es_ar": "vos", "en": "vos", "ru": "vos", "de": "vos", "tr": "vos" }
+    ],
+    "rows": [
+     { "cells": ["tener", "tengo", "tenés"] },
+     { "cells": ["ir", "voy", "vas"] },
+     { "cells": ["hacer", "hago", "hacés"] },
+     { "cells": ["poder", "puedo", "podés"] },
+     { "cells": ["querer", "quiero", "querés"] },
+     { "cells": ["decir", "digo", "decís"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "Todos los días tomo mate y leo el diario.", "en": "Every day I drink mate and read the newspaper.", "ru": "Каждый день я пью мате и читаю газету.", "de": "Jeden Tag trinke ich Mate und lese die Zeitung.", "tr": "Her gün mate içerim ve gazete okurum." },
+   { "es_ar": "¿Vos trabajás o estudiás?", "en": "Do you work or study? (voseo)", "ru": "Ты работаешь или учишься? (voseo)", "de": "Arbeitest oder studierst du? (voseo)", "tr": "Çalışıyor musun yoksa okuyor musun? (voseo)" },
+   { "es_ar": "Vivimos en un departamento en Palermo.", "en": "We live in an apartment in Palermo.", "ru": "Мы живём в квартире в Палермо.", "de": "Wir wohnen in einer Wohnung in Palermo.", "tr": "Palermo'da bir dairede yaşıyoruz." }
+  ],
+  "hints": {
+   "en": "The Spanish present covers English simple AND continuous: 'trabajo' = 'I work' and 'I'm working'. You don't need a separate form for right-now (though 'estoy trabajando' exists for emphasis).",
+   "ru": "Испанское настоящее покрывает и Present Simple, и Continuous: 'trabajo' = «я работаю» и «я сейчас работаю». Отдельная форма не нужна (хотя есть 'estoy trabajando' для акцента).",
+   "de": "Das spanische Präsens deckt Simple UND Continuous ab: 'trabajo' = 'ich arbeite' und 'ich bin gerade am Arbeiten'. Eine eigene Verlaufsform brauchst du nicht (es gibt aber 'estoy trabajando' zur Betonung).",
+   "tr": "İspanyolca presente hem geniş hem şimdiki zamanı karşılar: 'trabajo' = 'çalışırım' ve 'çalışıyorum'. Ayrı bir biçim gerekmez (vurgu için 'estoy trabajando' vardır)."
+  }
+ },
+ {
+  "id": "gustar",
+  "icon": "❤️",
+  "level": "A1",
+  "title": {
+   "es_ar": "Gustar y verbos parecidos",
+   "en": "Gustar & verbs like it",
+   "ru": "Gustar и похожие глаголы",
+   "de": "Gustar & ähnliche Verben",
+   "tr": "Gustar ve benzer fiiller"
+  },
+  "intro": {
+   "es_ar": "'Gustar' no significa exactamente «to like»: literalmente es «me resulta agradable». La cosa que gusta es el SUJETO, así que el verbo va con ella: 'me gusta el mate' (singular), 'me gustan los alfajores' (plural). La persona lleva un pronombre de objeto indirecto: me, te, le, nos, les. Igual funcionan encantar, doler, molestar, interesar, faltar.",
+   "en": "'Gustar' doesn't mean 'to like' the way English does: literally it's 'X is pleasing to me'. The thing liked is the SUBJECT, so the verb agrees with it: 'me gusta el mate' (sing.), 'me gustan los alfajores' (pl.). The person takes an indirect-object pronoun: me, te, le, nos, les. Encantar, doler, molestar, interesar, faltar work the same way.",
+   "ru": "'Gustar' — это не совсем «нравиться» по-английски: буквально «X мне приятен». То, что нравится, — это ПОДЛЕЖАЩЕЕ, и глагол согласуется с ним: 'me gusta el mate' (ед.), 'me gustan los alfajores' (мн.). Человек выражается местоимением косвенного дополнения: me, te, le, nos, les. Так же — encantar, doler, molestar, interesar, faltar.",
+   "de": "'Gustar' heißt nicht «mögen» wie im Deutschen: wörtlich «X gefällt mir». Das Gemochte ist das SUBJEKT, das Verb richtet sich danach: 'me gusta el mate' (Sing.), 'me gustan los alfajores' (Pl.). Die Person steht als indirektes Objektpronomen: me, te, le, nos, les. Genauso: encantar, doler, molestar, interesar, faltar.",
+   "tr": "'Gustar' İngilizcedeki gibi «beğenmek» değildir: kelimesi kelimesine «X bana hoş gelir». Beğenilen şey ÖZNEdir, fiil ona göre çekilir: 'me gusta el mate' (tekil), 'me gustan los alfajores' (çoğul). Kişi dolaylı nesne zamiriyle gelir: me, te, le, nos, les. encantar, doler, molestar, interesar, faltar da aynı."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "El esquema de gustar", "en": "The gustar pattern", "ru": "Схема gustar", "de": "Das gustar-Schema", "tr": "gustar kalıbı" },
+    "columns": [
+     { "es_ar": "A quién", "en": "To whom", "ru": "Кому", "de": "Wem", "tr": "Kime" },
+     { "es_ar": "Pronombre", "en": "Pronoun", "ru": "Местоим.", "de": "Pronomen", "tr": "Zamir" },
+     { "es_ar": "gusta / gustan", "en": "gusta / gustan", "ru": "gusta / gustan", "de": "gusta / gustan", "tr": "gusta / gustan" }
+    ],
+    "rows": [
+     { "cells": ["(a mí)", "me", "gusta el café"] },
+     { "cells": ["(a vos)", "te", "gustan los libros"] },
+     { "cells": ["(a él/ella/usted)", "le", "gusta bailar"] },
+     { "cells": ["(a nosotros)", "nos", "gusta la playa"] },
+     { "cells": ["(a ustedes/ellos)", "les", "gustan las facturas"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "Me gusta mucho el asado, pero no me gustan las achuras.", "en": "I really like asado, but I don't like offal.", "ru": "Мне очень нравится асадо, но не нравятся потроха.", "de": "Ich mag Asado sehr, aber Innereien mag ich nicht.", "tr": "Asado'yu çok severim ama sakatatı sevmem." },
+   { "es_ar": "¿Te gusta el tango?", "en": "Do you like tango? (voseo)", "ru": "Тебе нравится танго? (voseo)", "de": "Magst du Tango? (voseo)", "tr": "Tango sever misin? (voseo)" },
+   { "es_ar": "A mi hermana le encanta viajar.", "en": "My sister loves to travel.", "ru": "Моя сестра обожает путешествовать.", "de": "Meine Schwester reist für ihr Leben gern.", "tr": "Kız kardeşim seyahat etmeye bayılır." }
+  ],
+  "hints": {
+   "en": "When what's liked is a verb, gustar stays singular: 'me gusta cantar y bailar' (not *gustan). Add 'a mí/a vos…' up front only for emphasis or contrast: 'A mí me gusta, a vos no.'",
+   "ru": "Если нравится действие (глагол), gustar остаётся в единственном: 'me gusta cantar y bailar' (не *gustan). 'a mí/a vos…' в начале — только для акцента: 'A mí me gusta, a vos no.'",
+   "de": "Wenn das Gemochte ein Verb ist, bleibt gustar Singular: 'me gusta cantar y bailar' (nicht *gustan). 'a mí/a vos…' voran nur zur Betonung: 'A mí me gusta, a vos no.'",
+   "tr": "Beğenilen şey bir fiilse gustar tekil kalır: 'me gusta cantar y bailar' (*gustan değil). Başa 'a mí/a vos…' sadece vurgu için: 'A mí me gusta, a vos no.'"
+  }
+ },
+ {
+  "id": "hay-interrogativos",
+  "icon": "❓",
+  "level": "A1",
+  "title": {
+   "es_ar": "Hay, y las preguntas",
+   "en": "Hay, and asking questions",
+   "ru": "Hay и вопросы",
+   "de": "Hay und Fragen",
+   "tr": "Hay ve soru sormak"
+  },
+  "intro": {
+   "es_ar": "'Hay' significa «there is / there are» y nunca cambia: hay un banco, hay muchos bancos. Para preguntar se usan palabras interrogativas con tilde: qué, quién, cuándo, dónde, cómo, cuánto, por qué, cuál. La pregunta se abre con ¿ y se cierra con ?, sin cambiar el orden: '¿Dónde vivís?'. La entonación sube al final.",
+   "en": "'Hay' means 'there is / there are' and never changes: hay un banco, hay muchos bancos. To ask, use accented question words: qué, quién, cuándo, dónde, cómo, cuánto, por qué, cuál. A question opens with ¿ and closes with ?, without reordering: '¿Dónde vivís?'. The pitch rises at the end.",
+   "ru": "'Hay' значит «есть / имеется» и не меняется: hay un banco, hay muchos bancos. Для вопросов — вопросительные слова с ударением: qué, quién, cuándo, dónde, cómo, cuánto, por qué, cuál. Вопрос открывается ¿ и закрывается ?, порядок слов не меняется: '¿Dónde vivís?'. Интонация повышается в конце.",
+   "de": "'Hay' heißt «es gibt» und ändert sich nie: hay un banco, hay muchos bancos. Zum Fragen dienen betonte Fragewörter: qué, quién, cuándo, dónde, cómo, cuánto, por qué, cuál. Eine Frage öffnet mit ¿ und schließt mit ?, ohne Umstellung: '¿Dónde vivís?'. Die Stimme steigt am Ende.",
+   "tr": "'Hay' «var / vardır» demektir ve hiç değişmez: hay un banco, hay muchos bancos. Soru sormak için vurgulu soru sözcükleri: qué, quién, cuándo, dónde, cómo, cuánto, por qué, cuál. Soru ¿ ile açılır, ? ile kapanır, sıra değişmez: '¿Dónde vivís?'. Ses sonda yükselir."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Palabras interrogativas", "en": "Question words", "ru": "Вопросительные слова", "de": "Fragewörter", "tr": "Soru sözcükleri" },
+    "columns": [
+     { "es_ar": "Español", "en": "Spanish", "ru": "Испанский", "de": "Spanisch", "tr": "İspanyolca" },
+     { "es_ar": "Sentido", "en": "Meaning", "ru": "Значение", "de": "Bedeutung", "tr": "Anlam" },
+     { "es_ar": "Ejemplo", "en": "Example", "ru": "Пример", "de": "Beispiel", "tr": "Örnek" }
+    ],
+    "rows": [
+     { "cells": ["¿qué?", "what", "¿Qué hacés?"] },
+     { "cells": ["¿quién?", "who", "¿Quién es?"] },
+     { "cells": ["¿dónde?", "where", "¿Dónde está?"] },
+     { "cells": ["¿cuándo?", "when", "¿Cuándo venís?"] },
+     { "cells": ["¿cómo?", "how", "¿Cómo estás?"] },
+     { "cells": ["¿cuánto/a/os/as?", "how much/many", "¿Cuánto sale?"] },
+     { "cells": ["¿por qué?", "why", "¿Por qué no?"] },
+     { "cells": ["¿cuál?", "which", "¿Cuál preferís?"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "¿Hay un baño por acá?", "en": "Is there a bathroom around here?", "ru": "Здесь есть туалет?", "de": "Gibt es hier eine Toilette?", "tr": "Buralarda tuvalet var mı?" },
+   { "es_ar": "¿Cuánto sale el colectivo?", "en": "How much is the bus? (Arg. 'salir' = to cost)", "ru": "Сколько стоит автобус? (арг. 'salir' = стоить)", "de": "Was kostet der Bus? (arg. 'salir' = kosten)", "tr": "Otobüs kaça? (Arj. 'salir' = etmek/tutmak)" },
+   { "es_ar": "¿Por qué no venís a cenar el sábado?", "en": "Why don't you come to dinner on Saturday?", "ru": "Почему бы тебе не прийти на ужин в субботу?", "de": "Warum kommst du am Samstag nicht zum Essen?", "tr": "Cumartesi akşam yemeğine neden gelmiyorsun?" }
+  ],
+  "hints": {
+   "en": "Don't confuse 'hay' (there is), 'ahí' (there), and 'ay!' (ouch) — they sound alike. 'Porque' (because) is one word without accent; '¿por qué?' (why) is two with accent.",
+   "ru": "Не путайте 'hay' (есть), 'ahí' (там) и 'ay!' (ай!) — звучат похоже. 'Porque' (потому что) — одно слово без ударения; '¿por qué?' (почему) — два слова с ударением.",
+   "de": "Verwechsle nicht 'hay' (es gibt), 'ahí' (dort) und 'ay!' (autsch) — klingen ähnlich. 'Porque' (weil) ist ein Wort ohne Akzent; '¿por qué?' (warum) zwei Wörter mit Akzent.",
+   "tr": "'hay' (var), 'ahí' (orada) ve 'ay!' (of!) karışmasın — benzer okunur. 'Porque' (çünkü) tek kelime, vurgusuz; '¿por qué?' (neden) iki kelime, vurgulu."
+  }
+ },
+ {
+  "id": "adjetivos",
+  "icon": "🎨",
+  "level": "A1",
+  "title": {
+   "es_ar": "Los adjetivos y su concordancia",
+   "en": "Adjectives & agreement",
+   "ru": "Прилагательные и согласование",
+   "de": "Adjektive & Kongruenz",
+   "tr": "Sıfatlar ve uyum"
+  },
+  "intro": {
+   "es_ar": "El adjetivo concuerda con el sustantivo en género y número, y casi siempre va DESPUÉS: 'un auto rojo', 'una casa roja', 'unos autos rojos'. Los que terminan en -e o en consonante no cambian de género (un chico inteligente, una chica inteligente), solo de número. Adelantar el adjetivo suena literario o cambia el matiz.",
+   "en": "An adjective agrees with its noun in gender and number, and almost always comes AFTER it: 'un auto rojo', 'una casa roja', 'unos autos rojos'. Adjectives ending in -e or a consonant don't change for gender (un chico inteligente, una chica inteligente), only for number. Putting the adjective first sounds literary or shifts the nuance.",
+   "ru": "Прилагательное согласуется с существительным в роде и числе и почти всегда стоит ПОСЛЕ: 'un auto rojo', 'una casa roja', 'unos autos rojos'. Оканчивающиеся на -e или согласный не меняются по роду (un chico inteligente, una chica inteligente), только по числу. Прилагательное впереди звучит книжно или меняет оттенок.",
+   "de": "Ein Adjektiv richtet sich nach dem Nomen in Genus und Numerus und steht fast immer DANACH: 'un auto rojo', 'una casa roja', 'unos autos rojos'. Adjektive auf -e oder Konsonant ändern das Genus nicht (un chico inteligente, una chica inteligente), nur den Numerus. Voranstellung klingt literarisch oder verschiebt die Nuance.",
+   "tr": "Sıfat, ismiyle cinsiyet ve sayıda uyuşur ve neredeyse her zaman SONRA gelir: 'un auto rojo', 'una casa roja', 'unos autos rojos'. -e ya da sessizle bitenler cinsiyete göre değişmez (un chico inteligente, una chica inteligente), sadece sayıya göre. Sıfatı öne almak edebi durur ya da anlamı değiştirir."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Las cuatro formas", "en": "The four forms", "ru": "Четыре формы", "de": "Die vier Formen", "tr": "Dört biçim" },
+    "labelHeader": { "es_ar": "Tipo", "en": "Type", "ru": "Тип", "de": "Typ", "tr": "Tür" },
+    "columns": [
+     { "es_ar": "m. sing.", "en": "m. sing.", "ru": "м. ед.", "de": "m. Sing.", "tr": "e. tekil" },
+     { "es_ar": "f. sing.", "en": "f. sing.", "ru": "ж. ед.", "de": "f. Sing.", "tr": "d. tekil" },
+     { "es_ar": "plural", "en": "plural", "ru": "мн.", "de": "Plural", "tr": "çoğul" }
+    ],
+    "rows": [
+     { "label": { "es_ar": "-o/-a", "en": "-o/-a", "ru": "-o/-a", "de": "-o/-a", "tr": "-o/-a" }, "cells": ["alto", "alta", "altos / altas"] },
+     { "label": { "es_ar": "-e", "en": "-e", "ru": "-e", "de": "-e", "tr": "-e" }, "cells": ["grande", "grande", "grandes"] },
+     { "label": { "es_ar": "consonante", "en": "consonant", "ru": "согласный", "de": "Konsonant", "tr": "sessiz" }, "cells": ["fácil", "fácil", "fáciles"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "Es una ciudad muy linda y tranquila.", "en": "It's a very pretty and quiet city.", "ru": "Это очень красивый и тихий город.", "de": "Es ist eine sehr schöne und ruhige Stadt.", "tr": "Çok güzel ve sakin bir şehir." },
+   { "es_ar": "Tengo dos hermanos mayores.", "en": "I have two older brothers.", "ru": "У меня два старших брата.", "de": "Ich habe zwei ältere Brüder.", "tr": "İki büyük erkek kardeşim var." },
+   { "es_ar": "Las empanadas están buenísimas.", "en": "The empanadas are super good.", "ru": "Эмпанады очень вкусные.", "de": "Die Empanadas sind superlecker.", "tr": "Empanadalar çok güzel." }
+  ],
+  "hints": {
+   "en": "A few adjectives drop the -o before a masculine singular noun: 'buen', 'mal', 'primer', 'tercer', 'gran' (bueno → un buen amigo; grande → una gran idea). '-ísimo' means 'very…': lindo → lindísimo.",
+   "ru": "Несколько прилагательных теряют -o перед существительным м. р. ед. ч.: 'buen', 'mal', 'primer', 'tercer', 'gran' (bueno → un buen amigo; grande → una gran idea). '-ísimo' значит «очень»: lindo → lindísimo.",
+   "de": "Einige Adjektive verlieren das -o vor maskulinem Singularnomen: 'buen', 'mal', 'primer', 'tercer', 'gran' (bueno → un buen amigo; grande → una gran idea). '-ísimo' heißt «sehr…»: lindo → lindísimo.",
+   "tr": "Bazı sıfatlar eril tekil isimden önce -o'yu düşürür: 'buen', 'mal', 'primer', 'tercer', 'gran' (bueno → un buen amigo; grande → una gran idea). '-ísimo' «çok…» demektir: lindo → lindísimo."
+  }
+ },
+ {
+  "id": "posesivos",
+  "icon": "🔑",
+  "level": "A1",
+  "title": {
+   "es_ar": "Los posesivos",
+   "en": "Possessives",
+   "ru": "Притяжательные",
+   "de": "Possessivbegleiter",
+   "tr": "İyelik sıfatları"
+  },
+  "intro": {
+   "es_ar": "Los posesivos átonos van antes del sustantivo y concuerdan en número (y mi/tu/su también son iguales para masc. y fem.): mi, tu, su, nuestro/a. 'Su' sirve para él, ella, usted, ellos y ustedes, así que a veces conviene aclarar con 'de él', 'de ella'. Ojo: 'tu' (posesivo, sin tilde) ≠ 'vos' (pronombre): 'tu casa' pero '¿de dónde sos vos?'.",
+   "en": "Unstressed possessives go before the noun and agree in number (mi/tu/su are the same for masc. and fem.): mi, tu, su, nuestro/a. 'Su' covers él, ella, usted, ellos and ustedes, so you sometimes clarify with 'de él', 'de ella'. Note: 'tu' (possessive, no accent) ≠ 'vos' (pronoun): 'tu casa' but '¿de dónde sos vos?'.",
+   "ru": "Безударные притяжательные стоят перед существительным и согласуются в числе (mi/tu/su одинаковы для м. и ж. рода): mi, tu, su, nuestro/a. 'Su' — это él, ella, usted, ellos, ustedes, поэтому иногда уточняют 'de él', 'de ella'. Внимание: 'tu' (притяж., без ударения) ≠ 'vos' (местоим.): 'tu casa', но '¿de dónde sos vos?'.",
+   "de": "Unbetonte Possessive stehen vor dem Nomen und richten sich nach dem Numerus (mi/tu/su sind gleich für Mask. und Fem.): mi, tu, su, nuestro/a. 'Su' gilt für él, ella, usted, ellos und ustedes, daher klärt man manchmal mit 'de él', 'de ella'. Achtung: 'tu' (Possessiv, ohne Akzent) ≠ 'vos' (Pronomen): 'tu casa', aber '¿de dónde sos vos?'.",
+   "tr": "Vurgusuz iyelikler isimden önce gelir ve sayıda uyuşur (mi/tu/su eril ve dişil için aynı): mi, tu, su, nuestro/a. 'Su' él, ella, usted, ellos ve ustedes için geçerli, bu yüzden bazen 'de él', 'de ella' ile netleştirilir. Dikkat: 'tu' (iyelik, vurgusuz) ≠ 'vos' (zamir): 'tu casa' ama '¿de dónde sos vos?'."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Posesivos átonos", "en": "Unstressed possessives", "ru": "Безударные притяжательные", "de": "Unbetonte Possessive", "tr": "Vurgusuz iyelikler" },
+    "columns": [
+     { "es_ar": "Poseedor", "en": "Owner", "ru": "Обладатель", "de": "Besitzer", "tr": "Sahip" },
+     { "es_ar": "Singular", "en": "Singular", "ru": "Ед.", "de": "Singular", "tr": "Tekil" },
+     { "es_ar": "Plural", "en": "Plural", "ru": "Мн.", "de": "Plural", "tr": "Çoğul" }
+    ],
+    "rows": [
+     { "cells": ["yo", "mi", "mis"] },
+     { "cells": ["vos", "tu", "tus"] },
+     { "cells": ["él/ella/usted", "su", "sus"] },
+     { "cells": ["nosotros", "nuestro / nuestra", "nuestros / nuestras"] },
+     { "cells": ["ustedes/ellos", "su", "sus"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "Mi vieja vive en Córdoba.", "en": "My mom lives in Córdoba. ('vieja' = mom, informal)", "ru": "Моя мама живёт в Кордобе. ('vieja' — мама, разг.)", "de": "Meine Mutter wohnt in Córdoba. ('vieja' = Mama, ugs.)", "tr": "Annem Córdoba'da yaşıyor. ('vieja' = anne, samimi)" },
+   { "es_ar": "¿Este es tu celular o el mío?", "en": "Is this your cell phone or mine?", "ru": "Это твой мобильный или мой?", "de": "Ist das dein Handy oder meins?", "tr": "Bu senin cep telefonun mu benimki mi?" },
+   { "es_ar": "Nuestros amigos llegan mañana.", "en": "Our friends arrive tomorrow.", "ru": "Наши друзья приезжают завтра.", "de": "Unsere Freunde kommen morgen an.", "tr": "Arkadaşlarımız yarın geliyor." }
+  ],
+  "hints": {
+   "en": "Spanish rarely uses possessives with body parts and clothes — it uses the article: 'me duele la cabeza' (my head hurts), 'me pongo la campera' (I put on my jacket).",
+   "ru": "С частями тела и одеждой испанский почти не использует притяжательные — берётся артикль: 'me duele la cabeza' (у меня болит голова), 'me pongo la campera' (надеваю куртку).",
+   "de": "Bei Körperteilen und Kleidung nimmt Spanisch selten Possessive, sondern den Artikel: 'me duele la cabeza' (mir tut der Kopf weh), 'me pongo la campera' (ich ziehe die Jacke an).",
+   "tr": "Vücut parçaları ve giysilerde İspanyolca genelde iyelik değil artikel kullanır: 'me duele la cabeza' (başım ağrıyor), 'me pongo la campera' (montu giyerim)."
+  }
+ },
+ {
+  "id": "ir-a-futuro",
+  "icon": "➡️",
+  "level": "A2",
+  "title": {
+   "es_ar": "El futuro con «ir a + infinitivo»",
+   "en": "Near future: 'ir a + infinitive'",
+   "ru": "Ближайшее будущее: «ir a + инфинитив»",
+   "de": "Nahe Zukunft: «ir a + Infinitiv»",
+   "tr": "Yakın gelecek: «ir a + mastar»"
+  },
+  "intro": {
+   "es_ar": "La forma más común de hablar del futuro en el día a día es 'ir a' + infinitivo, igual que el inglés 'going to': voy a estudiar, vas a ver, vamos a comer. Es más frecuente en la conversación que el futuro simple (estudiaré). Se conjuga solo 'ir'; el segundo verbo queda en infinitivo.",
+   "en": "The everyday way to talk about the future is 'ir a' + infinitive, just like English 'going to': voy a estudiar, vas a ver, vamos a comer. It's far more common in speech than the simple future (estudiaré). Only 'ir' is conjugated; the second verb stays in the infinitive.",
+   "ru": "Самый обычный способ говорить о будущем — 'ir a' + инфинитив, как английское 'going to': voy a estudiar, vas a ver, vamos a comer. В разговоре встречается чаще, чем простое будущее (estudiaré). Спрягается только 'ir'; второй глагол — в инфинитиве.",
+   "de": "Der alltägliche Weg über die Zukunft zu sprechen ist 'ir a' + Infinitiv, wie das englische 'going to': voy a estudiar, vas a ver, vamos a comer. In der gesprochenen Sprache viel häufiger als das einfache Futur (estudiaré). Nur 'ir' wird konjugiert; das zweite Verb bleibt Infinitiv.",
+   "tr": "Günlük dilde gelecekten söz etmenin en yaygın yolu 'ir a' + mastar, tıpkı İngilizce 'going to' gibi: voy a estudiar, vas a ver, vamos a comer. Konuşmada basit gelecekten (estudiaré) çok daha sık. Sadece 'ir' çekilir; ikinci fiil mastarda kalır."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Presente de «ir» (voseo)", "en": "Present of 'ir' (voseo)", "ru": "Настоящее «ir» (voseo)", "de": "Präsens von 'ir' (voseo)", "tr": "'ir' şimdiki zaman (voseo)" },
+    "columns": [
+     { "es_ar": "Persona", "en": "Person", "ru": "Лицо", "de": "Person", "tr": "Şahıs" },
+     { "es_ar": "ir", "en": "ir", "ru": "ir", "de": "ir", "tr": "ir" },
+     { "es_ar": "+ a + infinitivo", "en": "+ a + infinitive", "ru": "+ a + инфинитив", "de": "+ a + Infinitiv", "tr": "+ a + mastar" }
+    ],
+    "rows": [
+     { "cells": ["yo", "voy", "voy a salir"] },
+     { "cells": ["vos", "vas", "vas a ver"] },
+     { "cells": ["él/ella/usted", "va", "va a llover"] },
+     { "cells": ["nosotros", "vamos", "vamos a comer"] },
+     { "cells": ["ustedes/ellos", "van", "van a llegar"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "Esta noche vamos a ver a los pibes.", "en": "Tonight we're going to see the guys.", "ru": "Сегодня вечером мы увидимся с ребятами.", "de": "Heute Abend treffen wir die Jungs.", "tr": "Bu gece çocuklarla buluşacağız." },
+   { "es_ar": "¿Qué vas a hacer el finde?", "en": "What are you going to do this weekend? ('finde' = weekend)", "ru": "Что ты будешь делать на выходных? ('finde' = выходные)", "de": "Was machst du am Wochenende? ('finde' = Wochenende)", "tr": "Hafta sonu ne yapacaksın? ('finde' = hafta sonu)" },
+   { "es_ar": "Creo que va a llover.", "en": "I think it's going to rain.", "ru": "Думаю, будет дождь.", "de": "Ich glaube, es wird regnen.", "tr": "Sanırım yağmur yağacak." }
+  ],
+  "hints": {
+   "en": "Same 'going to' logic, so it's intuitive for English speakers. For an on-the-spot decision or a present-progressive idea, plain present often does the job too: 'salgo en cinco minutos' (I'm leaving in five).",
+   "ru": "Та же логика 'going to' — интуитивно для тех, кто знает английский. Для сиюминутного решения нередко хватает и настоящего: 'salgo en cinco minutos' (выхожу через пять минут).",
+   "de": "Gleiche 'going to'-Logik, daher intuitiv. Für eine spontane Entscheidung reicht oft das Präsens: 'salgo en cinco minutos' (ich gehe in fünf Minuten).",
+   "tr": "Aynı 'going to' mantığı, sezgisel. Anlık bir karar için çoğu zaman düz şimdiki zaman da yeter: 'salgo en cinco minutos' (beş dakikaya çıkıyorum)."
+  }
+ },
+ {
+  "id": "imperativo-vos",
+  "icon": "📣",
+  "level": "A1",
+  "title": {
+   "es_ar": "El imperativo (con voseo)",
+   "en": "The imperative (with voseo)",
+   "ru": "Повелительное наклонение (с voseo)",
+   "de": "Der Imperativ (mit Voseo)",
+   "tr": "Emir kipi (voseo ile)"
+  },
+  "intro": {
+   "es_ar": "Para dar órdenes o pedidos a 'vos', el imperativo afirmativo es facilísimo: tomás el infinitivo, le sacás la -r final y ponés la tilde en la última vocal: hablá, comé, viví, tené, vení, hacé, decí, mirá. Para 'usted' y 'ustedes' se usan las formas del subjuntivo (hable, hablen). El negativo cambia (ver B1: mandatos negativos).",
+   "en": "To give an order or request to 'vos', the affirmative imperative is dead easy: take the infinitive, drop the final -r, and stress the last vowel: hablá, comé, viví, tené, vení, hacé, decí, mirá. For 'usted' and 'ustedes' use the subjunctive forms (hable, hablen). The negative is different (see B1: negative commands).",
+   "ru": "Чтобы отдать команду или просьбу к 'vos', утвердительное повелительное совсем простое: берём инфинитив, убираем -r и ставим ударение на последний гласный: hablá, comé, viví, tené, vení, hacé, decí, mirá. Для 'usted' и 'ustedes' — формы сослагательного (hable, hablen). Отрицание другое (см. B1: отрицательные команды).",
+   "de": "Für einen Befehl/eine Bitte an 'vos' ist der bejahende Imperativ kinderleicht: Infinitiv nehmen, -r weg, letzten Vokal betonen: hablá, comé, viví, tené, vení, hacé, decí, mirá. Für 'usted' und 'ustedes' die Subjunktiv-Formen (hable, hablen). Die Verneinung ist anders (siehe B1: verneinte Befehle).",
+   "tr": "'vos'a emir/rica için olumlu emir çok kolay: mastarı al, son -r'yi at, son sesliyi vurgula: hablá, comé, viví, tené, vení, hacé, decí, mirá. 'usted' ve 'ustedes' için subjuntivo biçimleri (hable, hablen). Olumsuzu farklıdır (bkz. B1: olumsuz emir)."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Imperativo afirmativo", "en": "Affirmative imperative", "ru": "Утвердительное повелительное", "de": "Bejahender Imperativ", "tr": "Olumlu emir" },
+    "columns": [
+     { "es_ar": "Infinitivo", "en": "Infinitive", "ru": "Инфинитив", "de": "Infinitiv", "tr": "Mastar" },
+     { "es_ar": "vos", "en": "vos", "ru": "vos", "de": "vos", "tr": "vos" },
+     { "es_ar": "usted", "en": "usted", "ru": "usted", "de": "usted", "tr": "usted" },
+     { "es_ar": "ustedes", "en": "ustedes", "ru": "ustedes", "de": "ustedes", "tr": "ustedes" }
+    ],
+    "rows": [
+     { "cells": ["hablar", "hablá", "hable", "hablen"] },
+     { "cells": ["comer", "comé", "coma", "coman"] },
+     { "cells": ["venir", "vení", "venga", "vengan"] },
+     { "cells": ["decir", "decí", "diga", "digan"] },
+     { "cells": ["hacer", "hacé", "haga", "hagan"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "Dale, vení para acá.", "en": "Come on, come over here. ('dale' = come on/OK)", "ru": "Давай, иди сюда. ('dale' = давай/ладно)", "de": "Komm schon, komm her. ('dale' = los/okay)", "tr": "Hadi, buraya gel. ('dale' = hadi/tamam)" },
+   { "es_ar": "Decime la verdad, por favor.", "en": "Tell me the truth, please. (pronoun attached)", "ru": "Скажи мне правду, пожалуйста. (местоим. присоединено)", "de": "Sag mir die Wahrheit, bitte. (Pronomen angehängt)", "tr": "Bana doğruyu söyle, lütfen. (zamir bitişik)" },
+   { "es_ar": "Pasá, sentate, tomá un mate.", "en": "Come in, sit down, have a mate.", "ru": "Заходи, садись, выпей мате.", "de": "Komm rein, setz dich, trink einen Mate.", "tr": "Gir, otur, bir mate iç." }
+  ],
+  "hints": {
+   "en": "With affirmative commands the object pronoun sticks onto the end and can add a written accent: decí + me → decime; tomá + lo → tomalo; sentá + te → sentate. Only 'ir' is irregular for vos: 'andá' is used, or 'andate' (go away).",
+   "ru": "При утвердительных командах местоимение приклеивается к концу и может получать ударение: decí + me → decime; tomá + lo → tomalo; sentá + te → sentate. Неправильный только 'ir' для vos: используется 'andá' или 'andate' (уходи).",
+   "de": "Bei bejahten Befehlen hängt das Objektpronomen hinten an und kann einen Akzent bekommen: decí + me → decime; tomá + lo → tomalo; sentá + te → sentate. Nur 'ir' ist für vos unregelmäßig: man sagt 'andá' bzw. 'andate' (geh weg).",
+   "tr": "Olumlu emirlerde nesne zamiri sona yapışır ve vurgu alabilir: decí + me → decime; tomá + lo → tomalo; sentá + te → sentate. Vos için sadece 'ir' düzensiz: 'andá' ya da 'andate' (git) kullanılır."
+  }
+ },
+ {
+  "id": "preterito-indefinido",
+  "icon": "📅",
+  "level": "A2",
+  "title": {
+   "es_ar": "El pretérito perfecto simple (indefinido)",
+   "en": "The preterite (simple past)",
+   "ru": "Простое прошедшее (indefinido)",
+   "de": "Das Indefinido (einfache Vergangenheit)",
+   "tr": "Belirli geçmiş (indefinido)"
+  },
+  "intro": {
+   "es_ar": "El pretérito perfecto simple cuenta acciones terminadas del pasado: ayer comí, la semana pasada fuimos. En el Río de la Plata es EL pasado por defecto: donde España diría 'hoy he comido', acá se dice 'hoy comí'. Se forma con terminaciones propias para -ar y para -er/-ir. Hay varios irregulares muy frecuentes (ser/ir comparten forma: fui).",
+   "en": "The preterite narrates completed past actions: ayer comí, la semana pasada fuimos. In the Río de la Plata it's THE default past: where Spain says 'hoy he comido', here you say 'hoy comí'. It has one set of endings for -ar and another for -er/-ir. Several very common verbs are irregular (ser and ir share a form: fui).",
+   "ru": "Простое прошедшее описывает завершённые действия: ayer comí, la semana pasada fuimos. В регионе Ла-Платы это основное прошедшее: где Испания скажет 'hoy he comido', здесь говорят 'hoy comí'. Одни окончания для -ar, другие для -er/-ir. Несколько частых глаголов неправильные (ser и ir совпадают: fui).",
+   "de": "Das Indefinido erzählt abgeschlossene Handlungen: ayer comí, la semana pasada fuimos. Am Río de la Plata ist es DIE Standardvergangenheit: wo Spanien 'hoy he comido' sagt, sagt man hier 'hoy comí'. Ein Endungssatz für -ar, ein anderer für -er/-ir. Mehrere häufige Verben sind unregelmäßig (ser und ir teilen eine Form: fui).",
+   "tr": "İndefinido tamamlanmış geçmiş eylemleri anlatır: ayer comí, la semana pasada fuimos. Río de la Plata'da varsayılan geçmiş budur: İspanya 'hoy he comido' derken burada 'hoy comí' denir. -ar için bir ek grubu, -er/-ir için başka bir grup var. Birçok sık fiil düzensizdir (ser ve ir aynı biçimi paylaşır: fui)."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Terminaciones regulares", "en": "Regular endings", "ru": "Правильные окончания", "de": "Regelmäßige Endungen", "tr": "Düzenli ekler" },
+    "labelHeader": { "es_ar": "Persona", "en": "Person", "ru": "Лицо", "de": "Person", "tr": "Şahıs" },
+    "columns": [
+     { "es_ar": "hablar", "en": "hablar", "ru": "hablar", "de": "hablar", "tr": "hablar" },
+     { "es_ar": "comer / vivir", "en": "comer / vivir", "ru": "comer / vivir", "de": "comer / vivir", "tr": "comer / vivir" }
+    ],
+    "rows": [
+     { "label": { "es_ar": "yo", "en": "yo", "ru": "yo", "de": "yo", "tr": "yo" }, "cells": ["hablé", "comí / viví"] },
+     { "label": { "es_ar": "vos/tú", "en": "vos/tú", "ru": "vos/tú", "de": "vos/tú", "tr": "vos/tú" }, "cells": ["hablaste", "comiste / viviste"] },
+     { "label": { "es_ar": "él/ella/usted", "en": "él/ella/usted", "ru": "él/ella/usted", "de": "él/ella/usted", "tr": "él/ella/usted" }, "cells": ["habló", "comió / vivió"] },
+     { "label": { "es_ar": "nosotros", "en": "nosotros", "ru": "nosotros", "de": "nosotros", "tr": "nosotros" }, "cells": ["hablamos", "comimos / vivimos"] },
+     { "label": { "es_ar": "ustedes/ellos", "en": "ustedes/ellos", "ru": "ustedes/ellos", "de": "ustedes/ellos", "tr": "ustedes/ellos" }, "cells": ["hablaron", "comieron / vivieron"] }
+    ]
+   },
+   {
+    "caption": { "es_ar": "Irregulares imprescindibles", "en": "Essential irregulars", "ru": "Ключевые неправильные", "de": "Unverzichtbare unregelmäßige", "tr": "Vazgeçilmez düzensizler" },
+    "columns": [
+     { "es_ar": "Verbo", "en": "Verb", "ru": "Глагол", "de": "Verb", "tr": "Fiil" },
+     { "es_ar": "yo", "en": "yo", "ru": "yo", "de": "yo", "tr": "yo" },
+     { "es_ar": "él/ella", "en": "él/ella", "ru": "él/ella", "de": "él/ella", "tr": "él/ella" }
+    ],
+    "rows": [
+     { "cells": ["ser / ir", "fui", "fue"] },
+     { "cells": ["estar", "estuve", "estuvo"] },
+     { "cells": ["tener", "tuve", "tuvo"] },
+     { "cells": ["hacer", "hice", "hizo"] },
+     { "cells": ["decir", "dije", "dijo"] },
+     { "cells": ["poder", "pude", "pudo"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "Anoche salí con los chicos y volví tardísimo.", "en": "Last night I went out with the guys and got back super late.", "ru": "Вчера вечером я вышел с ребятами и вернулся очень поздно.", "de": "Gestern Abend ging ich mit den Jungs aus und kam superspät zurück.", "tr": "Dün gece çocuklarla çıktım ve çok geç döndüm." },
+   { "es_ar": "¿Ya almorzaste?", "en": "Have you had lunch yet? (Arg. uses preterite, not perfect)", "ru": "Ты уже пообедал? (арг. — простое прош., не перфект)", "de": "Hast du schon zu Mittag gegessen? (Arg. Indefinido, nicht Perfekt)", "tr": "Öğle yemeği yedin mi? (Arj. indefinido kullanır, perfekt değil)" },
+   { "es_ar": "El año pasado fuimos a Bariloche.", "en": "Last year we went to Bariloche.", "ru": "В прошлом году мы ездили в Барилоче.", "de": "Letztes Jahr fuhren wir nach Bariloche.", "tr": "Geçen yıl Bariloche'ye gittik." }
+  ],
+  "hints": {
+   "en": "Careful: the 'vos/tú' ending is -aste / -iste with NO final -s. Educated Argentine avoids '*comistes'. And 'fui' covers both 'I was' and 'I went' — context decides.",
+   "ru": "Внимание: окончание 'vos/tú' — -aste / -iste, БЕЗ конечного -s. Грамотный аргентинец не говорит '*comistes'. И 'fui' — это и «я был», и «я пошёл»: решает контекст.",
+   "de": "Achtung: die 'vos/tú'-Endung ist -aste / -iste OHNE End-s. Gebildetes Argentinisch vermeidet '*comistes'. Und 'fui' heißt sowohl 'ich war' als auch 'ich ging' — der Kontext entscheidet.",
+   "tr": "Dikkat: 'vos/tú' eki -aste / -iste, sonda -s YOK. Eğitimli Arjantinli '*comistes' demez. Ve 'fui' hem 'idim' hem 'gittim' demek — bağlam belirler."
+  }
+ },
+ {
+  "id": "imperfecto",
+  "icon": "🎞️",
+  "level": "A2",
+  "title": {
+   "es_ar": "El pretérito imperfecto",
+   "en": "The imperfect tense",
+   "ru": "Прошедшее несовершенное (imperfecto)",
+   "de": "Das Imperfekt (Imperfecto)",
+   "tr": "Sürekli geçmiş (imperfecto)"
+  },
+  "intro": {
+   "es_ar": "El imperfecto describe el pasado sin marcar un final: costumbres (todos los veranos íbamos…), descripciones (hacía frío, era de noche), acciones en curso (mientras cocinaba) y la edad (tenía diez años). Es casi todo regular: solo tres irregulares (ir, ser, ver). Las terminaciones -aba y -ía suenan a «solía / used to».",
+   "en": "The imperfect describes the past without marking an end: habits (every summer we used to go…), descriptions (it was cold, it was night), actions in progress (while I was cooking) and age (I was ten). It's almost entirely regular — only three irregulars (ir, ser, ver). The -aba / -ía endings feel like English 'used to / was …-ing'.",
+   "ru": "Имперфект описывает прошлое без указания на конец: привычки (каждое лето мы ездили…), описания (было холодно, была ночь), длящиеся действия (пока я готовил) и возраст (мне было десять). Почти весь правильный — лишь три неправильных (ir, ser, ver). Окончания -aba / -ía близки к «бывало / был в процессе».",
+   "de": "Das Imperfekt beschreibt die Vergangenheit ohne Endpunkt: Gewohnheiten (jeden Sommer fuhren wir…), Beschreibungen (es war kalt, es war Nacht), laufende Handlungen (während ich kochte) und Alter (ich war zehn). Fast alles regelmäßig — nur drei unregelmäßige (ir, ser, ver). Die Endungen -aba / -ía entsprechen dem englischen 'used to'.",
+   "tr": "İmperfekt geçmişi bitiş belirtmeden anlatır: alışkanlıklar (her yaz giderdik…), betimlemeler (soğuktu, geceydi), süregelen eylemler (yemek yaparken) ve yaş (on yaşındaydım). Neredeyse tamamı düzenli — sadece üç düzensiz (ir, ser, ver). -aba / -ía ekleri İngilizce 'used to' gibidir."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Terminaciones e irregulares", "en": "Endings & irregulars", "ru": "Окончания и неправильные", "de": "Endungen & unregelmäßige", "tr": "Ekler ve düzensizler" },
+    "labelHeader": { "es_ar": "Persona", "en": "Person", "ru": "Лицо", "de": "Person", "tr": "Şahıs" },
+    "columns": [
+     { "es_ar": "-ar (hablar)", "en": "-ar (hablar)", "ru": "-ar (hablar)", "de": "-ar (hablar)", "tr": "-ar (hablar)" },
+     { "es_ar": "-er/-ir (comer)", "en": "-er/-ir (comer)", "ru": "-er/-ir (comer)", "de": "-er/-ir (comer)", "tr": "-er/-ir (comer)" },
+     { "es_ar": "ser", "en": "ser", "ru": "ser", "de": "ser", "tr": "ser" }
+    ],
+    "rows": [
+     { "label": { "es_ar": "yo", "en": "yo", "ru": "yo", "de": "yo", "tr": "yo" }, "cells": ["hablaba", "comía", "era"] },
+     { "label": { "es_ar": "vos/tú", "en": "vos/tú", "ru": "vos/tú", "de": "vos/tú", "tr": "vos/tú" }, "cells": ["hablabas", "comías", "eras"] },
+     { "label": { "es_ar": "él/ella", "en": "él/ella", "ru": "él/ella", "de": "él/ella", "tr": "él/ella" }, "cells": ["hablaba", "comía", "era"] },
+     { "label": { "es_ar": "nosotros", "en": "nosotros", "ru": "nosotros", "de": "nosotros", "tr": "nosotros" }, "cells": ["hablábamos", "comíamos", "éramos"] },
+     { "label": { "es_ar": "ustedes/ellos", "en": "ustedes/ellos", "ru": "ustedes/ellos", "de": "ustedes/ellos", "tr": "ustedes/ellos" }, "cells": ["hablaban", "comían", "eran"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "Cuando era chico, vivíamos en el campo.", "en": "When I was little, we lived in the countryside.", "ru": "Когда я был маленьким, мы жили в деревне.", "de": "Als ich klein war, wohnten wir auf dem Land.", "tr": "Küçükken kırsalda yaşıyorduk." },
+   { "es_ar": "Eran las ocho y llovía.", "en": "It was eight o'clock and it was raining.", "ru": "Было восемь часов, и шёл дождь.", "de": "Es war acht Uhr und es regnete.", "tr": "Saat sekizdi ve yağmur yağıyordu." },
+   { "es_ar": "Antes tomaba mucho café; ahora tomo mate.", "en": "I used to drink a lot of coffee; now I drink mate.", "ru": "Раньше я пил много кофе; теперь пью мате.", "de": "Früher trank ich viel Kaffee; jetzt trinke ich Mate.", "tr": "Eskiden çok kahve içerdim; şimdi mate içiyorum." }
+  ],
+  "hints": {
+   "en": "Only three irregulars total: ir → iba, ser → era, ver → veía. There is no 'vos' twist here — the imperfect uses the same forms as 'tú' everywhere.",
+   "ru": "Всего три неправильных: ir → iba, ser → era, ver → veía. Здесь нет особой формы 'vos' — имперфект везде использует те же формы, что и 'tú'.",
+   "de": "Nur drei unregelmäßige: ir → iba, ser → era, ver → veía. Kein Voseo-Sonderfall — das Imperfekt nutzt überall die 'tú'-Formen.",
+   "tr": "Toplam üç düzensiz: ir → iba, ser → era, ver → veía. Burada 'vos' istisnası yok — imperfekt her yerde 'tú' biçimlerini kullanır."
+  }
+ },
+ {
+  "id": "pronombres-objeto",
+  "icon": "🎯",
+  "level": "A2",
+  "title": {
+   "es_ar": "Pronombres de objeto directo e indirecto",
+   "en": "Direct & indirect object pronouns",
+   "ru": "Местоимения прямого и косвенного дополнения",
+   "de": "Direkte & indirekte Objektpronomen",
+   "tr": "Nesne zamirleri (dolaysız/dolaylı)"
+  },
+  "intro": {
+   "es_ar": "El objeto directo (¿qué?) usa lo/la/los/las; el indirecto (¿a quién?) usa le/les. Van ANTES del verbo conjugado: 'lo veo', 'te lo doy'. Cuando aparecen los dos, primero el indirecto: 'me lo da'. Y ojo con la regla estrella: le/les + lo/la se transforma en SE: 'se lo di' (no *le lo di).",
+   "en": "The direct object (what?) uses lo/la/los/las; the indirect (to whom?) uses le/les. They go BEFORE the conjugated verb: 'lo veo', 'te lo doy'. With both, the indirect comes first: 'me lo da'. And the star rule: le/les + lo/la becomes SE: 'se lo di' (not *le lo di).",
+   "ru": "Прямое дополнение (что?) — lo/la/los/las; косвенное (кому?) — le/les. Ставятся ПЕРЕД спрягаемым глаголом: 'lo veo', 'te lo doy'. Если оба — сначала косвенное: 'me lo da'. Главное правило: le/les + lo/la превращается в SE: 'se lo di' (не *le lo di).",
+   "de": "Das direkte Objekt (was?) nimmt lo/la/los/las; das indirekte (wem?) le/les. Sie stehen VOR dem konjugierten Verb: 'lo veo', 'te lo doy'. Bei beiden zuerst das indirekte: 'me lo da'. Und die Kernregel: le/les + lo/la wird zu SE: 'se lo di' (nicht *le lo di).",
+   "tr": "Dolaysız nesne (ne?) lo/la/los/las kullanır; dolaylı (kime?) le/les. Çekimli fiilden ÖNCE gelirler: 'lo veo', 'te lo doy'. İkisi birlikteyse önce dolaylı: 'me lo da'. Ve altın kural: le/les + lo/la, SE olur: 'se lo di' (*le lo di değil)."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Las dos series", "en": "The two sets", "ru": "Два ряда", "de": "Die zwei Reihen", "tr": "İki dizi" },
+    "columns": [
+     { "es_ar": "Persona", "en": "Person", "ru": "Лицо", "de": "Person", "tr": "Şahıs" },
+     { "es_ar": "Directo (OD)", "en": "Direct (DO)", "ru": "Прямое", "de": "Direkt", "tr": "Dolaysız" },
+     { "es_ar": "Indirecto (OI)", "en": "Indirect (IO)", "ru": "Косвенное", "de": "Indirekt", "tr": "Dolaylı" }
+    ],
+    "rows": [
+     { "cells": ["yo", "me", "me"] },
+     { "cells": ["vos/tú", "te", "te"] },
+     { "cells": ["él/ella/usted", "lo / la", "le (→ se)"] },
+     { "cells": ["nosotros", "nos", "nos"] },
+     { "cells": ["ustedes/ellos", "los / las", "les (→ se)"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "—¿Viste a Martín? —Sí, lo vi ayer.", "en": "—Did you see Martín? —Yes, I saw him yesterday.", "ru": "—Ты видел Мартина? —Да, я видел его вчера.", "de": "—Hast du Martín gesehen? —Ja, ich habe ihn gestern gesehen.", "tr": "—Martín'i gördün mü? —Evet, onu dün gördüm." },
+   { "es_ar": "Te lo mando por WhatsApp.", "en": "I'll send it to you on WhatsApp.", "ru": "Я пришлю тебе это в WhatsApp.", "de": "Ich schicke es dir per WhatsApp.", "tr": "Sana WhatsApp'tan yollarım." },
+   { "es_ar": "Ese libro es de Ana; devolveselo.", "en": "That book is Ana's; give it back to her. (both pronouns attached to the vos command)", "ru": "Эта книга Аны; верни ей её. (оба местоим. присоединены к команде vos)", "de": "Das Buch gehört Ana; gib es ihr zurück. (beide Pronomen an den vos-Imperativ)", "tr": "O kitap Ana'nın; ona geri ver. (iki zamir de vos emrine bitişik)" }
+  ],
+  "hints": {
+   "en": "Argentina is largely 'loísta' (uses lo/la for the object, not the Peninsular 'leísmo'): 'lo saludé' (I greeted him), not 'le saludé'. Pronouns attach to infinitives, gerunds and affirmative commands: 'quiero verte', 'dándotelo', 'decímelo'.",
+   "ru": "Аргентина в основном «loísta» (для дополнения — lo/la, а не пиренейское «leísmo»): 'lo saludé' (я поздоровался с ним), не 'le saludé'. Местоимения приклеиваются к инфинитиву, герундию и утвердит. командам: 'quiero verte', 'dándotelo', 'decímelo'.",
+   "de": "Argentinien ist überwiegend 'loísta' (Objekt = lo/la, nicht der iberische 'Leísmo'): 'lo saludé' (ich grüßte ihn), nicht 'le saludé'. Pronomen hängen an Infinitiv, Gerundium und bejahte Befehle: 'quiero verte', 'dándotelo', 'decímelo'.",
+   "tr": "Arjantin büyük ölçüde 'loísta'dır (nesne için lo/la, İber 'leísmo' değil): 'lo saludé' (onu selamladım), 'le saludé' değil. Zamirler mastara, ulaca ve olumlu emirlere yapışır: 'quiero verte', 'dándotelo', 'decímelo'."
+  }
+ },
+ {
+  "id": "reflexivos",
+  "icon": "🔄",
+  "level": "A2",
+  "title": {
+   "es_ar": "Los verbos reflexivos y pronominales",
+   "en": "Reflexive & pronominal verbs",
+   "ru": "Возвратные и местоименные глаголы",
+   "de": "Reflexive & pronominale Verben",
+   "tr": "Dönüşlü ve zamirli fiiller"
+  },
+  "intro": {
+   "es_ar": "Muchos verbos de rutina llevan un pronombre reflexivo que concuerda con el sujeto: me levanto, te bañás, se acuesta. Marca que la acción recae sobre uno mismo (lavarse, vestirse) o simplemente forma parte del verbo (irse, acordarse, quejarse). El pronombre va antes del verbo o pegado al infinitivo/gerundio/imperativo.",
+   "en": "Many everyday verbs carry a reflexive pronoun that matches the subject: me levanto, te bañás, se acuesta. It shows the action falls on oneself (lavarse, vestirse) or is simply part of the verb (irse, acordarse, quejarse). The pronoun goes before the verb, or attached to an infinitive/gerund/imperative.",
+   "ru": "Многие бытовые глаголы имеют возвратное местоимение, согласованное с подлежащим: me levanto, te bañás, se acuesta. Оно показывает, что действие направлено на себя (lavarse, vestirse) или просто входит в глагол (irse, acordarse, quejarse). Местоимение — перед глаголом или приклеено к инфинитиву/герундию/императиву.",
+   "de": "Viele Alltagsverben tragen ein Reflexivpronomen, das zum Subjekt passt: me levanto, te bañás, se acuesta. Es zeigt, dass die Handlung auf einen selbst zielt (lavarse, vestirse) oder einfach zum Verb gehört (irse, acordarse, quejarse). Das Pronomen steht vor dem Verb oder am Infinitiv/Gerundium/Imperativ.",
+   "tr": "Birçok günlük fiil, özneye uyan bir dönüşlü zamir taşır: me levanto, te bañás, se acuesta. Eylemin kişinin kendisine döndüğünü (lavarse, vestirse) ya da sadece fiilin parçası olduğunu (irse, acordarse, quejarse) gösterir. Zamir fiilden önce ya da mastara/ulaca/emre bitişik gelir."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "levantarse (voseo)", "en": "levantarse (voseo)", "ru": "levantarse (voseo)", "de": "levantarse (voseo)", "tr": "levantarse (voseo)" },
+    "columns": [
+     { "es_ar": "Persona", "en": "Person", "ru": "Лицо", "de": "Person", "tr": "Şahıs" },
+     { "es_ar": "Pron.", "en": "Pron.", "ru": "Мест.", "de": "Pron.", "tr": "Zamir" },
+     { "es_ar": "Verbo", "en": "Verb", "ru": "Глагол", "de": "Verb", "tr": "Fiil" }
+    ],
+    "rows": [
+     { "cells": ["yo", "me", "levanto"] },
+     { "cells": ["vos", "te", "levantás"] },
+     { "cells": ["él/ella/usted", "se", "levanta"] },
+     { "cells": ["nosotros", "nos", "levantamos"] },
+     { "cells": ["ustedes/ellos", "se", "levantan"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "Me levanto a las siete y me ducho.", "en": "I get up at seven and take a shower.", "ru": "Я встаю в семь и принимаю душ.", "de": "Ich stehe um sieben auf und dusche.", "tr": "Yedide kalkarım ve duş alırım." },
+   { "es_ar": "¿A qué hora te acostás?", "en": "What time do you go to bed? (voseo)", "ru": "Во сколько ты ложишься? (voseo)", "de": "Um wie viel Uhr gehst du ins Bett? (voseo)", "tr": "Saat kaçta yatıyorsun? (voseo)" },
+   { "es_ar": "Se fue sin despedirse.", "en": "He/She left without saying goodbye.", "ru": "Он/Она ушёл(ушла), не попрощавшись.", "de": "Er/Sie ging, ohne sich zu verabschieden.", "tr": "Vedalaşmadan gitti." }
+  ],
+  "hints": {
+   "en": "Adding 'se' can change the meaning: 'ir' = to go, 'irse' = to leave/go away; 'dormir' = to sleep, 'dormirse' = to fall asleep; 'acordar' = to agree, 'acordarse (de)' = to remember.",
+   "ru": "Добавление 'se' меняет смысл: 'ir' = идти, 'irse' = уходить; 'dormir' = спать, 'dormirse' = засыпать; 'acordar' = договариваться, 'acordarse (de)' = вспоминать.",
+   "de": "Das 'se' kann die Bedeutung ändern: 'ir' = gehen, 'irse' = weggehen; 'dormir' = schlafen, 'dormirse' = einschlafen; 'acordar' = vereinbaren, 'acordarse (de)' = sich erinnern.",
+   "tr": "'se' eklemek anlamı değiştirebilir: 'ir' = gitmek, 'irse' = ayrılmak; 'dormir' = uyumak, 'dormirse' = uykuya dalmak; 'acordar' = anlaşmak, 'acordarse (de)' = hatırlamak."
+  }
+ },
+ {
+  "id": "comparativos",
+  "icon": "📊",
+  "level": "A2",
+  "title": {
+   "es_ar": "Comparativos y superlativos",
+   "en": "Comparatives & superlatives",
+   "ru": "Сравнительная и превосходная степень",
+   "de": "Komparativ & Superlativ",
+   "tr": "Karşılaştırma ve üstünlük"
+  },
+  "intro": {
+   "es_ar": "Para comparar: más… que (superioridad), menos… que (inferioridad), tan(to)… como (igualdad): 'más alto que', 'menos caro que', 'tan lindo como'. El superlativo relativo usa el/la/los/las más… de: 'el más grande del país'. Hay cuatro comparativos irregulares que hay que memorizar: mejor, peor, mayor, menor.",
+   "en": "To compare: más… que (more), menos… que (less), tan(to)… como (equal): 'más alto que', 'menos caro que', 'tan lindo como'. The relative superlative uses el/la/los/las más… de: 'el más grande del país'. Four irregular comparatives must be memorised: mejor, peor, mayor, menor.",
+   "ru": "Для сравнения: más… que (больше), menos… que (меньше), tan(to)… como (равенство): 'más alto que', 'menos caro que', 'tan lindo como'. Относительная превосходная: el/la/los/las más… de: 'el más grande del país'. Четыре неправильных: mejor, peor, mayor, menor.",
+   "de": "Zum Vergleichen: más… que (mehr), menos… que (weniger), tan(to)… como (gleich): 'más alto que', 'menos caro que', 'tan lindo como'. Der relative Superlativ nutzt el/la/los/las más… de: 'el más grande del país'. Vier unregelmäßige: mejor, peor, mayor, menor.",
+   "tr": "Karşılaştırma için: más… que (daha çok), menos… que (daha az), tan(to)… como (eşit): 'más alto que', 'menos caro que', 'tan lindo como'. Göreli üstünlük: el/la/los/las más… de: 'el más grande del país'. Dört düzensiz: mejor, peor, mayor, menor."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Los tres tipos + irregulares", "en": "The three types + irregulars", "ru": "Три типа + неправильные", "de": "Die drei Typen + unregelmäßige", "tr": "Üç tür + düzensizler" },
+    "columns": [
+     { "es_ar": "Relación", "en": "Relation", "ru": "Отношение", "de": "Verhältnis", "tr": "İlişki" },
+     { "es_ar": "Estructura", "en": "Structure", "ru": "Структура", "de": "Struktur", "tr": "Yapı" },
+     { "es_ar": "Ejemplo", "en": "Example", "ru": "Пример", "de": "Beispiel", "tr": "Örnek" }
+    ],
+    "rows": [
+     { "cells": ["+", "más … que", "más caro que"] },
+     { "cells": ["−", "menos … que", "menos caro que"] },
+     { "cells": ["=", "tan … como", "tan caro como"] },
+     { "cells": ["irreg.", "mejor/peor", "esto es mejor que eso"] },
+     { "cells": ["irreg.", "mayor/menor", "soy mayor que vos"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "El subte es más rápido que el colectivo.", "en": "The subway is faster than the bus.", "ru": "Метро быстрее автобуса.", "de": "Die U-Bahn ist schneller als der Bus.", "tr": "Metro otobüsten daha hızlı." },
+   { "es_ar": "Este alfajor es el mejor de todos.", "en": "This alfajor is the best of all.", "ru": "Этот альфахор — лучший из всех.", "de": "Dieser Alfajor ist der beste von allen.", "tr": "Bu alfajor hepsinin en iyisi." },
+   { "es_ar": "Mi hermano es tan alto como mi papá.", "en": "My brother is as tall as my dad.", "ru": "Мой брат такой же высокий, как папа.", "de": "Mein Bruder ist so groß wie mein Vater.", "tr": "Kardeşim babam kadar uzun." }
+  ],
+  "hints": {
+   "en": "Use 'mayor/menor' mostly for age (and abstract size): 'mi hermano mayor'. Before a number, 'than' is 'de', not 'que': 'más de veinte pesos'. The absolute superlative '-ísimo' means 'extremely': carísimo, buenísimo.",
+   "ru": "'mayor/menor' — в основном о возрасте (и абстрактном размере): 'mi hermano mayor'. Перед числом «чем» — 'de', а не 'que': 'más de veinte pesos'. Абсолютная превосходная '-ísimo' = «крайне»: carísimo, buenísimo.",
+   "de": "'mayor/menor' meist fürs Alter (und abstrakte Größe): 'mi hermano mayor'. Vor einer Zahl heißt 'als' 'de', nicht 'que': 'más de veinte pesos'. Der absolute Superlativ '-ísimo' = 'äußerst': carísimo, buenísimo.",
+   "tr": "'mayor/menor' çoğunlukla yaş için (ve soyut büyüklük): 'mi hermano mayor'. Sayıdan önce 'than' 'que' değil 'de'dir: 'más de veinte pesos'. Mutlak üstünlük '-ísimo' = 'son derece': carísimo, buenísimo."
+  }
+ },
+ {
+  "id": "por-para",
+  "icon": "↔️",
+  "level": "A2",
+  "title": {
+   "es_ar": "Por vs. para",
+   "en": "Por vs. para",
+   "ru": "Por и para",
+   "de": "Por vs. para",
+   "tr": "Por ve para"
+  },
+  "intro": {
+   "es_ar": "Las dos se traducen a veces igual, pero reparten el trabajo. PARA apunta hacia adelante: destino, finalidad, plazo, destinatario ('para vos', 'para el lunes', 'para trabajar'). POR mira hacia atrás o alrededor: causa, medio, precio, lugar por el que se pasa, tiempo aproximado ('por vos', 'por dos pesos', 'por la mañana', 'por Corrientes').",
+   "en": "The two sometimes translate the same, but they split the work. PARA looks forward: destination, purpose, deadline, recipient ('para vos', 'para el lunes', 'para trabajar'). POR looks back or around: cause, means, price, place you pass through, approximate time ('por vos', 'por dos pesos', 'por la mañana', 'por Corrientes').",
+   "ru": "Оба иногда переводятся одинаково, но делят работу. PARA смотрит вперёд: цель, назначение, срок, адресат ('para vos', 'para el lunes', 'para trabajar'). POR смотрит назад/вокруг: причина, средство, цена, место, через которое проходишь, примерное время ('por vos', 'por dos pesos', 'por la mañana', 'por Corrientes').",
+   "de": "Beide werden manchmal gleich übersetzt, teilen sich aber die Arbeit. PARA blickt nach vorn: Ziel, Zweck, Frist, Empfänger ('para vos', 'para el lunes', 'para trabajar'). POR blickt zurück/herum: Ursache, Mittel, Preis, Durchgangsort, ungefähre Zeit ('por vos', 'por dos pesos', 'por la mañana', 'por Corrientes').",
+   "tr": "İkisi bazen aynı çevrilir ama işi paylaşır. PARA ileriye bakar: hedef, amaç, süre, alıcı ('para vos', 'para el lunes', 'para trabajar'). POR geriye/çevreye bakar: neden, araç, fiyat, geçilen yer, yaklaşık zaman ('por vos', 'por dos pesos', 'por la mañana', 'por Corrientes')."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Repartición de usos", "en": "Who does what", "ru": "Кто за что", "de": "Wer wofür", "tr": "Hangisi ne için" },
+    "columns": [
+     { "es_ar": "Idea", "en": "Idea", "ru": "Идея", "de": "Idee", "tr": "Fikir" },
+     { "es_ar": "PARA", "en": "PARA", "ru": "PARA", "de": "PARA", "tr": "PARA" },
+     { "es_ar": "POR", "en": "POR", "ru": "POR", "de": "POR", "tr": "POR" }
+    ],
+    "rows": [
+     { "cells": ["finalidad / causa", "para aprender", "por amor"] },
+     { "cells": ["destino / lugar", "salgo para Rosario", "paso por Rosario"] },
+     { "cells": ["tiempo", "para el viernes", "por la tarde"] },
+     { "cells": ["destinatario / precio", "es para vos", "lo compré por mil pesos"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "Estudio español para viajar por Sudamérica.", "en": "I study Spanish to travel around South America.", "ru": "Я учу испанский, чтобы путешествовать по Южной Америке.", "de": "Ich lerne Spanisch, um durch Südamerika zu reisen.", "tr": "Güney Amerika'yı gezmek için İspanyolca öğreniyorum." },
+   { "es_ar": "Gracias por venir.", "en": "Thanks for coming.", "ru": "Спасибо, что пришёл.", "de": "Danke fürs Kommen.", "tr": "Geldiğin için teşekkürler." },
+   { "es_ar": "Este regalo es para mi vieja.", "en": "This gift is for my mom.", "ru": "Этот подарок для моей мамы.", "de": "Dieses Geschenk ist für meine Mutter.", "tr": "Bu hediye annem için." }
+  ],
+  "hints": {
+   "en": "Rule of thumb: 'para' = goal/aim (an arrow →); 'por' = reason/exchange/route (a loop ↺). 'Trabajo para el banco' (I work for the bank, my employer) vs. 'trabajo por plata' (I work for money, my motive).",
+   "ru": "Подсказка: 'para' = цель (стрелка →); 'por' = причина/обмен/маршрут (петля ↺). 'Trabajo para el banco' (работаю на банк, работодатель) vs. 'trabajo por plata' (работаю ради денег, мотив).",
+   "de": "Faustregel: 'para' = Ziel/Zweck (ein Pfeil →); 'por' = Grund/Tausch/Route (eine Schleife ↺). 'Trabajo para el banco' (ich arbeite für die Bank, Arbeitgeber) vs. 'trabajo por plata' (ich arbeite für Geld, Motiv).",
+   "tr": "Kural: 'para' = hedef/amaç (ok →); 'por' = neden/değiş tokuş/güzergah (döngü ↺). 'Trabajo para el banco' (banka için çalışırım, işveren) vs. 'trabajo por plata' (para için çalışırım, sebep)."
+  }
+ },
+ {
+  "id": "pasados-contraste",
+  "icon": "⏳",
+  "level": "B1",
+  "title": {
+   "es_ar": "Indefinido, imperfecto y perfecto: el contraste",
+   "en": "Preterite vs. imperfect vs. present perfect",
+   "ru": "Indefinido, imperfecto и perfecto: контраст",
+   "de": "Indefinido, Imperfekt & Perfekt: der Kontrast",
+   "tr": "İndefinido, imperfekt ve perfekt: karşıtlık"
+  },
+  "intro": {
+   "es_ar": "El indefinido cuenta el hecho puntual (empezó, terminó); el imperfecto pinta el fondo (llovía, estaba nervioso). En un relato se combinan: 'Caminaba por la calle (fondo) cuando sonó el teléfono (hecho)'. El pretérito perfecto compuesto (he comido) existe, pero en el Río de la Plata se usa poco: para 'hoy comí', 'esta semana fui', el rioplatense prefiere el simple.",
+   "en": "The preterite tells the point-event (it started, it ended); the imperfect paints the background (it was raining, I was nervous). In a story they combine: 'I was walking down the street (background) when the phone rang (event)'. The present perfect (he comido) exists, but the Río de la Plata rarely uses it: for 'I ate today' or 'I went this week', Rioplatense prefers the simple preterite.",
+   "ru": "Indefinido сообщает точечное событие (начал, закончил); imperfecto рисует фон (шёл дождь, я нервничал). В рассказе они сочетаются: 'Я шёл по улице (фон), когда зазвонил телефон (событие)'. Составной перфект (he comido) есть, но в регионе Ла-Платы редок: для 'сегодня я поел', 'на этой неделе я ездил' предпочитают простое.",
+   "de": "Das Indefinido nennt das punktuelle Ereignis (begann, endete); das Imperfekt malt den Hintergrund (es regnete, ich war nervös). In einer Erzählung kombinieren sie sich: 'Ich ging die Straße entlang (Hintergrund), als das Telefon klingelte (Ereignis)'. Das Perfekt (he comido) existiert, wird am Río de la Plata aber selten genutzt: für 'heute aß ich', 'diese Woche fuhr ich' bevorzugt man das Indefinido.",
+   "tr": "İndefinido noktasal olayı anlatır (başladı, bitti); imperfekt arka planı boyar (yağmur yağıyordu, gergindim). Bir öyküde birleşirler: 'Sokakta yürüyordum (arka plan), telefon çaldığında (olay)'. Bileşik perfekt (he comido) vardır ama Río de la Plata'da az kullanılır: 'bugün yedim', 'bu hafta gittim' için basit geçmiş tercih edilir."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "¿Cuál elijo?", "en": "Which do I pick?", "ru": "Что выбрать?", "de": "Welches wähle ich?", "tr": "Hangisini seçerim?" },
+    "columns": [
+     { "es_ar": "Función", "en": "Function", "ru": "Функция", "de": "Funktion", "tr": "İşlev" },
+     { "es_ar": "Tiempo", "en": "Tense", "ru": "Время", "de": "Zeit", "tr": "Zaman" },
+     { "es_ar": "Ejemplo", "en": "Example", "ru": "Пример", "de": "Beispiel", "tr": "Örnek" }
+    ],
+    "rows": [
+     { "cells": ["hecho puntual", "indefinido", "ayer llegué tarde"] },
+     { "cells": ["descripción / fondo", "imperfecto", "el cielo estaba gris"] },
+     { "cells": ["costumbre pasada", "imperfecto", "de chico jugaba al fútbol"] },
+     { "cells": ["pasado ligado al ahora", "perfecto (poco usado)", "nunca he estado en Salta"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "Cuando llegué, ya no había nadie.", "en": "When I arrived, there was nobody left.", "ru": "Когда я пришёл, уже никого не было.", "de": "Als ich ankam, war niemand mehr da.", "tr": "Vardığımda artık kimse yoktu." },
+   { "es_ar": "Mientras dormía, alguien golpeó la puerta.", "en": "While I was sleeping, someone knocked on the door.", "ru": "Пока я спал, кто-то постучал в дверь.", "de": "Während ich schlief, klopfte jemand an die Tür.", "tr": "Ben uyurken biri kapıyı çaldı." },
+   { "es_ar": "Hoy me levanté temprano y desayuné en el bar.", "en": "Today I got up early and had breakfast at the café. (Arg. preterite, not 'me he levantado')", "ru": "Сегодня я встал рано и позавтракал в кафе. (арг. простое прош.)", "de": "Heute stand ich früh auf und frühstückte im Café. (arg. Indefinido)", "tr": "Bugün erken kalktım ve kafede kahvaltı ettim. (Arj. indefinido)" }
+  ],
+  "hints": {
+   "en": "Trigger words help: 'ayer, la semana pasada, en 2010, de repente' → preterite; 'siempre, todos los días, mientras, mientras tanto' → imperfect. In Argentina, don't reach for 'he hecho' — 'hice' almost always fits.",
+   "ru": "Слова-подсказки: 'ayer, la semana pasada, en 2010, de repente' → indefinido; 'siempre, todos los días, mientras' → imperfecto. В Аргентине не тянитесь к 'he hecho' — почти всегда подходит 'hice'.",
+   "de": "Signalwörter helfen: 'ayer, la semana pasada, en 2010, de repente' → Indefinido; 'siempre, todos los días, mientras' → Imperfekt. In Argentinien nicht zu 'he hecho' greifen — 'hice' passt fast immer.",
+   "tr": "İpucu sözcükleri: 'ayer, la semana pasada, en 2010, de repente' → indefinido; 'siempre, todos los días, mientras' → imperfekt. Arjantin'de 'he hecho'ya uzanma — neredeyse her zaman 'hice' uyar."
+  }
+ },
+ {
+  "id": "futuro-simple",
+  "icon": "🔮",
+  "level": "B1",
+  "title": {
+   "es_ar": "El futuro simple",
+   "en": "The simple future",
+   "ru": "Простое будущее",
+   "de": "Das einfache Futur",
+   "tr": "Basit gelecek zaman"
+  },
+  "intro": {
+   "es_ar": "El futuro simple se forma con el infinitivo completo + las terminaciones -é, -ás, -á, -emos, -án (iguales para las tres conjugaciones): hablaré, comerás, vivirá. En la charla diaria pierde terreno frente a 'ir a + infinitivo', pero se usa para predicciones, promesas y, muy típico, para la PROBABILIDAD en el presente: 'serán las once' (= deben de ser).",
+   "en": "The simple future is the full infinitive + the endings -é, -ás, -á, -emos, -án (the same for all three conjugations): hablaré, comerás, vivirá. In everyday talk it loses ground to 'ir a + infinitive', but it's used for predictions, promises and — very typically — PROBABILITY in the present: 'serán las once' (= it's probably eleven).",
+   "ru": "Простое будущее — это полный инфинитив + окончания -é, -ás, -á, -emos, -án (одинаковые для трёх спряжений): hablaré, comerás, vivirá. В разговоре уступает 'ir a + инфинитив', но используется для предсказаний, обещаний и — очень типично — для ВЕРОЯТНОСТИ в настоящем: 'serán las once' (= наверное, одиннадцать).",
+   "de": "Das einfache Futur ist der volle Infinitiv + die Endungen -é, -ás, -á, -emos, -án (gleich für alle drei Konjugationen): hablaré, comerás, vivirá. Im Alltag verliert es gegen 'ir a + Infinitiv', dient aber für Vorhersagen, Versprechen und — sehr typisch — WAHRSCHEINLICHKEIT in der Gegenwart: 'serán las once' (= es wird wohl elf sein).",
+   "tr": "Basit gelecek, tam mastar + -é, -ás, -á, -emos, -án ekleridir (üç çekim için aynı): hablaré, comerás, vivirá. Günlük konuşmada 'ir a + mastar'a yenik düşer ama tahmin, söz verme ve çok tipik olarak şimdiki zamanda OLASILIK için kullanılır: 'serán las once' (= saat on bir olmalı)."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Terminaciones + raíces irregulares", "en": "Endings + irregular stems", "ru": "Окончания + неправильные основы", "de": "Endungen + unregelmäßige Stämme", "tr": "Ekler + düzensiz kökler" },
+    "columns": [
+     { "es_ar": "Persona / verbo", "en": "Person / verb", "ru": "Лицо / глагол", "de": "Person / Verb", "tr": "Şahıs / fiil" },
+     { "es_ar": "Regular (hablar)", "en": "Regular (hablar)", "ru": "Правильный (hablar)", "de": "Regelmäßig (hablar)", "tr": "Düzenli (hablar)" },
+     { "es_ar": "Irregular", "en": "Irregular", "ru": "Неправильный", "de": "Unregelmäßig", "tr": "Düzensiz" }
+    ],
+    "rows": [
+     { "cells": ["yo", "hablaré", "tener → tendré"] },
+     { "cells": ["vos/tú", "hablarás", "hacer → harás"] },
+     { "cells": ["él/ella", "hablará", "poder → podrá"] },
+     { "cells": ["nosotros", "hablaremos", "salir → saldremos"] },
+     { "cells": ["ustedes/ellos", "hablarán", "decir → dirán"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "El año que viene viajaré a la Patagonia.", "en": "Next year I'll travel to Patagonia.", "ru": "В следующем году я поеду в Патагонию.", "de": "Nächstes Jahr werde ich nach Patagonien reisen.", "tr": "Gelecek yıl Patagonya'ya seyahat edeceğim." },
+   { "es_ar": "No te preocupes, todo saldrá bien.", "en": "Don't worry, everything will turn out fine.", "ru": "Не волнуйся, всё будет хорошо.", "de": "Keine Sorge, alles wird gut.", "tr": "Merak etme, her şey yoluna girecek." },
+   { "es_ar": "¿Dónde está Juan? — No sé, estará en el laburo.", "en": "Where's Juan? — Dunno, he's probably at work. (future of probability)", "ru": "Где Хуан? — Не знаю, наверное, на работе. (будущее вероятности)", "de": "Wo ist Juan? — Keine Ahnung, er wird wohl bei der Arbeit sein. (Wahrscheinlichkeitsfutur)", "tr": "Juan nerede? — Bilmem, herhalde iştedir. (olasılık geleceği)" }
+  ],
+  "hints": {
+   "en": "Only twelve or so verbs have irregular stems, and they share them with the conditional (tendr-, podr-, dr-/-ldr-). The endings never change and always carry a written accent except 'nosotros'.",
+   "ru": "Неправильных основ около двенадцати, и они те же, что в условном (tendr-, podr-, dr-/-ldr-). Окончания неизменны и всегда с ударением, кроме 'nosotros'.",
+   "de": "Nur etwa zwölf Verben haben unregelmäßige Stämme, geteilt mit dem Konditional (tendr-, podr-, dr-/-ldr-). Die Endungen ändern sich nie und tragen immer einen Akzent außer 'nosotros'.",
+   "tr": "Yalnızca on iki kadar fiilin düzensiz kökü var ve bunları şart kipiyle paylaşır (tendr-, podr-, dr-/-ldr-). Ekler hiç değişmez ve 'nosotros' dışında hep vurgu taşır."
+  }
+ },
+ {
+  "id": "condicional",
+  "icon": "🕊️",
+  "level": "B1",
+  "title": {
+   "es_ar": "El condicional",
+   "en": "The conditional",
+   "ru": "Условное наклонение",
+   "de": "Das Konditional",
+   "tr": "Şart kipi (koşul)"
+  },
+  "intro": {
+   "es_ar": "El condicional se forma con el mismo infinitivo que el futuro + las terminaciones del imperfecto de -er/-ir: -ía, -ías, -ía, -íamos, -ían (hablaría, comería). Sirve para la cortesía ('querría un café', 'me podrías ayudar'), los consejos ('deberías descansar') y lo hipotético ('yo que vos, no iría'). Comparte las raíces irregulares con el futuro.",
+   "en": "The conditional uses the same infinitive as the future + the -er/-ir imperfect endings: -ía, -ías, -ía, -íamos, -ían (hablaría, comería). It's for politeness ('querría un café', 'could you help me'), advice ('you should rest') and the hypothetical ('if I were you, I wouldn't go'). It shares the irregular stems with the future.",
+   "ru": "Условное образуется с тем же инфинитивом, что и будущее, + окончания имперфекта -er/-ir: -ía, -ías, -ía, -íamos, -ían (hablaría, comería). Для вежливости ('querría un café', 'ты не мог бы помочь'), советов ('тебе стоит отдохнуть') и гипотез ('на твоём месте я бы не пошёл'). Неправильные основы — те же, что в будущем.",
+   "de": "Das Konditional nutzt denselben Infinitiv wie das Futur + die Imperfekt-Endungen von -er/-ir: -ía, -ías, -ía, -íamos, -ían (hablaría, comería). Für Höflichkeit ('querría un café', 'könntest du mir helfen'), Ratschläge ('du solltest dich ausruhen') und Hypothetisches ('an deiner Stelle würde ich nicht gehen'). Die unregelmäßigen Stämme teilt es mit dem Futur.",
+   "tr": "Şart kipi, gelecekle aynı mastarı + -er/-ir imperfekt eklerini kullanır: -ía, -ías, -ía, -íamos, -ían (hablaría, comería). Kibarlık ('querría un café', 'bana yardım eder misin'), öğüt ('dinlenmelisin') ve varsayım için ('senin yerinde olsam gitmezdim'). Düzensiz kökleri gelecekle paylaşır."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Formas y usos", "en": "Forms & uses", "ru": "Формы и употребление", "de": "Formen & Gebrauch", "tr": "Biçimler ve kullanım" },
+    "columns": [
+     { "es_ar": "Persona", "en": "Person", "ru": "Лицо", "de": "Person", "tr": "Şahıs" },
+     { "es_ar": "hablar", "en": "hablar", "ru": "hablar", "de": "hablar", "tr": "hablar" },
+     { "es_ar": "Uso típico", "en": "Typical use", "ru": "Типичное употребление", "de": "Typischer Gebrauch", "tr": "Tipik kullanım" }
+    ],
+    "rows": [
+     { "cells": ["yo", "hablaría", "cortesía: querría…"] },
+     { "cells": ["vos/tú", "hablarías", "consejo: deberías…"] },
+     { "cells": ["él/ella", "hablaría", "hipótesis: sería lindo…"] },
+     { "cells": ["nosotros", "hablaríamos", "podríamos…"] },
+     { "cells": ["ustedes/ellos", "hablarían", "gustaría…"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "¿Me podrías pasar la sal, por favor?", "en": "Could you pass me the salt, please?", "ru": "Не мог бы ты передать мне соль?", "de": "Könntest du mir bitte das Salz reichen?", "tr": "Tuzu uzatabilir misin lütfen?" },
+   { "es_ar": "Yo que vos, hablaría con el jefe.", "en": "If I were you, I'd talk to the boss.", "ru": "На твоём месте я бы поговорил с начальником.", "de": "An deiner Stelle würde ich mit dem Chef reden.", "tr": "Senin yerinde olsam patronla konuşurdum." },
+   { "es_ar": "Me encantaría ir, pero no puedo.", "en": "I'd love to go, but I can't.", "ru": "Я бы с удовольствием пошёл, но не могу.", "de": "Ich würde liebend gern gehen, kann aber nicht.", "tr": "Gitmeyi çok isterdim ama gelemem." }
+  ],
+  "hints": {
+   "en": "Think of it as English 'would': 'iría' = 'I would go'. It softens requests and opinions — 'querría' is politer than 'quiero', 'deberías' gentler than a command.",
+   "ru": "Думайте о нём как об английском 'would': 'iría' = «я бы пошёл». Смягчает просьбы и мнения — 'querría' вежливее, чем 'quiero', 'deberías' мягче команды.",
+   "de": "Denk an das englische 'would': 'iría' = 'ich würde gehen'. Es mildert Bitten und Meinungen — 'querría' ist höflicher als 'quiero', 'deberías' sanfter als ein Befehl.",
+   "tr": "İngilizce 'would' gibi düşün: 'iría' = 'giderdim'. Rica ve görüşleri yumuşatır — 'querría' 'quiero'dan kibar, 'deberías' emirden yumuşaktır."
+  }
+ },
+ {
+  "id": "subjuntivo-presente",
+  "icon": "🌱",
+  "level": "B1",
+  "title": {
+   "es_ar": "El presente de subjuntivo",
+   "en": "The present subjunctive",
+   "ru": "Настоящее сослагательное (subjuntivo)",
+   "de": "Der Presente de Subjuntivo",
+   "tr": "İstek kipi (subjuntivo, şimdiki)"
+  },
+  "intro": {
+   "es_ar": "El subjuntivo no habla de hechos, sino de deseos, dudas, emociones y lo aún no realizado. Aparece en oraciones subordinadas tras 'que': querer que ('quiero que vengas'), ojalá ('ojalá llueva'), es probable que, para que, cuando (futuro), antes de que. Se forma cambiando la vocal del presente: -ar → -e, -er/-ir → -a (hable, coma, viva).",
+   "en": "The subjunctive doesn't state facts; it voices wishes, doubts, emotions and the not-yet-real. It shows up in subordinate clauses after 'que': querer que ('I want you to come'), ojalá ('I hope it rains'), es probable que, para que, cuando (future), antes de que. Form it by flipping the present vowel: -ar → -e, -er/-ir → -a (hable, coma, viva).",
+   "ru": "Сослагательное говорит не о фактах, а о желаниях, сомнениях, эмоциях и ещё не осуществившемся. Появляется в придаточных после 'que': querer que ('хочу, чтобы ты пришёл'), ojalá ('хоть бы пошёл дождь'), es probable que, para que, cuando (будущее), antes de que. Образуется сменой гласной настоящего: -ar → -e, -er/-ir → -a (hable, coma, viva).",
+   "de": "Der Subjuntivo nennt keine Fakten, sondern Wünsche, Zweifel, Emotionen und noch nicht Reales. Er erscheint in Nebensätzen nach 'que': querer que ('ich will, dass du kommst'), ojalá ('hoffentlich regnet es'), es probable que, para que, cuando (Zukunft), antes de que. Bildung durch Vokalwechsel des Präsens: -ar → -e, -er/-ir → -a (hable, coma, viva).",
+   "tr": "Subjuntivo olguları değil; istek, kuşku, duygu ve henüz gerçekleşmemişi dile getirir. 'que'den sonra yan cümlede çıkar: querer que ('gelmeni istiyorum'), ojalá ('umarım yağmur yağar'), es probable que, para que, cuando (gelecek), antes de que. Şimdiki zamanın sesli harfini çevirerek yapılır: -ar → -e, -er/-ir → -a (hable, coma, viva)."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Presente de subjuntivo (voseo → forma estándar tuteo)", "en": "Present subjunctive (voseo → standard tuteo form)", "ru": "Наст. subjuntivo (voseo → стандарт tuteo)", "de": "Presente de Subjuntivo (voseo → Standardform tuteo)", "tr": "Şimdiki subjuntivo (voseo → standart tuteo)" },
+    "labelHeader": { "es_ar": "Persona", "en": "Person", "ru": "Лицо", "de": "Person", "tr": "Şahıs" },
+    "columns": [
+     { "es_ar": "hablar", "en": "hablar", "ru": "hablar", "de": "hablar", "tr": "hablar" },
+     { "es_ar": "comer", "en": "comer", "ru": "comer", "de": "comer", "tr": "comer" },
+     { "es_ar": "tener", "en": "tener", "ru": "tener", "de": "tener", "tr": "tener" }
+    ],
+    "rows": [
+     { "label": { "es_ar": "yo", "en": "yo", "ru": "yo", "de": "yo", "tr": "yo" }, "cells": ["hable", "coma", "tenga"] },
+     { "label": { "es_ar": "vos/tú", "en": "vos/tú", "ru": "vos/tú", "de": "vos/tú", "tr": "vos/tú" }, "cells": ["hables", "comas", "tengas"] },
+     { "label": { "es_ar": "él/ella", "en": "él/ella", "ru": "él/ella", "de": "él/ella", "tr": "él/ella" }, "cells": ["hable", "coma", "tenga"] },
+     { "label": { "es_ar": "nosotros", "en": "nosotros", "ru": "nosotros", "de": "nosotros", "tr": "nosotros" }, "cells": ["hablemos", "comamos", "tengamos"] },
+     { "label": { "es_ar": "ustedes/ellos", "en": "ustedes/ellos", "ru": "ustedes/ellos", "de": "ustedes/ellos", "tr": "ustedes/ellos" }, "cells": ["hablen", "coman", "tengan"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "Quiero que vengas a mi cumple.", "en": "I want you to come to my birthday.", "ru": "Хочу, чтобы ты пришёл на мой день рождения.", "de": "Ich will, dass du zu meinem Geburtstag kommst.", "tr": "Doğum günüme gelmeni istiyorum." },
+   { "es_ar": "Ojalá no llueva mañana.", "en": "I hope it doesn't rain tomorrow.", "ru": "Хоть бы завтра не было дождя.", "de": "Hoffentlich regnet es morgen nicht.", "tr": "Umarım yarın yağmur yağmaz." },
+   { "es_ar": "Te lo digo para que lo sepas.", "en": "I'm telling you so that you know.", "ru": "Говорю тебе, чтобы ты знал.", "de": "Ich sage es dir, damit du es weißt.", "tr": "Bilesin diye söylüyorum." }
+  ],
+  "hints": {
+   "en": "Register note: for 'vos' the educated Buenos Aires standard uses the tuteo form — 'quiero que tengas', 'ojalá vengas'. The voseo subjunctive ('tengás', 'vengás') is heard colloquially but is not the written norm — stick with tengas/vengas.",
+   "ru": "О регистре: для 'vos' грамотный стандарт Буэнос-Айреса использует форму tuteo — 'quiero que tengas', 'ojalá vengas'. Voseo-субхунтив ('tengás', 'vengás') слышен в разговоре, но не является письменной нормой — используйте tengas/vengas.",
+   "de": "Zum Register: Für 'vos' nutzt der gebildete Standard von Buenos Aires die tuteo-Form — 'quiero que tengas', 'ojalá vengas'. Der Voseo-Subjuntivo ('tengás', 'vengás') ist umgangssprachlich zu hören, aber nicht die Schriftnorm — bleib bei tengas/vengas.",
+   "tr": "Kayıt notu: 'vos' için eğitimli Buenos Aires standardı tuteo biçimini kullanır — 'quiero que tengas', 'ojalá vengas'. Voseo subjuntivo ('tengás', 'vengás') konuşmada duyulur ama yazı normu değildir — tengas/vengas'te kal."
+  }
+ },
+ {
+  "id": "mandatos-negativos",
+  "icon": "🚫",
+  "level": "B1",
+  "title": {
+   "es_ar": "El imperativo negativo",
+   "en": "The negative imperative",
+   "ru": "Отрицательное повелительное",
+   "de": "Der verneinte Imperativ",
+   "tr": "Olumsuz emir"
+  },
+  "intro": {
+   "es_ar": "Para decir «no hagas esto» no sirve el imperativo afirmativo: se usa 'no' + el presente de subjuntivo. Así, la orden negativa a vos/tú es 'no hables, no comas, no vengas'; a usted 'no hable'; a ustedes 'no hablen'. Además, con el imperativo negativo el pronombre va ANTES del verbo: 'no me lo digas' (no *digasmelo).",
+   "en": "To say 'don't do this' the affirmative imperative won't do: use 'no' + the present subjunctive. So the negative order to vos/tú is 'no hables, no comas, no vengas'; to usted 'no hable'; to ustedes 'no hablen'. Also, with the negative imperative the pronoun goes BEFORE the verb: 'no me lo digas' (not *digasmelo).",
+   "ru": "Чтобы сказать «не делай этого», утвердительное повелительное не годится: берётся 'no' + настоящее сослагательное. Отрицательный приказ к vos/tú — 'no hables, no comas, no vengas'; к usted — 'no hable'; к ustedes — 'no hablen'. И местоимение при отрицании идёт ПЕРЕД глаголом: 'no me lo digas' (не *digasmelo).",
+   "de": "Für 'tu das nicht' taugt der bejahende Imperativ nicht: man nimmt 'no' + Presente de Subjuntivo. Der verneinte Befehl an vos/tú ist 'no hables, no comas, no vengas'; an usted 'no hable'; an ustedes 'no hablen'. Zudem steht das Pronomen beim verneinten Imperativ VOR dem Verb: 'no me lo digas' (nicht *digasmelo).",
+   "tr": "'Bunu yapma' demek için olumlu emir işe yaramaz: 'no' + şimdiki subjuntivo kullanılır. vos/tú'ya olumsuz emir 'no hables, no comas, no vengas'; usted'e 'no hable'; ustedes'e 'no hablen'. Ayrıca olumsuz emirde zamir fiilden ÖNCE gelir: 'no me lo digas' (*digasmelo değil)."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Afirmativo vs. negativo", "en": "Affirmative vs. negative", "ru": "Утвердительное и отрицательное", "de": "Bejaht vs. verneint", "tr": "Olumlu ile olumsuz" },
+    "columns": [
+     { "es_ar": "Persona", "en": "Person", "ru": "Лицо", "de": "Person", "tr": "Şahıs" },
+     { "es_ar": "Afirmativo", "en": "Affirmative", "ru": "Утвердит.", "de": "Bejaht", "tr": "Olumlu" },
+     { "es_ar": "Negativo", "en": "Negative", "ru": "Отрицат.", "de": "Verneint", "tr": "Olumsuz" }
+    ],
+    "rows": [
+     { "cells": ["vos/tú", "hacé / decí", "no hagas / no digas"] },
+     { "cells": ["usted", "haga / diga", "no haga / no diga"] },
+     { "cells": ["ustedes", "hagan / digan", "no hagan / no digan"] },
+     { "cells": ["+ pronombre", "hacelo, decímelo", "no lo hagas, no me lo digas"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "No te preocupes, todo va a estar bien.", "en": "Don't worry, everything's going to be fine.", "ru": "Не волнуйся, всё будет хорошо.", "de": "Mach dir keine Sorgen, alles wird gut.", "tr": "Merak etme, her şey iyi olacak." },
+   { "es_ar": "No me digas eso, no lo puedo creer.", "en": "Don't tell me that, I can't believe it.", "ru": "Не говори мне такого, не могу поверить.", "de": "Sag mir das nicht, ich kann es nicht glauben.", "tr": "Bana bunu söyleme, inanamıyorum." },
+   { "es_ar": "No llegues tarde, ¿eh?", "en": "Don't be late, okay?", "ru": "Не опаздывай, хорошо?", "de": "Komm nicht zu spät, ja?", "tr": "Geç kalma, tamam mı?" }
+  ],
+  "hints": {
+   "en": "Colloquial Argentine sometimes uses the voseo form 'no hagás, no digás, no llamés', but the accepted written standard is the tuteo 'no hagas, no digas, no llames'. Note the flip: pronouns attach in affirmative ('decímelo') but detach in negative ('no me lo digas').",
+   "ru": "В разговорной аргентинской речи иногда встречается voseo: 'no hagás, no digás, no llamés', но письменная норма — tuteo 'no hagas, no digas, no llames'. Обратите внимание на разворот: в утвердит. местоимения приклеиваются ('decímelo'), в отрицат. отделяются ('no me lo digas').",
+   "de": "Umgangssprachlich hört man manchmal die Voseo-Form 'no hagás, no digás, no llamés', aber die anerkannte Schriftnorm ist tuteo 'no hagas, no digas, no llames'. Beachte den Wechsel: bejaht hängen Pronomen an ('decímelo'), verneint stehen sie davor ('no me lo digas').",
+   "tr": "Konuşma dilinde bazen voseo biçimi 'no hagás, no digás, no llamés' duyulur ama kabul gören yazı normu tuteo 'no hagas, no digas, no llames'. Değişime dikkat: olumluda zamir yapışır ('decímelo'), olumsuzda ayrılır ('no me lo digas')."
+  }
+ },
+ {
+  "id": "relativos",
+  "icon": "🔗",
+  "level": "B1",
+  "title": {
+   "es_ar": "Las oraciones de relativo",
+   "en": "Relative clauses",
+   "ru": "Относительные предложения",
+   "de": "Relativsätze",
+   "tr": "İlgi (bağlaç) cümleleri"
+  },
+  "intro": {
+   "es_ar": "Los relativos unen dos ideas sobre un mismo elemento. El más común es 'que', que sirve para personas y cosas: 'el chico que vino', 'la casa que compré'. Para personas tras preposición se usa 'quien/quienes' o 'el que': 'la persona con quien hablé'. También hay 'donde' (lugar), 'cuando' (tiempo) y 'cuyo' (posesión, culto).",
+   "en": "Relatives link two ideas about the same element. The commonest is 'que', good for people and things: 'el chico que vino', 'la casa que compré'. For people after a preposition, use 'quien/quienes' or 'el que': 'la persona con quien hablé'. There's also 'donde' (place), 'cuando' (time) and 'cuyo' (possession, formal).",
+   "ru": "Относительные соединяют две мысли об одном элементе. Самое частое — 'que', для людей и вещей: 'el chico que vino', 'la casa que compré'. Для людей после предлога — 'quien/quienes' или 'el que': 'la persona con quien hablé'. Есть также 'donde' (место), 'cuando' (время) и 'cuyo' (принадлежность, книжн.).",
+   "de": "Relativa verbinden zwei Ideen über dasselbe Element. Am häufigsten ist 'que' für Personen und Dinge: 'el chico que vino', 'la casa que compré'. Für Personen nach Präposition 'quien/quienes' oder 'el que': 'la persona con quien hablé'. Außerdem 'donde' (Ort), 'cuando' (Zeit) und 'cuyo' (Besitz, gehoben).",
+   "tr": "İlgi sözcükleri aynı öğe hakkındaki iki fikri birleştirir. En yaygını 'que', hem insan hem nesne için: 'el chico que vino', 'la casa que compré'. Edattan sonra insanlar için 'quien/quienes' ya da 'el que': 'la persona con quien hablé'. Ayrıca 'donde' (yer), 'cuando' (zaman) ve 'cuyo' (iyelik, resmi) var."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Los relativos más útiles", "en": "The most useful relatives", "ru": "Самые полезные относительные", "de": "Die nützlichsten Relativa", "tr": "En yararlı ilgi sözcükleri" },
+    "columns": [
+     { "es_ar": "Relativo", "en": "Relative", "ru": "Относит.", "de": "Relativum", "tr": "İlgi sözcüğü" },
+     { "es_ar": "Se refiere a", "en": "Refers to", "ru": "Указывает на", "de": "Bezieht sich auf", "tr": "Neye gönderir" },
+     { "es_ar": "Ejemplo", "en": "Example", "ru": "Пример", "de": "Beispiel", "tr": "Örnek" }
+    ],
+    "rows": [
+     { "cells": ["que", "personas y cosas", "el mate que me regalaste"] },
+     { "cells": ["quien/es", "personas (tras prep.)", "el amigo con quien viajo"] },
+     { "cells": ["el/la que", "personas y cosas", "la que llamó recién"] },
+     { "cells": ["donde", "lugar", "el barrio donde crecí"] },
+     { "cells": ["cuyo/a", "posesión (culto)", "el autor cuyo libro leí"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "El colectivo que tomo pasa cada diez minutos.", "en": "The bus I take comes every ten minutes.", "ru": "Автобус, на котором я езжу, ходит каждые десять минут.", "de": "Der Bus, den ich nehme, fährt alle zehn Minuten.", "tr": "Bindiğim otobüs her on dakikada bir geçer." },
+   { "es_ar": "Esa es la mina que te conté.", "en": "That's the girl I told you about. ('mina' = girl/woman, informal)", "ru": "Это та девушка, о которой я тебе рассказывал. ('mina' — девушка, разг.)", "de": "Das ist das Mädchen, von dem ich dir erzählt habe. ('mina' = Mädchen, ugs.)", "tr": "İşte sana anlattığım kız. ('mina' = kız/kadın, samimi)" },
+   { "es_ar": "Bariloche, donde nací, está en el sur.", "en": "Bariloche, where I was born, is in the south.", "ru": "Барилоче, где я родился, находится на юге.", "de": "Bariloche, wo ich geboren wurde, liegt im Süden.", "tr": "Doğduğum yer olan Bariloche güneyde." }
+  ],
+  "hints": {
+   "en": "Unlike English, Spanish never drops the relative: 'the book I read' must be 'el libro QUE leí'. And there's no comma before a restrictive 'que' (the one that identifies which thing you mean).",
+   "ru": "В отличие от английского, испанский никогда не опускает относительное слово: 'книга, которую я прочёл' — обязательно 'el libro QUE leí'. И перед ограничительным 'que' (тем, что уточняет, о чём речь) запятая не ставится.",
+   "de": "Anders als im Englischen lässt Spanisch das Relativpronomen nie weg: 'das Buch, das ich las' muss 'el libro QUE leí' sein. Und vor einem restriktiven 'que' (das identifiziert, welche Sache gemeint ist) steht kein Komma.",
+   "tr": "İngilizcenin aksine İspanyolca ilgi sözcüğünü asla düşürmez: 'okuduğum kitap' mutlaka 'el libro QUE leí' olur. Ve hangi şeyi kastettiğini belirten kısıtlayıcı 'que'den önce virgül konmaz."
+  }
+ },
+ {
+  "id": "perifrasis",
+  "icon": "🧩",
+  "level": "B1",
+  "title": {
+   "es_ar": "Perífrasis verbales útiles",
+   "en": "Useful verbal periphrases",
+   "ru": "Полезные глагольные перифразы",
+   "de": "Nützliche Verbalperiphrasen",
+   "tr": "Yararlı fiil öbekleri (perifraz)"
+  },
+  "intro": {
+   "es_ar": "Una perífrasis junta un verbo auxiliar y un infinitivo, gerundio o participio para matizar la acción. Las más usadas: 'estar + gerundio' (estoy comiendo = ahora mismo), 'ir a + infinitivo' (futuro), 'tener que / hay que / deber + infinitivo' (obligación), 'acabar de + infinitivo' (recién), 'seguir + gerundio' (continuar), 'volver a + infinitivo' (otra vez).",
+   "en": "A periphrasis joins an auxiliary verb with an infinitive, gerund or participle to shade the action. The most used: 'estar + gerund' (estoy comiendo = right now), 'ir a + infinitive' (future), 'tener que / hay que / deber + infinitive' (obligation), 'acabar de + infinitive' (just did), 'seguir + gerund' (keep on), 'volver a + infinitive' (again).",
+   "ru": "Перифраза соединяет вспомогательный глагол с инфинитивом, герундием или причастием, чтобы уточнить действие. Самые частые: 'estar + герундий' (estoy comiendo = прямо сейчас), 'ir a + инфинитив' (будущее), 'tener que / hay que / deber + инфинитив' (долженствование), 'acabar de + инфинитив' (только что), 'seguir + герундий' (продолжать), 'volver a + инфинитив' (снова).",
+   "de": "Eine Periphrase verbindet ein Hilfsverb mit Infinitiv, Gerundium oder Partizip, um die Handlung zu nuancieren. Am häufigsten: 'estar + Gerundium' (estoy comiendo = gerade jetzt), 'ir a + Infinitiv' (Zukunft), 'tener que / hay que / deber + Infinitiv' (Pflicht), 'acabar de + Infinitiv' (gerade eben), 'seguir + Gerundium' (weiterhin), 'volver a + Infinitiv' (wieder).",
+   "tr": "Perifraz, eylemi inceltmek için bir yardımcı fiili mastar, ulaç ya da ortaçla birleştirir. En sık kullanılanlar: 'estar + ulaç' (estoy comiendo = şu anda), 'ir a + mastar' (gelecek), 'tener que / hay que / deber + mastar' (zorunluluk), 'acabar de + mastar' (az önce), 'seguir + ulaç' (devam etmek), 'volver a + mastar' (yeniden)."
+  },
+  "tables": [
+   {
+    "caption": { "es_ar": "Perífrasis frecuentes", "en": "Frequent periphrases", "ru": "Частые перифразы", "de": "Häufige Periphrasen", "tr": "Sık perifrazlar" },
+    "columns": [
+     { "es_ar": "Estructura", "en": "Structure", "ru": "Структура", "de": "Struktur", "tr": "Yapı" },
+     { "es_ar": "Sentido", "en": "Meaning", "ru": "Значение", "de": "Bedeutung", "tr": "Anlam" },
+     { "es_ar": "Ejemplo", "en": "Example", "ru": "Пример", "de": "Beispiel", "tr": "Örnek" }
+    ],
+    "rows": [
+     { "cells": ["estar + gerundio", "acción en curso", "estoy laburando"] },
+     { "cells": ["tener que + inf.", "obligación personal", "tengo que estudiar"] },
+     { "cells": ["hay que + inf.", "obligación general", "hay que esperar"] },
+     { "cells": ["acabar de + inf.", "pasado inmediato", "acabo de llegar"] },
+     { "cells": ["seguir + gerundio", "continuidad", "sigo esperando"] },
+     { "cells": ["volver a + inf.", "repetición", "volví a verlo"] }
+    ]
+   }
+  ],
+  "examples": [
+   { "es_ar": "Estoy tomando mate y mirando la tele.", "en": "I'm drinking mate and watching TV.", "ru": "Я пью мате и смотрю телевизор.", "de": "Ich trinke gerade Mate und schaue fern.", "tr": "Mate içiyorum ve televizyon izliyorum." },
+   { "es_ar": "Tengo que ir al banco antes de las tres.", "en": "I have to go to the bank before three.", "ru": "Мне нужно в банк до трёх.", "de": "Ich muss vor drei zur Bank.", "tr": "Üçten önce bankaya gitmem lazım." },
+   { "es_ar": "Acabo de hablar con ella.", "en": "I've just spoken with her.", "ru": "Я только что говорил с ней.", "de": "Ich habe gerade mit ihr gesprochen.", "tr": "Az önce onunla konuştum." }
+  ],
+  "hints": {
+   "en": "The gerund is -ando (-ar) / -iendo (-er, -ir): hablando, comiendo, viviendo. Unlike English, don't use it as a noun ('swimming is healthy' = 'nadar es sano', infinitive, not *nadando).",
+   "ru": "Герундий: -ando (-ar) / -iendo (-er, -ir): hablando, comiendo, viviendo. В отличие от английского, его не используют как существительное ('плавать полезно' = 'nadar es sano', инфинитив, а не *nadando).",
+   "de": "Das Gerundium ist -ando (-ar) / -iendo (-er, -ir): hablando, comiendo, viviendo. Anders als im Englischen nicht als Nomen verwenden ('Schwimmen ist gesund' = 'nadar es sano', Infinitiv, nicht *nadando).",
+   "tr": "Ulaç -ando (-ar) / -iendo (-er, -ir): hablando, comiendo, viviendo. İngilizcenin aksine isim gibi kullanılmaz ('yüzmek sağlıklıdır' = 'nadar es sano', mastar, *nadando değil)."
+  }
+ }
+];

@@ -42,8 +42,12 @@
   // the per-word field holding that target's CEFR level. Grammar sheets exist
   // for German only (`grammar: true`).
   var TARGETS = [
-    { key: "de", flag: "🇩🇪", endo: "Deutsch", tts: "de-DE", piper: "de_DE-thorsten-medium", level: "level", grammar: true },
-    { key: "tr", flag: "🇹🇷", endo: "Türkçe",  tts: "tr-TR", piper: "tr_TR-dfki-medium",     level: "level", grammar: true, allow: ["ru", "en", "de", "ar_sy"] }
+    { key: "de",    flag: "🇩🇪", endo: "Deutsch",              tts: "de-DE", piper: "de_DE-thorsten-medium", level: "level", grammar: true },
+    { key: "tr",    flag: "🇹🇷", endo: "Türkçe",               tts: "tr-TR", piper: "tr_TR-dfki-medium",     level: "level", grammar: true, allow: ["ru", "en", "de", "ar_sy"] },
+    // Argentinian (Rioplatense) Spanish — voseo, sheísmo, ustedes. Studied from
+    // Russian, English, German or Turkish. The es-AR speech locale and Piper's
+    // Argentine voice give the accent; the corpus uses Argentine word choices.
+    { key: "es_ar", flag: "🇦🇷", endo: "Español rioplatense",  tts: "es-AR", piper: "es_AR-daniela-high",    level: "level", grammar: true, allow: ["ru", "en", "de", "tr"] }
   ];
   var TARGET_BY_KEY = {};
   TARGETS.forEach(function (t) { TARGET_BY_KEY[t.key] = t; });
@@ -203,6 +207,7 @@
     { key: "ar_lb", flag: "🇱🇧", label: "AR-LB", endo: "لبناني",        names: { de: "Libanesisch-Arabisch", en: "Lebanese Arabic", ru: "Ливанский арабский", vi: "Tiếng Ả Rập Liban", fa: "عربی لبنانی" } },
     { key: "ar_sy", flag: "🇸🇾", label: "AR-SY", endo: "سوري",          names: { de: "Syrisch-Arabisch", en: "Syrian Arabic", ru: "Сирийский арабский", vi: "Tiếng Ả Rập Syria", fa: "عربی سوری" } },
     { key: "es_mx", flag: "🇲🇽", label: "ES-MX", endo: "Español (México)", names: { de: "Mexikanisches Spanisch", en: "Mexican Spanish", ru: "Мексиканский испанский", vi: "Tiếng Tây Ban Nha (Mexico)", fa: "اسپانیایی مکزیکی" } },
+    { key: "es_ar", flag: "🇦🇷", label: "ES-AR", endo: "Español rioplatense", names: { de: "Argentinisches Spanisch", en: "Argentinian Spanish", ru: "Аргентинский испанский", tr: "Arjantin İspanyolcası", vi: "Tiếng Tây Ban Nha (Argentina)", fa: "اسپانیایی آرژانتینی" } },
     { key: "ca",    flag: "🇦🇩", label: "CA",    endo: "Català",        names: { de: "Katalanisch", en: "Catalan", ru: "Каталанский", vi: "Tiếng Catalan", fa: "کاتالان" } },
     { key: "hr",    flag: "🇭🇷", label: "HR",    endo: "Hrvatski",      names: { de: "Kroatisch", en: "Croatian", ru: "Хорватский", vi: "Tiếng Croatia", fa: "کرواتی" } },
     { key: "sr",    flag: "🇷🇸", label: "SR",    endo: "Српски",        names: { de: "Serbisch", en: "Serbian", ru: "Сербский", vi: "Tiếng Serbia", fa: "صربی" } },
