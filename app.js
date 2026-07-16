@@ -50,7 +50,12 @@
     { key: "es_ar", flag: "🇦🇷", endo: "Español rioplatense",  tts: "es-AR", piper: "es_AR-daniela-high",    level: "level", grammar: true, allow: ["ru", "en", "de", "tr"] },
     // French (France) — studied from Russian, English, German, Turkish, Spanish,
     // Italian or Syrian Arabic.
-    { key: "fr",    flag: "🇫🇷", endo: "Français",             tts: "fr-FR", piper: "fr_FR-siwis-medium",    level: "level", grammar: true, allow: ["ru", "en", "de", "tr", "es_ar", "it", "ar_sy"] }
+    { key: "fr",    flag: "🇫🇷", endo: "Français",             tts: "fr-FR", piper: "fr_FR-siwis-medium",    level: "level", grammar: true, allow: ["ru", "en", "de", "tr", "es_ar", "it", "ar_sy"] },
+    // Russian — studied from German, English, French, Persian, Ukrainian or
+    // Syrian Arabic.
+    { key: "ru",    flag: "🇷🇺", endo: "Русский",              tts: "ru-RU", piper: "ru_RU-irina-medium",    level: "level", grammar: true, allow: ["de", "en", "fr", "fa", "uk", "ar_sy"] },
+    // Italian — studied from Russian, German, English, Ukrainian or Persian.
+    { key: "it",    flag: "🇮🇹", endo: "Italiano",             tts: "it-IT", piper: "it_IT-riccardo-x_low",  level: "level", grammar: true, allow: ["ru", "de", "en", "uk", "fa"] }
   ];
   var TARGET_BY_KEY = {};
   TARGETS.forEach(function (t) { TARGET_BY_KEY[t.key] = t; });
