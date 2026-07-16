@@ -1214,8 +1214,12 @@
     h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507); h2 ^= Math.imul(h1 ^ (h1 >>> 13), 3266489909);
     return (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(36);
   }
+  // Clips live in the separate beeins-audio repo, served via the jsDelivr CDN
+  // (edge- and browser-cached; only clips actually played are fetched). Keeps
+  // this repo small. If the CDN is unreachable, speak() falls back to synthesis.
+  var AUDIO_BASE = "https://cdn.jsdelivr.net/gh/universeawaits/beeins-audio@main/audio/";
   function audioURL(text) {
-    return new URL("audio/" + LEARN + "/" + cyrb53(String(text)) + ".m4a", document.baseURI).href;
+    return AUDIO_BASE + LEARN + "/" + cyrb53(String(text)) + ".m4a";
   }
 
   // Speak a target-language string. Every corpus string is pre-rendered to a
