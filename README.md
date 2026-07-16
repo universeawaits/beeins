@@ -29,7 +29,7 @@ Each language has a vocabulary trainer and a grammar reference, switchable from 
 - **Look back** — step back through cards you've already seen without losing your place.
 - **Automatic progress saving** — close the tab and pick up exactly where you left off. A reset button reshuffles and starts fresh.
 - **See synonyms** (where they exist) and the word's example sentence translated into every language you've turned on.
-- **Hear it spoken** — a speaker button next to the word you're learning and each example plays its pronunciation in the target language. It uses **Piper**, an open-source neural voice that runs entirely in your browser (WebAssembly): the voice model downloads once (~60 MB) and is then cached, so afterwards it works offline and sounds natural regardless of what voices your device has. While that first download is in progress — or if it can't run — it falls back to the browser's built-in text-to-speech.
+- **Hear it spoken** — a speaker button next to the word you're learning and each example plays its pronunciation in the target language. Every clip is **pre-rendered with [Piper](https://github.com/rhasspy/piper)**, an open-source neural voice, and shipped as a small audio file, so playback is **instant, offline, and natural** — no synthesis lag, no dependence on the voices your device happens to have, and only the tiny clips you actually play are ever fetched. If a clip is ever missing it falls back to synthesizing in the browser (Piper via WebAssembly), then to the OS text-to-speech.
 
 ### 📖 Grammar — a plain-language reference
 

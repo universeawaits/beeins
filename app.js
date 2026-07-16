@@ -1182,9 +1182,10 @@
     });
   }
 
-  // Speak a target-language string. Piper if ready; otherwise Web Speech while
-  // Piper's model downloads (or permanently, if Piper can't run here).
-  function speak(text, btn) {
+  // Synthesize on the fly: Piper if ready; otherwise Web Speech while Piper's
+  // model downloads (or permanently, if Piper can't run here). Used only as a
+  // fallback when a pre-generated clip is missing.
+  function speakSynth(text, btn) {
     if (!text) return;
     if (PIPER_VOICE && piperState !== "dead") {
       piperSpeak(text, btn).then(function (handled) {
@@ -1197,6 +1198,48 @@
       return;
     }
     webSpeak(text, btn);
+  }
+
+  // cyrb53 string hash — MUST stay byte-identical to the generator that named
+  // the pre-rendered audio files (scratchpad/gen-audio.js).
+  function cyrb53(str, seed) {
+    seed = seed || 0;
+    var h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
+    for (var i = 0, ch; i < str.length; i++) {
+      ch = str.charCodeAt(i);
+      h1 = Math.imul(h1 ^ ch, 2654435761);
+      h2 = Math.imul(h2 ^ ch, 1597334677);
+    }
+    h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507); h1 ^= Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+    h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507); h2 ^= Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+    return (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(36);
+  }
+  function audioURL(text) {
+    return new URL("audio/" + LEARN + "/" + cyrb53(String(text)) + ".m4a", document.baseURI).href;
+  }
+
+  // Speak a target-language string. Every corpus string is pre-rendered to a
+  // small audio file, so we play that instantly (browser-cached after first
+  // play, tiny traffic). If the clip is missing/unplayable, fall back to
+  // on-the-fly synthesis.
+  function speak(text, btn) {
+    if (!text) return;
+    if (TTS_OK) { try { window.speechSynthesis.cancel(); } catch (e) {} }
+    try { if (piperAudio) piperAudio.pause(); } catch (e) {}
+    var a = new Audio();
+    piperAudio = a;
+    var fell = false;
+    var fallback = function () {
+      if (fell) return; fell = true;
+      if (btn) btn.classList.remove("speaking");
+      speakSynth(text, btn);
+    };
+    markSpeaking(btn);
+    a.onended = function () { if (btn) btn.classList.remove("speaking"); };
+    a.onerror = fallback;
+    a.src = audioURL(text);
+    var pr = a.play();
+    if (pr && pr.catch) pr.catch(fallback);
   }
 
   // Build a muted speaker button that plays `text` when clicked. Its pointer
