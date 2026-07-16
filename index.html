@@ -5,6 +5,11 @@
 <title>beeins</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
+<!-- Resolves the bare "onnxruntime-web" specifier that the vendored Piper TTS
+     imports at runtime (must load before any module import runs). -->
+<script type="importmap">
+{ "imports": { "onnxruntime-web": "https://esm.sh/onnxruntime-web@1.18.0" } }
+</script>
 <script>try{var t=localStorage.getItem('beeins_theme')||localStorage.getItem('swipua_theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 </head>
 <body>

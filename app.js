@@ -42,8 +42,8 @@
   // the per-word field holding that target's CEFR level. Grammar sheets exist
   // for German only (`grammar: true`).
   var TARGETS = [
-    { key: "de", flag: "🇩🇪", endo: "Deutsch", tts: "de-DE", level: "level", grammar: true },
-    { key: "tr", flag: "🇹🇷", endo: "Türkçe",  tts: "tr-TR", level: "level", grammar: true, allow: ["ru", "en", "de", "ar_sy"] }
+    { key: "de", flag: "🇩🇪", endo: "Deutsch", tts: "de-DE", piper: "de_DE-thorsten-medium", level: "level", grammar: true },
+    { key: "tr", flag: "🇹🇷", endo: "Türkçe",  tts: "tr-TR", piper: "tr_TR-dfki-medium",     level: "level", grammar: true, allow: ["ru", "en", "de", "ar_sy"] }
   ];
   var TARGET_BY_KEY = {};
   TARGETS.forEach(function (t) { TARGET_BY_KEY[t.key] = t; });
@@ -1063,14 +1063,18 @@
   function langByKey(key) { return LANG_BY_KEY[key] || LANGS[0]; }
 
   // ---- pronunciation (text-to-speech) ------------------------------------
-  // The target word is spoken with the browser's built-in Web Speech API
-  // (speechSynthesis). It is free, needs no audio files, works offline, and
-  // uses whatever voice the operating system provides for the target locale
-  // (e.g. de-DE, tr-TR) — on modern macOS / Windows / Android these are
-  // natural neural voices.
+  // Primary engine: Piper — an open-source neural TTS (VITS) that runs fully in
+  // the browser via WebAssembly (vendored under vendor/piper/). The target's
+  // voice model (~60 MB) downloads once from HuggingFace and is cached in the
+  // browser (OPFS), so afterwards it works offline and sounds natural no matter
+  // what voices the OS has. Until the model has finished downloading — and if
+  // Piper is unsupported or errors — we fall back to the browser's built-in Web
+  // Speech API in the target locale.
   var TTS_OK = typeof window !== "undefined" && "speechSynthesis" in window;
   var TTS_LANG = TARGET.tts || "de-DE";                  // BCP-47 locale to speak
   var TTS_PREFIX = TTS_LANG.split(/[-_]/)[0].toLowerCase(); // "de", "tr", …
+  var PIPER_VOICE = TARGET.piper || null;                // Piper voice id, if any
+  var SPEAK_OK = TTS_OK || !!PIPER_VOICE;                // is any engine available?
 
   // Inline speaker icon (inherits currentColor so it can be shown in a muted
   // tone next to the text and brighten on hover).
@@ -1081,8 +1085,7 @@
     '<path d="M15.5 8.5a5 5 0 0 1 0 7"></path>' +
     '<path d="M19 5a9 9 0 0 1 0 14"></path></svg>';
 
-  // Pick the best-sounding voice for the target locale, preferring an exact
-  // locale match and voices that look enhanced/neural.
+  // --- Web Speech fallback: pick the best-sounding voice for the locale ---
   var learnVoice = null;
   var EXACT_LANG_RE = new RegExp(TTS_LANG.replace(/[-_]/g, "[-_]"), "i");
   var PREFIX_LANG_RE = new RegExp("^" + TTS_PREFIX + "([-_]|$)", "i");
@@ -1103,16 +1106,13 @@
   }
   if (TTS_OK) {
     refreshVoice();
-    // Voices often load asynchronously; re-pick when they arrive.
     window.speechSynthesis.addEventListener("voiceschanged", refreshVoice);
   }
-
-  // Speak a target-language string, highlighting the button that triggered it.
-  function speak(text, btn) {
+  function webSpeak(text, btn) {
     if (!TTS_OK || !text) return;
     var synth = window.speechSynthesis;
     try {
-      synth.cancel(); // stop anything already playing
+      synth.cancel();
       var prev = document.querySelector(".speakBtn.speaking");
       if (prev) prev.classList.remove("speaking");
       var u = new SpeechSynthesisUtterance(String(text));
@@ -1125,6 +1125,78 @@
       }
       synth.speak(u);
     } catch (e) {}
+  }
+
+  // --- Piper neural engine (primary) ---
+  var piperMod = null, piperLoading = null;
+  var piperState = "idle";   // idle | downloading | ready | dead
+  var piperAudio = null;
+  function loadPiper() {
+    if (piperMod) return Promise.resolve(piperMod);
+    if (piperLoading) return piperLoading;
+    var url = new URL("vendor/piper/piper-tts-web.js", document.baseURI).href;
+    piperLoading = import(url).then(function (m) { piperMod = m; return m; });
+    return piperLoading;
+  }
+  function markSpeaking(btn) {
+    if (!btn) return;
+    var p = document.querySelector(".speakBtn.speaking");
+    if (p) p.classList.remove("speaking");
+    btn.classList.add("speaking");
+  }
+  function playWav(wav, btn) {
+    if (TTS_OK) { try { window.speechSynthesis.cancel(); } catch (e) {} }
+    try { if (piperAudio) piperAudio.pause(); } catch (e) {}
+    var url = URL.createObjectURL(wav);
+    piperAudio = new Audio(url);
+    markSpeaking(btn);
+    piperAudio.onended = piperAudio.onerror = function () {
+      if (btn) btn.classList.remove("speaking");
+      URL.revokeObjectURL(url);
+    };
+    var pr = piperAudio.play();
+    if (pr && pr.catch) pr.catch(function () { if (btn) btn.classList.remove("speaking"); });
+  }
+  // Resolves true when Piper played the audio; false means "not ready yet, use
+  // the fallback for this tap" (the model download is kicked off in background).
+  function piperSpeak(text, btn) {
+    return loadPiper().then(function (m) {
+      return Promise.resolve(m.stored ? m.stored() : []).then(function (list) {
+        var have = (list || []).indexOf(PIPER_VOICE) !== -1;
+        if (!have) {
+          if (piperState !== "downloading") {
+            piperState = "downloading";
+            m.download(PIPER_VOICE, function () {}).then(function () { piperState = "ready"; })
+              .catch(function () { piperState = "dead"; });
+          }
+          return false;
+        }
+        piperState = "ready";
+        if (btn) btn.classList.add("loading");
+        return m.predict({ text: String(text), voiceId: PIPER_VOICE }).then(function (wav) {
+          if (btn) btn.classList.remove("loading");
+          playWav(wav, btn);
+          return true;
+        });
+      });
+    });
+  }
+
+  // Speak a target-language string. Piper if ready; otherwise Web Speech while
+  // Piper's model downloads (or permanently, if Piper can't run here).
+  function speak(text, btn) {
+    if (!text) return;
+    if (PIPER_VOICE && piperState !== "dead") {
+      piperSpeak(text, btn).then(function (handled) {
+        if (!handled) webSpeak(text, btn);
+      }).catch(function () {
+        piperState = "dead";
+        if (btn) btn.classList.remove("loading");
+        webSpeak(text, btn);
+      });
+      return;
+    }
+    webSpeak(text, btn);
   }
 
   // Build a muted speaker button that plays `text` when clicked. Its pointer
@@ -1350,7 +1422,7 @@
     elWord.textContent = wordVal(w, frontKey);
     elWord.setAttribute("dir", "auto"); // render RTL (Persian/Arabic/Urdu) correctly
     // Speak the title when it is the target word (the language being learned).
-    if (TTS_OK && frontKey === LEARN) elWord.appendChild(makeSpeakBtn(wordVal(w, LEARN)));
+    if (SPEAK_OK && frontKey === LEARN) elWord.appendChild(makeSpeakBtn(wordVal(w, LEARN)));
 
     // The target (the word being learned) goes first on its own highlighted
     // row; every other translation wraps onto the row below it.
@@ -1369,7 +1441,7 @@
       if (l.key === LEARN) {
         span.className = "deBadge";
         // The target is the word being learned — let it be heard from here too.
-        if (TTS_OK) span.appendChild(makeSpeakBtn(wordVal(w, LEARN)));
+        if (SPEAK_OK) span.appendChild(makeSpeakBtn(wordVal(w, LEARN)));
         deRow.appendChild(span);
       } else {
         otherRow.appendChild(span);
@@ -1414,7 +1486,7 @@
       // Speak the target-language example sentence.
       var learnLine = div.querySelector(".exLearn");
       var exWord = exVal(ex, LEARN);
-      if (TTS_OK && learnLine && exWord) learnLine.appendChild(makeSpeakBtn(exWord));
+      if (SPEAK_OK && learnLine && exWord) learnLine.appendChild(makeSpeakBtn(exWord));
       elExamples.appendChild(div);
     });
 
@@ -1701,7 +1773,7 @@
         de.setAttribute("dir", "auto");
         de.textContent = ex[LEARN] || "";
         // Speak the target-language grammar example.
-        if (TTS_OK && ex[LEARN]) de.appendChild(makeSpeakBtn(ex[LEARN]));
+        if (SPEAK_OK && ex[LEARN]) de.appendChild(makeSpeakBtn(ex[LEARN]));
         d.appendChild(de);
         shownLangs().forEach(function (l) {
           if (l.key === LEARN || !ex[l.key]) return;

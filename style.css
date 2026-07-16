@@ -429,6 +429,9 @@ body {
 .speakBtn:hover { opacity: 1; color: var(--accent); }
 .speakBtn:active { transform: scale(0.88); }
 .speakBtn.speaking { opacity: 1; color: var(--accent); }
+/* While Piper synthesizes (or first-time model download), pulse the icon. */
+.speakBtn.loading { opacity: 1; color: var(--accent); animation: speakPulse 0.9s ease-in-out infinite; }
+@keyframes speakPulse { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
 .speakBtn svg { display: block; }
 
 .example > div:not(.exLearn) {
