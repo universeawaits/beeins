@@ -28,7 +28,7 @@ Each language has a vocabulary trainer and a grammar reference, switchable from 
 - **Words stick until you know them** — anything you mark "don't know" comes back later in the same session; words you know leave the deck.
 - **Look back** — step back through cards you've already seen without losing your place.
 - **Automatic progress saving** — close the tab and pick up exactly where you left off. A reset button reshuffles and starts fresh.
-- **See synonyms** (for German) and the word's example sentence translated into every language you've turned on.
+- **See synonyms** (where they exist) and the word's example sentence translated into every language you've turned on.
 - **Hear it spoken** — a small speaker button next to the word you're learning and each example plays its pronunciation in the target language, using your device's built-in text-to-speech (no downloads, works offline).
 
 ### 📖 Grammar — a plain-language reference

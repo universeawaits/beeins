@@ -308,7 +308,6 @@
   var elAskFlags = document.getElementById("askFlags");
   var elShowFlags = document.getElementById("showFlags");
   var elAskDrop = document.querySelector('.langDrop[data-set="title"]');
-  var elLearnLang = document.getElementById("learnLang");
 
   var GRAMMAR_DATA = (typeof GRAMMAR !== "undefined" && GRAMMAR) ? GRAMMAR : [];
 
@@ -1379,11 +1378,11 @@
     if (deRow.childNodes.length) elTranslations.appendChild(deRow);
     if (otherRow.childNodes.length) elTranslations.appendChild(otherRow);
 
-    // Synonyms — alternatives you can sometimes swap the word for. These exist
-    // for German only in the corpus, so they show only when learning German.
-    // Built regardless of reveal state (CSS hides them until revealed).
+    // Synonyms — alternatives you can sometimes swap the word for, shown for any
+    // target whose corpus provides them. Built regardless of reveal state (CSS
+    // hides them until revealed).
     elSynonyms.innerHTML = "";
-    var syn = (LEARN === "de" && w.syn) ? w.syn : [];
+    var syn = w.syn || [];
     if (syn.length) {
       var lab = document.createElement("span");
       lab.className = "synLabel";
@@ -1399,16 +1398,23 @@
     }
 
     elExamples.innerHTML = "";
+    // The target sentence (the language being learned) leads each example, bold;
+    // the translations follow, muted. Order the target first regardless of its
+    // position in the master list.
+    var exLangs = AVAIL.filter(function (l) { return showLangs[l.key]; });
+    exLangs = exLangs.filter(function (l) { return l.key === LEARN; })
+      .concat(exLangs.filter(function (l) { return l.key !== LEARN; }));
     (w.examples || []).forEach(function (ex) {
       var div = document.createElement("div");
       div.className = "example";
-      div.innerHTML = AVAIL.filter(function (l) { return showLangs[l.key]; }).map(function (l) {
-        return '<div class="' + l.key + '" dir="auto">' + escapeHtml(exVal(ex, l.key)) + "</div>";
+      div.innerHTML = exLangs.map(function (l) {
+        var cls = l.key + (l.key === LEARN ? " exLearn" : "");
+        return '<div class="' + cls + '" dir="auto">' + escapeHtml(exVal(ex, l.key)) + "</div>";
       }).join("");
       // Speak the target-language example sentence.
-      var deLine = div.querySelector("." + LEARN);
+      var learnLine = div.querySelector(".exLearn");
       var exWord = exVal(ex, LEARN);
-      if (TTS_OK && deLine && exWord) deLine.appendChild(makeSpeakBtn(exWord));
+      if (TTS_OK && learnLine && exWord) learnLine.appendChild(makeSpeakBtn(exWord));
       elExamples.appendChild(div);
     });
 
@@ -1694,6 +1700,8 @@
         de.className = "gExDe";
         de.setAttribute("dir", "auto");
         de.textContent = ex[LEARN] || "";
+        // Speak the target-language grammar example.
+        if (TTS_OK && ex[LEARN]) de.appendChild(makeSpeakBtn(ex[LEARN]));
         d.appendChild(de);
         shownLangs().forEach(function (l) {
           if (l.key === LEARN || !ex[l.key]) return;
@@ -1962,7 +1970,12 @@
     btn.classList.toggle("open", open);
   }
 
-  function closeAllPanels() { openPanel("title", false); openPanel("show", false); }
+  function closeAllPanels() {
+    openPanel("title", false); openPanel("show", false);
+    var lp = document.getElementById("learnPanel"), lb = document.getElementById("learnDropBtn");
+    if (lp) lp.hidden = true;
+    if (lb) { lb.setAttribute("aria-expanded", "false"); lb.classList.remove("open"); }
+  }
 
   function initLangDrops() {
     ["title", "show"].forEach(function (name) {
@@ -2173,14 +2186,44 @@
   // switching persists the choice and reloads — every downstream default is
   // then recomputed cleanly from the stored target at boot.
   function initLearnLang() {
-    if (!elLearnLang) return;
-    elLearnLang.value = LEARN;
-    elLearnLang.addEventListener("change", function () {
-      var v = elLearnLang.value;
-      if (!TARGET_BY_KEY[v] || v === LEARN) { elLearnLang.value = LEARN; return; }
-      try { window.localStorage.setItem("beeins_learn", v); } catch (e) {}
-      window.location.reload();
+    var btn = document.getElementById("learnDropBtn");
+    var panel = document.getElementById("learnPanel");
+    var face = document.getElementById("learnFace");
+    var flag = document.getElementById("learnFlag");
+    if (!btn || !panel) return;
+    if (flag) flag.textContent = TARGET.flag;
+    if (face) face.textContent = TARGET.endo;
+    // One option per learnable target (single-select). Picking a different one
+    // persists the choice and reloads, so all defaults recompute cleanly.
+    panel.innerHTML = "";
+    TARGETS.forEach(function (t) {
+      var on = t.key === LEARN;
+      var opt = document.createElement("button");
+      opt.type = "button";
+      opt.className = "ldOpt" + (on ? "" : " off");
+      opt.setAttribute("role", "option");
+      opt.setAttribute("aria-checked", on ? "true" : "false");
+      opt.innerHTML =
+        '<span class="ldChk" aria-hidden="true">' + (on ? "✓" : "") + "</span>" +
+        '<span class="ldFlag" aria-hidden="true">' + t.flag + "</span>" +
+        '<span class="ldNames"><span class="ldEndo" dir="auto">' + escapeHtml(t.endo) + "</span></span>";
+      opt.addEventListener("click", function (e) {
+        e.stopPropagation();
+        if (t.key === LEARN) { closeAllPanels(); return; }
+        try { window.localStorage.setItem("beeins_learn", t.key); } catch (e2) {}
+        window.location.reload();
+      });
+      panel.appendChild(opt);
     });
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var willOpen = panel.hidden;
+      closeAllPanels();
+      panel.hidden = !willOpen;
+      btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      btn.classList.toggle("open", willOpen);
+    });
+    panel.addEventListener("click", function (e) { e.stopPropagation(); });
   }
 
   // Grammar cheat sheets exist for German only. For other targets there is just

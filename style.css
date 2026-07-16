@@ -97,20 +97,13 @@ body {
 #themeToggle:active,
 #resetBtn:active { transform: scale(0.92); }
 
-/* Learning-target selector: the app's primary control, pinned top-left. Given
-   a little more weight than the other chips so it reads as an identity switch. */
-#learnLang {
+/* Learning-target selector: a plain dropdown matching the Ask/Show ones,
+   pinned top-left. Shows the current target's flag + endonym. */
+#learnDrop .ldLearnName {
   font-size: 0.9rem;
   font-weight: 700;
-  padding: 6px 10px;
-  border-radius: 12px;
-  border: 1px solid var(--accent);
-  background: var(--card-bg);
-  color: var(--text);
-  cursor: pointer;
+  white-space: nowrap;
 }
-
-#learnLang:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* Cards-per-session selector: matched to the level-switch chip aesthetic. */
 #sessionSize {
@@ -411,7 +404,7 @@ body {
   padding-top: 12px;
 }
 
-.example .de {
+.example .exLearn {
   font-weight: 600;
   margin-bottom: 4px;
 }
@@ -438,7 +431,7 @@ body {
 .speakBtn.speaking { opacity: 1; color: var(--accent); }
 .speakBtn svg { display: block; }
 
-.example > div:not(.de) {
+.example > div:not(.exLearn) {
   color: var(--muted);
   font-size: 0.92rem;
   line-height: 1.4;
