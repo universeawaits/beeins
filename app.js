@@ -1488,8 +1488,10 @@
       if (l.key === frontKey || !showLangs[l.key]) return;
       var span = document.createElement("span");
       // <bdi> isolates the value's direction so mixing LTR labels with
-      // RTL (Persian/Arabic) values stays readable
-      span.innerHTML = l.label + ": <bdi>" + escapeHtml(wordVal(w, l.key)) + "</bdi>";
+      // RTL (Persian/Arabic) values stays readable. The target word carries no
+      // language-code prefix — you already know which language you're learning.
+      var prefix = l.key === LEARN ? "" : l.label + ": ";
+      span.innerHTML = prefix + "<bdi>" + escapeHtml(wordVal(w, l.key)) + "</bdi>";
       if (l.key === LEARN) {
         span.className = "deBadge";
         // The target is the word being learned — let it be heard from here too.
