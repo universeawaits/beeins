@@ -11,11 +11,11 @@ Or run it locally: open `index.html`, or serve the folder and visit it in a brow
 A dropdown in the very top-left picks the language you're studying:
 
 - **🇩🇪 German** — 4,600+ words, a 20-topic grammar reference, and translations into any of 25+ languages.
-- **🇹🇷 Turkish** — 3,700+ words and a 23-topic Turkish grammar reference, studied from Russian, English, German, or Syrian Arabic.
-- **🇦🇷 Argentinian Spanish** — 4,000+ words and a 24-topic **Rioplatense** grammar reference, studied from Russian, English, German, or Turkish.
+- **🇹🇷 Turkish** — 3,700+ words and a 23-topic Turkish grammar reference, studied from Russian, English, German, Syrian Arabic, Ukrainian, Persian, or French.
+- **🇦🇷 Argentinian Spanish** — 4,000+ words and a 24-topic **Rioplatense** grammar reference, studied from Russian, English, German, Turkish, Ukrainian, Persian, or French.
 - **🇫🇷 French** — 4,000+ words and a 24-topic grammar reference, studied from Russian, English, German, Turkish, Spanish, Italian, or Syrian Arabic. Levels and grammar follow the CEFR / DELF A1–B1 and the *Niveau A1/A2/B1 pour le français* référentiels.
 - **🇷🇺 Russian** — 3,300+ words and a 24-topic grammar reference (the six cases, verbal aspect, verbs of motion…), studied from German, English, French, Persian, Ukrainian, or Syrian Arabic.
-- **🇮🇹 Italian** — 3,300+ words and a 24-topic grammar reference, studied from Russian, German, English, Ukrainian, or Persian. It teaches the Argentine variety throughout: **voseo** (vos tenés, vos sos), **ustedes** (never vosotros), the **sheísmo** pronunciation of *ll/y*, the preterite over the present perfect, and Argentine word choices (*auto, colectivo, celular, computadora, frutilla, palta, heladera, laburo, plata, birome, remera, valija, che, dale*).
+- **🇮🇹 Italian** — 3,300+ words and a 24-topic grammar reference (articles, the passato prossimo/imperfetto contrast, the subjunctive, object and relative pronouns…), studied from Russian, German, English, Ukrainian, or Persian.
 
 Each language is built from its own materials — vocabulary, CEFR levels, and grammar all drawn from that language's official curricula, not translated across — and keeps its own progress, level, and preferences, so switching between them never disturbs the other.
 
@@ -47,9 +47,9 @@ Everything around the word you're learning — translations, example sentences, 
 
 English · Russian · Ukrainian · Vietnamese · Persian · Thai · Chinese · Malay · Turkish · Polish · Swahili · Amharic · Hindi · Urdu · Mexican Spanish · Catalan · Croatian · Serbian · Greek · Romanian · Albanian · and Egyptian, Lebanese & Syrian Arabic
 
-When learning **Turkish**, the study-from languages are currently English, Russian, German, and Syrian Arabic.
+When learning **Turkish**, the study-from languages are currently English, Russian, German, Syrian Arabic, Ukrainian, Persian, and French.
 
-When learning **Argentinian Spanish**, the study-from languages are currently Russian, English, German, and Turkish. Every grammar explanation flags the mistakes speakers of those languages typically make, and the Rioplatense features (voseo, ustedes, sheísmo, the preterite preference) are called out in each relevant topic. The certification landscape is Argentina's own **CELU** (a usage-based, oral-plus-written proficiency exam) alongside the pan-Hispanic **DELE** and **SIELE**; the vocabulary and per-level grammar follow the Instituto Cervantes' Plan Curricular (PCIC) A1–B1 inventories, systematically overridden with Argentine usage.
+When learning **Argentinian Spanish**, the study-from languages are currently Russian, English, German, Turkish, Ukrainian, Persian, and French. Every grammar explanation flags the mistakes speakers of those languages typically make, and the Rioplatense features (voseo, ustedes, sheísmo, the preterite preference) are called out in each relevant topic. The certification landscape is Argentina's own **CELU** (a usage-based, oral-plus-written proficiency exam) alongside the pan-Hispanic **DELE** and **SIELE**; the vocabulary and per-level grammar follow the Instituto Cervantes' Plan Curricular (PCIC) A1–B1 inventories, systematically overridden with Argentine usage.
 
 Two simple selectors let you tune this:
 
