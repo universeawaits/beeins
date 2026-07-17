@@ -317,6 +317,7 @@ body {
 }
 
 #card {
+  position: relative;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 20px;
@@ -803,3 +804,82 @@ body { -webkit-tap-highlight-color: transparent; }
   #controls button { padding: 11px 10px; font-size: 0.88rem; }
   .ldFlags { max-width: 92px; }
 }
+
+/* ---- loading skeleton -------------------------------------------------- */
+/* Shown until app.js removes `app-loading` from <html>. Mirrors the topbar +
+   card layout so the shell doesn't flash empty while the big corpus loads. */
+#appSkeleton {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+html:not(.app-loading) #appSkeleton { display: none; }
+.skTopbar {
+  display: flex;
+  align-items: center;
+  gap: 8px 14px;
+  padding: 24px;
+  flex-wrap: wrap;
+}
+.skDeck {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.sk {
+  position: relative;
+  overflow: hidden;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.sk::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(127, 127, 127, 0.18), transparent);
+  animation: skShimmer 1.3s ease-in-out infinite;
+}
+@keyframes skShimmer { 100% { transform: translateX(100%); } }
+.skPill { height: 34px; }
+.skGrow { flex: 1; min-width: 40px; }
+.skCard { width: 100%; max-width: 560px; height: 260px; border-radius: 20px; }
+@media (prefers-reduced-motion: reduce) { .sk::after { animation: none; } }
+
+/* ---- topics filter ----------------------------------------------------- */
+#topicFace {
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+/* The option's leading emoji in the topics panel. */
+.ldTopicEmoji {
+  font-size: 1.05rem;
+  width: 1.4em;
+  text-align: center;
+  flex-shrink: 0;
+}
+/* Topic emojis in the card's top-left corner. */
+#cardTopics {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  max-width: 62%;
+  pointer-events: auto;
+}
+.cardTopic {
+  font-size: 1rem;
+  line-height: 1;
+  cursor: default;
+  opacity: 0.8;
+}
+.cardTopic:hover { opacity: 1; }

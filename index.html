@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="app-loading">
 <head>
 <meta charset="utf-8">
 <title>beeins</title>
@@ -13,6 +13,23 @@
 <script>try{var t=localStorage.getItem('beeins_theme')||localStorage.getItem('swipua_theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 </head>
 <body>
+
+<!-- Shimmer skeleton shown until app.js finishes wiring the UI (the corpus files
+     are large, so a fresh load or a language switch can take a moment). app.js
+     removes `app-loading` from <html> once the first card is painted. -->
+<div id="appSkeleton" aria-hidden="true">
+  <div class="skTopbar">
+    <span class="sk skPill" style="width:52px"></span>
+    <span class="sk skPill" style="width:150px"></span>
+    <span class="sk skPill" style="width:132px"></span>
+    <span class="sk skPill" style="width:70px"></span>
+    <span class="sk skPill" style="width:64px"></span>
+    <span class="sk skPill skGrow"></span>
+    <span class="sk skPill" style="width:60px"></span>
+    <span class="sk skPill" style="width:44px"></span>
+  </div>
+  <div class="skDeck"><div class="sk skCard"></div></div>
+</div>
 
 <header id="topbar">
   <div id="topbarMain">
@@ -34,6 +51,14 @@
       <button type="button" class="levelBtn" data-level="A2">A2</button>
       <button type="button" class="levelBtn" data-level="B1">B1</button>
     </nav>
+    <div class="langDrop" id="topicDrop" data-set="topics">
+      <button type="button" class="langDropBtn" id="topicDropBtn" aria-haspopup="listbox" aria-expanded="false" title="Filter the deck by topic">
+        <span class="ldLabel" id="lblTopics">topics</span>
+        <span class="ldFlags" id="topicFace" aria-hidden="true"></span>
+        <span class="ldCaret" aria-hidden="true">▾</span>
+      </button>
+      <div class="langDropPanel" id="topicPanel" role="listbox" aria-multiselectable="true" aria-label="Topics" hidden></div>
+    </div>
     <div id="langDrops">
       <div class="langDrop" data-set="title">
         <button type="button" class="langDropBtn" id="askDropBtn" aria-haspopup="listbox" aria-expanded="false">
@@ -71,6 +96,7 @@
 
 <main id="deck">
   <div id="card" class="answer-hidden">
+    <div id="cardTopics" aria-label="Topics for this word"></div>
     <div id="word"></div>
     <div id="synonyms"></div>
     <div id="revealHint">Tap the card or press any key to reveal</div>
@@ -110,10 +136,20 @@
     ru:    ["data-ru.js", "grammar-ru.js"],
     it:    ["data-it.js", "grammar-it.js"]
   };
-  var files = byTarget[t] || ["data.js", "grammar.js"];
-  for (var i = 0; i < files.length; i++) document.write('<script src="' + files[i] + '"><\/script>');
+  // Load corpus → grammar → topics → app sequentially but WITHOUT blocking the
+  // first paint (document.write would stall rendering until the big corpus file
+  // finished downloading and parsing). The skeleton stays visible meanwhile.
+  var files = (byTarget[t] || ["data.js", "grammar.js"]).concat(["topics.js", "app.js"]);
+  var i = 0;
+  (function next() {
+    if (i >= files.length) return;
+    var s = document.createElement("script");
+    s.src = files[i++];
+    s.onload = next;
+    s.onerror = next; // keep going even if one file is missing
+    document.head.appendChild(s);
+  })();
 })();
 </script>
-<script src="app.js"></script>
 </body>
 </html>

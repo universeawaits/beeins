@@ -144,12 +144,70 @@
   function wordLevel(w) { var lv = w[LEVEL_FIELD]; return LEVEL_ORDER[lv] ? lv : "B1"; }
   function inCurrentLevel(w) { return LEVEL_ORDER[wordLevel(w)] <= LEVEL_ORDER[currentLevel]; }
 
+  // ---- topics ------------------------------------------------------------
+  // Topic taxonomy comes from topics.js (TOPICS + TOPIC_ALL_LABEL). Every word
+  // carries `topics: [ids]`. The chosen filter is stored globally (shared
+  // across targets, since a topic like "food" means the same everywhere); an
+  // empty selection means "all topics" and applies no filtering.
+  var TOPIC_LIST = (typeof TOPICS !== "undefined" && TOPICS) ? TOPICS : [];
+  var TOPIC_BY_ID = {};
+  TOPIC_LIST.forEach(function (t) { TOPIC_BY_ID[t.id] = t; });
+  var TOPIC_ALL = (typeof TOPIC_ALL_LABEL !== "undefined" && TOPIC_ALL_LABEL) ? TOPIC_ALL_LABEL : { en: "All topics" };
+
+  function loadSelectedTopics() {
+    try {
+      var v = JSON.parse(window.localStorage.getItem("beeins_topics"));
+      if (Array.isArray(v)) {
+        var m = {};
+        v.forEach(function (id) { if (TOPIC_BY_ID[id]) m[id] = true; });
+        return m;
+      }
+    } catch (e) {}
+    return {};
+  }
+  var selectedTopics = loadSelectedTopics();
+  function saveSelectedTopics() {
+    try { window.localStorage.setItem("beeins_topics", JSON.stringify(Object.keys(selectedTopics))); } catch (e) {}
+  }
+  function topicsAll() { return Object.keys(selectedTopics).length === 0; }
+  function inSelectedTopics(w) {
+    if (topicsAll()) return true;
+    var ts = w.topics;
+    if (!ts || !ts.length) return false;
+    for (var i = 0; i < ts.length; i++) if (selectedTopics[ts[i]]) return true;
+    return false;
+  }
+  function topicLabel(id) {
+    var t = TOPIC_BY_ID[id];
+    if (!t) return id;
+    var k = uiLangKey();
+    return (t.names && (t.names[k] || t.names.en)) || id;
+  }
+  // Paint the current word's topic emojis into the card's top-left corner.
+  function renderCardTopics(w) {
+    if (!elCardTopics) return;
+    elCardTopics.innerHTML = "";
+    var ts = (w && w.topics) || [];
+    ts.forEach(function (id) {
+      var t = TOPIC_BY_ID[id];
+      if (!t) return;
+      var sp = document.createElement("span");
+      sp.className = "cardTopic";
+      sp.textContent = t.emoji;
+      var nm = topicLabel(id);
+      sp.title = nm;
+      sp.setAttribute("aria-label", nm);
+      elCardTopics.appendChild(sp);
+    });
+  }
+
+
   // Build one session's deck from the words at the current level. Unless the
   // size is "All", it's a review mix: ~30% already-mastered words (kept fresh),
   // ~70% weak/new — previously-missed words prioritised over never-seen ones.
   // If one bucket falls short the other fills in, so the deck reaches its size.
   function buildDeck() {
-    var pool = source.filter(inCurrentLevel);
+    var pool = source.filter(function (w) { return inCurrentLevel(w) && inSelectedTopics(w); });
     if (sessionSize === "all" || pool.length === 0) return shuffle(pool.slice());
 
     var N = Math.min(sessionSize, pool.length);
@@ -323,6 +381,12 @@
   var elAskFlags = document.getElementById("askFlags");
   var elShowFlags = document.getElementById("showFlags");
   var elAskDrop = document.querySelector('.langDrop[data-set="title"]');
+  var elTopicDrop = document.getElementById("topicDrop");
+  var elTopicBtn = document.getElementById("topicDropBtn");
+  var elTopicPanel = document.getElementById("topicPanel");
+  var elTopicFace = document.getElementById("topicFace");
+  var elCardTopics = document.getElementById("cardTopics");
+  var elLblTopics = document.getElementById("lblTopics");
 
   var GRAMMAR_DATA = (typeof GRAMMAR !== "undefined" && GRAMMAR) ? GRAMMAR : [];
 
@@ -1464,7 +1528,7 @@
     elStats.classList.add("hidden");
     showView("cards");
     if (deck.length === 0) {
-      elWord.textContent = "—";
+      elWord.textContent = "—"; if (elCardTopics) elCardTopics.innerHTML = "";
       elCard.classList.remove("answer-hidden");
       elTranslations.innerHTML = "";
       elSynonyms.innerHTML = "";
@@ -1483,6 +1547,7 @@
   function paintCard(w, frontKey, isRevealed) {
     elWord.textContent = wordVal(w, frontKey);
     elWord.setAttribute("dir", "auto"); // render RTL (Persian/Arabic/Urdu) correctly
+    renderCardTopics(w);
     // Speak the title when it is the target word (the language being learned).
     if (SPEAK_OK && frontKey === LEARN) elWord.appendChild(makeSpeakBtn(wordVal(w, LEARN)));
 
@@ -1755,6 +1820,8 @@
     // rebuild them whenever that language changes.
     renderPanel("title");
     renderPanel("show");
+    renderTopicPanel();
+    updateTopicFace();
     updateProgress();
   }
 
@@ -1958,6 +2025,8 @@
     // the rules and the examples. The "ask" (prompt) selector only makes sense
     // for cards, so hide it here.
     if (elAskDrop) elAskDrop.classList.toggle("hidden", grammar);
+    // Topics filter the card deck only, so hide it in the grammar view.
+    if (elTopicDrop) elTopicDrop.classList.toggle("hidden", grammar);
     elDeck.classList.toggle("hidden", grammar || sessionDone);
     elControls.classList.toggle("hidden", grammar || sessionDone);
     elStats.classList.toggle("hidden", grammar || !sessionDone);
@@ -2007,7 +2076,7 @@
     elDeck.classList.remove("hidden");
     elControls.classList.remove("hidden");
     if (deck.length === 0) {
-      elWord.textContent = "—";
+      elWord.textContent = "—"; if (elCardTopics) elCardTopics.innerHTML = "";
       elCard.classList.remove("answer-hidden");
       elTranslations.innerHTML = "";
       elSynonyms.innerHTML = "";
@@ -2111,6 +2180,73 @@
     var lp = document.getElementById("learnPanel"), lb = document.getElementById("learnDropBtn");
     if (lp) lp.hidden = true;
     if (lb) { lb.setAttribute("aria-expanded", "false"); lb.classList.remove("open"); }
+    if (elTopicPanel) elTopicPanel.hidden = true;
+    if (elTopicBtn) { elTopicBtn.setAttribute("aria-expanded", "false"); elTopicBtn.classList.remove("open"); }
+  }
+
+  // (Re)build the topics filter panel in the current interface language: an
+  // "all topics" master row followed by every topic (emoji + localized name).
+  function renderTopicPanel() {
+    if (!elTopicPanel) return;
+    var uiK = uiLangKey();
+    elTopicPanel.innerHTML = "";
+    var all = topicsAll();
+    var allOpt = document.createElement("button");
+    allOpt.type = "button";
+    allOpt.className = "ldOpt" + (all ? "" : " off");
+    allOpt.setAttribute("role", "option");
+    allOpt.setAttribute("aria-checked", all ? "true" : "false");
+    var allName = (TOPIC_ALL && (TOPIC_ALL[uiK] || TOPIC_ALL.en)) || "All topics";
+    allOpt.innerHTML =
+      '<span class="ldChk" aria-hidden="true">' + (all ? "✓" : "") + "</span>" +
+      '<span class="ldTopicEmoji">🗂️</span>' +
+      '<span class="ldNames"><span class="ldEndo">' + escapeHtml(allName) + "</span></span>";
+    allOpt.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (topicsAll()) return;
+      selectedTopics = {};
+      saveSelectedTopics();
+      renderTopicPanel();
+      updateTopicFace();
+      applyTopicChange();
+    });
+    elTopicPanel.appendChild(allOpt);
+    TOPIC_LIST.forEach(function (t) {
+      var on = !!selectedTopics[t.id];
+      var opt = document.createElement("button");
+      opt.type = "button";
+      opt.className = "ldOpt" + (on ? "" : " off");
+      opt.setAttribute("role", "option");
+      opt.setAttribute("data-topic", t.id);
+      opt.setAttribute("aria-checked", on ? "true" : "false");
+      var nm = (t.names && (t.names[uiK] || t.names.en)) || t.id;
+      opt.innerHTML =
+        '<span class="ldChk" aria-hidden="true">' + (on ? "✓" : "") + "</span>" +
+        '<span class="ldTopicEmoji">' + t.emoji + "</span>" +
+        '<span class="ldNames"><span class="ldEndo" dir="auto">' + escapeHtml(nm) + "</span></span>";
+      opt.addEventListener("click", function (e) { e.stopPropagation(); toggleTopic(t.id); });
+      elTopicPanel.appendChild(opt);
+    });
+  }
+  function toggleTopic(id) {
+    if (selectedTopics[id]) delete selectedTopics[id]; else selectedTopics[id] = true;
+    saveSelectedTopics();
+    renderTopicPanel();
+    updateTopicFace();
+    applyTopicChange();
+  }
+  // The dropdown button face: 🗂️ when unfiltered, else the selected emojis.
+  function updateTopicFace() {
+    if (!elTopicFace) return;
+    if (topicsAll()) { elTopicFace.textContent = "🗂️"; return; }
+    elTopicFace.textContent = Object.keys(selectedTopics)
+      .map(function (id) { return TOPIC_BY_ID[id] ? TOPIC_BY_ID[id].emoji : ""; }).join("");
+  }
+  // A topic change re-filters the deck and starts a fresh session, like the
+  // level and session-size switches. Only meaningful in the cards view.
+  function applyTopicChange() {
+    if (currentView === "grammar") return;
+    resetSession();
   }
 
   function initLangDrops() {
@@ -2125,6 +2261,21 @@
       });
       panelFor(name).addEventListener("click", function (e) { e.stopPropagation(); });
     });
+    if (elTopicBtn && elTopicPanel) {
+      renderTopicPanel();
+      updateTopicFace();
+      elTopicBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var willOpen = elTopicPanel.hidden;
+        closeAllPanels();
+        if (willOpen) {
+          elTopicPanel.hidden = false;
+          elTopicBtn.setAttribute("aria-expanded", "true");
+          elTopicBtn.classList.add("open");
+        }
+      });
+      elTopicPanel.addEventListener("click", function (e) { e.stopPropagation(); });
+    }
     document.addEventListener("click", closeAllPanels);
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeAllPanels(); });
   }
@@ -2392,7 +2543,7 @@
     if (sessionDone) {
       showStats();
     } else if (deck.length === 0) {
-      elWord.textContent = "—";
+      elWord.textContent = "—"; if (elCardTopics) elCardTopics.innerHTML = "";
       elCard.classList.remove("answer-hidden");
       updateControls();
       updateProgress();
@@ -2412,4 +2563,7 @@
     renderCard();
   }
   if (GRAMMAR_ON && (location.hash || "").toLowerCase() === "#grammar") showView("grammar");
+
+  // The UI is wired and the first card painted — drop the loading skeleton.
+  try { document.documentElement.classList.remove("app-loading"); } catch (e) {}
 })();
