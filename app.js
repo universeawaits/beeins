@@ -58,7 +58,11 @@
     { key: "it",    flag: "🇮🇹", endo: "Italiano",             tts: "it-IT", piper: "it_IT-riccardo-x_low",  level: "level", grammar: true, allow: ["ru", "de", "en", "uk", "fa"] },
     { key: "uk",    flag: "🇺🇦", endo: "Українська",           tts: "uk-UA", piper: "uk_UA-ukrainian_tts-medium", level: "level", grammar: true, allow: ["ru", "en", "de", "it", "es_ar", "fr"] },
     { key: "hr",    flag: "🇭🇷", endo: "Hrvatski",              tts: "hr-HR", piper: "hr_HR-mihael-medium",       level: "level", grammar: true, allow: ["de", "en", "ru", "fr", "tr", "es_ar"] },
-    { key: "be",    flag: "🇧🇾", endo: "Беларуская",            tts: "be-BY", piper: "be_BY-nastya-medium",       level: "level", grammar: true, allow: ["de", "en", "ru", "fr", "tr", "es_ar"] }
+    { key: "be",    flag: "🇧🇾", endo: "Беларуская",            tts: "be-BY", piper: "be_BY-nastya-medium",       level: "level", grammar: true, allow: ["de", "en", "ru", "fr", "tr", "es_ar"] },
+    // English (British) — the Oxford 3000/5000 A1-B1 wordlist, studied from any
+    // of 25 languages. No real Piper English voice ships here (they are espeak-
+    // based); the pre-rendered clips use a British system voice.
+    { key: "en",    flag: "🇬🇧", endo: "English",              tts: "en-GB", piper: "en_GB-alba-medium",         level: "level", grammar: true, allow: ["de", "ru", "vi", "fa", "uk", "pl", "tr", "th", "sw", "ar_eg", "zh", "ar_lb", "ms", "am", "ar_sy", "hi", "ur", "es_mx", "ca", "hr", "sr", "el", "sq", "ro", "fr"] }
   ];
   var TARGET_BY_KEY = {};
   TARGETS.forEach(function (t) { TARGET_BY_KEY[t.key] = t; });
