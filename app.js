@@ -412,6 +412,7 @@
   var elSynonyms = document.getElementById("synonyms");
   var elNavCards = document.getElementById("navCards");
   var elNavGrammar = document.getElementById("navGrammar");
+  var elModeNav = document.getElementById("modeNav");
   var elLevelNav = document.getElementById("levelNav");
   var elGrammar = document.getElementById("grammar");
   var elGrammarBody = document.getElementById("grammarBody");
@@ -491,6 +492,20 @@
   // EXPLAINED in; the "show" row picks the languages examples & analogues appear in.
   var currentView = "cards";
   var sessionDone = false;
+
+  // ---- study mode (the third toggle, only in the Study view) -------------
+  // How a card prompts you before you reveal it:
+  //   cards  — see one language's word, recall the rest (the classic behaviour)
+  //   blanks — a real example sentence with the target word blanked out
+  //   listen — hear the target word's audio, recall it before the reveal
+  // The deck, levels and topics are identical across modes; only the prompt
+  // (and which language leads the card) changes. Stored globally, not per target.
+  var STUDY_MODES = { cards: 1, blanks: 1, listen: 1 };
+  var studyMode = loadStudyMode();
+  function loadStudyMode() {
+    try { var v = window.localStorage.getItem("beeins_studyMode"); if (STUDY_MODES[v]) return v; } catch (e) {}
+    return "cards";
+  }
 
   // Small UI dictionary for the grammar view chrome, shown in the explain language.
   var GUI = {
@@ -656,6 +671,43 @@
       "el": "Γραμματική",
       "ro": "Gramatică",
       "sq": "Gramatikë"
+    },
+    // The two top view toggles. "Study" (was "Cards") is the flashcard practice
+    // view; "Reference" (was "Grammar") is the grammar cheat-sheet.
+    study: {
+      "de": "Lernen", "en": "Study", "fr": "Réviser", "it": "Studia", "be": "Вучыцца",
+      "ru": "Учить", "vi": "Học", "fa": "تمرین", "uk": "Вчити", "th": "ฝึก", "zh": "学习",
+      "ms": "Belajar", "tr": "Çalış", "pl": "Nauka", "sw": "Jifunze", "am": "ተማር",
+      "hi": "अभ्यास", "ur": "مشق", "ar_eg": "مذاكرة", "ar_lb": "دراسة", "ar_sy": "دراسة",
+      "es_mx": "Estudiar", "es_ar": "Estudiar", "ca": "Estudiar", "hr": "Uči", "sr": "Учи",
+      "el": "Μελέτη", "ro": "Studiu", "sq": "Mëso"
+    },
+    reference: {
+      "de": "Referenz", "en": "Reference", "fr": "Référence", "it": "Riferimento", "be": "Даведнік",
+      "ru": "Справочник", "vi": "Tra cứu", "fa": "مرجع", "uk": "Довідник", "th": "อ้างอิง", "zh": "参考",
+      "ms": "Rujukan", "tr": "Başvuru", "pl": "Materiały", "sw": "Marejeleo", "am": "ማጣቀሻ",
+      "hi": "संदर्भ", "ur": "حوالہ", "ar_eg": "مرجع", "ar_lb": "مرجع", "ar_sy": "مرجع",
+      "es_mx": "Referencia", "es_ar": "Referencia", "ca": "Referència", "hr": "Priručnik", "sr": "Приручник",
+      "el": "Αναφορά", "ro": "Referință", "sq": "Referencë"
+    },
+    // The two extra study modes (the third toggle, shown only in the Study view).
+    // "Cards" reuses UISTR.cards. Blanks = cloze on a real example sentence;
+    // Listen = audio-first recall (hear the word, then reveal it).
+    blanks: {
+      "de": "Lücken", "en": "Blanks", "fr": "Lacunes", "it": "Spazi", "be": "Прабелы",
+      "ru": "Пропуски", "vi": "Điền từ", "fa": "جای خالی", "uk": "Пропуски", "th": "เติมคำ", "zh": "填空",
+      "ms": "Isian", "tr": "Boşluk", "pl": "Luki", "sw": "Pengo", "am": "ክፍተት",
+      "hi": "रिक्त", "ur": "خالی جگہ", "ar_eg": "فراغات", "ar_lb": "فراغات", "ar_sy": "فراغات",
+      "es_mx": "Huecos", "es_ar": "Huecos", "ca": "Buits", "hr": "Praznine", "sr": "Празнине",
+      "el": "Κενά", "ro": "Spații", "sq": "Zbrazëti"
+    },
+    listen: {
+      "de": "Hören", "en": "Listen", "fr": "Écouter", "it": "Ascolto", "be": "Слухаць",
+      "ru": "Слушать", "vi": "Nghe", "fa": "شنیدن", "uk": "Слухати", "th": "ฟัง", "zh": "听力",
+      "ms": "Dengar", "tr": "Dinle", "pl": "Słuchanie", "sw": "Sikiliza", "am": "አዳምጥ",
+      "hi": "सुनना", "ur": "سنیں", "ar_eg": "استماع", "ar_lb": "استماع", "ar_sy": "استماع",
+      "es_mx": "Escuchar", "es_ar": "Escuchar", "ca": "Escoltar", "hr": "Slušaj", "sr": "Слушај",
+      "el": "Ακρόαση", "ro": "Ascultare", "sq": "Dëgjo"
     },
     ask: {
       "de": "Frage",
@@ -1761,27 +1813,189 @@
   }
 
   // ---- rendering ---------------------------------------------------------
-  // Paint a word onto the card. `frontKey` = which language is the title;
-  // `isRevealed` = whether translations/examples are shown.
+  // What the learner last typed into the blank (kept so the revealed card can
+  // show it and mark it right/wrong). Reset for each fresh card.
+  var blankGuess = "";
+
+  // The first example whose target sentence actually contains the headword —
+  // the sentence we turn into a fill-in-the-blank.
+  function clozeExample(w) {
+    var word = w.word, ex = w.examples || [];
+    for (var i = 0; i < ex.length; i++) {
+      var s = exVal(ex[i], LEARN);
+      if (s && word && s.indexOf(word) !== -1) return { ex: ex[i], s: s, idx: s.indexOf(word) };
+    }
+    return null;
+  }
+
+  function clozeClueNode(hit, frontKey) {
+    var clue = exVal(hit.ex, frontKey);
+    if (!clue || frontKey === LEARN) return null;
+    var c = document.createElement("div");
+    c.className = "clozeClue";
+    c.setAttribute("dir", "auto");
+    c.textContent = clue;
+    return c;
+  }
+
+  function normGuess(s) { return (s || "").trim().toLowerCase().replace(/\s+/g, " "); }
+
+  // Blanks prompt state: the sentence with a text <input> where the word goes.
+  // Type the word and press Enter to complete it; a translation of the sentence
+  // sits underneath as the clue. Falls back to a bare input prompted by the
+  // word's translation when no example contains the exact form.
+  function buildBlankPrompt(w, frontKey) {
+    var wrap = document.createElement("div");
+    wrap.className = "clozePrompt";
+    var inp = document.createElement("input");
+    inp.type = "text";
+    inp.className = "clozeInput";
+    inp.setAttribute("autocomplete", "off");
+    inp.setAttribute("autocapitalize", "off");
+    inp.setAttribute("autocorrect", "off");
+    inp.setAttribute("spellcheck", "false");
+    inp.setAttribute("aria-label", "Type the missing word");
+    var stop = function (e) { e.stopPropagation(); };
+    inp.addEventListener("mousedown", stop);
+    inp.addEventListener("touchstart", stop, { passive: true });
+    inp.addEventListener("click", stop);
+    inp.addEventListener("keydown", function (e) {
+      e.stopPropagation();            // don't let the card's key handler reveal
+      if (e.key === "Enter") { e.preventDefault(); submitBlank(inp.value); }
+    });
+
+    var hit = clozeExample(w);
+    if (!hit) {
+      var clueKey = frontKey === LEARN ? (allowedTitleLangs()[0] || {}).key : frontKey;
+      var lbl = document.createElement("div");
+      lbl.className = "clozeClue";
+      lbl.setAttribute("dir", "auto");
+      lbl.textContent = wordVal(w, clueKey || "en") || "";
+      wrap.appendChild(inp);
+      wrap.appendChild(lbl);
+    } else {
+      var sent = document.createElement("div");
+      sent.className = "clozeSentence";
+      sent.setAttribute("dir", "auto");
+      sent.appendChild(document.createTextNode(hit.s.slice(0, hit.idx)));
+      sent.appendChild(inp);
+      sent.appendChild(document.createTextNode(hit.s.slice(hit.idx + w.word.length)));
+      wrap.appendChild(sent);
+      var clue = clozeClueNode(hit, frontKey);
+      if (clue) wrap.appendChild(clue);
+    }
+    if (window.requestAnimationFrame) window.requestAnimationFrame(function () { try { inp.focus(); } catch (e) {} });
+    else setTimeout(function () { try { inp.focus(); } catch (e) {} }, 0);
+    return wrap;
+  }
+
+  // Blanks revealed state: the sentence completed with the answer in place,
+  // marked right/wrong against what the learner typed.
+  function buildBlankFilled(w, frontKey) {
+    var wrap = document.createElement("div");
+    wrap.className = "clozePrompt";
+    var g = normGuess(blankGuess);
+    var ok = !!g && (g === normGuess(w.word) || (w.reading && g === normGuess(w.reading)));
+    var ans = document.createElement("span");
+    ans.className = "clozeAnswer" + (g ? (ok ? " clozeOk" : " clozeBad") : "");
+    ans.textContent = w.word;
+
+    var hit = clozeExample(w);
+    if (!hit) {
+      wrap.appendChild(ans);
+    } else {
+      var sent = document.createElement("div");
+      sent.className = "clozeSentence";
+      sent.setAttribute("dir", "auto");
+      sent.appendChild(document.createTextNode(hit.s.slice(0, hit.idx)));
+      sent.appendChild(ans);
+      sent.appendChild(document.createTextNode(hit.s.slice(hit.idx + w.word.length)));
+      wrap.appendChild(sent);
+    }
+    if (g && !ok) {
+      var you = document.createElement("div");
+      you.className = "clozeYou";
+      you.setAttribute("dir", "auto");
+      you.textContent = "✗ " + blankGuess.trim();
+      wrap.appendChild(you);
+    }
+    if (hit) { var clue2 = clozeClueNode(hit, frontKey); if (clue2) wrap.appendChild(clue2); }
+    return wrap;
+  }
+
+  // Enter in the blank: remember the guess and reveal (repaints into the
+  // completed, graded sentence).
+  function submitBlank(val) {
+    if (revealed) return;
+    blankGuess = val || "";
+    reveal();
+  }
+
+  // Listen mode: a large speaker the learner taps (auto-played once for the live
+  // card) to hear the target word before recalling and revealing it.
+  function buildListenPrompt(w) {
+    var wrap = document.createElement("div");
+    wrap.className = "listenPrompt";
+    var text = wordVal(w, LEARN);
+    if (SPEAK_OK) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "listenBtn";
+      btn.setAttribute("aria-label", "Play pronunciation");
+      btn.innerHTML = SPEAKER_SVG;
+      var stop = function (e) { e.stopPropagation(); };
+      btn.addEventListener("mousedown", stop);
+      btn.addEventListener("touchstart", stop, { passive: true });
+      btn.addEventListener("click", function (e) { e.stopPropagation(); e.preventDefault(); speak(text, btn); });
+      wrap.appendChild(btn);
+      // Auto-play for the freshly shown live card (not when peeking back).
+      if (peekPos === null) { try { speak(text, btn); } catch (e) {} }
+    } else {
+      wrap.textContent = "🔊";
+    }
+    return wrap;
+  }
+
   function paintCard(w, frontKey, isRevealed) {
-    elWord.textContent = wordVal(w, frontKey);
     elWord.setAttribute("dir", "auto"); // render RTL (Persian/Arabic/Urdu) correctly
     renderCardTopics(w);
-    // Speak the title when it is the target word (the language being learned).
-    if (SPEAK_OK && frontKey === LEARN) elWord.appendChild(makeSpeakBtn(wordVal(w, LEARN)));
 
-    // Pronunciation aid (pinyin / romaji / romanization). Corpora for logographic
-    // or non-Latin targets carry a `reading`; scripts a beginner can already read
-    // (Latin, Cyrillic) omit it. Show it under the headword only while the title
-    // is the target script — a translation prompt needs no reading.
-    if (elWordReading) {
-      if (w.reading && frontKey === LEARN) {
-        elWordReading.textContent = w.reading;
-        elWordReading.style.display = "";
+    // The headword area depends on the study mode. In "cards" it shows whichever
+    // language leads the card; in "blanks"/"listen" the answer is always the
+    // target word, so before the reveal it shows the mode's prompt (a cloze
+    // sentence or a speaker) and after the reveal it shows the target word.
+    var isCards = (studyMode === "cards");
+    elWord.innerHTML = "";
+    if (isCards) {
+      elWord.appendChild(document.createTextNode(wordVal(w, frontKey)));
+      // Speak the title when it is the target word (the language being learned).
+      if (SPEAK_OK && frontKey === LEARN) elWord.appendChild(makeSpeakBtn(wordVal(w, LEARN)));
+    } else if (studyMode === "blanks") {
+      // Before the reveal: the sentence with a text input where the word goes;
+      // after: the same sentence completed with the answer (and correctness).
+      elWord.appendChild(isRevealed ? buildBlankFilled(w, frontKey) : buildBlankPrompt(w, frontKey));
+    } else { // listen
+      if (isRevealed) {
+        elWord.appendChild(document.createTextNode(wordVal(w, LEARN)));
+        if (SPEAK_OK) elWord.appendChild(makeSpeakBtn(wordVal(w, LEARN)));
       } else {
-        elWordReading.textContent = "";
-        elWordReading.style.display = "none";
+        elWord.appendChild(buildListenPrompt(w));
       }
+    }
+
+    // Pronunciation aid (pinyin / romaji / romanization). Shown under the
+    // headword only when that area is a single target word: a target-led card,
+    // or a revealed Listen answer. Never under a translation prompt, a cloze
+    // sentence, or the speaker. (In Blanks the reading rides along in the
+    // answer row / examples instead.)
+    if (elWordReading) {
+      var showReading = false;
+      if (w.reading) {
+        if (isCards) showReading = (frontKey === LEARN);
+        else if (studyMode === "listen") showReading = isRevealed;
+      }
+      elWordReading.textContent = showReading ? w.reading : "";
+      elWordReading.style.display = showReading ? "" : "none";
     }
 
     // The target (the word being learned) goes first on its own highlighted
@@ -1870,8 +2084,16 @@
   function renderCard() {
     peekPos = null;
     revealed = false;
+    blankGuess = "";
     var w = deck[0];
     var allowed = allowedTitleLangs();
+    // In blanks/listen the answer is the target word, so the card should lead
+    // with a different language (the cloze clue / the reveal's other translation)
+    // — only fall back to the target if it's the sole allowed prompt language.
+    if (studyMode !== "cards") {
+      var nonTarget = allowed.filter(function (l) { return l.key !== LEARN; });
+      if (nonTarget.length) allowed = nonTarget;
+    }
     currentFrontKey = allowed[Math.floor(Math.random() * allowed.length)].key;
     paintCard(w, currentFrontKey, false);
     updateProgress();
@@ -1922,6 +2144,9 @@
     if (revealed) return;
     revealed = true;
     elCard.classList.remove("answer-hidden");
+    // Blanks/listen swap the prompt (cloze / speaker) for the target word on
+    // reveal, so repaint the live card; cards mode just unhides the answer.
+    if (studyMode !== "cards" && peekPos === null && deck.length) paintCard(deck[0], currentFrontKey, true);
     saveProgress();
   }
 
@@ -2035,8 +2260,15 @@
   // Paint all static interface labels in the current UI language.
   function applyUiLang() {
     var k = uiLangKey();
-    elNavCards.textContent = tr(UISTR.cards, k);
-    elNavGrammar.textContent = tr(UISTR.grammar, k);
+    elNavCards.textContent = tr(UISTR.study, k);
+    elNavGrammar.textContent = tr(UISTR.reference, k);
+    if (elModeNav) {
+      var modeLabel = { cards: UISTR.cards, blanks: UISTR.blanks, listen: UISTR.listen };
+      Array.prototype.forEach.call(elModeNav.querySelectorAll(".modeBtn"), function (b) {
+        var m = b.getAttribute("data-mode");
+        if (modeLabel[m]) b.textContent = tr(modeLabel[m], k);
+      });
+    }
     if (elLblAsk) { elLblAsk.textContent = tr(UISTR.ask, k); elLblAsk.setAttribute("title", tr(UISTR.askTip, k)); }
     if (elLblShow) { elLblShow.textContent = tr(UISTR.langs, k); elLblShow.setAttribute("title", trTarget(UISTR.showTip, k)); }
     if (elLblTopics) elLblTopics.textContent = tr(UISTR.topics, k);
@@ -2268,6 +2500,8 @@
     if (elAskDrop) elAskDrop.classList.toggle("hidden", grammar);
     // Topics filter the card deck only, so hide it in the grammar view.
     if (elTopicDrop) elTopicDrop.classList.toggle("hidden", grammar);
+    // The study-mode toggle (Cards/Blanks/Listen) only applies to the Study view.
+    if (elModeNav) elModeNav.classList.toggle("hidden", grammar);
     elDeck.classList.toggle("hidden", grammar || sessionDone);
     elControls.classList.toggle("hidden", grammar || sessionDone);
     elStats.classList.toggle("hidden", grammar || !sessionDone);
@@ -2282,6 +2516,26 @@
     elResetBtn.classList.toggle("hidden", grammar);
     if (elSessionDrop) elSessionDrop.classList.toggle("hidden", grammar);
     if (grammar) renderGrammar();
+  }
+
+  // ---- study mode switch (Cards / Blanks / Listen) -----------------------
+  function updateModeNav() {
+    if (!elModeNav) return;
+    Array.prototype.forEach.call(elModeNav.querySelectorAll(".modeBtn"), function (b) {
+      var on = b.getAttribute("data-mode") === studyMode;
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  }
+
+  function setStudyMode(mode) {
+    if (!STUDY_MODES[mode] || mode === studyMode) { updateModeNav(); return; }
+    studyMode = mode;
+    try { window.localStorage.setItem("beeins_studyMode", mode); } catch (e) {}
+    updateModeNav();
+    // Re-prompt the current card in the new mode (keeps the deck position; just
+    // resets the reveal and picks a fitting leading language).
+    if (currentView === "cards" && !sessionDone && deck.length) renderCard();
   }
 
   // ---- level switch ------------------------------------------------------
@@ -2560,6 +2814,12 @@
   }
   elNavCards.addEventListener("click", function () { showView("cards"); setHash(""); });
   elNavGrammar.addEventListener("click", function () { showView("grammar"); setHash("grammar"); });
+  if (elModeNav) {
+    Array.prototype.forEach.call(elModeNav.querySelectorAll(".modeBtn"), function (b) {
+      b.addEventListener("click", function () { setStudyMode(b.getAttribute("data-mode")); });
+    });
+  }
+  updateModeNav();
   Array.prototype.forEach.call(elLevelNav.querySelectorAll(".levelBtn"), function (b) {
     b.addEventListener("click", function () { setLevel(b.getAttribute("data-level")); });
     // Some targets label the three CEFR bands with their own proficiency ladder

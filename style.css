@@ -481,6 +481,92 @@ body {
   color: #fff;
 }
 
+/* ---- study-mode toggle (Cards / Blanks / Listen) --------------------- */
+#modeNav {
+  display: inline-flex;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card-bg);
+}
+#modeNav.hidden { display: none; }
+
+.modeBtn {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 11px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.modeBtn.active { background: var(--accent); color: #fff; }
+
+/* Blanks-mode prompt: a real example sentence with the target word removed and
+   a text input in its place; type the word and press Enter to complete it. A
+   translation clue sits underneath. Overrides the big headword sizing. */
+.clozePrompt { font-size: 1.5rem; line-height: 1.5; }
+.clozeSentence { font-weight: var(--head-weight); }
+.clozeInput {
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 600;
+  text-align: center;
+  width: 6em;
+  max-width: 60vw;
+  margin: 0 0.15em;
+  padding: 0 0.2em;
+  color: var(--accent);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--accent);
+  outline: none;
+}
+.clozeClue {
+  margin-top: 12px;
+  font-family: var(--font-body, inherit);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+/* The completed answer, once revealed — highlighted; green when the typed
+   guess matched. The learner's wrong guess is shown beneath in red. */
+.clozeAnswer {
+  font-weight: 700;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding: 0 0.1em;
+}
+.clozeAnswer.clozeOk { color: #16a34a; border-color: #16a34a; }
+.clozeYou {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #dc2626;
+}
+
+/* Listen-mode prompt: a big round speaker you tap to hear the target word. */
+.listenBtn {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  cursor: pointer;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease, opacity 0.15s ease;
+}
+.listenBtn:hover { opacity: 0.9; }
+.listenBtn:active { transform: scale(0.92); }
+.listenBtn svg { width: 34px; height: 34px; display: block; }
+
 /* ---- level switch (A1 / A2 / B1) -------------------------------------- */
 #levelNav {
   display: inline-flex;
