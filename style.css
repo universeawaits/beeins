@@ -159,14 +159,14 @@
   --page-bg: linear-gradient(160deg, color-mix(in srgb, var(--accent) 10%, var(--bg)), var(--bg) 70%);
 }
 
-/* 🩸 blooddrop — dark, sharp, monospaced (dialled back) */
+/* 🩸 blooddrop — dark, sharp, heavy sans (dialled back) */
 :root[data-skin="blooddrop"] {
   --accent: #c92a2a;
   --border: color-mix(in srgb, #c92a2a 30%, var(--border));
   --radius: 6px; --radius-sm: 5px;
   --card-border-w: 1.5px;
-  --font-head: ui-monospace, "SF Mono", "Menlo", monospace;
-  --head-weight: 600;
+  --font-head: "Helvetica Neue", Helvetica, "Arial Narrow", var(--font-body);
+  --head-weight: 800;
   --card-tint: color-mix(in srgb, var(--accent) 6%, var(--card-bg));
   --card-shadow: 0 8px 30px color-mix(in srgb, #c92a2a 20%, transparent);
   --page-bg: radial-gradient(1000px 600px at 50% -20%, color-mix(in srgb, #c92a2a 9%, var(--bg)), var(--bg));
