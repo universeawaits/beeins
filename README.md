@@ -71,6 +71,7 @@ Right-to-left languages (Persian, Arabic, Urdu) display correctly.
 ## Extras
 
 - **Light and dark themes**, with a one-tap toggle.
+- **Skins** — pick a whole look from the emoji dropdown: 🌿 leaf (default), 🫧 bubbles, 🪩 disco, 🌼 daisy, 💧 raindrop, 🩸 blooddrop, 🍷 wine, 🍕 pizza. Each restyles the accent, card shape, surface (tint / frosted glass), typography and page backdrop — not just the accent colour — and works in both light and dark.
 - **Nothing to sign up for** — your progress lives on your own device.
 
 ## Support & follow

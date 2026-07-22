@@ -11,6 +11,19 @@
   --accent: #448c27;
   --bad: #aa3731;
   --border: #d6d6d2;
+
+  /* Skin knobs — the defaults below reproduce the plain "leaf" look exactly.
+     Each skin (data-skin) overrides some of these to restyle shape, surface,
+     typography and background without ever touching the layout. */
+  --radius: 20px;        /* card corners */
+  --radius-sm: 14px;     /* buttons / controls */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-head: var(--font-body);   /* the headword */
+  --card-tint: var(--card-bg);     /* card surface (skins may tint / go translucent) */
+  --card-blur: 0px;                /* frosted-glass backdrop for translucent skins */
+  --card-border-w: 1px;
+  --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  --page-bg: var(--bg);            /* body backdrop (skins may paint a gradient) */
 }
 
 /* Dark theme values, shared by system-preference and manual selection. */
@@ -38,40 +51,110 @@
   --border: #333436;
 }
 
-/* Flower colour themes. Each sets the accent for the light base and, via the
-   two dark selectors (explicit toggle + system-dark), for the dark base. */
-:root[data-flower="rose"]      { --accent: #d6336c; }
-:root[data-flower="sunflower"] { --accent: #d9a406; }
-:root[data-flower="tulip"]     { --accent: #c2255c; }
-:root[data-flower="daisy"]     { --accent: #74b816; }
-:root[data-flower="blossom"]   { --accent: #e64980; }
-:root[data-flower="hibiscus"]  { --accent: #e8590c; }
-:root[data-flower="lotus"]     { --accent: #0ca678; }
-:root[data-flower="bouquet"]   { --accent: #7048e8; }
-:root[data-flower="marigold"]  { --accent: #f08c00; }
-:root[data-flower="iris"]      { --accent: #4263eb; }
+/* ------------------------------------------------------------------ skins --
+   A skin is a whole personality, not just an accent: it retunes shape
+   (--radius), surface (--card-tint / --card-blur / --card-border-w),
+   typography (--font-head/body), depth (--card-shadow) and the page
+   backdrop (--page-bg). Non-accent knobs are mode-independent and mix
+   against the base light/dark tokens so they read in both; only the accent
+   is split light vs. dark, exactly like the theme toggle. "leaf" is the
+   bare default (no data-skin) and deliberately overrides nothing. */
 
-:root[data-theme="dark"][data-flower="rose"]      { --accent: #ff8787; }
-:root[data-theme="dark"][data-flower="sunflower"] { --accent: #ffd43b; }
-:root[data-theme="dark"][data-flower="tulip"]     { --accent: #f783ac; }
-:root[data-theme="dark"][data-flower="daisy"]     { --accent: #a9e34b; }
-:root[data-theme="dark"][data-flower="blossom"]   { --accent: #fcc2d7; }
-:root[data-theme="dark"][data-flower="hibiscus"]  { --accent: #ffa94d; }
-:root[data-theme="dark"][data-flower="lotus"]     { --accent: #63e6be; }
-:root[data-theme="dark"][data-flower="bouquet"]   { --accent: #b197fc; }
-:root[data-theme="dark"][data-flower="marigold"]  { --accent: #ffc078; }
-:root[data-theme="dark"][data-flower="iris"]      { --accent: #91a7ff; }
+/* 🫧 bubbles — round, frosted, airy blue glass */
+:root[data-skin="bubbles"] {
+  --accent: #1c7ed6;
+  --radius: 30px; --radius-sm: 20px;
+  --font-head: ui-rounded, "SF Pro Rounded", "Nunito", var(--font-body);
+  --card-tint: color-mix(in srgb, var(--card-bg) 68%, transparent);
+  --card-blur: 14px;
+  --card-shadow: 0 10px 40px color-mix(in srgb, var(--accent) 28%, transparent);
+  --page-bg: radial-gradient(900px 520px at 18% -8%, color-mix(in srgb, var(--accent) 16%, var(--bg)), var(--bg));
+}
+
+/* 🪩 disco — glossy, saturated, party-lights backdrop */
+:root[data-skin="disco"] {
+  --accent: #ae3ec9;
+  --radius: 14px; --radius-sm: 11px;
+  --card-tint: color-mix(in srgb, var(--accent) 9%, var(--card-bg));
+  --card-blur: 4px;
+  --card-shadow: 0 12px 44px color-mix(in srgb, var(--accent) 42%, transparent);
+  --page-bg: linear-gradient(135deg,
+    color-mix(in srgb, #ae3ec9 13%, var(--bg)),
+    color-mix(in srgb, #1c7ed6 13%, var(--bg)) 55%,
+    color-mix(in srgb, #f76707 12%, var(--bg)));
+}
+
+/* 🌼 daisy — soft, sunny, gently rounded */
+:root[data-skin="daisy"] {
+  --accent: #9a6f00;
+  --radius: 26px; --radius-sm: 18px;
+  --font-head: ui-rounded, "SF Pro Rounded", "Nunito", var(--font-body);
+  --card-tint: color-mix(in srgb, var(--accent) 8%, var(--card-bg));
+  --card-shadow: 0 8px 30px color-mix(in srgb, var(--accent) 20%, transparent);
+  --page-bg: radial-gradient(900px 500px at 82% -10%, color-mix(in srgb, var(--accent) 14%, var(--bg)), var(--bg));
+}
+
+/* 💧 raindrop — cool, translucent, quiet */
+:root[data-skin="raindrop"] {
+  --accent: #0c8599;
+  --radius: 24px; --radius-sm: 16px;
+  --card-tint: color-mix(in srgb, var(--card-bg) 76%, transparent);
+  --card-blur: 12px;
+  --card-shadow: 0 10px 34px color-mix(in srgb, var(--accent) 26%, transparent);
+  --page-bg: linear-gradient(180deg, color-mix(in srgb, var(--accent) 13%, var(--bg)), var(--bg) 60%);
+}
+
+/* 🩸 blooddrop — dark, sharp, urgent */
+:root[data-skin="blooddrop"] {
+  --accent: #c92a2a;
+  --border: color-mix(in srgb, #c92a2a 34%, var(--border));
+  --radius: 6px; --radius-sm: 5px;
+  --card-border-w: 1.5px;
+  --card-tint: color-mix(in srgb, var(--accent) 7%, var(--card-bg));
+  --card-shadow: 0 8px 30px color-mix(in srgb, #c92a2a 26%, transparent);
+  --page-bg: radial-gradient(1000px 600px at 50% -20%, color-mix(in srgb, #c92a2a 12%, var(--bg)), var(--bg));
+}
+
+/* 🍷 wine — elegant, serif, deep burgundy */
+:root[data-skin="wine"] {
+  --accent: #a61e4d;
+  --radius: 10px; --radius-sm: 8px;
+  --font-body: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --font-head: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --card-tint: color-mix(in srgb, var(--accent) 7%, var(--card-bg));
+  --card-shadow: 0 14px 44px rgba(0, 0, 0, 0.2);
+  --page-bg: linear-gradient(160deg, color-mix(in srgb, var(--accent) 12%, var(--bg)), var(--bg) 70%);
+}
+
+/* 🍕 pizza — warm, chunky, hand-thrown crust */
+:root[data-skin="pizza"] {
+  --accent: #e8590c;
+  --border: color-mix(in srgb, #d9480f 42%, var(--border));
+  --radius: 22px; --radius-sm: 16px;
+  --card-border-w: 2px;
+  --font-head: ui-rounded, "SF Pro Rounded", "Nunito", var(--font-body);
+  --card-tint: color-mix(in srgb, var(--accent) 9%, var(--card-bg));
+  --card-shadow: 0 10px 32px color-mix(in srgb, var(--accent) 30%, transparent);
+  --page-bg: radial-gradient(900px 520px at 20% -10%, color-mix(in srgb, var(--accent) 15%, var(--bg)), var(--bg));
+}
+
+/* Dark accents per skin (explicit toggle + system-dark), same pattern as the
+   base theme. Shape/surface/typography above are shared across both modes. */
+:root[data-theme="dark"][data-skin="bubbles"]   { --accent: #74c0fc; }
+:root[data-theme="dark"][data-skin="disco"]     { --accent: #e599f7; }
+:root[data-theme="dark"][data-skin="daisy"]     { --accent: #ffd43b; }
+:root[data-theme="dark"][data-skin="raindrop"]  { --accent: #66d9e8; }
+:root[data-theme="dark"][data-skin="blooddrop"] { --accent: #ff8787; --border: color-mix(in srgb, #ff8787 30%, var(--border)); }
+:root[data-theme="dark"][data-skin="wine"]      { --accent: #f06595; }
+:root[data-theme="dark"][data-skin="pizza"]     { --accent: #ffa94d; --border: color-mix(in srgb, #ffa94d 34%, var(--border)); }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme])[data-flower="rose"]      { --accent: #ff8787; }
-  :root:not([data-theme])[data-flower="sunflower"] { --accent: #ffd43b; }
-  :root:not([data-theme])[data-flower="tulip"]     { --accent: #f783ac; }
-  :root:not([data-theme])[data-flower="daisy"]     { --accent: #a9e34b; }
-  :root:not([data-theme])[data-flower="blossom"]   { --accent: #fcc2d7; }
-  :root:not([data-theme])[data-flower="hibiscus"]  { --accent: #ffa94d; }
-  :root:not([data-theme])[data-flower="lotus"]     { --accent: #63e6be; }
-  :root:not([data-theme])[data-flower="bouquet"]   { --accent: #b197fc; }
-  :root:not([data-theme])[data-flower="marigold"]  { --accent: #ffc078; }
-  :root:not([data-theme])[data-flower="iris"]      { --accent: #91a7ff; }
+  :root:not([data-theme])[data-skin="bubbles"]   { --accent: #74c0fc; }
+  :root:not([data-theme])[data-skin="disco"]     { --accent: #e599f7; }
+  :root:not([data-theme])[data-skin="daisy"]     { --accent: #ffd43b; }
+  :root:not([data-theme])[data-skin="raindrop"]  { --accent: #66d9e8; }
+  :root:not([data-theme])[data-skin="blooddrop"] { --accent: #ff8787; --border: color-mix(in srgb, #ff8787 30%, var(--border)); }
+  :root:not([data-theme])[data-skin="wine"]      { --accent: #f06595; }
+  :root:not([data-theme])[data-skin="pizza"]     { --accent: #ffa94d; --border: color-mix(in srgb, #ffa94d 34%, var(--border)); }
 }
 
 * { box-sizing: border-box; }
@@ -82,8 +165,9 @@ html, body {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  background: var(--bg);
+  font-family: var(--font-body);
+  background: var(--page-bg);
+  background-attachment: fixed;
   color: var(--text);
   display: flex;
   flex-direction: column;
@@ -121,9 +205,9 @@ body {
   font-size: 1rem;
   line-height: 1;
   padding: 5px 8px;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--border);
-  background: var(--card-bg);
+  background: var(--card-tint);
   color: var(--text);
   cursor: pointer;
 }
@@ -173,8 +257,8 @@ body {
   max-width: 100%;
   padding: 6px 10px;
   border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--card-bg);
+  border-radius: var(--radius-sm);
+  background: var(--card-tint);
   color: var(--text);
   font: inherit;
   cursor: pointer;
@@ -370,10 +454,12 @@ body {
 
 #card {
   position: relative;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  background: var(--card-tint);
+  border: var(--card-border-w) solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
   padding: 40px 36px;
   max-width: 560px;
   width: 100%;
@@ -395,6 +481,7 @@ body {
 }
 
 #word {
+  font-family: var(--font-head);
   font-size: 2.1rem;
   font-weight: 700;
   text-align: center;
@@ -506,7 +593,7 @@ button {
   font-size: 1rem;
   font-weight: 600;
   padding: 14px 22px;
-  border-radius: 14px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   background: var(--card-bg);
   color: var(--text);
@@ -828,7 +915,7 @@ body { -webkit-tap-highlight-color: transparent; }
   .ldFlags { max-width: 104px; }
 
   #deck { padding: 12px; }
-  #card { padding: 26px 18px; border-radius: 16px; }
+  #card { padding: 26px 18px; border-radius: min(var(--radius), 16px); }
   #word { font-size: 1.75rem; margin-bottom: 14px; }
   #translations { gap: 10px 12px; font-size: 1rem; margin-bottom: 18px; }
   #synonyms { margin-bottom: 14px; }

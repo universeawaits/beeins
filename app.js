@@ -2454,24 +2454,30 @@
     elSessionPanel.addEventListener("click", function (e) { e.stopPropagation(); });
   }
 
-  // Colour themes: ten flower palettes (plus the default leaf), each with a
-  // light and dark version. The flower sets `data-flower` on <html>; the
-  // separate light/dark toggle sets `data-theme`. Both persist.
+  // Skins: each is a whole look — not just an accent, but shape, surface,
+  // typography and page backdrop (see the data-skin blocks in style.css).
+  // "leaf" is the bare default (no attribute). The chosen skin sets
+  // `data-skin` on <html>; the separate light/dark toggle sets `data-theme`.
+  // Both persist independently, so any skin works in light or dark.
   var THEMES = [
-    { key: "", emoji: "🌿" }, { key: "rose", emoji: "🌹" }, { key: "sunflower", emoji: "🌻" },
-    { key: "tulip", emoji: "🌷" }, { key: "daisy", emoji: "🌼" }, { key: "blossom", emoji: "🌸" },
-    { key: "hibiscus", emoji: "🌺" }, { key: "lotus", emoji: "🪷" }, { key: "bouquet", emoji: "💐" },
-    { key: "marigold", emoji: "🏵️" }, { key: "iris", emoji: "💮" }
+    { key: "", emoji: "🌿" },          // leaf — default
+    { key: "bubbles", emoji: "🫧" },
+    { key: "disco", emoji: "🪩" },
+    { key: "daisy", emoji: "🌼" },
+    { key: "raindrop", emoji: "💧" },
+    { key: "blooddrop", emoji: "🩸" },
+    { key: "wine", emoji: "🍷" },
+    { key: "pizza", emoji: "🍕" }
   ];
-  function currentFlower() { try { return window.localStorage.getItem("beeins_flower") || ""; } catch (e) { return ""; } }
-  function applyFlower(key) {
-    if (key) document.documentElement.setAttribute("data-flower", key);
-    else document.documentElement.removeAttribute("data-flower");
-    try { if (key) window.localStorage.setItem("beeins_flower", key); else window.localStorage.removeItem("beeins_flower"); } catch (e) {}
+  function currentSkin() { try { return window.localStorage.getItem("beeins_skin") || ""; } catch (e) { return ""; } }
+  function applySkin(key) {
+    if (key) document.documentElement.setAttribute("data-skin", key);
+    else document.documentElement.removeAttribute("data-skin");
+    try { if (key) window.localStorage.setItem("beeins_skin", key); else window.localStorage.removeItem("beeins_skin"); } catch (e) {}
   }
   function renderThemePanel() {
     if (!elThemePanel) return;
-    var cur = currentFlower();
+    var cur = currentSkin();
     elThemePanel.innerHTML = "";
     THEMES.forEach(function (t) {
       var on = t.key === cur;
@@ -2481,7 +2487,7 @@
       b.setAttribute("role", "option");
       b.setAttribute("aria-checked", on ? "true" : "false");
       b.innerHTML = '<span class="ldFlag" aria-hidden="true">' + t.emoji + "</span>" + (on ? '<span class="ldSel" aria-hidden="true">✓</span>' : "");
-      b.addEventListener("click", function (e) { e.stopPropagation(); closeAllPanels(); applyFlower(t.key); renderThemePanel(); });
+      b.addEventListener("click", function (e) { e.stopPropagation(); closeAllPanels(); applySkin(t.key); renderThemePanel(); });
       elThemePanel.appendChild(b);
     });
     var f = null; THEMES.forEach(function (x) { if (x.key === cur) f = x; });
