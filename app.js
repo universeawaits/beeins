@@ -56,7 +56,8 @@
     { key: "ru",    flag: "🇷🇺", endo: "Русский",              tts: "ru-RU", piper: "ru_RU-irina-medium",    level: "level", grammar: true, allow: ["de", "en", "fr", "fa", "uk", "ar_sy"] },
     // Italian — studied from Russian, German, English, Ukrainian or Persian.
     { key: "it",    flag: "🇮🇹", endo: "Italiano",             tts: "it-IT", piper: "it_IT-riccardo-x_low",  level: "level", grammar: true, allow: ["ru", "de", "en", "uk", "fa"] },
-    { key: "uk",    flag: "🇺🇦", endo: "Українська",           tts: "uk-UA", piper: "uk_UA-ukrainian_tts-medium", level: "level", grammar: true, allow: ["ru", "en", "de", "it", "es_ar", "fr"] }
+    { key: "uk",    flag: "🇺🇦", endo: "Українська",           tts: "uk-UA", piper: "uk_UA-ukrainian_tts-medium", level: "level", grammar: true, allow: ["ru", "en", "de", "it", "es_ar", "fr"] },
+    { key: "hr",    flag: "🇭🇷", endo: "Hrvatski",              tts: "hr-HR", piper: "hr_HR-mihael-medium",       level: "level", grammar: true, allow: ["de", "en", "ru", "fr", "tr", "es_ar"] }
   ];
   var TARGET_BY_KEY = {};
   TARGETS.forEach(function (t) { TARGET_BY_KEY[t.key] = t; });
