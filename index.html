@@ -42,6 +42,16 @@
       </button>
       <div class="langDropPanel" id="learnPanel" role="listbox" aria-label="Language to learn" hidden></div>
     </div>
+    <div id="langDrops">
+      <div class="langDrop" data-set="show">
+        <button type="button" class="langDropBtn" id="showDropBtn" aria-haspopup="listbox" aria-expanded="false">
+          <span class="ldLabel" id="lblShow" title="Languages shown as prompts and as translations">From</span>
+          <span class="ldFlags" id="showFlags" aria-hidden="true"></span>
+          <span class="ldCaret" aria-hidden="true">▾</span>
+        </button>
+        <div class="langDropPanel" id="showPanel" role="listbox" aria-multiselectable="true" aria-label="Languages" hidden></div>
+      </div>
+    </div>
     <nav id="viewNav" role="tablist" aria-label="View">
       <button type="button" id="navCards" class="viewBtn active" role="tab" aria-selected="true">Cards</button>
       <button type="button" id="navGrammar" class="viewBtn" role="tab" aria-selected="false">Grammar</button>
@@ -51,16 +61,6 @@
       <button type="button" class="levelBtn" data-level="A2">A2</button>
       <button type="button" class="levelBtn" data-level="B1">B1</button>
     </nav>
-    <div id="langDrops">
-      <div class="langDrop" data-set="show">
-        <button type="button" class="langDropBtn" id="showDropBtn" aria-haspopup="listbox" aria-expanded="false">
-          <span class="ldLabel" id="lblShow" title="Languages shown as prompts and as translations">languages</span>
-          <span class="ldFlags" id="showFlags" aria-hidden="true"></span>
-          <span class="ldCaret" aria-hidden="true">▾</span>
-        </button>
-        <div class="langDropPanel" id="showPanel" role="listbox" aria-multiselectable="true" aria-label="Languages" hidden></div>
-      </div>
-    </div>
     <div class="langDrop" id="topicDrop" data-set="topics">
       <button type="button" class="langDropBtn" id="topicDropBtn" aria-haspopup="listbox" aria-expanded="false" title="Filter the deck by topic">
         <span class="ldLabel" id="lblTopics">topics</span>

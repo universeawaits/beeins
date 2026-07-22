@@ -2460,14 +2460,18 @@
   // `data-skin` on <html>; the separate light/dark toggle sets `data-theme`.
   // Both persist independently, so any skin works in light or dark.
   var THEMES = [
-    { key: "", emoji: "🌿" },          // leaf — default
-    { key: "bubbles", emoji: "🫧" },
-    { key: "disco", emoji: "🪩" },
+    { key: "", emoji: "🌿" },            // leaf — default
+    { key: "bubbles", emoji: "🫧" },     // glass
+    { key: "ice", emoji: "🧊" },         // glass
+    { key: "raindrop", emoji: "💧" },    // glass
+    { key: "crystal", emoji: "🔮" },     // glass + glow
+    { key: "aurora", emoji: "✨" },      // glow
+    { key: "disco", emoji: "🪩" },       // glow
     { key: "daisy", emoji: "🌼" },
-    { key: "raindrop", emoji: "💧" },
-    { key: "blooddrop", emoji: "🩸" },
     { key: "wine", emoji: "🍷" },
-    { key: "pizza", emoji: "🍕" }
+    { key: "blooddrop", emoji: "🩸" },
+    { key: "pizza", emoji: "🍕" },
+    { key: "scroll", emoji: "📜" }
   ];
   function currentSkin() { try { return window.localStorage.getItem("beeins_skin") || ""; } catch (e) { return ""; } }
   function applySkin(key) {

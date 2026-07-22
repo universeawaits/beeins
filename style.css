@@ -19,6 +19,8 @@
   --radius-sm: 14px;     /* buttons / controls */
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   --font-head: var(--font-body);   /* the headword */
+  --head-weight: 700;              /* headword weight (skins may lighten) */
+  --head-glow: none;               /* headword text-shadow (glowing skins set it) */
   --card-tint: var(--card-bg);     /* card surface (skins may tint / go translucent) */
   --card-blur: 0px;                /* frosted-glass backdrop for translucent skins */
   --card-border-w: 1px;
@@ -65,96 +67,165 @@
   --accent: #1c7ed6;
   --radius: 30px; --radius-sm: 20px;
   --font-head: ui-rounded, "SF Pro Rounded", "Nunito", var(--font-body);
-  --card-tint: color-mix(in srgb, var(--card-bg) 68%, transparent);
-  --card-blur: 14px;
-  --card-shadow: 0 10px 40px color-mix(in srgb, var(--accent) 28%, transparent);
-  --page-bg: radial-gradient(900px 520px at 18% -8%, color-mix(in srgb, var(--accent) 16%, var(--bg)), var(--bg));
+  --head-weight: 600;
+  --card-tint: color-mix(in srgb, var(--card-bg) 58%, transparent);
+  --card-blur: 16px;
+  --card-shadow: 0 10px 44px color-mix(in srgb, var(--accent) 24%, transparent);
+  --page-bg: radial-gradient(900px 520px at 18% -8%, color-mix(in srgb, var(--accent) 14%, var(--bg)), var(--bg));
 }
 
-/* 🪩 disco — glossy, saturated, party-lights backdrop */
+/* 🧊 ice — ultra-transparent frost, pale, feather-light type */
+:root[data-skin="ice"] {
+  --accent: #3b8ea5;
+  --radius: 22px; --radius-sm: 16px;
+  --font-head: "Avenir Next", "Helvetica Neue", "Segoe UI", var(--font-body);
+  --head-weight: 500;
+  --card-tint: color-mix(in srgb, var(--card-bg) 46%, transparent);
+  --card-blur: 22px;
+  --card-shadow: 0 8px 40px color-mix(in srgb, var(--accent) 16%, transparent);
+  --page-bg: linear-gradient(180deg, color-mix(in srgb, var(--accent) 12%, var(--bg)), var(--bg) 55%);
+}
+
+/* 💧 raindrop — cool translucent glass, Optima humanist type */
+:root[data-skin="raindrop"] {
+  --accent: #0c8599;
+  --radius: 24px; --radius-sm: 16px;
+  --font-head: "Optima", "Avenir Next", var(--font-body);
+  --head-weight: 600;
+  --card-tint: color-mix(in srgb, var(--card-bg) 66%, transparent);
+  --card-blur: 14px;
+  --card-shadow: 0 10px 36px color-mix(in srgb, var(--accent) 22%, transparent);
+  --page-bg: linear-gradient(180deg, color-mix(in srgb, var(--accent) 11%, var(--bg)), var(--bg) 60%);
+}
+
+/* 🔮 crystal — violet glass that glows, elegant Baskerville */
+:root[data-skin="crystal"] {
+  --accent: #7048e8;
+  --radius: 20px; --radius-sm: 14px;
+  --font-head: "Baskerville", "Iowan Old Style", Georgia, serif;
+  --head-weight: 600;
+  --head-glow: 0 0 22px color-mix(in srgb, var(--accent) 55%, transparent);
+  --card-tint: color-mix(in srgb, var(--card-bg) 60%, transparent);
+  --card-blur: 16px;
+  --card-shadow: 0 12px 46px color-mix(in srgb, var(--accent) 30%, transparent);
+  --page-bg: radial-gradient(900px 560px at 78% -12%, color-mix(in srgb, var(--accent) 15%, var(--bg)), var(--bg));
+}
+
+/* ✨ aurora — dark neon glow, monospaced */
+:root[data-skin="aurora"] {
+  --accent: #12b886;
+  --radius: 12px; --radius-sm: 10px;
+  --font-head: ui-monospace, "SF Mono", "Menlo", monospace;
+  --head-weight: 600;
+  --head-glow: 0 0 24px color-mix(in srgb, var(--accent) 70%, transparent);
+  --card-tint: color-mix(in srgb, var(--card-bg) 68%, transparent);
+  --card-blur: 10px;
+  --card-shadow: 0 0 42px color-mix(in srgb, var(--accent) 26%, transparent), 0 10px 30px rgba(0, 0, 0, 0.16);
+  --page-bg: radial-gradient(1000px 620px at 50% -18%, color-mix(in srgb, var(--accent) 13%, var(--bg)), var(--bg));
+}
+
+/* 🪩 disco — party-lights glow, Futura geometric (dialled back) */
 :root[data-skin="disco"] {
   --accent: #ae3ec9;
   --radius: 14px; --radius-sm: 11px;
-  --card-tint: color-mix(in srgb, var(--accent) 9%, var(--card-bg));
-  --card-blur: 4px;
-  --card-shadow: 0 12px 44px color-mix(in srgb, var(--accent) 42%, transparent);
+  --font-head: "Futura", "Avenir Next", var(--font-body);
+  --head-weight: 600;
+  --head-glow: 0 0 20px color-mix(in srgb, var(--accent) 42%, transparent);
+  --card-tint: color-mix(in srgb, var(--accent) 6%, var(--card-bg));
+  --card-blur: 6px;
+  --card-shadow: 0 10px 40px color-mix(in srgb, var(--accent) 28%, transparent);
   --page-bg: linear-gradient(135deg,
-    color-mix(in srgb, #ae3ec9 13%, var(--bg)),
-    color-mix(in srgb, #1c7ed6 13%, var(--bg)) 55%,
-    color-mix(in srgb, #f76707 12%, var(--bg)));
+    color-mix(in srgb, #ae3ec9 8%, var(--bg)),
+    color-mix(in srgb, #1c7ed6 8%, var(--bg)) 55%,
+    color-mix(in srgb, #f76707 7%, var(--bg)));
 }
 
-/* 🌼 daisy — soft, sunny, gently rounded */
+/* 🌼 daisy — soft, sunny, gently rounded (lightened) */
 :root[data-skin="daisy"] {
   --accent: #9a6f00;
   --radius: 26px; --radius-sm: 18px;
   --font-head: ui-rounded, "SF Pro Rounded", "Nunito", var(--font-body);
-  --card-tint: color-mix(in srgb, var(--accent) 8%, var(--card-bg));
-  --card-shadow: 0 8px 30px color-mix(in srgb, var(--accent) 20%, transparent);
-  --page-bg: radial-gradient(900px 500px at 82% -10%, color-mix(in srgb, var(--accent) 14%, var(--bg)), var(--bg));
-}
-
-/* 💧 raindrop — cool, translucent, quiet */
-:root[data-skin="raindrop"] {
-  --accent: #0c8599;
-  --radius: 24px; --radius-sm: 16px;
-  --card-tint: color-mix(in srgb, var(--card-bg) 76%, transparent);
-  --card-blur: 12px;
-  --card-shadow: 0 10px 34px color-mix(in srgb, var(--accent) 26%, transparent);
-  --page-bg: linear-gradient(180deg, color-mix(in srgb, var(--accent) 13%, var(--bg)), var(--bg) 60%);
-}
-
-/* 🩸 blooddrop — dark, sharp, urgent */
-:root[data-skin="blooddrop"] {
-  --accent: #c92a2a;
-  --border: color-mix(in srgb, #c92a2a 34%, var(--border));
-  --radius: 6px; --radius-sm: 5px;
-  --card-border-w: 1.5px;
+  --head-weight: 600;
   --card-tint: color-mix(in srgb, var(--accent) 7%, var(--card-bg));
-  --card-shadow: 0 8px 30px color-mix(in srgb, #c92a2a 26%, transparent);
-  --page-bg: radial-gradient(1000px 600px at 50% -20%, color-mix(in srgb, #c92a2a 12%, var(--bg)), var(--bg));
+  --card-shadow: 0 8px 30px color-mix(in srgb, var(--accent) 16%, transparent);
+  --page-bg: radial-gradient(900px 500px at 82% -10%, color-mix(in srgb, var(--accent) 12%, var(--bg)), var(--bg));
 }
 
-/* 🍷 wine — elegant, serif, deep burgundy */
+/* 🍷 wine — elegant serif, deep burgundy (lightened weight) */
 :root[data-skin="wine"] {
   --accent: #a61e4d;
   --radius: 10px; --radius-sm: 8px;
   --font-body: Georgia, "Iowan Old Style", "Times New Roman", serif;
   --font-head: Georgia, "Iowan Old Style", "Times New Roman", serif;
-  --card-tint: color-mix(in srgb, var(--accent) 7%, var(--card-bg));
-  --card-shadow: 0 14px 44px rgba(0, 0, 0, 0.2);
-  --page-bg: linear-gradient(160deg, color-mix(in srgb, var(--accent) 12%, var(--bg)), var(--bg) 70%);
+  --head-weight: 600;
+  --card-tint: color-mix(in srgb, var(--accent) 6%, var(--card-bg));
+  --card-shadow: 0 14px 44px rgba(0, 0, 0, 0.18);
+  --page-bg: linear-gradient(160deg, color-mix(in srgb, var(--accent) 10%, var(--bg)), var(--bg) 70%);
 }
 
-/* 🍕 pizza — warm, chunky, hand-thrown crust */
+/* 🩸 blooddrop — dark, sharp, monospaced (dialled back) */
+:root[data-skin="blooddrop"] {
+  --accent: #c92a2a;
+  --border: color-mix(in srgb, #c92a2a 30%, var(--border));
+  --radius: 6px; --radius-sm: 5px;
+  --card-border-w: 1.5px;
+  --font-head: ui-monospace, "SF Mono", "Menlo", monospace;
+  --head-weight: 600;
+  --card-tint: color-mix(in srgb, var(--accent) 6%, var(--card-bg));
+  --card-shadow: 0 8px 30px color-mix(in srgb, #c92a2a 20%, transparent);
+  --page-bg: radial-gradient(1000px 600px at 50% -20%, color-mix(in srgb, #c92a2a 9%, var(--bg)), var(--bg));
+}
+
+/* 🍕 pizza — warm, chunky crust, rounded (dialled back) */
 :root[data-skin="pizza"] {
   --accent: #e8590c;
-  --border: color-mix(in srgb, #d9480f 42%, var(--border));
+  --border: color-mix(in srgb, #d9480f 36%, var(--border));
   --radius: 22px; --radius-sm: 16px;
-  --card-border-w: 2px;
+  --card-border-w: 1.5px;
   --font-head: ui-rounded, "SF Pro Rounded", "Nunito", var(--font-body);
+  --head-weight: 600;
+  --card-tint: color-mix(in srgb, var(--accent) 7%, var(--card-bg));
+  --card-shadow: 0 10px 32px color-mix(in srgb, var(--accent) 22%, transparent);
+  --page-bg: radial-gradient(900px 520px at 20% -10%, color-mix(in srgb, var(--accent) 10%, var(--bg)), var(--bg));
+}
+
+/* 📜 scroll — warm parchment, typewriter */
+:root[data-skin="scroll"] {
+  --accent: #8a6d3b;
+  --radius: 8px; --radius-sm: 6px;
+  --font-body: "American Typewriter", "Courier New", ui-monospace, monospace;
+  --font-head: "American Typewriter", "Courier New", ui-monospace, monospace;
+  --head-weight: 600;
   --card-tint: color-mix(in srgb, var(--accent) 9%, var(--card-bg));
-  --card-shadow: 0 10px 32px color-mix(in srgb, var(--accent) 30%, transparent);
-  --page-bg: radial-gradient(900px 520px at 20% -10%, color-mix(in srgb, var(--accent) 15%, var(--bg)), var(--bg));
+  --card-shadow: 0 8px 26px rgba(0, 0, 0, 0.14);
+  --page-bg: radial-gradient(900px 520px at 50% -10%, color-mix(in srgb, var(--accent) 10%, var(--bg)), var(--bg));
 }
 
 /* Dark accents per skin (explicit toggle + system-dark), same pattern as the
    base theme. Shape/surface/typography above are shared across both modes. */
 :root[data-theme="dark"][data-skin="bubbles"]   { --accent: #74c0fc; }
+:root[data-theme="dark"][data-skin="ice"]       { --accent: #99e9f2; }
+:root[data-theme="dark"][data-skin="raindrop"]  { --accent: #66d9e8; }
+:root[data-theme="dark"][data-skin="crystal"]   { --accent: #b197fc; }
+:root[data-theme="dark"][data-skin="aurora"]    { --accent: #63e6be; }
 :root[data-theme="dark"][data-skin="disco"]     { --accent: #e599f7; }
 :root[data-theme="dark"][data-skin="daisy"]     { --accent: #ffd43b; }
-:root[data-theme="dark"][data-skin="raindrop"]  { --accent: #66d9e8; }
-:root[data-theme="dark"][data-skin="blooddrop"] { --accent: #ff8787; --border: color-mix(in srgb, #ff8787 30%, var(--border)); }
 :root[data-theme="dark"][data-skin="wine"]      { --accent: #f06595; }
+:root[data-theme="dark"][data-skin="blooddrop"] { --accent: #ff8787; --border: color-mix(in srgb, #ff8787 30%, var(--border)); }
 :root[data-theme="dark"][data-skin="pizza"]     { --accent: #ffa94d; --border: color-mix(in srgb, #ffa94d 34%, var(--border)); }
+:root[data-theme="dark"][data-skin="scroll"]    { --accent: #d9b382; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme])[data-skin="bubbles"]   { --accent: #74c0fc; }
+  :root:not([data-theme])[data-skin="ice"]       { --accent: #99e9f2; }
+  :root:not([data-theme])[data-skin="raindrop"]  { --accent: #66d9e8; }
+  :root:not([data-theme])[data-skin="crystal"]   { --accent: #b197fc; }
+  :root:not([data-theme])[data-skin="aurora"]    { --accent: #63e6be; }
   :root:not([data-theme])[data-skin="disco"]     { --accent: #e599f7; }
   :root:not([data-theme])[data-skin="daisy"]     { --accent: #ffd43b; }
-  :root:not([data-theme])[data-skin="raindrop"]  { --accent: #66d9e8; }
-  :root:not([data-theme])[data-skin="blooddrop"] { --accent: #ff8787; --border: color-mix(in srgb, #ff8787 30%, var(--border)); }
   :root:not([data-theme])[data-skin="wine"]      { --accent: #f06595; }
+  :root:not([data-theme])[data-skin="blooddrop"] { --accent: #ff8787; --border: color-mix(in srgb, #ff8787 30%, var(--border)); }
   :root:not([data-theme])[data-skin="pizza"]     { --accent: #ffa94d; --border: color-mix(in srgb, #ffa94d 34%, var(--border)); }
+  :root:not([data-theme])[data-skin="scroll"]    { --accent: #d9b382; }
 }
 
 * { box-sizing: border-box; }
@@ -483,7 +554,8 @@ body {
 #word {
   font-family: var(--font-head);
   font-size: 2.1rem;
-  font-weight: 700;
+  font-weight: var(--head-weight);
+  text-shadow: var(--head-glow);
   text-align: center;
   margin-bottom: 18px;
   overflow-wrap: break-word;
