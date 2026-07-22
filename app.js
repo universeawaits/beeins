@@ -496,11 +496,14 @@
   // ---- study mode (the third toggle, only in the Study view) -------------
   // How a card prompts you before you reveal it:
   //   cards  — see one language's word, recall the rest (the classic behaviour)
-  //   blanks — a real example sentence with the target word blanked out
-  //   listen — hear the target word's audio, recall it before the reveal
-  // The deck, levels and topics are identical across modes; only the prompt
-  // (and which language leads the card) changes. Stored globally, not per target.
-  var STUDY_MODES = { cards: 1, blanks: 1, listen: 1 };
+  //   blanks — a real example sentence with the target word blanked, typed in
+  //   listen — hear the target word's audio, type what you heard
+  //   combi  — all three at once: audio + a fill-in sentence + a translation clue
+  // Blanks/listen/combi accept a typed answer, graded on reveal. The deck,
+  // levels and topics are identical across modes; only the prompt (and which
+  // language leads the card) changes. Stored globally, not per target.
+  var STUDY_MODES = { cards: 1, blanks: 1, listen: 1, combi: 1 };
+  var TYPED_MODES = { blanks: 1, listen: 1, combi: 1 }; // modes with an input
   var studyMode = loadStudyMode();
   function loadStudyMode() {
     try { var v = window.localStorage.getItem("beeins_studyMode"); if (STUDY_MODES[v]) return v; } catch (e) {}
@@ -708,6 +711,15 @@
       "hi": "सुनना", "ur": "سنیں", "ar_eg": "استماع", "ar_lb": "استماع", "ar_sy": "استماع",
       "es_mx": "Escuchar", "es_ar": "Escuchar", "ca": "Escoltar", "hr": "Slušaj", "sr": "Слушај",
       "el": "Ακρόαση", "ro": "Ascultare", "sq": "Dëgjo"
+    },
+    // Combi = all three prompts at once (audio + fill-in sentence + clue).
+    combi: {
+      "de": "Kombi", "en": "Combi", "fr": "Combi", "it": "Combo", "be": "Камбі",
+      "ru": "Комби", "vi": "Kết hợp", "fa": "ترکیبی", "uk": "Комбі", "th": "รวม", "zh": "综合",
+      "ms": "Gabungan", "tr": "Karma", "pl": "Combo", "sw": "Mchanganyiko", "am": "ቅይጥ",
+      "hi": "मिश्रित", "ur": "مکس", "ar_eg": "مدمج", "ar_lb": "مدمج", "ar_sy": "مدمج",
+      "es_mx": "Combi", "es_ar": "Combi", "ca": "Combi", "hr": "Kombo", "sr": "Комбо",
+      "el": "Συνδυασμός", "ro": "Combo", "sq": "Kombi"
     },
     ask: {
       "de": "Frage",
@@ -1813,8 +1825,9 @@
   }
 
   // ---- rendering ---------------------------------------------------------
-  // What the learner last typed into the blank (kept so the revealed card can
-  // show it and mark it right/wrong). Reset for each fresh card.
+  // What the learner last typed into the input (kept so the revealed card can
+  // show it and mark it right/wrong). Reset for each fresh card. Shared by the
+  // typed modes (blanks, listen, combi).
   var blankGuess = "";
 
   // The first example whose target sentence actually contains the headword —
@@ -1840,13 +1853,10 @@
 
   function normGuess(s) { return (s || "").trim().toLowerCase().replace(/\s+/g, " "); }
 
-  // Blanks prompt state: the sentence with a text <input> where the word goes.
-  // Type the word and press Enter to complete it; a translation of the sentence
-  // sits underneath as the clue. Falls back to a bare input prompted by the
-  // word's translation when no example contains the exact form.
-  function buildBlankPrompt(w, frontKey) {
-    var wrap = document.createElement("div");
-    wrap.className = "clozePrompt";
+  // The text field the learner types the answer into (blanks/listen/combi).
+  // Its pointer/key events are stopped so typing never reveals or swipes the
+  // card; Enter submits.
+  function makeClozeInput() {
     var inp = document.createElement("input");
     inp.type = "text";
     inp.className = "clozeInput";
@@ -1854,7 +1864,7 @@
     inp.setAttribute("autocapitalize", "off");
     inp.setAttribute("autocorrect", "off");
     inp.setAttribute("spellcheck", "false");
-    inp.setAttribute("aria-label", "Type the missing word");
+    inp.setAttribute("aria-label", "Type the word");
     var stop = function (e) { e.stopPropagation(); };
     inp.addEventListener("mousedown", stop);
     inp.addEventListener("touchstart", stop, { passive: true });
@@ -1863,7 +1873,50 @@
       e.stopPropagation();            // don't let the card's key handler reveal
       if (e.key === "Enter") { e.preventDefault(); submitBlank(inp.value); }
     });
+    return inp;
+  }
 
+  function focusSoon(inp) {
+    if (window.requestAnimationFrame) window.requestAnimationFrame(function () { try { inp.focus(); } catch (e) {} });
+    else setTimeout(function () { try { inp.focus(); } catch (e) {} }, 0);
+  }
+
+  // A big round speaker that plays the target word; auto-plays once for the
+  // live card (not when peeking back). Used by listen + combi prompts.
+  function makeListenButton(w) {
+    var text = wordVal(w, LEARN);
+    if (!SPEAK_OK) { var s = document.createElement("div"); s.textContent = "🔊"; return s; }
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "listenBtn";
+    btn.setAttribute("aria-label", "Play pronunciation");
+    btn.innerHTML = SPEAKER_SVG;
+    var stop = function (e) { e.stopPropagation(); };
+    btn.addEventListener("mousedown", stop);
+    btn.addEventListener("touchstart", stop, { passive: true });
+    btn.addEventListener("click", function (e) { e.stopPropagation(); e.preventDefault(); speak(text, btn); });
+    if (peekPos === null) { try { speak(text, btn); } catch (e) {} }
+    return btn;
+  }
+
+  // A small "you: X" line marking a wrong guess in red.
+  function wrongGuessNode() {
+    var you = document.createElement("div");
+    you.className = "clozeYou";
+    you.setAttribute("dir", "auto");
+    you.textContent = "✗ " + blankGuess.trim();
+    return you;
+  }
+
+  // Blanks/combi prompt state: the sentence with a text input where the word
+  // goes, a translation clue underneath, and (combi) the target word's audio.
+  // Falls back to a bare input prompted by the word's translation when no
+  // example contains the exact form.
+  function buildBlankPrompt(w, frontKey, withAudio) {
+    var wrap = document.createElement("div");
+    wrap.className = "clozePrompt";
+    if (withAudio) wrap.appendChild(makeListenButton(w));
+    var inp = makeClozeInput();
     var hit = clozeExample(w);
     if (!hit) {
       var clueKey = frontKey === LEARN ? (allowedTitleLangs()[0] || {}).key : frontKey;
@@ -1884,13 +1937,12 @@
       var clue = clozeClueNode(hit, frontKey);
       if (clue) wrap.appendChild(clue);
     }
-    if (window.requestAnimationFrame) window.requestAnimationFrame(function () { try { inp.focus(); } catch (e) {} });
-    else setTimeout(function () { try { inp.focus(); } catch (e) {} }, 0);
+    focusSoon(inp);
     return wrap;
   }
 
-  // Blanks revealed state: the sentence completed with the answer in place,
-  // marked right/wrong against what the learner typed.
+  // Blanks/combi revealed state: the sentence completed with the answer in
+  // place, marked right/wrong against what the learner typed.
   function buildBlankFilled(w, frontKey) {
     var wrap = document.createElement("div");
     wrap.className = "clozePrompt";
@@ -1912,48 +1964,49 @@
       sent.appendChild(document.createTextNode(hit.s.slice(hit.idx + w.word.length)));
       wrap.appendChild(sent);
     }
-    if (g && !ok) {
-      var you = document.createElement("div");
-      you.className = "clozeYou";
-      you.setAttribute("dir", "auto");
-      you.textContent = "✗ " + blankGuess.trim();
-      wrap.appendChild(you);
-    }
+    if (g && !ok) wrap.appendChild(wrongGuessNode());
     if (hit) { var clue2 = clozeClueNode(hit, frontKey); if (clue2) wrap.appendChild(clue2); }
     return wrap;
   }
 
-  // Enter in the blank: remember the guess and reveal (repaints into the
-  // completed, graded sentence).
+  // Listen prompt state: a big speaker (auto-played) and an input to type what
+  // you heard — pure listening recall, no sentence or clue.
+  function buildListenPrompt(w) {
+    var wrap = document.createElement("div");
+    wrap.className = "listenPrompt";
+    wrap.appendChild(makeListenButton(w));
+    var inp = makeClozeInput();
+    inp.className += " clozeInputBlock";
+    wrap.appendChild(inp);
+    focusSoon(inp);
+    return wrap;
+  }
+
+  // Listen revealed state: the target word (its reading shows under it) with a
+  // replay speaker, marked right/wrong against what was typed.
+  function buildListenFilled(w) {
+    var wrap = document.createElement("div");
+    wrap.className = "listenPrompt";
+    var line = document.createElement("div");
+    line.setAttribute("dir", "auto");
+    var g = normGuess(blankGuess);
+    var ok = !!g && (g === normGuess(w.word) || (w.reading && g === normGuess(w.reading)));
+    var ans = document.createElement("span");
+    ans.className = "clozeAnswer" + (g ? (ok ? " clozeOk" : " clozeBad") : "");
+    ans.textContent = wordVal(w, LEARN);
+    line.appendChild(ans);
+    if (SPEAK_OK) line.appendChild(makeSpeakBtn(wordVal(w, LEARN)));
+    wrap.appendChild(line);
+    if (g && !ok) wrap.appendChild(wrongGuessNode());
+    return wrap;
+  }
+
+  // Enter in any typed mode: remember the guess and reveal (repaints into the
+  // completed, graded state).
   function submitBlank(val) {
     if (revealed) return;
     blankGuess = val || "";
     reveal();
-  }
-
-  // Listen mode: a large speaker the learner taps (auto-played once for the live
-  // card) to hear the target word before recalling and revealing it.
-  function buildListenPrompt(w) {
-    var wrap = document.createElement("div");
-    wrap.className = "listenPrompt";
-    var text = wordVal(w, LEARN);
-    if (SPEAK_OK) {
-      var btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "listenBtn";
-      btn.setAttribute("aria-label", "Play pronunciation");
-      btn.innerHTML = SPEAKER_SVG;
-      var stop = function (e) { e.stopPropagation(); };
-      btn.addEventListener("mousedown", stop);
-      btn.addEventListener("touchstart", stop, { passive: true });
-      btn.addEventListener("click", function (e) { e.stopPropagation(); e.preventDefault(); speak(text, btn); });
-      wrap.appendChild(btn);
-      // Auto-play for the freshly shown live card (not when peeking back).
-      if (peekPos === null) { try { speak(text, btn); } catch (e) {} }
-    } else {
-      wrap.textContent = "🔊";
-    }
-    return wrap;
   }
 
   function paintCard(w, frontKey, isRevealed) {
@@ -1961,26 +2014,23 @@
     renderCardTopics(w);
 
     // The headword area depends on the study mode. In "cards" it shows whichever
-    // language leads the card; in "blanks"/"listen" the answer is always the
-    // target word, so before the reveal it shows the mode's prompt (a cloze
-    // sentence or a speaker) and after the reveal it shows the target word.
+    // language leads the card; the typed modes (blanks/listen/combi) prompt you
+    // to recall the target word and grade what you type on reveal.
+    //   blanks / combi — a fill-in sentence (combi also auto-plays the audio);
+    //                     on reveal the sentence is completed and graded.
+    //   listen         — a speaker + input; on reveal the target word is shown.
     var isCards = (studyMode === "cards");
     elWord.innerHTML = "";
     if (isCards) {
       elWord.appendChild(document.createTextNode(wordVal(w, frontKey)));
       // Speak the title when it is the target word (the language being learned).
       if (SPEAK_OK && frontKey === LEARN) elWord.appendChild(makeSpeakBtn(wordVal(w, LEARN)));
-    } else if (studyMode === "blanks") {
-      // Before the reveal: the sentence with a text input where the word goes;
-      // after: the same sentence completed with the answer (and correctness).
-      elWord.appendChild(isRevealed ? buildBlankFilled(w, frontKey) : buildBlankPrompt(w, frontKey));
+    } else if (studyMode === "blanks" || studyMode === "combi") {
+      elWord.appendChild(isRevealed
+        ? buildBlankFilled(w, frontKey)
+        : buildBlankPrompt(w, frontKey, studyMode === "combi"));
     } else { // listen
-      if (isRevealed) {
-        elWord.appendChild(document.createTextNode(wordVal(w, LEARN)));
-        if (SPEAK_OK) elWord.appendChild(makeSpeakBtn(wordVal(w, LEARN)));
-      } else {
-        elWord.appendChild(buildListenPrompt(w));
-      }
+      elWord.appendChild(isRevealed ? buildListenFilled(w) : buildListenPrompt(w));
     }
 
     // Pronunciation aid (pinyin / romaji / romanization). Shown under the
@@ -2263,7 +2313,7 @@
     elNavCards.textContent = tr(UISTR.study, k);
     elNavGrammar.textContent = tr(UISTR.reference, k);
     if (elModeNav) {
-      var modeLabel = { cards: UISTR.cards, blanks: UISTR.blanks, listen: UISTR.listen };
+      var modeLabel = { cards: UISTR.cards, blanks: UISTR.blanks, listen: UISTR.listen, combi: UISTR.combi };
       Array.prototype.forEach.call(elModeNav.querySelectorAll(".modeBtn"), function (b) {
         var m = b.getAttribute("data-mode");
         if (modeLabel[m]) b.textContent = tr(modeLabel[m], k);

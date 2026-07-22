@@ -547,6 +547,23 @@ body {
   color: #dc2626;
 }
 
+/* Listen / combi prompt: a big round speaker, with the typed-answer input
+   stacked beneath it (and, in combi, above the fill-in sentence). */
+.listenPrompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.5rem;
+}
+.clozeInputBlock {
+  display: block;
+  width: 8em;
+  max-width: 70vw;
+  text-align: center;
+}
+.clozePrompt .listenBtn { margin-bottom: 14px; }
+
 /* Listen-mode prompt: a big round speaker you tap to hear the target word. */
 .listenBtn {
   appearance: none;
