@@ -586,14 +586,6 @@ body {
   padding: 6px 12px;
 }
 
-/* The German translation is the word being learned — always highlighted with a
-   soft green glowing outline when the card is revealed. */
-#translations .deBadge {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 1px var(--accent),
-              0 0 12px 1px color-mix(in srgb, var(--accent) 45%, transparent);
-}
-
 #revealHint {
   text-align: center;
   color: var(--muted);
