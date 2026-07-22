@@ -551,18 +551,17 @@ body {
    stacked beneath it (and, in combi, above the fill-in sentence). */
 .listenPrompt {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 16px;
+  justify-content: center;
+  gap: 12px;
   font-size: 1.5rem;
 }
 .clozeInputBlock {
-  display: block;
   width: 8em;
-  max-width: 70vw;
+  max-width: 60vw;
   text-align: center;
 }
-.clozePrompt .listenBtn { margin-bottom: 14px; }
 
 /* Listen-mode prompt: a big round speaker you tap to hear the target word. */
 .listenBtn {
@@ -570,8 +569,9 @@ body {
   -webkit-appearance: none;
   border: none;
   cursor: pointer;
-  width: 52px;
-  height: 52px;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: var(--accent);
   color: #fff;
@@ -582,7 +582,7 @@ body {
 }
 .listenBtn:hover { opacity: 0.9; }
 .listenBtn:active { transform: scale(0.92); }
-.listenBtn svg { width: 22px; height: 22px; display: block; }
+.listenBtn svg { width: 18px; height: 18px; display: block; }
 
 /* ---- level switch (A1 / A2 / B1) -------------------------------------- */
 #levelNav {
