@@ -398,7 +398,7 @@ body {
   flex-shrink: 0;
   width: 18px;
   height: 18px;
-  border: 1.5px solid var(--border);
+  border: 1.5px solid var(--muted);
   border-radius: 5px;
   display: inline-flex;
   align-items: center;
