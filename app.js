@@ -499,6 +499,37 @@
   // Interface chrome (nav, buttons, progress, stats). Rendered in the first
   // enabled "show" language so the whole UI speaks the learner's language.
   var UISTR = {
+    topics: {
+      "de": "Themen",
+      "en": "Topics",
+      "ru": "Темы",
+      "vi": "Chủ đề",
+      "fa": "موضوع‌ها",
+      "uk": "Теми",
+      "th": "หัวข้อ",
+      "zh": "主题",
+      "ms": "Topik",
+      "tr": "Konular",
+      "pl": "Tematy",
+      "sw": "Mada",
+      "am": "ርዕሶች",
+      "hi": "विषय",
+      "ur": "موضوعات",
+      "ar_eg": "مواضيع",
+      "ar_lb": "مواضيع",
+      "ar_sy": "مواضيع",
+      "es_mx": "Temas",
+      "es_ar": "Temas",
+      "ca": "Temes",
+      "it": "Argomenti",
+      "fr": "Thèmes",
+      "hr": "Teme",
+      "be": "Тэмы",
+      "sr": "Теме",
+      "el": "Θέματα",
+      "ro": "Subiecte",
+      "sq": "Temat"
+    },
     cards: {
       "de": "Karten",
       "en": "Cards",
@@ -1982,6 +2013,7 @@
     elNavGrammar.textContent = tr(UISTR.grammar, k);
     if (elLblAsk) { elLblAsk.textContent = tr(UISTR.ask, k); elLblAsk.setAttribute("title", tr(UISTR.askTip, k)); }
     if (elLblShow) { elLblShow.textContent = tr(UISTR.langs, k); elLblShow.setAttribute("title", trTarget(UISTR.showTip, k)); }
+    if (elLblTopics) elLblTopics.textContent = tr(UISTR.topics, k);
     if (elLevelNav) elLevelNav.setAttribute("title", tr(UISTR.levelTip, k));
     if (elRevealHint) {
       elRevealHint.textContent = tr(UISTR.reveal, k);
