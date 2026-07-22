@@ -786,7 +786,7 @@
     langs: {
       "de": "Aus",
       "en": "From",
-      "ru": "От",
+      "ru": "С",
       "vi": "Từ",
       "fa": "از",
       "uk": "Від",
@@ -1827,8 +1827,21 @@
   // ---- rendering ---------------------------------------------------------
   // What the learner last typed into the input (kept so the revealed card can
   // show it and mark it right/wrong). Reset for each fresh card. Shared by the
-  // typed modes (blanks, listen, combi).
+  // typed modes (blanks, listen, combi). `typedGrade` is the auto-grade from
+  // that answer (true=right, false=wrong, null=not a typed answer) — it drives
+  // the score in the typed modes so a wrong answer counts as a mistake.
   var blankGuess = "";
+  var typedGrade = null;
+
+  // "combi" isn't a card format of its own — it's a mix: each card is randomly
+  // one of cards / blanks / listen. `comboPick` holds this card's chosen format
+  // (reset per card in renderCard); `curMode()` resolves the format to render.
+  var comboPick = null;
+  function curMode() {
+    if (studyMode !== "combi") return studyMode;
+    if (!comboPick) { var f = ["cards", "blanks", "listen"]; comboPick = f[Math.floor(Math.random() * f.length)]; }
+    return comboPick;
+  }
 
   // The first example whose target sentence actually contains the headword —
   // the sentence we turn into a fill-in-the-blank.
@@ -1852,6 +1865,13 @@
   }
 
   function normGuess(s) { return (s || "").trim().toLowerCase().replace(/\s+/g, " "); }
+
+  // Is the typed answer correct for word `w`? Accepts the target headword or its
+  // reading (pinyin/romaji/…). Empty answer counts as wrong.
+  function guessIsCorrect(w) {
+    var g = normGuess(blankGuess);
+    return !!g && (g === normGuess(w.word) || (w.reading && g === normGuess(w.reading)));
+  }
 
   // The text field the learner types the answer into (blanks/listen/combi).
   // Its pointer/key events are stopped so typing never reveals or swipes the
@@ -2001,11 +2021,12 @@
     return wrap;
   }
 
-  // Enter in any typed mode: remember the guess and reveal (repaints into the
-  // completed, graded state).
+  // Enter in any typed mode: remember the guess, grade it, and reveal (repaints
+  // into the completed, graded state). The grade is what scores the card.
   function submitBlank(val) {
     if (revealed) return;
     blankGuess = val || "";
+    if (deck.length) typedGrade = guessIsCorrect(deck[0]);
     reveal();
   }
 
@@ -2013,22 +2034,19 @@
     elWord.setAttribute("dir", "auto"); // render RTL (Persian/Arabic/Urdu) correctly
     renderCardTopics(w);
 
-    // The headword area depends on the study mode. In "cards" it shows whichever
-    // language leads the card; the typed modes (blanks/listen/combi) prompt you
-    // to recall the target word and grade what you type on reveal.
-    //   blanks / combi — a fill-in sentence (combi also auto-plays the audio);
-    //                     on reveal the sentence is completed and graded.
-    //   listen         — a speaker + input; on reveal the target word is shown.
-    var isCards = (studyMode === "cards");
+    // The headword area depends on the card's format (combi resolves to one of
+    // cards/blanks/listen per card):
+    //   cards  — show a language's word, recall the rest.
+    //   blanks — a fill-in example sentence; on reveal it's completed and graded.
+    //   listen — a speaker + input; on reveal the target word is shown.
+    var mode = curMode();
     elWord.innerHTML = "";
-    if (isCards) {
+    if (mode === "cards") {
       elWord.appendChild(document.createTextNode(wordVal(w, frontKey)));
       // Speak the title when it is the target word (the language being learned).
       if (SPEAK_OK && frontKey === LEARN) elWord.appendChild(makeSpeakBtn(wordVal(w, LEARN)));
-    } else if (studyMode === "blanks" || studyMode === "combi") {
-      elWord.appendChild(isRevealed
-        ? buildBlankFilled(w, frontKey)
-        : buildBlankPrompt(w, frontKey, studyMode === "combi"));
+    } else if (mode === "blanks") {
+      elWord.appendChild(isRevealed ? buildBlankFilled(w, frontKey) : buildBlankPrompt(w, frontKey));
     } else { // listen
       elWord.appendChild(isRevealed ? buildListenFilled(w) : buildListenPrompt(w));
     }
@@ -2041,8 +2059,8 @@
     if (elWordReading) {
       var showReading = false;
       if (w.reading) {
-        if (isCards) showReading = (frontKey === LEARN);
-        else if (studyMode === "listen") showReading = isRevealed;
+        if (mode === "cards") showReading = (frontKey === LEARN);
+        else if (mode === "listen") showReading = isRevealed;
       }
       elWordReading.textContent = showReading ? w.reading : "";
       elWordReading.style.display = showReading ? "" : "none";
@@ -2135,12 +2153,14 @@
     peekPos = null;
     revealed = false;
     blankGuess = "";
+    typedGrade = null;
+    comboPick = null;                    // fresh combi format pick for this card
     var w = deck[0];
     var allowed = allowedTitleLangs();
     // In blanks/listen the answer is the target word, so the card should lead
     // with a different language (the cloze clue / the reveal's other translation)
     // — only fall back to the target if it's the sole allowed prompt language.
-    if (studyMode !== "cards") {
+    if (curMode() !== "cards") {
       var nonTarget = allowed.filter(function (l) { return l.key !== LEARN; });
       if (nonTarget.length) allowed = nonTarget;
     }
@@ -2196,7 +2216,7 @@
     elCard.classList.remove("answer-hidden");
     // Blanks/listen swap the prompt (cloze / speaker) for the target word on
     // reveal, so repaint the live card; cards mode just unhides the answer.
-    if (studyMode !== "cards" && peekPos === null && deck.length) paintCard(deck[0], currentFrontKey, true);
+    if (curMode() !== "cards" && peekPos === null && deck.length) paintCard(deck[0], currentFrontKey, true);
     saveProgress();
   }
 
@@ -2205,6 +2225,10 @@
     if (peekPos !== null) return;       // can't change status while looking back
     if (deck.length === 0) return;
     if (!revealed) { reveal(); return; } // first interaction reveals the answer
+
+    // In the typed modes the answer you typed decides the grade — pressing
+    // Know/Don't (or tapping) just moves on; a wrong answer is a real mistake.
+    if (TYPED_MODES[curMode()] && typedGrade !== null) isKnown = typedGrade;
 
     var w = deck.shift();
     seen.push({ word: w, frontKey: currentFrontKey });
@@ -2258,13 +2282,21 @@
     elStats.classList.remove("hidden");
 
     var k = uiLangKey();
+    // Three stat tiles: total, learned (accent), mistakes (turns red when any).
+    var tile = function (cls, n, label) {
+      return '<div class="statTile ' + cls + '"><b>' + n + '</b><span>' + escapeHtml(label) + '</span></div>';
+    };
     elStatNumbers.innerHTML =
-      '<div><b>' + totalWords + '</b>' + escapeHtml(tr(UISTR.words, k)) + '</div>' +
-      '<div><b>' + knownCount + '</b>' + escapeHtml(tr(UISTR.learned, k)) + '</div>' +
-      '<div><b>' + missCount + '</b>' + escapeHtml(tr(UISTR.slips, k)) + '</div>';
+      tile("", totalWords, tr(UISTR.words, k)) +
+      tile("statTile--good", knownCount, tr(UISTR.learned, k)) +
+      tile("statTile--bad" + (missCount > 0 ? " on" : ""), missCount, tr(UISTR.slips, k));
 
+    // The summary line reads as a win only when nothing was missed.
+    var perfect = missCount === 0;
     elUnknownList.innerHTML =
-      '<div class="row"><span class="w" dir="auto">' + escapeHtml(tr(UISTR.allremembered, k)) + '</span></div>';
+      '<div class="row' + (perfect ? " good" : "") + '"><span class="w" dir="auto">' +
+      escapeHtml(perfect ? tr(UISTR.allremembered, k) : (missCount + " " + tr(UISTR.slips, k))) +
+      '</span></div>';
   }
 
   // ---- grammar cheat sheet ----------------------------------------------

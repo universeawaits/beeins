@@ -1,5 +1,5 @@
 /* Light theme — modelled on the VS Code "Quiet Light" theme
-   (bg #f5f5f5, text #333, green #448c27, red #aa3731). This is the
+   (bg #f5f5f5, text #333, green #2f9e44, red #aa3731). This is the
    default; the dark theme applies via prefers-color-scheme or an
    explicit [data-theme="dark"] set by the toggle. */
 :root {
@@ -8,7 +8,7 @@
   --card-bg: #f8f6f1;
   --text: #333230;
   --muted: #8c887f;
-  --accent: #448c27;
+  --accent: #2f9e44;
   --bad: #aa3731;
   --border: #ddd8cf;
 
@@ -35,7 +35,7 @@
     --card-bg: #282a2f;
     --text: #ececec;
     --muted: #9a9a9a;
-    --accent: #5fbf8e;
+    --accent: #40c057;
     --bad: #e07070;
     --border: #40434a;
   }
@@ -47,7 +47,7 @@
   --card-bg: #282a2f;
   --text: #ececec;
   --muted: #9a9a9a;
-  --accent: #5fbf8e;
+  --accent: #40c057;
   --bad: #e07070;
   --border: #40434a;
 }
@@ -63,7 +63,7 @@
 
 /* 🫧 bubbles — round, frosted, airy blue glass */
 :root[data-skin="bubbles"] {
-  --accent: #1c7ed6;
+  --accent: #228be6;
   --radius: 30px; --radius-sm: 20px;
   --font-head: ui-rounded, "SF Pro Rounded", "Nunito", var(--font-body);
   --head-weight: 600;
@@ -75,7 +75,7 @@
 
 /* 🧊 ice — ultra-transparent frost, pale, feather-light type */
 :root[data-skin="ice"] {
-  --accent: #3b8ea5;
+  --accent: #1098ad;
   --radius: 22px; --radius-sm: 16px;
   --font-head: "Avenir Next", "Helvetica Neue", "Segoe UI", var(--font-body);
   --head-weight: 500;
@@ -99,7 +99,7 @@
 
 /* 🔮 crystal — violet glass that glows, elegant Baskerville */
 :root[data-skin="crystal"] {
-  --accent: #7048e8;
+  --accent: #7950f2;
   --radius: 20px; --radius-sm: 14px;
   --font-head: "Baskerville", "Iowan Old Style", Georgia, serif;
   --head-weight: 600;
@@ -111,7 +111,7 @@
 
 /* ✨ aurora — dark neon glow, monospaced */
 :root[data-skin="aurora"] {
-  --accent: #12b886;
+  --accent: #0ca678;
   --radius: 12px; --radius-sm: 10px;
   --font-head: ui-monospace, "SF Mono", "Menlo", monospace;
   --head-weight: 600;
@@ -123,7 +123,7 @@
 
 /* 🪩 disco — party-lights glow, Futura geometric (dialled back) */
 :root[data-skin="disco"] {
-  --accent: #ae3ec9;
+  --accent: #be4bdb;
   --radius: 14px; --radius-sm: 11px;
   --font-head: "Futura", "Avenir Next", var(--font-body);
   --head-weight: 600;
@@ -131,14 +131,14 @@
   --card-blur: 6px;
   --card-shadow: 0 10px 40px color-mix(in srgb, var(--accent) 28%, transparent);
   --page-bg: linear-gradient(135deg,
-    color-mix(in srgb, #ae3ec9 8%, var(--bg)),
-    color-mix(in srgb, #1c7ed6 8%, var(--bg)) 55%,
+    color-mix(in srgb, #be4bdb 8%, var(--bg)),
+    color-mix(in srgb, #228be6 8%, var(--bg)) 55%,
     color-mix(in srgb, #f76707 7%, var(--bg)));
 }
 
 /* 🌼 daisy — soft, sunny, gently rounded (lightened) */
 :root[data-skin="daisy"] {
-  --accent: #9a6f00;
+  --accent: #c98a00;
   --radius: 26px; --radius-sm: 18px;
   --font-head: ui-rounded, "SF Pro Rounded", "Nunito", var(--font-body);
   --head-weight: 600;
@@ -149,7 +149,7 @@
 
 /* 🍷 wine — elegant serif, deep burgundy (lightened weight) */
 :root[data-skin="wine"] {
-  --accent: #a61e4d;
+  --accent: #c2255c;
   --radius: 10px; --radius-sm: 8px;
   --font-body: Georgia, "Iowan Old Style", "Times New Roman", serif;
   --font-head: Georgia, "Iowan Old Style", "Times New Roman", serif;
@@ -161,20 +161,20 @@
 
 /* 🩸 blooddrop — dark, sharp, heavy sans (dialled back) */
 :root[data-skin="blooddrop"] {
-  --accent: #c92a2a;
-  --border: color-mix(in srgb, #c92a2a 30%, var(--border));
+  --accent: #e03131;
+  --border: color-mix(in srgb, #e03131 30%, var(--border));
   --radius: 6px; --radius-sm: 5px;
   --card-border-w: 1.5px;
   --font-head: "Helvetica Neue", Helvetica, "Arial Narrow", var(--font-body);
   --head-weight: 800;
   --card-tint: color-mix(in srgb, var(--accent) 6%, var(--card-bg));
-  --card-shadow: 0 8px 30px color-mix(in srgb, #c92a2a 20%, transparent);
-  --page-bg: radial-gradient(1000px 600px at 50% -20%, color-mix(in srgb, #c92a2a 9%, var(--bg)), var(--bg));
+  --card-shadow: 0 8px 30px color-mix(in srgb, #e03131 20%, transparent);
+  --page-bg: radial-gradient(1000px 600px at 50% -20%, color-mix(in srgb, #e03131 9%, var(--bg)), var(--bg));
 }
 
 /* 🍕 pizza — warm, chunky crust, rounded (dialled back) */
 :root[data-skin="pizza"] {
-  --accent: #e8590c;
+  --accent: #f76707;
   --border: color-mix(in srgb, #d9480f 36%, var(--border));
   --radius: 22px; --radius-sm: 16px;
   --card-border-w: 1.5px;
@@ -187,7 +187,7 @@
 
 /* 📜 scroll — warm parchment, typewriter */
 :root[data-skin="scroll"] {
-  --accent: #8a6d3b;
+  --accent: #b1802e;
   --radius: 8px; --radius-sm: 6px;
   --font-body: "American Typewriter", "Courier New", ui-monospace, monospace;
   --font-head: "American Typewriter", "Courier New", ui-monospace, monospace;
@@ -199,29 +199,29 @@
 
 /* Dark accents per skin (explicit toggle + system-dark), same pattern as the
    base theme. Shape/surface/typography above are shared across both modes. */
-:root[data-theme="dark"][data-skin="bubbles"]   { --accent: #74c0fc; }
-:root[data-theme="dark"][data-skin="ice"]       { --accent: #99e9f2; }
-:root[data-theme="dark"][data-skin="raindrop"]  { --accent: #66d9e8; }
-:root[data-theme="dark"][data-skin="crystal"]   { --accent: #b197fc; }
-:root[data-theme="dark"][data-skin="aurora"]    { --accent: #63e6be; }
-:root[data-theme="dark"][data-skin="disco"]     { --accent: #e599f7; }
-:root[data-theme="dark"][data-skin="daisy"]     { --accent: #ffd43b; }
+:root[data-theme="dark"][data-skin="bubbles"]   { --accent: #4dabf7; }
+:root[data-theme="dark"][data-skin="ice"]       { --accent: #3bc9db; }
+:root[data-theme="dark"][data-skin="raindrop"]  { --accent: #22b8cf; }
+:root[data-theme="dark"][data-skin="crystal"]   { --accent: #9775fa; }
+:root[data-theme="dark"][data-skin="aurora"]    { --accent: #38d9a9; }
+:root[data-theme="dark"][data-skin="disco"]     { --accent: #da77f2; }
+:root[data-theme="dark"][data-skin="daisy"]     { --accent: #fcc419; }
 :root[data-theme="dark"][data-skin="wine"]      { --accent: #f06595; }
-:root[data-theme="dark"][data-skin="blooddrop"] { --accent: #ff8787; --border: color-mix(in srgb, #ff8787 30%, var(--border)); }
-:root[data-theme="dark"][data-skin="pizza"]     { --accent: #ffa94d; --border: color-mix(in srgb, #ffa94d 34%, var(--border)); }
-:root[data-theme="dark"][data-skin="scroll"]    { --accent: #d9b382; }
+:root[data-theme="dark"][data-skin="blooddrop"] { --accent: #ff6b6b; --border: color-mix(in srgb, #ff6b6b 30%, var(--border)); }
+:root[data-theme="dark"][data-skin="pizza"]     { --accent: #ff922b; --border: color-mix(in srgb, #ff922b 34%, var(--border)); }
+:root[data-theme="dark"][data-skin="scroll"]    { --accent: #e0aa5a; }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme])[data-skin="bubbles"]   { --accent: #74c0fc; }
-  :root:not([data-theme])[data-skin="ice"]       { --accent: #99e9f2; }
-  :root:not([data-theme])[data-skin="raindrop"]  { --accent: #66d9e8; }
-  :root:not([data-theme])[data-skin="crystal"]   { --accent: #b197fc; }
-  :root:not([data-theme])[data-skin="aurora"]    { --accent: #63e6be; }
-  :root:not([data-theme])[data-skin="disco"]     { --accent: #e599f7; }
-  :root:not([data-theme])[data-skin="daisy"]     { --accent: #ffd43b; }
+  :root:not([data-theme])[data-skin="bubbles"]   { --accent: #4dabf7; }
+  :root:not([data-theme])[data-skin="ice"]       { --accent: #3bc9db; }
+  :root:not([data-theme])[data-skin="raindrop"]  { --accent: #22b8cf; }
+  :root:not([data-theme])[data-skin="crystal"]   { --accent: #9775fa; }
+  :root:not([data-theme])[data-skin="aurora"]    { --accent: #38d9a9; }
+  :root:not([data-theme])[data-skin="disco"]     { --accent: #da77f2; }
+  :root:not([data-theme])[data-skin="daisy"]     { --accent: #fcc419; }
   :root:not([data-theme])[data-skin="wine"]      { --accent: #f06595; }
-  :root:not([data-theme])[data-skin="blooddrop"] { --accent: #ff8787; --border: color-mix(in srgb, #ff8787 30%, var(--border)); }
-  :root:not([data-theme])[data-skin="pizza"]     { --accent: #ffa94d; --border: color-mix(in srgb, #ffa94d 34%, var(--border)); }
-  :root:not([data-theme])[data-skin="scroll"]    { --accent: #d9b382; }
+  :root:not([data-theme])[data-skin="blooddrop"] { --accent: #ff6b6b; --border: color-mix(in srgb, #ff6b6b 30%, var(--border)); }
+  :root:not([data-theme])[data-skin="pizza"]     { --accent: #ff922b; --border: color-mix(in srgb, #ff922b 34%, var(--border)); }
+  :root:not([data-theme])[data-skin="scroll"]    { --accent: #e0aa5a; }
 }
 
 * { box-sizing: border-box; }
@@ -570,8 +570,8 @@ body {
   -webkit-appearance: none;
   border: none;
   cursor: pointer;
-  width: 84px;
-  height: 84px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: var(--accent);
   color: #fff;
@@ -582,7 +582,7 @@ body {
 }
 .listenBtn:hover { opacity: 0.9; }
 .listenBtn:active { transform: scale(0.92); }
-.listenBtn svg { width: 34px; height: 34px; display: block; }
+.listenBtn svg { width: 22px; height: 22px; display: block; }
 
 /* ---- level switch (A1 / A2 / B1) -------------------------------------- */
 #levelNav {
@@ -829,39 +829,103 @@ kbd {
   display: none;
 }
 
-#statNumbers {
-  font-size: 1.2rem;
-  margin-bottom: 24px;
-  display: flex;
-  gap: 24px;
+#statsTitle {
+  font-family: var(--font-head);
+  font-weight: var(--head-weight);
+  font-size: 2.4rem;
+  margin: 0 0 28px;
 }
 
-#statNumbers b { font-size: 1.6rem; display: block; }
+/* Three stat tiles — each its own little card, so the summary reads as a
+   dashboard rather than loose numbers. The accent highlights what you learned;
+   mistakes glow red only when there are any. */
+#statNumbers {
+  margin-bottom: 24px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.statTile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 92px;
+  padding: 16px 18px;
+  border: var(--card-border-w) solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--card-tint);
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+}
+.statTile b {
+  font-family: var(--font-head);
+  font-size: 2rem;
+  font-weight: var(--head-weight);
+  line-height: 1;
+}
+.statTile span {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.statTile--good {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  background: color-mix(in srgb, var(--accent) 10%, var(--card-tint));
+}
+.statTile--good b { color: var(--accent); }
+/* Mistakes tile stays neutral at zero; lights up red once you miss one. */
+.statTile--bad.on {
+  border-color: color-mix(in srgb, var(--bad) 45%, var(--border));
+  background: color-mix(in srgb, var(--bad) 10%, var(--card-tint));
+}
+.statTile--bad.on b { color: var(--bad); }
 
 #unknownList {
   max-width: 560px;
   width: 100%;
-  text-align: left;
+  text-align: center;
   margin-bottom: 28px;
   max-height: 45vh;
   overflow-y: auto;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: var(--card-bg);
 }
 
 #unknownList .row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 12px;
-  padding: 10px 16px;
-  border-bottom: 1px solid var(--border);
+  padding: 12px 18px;
+  border: var(--card-border-w) solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--card-tint);
+  margin-bottom: 8px;
 }
-
-#unknownList .row:last-child { border-bottom: none; }
+#unknownList .row.good {
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  background: color-mix(in srgb, var(--accent) 8%, var(--card-tint));
+}
 
 #unknownList .row .w { font-weight: 600; }
 #unknownList .row .t { color: var(--muted); }
+
+/* The "reload and start over" button — a solid accent call-to-action. */
+#btnReload {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--accent) 30%, transparent);
+  transition: transform 0.1s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+}
+#btnReload:hover { opacity: 0.94; box-shadow: 0 8px 26px color-mix(in srgb, var(--accent) 38%, transparent); }
+#btnReload:active { transform: translateY(1px) scale(0.99); }
 
 /* ---- synonyms on the card --------------------------------------------- */
 #synonyms {
@@ -918,8 +982,14 @@ kbd {
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
+  scrollbar-width: thin;                              /* Firefox: thin bar */
+  scrollbar-color: var(--border) transparent;
 }
+/* WebKit (Chrome/Safari): a slim, unobtrusive horizontal scrollbar. */
+#grammarIndex::-webkit-scrollbar { height: 3px; }
+#grammarIndex::-webkit-scrollbar-track { background: transparent; }
+#grammarIndex::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+#grammarIndex::-webkit-scrollbar-thumb:hover { background: var(--muted); }
 
 #grammarIndex.hidden { display: none; }
 
