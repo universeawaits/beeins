@@ -285,7 +285,7 @@
     { key: "vi",    flag: "🇻🇳", label: "VI",    endo: "Tiếng Việt",    names: { de: "Vietnamesisch", en: "Vietnamese", ru: "Вьетнамский", vi: "Tiếng Việt", fa: "ویتنامی" } },
     { key: "fa",    flag: "🇮🇷", label: "FA",    endo: "فارسی",         names: { de: "Persisch", en: "Persian", ru: "Персидский", vi: "Tiếng Ba Tư", fa: "فارسی" } },
     { key: "uk",    flag: "🇺🇦", label: "UK",    endo: "Українська",    names: { de: "Ukrainisch", en: "Ukrainian", ru: "Украинский", vi: "Tiếng Ukraina", fa: "اوکراینی" } },
-    { key: "th",    flag: "🇹🇭", label: "TH",    endo: "ไทย",           names: { de: "Thailändisch", en: "Thai", ru: "Тайский", vi: "Tiếng Thái", fa: "تایلندی" } },
+    { key: "th",    flag: "🇹🇭", label: "TH",    endo: "ไทย",           names: { de: "Thailändisch", en: "Thai", ru: "Тайский", vi: "Tiếng Thái", fa: "تایلندی", fr: "Thaïlandais", tr: "Tayca", it: "Tailandese", es_ar: "Tailandés" } },
     { key: "zh",    flag: "🇨🇳", label: "ZH",    endo: "中文",           names: { de: "Chinesisch", en: "Chinese", ru: "Китайский", tr: "Çince", it: "Cinese", es_ar: "Chino", vi: "Tiếng Trung", fa: "چینی" } },
     { key: "ja",    flag: "🇯🇵", label: "JA",    endo: "日本語",         names: { de: "Japanisch", en: "Japanese", ru: "Японский", tr: "Japonca", it: "Giapponese", es_ar: "Japonés", vi: "Tiếng Nhật", fa: "ژاپنی" } },
     { key: "ko",    flag: "🇰🇷", label: "KO",    endo: "한국어",         names: { de: "Koreanisch", en: "Korean", ru: "Корейский", tr: "Korece", it: "Coreano", es_ar: "Coreano", vi: "Tiếng Hàn", fa: "کره‌ای" } },
