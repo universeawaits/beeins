@@ -218,6 +218,9 @@
   function renderCardTopics(w) {
     if (!elCardTopics) return;
     elCardTopics.innerHTML = "";
+    // The per-card topic emojis in the top-left corner were removed at the
+    // user's request; topic filtering still lives in the topics dropdown.
+    return;
     var ts = (w && w.topics) || [];
     ts.forEach(function (id) {
       var t = TOPIC_BY_ID[id];

@@ -702,7 +702,7 @@ body {
 .example .exLearn.exStacked {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.1em;
 }
 .example .exLearn.exStacked .exText { min-width: 0; }
