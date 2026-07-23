@@ -62,7 +62,14 @@
     // English (British) — the Oxford 3000/5000 A1-B1 wordlist, studied from any
     // of 25 languages. No real Piper English voice ships here (they are espeak-
     // based); the pre-rendered clips use a British system voice.
-    { key: "en",    flag: "🇬🇧", endo: "English",              tts: "en-GB", piper: "en_GB-alba-medium",         level: "level", grammar: true, allow: ["de", "ru", "vi", "fa", "uk", "pl", "tr", "th", "sw", "ar_eg", "zh", "ar_lb", "ms", "am", "ar_sy", "hi", "ur", "es_mx", "ca", "hr", "sr", "el", "sq", "ro", "fr"] }
+    { key: "en",    flag: "🇬🇧", endo: "English",              tts: "en-GB", piper: "en_GB-alba-medium",         level: "level", grammar: true, allow: ["de", "ru", "vi", "fa", "uk", "pl", "tr", "th", "sw", "ar_eg", "zh", "ar_lb", "ms", "am", "ar_sy", "hi", "ur", "es_mx", "ca", "hr", "sr", "el", "sq", "ro", "fr"] },
+    // Mandarin Chinese (Simplified) — HSK 1-4, which is where A1-B1 actually
+    // ends; HSK 5-6 is already B2/C1, so the corpus stops there rather than
+    // padding. Every headword and example carries pinyin in `reading`. The
+    // level buttons show the HSK ladder instead of CEFR (see levelLabels).
+    { key: "zh",    flag: "🇨🇳", endo: "中文",                  tts: "zh-CN", level: "level", grammar: true,
+      allow: ["ru", "de", "en", "tr", "it", "es_ar"],
+      levelLabels: { A1: "HSK 1-2", A2: "HSK 3", B1: "HSK 4" } }
   ];
   var TARGET_BY_KEY = {};
   TARGETS.forEach(function (t) { TARGET_BY_KEY[t.key] = t; });
