@@ -226,6 +226,14 @@
 
 * { box-sizing: border-box; }
 
+/* No visible scrollbars anywhere — vertical or horizontal. Everything still
+   scrolls (wheel, trackpad, touch, keyboard); only the bars are hidden. */
+* {
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* old Edge/IE */
+}
+*::-webkit-scrollbar { width: 0; height: 0; }   /* WebKit / Blink */
+
 html, body {
   height: 100%;
   margin: 0;
@@ -971,14 +979,7 @@ kbd {
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;                              /* Firefox: thin bar */
-  scrollbar-color: var(--border) transparent;
 }
-/* WebKit (Chrome/Safari): a slim, unobtrusive horizontal scrollbar. */
-#grammarIndex::-webkit-scrollbar { height: 3px; }
-#grammarIndex::-webkit-scrollbar-track { background: transparent; }
-#grammarIndex::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-#grammarIndex::-webkit-scrollbar-thumb:hover { background: var(--muted); }
 
 #grammarIndex.hidden { display: none; }
 
