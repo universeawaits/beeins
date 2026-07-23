@@ -1112,6 +1112,15 @@ table.gTable td.gRowLabel {
 
 .gExample .gExDe { font-weight: 600; margin-bottom: 3px; }
 
+/* Romanisation under a CJK grammar example (pinyin / romaji / RR). */
+.gExample .gExReading {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+
 .gExample .gExTr {
   color: var(--muted);
   font-size: 0.9rem;

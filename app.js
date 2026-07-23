@@ -2461,6 +2461,14 @@
         // Speak the target-language grammar example.
         if (SPEAK_OK && ex[LEARN]) de.appendChild(makeSpeakBtn(ex[LEARN]));
         d.appendChild(de);
+        // Romanisation for CJK targets — shown under the target sentence, never spoken.
+        if (ex.reading) {
+          var rd = document.createElement("div");
+          rd.className = "gExReading";
+          rd.setAttribute("dir", "auto");
+          rd.textContent = ex.reading;
+          d.appendChild(rd);
+        }
         shownLangs().forEach(function (l) {
           if (l.key === LEARN || !ex[l.key]) return;
           var line = document.createElement("div");
