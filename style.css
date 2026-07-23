@@ -563,26 +563,15 @@ body {
   text-align: center;
 }
 
-/* Listen-mode prompt: a big round speaker you tap to hear the target word. */
+/* Listen-mode prompt: the same speaker icon as the one beside a word (it also
+   carries .speakBtn, so hover/speaking/loading states come along), just scaled
+   up because here it *is* the prompt rather than an afterthought. */
 .listenBtn {
-  appearance: none;
-  -webkit-appearance: none;
-  border: none;
-  cursor: pointer;
   flex: 0 0 auto;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #fff;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.1s ease, opacity 0.15s ease;
+  margin-inline-start: 0;
+  font-size: 1.9rem;
+  opacity: 0.7;
 }
-.listenBtn:hover { opacity: 0.9; }
-.listenBtn:active { transform: scale(0.92); }
-.listenBtn svg { width: 18px; height: 18px; display: block; }
 
 /* ---- level switch (A1 / A2 / B1) -------------------------------------- */
 #levelNav {

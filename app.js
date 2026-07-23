@@ -1919,14 +1919,16 @@
     else setTimeout(function () { try { inp.focus(); } catch (e) {} }, 0);
   }
 
-  // A big round speaker that plays the target word; auto-plays once for the
-  // live card (not when peeking back). Used by listen + combi prompts.
+  // The speaker that plays the target word; auto-plays once for the live card
+  // (not when peeking back). Used by listen + combi prompts. Same icon and
+  // states as the inline speakBtn next to a word, only bigger.
   function makeListenButton(w) {
     var text = wordVal(w, LEARN);
     if (!SPEAK_OK) { var s = document.createElement("div"); s.textContent = "🔊"; return s; }
     var btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "listenBtn";
+    btn.className = "speakBtn listenBtn";
+    btn.title = "Play pronunciation";
     btn.setAttribute("aria-label", "Play pronunciation");
     btn.innerHTML = SPEAKER_SVG;
     var stop = function (e) { e.stopPropagation(); };
