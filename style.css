@@ -156,19 +156,20 @@
   --radius: 10px; --radius-sm: 8px;
   --font-body: "Hoefler Text", Baskerville, Charter, Cambria, Georgia, "Times New Roman", serif;
   --font-head: "Hoefler Text", Baskerville, Charter, Cambria, Georgia, "Times New Roman", serif;
-  --head-weight: 500;
+  --head-weight: 400;
   --card-tint: color-mix(in srgb, var(--accent) 6%, var(--card-bg));
   --card-shadow: 0 14px 44px rgba(0, 0, 0, 0.18);
   --page-bg: linear-gradient(160deg, color-mix(in srgb, var(--accent) 10%, var(--bg)), var(--bg) 70%);
 }
-/* A serif at 700 is much wider than a sans at 700, which is what pushed the
-   controls onto a second row. Step the topbar chips down one weight for this
-   skin only — colours and sizes untouched. */
-:root[data-skin="wine"] #learnDrop .ldLearnName,
-:root[data-skin="wine"] .langDropBtn,
-:root[data-skin="wine"] .viewBtn,
-:root[data-skin="wine"] .modeBtn,
-:root[data-skin="wine"] .levelBtn { font-weight: 600; }
+/* No bold anywhere in this skin. A serif at 600-700 is both heavier and much
+   wider than the sans it replaces — it pushed the topbar onto a second row and
+   read as shouting on the card. Everything stays at regular; the hierarchy is
+   carried by size and by muted vs full-strength colour, which this typeface
+   does well on its own. Scoped to the skin, so nothing else changes. */
+:root[data-skin="wine"] :is(#topbar, #card, #controls, #stats, #grammar, #deck)
+  :is(div, span, button, input, kbd, a, h1, h2, h3, p, li, td, th) {
+  font-weight: 400;
+}
 
 /* 🩸 blooddrop — dark, sharp, heavy sans (dialled back) */
 :root[data-skin="blooddrop"] {
