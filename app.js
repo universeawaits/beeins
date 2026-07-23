@@ -315,7 +315,15 @@
     { key: "sr",    flag: "🇷🇸", label: "SR",    endo: "Српски",        names: { de: "Serbisch", en: "Serbian", ru: "Сербский", vi: "Tiếng Serbia", fa: "صربی" } },
     { key: "el",    flag: "🇬🇷", label: "EL",    endo: "Ελληνικά",      names: { de: "Griechisch", en: "Greek", ru: "Греческий", vi: "Tiếng Hy Lạp", fa: "یونانی" } },
     { key: "ro",    flag: "🇷🇴", label: "RO",    endo: "Română",        names: { de: "Rumänisch", en: "Romanian", ru: "Румынский", vi: "Tiếng Rumani", fa: "رومانیایی" } },
-    { key: "sq",    flag: "🇦🇱", label: "SQ",    endo: "Shqip",         names: { de: "Albanisch", en: "Albanian", ru: "Албанский", vi: "Tiếng Albania", fa: "آلبانیایی" } }
+    { key: "sq",    flag: "🇦🇱", label: "SQ",    endo: "Shqip",         names: { de: "Albanisch", en: "Albanian", ru: "Албанский", vi: "Tiếng Albania", fa: "آلبانیایی" } },
+    // Afghan / Central-Asian study-from languages. Dari (prs) is Afghan Persian
+    // — related to but distinct from Iranian Persian (fa) in spelling and
+    // vocabulary, so it carries its own glosses. Pashto (ps) is the other
+    // official language of Afghanistan; both are RTL. Uzbek (uz) is Latin-script
+    // (official Oʻzbek lotin) and Turkic.
+    { key: "prs",   flag: "🇦🇫", label: "PRS",   endo: "دری",           names: { de: "Dari", en: "Dari", ru: "Дари", fa: "دری" } },
+    { key: "ps",    flag: "🇦🇫", label: "PS",    endo: "پښتو",          names: { de: "Paschtu", en: "Pashto", ru: "Пушту", fa: "پشتو" } },
+    { key: "uz",    flag: "🇺🇿", label: "UZ",    endo: "Oʻzbekcha",     names: { de: "Usbekisch", en: "Uzbek", ru: "Узбекский", fa: "ازبکی" } }
   ];
 
   var LANG_BY_KEY = {};
@@ -370,9 +378,9 @@
     be: "slavic", ru: "slavic", uk: "slavic", hr: "slavic", sr: "slavic", pl: "slavic",
     el: "hellenic",
     sq: "albanian",
-    fa: "indo_iranian", hi: "indo_iranian", ur: "indo_iranian",
+    fa: "indo_iranian", hi: "indo_iranian", ur: "indo_iranian", prs: "indo_iranian", ps: "indo_iranian",
     ar_eg: "semitic", ar_lb: "semitic", ar_sy: "semitic", am: "semitic", he: "semitic",
-    tr: "turkic",
+    tr: "turkic", uz: "turkic",
     vi: "other", zh: "other", th: "other", ms: "other", sw: "other"
   };
   function familyRank(key) {
